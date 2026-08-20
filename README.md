@@ -5,6 +5,12 @@ the duels on *The Floor* — two clocks, one image, last dawg standing.
 
 ![indigo #3830a0 / lime #d2f050](https://img.shields.io/badge/brand-%233830a0%20%2F%20%23d2f050-d2f050?style=flat-square)
 
+## Live
+
+<https://dawghouseduel.com> — see [DEPLOY.md](DEPLOY.md) for how it's wired up
+(Cloudflare Pages for the site, a Worker for phone pairing, DNS pointed from
+Squarespace).
+
 ## Run it
 
 ```bash
@@ -41,17 +47,30 @@ flourish never costs anybody time.
 ## Judging answers — the Host View
 
 The answer key can't live on the screen the dawgs are reading, so it gets its
-own window. Hit **Host View** on setup (or <kbd>H</kbd> mid-duel) and a second
-window opens with:
+own screen. Two ways to run it.
+
+**On your phone** — the setup screen shows a four-letter room code. Open
+`dawghouseduel.com/host` on your phone, type the code, done. Best setup for
+filming: the laptop faces the dawgs and you judge from your hand.
+
+**On the same computer** — hit **Host View** on setup (or <kbd>H</kbd> mid-duel)
+for a second window. No pairing, no internet needed at all.
+
+Either way you get:
 
 - **the answer**, big, plus the alternate names that also count
 - the picture the dawgs are looking at, and **what's next up**
 - both clocks and who has control
 - big **CORRECT / WRONG −3s / PASS −2s** buttons, plus skip and pause
 
-Put it on a second monitor, a second laptop, or the corner of your own screen.
-Every button and key in it drives the duel screen live over a BroadcastChannel —
-no server, no setup, no lag. Close it and the duel carries on regardless.
+The duel screen is the one actually running the game. The host end is a remote
+control: if the phone loses signal or the relay goes down mid-duel, the clocks
+keep running on the laptop and the phone reconnects on its own. Worst case,
+<kbd>H</kbd> on the laptop is the backup.
+
+Same-machine pairing goes over a BroadcastChannel with no server involved.
+Phone pairing goes through a small Cloudflare Worker — see
+[DEPLOY.md](DEPLOY.md) and [worker/](worker/).
 
 ## Running the room
 
@@ -88,10 +107,11 @@ It also unlocks audio, which browsers gate until the first click.
 
 ## Categories
 
-| Category | Answers | Pictures |
-| --- | --- | --- |
-| Superheroes | 113 | 113 |
-| Disney Characters | 152 | 152 |
+| Category | Answers | Pictures | Source |
+| --- | --- | --- | --- |
+| Superheroes | 113 | 113 | superhero-api + Wikipedia/Fandom |
+| Disney Characters | 152 | 152 | Disney Wiki |
+| Animals | 170 | 170 | Wikipedia |
 
 Each is one file in `js/data/`, registered with a `<script>` tag in
 `index.html`. Difficulty tiers (`easy` / `mid` / `deep`) let the **deep cuts**
@@ -143,6 +163,22 @@ the answer printed across it. Those carry an explicit `page: 'Dumbo (character)'
 in the data file. Every image in both categories was eyeballed on a contact
 sheet; the script also flags any answer that resolved to a differently-named
 page so a wrong picture is easy to spot.
+
+Animals come from Wikipedia:
+
+```bash
+node tools/fetch-wiki-images.js animals
+```
+
+This is the one category whose pictures are genuinely reusable — they're mostly
+CC-BY-SA and public-domain photographs, and the fetcher records the licence and
+photographer for each one in `sources.json`. Wikimedia rate-limits a sweep this
+size, so the script backs off and retries; re-run it and it picks up where it
+stopped.
+
+Because a lot of animals share a name with something broader, the answer is what
+you'd actually shout and the article is pinned separately — `name: 'Penguin'`
+with `page: 'Emperor penguin'`, and "Emperor penguin" accepted as an alternate.
 
 If any answer ever loses its picture, the deck setting **Images only** (the
 default) simply doesn't deal it.
@@ -214,6 +250,10 @@ js/audio.js           synthesized buzzers and stings — no audio files to lose
 js/app.js             clocks, control, pass logic, screens, host link
 js/host.js            host window controller
 js/data/disney.js     152 Disney answers
+js/data/animals.js    170 animal answers
+js/net.js             local channel + relay transport
+js/config.js          relay URL and host URL — the one file to edit on deploy
+worker/               the Cloudflare Worker that pairs a phone to a duel screen
 tools/build-manifest.sh   regenerates the folder listing after you add images
 tools/fetch-images.js     pulls placeholder art for a category from superhero-api
 tools/fetch-extra-images.sh  the six the dataset doesn't carry

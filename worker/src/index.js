@@ -1,0 +1,109 @@
+/* ══════════════════════════════════════════════════════════════
+   Dawg House Duel — pairing relay
+
+   A dumb pipe. The duel screen stays the only authority on the
+   game; this just carries its state out to the host's phone and
+   carries the host's button presses back.
+
+   One Durable Object per room code, so every room is its own
+   isolated little server that exists only while someone is in it.
+
+     wss://<worker>/room/WXYZ?role=duel
+     wss://<worker>/room/WXYZ?role=host
+   ══════════════════════════════════════════════════════════════ */
+
+const MAX_MESSAGE = 256 * 1024;   // a state frame carries an image URL, not an image
+const MAX_PEERS   = 8;            // duel screen, host, and a few spectating tabs
+
+export class Room {
+  constructor(state) {
+    this.state = state;
+    this.peers = new Map();       // ws -> role
+    this.lastDuelState = null;    // so a phone joining mid-duel sees it at once
+  }
+
+  async fetch(request) {
+    if (request.headers.get('Upgrade') !== 'websocket') {
+      return new Response('expected a websocket', { status: 426 });
+    }
+    if (this.peers.size >= MAX_PEERS) {
+      return new Response('room full', { status: 429 });
+    }
+    const role = new URL(request.url).searchParams.get('role') === 'duel' ? 'duel' : 'host';
+    const { 0: client, 1: server } = new WebSocketPair();
+    this.accept(server, role);
+    return new Response(null, { status: 101, webSocket: client });
+  }
+
+  accept(ws, role) {
+    ws.accept();
+    this.peers.set(ws, role);
+
+    // Catch the newcomer up before anything else happens.
+    if (role !== 'duel' && this.lastDuelState) this.post(ws, this.lastDuelState);
+    this.announce();
+
+    ws.addEventListener('message', ev => {
+      const raw = typeof ev.data === 'string' ? ev.data : null;
+      if (!raw || raw.length > MAX_MESSAGE) return;
+
+      let msg;
+      try { msg = JSON.parse(raw); } catch (e) { return; }
+      if (!msg || typeof msg !== 'object') return;
+
+      // Only the duel screen's own frames are worth replaying to latecomers.
+      if (msg.from === 'duel') this.lastDuelState = raw;
+
+      for (const peer of this.peers.keys()) if (peer !== ws) this.post(peer, raw);
+    });
+
+    const drop = () => {
+      this.peers.delete(ws);
+      if (role === 'duel') this.lastDuelState = null;   // don't serve a stale board
+      this.announce();
+    };
+    ws.addEventListener('close', drop);
+    ws.addEventListener('error', drop);
+  }
+
+  post(ws, data) {
+    try { ws.send(data); } catch (e) { this.peers.delete(ws); }
+  }
+
+  /* Let both ends show whether the other one is actually there. */
+  announce() {
+    const roles = [...this.peers.values()];
+    const msg = JSON.stringify({
+      from: 'relay',
+      peers: roles.length,
+      duel: roles.includes('duel'),
+      hosts: roles.filter(r => r === 'host').length
+    });
+    for (const ws of this.peers.keys()) this.post(ws, msg);
+  }
+}
+
+const CORS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET,OPTIONS',
+  'Access-Control-Allow-Headers': 'content-type'
+};
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS });
+    if (url.pathname === '/health') {
+      return new Response(JSON.stringify({ ok: true }), {
+        headers: { 'content-type': 'application/json', ...CORS }
+      });
+    }
+
+    const m = url.pathname.match(/^\/room\/([A-Za-z0-9]{4,12})$/);
+    if (!m) return new Response('not found', { status: 404, headers: CORS });
+
+    const id = env.ROOMS.idFromName(m[1].toUpperCase());
+    return env.ROOMS.get(id).fetch(request);
+  }
+};

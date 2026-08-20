@@ -12,40 +12,100 @@
 
   var el = {
     cat: $('cat'), count: $('count'), thumb: $('thumb'),
-    answer: $('answer'), alts: $('alts'), next: $('next'), status: $('status'),
+    answer: $('answer'), alts: $('alts'), next: $('next'),
+    status: $('status'), phase: $('phase'),
     wrongCost: $('wrongCost'), passCost: $('passCost'), pauseLabel: $('pauseLabel')
   };
   var cl = [0, 1].map(function (i) {
     return { root: $('cl' + i), name: $('cl' + i + 'Name'), clock: $('cl' + i + 'Clock') };
   });
 
-  /* ── link ── */
-  var NAME = 'dawghouse-duel';
-  var chan = null;
-  try { chan = new BroadcastChannel(NAME); } catch (e) { chan = null; }
+  var join = {
+    root: $('join'), form: $('joinForm'), code: $('joinCode'),
+    go: $('joinForm') && $('joinForm').querySelector('.join__go'),
+    state: $('joinState'), hdrRoom: $('hdrRoom'), leave: $('leave')
+  };
 
-  function send(cmd) {
-    var msg = { from: 'host', cmd: cmd, t: Date.now() };
-    if (chan) chan.postMessage(msg);
-    else { try { localStorage.setItem(NAME + '.cmd', JSON.stringify(msg)); } catch (e) {} }
-  }
-
-  function onState(s) {
-    if (!s || s.from !== 'duel') return;
-    lastSeen = Date.now();
-    render(s);
-  }
-
-  if (chan) chan.onmessage = function (e) { onState(e.data); };
-  window.addEventListener('storage', function (e) {
-    if (e.key === NAME + '.state' && e.newValue) {
-      try { onState(JSON.parse(e.newValue)); } catch (err) {}
-    }
-  });
-
-  /* ── render ── */
+  var Net = DHD.Net;
   var lastSeen = 0, lastPhase = '';
 
+  function send(cmd) { Net.send({ from: 'host', cmd: cmd, t: Date.now() }); }
+
+  var wasHearing = false;
+  function onIncoming(m) {
+    if (!m || m.from !== 'duel') return;
+    lastSeen = Date.now();
+    document.body.classList.add('paired');
+    if (!wasHearing) { wasHearing = true; onStatus(); }
+    render(m);
+  }
+
+  function onStatus() {
+    var st = Net.status(), peers = Net.peers(), room = Net.room();
+    var solo = !room;
+    document.body.classList.toggle('solo', solo);
+    join.hdrRoom.textContent = room || '';
+
+    var label, cls;
+    var hearing = Date.now() - lastSeen < 3000;
+    if (solo && hearing)          { label = 'same computer'; cls = 'on'; }
+    else if (solo)                { label = 'enter the code from the duel screen'; cls = 'wait'; }
+    else if (st === 'online')     { label = peers.duel ? 'connected to the duel screen' : 'waiting for the duel screen'; cls = peers.duel ? 'on' : 'wait'; }
+    else if (st === 'connecting') { label = 'connecting…'; cls = 'wait'; }
+    else                          { label = 'no connection — check the code'; cls = 'off'; }
+
+    join.state.textContent = label;
+    join.state.className = 'join__state is-' + cls;
+    el.status.textContent = label;
+    el.status.classList.toggle('live', cls === 'on');
+  }
+
+  /* A code in the URL (#WXYZ or ?room=WXYZ) joins straight away, so the code
+     can be handed over as a link instead of typed. */
+  function codeFromUrl() {
+    var h = (location.hash || '').replace('#', '');
+    var q = new URLSearchParams(location.search).get('room') || '';
+    return Net.clean(h || q);
+  }
+
+  Net.start({
+    role: 'host',
+    room: codeFromUrl() || null,
+    onMessage: onIncoming,
+    onStatus: onStatus
+  });
+
+  if (join.form) {
+    join.form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var code = Net.clean(join.code.value);
+      if (code.length < 4) { join.state.textContent = 'that code is too short'; join.state.className = 'join__state is-off'; return; }
+      Net.join(code);
+      location.hash = code;
+      onStatus();
+    });
+    join.code.addEventListener('input', function () {
+      join.code.value = Net.clean(join.code.value);
+    });
+  }
+  if (join.leave) {
+    join.leave.addEventListener('click', function () {
+      Net.leave();
+      document.body.classList.remove('paired');
+      location.hash = '';
+      onStatus();
+    });
+  }
+
+  /* Same machine, no relay: the BroadcastChannel already links the two windows,
+     so drop straight into the control view. */
+  if (!codeFromUrl() && window.opener) {
+    document.body.classList.add('paired');
+    Net.leave();
+  }
+  onStatus();
+
+  /* ── render ── */  /* ── render ── */
   function fmt(ms) { return (Math.max(0, ms) / 1000).toFixed(1); }
 
   function render(s) {
@@ -84,12 +144,10 @@
 
     if (s.phase !== lastPhase) {
       lastPhase = s.phase;
-      el.status.textContent = ({
+      el.phase.textContent = ({
         intro: 'counting in…', live: 'live', reveal: 'showing the answer…',
-        paused: 'paused', over: 'duel over — ' + (s.winnerName || '') + ' wins',
-        idle: 'waiting for the duel screen…'
+        paused: 'paused', over: 'duel over — ' + (s.winnerName || '') + ' wins'
       })[s.phase] || s.phase;
-      el.status.classList.toggle('live', s.phase === 'live');
     }
   }
 
@@ -99,6 +157,7 @@
   });
 
   document.addEventListener('keydown', function (e) {
+    if (/^(INPUT|TEXTAREA)$/.test((e.target || {}).tagName || '')) return;
     var map = {
       'Enter': 'correct', 'ArrowRight': 'correct',
       'x': 'wrong', 'X': 'wrong', 'ArrowLeft': 'wrong',
@@ -111,16 +170,18 @@
     e.preventDefault();
     send(cmd);
     var btn = document.querySelector('.act[data-cmd="' + cmd + '"]');
-    if (btn && !btn.disabled) { btn.style.transform = 'translateY(2px)'; setTimeout(function () { btn.style.transform = ''; }, 90); }
+    if (btn && !btn.disabled) {
+      btn.style.transform = 'translateY(2px)';
+      setTimeout(function () { btn.style.transform = ''; }, 90);
+    }
   });
 
-  /* Nudge the duel window to describe itself, and notice if it goes away. */
+  /* Nudge the duel screen to describe itself, and notice if it goes quiet. */
   send('hello');
   setInterval(function () {
-    if (Date.now() - lastSeen > 2500) {
+    if (Date.now() - lastSeen > 3000) {
       document.body.classList.add('idle');
-      el.status.textContent = 'duel screen not responding — is the main window still open?';
-      el.status.classList.remove('live');
+      if (wasHearing) { wasHearing = false; onStatus(); }
       send('hello');
     }
   }, 1500);

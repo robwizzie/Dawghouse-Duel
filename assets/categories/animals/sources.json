@@ -1,0 +1,1362 @@
+{
+ "lion": {
+  "answer": "Lion",
+  "matched": "Lion",
+  "via": "Lion",
+  "file": "020 The lion king Snyggve in the Serengeti National Park Photo by Giles Laurent.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Giles Laurent"
+ },
+ "tiger": {
+  "answer": "Tiger",
+  "matched": "Tiger",
+  "via": "Tiger",
+  "file": "Bengal tiger (Panthera tigris tigris) female 3 crop.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "giraffe": {
+  "answer": "Giraffe",
+  "matched": "Giraffe",
+  "via": "Giraffe",
+  "file": "Giraffe Mikumi National Park.jpg",
+  "licence": "GFDL 1.2",
+  "by": "Muhammad Mahdi Karim Facebook The making of this document was supported by Wikimedia CH. (Submit your project!) For all "
+ },
+ "zebra": {
+  "answer": "Zebra",
+  "matched": "Plains zebra",
+  "via": "Plains zebra",
+  "file": "Equus quagga burchellii - Etosha, 2014.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Yathin S Krishnappa"
+ },
+ "pangolin": {
+  "answer": "Pangolin",
+  "matched": "Pangolin",
+  "via": "Pangolin",
+  "file": "Eupholidota.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "derivative work: user:The Explaner"
+ },
+ "aardvark": {
+  "answer": "Aardvark",
+  "matched": "Aardvark",
+  "via": "Aardvark",
+  "file": "Orycteropus afer 175359469.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Kelly Abram"
+ },
+ "tapir": {
+  "answer": "Tapir",
+  "matched": "Tapir",
+  "via": "Tapir",
+  "file": "Tapiridae.png",
+  "licence": "CC BY-SA 4.0",
+  "by": "蕭漫"
+ },
+ "wildebeest": {
+  "answer": "Wildebeest",
+  "matched": "Blue wildebeest",
+  "via": "Blue wildebeest",
+  "file": "Blue Wildebeest, Ngorongoro.jpg",
+  "licence": "GFDL 1.2",
+  "by": "Muhammad Mahdi Karim"
+ },
+ "elephant": {
+  "answer": "Elephant",
+  "matched": "African bush elephant",
+  "via": "African bush elephant",
+  "file": "178 Male African bush elephant in Etosha National Park Photo by Giles Laurent.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Giles Laurent"
+ },
+ "kangaroo": {
+  "answer": "Kangaroo",
+  "matched": "Red kangaroo",
+  "via": "Red kangaroo",
+  "file": "Red kangaroo - melbourne zoo.jpg",
+  "licence": "GFDL 1.2",
+  "by": "fir0002 flagstaffotos [at] gmail.com Canon 20D + Canon 70-200mm f/2.8 L"
+ },
+ "dolphin": {
+  "answer": "Dolphin",
+  "matched": "Common bottlenose dolphin",
+  "via": "Common bottlenose dolphin",
+  "file": "Tursiops truncatus 01-cropped.jpg",
+  "licence": "Public domain",
+  "by": "NASA"
+ },
+ "rhinoceros": {
+  "answer": "Rhinoceros",
+  "matched": "White rhinoceros",
+  "via": "White rhinoceros",
+  "file": "109 Male White rhinoceros walking in the Kalahari Desert of Namibia Photo by Giles Laurent.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Giles Laurent"
+ },
+ "crocodile": {
+  "answer": "Crocodile",
+  "matched": "Saltwater crocodile",
+  "via": "Saltwater crocodile",
+  "file": "SaltwaterCrocodile('Maximo').jpg",
+  "licence": "Public domain",
+  "by": "Obtained from Molly Ebersold of the St. Augustine Alligator Farm"
+ },
+ "camel": {
+  "answer": "Camel",
+  "matched": "Dromedary",
+  "via": "Dromedary",
+  "file": "Camelus dromedarius in Nuweiba.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Florian Prischl"
+ },
+ "flamingo": {
+  "answer": "Flamingo",
+  "matched": "American flamingo",
+  "via": "American flamingo",
+  "file": "American Flamingo JG.jpg",
+  "licence": "CC BY 4.0",
+  "by": "JeffreyGammon"
+ },
+ "owl": {
+  "answer": "Owl",
+  "matched": "Snowy owl",
+  "via": "Snowy owl",
+  "file": "SnowyOwlAmericanBlackDuck.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Chuck Homler d/b/a Focus On Wildlife"
+ },
+ "ostrich": {
+  "answer": "Ostrich",
+  "matched": "Common ostrich",
+  "via": "Common ostrich",
+  "file": "Struthio camelus - Etosha 2014 (3).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Yathin S Krishnappa"
+ },
+ "hedgehog": {
+  "answer": "Hedgehog",
+  "matched": "European hedgehog",
+  "via": "European hedgehog",
+  "file": "Erinaceus europaeus LC0119.jpg",
+  "licence": "CC BY-SA 2.0 de",
+  "by": "Jörg Hempel"
+ },
+ "cheetah": {
+  "answer": "Cheetah",
+  "matched": "Cheetah",
+  "via": "Cheetah",
+  "file": "Male cheetah facing left in South Africa.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "AfricanConservation"
+ },
+ "honey-bee": {
+  "answer": "Honey Bee",
+  "matched": "Western honey bee",
+  "via": "Western honey bee",
+  "file": "Apis mellifera Western honey bee.jpg",
+  "licence": "CC BY-SA 2.5",
+  "by": "Andreas Trepte"
+ },
+ "chameleon": {
+  "answer": "Chameleon",
+  "matched": "Veiled chameleon",
+  "via": "Veiled chameleon",
+  "file": "Yemen Chameleon.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Kupos"
+ },
+ "frog": {
+  "answer": "Frog",
+  "matched": "Agalychnis callidryas",
+  "via": "Agalychnis callidryas",
+  "file": "Red-eyed Tree Frog (Agalychnis callidryas) 1.png",
+  "licence": "CC BY 2.0",
+  "by": "Red-eyed Tree Frog (Agalychnis callidryas) 3.jpg: Geoff Gallice from Gainesville, FL, USA derivative work: B kimmel"
+ },
+ "starfish": {
+  "answer": "Starfish",
+  "matched": "Starfish",
+  "via": "Starfish",
+  "file": "Starfish montage.png",
+  "licence": "CC BY-SA 4.0",
+  "by": "Top left: Klaus Rassinger (Museum Wiesbaden) Top right: Katie Ahlfeld Bottom right: Jon Zander (Digon3) Bottom left: Esp"
+ },
+ "bat": {
+  "answer": "Bat",
+  "matched": "Little brown bat",
+  "via": "Little brown bat",
+  "file": "Little Brown Myotis (cropped).JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "SMBishop"
+ },
+ "capybara": {
+  "answer": "Capybara",
+  "matched": "Capybara",
+  "via": "Capybara",
+  "file": "Capybaracropped.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Giles Laurent"
+ },
+ "lemur": {
+  "answer": "Ring-tailed Lemur",
+  "matched": "Ring-tailed lemur",
+  "via": "Ring-tailed lemur",
+  "file": "Ring-tailed lemur (Lemur catta).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "mandrill": {
+  "answer": "Mandrill",
+  "matched": "Mandrill",
+  "via": "Mandrill",
+  "file": "Mandrill Albert September 2015 Zoo Berlin (2).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Katma0601"
+ },
+ "platypus": {
+  "answer": "Platypus",
+  "matched": "Platypus",
+  "via": "Platypus",
+  "file": "Duck-billed platypus (Ornithorhynchus anatinus) Scottsdale.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "echidna": {
+  "answer": "Echidna",
+  "matched": "Short-beaked echidna",
+  "via": "Short-beaked echidna",
+  "file": "Wild shortbeak echidna.jpg",
+  "licence": "GFDL 1.2",
+  "by": "User:Fir0002"
+ },
+ "anteater": {
+  "answer": "Giant Anteater",
+  "matched": "Giant anteater",
+  "via": "Giant anteater",
+  "file": "Myresluger2.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Malene Thyssen"
+ },
+ "armadillo": {
+  "answer": "Armadillo",
+  "matched": "Nine-banded armadillo",
+  "via": "Nine-banded armadillo",
+  "file": "Dasypus novemcinctus en Zoológico de Paraguaná.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Aramburu Carlos"
+ },
+ "okapi": {
+  "answer": "Okapi",
+  "matched": "Okapi",
+  "via": "Okapi",
+  "file": "Saint-Aignan (Loir-et-Cher). Okapi.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Daniel Jolivet"
+ },
+ "hyena": {
+  "answer": "Spotted Hyena",
+  "matched": "Spotted hyena",
+  "via": "Spotted hyena",
+  "file": "Spotted hyena (Crocuta crocuta).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "caracal": {
+  "answer": "Caracal",
+  "matched": "Caracal",
+  "via": "Caracal",
+  "file": "Caracal on the road, early morning in Kgalagadi (36173878220) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Derek Keats"
+ },
+ "porcupine": {
+  "answer": "Porcupine",
+  "matched": "Crested porcupine",
+  "via": "Crested porcupine",
+  "file": "Hystrix cristata qtl1.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Quartl"
+ },
+ "pelican": {
+  "answer": "Pelican",
+  "matched": "Great white pelican",
+  "via": "Great white pelican",
+  "file": "Great white pelican (Pelecanus onocrotalus).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "woodpecker": {
+  "answer": "Woodpecker",
+  "matched": "Pileated woodpecker",
+  "via": "Pileated woodpecker",
+  "file": "PileatedWoodpeckerFeedingonTree, crop.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Joshlaymon"
+ },
+ "cassowary": {
+  "answer": "Cassowary",
+  "matched": "Southern cassowary",
+  "via": "Southern cassowary",
+  "file": "Southern Cassowary 7071.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Summerdrought"
+ },
+ "vulture": {
+  "answer": "Vulture",
+  "matched": "Eurasian griffon vulture",
+  "via": "Griffon vulture",
+  "file": "Gyps fulvus in flight - Spain.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Pierre Dalous"
+ },
+ "komodo-dragon": {
+  "answer": "Komodo Dragon",
+  "matched": "Komodo dragon",
+  "via": "Komodo dragon",
+  "file": "202306 Varanus komodoensis.jpg",
+  "licence": "CC BY 4.0",
+  "by": "James Jolokia (james1203)"
+ },
+ "gecko": {
+  "answer": "Gecko",
+  "matched": "Leopard gecko",
+  "via": "Common leopard gecko",
+  "file": "Eublepharis macularius 2009 G6.jpg",
+  "licence": "Public domain",
+  "by": "George Chernilevsky"
+ },
+ "stingray": {
+  "answer": "Stingray",
+  "matched": "Stingray",
+  "via": "Stingray",
+  "file": "SStringray.jpg",
+  "licence": "Public domain",
+  "by": "Wrtiii3644 at English Wikipedia"
+ },
+ "clownfish": {
+  "answer": "Clownfish",
+  "matched": "Clownfish",
+  "via": "Amphiprioninae",
+  "file": "Amphiprion ocellaris (Clown anemonefish) by Nick Hobgood.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Nick Hobgood"
+ },
+ "hammerhead": {
+  "answer": "Hammerhead Shark",
+  "matched": "Hammerhead shark",
+  "via": "Hammerhead shark",
+  "file": "Scalloped Hammerhead Shark Sphyrna Lewini (226845659).jpeg",
+  "licence": "CC BY 3.0",
+  "by": "Kris Mikael Krister"
+ },
+ "praying-mantis": {
+  "answer": "Praying Mantis",
+  "matched": "Mantis",
+  "via": "Mantis",
+  "file": "Mantis (European).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Mihai C. Popa"
+ },
+ "tarantula": {
+  "answer": "Tarantula",
+  "matched": "Tarantula",
+  "via": "Tarantula",
+  "file": "Brachypelma vagans p1.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Carlos Valenzuela Montuy"
+ },
+ "snail": {
+  "answer": "Snail",
+  "matched": "Cornu aspersum",
+  "via": "Cornu aspersum",
+  "file": "Snail1web.jpg",
+  "licence": "Public domain",
+  "by": ""
+ },
+ "aye-aye": {
+  "answer": "Aye-aye",
+  "matched": "Aye-aye",
+  "via": "Aye-aye",
+  "file": "Wild aye aye.jpg",
+  "licence": "CC BY 2.0",
+  "by": "nomis-simon"
+ },
+ "slow-loris": {
+  "answer": "Slow Loris",
+  "matched": "Slow loris",
+  "via": "Slow loris",
+  "file": "Nycticebus coucang 002.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "David Haring / Duke Lemur Center"
+ },
+ "maned-wolf": {
+  "answer": "Maned Wolf",
+  "matched": "Maned wolf",
+  "via": "Maned wolf",
+  "file": "San Diego Zoo (8678865731).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Tomás Del Coro from Las Vegas, Nevada, USA"
+ },
+ "dhole": {
+  "answer": "Dhole",
+  "matched": "Dhole",
+  "via": "Dhole",
+  "file": "Dhole (Asiatic wild dog) cropped.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Davidvraju"
+ },
+ "saiga": {
+  "answer": "Saiga Antelope",
+  "matched": "Saiga antelope",
+  "via": "Saiga antelope",
+  "file": "Saiga antelope at the Stepnoi Sanctuary.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Andrey Giljov"
+ },
+ "markhor": {
+  "answer": "Markhor",
+  "matched": "Markhor",
+  "via": "Markhor",
+  "file": "Markhor Schraubenziege Capra falconeri Zoo Augsburg-02.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Rufus46"
+ },
+ "gerenuk": {
+  "answer": "Gerenuk",
+  "matched": "Gerenuk",
+  "via": "Gerenuk",
+  "file": "San diego zoo group 3 DSC 0908 (35305473932).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Laura Wolf"
+ },
+ "dik-dik": {
+  "answer": "Dik-dik",
+  "matched": "Dik-dik",
+  "via": "Dik-dik",
+  "file": "Madoqua kirkii - male (Namutoni).jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Yathin S Krishnappa"
+ },
+ "bongo": {
+  "answer": "Bongo",
+  "matched": "Bongo (antelope)",
+  "via": "Bongo (antelope)",
+  "file": "Tragelaphus eurycerus -Marwell Wildlife, Hampshire, England-8a.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Charles Miller from Basingstoke, United Kingdom"
+ },
+ "bharal": {
+  "answer": "Bharal",
+  "matched": "Bharal",
+  "via": "Bharal",
+  "file": "Bharal - Shreeram M V - Kibber, Spiti Valley, Himachal Pradesh, India.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Mvshreeram"
+ },
+ "numbat": {
+  "answer": "Numbat",
+  "matched": "Numbat",
+  "via": "Numbat",
+  "file": "Numbat, Dryandra Woodland, Western Australia.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "JJ Harrison"
+ },
+ "bilby": {
+  "answer": "Bilby",
+  "matched": "Greater bilby",
+  "via": "Greater bilby",
+  "file": "Bilby at Sydney Wildlife World.jpg",
+  "licence": "Public domain",
+  "by": "Dcoetzee"
+ },
+ "tasmanian-devil": {
+  "answer": "Tasmanian Devil",
+  "matched": "Tasmanian devil",
+  "via": "Tasmanian devil",
+  "file": "Sarcophilus harrisii taranna.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "JJ Harrison (https://www.jjharrison.com.au/)"
+ },
+ "coati": {
+  "answer": "Coati",
+  "matched": "Coati",
+  "via": "Coati",
+  "file": "WNCoati Alajuela CR.png",
+  "licence": "CC BY-SA 4.0",
+  "by": "Chuck Homler, Focus On Wildlife"
+ },
+ "colugo": {
+  "answer": "Colugo",
+  "matched": "Colugo",
+  "via": "Colugo",
+  "file": "Colugo (Galeopterus variegatus, adult female), Central Catchment Area, Singapore - 20060618.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Lip Kee Yap."
+ },
+ "pika": {
+  "answer": "Pika",
+  "matched": "Pika",
+  "via": "Pika",
+  "file": "American pika (Ochotona princeps princeps) haying spotted saxifrage (Saxifraga bronchialis) Moraine Lake 2.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "kakapo": {
+  "answer": "Kākāpō",
+  "matched": "Kākāpō",
+  "via": "Kākāpō",
+  "file": "Sirocco full length portrait.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Department of Conservation"
+ },
+ "hoatzin": {
+  "answer": "Hoatzin",
+  "matched": "Hoatzin",
+  "via": "Hoatzin",
+  "file": "Hoatzin (Opisthocomus hoazin) Rio Napo.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "potoo": {
+  "answer": "Potoo",
+  "matched": "Potoo",
+  "via": "Potoo",
+  "file": "Northern potoo (Nyctibius jamaicensis mexicanus) Orange Walk.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "frogmouth": {
+  "answer": "Tawny Frogmouth",
+  "matched": "Tawny frogmouth",
+  "via": "Tawny frogmouth",
+  "file": "Tawny Frogmouth - Sydney Olympic Park.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "JJ Harrison (https://www.jjharrison.com.au/)"
+ },
+ "hoopoe": {
+  "answer": "Hoopoe",
+  "matched": "Hoopoe",
+  "via": "Hoopoe",
+  "file": "Upupa epops Madrid 01.jpg",
+  "licence": "CC BY-SA 2.5",
+  "by": "Keta"
+ },
+ "quetzal": {
+  "answer": "Quetzal",
+  "matched": "Resplendent quetzal",
+  "via": "Resplendent quetzal",
+  "file": "Resplendent quetzal san gerardo de dota 3.31.24 DSC 3989-topaz-denoiseraw.jpg",
+  "licence": "CC BY 2.0",
+  "by": "lwolfartist"
+ },
+ "secretary-bird": {
+  "answer": "Secretary Bird",
+  "matched": "Secretarybird",
+  "via": "Secretarybird",
+  "file": "Secretary bird Mara for WC.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Sumeet Moghe"
+ },
+ "harpy-eagle": {
+  "answer": "Harpy Eagle",
+  "matched": "Harpy eagle",
+  "via": "Harpy eagle",
+  "file": "Harpia harpyja 001 800.jpg",
+  "licence": "CC BY 3.0",
+  "by": "http://www.birdphotos.com"
+ },
+ "mantis-shrimp": {
+  "answer": "Mantis Shrimp",
+  "matched": "Mantis shrimp",
+  "via": "Mantis shrimp",
+  "file": "OdontodactylusScyllarus2.jpg",
+  "licence": "Public domain",
+  "by": "Roy L. Caldwell, Department of Integrative Biology, University of California, Berkeley"
+ },
+ "leafy-sea-dragon": {
+  "answer": "Leafy Sea Dragon",
+  "matched": "Leafy seadragon",
+  "via": "Leafy seadragon",
+  "file": "Leafy Seadragon on Kangaroo Island.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "James Rosindell"
+ },
+ "nudibranch": {
+  "answer": "Nudibranch",
+  "matched": "Nudibranch",
+  "via": "Nudibranch",
+  "file": "Berghia coerulescens (Laurillard, 1830).jpg",
+  "licence": "Public domain",
+  "by": "Géry PARENT"
+ },
+ "anglerfish": {
+  "answer": "Anglerfish",
+  "matched": "Anglerfish",
+  "via": "Anglerfish",
+  "file": "Lophiiformes Collage.png",
+  "licence": "CC BY-SA 4.0",
+  "by": "Anthropophoca"
+ },
+ "sunfish": {
+  "answer": "Ocean Sunfish",
+  "matched": "Ocean sunfish",
+  "via": "Ocean sunfish",
+  "file": "Mola mola.jpg",
+  "licence": "Public domain",
+  "by": "U.S. National Oceanic and Atmospheric Administration"
+ },
+ "olm": {
+  "answer": "Olm",
+  "matched": "Olm",
+  "via": "Olm",
+  "file": "Proteus anguinus Postojnska Jama Slovenija.jpg",
+  "licence": "Public domain",
+  "by": "Boštjan Burger"
+ },
+ "tardigrade": {
+  "answer": "Tardigrade",
+  "matched": "Tardigrade",
+  "via": "Tardigrade",
+  "file": "SEM image of Milnesium tardigradum in active state - journal.pone.0045682.g001-2 (white background).png",
+  "licence": "CC BY 2.5",
+  "by": "Schokraie E, Warnken U, Hotz-Wagenblatt A, Grohme MA, Hengherr S, et al. (2012)"
+ },
+ "babirusa": {
+  "answer": "Babirusa",
+  "matched": "Babirusa",
+  "via": "Babirusa",
+  "file": "Hirscheber1a.jpg",
+  "licence": "CC BY-SA 2.0 de",
+  "by": "Masteraah at German Wikipedia"
+ },
+ "proboscis-monkey": {
+  "answer": "Proboscis Monkey",
+  "matched": "Proboscis monkey",
+  "via": "Proboscis monkey",
+  "file": "Proboscis Monkey in Borneo.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "David Dennis"
+ },
+ "sifaka": {
+  "answer": "Sifaka",
+  "matched": "Sifaka",
+  "via": "Sifaka",
+  "file": "Propithecus coquereli 02.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Olivier Lejade"
+ },
+ "gharial": {
+  "answer": "Gharial",
+  "matched": "Gharial",
+  "via": "Gharial",
+  "file": "Gharial (Gavialis gangeticus) male.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "thorny-devil": {
+  "answer": "Thorny Devil",
+  "matched": "Thorny devil",
+  "via": "Thorny devil",
+  "file": "Thornydevil.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Bäras (talk · contribs)"
+ },
+ "matamata": {
+  "answer": "Matamata",
+  "matched": "Mata mata",
+  "via": "Mata mata",
+  "file": "2009 Chelus fimbriatus.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "J. Patrick Fischer"
+ },
+ "penguin": {
+  "answer": "Penguin",
+  "matched": "Emperor penguin",
+  "via": "Emperor penguin",
+  "file": "Aptenodytes forsteri -Snow Hill Island, Antarctica -adults and juvenile-8.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Ian Duffy from UK"
+ },
+ "koala": {
+  "answer": "Koala",
+  "matched": "Koala",
+  "via": "Koala",
+  "file": "Koala climbing tree.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Diliff"
+ },
+ "giant-panda": {
+  "answer": "Giant Panda",
+  "matched": "Giant panda",
+  "via": "Giant panda",
+  "file": "Grosser Panda.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "J. Patrick Fischer"
+ },
+ "polar-bear": {
+  "answer": "Polar Bear",
+  "matched": "Polar bear",
+  "via": "Polar bear",
+  "file": "Polar Bear - Alaska (cropped).jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Alan Wilson"
+ },
+ "grizzly-bear": {
+  "answer": "Grizzly Bear",
+  "matched": "Grizzly bear",
+  "via": "Grizzly bear",
+  "file": "GrizzlyBearJeanBeaufort.jpg",
+  "licence": "CC0",
+  "by": "Jean Beaufort"
+ },
+ "wolf": {
+  "answer": "Wolf",
+  "matched": "Wolf",
+  "via": "Wolf",
+  "file": "Eurasian wolf 2.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "User:Mas3cf"
+ },
+ "red-fox": {
+  "answer": "Fox",
+  "matched": "Red fox",
+  "via": "Red fox",
+  "file": "Portrait of a red fox in Rautas fjällurskog (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "ClaudiaTen"
+ },
+ "great-white-shark": {
+  "answer": "Great White Shark",
+  "matched": "Great white shark",
+  "via": "Great white shark",
+  "file": "White shark.jpg",
+  "licence": "CC BY 2.5",
+  "by": "Pterantula (Terry Goss) at en.wikipedia"
+ },
+ "orca": {
+  "answer": "Orca",
+  "matched": "Orca",
+  "via": "Orca",
+  "file": "Killerwhales jumping.jpg",
+  "licence": "Public domain",
+  "by": "Robert Pittman"
+ },
+ "humpback-whale": {
+  "answer": "Humpback Whale",
+  "matched": "Humpback whale",
+  "via": "Humpback whale",
+  "file": "Humpback Whale underwater shot.jpg",
+  "licence": "Public domain",
+  "by": ""
+ },
+ "octopus": {
+  "answer": "Octopus",
+  "matched": "Octopus",
+  "via": "Octopus",
+  "file": "Octopus2.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "albert kok"
+ },
+ "gorilla": {
+  "answer": "Gorilla",
+  "matched": "Gorilla",
+  "via": "Gorilla",
+  "file": "Gorille des plaines de l'ouest à l'Espace Zoologique.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Thurundir"
+ },
+ "chimpanzee": {
+  "answer": "Chimpanzee",
+  "matched": "Chimpanzee",
+  "via": "Chimpanzee",
+  "file": "015 Chimpanzee at Kibale forest National Park Photo by Giles Laurent.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Giles Laurent"
+ },
+ "hippopotamus": {
+  "answer": "Hippopotamus",
+  "matched": "Hippopotamus",
+  "via": "Hippopotamus",
+  "file": "Portrait Hippopotamus in the water.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Muhammad Mahdi Karim"
+ },
+ "bald-eagle": {
+  "answer": "Bald Eagle",
+  "matched": "Bald eagle",
+  "via": "Bald eagle",
+  "file": "Bald eagle about to fly in Alaska (2016).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Andy Morffew from Itchen Abbas, Hampshire, UK"
+ },
+ "peacock": {
+  "answer": "Peacock",
+  "matched": "Indian peafowl",
+  "via": "Indian peafowl",
+  "file": "Peacock on tree (52077240794).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Kandukuru Nagarjun from Bangalore, India"
+ },
+ "sloth": {
+  "answer": "Sloth",
+  "matched": "Three-toed sloth",
+  "via": "Three-toed sloth",
+  "file": "Bradypus.jpg",
+  "licence": "Public domain",
+  "by": "Stefan Laube (Tauchgurke)"
+ },
+ "raccoon": {
+  "answer": "Raccoon",
+  "matched": "Raccoon",
+  "via": "Raccoon",
+  "file": "Raccoon in Central Park (35264).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Rhododendrites"
+ },
+ "squirrel": {
+  "answer": "Squirrel",
+  "matched": "Eastern gray squirrel",
+  "via": "Eastern gray squirrel",
+  "file": "EasternGraySquirrel GAm.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "JeffreyGammon"
+ },
+ "moose": {
+  "answer": "Moose",
+  "matched": "Moose",
+  "via": "Moose",
+  "file": "Alaska moose.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Paxson Woelber"
+ },
+ "bison": {
+  "answer": "Bison",
+  "matched": "American bison",
+  "via": "American bison",
+  "file": "American bison k5680-1.jpg",
+  "licence": "Public domain",
+  "by": "Jack Dykinga"
+ },
+ "leopard": {
+  "answer": "Leopard",
+  "matched": "Leopard",
+  "via": "Leopard",
+  "file": "African leopard male (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Sumeet Moghe"
+ },
+ "monarch-butterfly": {
+  "answer": "Monarch Butterfly",
+  "matched": "Monarch butterfly",
+  "via": "Monarch butterfly",
+  "file": "Monarch Butterfly Danaus plexippus Male 2664px.jpg",
+  "licence": "GFDL 1.2",
+  "by": "Photo by and (c)2007 Derek Ramsey (Ram-Man)"
+ },
+ "sea-turtle": {
+  "answer": "Sea Turtle",
+  "matched": "Green sea turtle",
+  "via": "Green sea turtle",
+  "file": "Green sea turtle (Chelonia mydas) Moorea.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "king-cobra": {
+  "answer": "King Cobra",
+  "matched": "King cobra",
+  "via": "King cobra",
+  "file": "12 - The Mystical King Cobra and Coffee Forests.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Michael Allen Smith from Seattle, USA"
+ },
+ "horse": {
+  "answer": "Horse",
+  "matched": "Horse",
+  "via": "Horse",
+  "file": "Nokota Horses cropped.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Nokota_Horses.jpg: François Marchal derivative work: Dana boomer (talk)"
+ },
+ "pig": {
+  "answer": "Pig",
+  "matched": "Pig",
+  "via": "Domestic pig",
+  "file": "Pig farm Vampula 1.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "kallerna"
+ },
+ "sheep": {
+  "answer": "Sheep",
+  "matched": "Sheep",
+  "via": "Sheep",
+  "file": "Flock of sheep.jpg",
+  "licence": "Public domain",
+  "by": "Keith Weller"
+ },
+ "goat": {
+  "answer": "Goat",
+  "matched": "Goat",
+  "via": "Goat",
+  "file": "Hausziege 04.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Kuebi = Armin Kübelbeck"
+ },
+ "rabbit": {
+  "answer": "Rabbit",
+  "matched": "European rabbit",
+  "via": "European rabbit",
+  "file": "Oryctolagus cuniculus - euqirneto - 419737670 (cropped).jpeg",
+  "licence": "CC BY 4.0",
+  "by": "euqirneto"
+ },
+ "mallard": {
+  "answer": "Duck",
+  "matched": "Mallard",
+  "via": "Mallard",
+  "file": "Anas platyrhynchos male female quadrat.jpg",
+  "licence": "CC BY-SA 2.5",
+  "by": "This picture was realized by Richard Bartz by using a Canon EF 70-300mm f/4-5.6 IS USM Lens"
+ },
+ "jellyfish": {
+  "answer": "Jellyfish",
+  "matched": "Jellyfish",
+  "via": "Jellyfish",
+  "file": "Jelly cc11.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Dan90266"
+ },
+ "seahorse": {
+  "answer": "Seahorse",
+  "matched": "Seahorse",
+  "via": "Seahorse",
+  "file": "Hippocampus hippocampus (on Ascophyllum nodosum).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Hans Hillewaert"
+ },
+ "crab": {
+  "answer": "Crab",
+  "matched": "Cancer pagurus",
+  "via": "Cancer pagurus",
+  "file": "Cancer pagurus.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Hans Hillewaert"
+ },
+ "deer": {
+  "answer": "Deer",
+  "matched": "White-tailed deer",
+  "via": "White-tailed deer",
+  "file": "White-tailed deer.jpg",
+  "licence": "Public domain",
+  "by": "USDA photo by Scott Bauer"
+ },
+ "meerkat": {
+  "answer": "Meerkat",
+  "matched": "Meerkat",
+  "via": "Meerkat",
+  "file": "Meerkat (Suricata suricatta) Tswalu.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "red-panda": {
+  "answer": "Red Panda",
+  "matched": "Red panda",
+  "via": "Red panda",
+  "file": "Red Panda, Gentle Tree-Dweller of the Himalayas.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Sunuwargr"
+ },
+ "orangutan": {
+  "answer": "Orangutan",
+  "matched": "Orangutan",
+  "via": "Orangutan",
+  "file": "Orang Utan, Semenggok Forest Reserve, Sarawak, Borneo, Malaysia.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Eleifert"
+ },
+ "baboon": {
+  "answer": "Baboon",
+  "matched": "Olive baboon",
+  "via": "Olive baboon",
+  "file": "Olive baboon Ngorongoro.jpg",
+  "licence": "GFDL 1.2",
+  "by": "Muhammad Mahdi Karim"
+ },
+ "wombat": {
+  "answer": "Wombat",
+  "matched": "Wombat",
+  "via": "Wombat",
+  "file": "Vombatus ursinus -Maria Island National Park.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "JJ Harrison (jjharrison89@facebook.com)"
+ },
+ "warthog": {
+  "answer": "Warthog",
+  "matched": "Common warthog",
+  "via": "Common warthog",
+  "file": "Southern warthog (Phacochoerus africanus sundevallii) male.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "gazelle": {
+  "answer": "Gazelle",
+  "matched": "Thomson's gazelle",
+  "via": "Thomson's gazelle",
+  "file": "Gacela de Thomson (Eudorcas thomsonii), parque nacional de Amboseli, Kenia, 2024-05-23, DD 11.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Diego Delso"
+ },
+ "jaguar": {
+  "answer": "Jaguar",
+  "matched": "Jaguar",
+  "via": "Jaguar",
+  "file": "Standing jaguar.jpg",
+  "licence": "Public domain",
+  "by": "USFWS"
+ },
+ "lynx": {
+  "answer": "Lynx",
+  "matched": "Eurasian lynx",
+  "via": "Eurasian lynx",
+  "file": "Lynx Nationalpark Bayerischer Wald 01.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Aconcagua (talk)"
+ },
+ "snow-leopard": {
+  "answer": "Snow Leopard",
+  "matched": "Snow leopard",
+  "via": "Snow leopard",
+  "file": "Irbis4.JPG",
+  "licence": "Public domain",
+  "by": "Irbis1983"
+ },
+ "fennec-fox": {
+  "answer": "Fennec Fox",
+  "matched": "Fennec fox",
+  "via": "Fennec fox",
+  "file": "Fennec Fox Vulpes zerda.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Drew Avery"
+ },
+ "arctic-fox": {
+  "answer": "Arctic Fox",
+  "matched": "Arctic fox",
+  "via": "Arctic fox",
+  "file": "Vulpes lagopus in Iceland (cropped 3).jpg",
+  "licence": "CC0",
+  "by": "Jonathen Pie https://unsplash.com/@r3dmax"
+ },
+ "wolverine": {
+  "answer": "Wolverine",
+  "matched": "Wolverine",
+  "via": "Wolverine",
+  "file": "Järv1.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Esquilo"
+ },
+ "badger": {
+  "answer": "Badger",
+  "matched": "European badger",
+  "via": "European badger",
+  "file": "European badger (Meles meles taxus) Drenthe.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "otter": {
+  "answer": "Sea Otter",
+  "matched": "Sea otter",
+  "via": "Sea otter",
+  "file": "Sea Otter (Enhydra lutris) (25169790524) crop.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Marshal Hedin from San Diego"
+ },
+ "beaver": {
+  "answer": "Beaver",
+  "matched": "North American beaver",
+  "via": "North American beaver",
+  "file": "American Beaver.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Steve from Washington, DC, USA"
+ },
+ "skunk": {
+  "answer": "Skunk",
+  "matched": "Striped skunk",
+  "via": "Striped skunk",
+  "file": "Skunk about to spray.jpg",
+  "licence": "Public domain",
+  "by": "Wallace Keck"
+ },
+ "mongoose": {
+  "answer": "Mongoose",
+  "matched": "Indian grey mongoose",
+  "via": "Indian grey mongoose",
+  "file": "Herpestes edwardsii at Hyderaba.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "J.M.Garg"
+ },
+ "walrus": {
+  "answer": "Walrus",
+  "matched": "Walrus",
+  "via": "Walrus",
+  "file": "Walrus in the Russian Arctic National Park, Novaya Zemlya 2015-2.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Nixette"
+ },
+ "seal": {
+  "answer": "Harbor Seal",
+  "matched": "Harbor seal",
+  "via": "Harbor seal",
+  "file": "Common seal (Phoca vitulina) 2.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "manatee": {
+  "answer": "Manatee",
+  "matched": "West Indian manatee",
+  "via": "West Indian manatee",
+  "file": "Manatee with calf.PD - colour corrected.jpg",
+  "licence": "Public domain",
+  "by": "Galen Rathbun"
+ },
+ "narwhal": {
+  "answer": "Narwhal",
+  "matched": "Narwhal",
+  "via": "Narwhal",
+  "file": "Нарвал в российской Арктике.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "пресс-служба ПАО \"Газпром нефть\""
+ },
+ "beluga": {
+  "answer": "Beluga Whale",
+  "matched": "Beluga whale",
+  "via": "Beluga whale",
+  "file": "Oceanogràfic 29102004.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Javier Yaya Tur / CIUDAD DE LAS ARTES Y LAS CIENCIAS from Valencia, España"
+ },
+ "puffin": {
+  "answer": "Puffin",
+  "matched": "Atlantic puffin",
+  "via": "Atlantic puffin",
+  "file": "Puffin (Fratercula arctica).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "toucan": {
+  "answer": "Toucan",
+  "matched": "Toco toucan",
+  "via": "Toco toucan",
+  "file": "006 Toco toucan in Encontro das Águas State Park Photo by Giles Laurent.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Giles Laurent"
+ },
+ "hummingbird": {
+  "answer": "Hummingbird",
+  "matched": "Ruby-throated hummingbird",
+  "via": "Ruby-throated hummingbird",
+  "file": "Archilochus colubris -flying -male-8.jpg",
+  "licence": "CC BY 2.0",
+  "by": "jeffreyw"
+ },
+ "kingfisher": {
+  "answer": "Kingfisher",
+  "matched": "Common kingfisher",
+  "via": "Common kingfisher",
+  "file": "Alcedo atthis -England-8 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Tony Wood"
+ },
+ "hornbill": {
+  "answer": "Hornbill",
+  "matched": "Great hornbill",
+  "via": "Great hornbill",
+  "file": "Great hornbill Photograph by Shantanu Kuveskar.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Shantanu Kuveskar"
+ },
+ "emu": {
+  "answer": "Emu",
+  "matched": "Emu",
+  "via": "Emu",
+  "file": "Emu 1 - Tidbinbilla.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "JJ Harrison (https://www.jjharrison.com.au/)"
+ },
+ "kiwi": {
+  "answer": "Kiwi",
+  "matched": "Kiwi (bird)",
+  "via": "Kiwi (bird)",
+  "file": "TeTuatahianui.jpg",
+  "licence": "Public domain",
+  "by": "Maungatautari Ecological Island Trust"
+ },
+ "roadrunner": {
+  "answer": "Roadrunner",
+  "matched": "Greater roadrunner",
+  "via": "Greater roadrunner",
+  "file": "Greater Roadrunner Tingley Beach.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Polinova"
+ },
+ "iguana": {
+  "answer": "Iguana",
+  "matched": "Green iguana",
+  "via": "Green iguana",
+  "file": "Iguana iguana (male resting).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Hans Hillewaert"
+ },
+ "axolotl": {
+  "answer": "Axolotl",
+  "matched": "Axolotl",
+  "via": "Axolotl",
+  "file": "Axolotl ganz.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "LoKiLeCh"
+ },
+ "anaconda": {
+  "answer": "Anaconda",
+  "matched": "Green anaconda",
+  "via": "Green anaconda",
+  "file": "Sucuri verde.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "MKAMPIS"
+ },
+ "tortoise": {
+  "answer": "Giant Tortoise",
+  "matched": "Galápagos tortoise",
+  "via": "Galápagos tortoise",
+  "file": "Galapagos giant tortoise Geochelone elephantopus.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Mfield, Matthew Field, http://www.photography.mattfield.com"
+ },
+ "pufferfish": {
+  "answer": "Pufferfish",
+  "matched": "Tetraodontidae",
+  "via": "Tetraodontidae",
+  "file": "Tetraodon-hispidus.jpg",
+  "licence": "Public domain",
+  "by": "National Oceanic and Atmospheric Administration"
+ },
+ "nautilus": {
+  "answer": "Nautilus",
+  "matched": "Nautilus",
+  "via": "Nautilus",
+  "file": "Nautilus belauensis from Palau.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Manuae"
+ },
+ "scorpion": {
+  "answer": "Scorpion",
+  "matched": "Scorpion",
+  "via": "Scorpion",
+  "file": "Scorpion Photograph By Shantanu Kuveskar.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Shantanu Kuveskar"
+ },
+ "dragonfly": {
+  "answer": "Dragonfly",
+  "matched": "Dragonfly",
+  "via": "Dragonfly",
+  "file": "Red grasshawk (Neurothemis fluctuans) male Phuket 2.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "quokka": {
+  "answer": "Quokka",
+  "matched": "Quokka",
+  "via": "Quokka",
+  "file": "Quokka at rottnest (cropped).jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Pikuan"
+ },
+ "shoebill": {
+  "answer": "Shoebill",
+  "matched": "Shoebill",
+  "via": "Shoebill",
+  "file": "Balaeniceps rex -Ueno Zoo, Tokyo, Japan-8a.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Bob Owen"
+ },
+ "tarsier": {
+  "answer": "Tarsier",
+  "matched": "Tarsier",
+  "via": "Tarsier",
+  "file": "Philippine tarsier (Carlito syrichta fraterculus) Bohol 2.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "fossa": {
+  "answer": "Fossa",
+  "matched": "Fossa (animal)",
+  "via": "Fossa (animal)",
+  "file": "Cryptoprocta Ferox.JPG",
+  "licence": "CC BY-SA 4.0",
+  "by": "Ran Kirlian"
+ },
+ "takin": {
+  "answer": "Takin",
+  "matched": "Takin",
+  "via": "Takin",
+  "file": "Thimphu-Takin-Reservat-06-2015-gje.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Gerd Eichmann"
+ },
+ "quoll": {
+  "answer": "Quoll",
+  "matched": "Quoll",
+  "via": "Quoll",
+  "file": "Eastern quoll (Dasyurus viverrinus) fawn morph Esk Valley.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Charles J. Sharp"
+ },
+ "jerboa": {
+  "answer": "Jerboa",
+  "matched": "Jerboa",
+  "via": "Jerboa",
+  "file": "Scarturus euphraticus 438215030 (cropped).jpg",
+  "licence": "CC0",
+  "by": "Marius Burger"
+ },
+ "chinchilla": {
+  "answer": "Chinchilla",
+  "matched": "Chinchilla",
+  "via": "Chinchilla",
+  "file": "Chinchilla lanigera (Wroclaw zoo)-2.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Guérin Nicolas (messages)"
+ },
+ "star-nosed-mole": {
+  "answer": "Star-nosed Mole",
+  "matched": "Star-nosed mole",
+  "via": "Star-nosed mole",
+  "file": "Condylura.jpg",
+  "licence": "Public domain",
+  "by": "US National Parks Service"
+ },
+ "naked-mole-rat": {
+  "answer": "Naked Mole-rat",
+  "matched": "Naked mole-rat",
+  "via": "Naked mole-rat",
+  "file": "Webs180130-rat.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Kein keen"
+ },
+ "binturong": {
+  "answer": "Binturong",
+  "matched": "Binturong",
+  "via": "Binturong",
+  "file": "Binturong in Overloon.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Tassilo Rau"
+ },
+ "kinkajou": {
+  "answer": "Kinkajou",
+  "matched": "Kinkajou",
+  "via": "Kinkajou",
+  "file": "Potos flavus (8973438737).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Dick Culbert from Gibsons, B.C., Canada"
+ }
+}

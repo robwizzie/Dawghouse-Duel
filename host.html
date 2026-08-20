@@ -12,9 +12,24 @@
 </head>
 <body>
 
+<section class="join" id="join">
+  <img class="join__logo" src="assets/brand/logo.png" alt="Dawg House" onerror="this.remove()">
+  <span class="join__tag">HOST</span>
+  <p class="join__lead">Type the room code from the duel screen.</p>
+  <form class="join__form" id="joinForm" autocomplete="off">
+    <input class="join__input" id="joinCode" inputmode="latin" autocapitalize="characters"
+           autocomplete="off" spellcheck="false" maxlength="6" placeholder="CODE" aria-label="Room code">
+    <button class="join__go" type="submit">JOIN</button>
+  </form>
+  <p class="join__state" id="joinState">not connected</p>
+  <p class="join__note">Keep this open next to the camera. Every button here drives the duel screen.</p>
+</section>
+
 <header class="hdr">
   <img class="hdr__logo" src="assets/brand/logo.png" alt="Dawg House" onerror="this.remove()">
   <span class="hdr__tag">HOST</span>
+  <span class="hdr__room" id="hdrRoom"></span>
+  <button class="hdr__leave" id="leave" title="Leave this room">&times;</button>
   <span class="hdr__cat" id="cat">—</span>
   <span class="hdr__count" id="count"></span>
 </header>
@@ -49,9 +64,12 @@
 
 <footer class="foot">
   <span class="foot__next">NEXT UP: <b id="next">—</b></span>
-  <span class="foot__link" id="status">waiting for the duel screen…</span>
+  <span class="foot__phase" id="phase"></span>
+  <span class="foot__link" id="status">not connected</span>
 </footer>
 
+<script src="js/config.js"></script>
+<script src="js/net.js"></script>
 <script src="js/host.js"></script>
 </body>
 </html>

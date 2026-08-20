@@ -1,0 +1,16 @@
+name = "dawghouse-duel-relay"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+
+# One Durable Object per room code. SQLite-backed classes are what the
+# free plan allows, so keep new_sqlite_classes (not new_classes) below.
+[[durable_objects.bindings]]
+name = "ROOMS"
+class_name = "Room"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Room"]
+
+[observability]
+enabled = true

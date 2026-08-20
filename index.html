@@ -117,6 +117,18 @@
         </div>
       </form>
 
+      <section class="pair">
+        <div class="pair__left">
+          <span class="pair__eyebrow">PAIR YOUR PHONE AS HOST</span>
+          <p class="pair__how">Open <b id="pairUrlBig">dawghouseduel.com/host</b> on your phone and punch in this code.</p>
+          <span class="pair__state" id="pairStateBig">same computer only</span>
+        </div>
+        <div class="pair__right">
+          <b class="pair__code" id="pairCodeBig">----</b>
+          <button class="pair__new" type="button" id="newCode">new code</button>
+        </div>
+      </section>
+
       <p class="setup__foot">Contestant clicks the mouse to <b>PASS</b> &middot; Operator hits <b>ENTER</b> for correct &middot; <b>?</b> for all controls</p>
     </div>
   </section>
@@ -132,7 +144,10 @@
         <span class="brandmark__duel">DUEL</span>
       </div>
       <div class="topbar__cat"><i>CATEGORY</i><b id="duelCat">—</b></div>
-      <div class="topbar__meta"><span id="duelProgress">1</span><i>of</i><span id="duelTotal">1</span></div>
+      <div class="topbar__right">
+        <div class="topbar__pair"><i id="pairUrl">dawghouseduel.com/host</i><b id="pairCode">----</b><span id="pairState"></span></div>
+        <div class="topbar__meta"><span id="duelProgress">1</span><i>of</i><span id="duelTotal">1</span></div>
+      </div>
     </header>
 
     <main class="arena">
@@ -276,11 +291,14 @@
       <div><kbd>A</kbd><span>Peek the answer (operator only)</span></div>
       <div><kbd>F</kbd><span>Full screen</span></div>
       <div><kbd>R</kbd><span>Restart duel</span></div>
-      <div><kbd>H</kbd><span>Open the Host View window</span></div>
+      <div><kbd>H</kbd><span>Open the Host View window (same computer)</span></div>
       <div><kbd>Esc</kbd><span>Back to setup</span></div>
     </div>
     <h3>Judging the answers &mdash; open the Host View</h3>
-    <p class="help__note">The answer key can&rsquo;t live on the screen the dawgs are reading. Hit <b>Host View</b> on setup (or <kbd>H</kbd> during a duel) and a second window opens showing <b>the answer, the alternates that also count, and the next one up</b> &mdash; plus big CORRECT / WRONG / PASS buttons. Put it on a second monitor, a second laptop window, or just the corner of your own screen. Every button and key in it drives the duel screen live.</p>
+    <p class="help__note">The answer key can&rsquo;t live on the screen the dawgs are reading, so it gets its own screen showing <b>the answer, the alternates that also count, and the next one up</b> &mdash; plus big CORRECT / WRONG / PASS buttons.</p>
+    <p class="help__note"><b>On your phone:</b> open the host URL shown on the setup screen, type the four-letter room code, and you&rsquo;re in. Best setup for filming &mdash; the laptop faces the dawgs and you judge from your hand.</p>
+    <p class="help__note"><b>On the same computer:</b> hit <b>Host View</b> on setup (or <kbd>H</kbd> mid-duel) for a second window. No pairing, no internet needed.</p>
+    <p class="help__note">Either way the duel screen is the one running the game &mdash; if the phone drops off, the duel carries on and reconnects by itself.</p>
 
     <h3>Filming setup</h3>
     <p class="help__note">Put the laptop just under the camera lens so the dawgs read the screen and look down the barrel. Give whoever has control the mouse &mdash; one click is a pass. Hit <kbd>F</kbd> for full screen before you roll.</p>
@@ -289,8 +307,11 @@
 
 <div class="toast" id="toast" hidden></div>
 
+<script src="js/config.js"></script>
 <script src="js/data/superheroes.js"></script>
 <script src="js/data/disney.js"></script>
+<script src="js/data/animals.js"></script>
+<script src="js/net.js"></script>
 <script src="js/store.js"></script>
 <script src="js/audio.js"></script>
 <script src="js/app.js"></script>

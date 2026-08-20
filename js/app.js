@@ -14,7 +14,7 @@
 (function () {
   'use strict';
 
-  var Store = DHD.Store, Sfx = DHD.Sfx;
+  var Store = DHD.Store, Sfx = DHD.Sfx, Net = DHD.Net;
   var $ = function (id) { return document.getElementById(id); };
   var html = document.documentElement;
 
@@ -28,6 +28,9 @@
     optDeep: $('optDeep'), optSound: $('optSound'), optTick: $('optTick'), optClue: $('optClue'),
     toMedia: $('toMedia'), toHelp: $('toHelp'), soundCheck: $('soundCheck'),
     openHost: $('openHost'), mediaCount: $('mediaCount'),
+    pairCode: $('pairCode'), pairUrl: $('pairUrl'), pairState: $('pairState'),
+    pairCodeBig: $('pairCodeBig'), pairUrlBig: $('pairUrlBig'), pairStateBig: $('pairStateBig'),
+    newCode: $('newCode'),
 
     duelCat: $('duelCat'), duelProgress: $('duelProgress'), duelTotal: $('duelTotal'),
     boardImg: $('boardImg'), boardCard: $('boardCard'), boardCardClue: $('boardCardClue'),
@@ -566,10 +569,6 @@
      the dawgs are reading — so it lives in its own window and talks over a
      BroadcastChannel. Commands come back in and run the same guarded
      actions the keyboard does. */
-  var BUS_NAME = 'dawghouse-duel';
-  var bus = null, hostWin = null;
-  try { bus = new BroadcastChannel(BUS_NAME); } catch (e) { bus = null; }
-
   function busState() {
     var item = G.queue[G.idx], next = G.queue[G.idx + 1];
     return {
@@ -586,17 +585,22 @@
       answer: item ? item.name : '',
       alts: item ? (item.alt || []) : [],
       nextAnswer: next ? next.name : '',
-      image: lastImageUrl,
+      image: absoluteImage(lastImageUrl),
       penaltyMs: cfg.penaltyMs, passCostMs: cfg.passCostMs,
       winnerName: G.winnerName || ''
     };
   }
 
+  /* A phone on the other side of the relay can't resolve "assets/…". */
+  function absoluteImage(url) {
+    if (!url) return null;
+    if (/^(data:|https?:)/.test(url)) return url;
+    return location.origin + location.pathname.replace(/[^/]*$/, '') + url;
+  }
+
   function broadcast() {
     if (!G.players[0]) return;
-    var s = busState();
-    if (bus) bus.postMessage(s);
-    else { try { localStorage.setItem(BUS_NAME + '.state', JSON.stringify(s)); } catch (e) {} }
+    Net.send(busState());
   }
 
   function runCommand(cmd) {
@@ -611,14 +615,36 @@
     broadcast();
   }
 
-  if (bus) bus.onmessage = function (e) { if (e.data && e.data.from === 'host') runCommand(e.data.cmd); };
-  window.addEventListener('storage', function (e) {
-    if (e.key === BUS_NAME + '.cmd' && e.newValue) {
-      try { var m = JSON.parse(e.newValue); if (m.from === 'host') runCommand(m.cmd); } catch (err) {}
-    }
+  Net.start({
+    role: 'duel',
+    room: Net.rememberedRoom() || Net.newCode(),
+    onMessage: function (m) { if (m && m.from === 'host') runCommand(m.cmd); },
+    onStatus: renderPairing
   });
 
   setInterval(broadcast, 120);
+
+  /* ── pairing panel ── */
+  function renderPairing() {
+    var st = Net.status(), peers = Net.peers();
+    var code = Net.room() || '----';
+    el.pairCode.textContent = code;
+    el.pairCodeBig.textContent = code;
+    el.pairUrl.textContent = Net.hostUrl();
+    el.pairUrlBig.textContent = Net.hostUrl();
+
+    var label, cls;
+    if (!Net.configured())     { label = 'same computer only'; cls = 'local'; }
+    else if (st === 'online')  { label = peers.hosts ? 'phone connected' : 'waiting for the host'; cls = peers.hosts ? 'on' : 'wait'; }
+    else if (st === 'connecting') { label = 'connecting…'; cls = 'wait'; }
+    else                       { label = 'relay offline — game still fine'; cls = 'off'; }
+
+    [el.pairState, el.pairStateBig].forEach(function (n) {
+      if (!n) return;
+      n.textContent = label;
+      n.className = n.className.replace(/\bis-\w+\b/g, '') + ' is-' + cls;
+    });
+  }
 
   function openHost() {
     var w = 520, h = 780;
@@ -727,6 +753,11 @@
   el.mediaRescan.addEventListener('click', function () { toast('Re-checking the assets folder…'); openMedia(true); });
   el.mediaBack.addEventListener('click', function () { show('setup'); refreshMediaCount(); });
   el.openHost.addEventListener('click', openHost);
+  el.newCode.addEventListener('click', function () {
+    Net.join(Net.newCode());
+    renderPairing();
+    toast('New room code — re-pair the phone');
+  });
   el.toHelp.addEventListener('click', function () { el.ovlHelp.hidden = false; });
   el.soundCheck.addEventListener('click', function () {
     Sfx.unlock();
