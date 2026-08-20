@@ -12,7 +12,7 @@
 
   var el = {
     cat: $('cat'), count: $('count'), thumb: $('thumb'),
-    answer: $('answer'), alts: $('alts'), next: $('next'),
+    answer: $('answer'), alts: $('alts'), show: $('show'), next: $('next'),
     status: $('status'), phase: $('phase'),
     wrongCost: $('wrongCost'), passCost: $('passCost'), pauseLabel: $('pauseLabel')
   };
@@ -128,6 +128,7 @@
     }
 
     el.answer.textContent = s.answer || '—';
+    el.show.textContent = s.show || '';
     el.alts.innerHTML = '';
     if (s.alts && s.alts.length) {
       el.alts.innerHTML = 'also counts: ' + s.alts.map(function (a) { return '<b>' + a + '</b>'; }).join(' · ');

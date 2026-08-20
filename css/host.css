@@ -47,6 +47,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .card__eyebrow{margin:0;font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 .card__answer{margin:0;font-family:var(--ff-display);color:var(--lime);line-height:1;
   font-size:clamp(30px,7.5vw,64px);text-transform:uppercase;overflow-wrap:anywhere}
+.card__show{margin:0;font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+.card__show:empty{display:none}
 .card__alts{margin:0;font-size:14px;font-weight:700;color:rgba(255,255,255,.6);line-height:1.25}
 .card__alts:empty{display:none}
 .card__alts b{color:var(--lime-hot);font-weight:800}

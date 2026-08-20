@@ -113,8 +113,9 @@ It also unlocks audio, which browsers gate until the first click.
 | Disney Characters | 152 | 152 | Disney Wiki |
 | Animals | 170 | 170 | Wikipedia |
 | Star Wars | 147 | 147 | Wookieepedia |
+| Sitcom Characters | 135 | 135 | 29 per-show wikis |
 
-**582 pictures across four categories.**
+**717 pictures across five categories.**
 
 Each is one file in `js/data/`, registered with a `<script>` tag in
 `index.html`. Difficulty tiers (`easy` / `mid` / `deep`) let the **deep cuts**
@@ -196,6 +197,24 @@ an `image:` field for exactly this. "The Mandalorian" needed
 `page: 'Din Djarin'` too — the plain name matched the *show*, whose lead image
 is the title card with the answer written across it.
 
+Sitcoms are characters, not shows — a show's own wiki page leads with its logo,
+which has the answer written across it. Each answer names its own wiki, because
+sitcom characters live one wiki per show:
+
+```bash
+node tools/fetch-wiki-images.js sitcoms
+```
+
+Seven answers pin an exact image. The whole *It's Always Sunny* cast came back
+as their opening-credits cards with **the actor's name printed across them**,
+and Frasier's page leads with a DVD cover carrying Kelsey Grammer's name. The
+obvious replacement had both Crane brothers in one shot, and Niles is a separate
+answer, so that needed pinning too.
+
+Sitcom answers also carry a `show` field. It isn't an accepted answer — it shows
+up in the Host View under the character's name so you have the context while
+judging.
+
 If any answer ever loses its picture, the deck setting **Images only** (the
 default) simply doesn't deal it.
 
@@ -251,7 +270,9 @@ window.DHD_CATEGORIES.push({
     {slug:'macarena', name:'Macarena', alt:['Los del Rio'], tier:'easy',
      clue:'1996. Everyone at the wedding still knows the arm moves.',
      page:'Los del Río',               // optional: pin the wiki article
-     image:'https://…/pic.jpg'}        // optional: pin an exact picture
+     image:'https://…/pic.jpg',        // optional: pin an exact picture
+     wiki:'music.fandom.com',          // optional: per-answer wiki override
+     show:'Top of the Pops'}           // optional: context shown to the host
   ]
 });
 ```
@@ -274,6 +295,7 @@ js/host.js            host window controller
 js/data/disney.js     152 Disney answers
 js/data/animals.js    170 animal answers
 js/data/starwars.js   147 Star Wars answers
+js/data/sitcoms.js    135 sitcom answers across 29 shows
 js/net.js             local channel + relay transport
 js/config.js          relay URL and host URL — the one file to edit on deploy
 worker/               the Cloudflare Worker that pairs a phone to a duel screen

@@ -1,0 +1,812 @@
+{
+ "michael-scott": {
+  "answer": "Michael Scott",
+  "matched": "Michael Scott",
+  "via": "Michael Scott",
+  "wiki": "theoffice.fandom.com"
+ },
+ "dwight-schrute": {
+  "answer": "Dwight Schrute",
+  "matched": "Dwight Schrute",
+  "via": "Dwight Schrute",
+  "wiki": "theoffice.fandom.com"
+ },
+ "jim-halpert": {
+  "answer": "Jim Halpert",
+  "matched": "Jim Halpert",
+  "via": "Jim Halpert",
+  "wiki": "theoffice.fandom.com"
+ },
+ "pam-beesly": {
+  "answer": "Pam Beesly",
+  "matched": "Pam Beesly",
+  "via": "Pam Beesly",
+  "wiki": "theoffice.fandom.com"
+ },
+ "kevin-malone": {
+  "answer": "Kevin Malone",
+  "matched": "Kevin Malone",
+  "via": "Kevin Malone",
+  "wiki": "theoffice.fandom.com"
+ },
+ "creed-bratton": {
+  "answer": "Creed Bratton",
+  "matched": "Creed Bratton",
+  "via": "Creed Bratton",
+  "wiki": "theoffice.fandom.com"
+ },
+ "stanley-hudson": {
+  "answer": "Stanley Hudson",
+  "matched": "Stanley Hudson",
+  "via": "Stanley Hudson",
+  "wiki": "theoffice.fandom.com"
+ },
+ "angela-martin": {
+  "answer": "Angela Martin",
+  "matched": "Angela Martin",
+  "via": "Angela Martin",
+  "wiki": "theoffice.fandom.com"
+ },
+ "andy-bernard": {
+  "answer": "Andy Bernard",
+  "matched": "Andy Bernard",
+  "via": "Andy Bernard",
+  "wiki": "theoffice.fandom.com"
+ },
+ "toby-flenderson": {
+  "answer": "Toby Flenderson",
+  "matched": "Toby Flenderson",
+  "via": "Toby Flenderson",
+  "wiki": "theoffice.fandom.com"
+ },
+ "ross-geller": {
+  "answer": "Ross Geller",
+  "matched": "Ross Geller",
+  "via": "Ross Geller",
+  "wiki": "friends.fandom.com"
+ },
+ "rachel-green": {
+  "answer": "Rachel Green",
+  "matched": "Rachel Greene",
+  "via": "Rachel Green",
+  "wiki": "friends.fandom.com"
+ },
+ "monica-geller": {
+  "answer": "Monica Geller",
+  "matched": "Monica Geller",
+  "via": "Monica Geller",
+  "wiki": "friends.fandom.com"
+ },
+ "chandler-bing": {
+  "answer": "Chandler Bing",
+  "matched": "Chandler Bing",
+  "via": "Chandler Bing",
+  "wiki": "friends.fandom.com"
+ },
+ "joey-tribbiani": {
+  "answer": "Joey Tribbiani",
+  "matched": "Joey Tribbiani",
+  "via": "Joey Tribbiani",
+  "wiki": "friends.fandom.com"
+ },
+ "phoebe-buffay": {
+  "answer": "Phoebe Buffay",
+  "matched": "Phoebe Buffay",
+  "via": "Phoebe Buffay",
+  "wiki": "friends.fandom.com"
+ },
+ "gunther": {
+  "answer": "Gunther",
+  "matched": "Gunther",
+  "via": "Gunther",
+  "wiki": "friends.fandom.com"
+ },
+ "jerry-seinfeld": {
+  "answer": "Jerry Seinfeld",
+  "matched": "Jerry Seinfeld",
+  "via": "Jerry Seinfeld",
+  "wiki": "seinfeld.fandom.com"
+ },
+ "george-costanza": {
+  "answer": "George Costanza",
+  "matched": "George Costanza",
+  "via": "George Costanza",
+  "wiki": "seinfeld.fandom.com"
+ },
+ "cosmo-kramer": {
+  "answer": "Kramer",
+  "matched": "Cosmo Kramer",
+  "via": "Kramer",
+  "wiki": "seinfeld.fandom.com"
+ },
+ "elaine-benes": {
+  "answer": "Elaine Benes",
+  "matched": "Elaine Benes",
+  "via": "Elaine Benes",
+  "wiki": "seinfeld.fandom.com"
+ },
+ "newman": {
+  "answer": "Newman",
+  "matched": "Newman",
+  "via": "Newman",
+  "wiki": "seinfeld.fandom.com"
+ },
+ "frank-costanza": {
+  "answer": "Frank Costanza",
+  "matched": "Frank Costanza",
+  "via": "Frank Costanza",
+  "wiki": "seinfeld.fandom.com"
+ },
+ "homer-simpson": {
+  "answer": "Homer Simpson",
+  "matched": "Homer Simpson",
+  "via": "Homer Simpson",
+  "wiki": "simpsons.fandom.com"
+ },
+ "marge-simpson": {
+  "answer": "Marge Simpson",
+  "matched": "Marge Simpson",
+  "via": "Marge Simpson",
+  "wiki": "simpsons.fandom.com"
+ },
+ "bart-simpson": {
+  "answer": "Bart Simpson",
+  "matched": "Bart Simpson",
+  "via": "Bart Simpson",
+  "wiki": "simpsons.fandom.com"
+ },
+ "lisa-simpson": {
+  "answer": "Lisa Simpson",
+  "matched": "Lisa Simpson",
+  "via": "Lisa Simpson",
+  "wiki": "simpsons.fandom.com"
+ },
+ "mr-burns": {
+  "answer": "Mr. Burns",
+  "matched": "Charles Montgomery Burns",
+  "via": "Burns",
+  "wiki": "simpsons.fandom.com"
+ },
+ "ned-flanders": {
+  "answer": "Ned Flanders",
+  "matched": "Ned Flanders",
+  "via": "Ned Flanders",
+  "wiki": "simpsons.fandom.com"
+ },
+ "krusty-the-clown": {
+  "answer": "Krusty the Clown",
+  "matched": "Krusty the Clown",
+  "via": "Krusty the Clown",
+  "wiki": "simpsons.fandom.com"
+ },
+ "milhouse": {
+  "answer": "Milhouse",
+  "matched": "Milhouse Van Houten",
+  "via": "Milhouse",
+  "wiki": "simpsons.fandom.com"
+ },
+ "ralph-wiggum": {
+  "answer": "Ralph Wiggum",
+  "matched": "Ralph Wiggum",
+  "via": "Ralph Wiggum",
+  "wiki": "simpsons.fandom.com"
+ },
+ "moe-szyslak": {
+  "answer": "Moe Szyslak",
+  "matched": "Moe Szyslak",
+  "via": "Moe Szyslak",
+  "wiki": "simpsons.fandom.com"
+ },
+ "principal-skinner": {
+  "answer": "Principal Skinner",
+  "matched": "Seymour Skinner",
+  "via": "Principal Skinner",
+  "wiki": "simpsons.fandom.com"
+ },
+ "leslie-knope": {
+  "answer": "Leslie Knope",
+  "matched": "Leslie Knope",
+  "via": "Leslie Knope",
+  "wiki": "parksandrecreation.fandom.com"
+ },
+ "ron-swanson": {
+  "answer": "Ron Swanson",
+  "matched": "Ron Swanson",
+  "via": "Ron Swanson",
+  "wiki": "parksandrecreation.fandom.com"
+ },
+ "andy-dwyer": {
+  "answer": "Andy Dwyer",
+  "matched": "Andy Dwyer",
+  "via": "Andy Dwyer",
+  "wiki": "parksandrecreation.fandom.com"
+ },
+ "april-ludgate": {
+  "answer": "April Ludgate",
+  "matched": "April Ludgate",
+  "via": "April Ludgate",
+  "wiki": "parksandrecreation.fandom.com"
+ },
+ "tom-haverford": {
+  "answer": "Tom Haverford",
+  "matched": "Tom Haverford",
+  "via": "Tom Haverford",
+  "wiki": "parksandrecreation.fandom.com"
+ },
+ "ben-wyatt": {
+  "answer": "Ben Wyatt",
+  "matched": "Ben Wyatt",
+  "via": "Ben Wyatt",
+  "wiki": "parksandrecreation.fandom.com"
+ },
+ "barney-stinson": {
+  "answer": "Barney Stinson",
+  "matched": "Barney Stinson",
+  "via": "Barney Stinson",
+  "wiki": "howimetyourmother.fandom.com"
+ },
+ "ted-mosby": {
+  "answer": "Ted Mosby",
+  "matched": "Ted Mosby",
+  "via": "Ted Mosby",
+  "wiki": "howimetyourmother.fandom.com"
+ },
+ "marshall-eriksen": {
+  "answer": "Marshall Eriksen",
+  "matched": "Marshall Eriksen",
+  "via": "Marshall Eriksen",
+  "wiki": "howimetyourmother.fandom.com"
+ },
+ "robin-scherbatsky": {
+  "answer": "Robin Scherbatsky",
+  "matched": "Robin Scherbatsky",
+  "via": "Robin Scherbatsky",
+  "wiki": "howimetyourmother.fandom.com"
+ },
+ "lily-aldrin": {
+  "answer": "Lily Aldrin",
+  "matched": "Lily Aldrin",
+  "via": "Lily Aldrin",
+  "wiki": "howimetyourmother.fandom.com"
+ },
+ "sheldon-cooper": {
+  "answer": "Sheldon Cooper",
+  "matched": "Sheldon Cooper",
+  "via": "Sheldon Cooper",
+  "wiki": "bigbangtheory.fandom.com"
+ },
+ "leonard-hofstadter": {
+  "answer": "Leonard Hofstadter",
+  "matched": "Leonard Hofstadter",
+  "via": "Leonard Hofstadter",
+  "wiki": "bigbangtheory.fandom.com"
+ },
+ "penny-bbt": {
+  "answer": "Penny",
+  "matched": "Penny",
+  "via": "Penny",
+  "wiki": "bigbangtheory.fandom.com"
+ },
+ "howard-wolowitz": {
+  "answer": "Howard Wolowitz",
+  "matched": "Howard Wolowitz",
+  "via": "Howard Wolowitz",
+  "wiki": "bigbangtheory.fandom.com"
+ },
+ "raj-koothrappali": {
+  "answer": "Raj Koothrappali",
+  "matched": "Rajesh Koothrappali",
+  "via": "Raj Koothrappali",
+  "wiki": "bigbangtheory.fandom.com"
+ },
+ "jake-peralta": {
+  "answer": "Jake Peralta",
+  "matched": "Jake Peralta",
+  "via": "Jake Peralta",
+  "wiki": "brooklyn99.fandom.com"
+ },
+ "captain-holt": {
+  "answer": "Captain Holt",
+  "matched": "Raymond Holt",
+  "via": "Captain Holt",
+  "wiki": "brooklyn99.fandom.com"
+ },
+ "amy-santiago": {
+  "answer": "Amy Santiago",
+  "matched": "Amy Santiago",
+  "via": "Amy Santiago",
+  "wiki": "brooklyn99.fandom.com"
+ },
+ "terry-jeffords": {
+  "answer": "Terry Jeffords",
+  "matched": "Terry Jeffords",
+  "via": "Terry Jeffords",
+  "wiki": "brooklyn99.fandom.com"
+ },
+ "rosa-diaz": {
+  "answer": "Rosa Diaz",
+  "matched": "Rosa Diaz",
+  "via": "Rosa Diaz",
+  "wiki": "brooklyn99.fandom.com"
+ },
+ "charles-boyle": {
+  "answer": "Charles Boyle",
+  "matched": "Charles Boyle",
+  "via": "Charles Boyle",
+  "wiki": "brooklyn99.fandom.com"
+ },
+ "gina-linetti": {
+  "answer": "Gina Linetti",
+  "matched": "Gina Linetti",
+  "via": "Gina Linetti",
+  "wiki": "brooklyn99.fandom.com"
+ },
+ "charlie-kelly": {
+  "answer": "Charlie Kelly",
+  "matched": "Charlie Kelly (pinned image)",
+  "via": "pinned image",
+  "wiki": "itsalwayssunny.fandom.com"
+ },
+ "dennis-reynolds": {
+  "answer": "Dennis Reynolds",
+  "matched": "Dennis Reynolds (pinned image)",
+  "via": "pinned image",
+  "wiki": "itsalwayssunny.fandom.com"
+ },
+ "frank-reynolds": {
+  "answer": "Frank Reynolds",
+  "matched": "Frank Reynolds (pinned image)",
+  "via": "pinned image",
+  "wiki": "itsalwayssunny.fandom.com"
+ },
+ "mac-sunny": {
+  "answer": "Mac",
+  "matched": "Mac (pinned image)",
+  "via": "pinned image",
+  "wiki": "itsalwayssunny.fandom.com"
+ },
+ "dee-reynolds": {
+  "answer": "Dee Reynolds",
+  "matched": "Dee Reynolds (pinned image)",
+  "via": "pinned image",
+  "wiki": "itsalwayssunny.fandom.com"
+ },
+ "eric-cartman": {
+  "answer": "Eric Cartman",
+  "matched": "Eric Cartman",
+  "via": "Eric Cartman",
+  "wiki": "southpark.fandom.com"
+ },
+ "stan-marsh": {
+  "answer": "Stan Marsh",
+  "matched": "Stan Marsh",
+  "via": "Stan Marsh",
+  "wiki": "southpark.fandom.com"
+ },
+ "kyle-broflovski": {
+  "answer": "Kyle Broflovski",
+  "matched": "Kyle Broflovski",
+  "via": "Kyle Broflovski",
+  "wiki": "southpark.fandom.com"
+ },
+ "kenny-mccormick": {
+  "answer": "Kenny McCormick",
+  "matched": "Kenny McCormick",
+  "via": "Kenny McCormick",
+  "wiki": "southpark.fandom.com"
+ },
+ "butters-stotch": {
+  "answer": "Butters",
+  "matched": "Butters Stotch",
+  "via": "Butters",
+  "wiki": "southpark.fandom.com"
+ },
+ "randy-marsh": {
+  "answer": "Randy Marsh",
+  "matched": "Randy Marsh",
+  "via": "Randy Marsh",
+  "wiki": "southpark.fandom.com"
+ },
+ "peter-griffin": {
+  "answer": "Peter Griffin",
+  "matched": "Peter Griffin",
+  "via": "Peter Griffin",
+  "wiki": "familyguy.fandom.com"
+ },
+ "stewie-griffin": {
+  "answer": "Stewie Griffin",
+  "matched": "Stewie Griffin",
+  "via": "Stewie Griffin",
+  "wiki": "familyguy.fandom.com"
+ },
+ "brian-griffin": {
+  "answer": "Brian Griffin",
+  "matched": "Brian Griffin",
+  "via": "Brian Griffin",
+  "wiki": "familyguy.fandom.com"
+ },
+ "lois-griffin": {
+  "answer": "Lois Griffin",
+  "matched": "Lois Griffin",
+  "via": "Lois Griffin",
+  "wiki": "familyguy.fandom.com"
+ },
+ "glenn-quagmire": {
+  "answer": "Quagmire",
+  "matched": "Glenn Quagmire",
+  "via": "Quagmire",
+  "wiki": "familyguy.fandom.com"
+ },
+ "meg-griffin": {
+  "answer": "Meg Griffin",
+  "matched": "Meg Griffin",
+  "via": "Meg Griffin",
+  "wiki": "familyguy.fandom.com"
+ },
+ "hank-hill": {
+  "answer": "Hank Hill",
+  "matched": "Hank Hill",
+  "via": "Hank Hill",
+  "wiki": "kingofthehill.fandom.com"
+ },
+ "bobby-hill": {
+  "answer": "Bobby Hill",
+  "matched": "Bobby Hill",
+  "via": "Bobby Hill",
+  "wiki": "kingofthehill.fandom.com"
+ },
+ "dale-gribble": {
+  "answer": "Dale Gribble",
+  "matched": "Dale Gribble",
+  "via": "Dale Gribble",
+  "wiki": "kingofthehill.fandom.com"
+ },
+ "boomhauer": {
+  "answer": "Boomhauer",
+  "matched": "Jeff Boomhauer",
+  "via": "Boomhauer",
+  "wiki": "kingofthehill.fandom.com"
+ },
+ "bob-belcher": {
+  "answer": "Bob Belcher",
+  "matched": "Bob Belcher",
+  "via": "Bob Belcher",
+  "wiki": "bobs-burgers.fandom.com"
+ },
+ "louise-belcher": {
+  "answer": "Louise Belcher",
+  "matched": "Louise Belcher",
+  "via": "Louise Belcher",
+  "wiki": "bobs-burgers.fandom.com"
+ },
+ "tina-belcher": {
+  "answer": "Tina Belcher",
+  "matched": "Tina Belcher",
+  "via": "Tina Belcher",
+  "wiki": "bobs-burgers.fandom.com"
+ },
+ "gene-belcher": {
+  "answer": "Gene Belcher",
+  "matched": "Gene Belcher",
+  "via": "Gene Belcher",
+  "wiki": "bobs-burgers.fandom.com"
+ },
+ "linda-belcher": {
+  "answer": "Linda Belcher",
+  "matched": "Linda Belcher",
+  "via": "Linda Belcher",
+  "wiki": "bobs-burgers.fandom.com"
+ },
+ "bender": {
+  "answer": "Bender",
+  "matched": "Bender Bending Rodríguez",
+  "via": "Bender",
+  "wiki": "futurama.fandom.com"
+ },
+ "philip-fry": {
+  "answer": "Fry",
+  "matched": "Philip J. Fry",
+  "via": "Fry",
+  "wiki": "futurama.fandom.com"
+ },
+ "turanga-leela": {
+  "answer": "Leela",
+  "matched": "Turanga Leela",
+  "via": "Leela",
+  "wiki": "futurama.fandom.com"
+ },
+ "zoidberg": {
+  "answer": "Zoidberg",
+  "matched": "John A. Zoidberg",
+  "via": "Dr. Zoidberg",
+  "wiki": "futurama.fandom.com"
+ },
+ "professor-farnsworth": {
+  "answer": "Professor Farnsworth",
+  "matched": "Hubert J. Farnsworth",
+  "via": "Professor Farnsworth",
+  "wiki": "futurama.fandom.com"
+ },
+ "sam-malone": {
+  "answer": "Sam Malone",
+  "matched": "Sam Malone",
+  "via": "Sam Malone",
+  "wiki": "cheers.fandom.com"
+ },
+ "norm-peterson": {
+  "answer": "Norm Peterson",
+  "matched": "Norm Peterson",
+  "via": "Norm Peterson",
+  "wiki": "cheers.fandom.com"
+ },
+ "cliff-clavin": {
+  "answer": "Cliff Clavin",
+  "matched": "Cliff Clavin (pinned image)",
+  "via": "pinned image",
+  "wiki": "cheers.fandom.com"
+ },
+ "frasier-crane": {
+  "answer": "Frasier Crane",
+  "matched": "Frasier Crane (pinned image)",
+  "via": "pinned image",
+  "wiki": "frasier.fandom.com"
+ },
+ "niles-crane": {
+  "answer": "Niles Crane",
+  "matched": "Niles Crane",
+  "via": "Niles Crane",
+  "wiki": "frasier.fandom.com"
+ },
+ "martin-crane": {
+  "answer": "Martin Crane",
+  "matched": "Martin Crane",
+  "via": "Martin Crane",
+  "wiki": "frasier.fandom.com"
+ },
+ "phil-dunphy": {
+  "answer": "Phil Dunphy",
+  "matched": "Phil Dunphy",
+  "via": "Phil Dunphy",
+  "wiki": "modernfamily.fandom.com"
+ },
+ "gloria-delgado": {
+  "answer": "Gloria",
+  "matched": "Gloria Delgado-Pritchett",
+  "via": "Gloria",
+  "wiki": "modernfamily.fandom.com"
+ },
+ "cameron-tucker": {
+  "answer": "Cameron Tucker",
+  "matched": "Cameron Tucker",
+  "via": "Cameron Tucker",
+  "wiki": "modernfamily.fandom.com"
+ },
+ "jay-pritchett": {
+  "answer": "Jay Pritchett",
+  "matched": "Jay Pritchett",
+  "via": "Jay Pritchett",
+  "wiki": "modernfamily.fandom.com"
+ },
+ "claire-dunphy": {
+  "answer": "Claire Dunphy",
+  "matched": "Claire Dunphy",
+  "via": "Claire Dunphy",
+  "wiki": "modernfamily.fandom.com"
+ },
+ "jeff-winger": {
+  "answer": "Jeff Winger",
+  "matched": "Jeff Winger",
+  "via": "Jeff Winger",
+  "wiki": "community-sitcom.fandom.com"
+ },
+ "abed-nadir": {
+  "answer": "Abed Nadir",
+  "matched": "Abed Nadir",
+  "via": "Abed Nadir",
+  "wiki": "community-sitcom.fandom.com"
+ },
+ "troy-barnes": {
+  "answer": "Troy Barnes",
+  "matched": "Troy Barnes",
+  "via": "Troy Barnes",
+  "wiki": "community-sitcom.fandom.com"
+ },
+ "dean-pelton": {
+  "answer": "Dean Pelton",
+  "matched": "Craig Pelton",
+  "via": "Dean Pelton",
+  "wiki": "community-sitcom.fandom.com"
+ },
+ "liz-lemon": {
+  "answer": "Liz Lemon",
+  "matched": "Liz Lemon",
+  "via": "Liz Lemon",
+  "wiki": "30rock.fandom.com"
+ },
+ "jack-donaghy": {
+  "answer": "Jack Donaghy",
+  "matched": "Jack Donaghy",
+  "via": "Jack Donaghy",
+  "wiki": "30rock.fandom.com"
+ },
+ "tracy-jordan": {
+  "answer": "Tracy Jordan",
+  "matched": "Tracy Jordan",
+  "via": "Tracy Jordan",
+  "wiki": "30rock.fandom.com"
+ },
+ "kenneth-parcell": {
+  "answer": "Kenneth Parcell",
+  "matched": "Kenneth Parcell",
+  "via": "Kenneth Parcell",
+  "wiki": "30rock.fandom.com"
+ },
+ "michael-bluth": {
+  "answer": "Michael Bluth",
+  "matched": "Michael Bluth",
+  "via": "Michael Bluth",
+  "wiki": "arresteddevelopment.fandom.com"
+ },
+ "gob-bluth": {
+  "answer": "GOB",
+  "matched": "G.O.B.",
+  "via": "George Oscar Bluth",
+  "wiki": "arresteddevelopment.fandom.com"
+ },
+ "tobias-funke": {
+  "answer": "Tobias Fünke",
+  "matched": "Tobias Fünke",
+  "via": "Tobias Fünke",
+  "wiki": "arresteddevelopment.fandom.com"
+ },
+ "buster-bluth": {
+  "answer": "Buster Bluth",
+  "matched": "Buster Bluth",
+  "via": "Buster Bluth",
+  "wiki": "arresteddevelopment.fandom.com"
+ },
+ "jd-scrubs": {
+  "answer": "J.D.",
+  "matched": "J.D.",
+  "via": "J.D.",
+  "wiki": "scrubs.fandom.com"
+ },
+ "dr-cox": {
+  "answer": "Dr. Cox",
+  "matched": "Perry Cox",
+  "via": "Dr. Cox",
+  "wiki": "scrubs.fandom.com"
+ },
+ "turk": {
+  "answer": "Turk",
+  "matched": "Christopher Turk",
+  "via": "Turk",
+  "wiki": "scrubs.fandom.com"
+ },
+ "janitor-scrubs": {
+  "answer": "The Janitor",
+  "matched": "Janitor",
+  "via": "The Janitor",
+  "wiki": "scrubs.fandom.com"
+ },
+ "jess-day": {
+  "answer": "Jess Day",
+  "matched": "Jess Day",
+  "via": "Jess Day",
+  "wiki": "newgirl.fandom.com"
+ },
+ "nick-miller": {
+  "answer": "Nick Miller",
+  "matched": "Nick Miller",
+  "via": "Nick Miller",
+  "wiki": "newgirl.fandom.com"
+ },
+ "schmidt": {
+  "answer": "Schmidt",
+  "matched": "Schmidt",
+  "via": "Schmidt",
+  "wiki": "newgirl.fandom.com"
+ },
+ "winston-bishop": {
+  "answer": "Winston Bishop",
+  "matched": "Winston Bishop",
+  "via": "Winston Bishop",
+  "wiki": "newgirl.fandom.com"
+ },
+ "carlton-banks": {
+  "answer": "Carlton Banks",
+  "matched": "Carlton Banks",
+  "via": "Carlton Banks",
+  "wiki": "freshprince.fandom.com"
+ },
+ "uncle-phil": {
+  "answer": "Uncle Phil",
+  "matched": "Philip Banks",
+  "via": "Uncle Phil",
+  "wiki": "freshprince.fandom.com"
+ },
+ "malcolm": {
+  "answer": "Malcolm",
+  "matched": "Malcolm",
+  "via": "Malcolm",
+  "wiki": "malcolminthemiddle.fandom.com"
+ },
+ "hal-malcolm": {
+  "answer": "Hal",
+  "matched": "Hal",
+  "via": "Hal",
+  "wiki": "malcolminthemiddle.fandom.com"
+ },
+ "sophia-petrillo": {
+  "answer": "Sophia Petrillo",
+  "matched": "Sophia Petrillo",
+  "via": "Sophia Petrillo",
+  "wiki": "goldengirls.fandom.com"
+ },
+ "blanche-devereaux": {
+  "answer": "Blanche Devereaux",
+  "matched": "Blanche Devereaux",
+  "via": "Blanche Devereaux",
+  "wiki": "goldengirls.fandom.com"
+ },
+ "dorothy-zbornak": {
+  "answer": "Dorothy Zbornak",
+  "matched": "Dorothy Zbornak",
+  "via": "Dorothy Zbornak",
+  "wiki": "goldengirls.fandom.com"
+ },
+ "al-bundy": {
+  "answer": "Al Bundy",
+  "matched": "Al Bundy",
+  "via": "Al Bundy",
+  "wiki": "marriedwithchildren.fandom.com"
+ },
+ "moira-rose": {
+  "answer": "Moira Rose",
+  "matched": "Moira Rose",
+  "via": "Moira Rose",
+  "wiki": "schitts-creek.fandom.com"
+ },
+ "david-rose": {
+  "answer": "David Rose",
+  "matched": "David Rose",
+  "via": "David Rose",
+  "wiki": "schitts-creek.fandom.com"
+ },
+ "alexis-rose": {
+  "answer": "Alexis Rose",
+  "matched": "Alexis Rose",
+  "via": "Alexis Rose",
+  "wiki": "schitts-creek.fandom.com"
+ },
+ "ted-lasso": {
+  "answer": "Ted Lasso",
+  "matched": "Ted Lasso",
+  "via": "Ted Lasso",
+  "wiki": "tedlasso.fandom.com"
+ },
+ "roy-kent": {
+  "answer": "Roy Kent",
+  "matched": "Roy Kent",
+  "via": "Roy Kent",
+  "wiki": "tedlasso.fandom.com"
+ },
+ "rebecca-welton": {
+  "answer": "Rebecca Welton",
+  "matched": "Rebecca Welton",
+  "via": "Rebecca Welton",
+  "wiki": "tedlasso.fandom.com"
+ },
+ "janine-teagues": {
+  "answer": "Janine Teagues",
+  "matched": "Janine Teagues",
+  "via": "Janine Teagues",
+  "wiki": "abbottelementary.fandom.com"
+ },
+ "ava-coleman": {
+  "answer": "Ava Coleman",
+  "matched": "Ava Coleman",
+  "via": "Ava Coleman",
+  "wiki": "abbottelementary.fandom.com"
+ }
+}

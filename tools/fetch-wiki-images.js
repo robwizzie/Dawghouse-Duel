@@ -7,6 +7,9 @@
 
    The category's data file names the wiki:  wiki: 'disney.fandom.com'
    Any item can override the lookup with:    page: 'Rex (Toy Story)'
+   ...or point at a different wiki entirely:  wiki: 'theoffice.fandom.com'
+   (sitcom characters live on one wiki per show, so that category sets a
+   wiki per answer rather than one for the lot)
    ...or skip the lookup entirely with:      image: 'https://…/pic.png'
    (the last one is for when a page's lead image is the wrong picture of
    the right character — Darth Vader's article shows Anakin's face)
@@ -137,7 +140,10 @@ async function credits(wiki, files) {
   require('../js/data/' + CAT + '.js');
   const cat = window.DHD_CATEGORIES.find(c => c.id === CAT);
   if (!cat) throw new Error('no category ' + CAT);
-  if (!cat.wiki) throw new Error(CAT + ' has no `wiki` in its data file');
+  if (!cat.wiki && !cat.items.every(i => i.wiki || i.image)) {
+    throw new Error(CAT + ' needs a `wiki` on the category or on every answer');
+  }
+  const wikiFor = item => item.wiki || cat.wiki;
 
   fs.mkdirSync(OUT, { recursive: true });
   const sources = {}, missing = [];
@@ -151,13 +157,24 @@ async function credits(wiki, files) {
   const todo = cat.items;
   console.log('Need ' + (cat.items.length - cached) + ', already have ' + cached + '.');
 
-  // Ask for every title we might want in a handful of batched requests.
-  const wanted = [];
-  todo.filter(i => !i.image).forEach(item => [item.page, item.name, ...(item.alt || [])]
-    .filter(Boolean).forEach(t => { if (!wanted.includes(t)) wanted.push(t); }));
-  process.stdout.write('Resolving ' + wanted.length + ' titles… ');
-  const lookup = await pageImages(cat.wiki, wanted);
-  console.log(lookup.size / 2 | 0, 'pages with images');
+  // Ask for every title we might want, batched, grouped by which wiki it's on.
+  const byWiki = new Map();
+  todo.filter(i => !i.image).forEach(item => {
+    const w = wikiFor(item);
+    if (!byWiki.has(w)) byWiki.set(w, []);
+    const list = byWiki.get(w);
+    [item.page, item.name, ...(item.alt || [])].filter(Boolean)
+      .forEach(t => { if (!list.includes(t)) list.push(t); });
+  });
+
+  const lookups = new Map();   // wiki -> Map(title -> hit)
+  let titleCount = 0;
+  for (const [w, titles] of byWiki) {
+    titleCount += titles.length;
+    process.stdout.write('\r  resolving ' + titles.length + ' titles on ' + w.padEnd(34));
+    lookups.set(w, await pageImages(w, titles));
+  }
+  console.log('\r  resolved ' + titleCount + ' titles across ' + byWiki.size + ' wiki(s)' + ' '.repeat(30));
 
   const plan = [];
   for (const item of todo) {
@@ -165,23 +182,29 @@ async function credits(wiki, files) {
       plan.push({ item, hit: { url: item.image, title: item.name + ' (pinned image)', file: null }, via: 'pinned image' });
       continue;
     }
+    const lookup = lookups.get(wikiFor(item)) || new Map();
     const tries = [item.page, item.name, ...(item.alt || [])].filter(Boolean);
     let hit = null, via = null;
     for (const t of tries) {
       hit = lookup.get(t.toLowerCase());
       if (hit) { via = t; break; }
     }
-    if (!hit) { missing.push(item.name); continue; }
+    if (!hit) { missing.push(item.name + (item.wiki ? '  [' + item.wiki + ']' : '')); continue; }
     plan.push({ item, hit, via });
   }
 
-  process.stdout.write('Fetching licences… ');
-  const lic = await credits(cat.wiki, plan.map(p => p.hit.file));
-  console.log(lic.size + ' recorded');
+  const lic = new Map();
+  if (cat.wiki && /wiki[mp]edia\.org$/.test(cat.wiki)) {
+    process.stdout.write('Fetching licences… ');
+    const got = await credits(cat.wiki, plan.map(p => p.hit.file));
+    got.forEach((v, k) => lic.set(k, v));
+    console.log(lic.size + ' recorded');
+  }
 
   for (const { item, hit, via } of plan) {
     const dest = path.join(OUT, item.slug + '.jpg');
     sources[item.slug] = { answer: item.name, matched: hit.title, via: via };
+    if (item.wiki) sources[item.slug].wiki = item.wiki;
     const cr = hit.file && lic.get(fileKey(hit.file));
     if (cr) Object.assign(sources[item.slug], cr);
     if (have.has(item.slug)) continue;      // picture already on disk; we only wanted the credit
