@@ -114,8 +114,9 @@ It also unlocks audio, which browsers gate until the first click.
 | Animals | 170 | 170 | Wikipedia |
 | Star Wars | 147 | 147 | Wookieepedia |
 | Sitcom Characters | 135 | 135 | 29 per-show wikis |
+| Fast Food | 69 | 69 | Wikipedia + Wikimedia Commons |
 
-**717 pictures across five categories.**
+**786 pictures across six categories.**
 
 Each is one file in `js/data/`, registered with a `<script>` tag in
 `index.html`. Difficulty tiers (`easy` / `mid` / `deep`) let the **deep cuts**
@@ -215,6 +216,21 @@ Sitcom answers also carry a `show` field. It isn't an accepted answer — it sho
 up in the Host View under the character's name so you have the context while
 judging.
 
+Fast food is the one category with deliberately mixed sourcing, because it
+resists a single approach. Chains with a signature item or mascot use that — a
+Big Mac, the Colonel, a Blizzard, the Krispy Kreme glazing conveyor — and those
+identify the chain without naming it. Everything else falls back to the brand
+mark, some of which carry the wordmark and give themselves away. That's a
+knowing trade: a strictly fair fast-food deck is only about 18 answers deep.
+
+What is *not* used is a plain food photo that identifies nothing. A Shake Shack
+burger and a Culver's ButterBurger are the same picture, so those chains show
+their mark instead. `tools/search-commons.js` is what dug the usable food shots
+out of Wikimedia Commons.
+
+Fast food answers carry a `note` field (the item's name) which, like `show` on
+sitcoms, appears in the Host View as context rather than as an accepted answer.
+
 If any answer ever loses its picture, the deck setting **Images only** (the
 default) simply doesn't deal it.
 
@@ -272,7 +288,7 @@ window.DHD_CATEGORIES.push({
      page:'Los del Río',               // optional: pin the wiki article
      image:'https://…/pic.jpg',        // optional: pin an exact picture
      wiki:'music.fandom.com',          // optional: per-answer wiki override
-     show:'Top of the Pops'}           // optional: context shown to the host
+     note:'1996 single'}               // optional: context shown to the host
   ]
 });
 ```
@@ -296,13 +312,15 @@ js/data/disney.js     152 Disney answers
 js/data/animals.js    170 animal answers
 js/data/starwars.js   147 Star Wars answers
 js/data/sitcoms.js    135 sitcom answers across 29 shows
+js/data/fastfood.js   69 fast food chains
 js/net.js             local channel + relay transport
 js/config.js          relay URL and host URL — the one file to edit on deploy
 worker/               the Cloudflare Worker that pairs a phone to a duel screen
 tools/build-manifest.sh   regenerates the folder listing after you add images
 tools/fetch-images.js     pulls placeholder art for a category from superhero-api
 tools/fetch-extra-images.sh  the six the dataset doesn't carry
-tools/fetch-wiki-images.js   pulls a category's art from a Fandom wiki
+tools/fetch-wiki-images.js   pulls a category's art from a Fandom wiki or Wikipedia
+tools/search-commons.js      finds text-free photos on Wikimedia Commons
 assets/brand/           the wordmark, plus a slot for a real brand font
 assets/categories/<cat>/
   *.jpg / *.png           the pictures

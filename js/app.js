@@ -584,7 +584,7 @@
       }),
       answer: item ? item.name : '',
       alts: item ? (item.alt || []) : [],
-      show: item ? (item.show || '') : '',
+      show: item ? (item.note || item.show || '') : '',   // host-side context, never an answer
       nextAnswer: next ? next.name : '',
       image: absoluteImage(lastImageUrl),
       penaltyMs: cfg.penaltyMs, passCostMs: cfg.passCostMs,
