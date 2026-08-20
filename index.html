@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-screen="setup">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dawg House Duel</title>
+<meta name="description" content="Head-to-head category duel. Two clocks, one image, last dawg standing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Luckiest+Guy&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/dhd.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2332328d'/><text y='72' x='50' text-anchor='middle' font-size='62' font-family='Arial Black,sans-serif' fill='%23deff66'>D</text></svg>">
+</head>
+<body>
+
+<div id="stage" class="stage">
+
+  <!-- ══════════════════════════ SETUP ══════════════════════════ -->
+  <section class="screen screen--setup" data-screen-id="setup">
+    <div class="setup__inner">
+      <div class="brandmark brandmark--stack">
+        <img class="brandmark__img" src="assets/brand/logo.png" alt="Dawg House"
+             onload="this.closest('.brandmark').classList.add('has-logo')" onerror="this.remove()">
+        <span class="brandmark__text">dawg<em>house</em></span>
+        <span class="brandmark__duel">DUEL</span>
+      </div>
+
+      <p class="setup__tag">Two dawgs. Two clocks. One category. <b>Last one standing takes it.</b></p>
+
+      <form class="panel" id="setupForm" autocomplete="off">
+        <div class="row row--players">
+          <label class="field field--p1">
+            <span class="field__label">Dawg 1 <i>(left)</i></span>
+            <input class="input input--name" id="p1Name" maxlength="14" placeholder="NAME" value="ROB">
+          </label>
+          <div class="vs">VS</div>
+          <label class="field field--p2">
+            <span class="field__label">Dawg 2 <i>(right)</i></span>
+            <input class="input input--name" id="p2Name" maxlength="14" placeholder="NAME" value="MIKE">
+          </label>
+        </div>
+
+        <div class="row row--3">
+          <label class="field">
+            <span class="field__label">Category</span>
+            <select class="input" id="catSelect"></select>
+          </label>
+          <label class="field">
+            <span class="field__label">Clock (each)</span>
+            <select class="input" id="clockSelect">
+              <option value="30">30 sec</option>
+              <option value="45" selected>45 sec &mdash; show standard</option>
+              <option value="60">60 sec</option>
+              <option value="90">90 sec</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="field__label">First control</span>
+            <select class="input" id="firstSelect">
+              <option value="flip" selected>Coin flip</option>
+              <option value="0">Dawg 1</option>
+              <option value="1">Dawg 2</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="row row--4">
+          <label class="field">
+            <span class="field__label">Wrong answer costs</span>
+            <select class="input" id="penaltySelect">
+              <option value="0">Nothing</option>
+              <option value="2">2 seconds</option>
+              <option value="3" selected>3 seconds</option>
+              <option value="5">5 seconds</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="field__label">Pass costs</span>
+            <select class="input" id="passCostSelect">
+              <option value="0">Nothing</option>
+              <option value="2" selected>2 seconds</option>
+              <option value="3">3 seconds</option>
+              <option value="5">5 seconds</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="field__label">Answer reveal</span>
+            <select class="input" id="revealSelect">
+              <option value="0">Off &mdash; straight to the next</option>
+              <option value="900">Quick (0.9s)</option>
+              <option value="1400" selected>Standard (1.4s)</option>
+              <option value="2000">Long (2.0s)</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="field__label">Deck</span>
+            <select class="input" id="deckSelect">
+              <option value="images" selected>Images only</option>
+              <option value="all">Everything (clue cards for missing art)</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="row row--toggles">
+          <label class="toggle"><input type="checkbox" id="optDeep" checked><span></span>Include deep cuts</label>
+          <label class="toggle"><input type="checkbox" id="optSound" checked><span></span>Sound FX</label>
+          <label class="toggle"><input type="checkbox" id="optTick" checked><span></span>Tick under 10s</label>
+          <label class="toggle"><input type="checkbox" id="optClue"><span></span>Clue text (practice)</label>
+        </div>
+
+        <div class="row row--go">
+          <button class="btn btn--go" type="submit">START THE DUEL</button>
+          <button class="btn btn--ghost" type="button" id="toMedia">Image Library <b id="mediaCount"></b></button>
+          <button class="btn btn--ghost btn--host" type="button" id="openHost">Host View &#8599;</button>
+          <button class="btn btn--ghost" type="button" id="soundCheck">Sound Check</button>
+          <button class="btn btn--ghost" type="button" id="toHelp">How It Works</button>
+        </div>
+      </form>
+
+      <p class="setup__foot">Contestant clicks the mouse to <b>PASS</b> &middot; Operator hits <b>ENTER</b> for correct &middot; <b>?</b> for all controls</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ DUEL ══════════════════════════ -->
+  <section class="screen screen--duel" data-screen-id="duel">
+
+    <header class="topbar">
+      <div class="brandmark brandmark--inline">
+        <img class="brandmark__img" src="assets/brand/logo.png" alt=""
+             onload="this.closest('.brandmark').classList.add('has-logo')" onerror="this.remove()">
+        <span class="brandmark__text">dawg<em>house</em></span>
+        <span class="brandmark__duel">DUEL</span>
+      </div>
+      <div class="topbar__cat"><i>CATEGORY</i><b id="duelCat">—</b></div>
+      <div class="topbar__meta"><span id="duelProgress">1</span><i>of</i><span id="duelTotal">1</span></div>
+    </header>
+
+    <main class="arena">
+
+      <aside class="pod pod--left" id="pod0">
+        <div class="pod__name" id="pod0Name">DAWG 1</div>
+        <div class="pod__clock"><span class="clock" id="pod0Clock">45.0</span></div>
+        <div class="pod__bar"><i id="pod0Bar"></i></div>
+        <div class="pod__stats"><span class="chip chip--right"><b id="pod0Right">0</b> RIGHT</span><span class="chip"><b id="pod0Pass">0</b> PASS</span></div>
+        <div class="pod__control">CONTROL</div>
+      </aside>
+
+      <div class="board">
+        <div class="board__frame" id="boardFrame">
+          <img class="board__img" id="boardImg" alt="" hidden>
+          <div class="board__card" id="boardCard" hidden>
+            <span class="board__cardmark">?</span>
+            <p class="board__cardclue" id="boardCardClue"></p>
+          </div>
+          <div class="board__flash" id="boardFlash"></div>
+          <div class="board__peek" id="boardPeek" hidden></div>
+          <div class="penalty" id="penaltyPop" hidden></div>
+          <div class="reveal" id="reveal" hidden>
+            <i class="reveal__eyebrow" id="revealEyebrow">CORRECT</i>
+            <b class="reveal__name" id="revealName">—</b>
+          </div>
+        </div>
+        <p class="board__clue" id="boardClue" hidden></p>
+      </div>
+
+      <aside class="pod pod--right" id="pod1">
+        <div class="pod__name" id="pod1Name">DAWG 2</div>
+        <div class="pod__clock"><span class="clock" id="pod1Clock">45.0</span></div>
+        <div class="pod__bar"><i id="pod1Bar"></i></div>
+        <div class="pod__stats"><span class="chip chip--right"><b id="pod1Right">0</b> RIGHT</span><span class="chip"><b id="pod1Pass">0</b> PASS</span></div>
+        <div class="pod__control">CONTROL</div>
+      </aside>
+
+    </main>
+
+    <button class="passbar" id="passBar" type="button">
+      <span class="passbar__who" id="passWho">DAWG 1</span>
+      <span class="passbar__word">PASS</span>
+      <span class="passbar__cost" id="passCost">&minus;2s</span>
+      <span class="passbar__hint">shows the answer &middot; new picture &middot; still your clock</span>
+    </button>
+
+    <div class="hostbar">
+      <span class="hostbar__k"><b>ENTER</b> correct &rarr; hand off</span>
+      <span class="hostbar__k"><b>SPACE</b> pass &minus;<span id="hostPassCost">2</span>s</span>
+      <span class="hostbar__k"><b>X</b> wrong &minus;<span id="hostPenalty">3</span>s</span>
+      <span class="hostbar__k"><b>P</b> pause</span>
+      <span class="hostbar__k"><b>A</b> peek</span>
+      <span class="hostbar__k"><b>F</b> full screen</span>
+      <span class="hostbar__k"><b>H</b> host view</span>
+      <span class="hostbar__k"><b>?</b> help</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ MEDIA LIBRARY ══════════════════════════ -->
+  <section class="screen screen--media" data-screen-id="media">
+    <header class="mediabar">
+      <button class="btn btn--ghost btn--sm" id="mediaBack">&larr; Back</button>
+      <h2 class="mediabar__title">Image Library <span id="mediaCat"></span></h2>
+      <div class="mediabar__acts">
+        <button class="btn btn--ghost btn--sm" id="mediaRescan">Rescan folder</button>
+        <button class="btn btn--ghost btn--sm" id="mediaCopy">Copy filename list</button>
+        <button class="btn btn--ghost btn--sm btn--danger" id="mediaClear">Clear uploads</button>
+      </div>
+    </header>
+    <div class="dropall" id="dropAll">
+      <b>Drop a whole folder of images here.</b>
+      <span>Files are matched to answers by filename &mdash; <code>black-panther.jpg</code> &rarr; Black Panther. Or drop onto a single tile below.</span>
+    </div>
+    <div class="mediagrid" id="mediaGrid"></div>
+  </section>
+
+</div>
+
+<!-- ══════════════════════════ OVERLAYS ══════════════════════════ -->
+<div class="ovl ovl--intro" id="ovlIntro" hidden>
+  <div class="intro">
+    <div class="intro__cat"><i>CATEGORY</i><b id="introCat">SUPERHEROES</b></div>
+    <div class="intro__vs">
+      <span class="intro__p" id="introP1">DAWG 1</span>
+      <span class="intro__x">VS</span>
+      <span class="intro__p" id="introP2">DAWG 2</span>
+    </div>
+    <div class="intro__first" id="introFirst">DAWG 1 STARTS WITH CONTROL</div>
+    <div class="intro__count" id="introCount">3</div>
+  </div>
+</div>
+
+<div class="ovl ovl--result" id="ovlResult" hidden>
+  <div class="result">
+    <img class="result__logo" src="assets/brand/logo.png" alt="Dawg House" onerror="this.remove()">
+    <div class="result__eyebrow">DUEL</div>
+    <div class="result__label">WINNER</div>
+    <div class="result__name" id="resultName">DAWG 1</div>
+    <div class="result__line" id="resultLine">Survived with 12.4 on the clock</div>
+    <table class="result__tbl">
+      <thead><tr><th></th><th id="resHead0">D1</th><th id="resHead1">D2</th></tr></thead>
+      <tbody>
+        <tr><td>Correct</td><td id="resRight0">0</td><td id="resRight1">0</td></tr>
+        <tr><td>Passes</td><td id="resPass0">0</td><td id="resPass1">0</td></tr>
+        <tr><td>Clock left</td><td id="resClock0">0.0</td><td id="resClock1">0.0</td></tr>
+      </tbody>
+    </table>
+    <div class="result__acts">
+      <button class="btn btn--go" id="resRematch">REMATCH <i>(R)</i></button>
+      <button class="btn btn--ghost" id="resNew">NEW DUEL <i>(N)</i></button>
+    </div>
+  </div>
+</div>
+
+<div class="ovl ovl--pause" id="ovlPause" hidden>
+  <div class="pausecard"><b>PAUSED</b><span>Press <kbd>P</kbd> to resume</span></div>
+</div>
+
+<div class="ovl ovl--help" id="ovlHelp" hidden>
+  <div class="help">
+    <button class="help__close" id="helpClose" aria-label="Close">&times;</button>
+    <h2>How Dawg House Duel works</h2>
+    <ol class="help__rules">
+      <li>Two dawgs sit facing the laptop. Each gets <b>45 seconds</b> on their own clock.</li>
+      <li>One picture at a time. Whoever has <b>CONTROL</b> is the only clock running.</li>
+      <li>Name it right &rarr; the answer flashes up and <b>control hands over</b> to the other dawg with a fresh picture. Your clock stops.</li>
+      <li>Wrong &rarr; <b>3 seconds off your clock</b>, same picture, still your turn. Guess again.</li>
+      <li>Stuck? <b>Click the mouse to PASS.</b> The answer is revealed and you get a different picture &mdash; but it costs you <b>2 seconds</b>, and it is <b>still your turn and still your clock</b>.</li>
+      <li>Only a correct answer gets you off the clock. First one to hit <b>00.0</b> loses.</li>
+    </ol>
+    <h3>Controls</h3>
+    <div class="help__keys">
+      <div><kbd>Click</kbd> <kbd>Space</kbd><span>Pass &mdash; reveal, new picture, same turn</span></div>
+      <div><kbd>Z</kbd><span>Left dawg passes (their own button)</span></div>
+      <div><kbd>M</kbd><span>Right dawg passes (their own button)</span></div>
+      <div><kbd>Enter</kbd> <kbd>&rarr;</kbd><span>Correct &mdash; reveal, hand off, new picture</span></div>
+      <div><kbd>X</kbd><span>Wrong &mdash; time penalty, same picture</span></div>
+      <div><kbd>S</kbd><span>Skip a bad picture (no reveal, no cost)</span></div>
+      <div><kbd>P</kbd><span>Pause both clocks</span></div>
+      <div><kbd>A</kbd><span>Peek the answer (operator only)</span></div>
+      <div><kbd>F</kbd><span>Full screen</span></div>
+      <div><kbd>R</kbd><span>Restart duel</span></div>
+      <div><kbd>H</kbd><span>Open the Host View window</span></div>
+      <div><kbd>Esc</kbd><span>Back to setup</span></div>
+    </div>
+    <h3>Judging the answers &mdash; open the Host View</h3>
+    <p class="help__note">The answer key can&rsquo;t live on the screen the dawgs are reading. Hit <b>Host View</b> on setup (or <kbd>H</kbd> during a duel) and a second window opens showing <b>the answer, the alternates that also count, and the next one up</b> &mdash; plus big CORRECT / WRONG / PASS buttons. Put it on a second monitor, a second laptop window, or just the corner of your own screen. Every button and key in it drives the duel screen live.</p>
+
+    <h3>Filming setup</h3>
+    <p class="help__note">Put the laptop just under the camera lens so the dawgs read the screen and look down the barrel. Give whoever has control the mouse &mdash; one click is a pass. Hit <kbd>F</kbd> for full screen before you roll.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="js/data/superheroes.js"></script>
+<script src="js/data/disney.js"></script>
+<script src="js/store.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

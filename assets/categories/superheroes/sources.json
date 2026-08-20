@@ -1,0 +1,644 @@
+{
+ "superman": {
+  "answer": "Superman",
+  "matched": "Superman",
+  "via": "Superman",
+  "id": 644
+ },
+ "batman": {
+  "answer": "Batman",
+  "matched": "Batman",
+  "via": "Batman",
+  "id": 69
+ },
+ "wonder-woman": {
+  "answer": "Wonder Woman",
+  "matched": "Wonder Woman",
+  "via": "Wonder Woman",
+  "id": 720
+ },
+ "spider-man": {
+  "answer": "Spider-Man",
+  "matched": "Spider-Man",
+  "via": "Spider-Man",
+  "id": 620
+ },
+ "iron-man": {
+  "answer": "Iron Man",
+  "matched": "Iron Man",
+  "via": "Iron Man",
+  "id": 346
+ },
+ "captain-america": {
+  "answer": "Captain America",
+  "matched": "Captain America",
+  "via": "Captain America",
+  "id": 149
+ },
+ "thor": {
+  "answer": "Thor",
+  "matched": "Thor",
+  "via": "Thor",
+  "id": 659
+ },
+ "hulk": {
+  "answer": "Hulk",
+  "matched": "Hulk",
+  "via": "Hulk",
+  "id": 332
+ },
+ "black-panther": {
+  "answer": "Black Panther",
+  "matched": "Black Panther",
+  "via": "Black Panther",
+  "id": 106
+ },
+ "captain-marvel": {
+  "answer": "Captain Marvel",
+  "matched": "Captain Marvel",
+  "via": "pinned #157",
+  "id": 157
+ },
+ "deadpool": {
+  "answer": "Deadpool",
+  "matched": "Deadpool",
+  "via": "Deadpool",
+  "id": 213
+ },
+ "wolverine": {
+  "answer": "Wolverine",
+  "matched": "Wolverine",
+  "via": "Wolverine",
+  "id": 717
+ },
+ "the-flash": {
+  "answer": "The Flash",
+  "matched": "Flash",
+  "via": "Flash",
+  "id": 263
+ },
+ "aquaman": {
+  "answer": "Aquaman",
+  "matched": "Aquaman",
+  "via": "Aquaman",
+  "id": 38
+ },
+ "green-lantern": {
+  "answer": "Green Lantern",
+  "matched": "Hal Jordan",
+  "via": "pinned #306",
+  "id": 306
+ },
+ "joker": {
+  "answer": "Joker",
+  "matched": "Joker",
+  "via": "Joker",
+  "id": 370
+ },
+ "harley-quinn": {
+  "answer": "Harley Quinn",
+  "matched": "Harley Quinn",
+  "via": "Harley Quinn",
+  "id": 309
+ },
+ "catwoman": {
+  "answer": "Catwoman",
+  "matched": "Catwoman",
+  "via": "Catwoman",
+  "id": 165
+ },
+ "thanos": {
+  "answer": "Thanos",
+  "matched": "Thanos",
+  "via": "Thanos",
+  "id": 655
+ },
+ "loki": {
+  "answer": "Loki",
+  "matched": "Loki",
+  "via": "Loki",
+  "id": 414
+ },
+ "venom": {
+  "answer": "Venom",
+  "matched": "Venom",
+  "via": "Venom",
+  "id": 687
+ },
+ "black-widow": {
+  "answer": "Black Widow",
+  "matched": "Black Widow",
+  "via": "Black Widow",
+  "id": 107
+ },
+ "storm": {
+  "answer": "Storm",
+  "matched": "Storm",
+  "via": "Storm",
+  "id": 638
+ },
+ "groot": {
+  "answer": "Groot",
+  "matched": "Groot",
+  "via": "Groot",
+  "id": 303
+ },
+ "robin": {
+  "answer": "Robin",
+  "matched": "Robin",
+  "via": "pinned #561",
+  "id": 561
+ },
+ "supergirl": {
+  "answer": "Supergirl",
+  "matched": "Supergirl",
+  "via": "Supergirl",
+  "id": 643
+ },
+ "doctor-strange": {
+  "answer": "Doctor Strange",
+  "matched": "Doctor Strange",
+  "via": "Doctor Strange",
+  "id": 226
+ },
+ "scarlet-witch": {
+  "answer": "Scarlet Witch",
+  "matched": "Scarlet Witch",
+  "via": "Scarlet Witch",
+  "id": 579
+ },
+ "vision": {
+  "answer": "Vision",
+  "matched": "Vision",
+  "via": "Vision",
+  "id": 697
+ },
+ "ant-man": {
+  "answer": "Ant-Man",
+  "matched": "Ant-Man",
+  "via": "Ant-Man",
+  "id": 30
+ },
+ "the-wasp": {
+  "answer": "The Wasp",
+  "matched": "Wasp",
+  "via": "Wasp",
+  "id": 708
+ },
+ "falcon": {
+  "answer": "Falcon",
+  "matched": "Falcon",
+  "via": "Falcon",
+  "id": 251
+ },
+ "winter-soldier": {
+  "answer": "Winter Soldier",
+  "matched": "Winter Soldier",
+  "via": "Winter Soldier",
+  "id": 714
+ },
+ "war-machine": {
+  "answer": "War Machine",
+  "matched": "War Machine",
+  "via": "War Machine",
+  "id": 703
+ },
+ "hawkeye": {
+  "answer": "Hawkeye",
+  "matched": "Hawkeye",
+  "via": "Hawkeye",
+  "id": 313
+ },
+ "star-lord": {
+  "answer": "Star-Lord",
+  "matched": "Star-Lord",
+  "via": "Star-Lord",
+  "id": 630
+ },
+ "gamora": {
+  "answer": "Gamora",
+  "matched": "Gamora",
+  "via": "Gamora",
+  "id": 275
+ },
+ "rocket-raccoon": {
+  "answer": "Rocket Raccoon",
+  "matched": "Rocket Raccoon",
+  "via": "Rocket Raccoon",
+  "id": 566
+ },
+ "drax": {
+  "answer": "Drax",
+  "matched": "Drax the Destroyer",
+  "via": "Drax the Destroyer",
+  "id": 234
+ },
+ "nebula": {
+  "answer": "Nebula",
+  "matched": "Nebula",
+  "via": "Nebula",
+  "id": 487
+ },
+ "daredevil": {
+  "answer": "Daredevil",
+  "matched": "Daredevil",
+  "via": "Daredevil",
+  "id": 201
+ },
+ "the-punisher": {
+  "answer": "The Punisher",
+  "matched": "Punisher",
+  "via": "Punisher",
+  "id": 530
+ },
+ "ghost-rider": {
+  "answer": "Ghost Rider",
+  "matched": "Ghost Rider",
+  "via": "Ghost Rider",
+  "id": 280
+ },
+ "silver-surfer": {
+  "answer": "Silver Surfer",
+  "matched": "Silver Surfer",
+  "via": "Silver Surfer",
+  "id": 598
+ },
+ "cyclops": {
+  "answer": "Cyclops",
+  "matched": "Cyclops",
+  "via": "Cyclops",
+  "id": 196
+ },
+ "jean-grey": {
+  "answer": "Jean Grey",
+  "matched": "Jean Grey",
+  "via": "Jean Grey",
+  "id": 356
+ },
+ "professor-x": {
+  "answer": "Professor X",
+  "matched": "Professor X",
+  "via": "Professor X",
+  "id": 527
+ },
+ "magneto": {
+  "answer": "Magneto",
+  "matched": "Magneto",
+  "via": "Magneto",
+  "id": 423
+ },
+ "beast": {
+  "answer": "Beast",
+  "matched": "Beast",
+  "via": "Beast",
+  "id": 75
+ },
+ "nightcrawler": {
+  "answer": "Nightcrawler",
+  "matched": "Nightcrawler",
+  "via": "Nightcrawler",
+  "id": 490
+ },
+ "rogue": {
+  "answer": "Rogue",
+  "matched": "Rogue",
+  "via": "Rogue",
+  "id": 567
+ },
+ "gambit": {
+  "answer": "Gambit",
+  "matched": "Gambit",
+  "via": "Gambit",
+  "id": 274
+ },
+ "mystique": {
+  "answer": "Mystique",
+  "matched": "Mystique",
+  "via": "Mystique",
+  "id": 480
+ },
+ "colossus": {
+  "answer": "Colossus",
+  "matched": "Colossus",
+  "via": "Colossus",
+  "id": 185
+ },
+ "iceman": {
+  "answer": "Iceman",
+  "matched": "Iceman",
+  "via": "Iceman",
+  "id": 339
+ },
+ "juggernaut": {
+  "answer": "Juggernaut",
+  "matched": "Juggernaut",
+  "via": "Juggernaut",
+  "id": 374
+ },
+ "sabretooth": {
+  "answer": "Sabretooth",
+  "matched": "Sabretooth",
+  "via": "Sabretooth",
+  "id": 570
+ },
+ "mr-fantastic": {
+  "answer": "Mister Fantastic",
+  "matched": "Mister Fantastic",
+  "via": "Mister Fantastic",
+  "id": 456
+ },
+ "invisible-woman": {
+  "answer": "Invisible Woman",
+  "matched": "Invisible Woman",
+  "via": "Invisible Woman",
+  "id": 344
+ },
+ "human-torch": {
+  "answer": "Human Torch",
+  "matched": "Human Torch",
+  "via": "Human Torch",
+  "id": 333
+ },
+ "the-thing": {
+  "answer": "The Thing",
+  "matched": "Thing",
+  "via": "Ben Grimm",
+  "id": 658
+ },
+ "doctor-doom": {
+  "answer": "Doctor Doom",
+  "matched": "Doctor Doom",
+  "via": "Doctor Doom",
+  "id": 222
+ },
+ "green-goblin": {
+  "answer": "Green Goblin",
+  "matched": "Green Goblin",
+  "via": "Green Goblin",
+  "id": 299
+ },
+ "doctor-octopus": {
+  "answer": "Doctor Octopus",
+  "matched": "Doctor Octopus",
+  "via": "Doctor Octopus",
+  "id": 225
+ },
+ "she-hulk": {
+  "answer": "She-Hulk",
+  "matched": "She-Hulk",
+  "via": "She-Hulk",
+  "id": 589
+ },
+ "moon-knight": {
+  "answer": "Moon Knight",
+  "matched": "Moon Knight",
+  "via": "Moon Knight",
+  "id": 470
+ },
+ "blade": {
+  "answer": "Blade",
+  "matched": "Blade",
+  "via": "Blade",
+  "id": 112
+ },
+ "nightwing": {
+  "answer": "Nightwing",
+  "matched": "Nightwing",
+  "via": "Nightwing",
+  "id": 491
+ },
+ "batgirl": {
+  "answer": "Batgirl",
+  "matched": "Batgirl",
+  "via": "Batgirl",
+  "id": 63
+ },
+ "cyborg": {
+  "answer": "Cyborg",
+  "matched": "Cyborg",
+  "via": "Cyborg",
+  "id": 194
+ },
+ "shazam": {
+  "answer": "Shazam",
+  "matched": "Captain Marvel",
+  "via": "pinned #156",
+  "id": 156
+ },
+ "green-arrow": {
+  "answer": "Green Arrow",
+  "matched": "Green Arrow",
+  "via": "Green Arrow",
+  "id": 298
+ },
+ "martian-manhunter": {
+  "answer": "Martian Manhunter",
+  "matched": "Martian Manhunter",
+  "via": "Martian Manhunter",
+  "id": 432
+ },
+ "lex-luthor": {
+  "answer": "Lex Luthor",
+  "matched": "Lex Luthor",
+  "via": "Lex Luthor",
+  "id": 405
+ },
+ "bane": {
+  "answer": "Bane",
+  "matched": "Bane",
+  "via": "Bane",
+  "id": 60
+ },
+ "poison-ivy": {
+  "answer": "Poison Ivy",
+  "matched": "Poison Ivy",
+  "via": "Poison Ivy",
+  "id": 522
+ },
+ "the-riddler": {
+  "answer": "The Riddler",
+  "matched": "Riddler",
+  "via": "Riddler",
+  "id": 558
+ },
+ "two-face": {
+  "answer": "Two-Face",
+  "matched": "Two-Face",
+  "via": "Two-Face",
+  "id": 678
+ },
+ "the-penguin": {
+  "answer": "The Penguin",
+  "matched": "Penguin",
+  "via": "Penguin",
+  "id": 514
+ },
+ "quicksilver": {
+  "answer": "Quicksilver",
+  "matched": "Quicksilver",
+  "via": "Quicksilver",
+  "id": 536
+ },
+ "hellboy": {
+  "answer": "Hellboy",
+  "matched": "Hellboy",
+  "via": "Hellboy",
+  "id": 322
+ },
+ "spawn": {
+  "answer": "Spawn",
+  "matched": "Spawn",
+  "via": "Spawn",
+  "id": 612
+ },
+ "kraven-the-hunter": {
+  "answer": "Kraven the Hunter",
+  "matched": "Kraven the Hunter",
+  "via": "Kraven the Hunter",
+  "id": 395
+ },
+ "mysterio": {
+  "answer": "Mysterio",
+  "matched": "Mysterio",
+  "via": "Mysterio",
+  "id": 479
+ },
+ "electro": {
+  "answer": "Electro",
+  "matched": "Electro",
+  "via": "Electro",
+  "id": 237
+ },
+ "the-vulture": {
+  "answer": "The Vulture",
+  "matched": "Vulture",
+  "via": "Vulture",
+  "id": 701
+ },
+ "carnage": {
+  "answer": "Carnage",
+  "matched": "Carnage",
+  "via": "Carnage",
+  "id": 162
+ },
+ "black-canary": {
+  "answer": "Black Canary",
+  "matched": "Black Canary",
+  "via": "Black Canary",
+  "id": 97
+ },
+ "zatanna": {
+  "answer": "Zatanna",
+  "matched": "Zatanna",
+  "via": "Zatanna",
+  "id": 730
+ },
+ "hawkgirl": {
+  "answer": "Hawkgirl",
+  "matched": "Hawkgirl",
+  "via": "Hawkgirl",
+  "id": 315
+ },
+ "plastic-man": {
+  "answer": "Plastic Man",
+  "matched": "Plastic Man",
+  "via": "Plastic Man",
+  "id": 520
+ },
+ "darkseid": {
+  "answer": "Darkseid",
+  "matched": "Darkseid",
+  "via": "Darkseid",
+  "id": 204
+ },
+ "galactus": {
+  "answer": "Galactus",
+  "matched": "Galactus",
+  "via": "Galactus",
+  "id": 273
+ },
+ "ultron": {
+  "answer": "Ultron",
+  "matched": "Ultron",
+  "via": "Ultron",
+  "id": 680
+ },
+ "red-skull": {
+  "answer": "Red Skull",
+  "matched": "Red Skull",
+  "via": "Red Skull",
+  "id": 550
+ },
+ "kingpin": {
+  "answer": "Kingpin",
+  "matched": "Kingpin",
+  "via": "Kingpin",
+  "id": 391
+ },
+ "the-atom": {
+  "answer": "The Atom",
+  "matched": "Atom II",
+  "via": "pinned #53",
+  "id": 53
+ },
+ "swamp-thing": {
+  "answer": "Swamp Thing",
+  "matched": "Swamp Thing",
+  "via": "Swamp Thing",
+  "id": 645
+ },
+ "john-constantine": {
+  "answer": "John Constantine",
+  "matched": "John Constantine",
+  "via": "John Constantine",
+  "id": 367
+ },
+ "silk": {
+  "answer": "Silk",
+  "matched": "Silk",
+  "via": "Silk",
+  "id": 595
+ },
+ "jessica-jones": {
+  "answer": "Jessica Jones",
+  "matched": "Jessica Jones",
+  "via": "Jessica Jones",
+  "id": 361
+ },
+ "luke-cage": {
+  "answer": "Luke Cage",
+  "matched": "Luke Cage",
+  "via": "Luke Cage",
+  "id": 416
+ },
+ "iron-fist": {
+  "answer": "Iron Fist",
+  "matched": "Iron Fist",
+  "via": "Iron Fist",
+  "id": 345
+ },
+ "nova": {
+  "answer": "Nova",
+  "matched": "Nova",
+  "via": "pinned #496",
+  "id": 496
+ },
+ "beta-ray-bill": {
+  "answer": "Beta Ray Bill",
+  "matched": "Beta Ray Bill",
+  "via": "Beta Ray Bill",
+  "id": 79
+ },
+ "etrigan": {
+  "answer": "Etrigan",
+  "matched": "Etrigan",
+  "via": "Etrigan",
+  "id": 246
+ },
+ "sentry": {
+  "answer": "Sentry",
+  "matched": "Sentry",
+  "via": "Sentry",
+  "id": 583
+ }
+}

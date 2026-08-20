@@ -1,0 +1,782 @@
+{
+ "mickey-mouse": {
+  "answer": "Mickey Mouse",
+  "matched": "Mickey Mouse",
+  "via": "Mickey Mouse"
+ },
+ "minnie-mouse": {
+  "answer": "Minnie Mouse",
+  "matched": "Minnie Mouse",
+  "via": "Minnie Mouse"
+ },
+ "donald-duck": {
+  "answer": "Donald Duck",
+  "matched": "Donald Duck",
+  "via": "Donald Duck"
+ },
+ "goofy": {
+  "answer": "Goofy",
+  "matched": "Goofy",
+  "via": "Goofy"
+ },
+ "pluto": {
+  "answer": "Pluto",
+  "matched": "Pluto",
+  "via": "Pluto"
+ },
+ "simba": {
+  "answer": "Simba",
+  "matched": "Simba",
+  "via": "Simba"
+ },
+ "mufasa": {
+  "answer": "Mufasa",
+  "matched": "Mufasa",
+  "via": "Mufasa"
+ },
+ "scar": {
+  "answer": "Scar",
+  "matched": "Scar",
+  "via": "Scar"
+ },
+ "elsa": {
+  "answer": "Elsa",
+  "matched": "Elsa",
+  "via": "Elsa"
+ },
+ "anna": {
+  "answer": "Anna",
+  "matched": "Anna",
+  "via": "Anna"
+ },
+ "olaf": {
+  "answer": "Olaf",
+  "matched": "Olaf",
+  "via": "Olaf"
+ },
+ "ariel": {
+  "answer": "Ariel",
+  "matched": "Ariel",
+  "via": "Ariel"
+ },
+ "belle": {
+  "answer": "Belle",
+  "matched": "Belle",
+  "via": "Belle"
+ },
+ "cinderella": {
+  "answer": "Cinderella",
+  "matched": "Cinderella (character)",
+  "via": "Cinderella (character)"
+ },
+ "snow-white": {
+  "answer": "Snow White",
+  "matched": "Snow White",
+  "via": "Snow White"
+ },
+ "aurora": {
+  "answer": "Aurora",
+  "matched": "Aurora",
+  "via": "Aurora"
+ },
+ "jasmine": {
+  "answer": "Jasmine",
+  "matched": "Jasmine",
+  "via": "Jasmine"
+ },
+ "aladdin": {
+  "answer": "Aladdin",
+  "matched": "Aladdin (character)",
+  "via": "Aladdin (character)"
+ },
+ "genie": {
+  "answer": "Genie",
+  "matched": "Genie",
+  "via": "Genie"
+ },
+ "moana": {
+  "answer": "Moana",
+  "matched": "Moana (character)",
+  "via": "Moana (character)"
+ },
+ "maui": {
+  "answer": "Maui",
+  "matched": "Maui",
+  "via": "Maui"
+ },
+ "woody": {
+  "answer": "Woody",
+  "matched": "Woody",
+  "via": "Woody"
+ },
+ "buzz-lightyear": {
+  "answer": "Buzz Lightyear",
+  "matched": "Buzz Lightyear",
+  "via": "Buzz Lightyear"
+ },
+ "stitch": {
+  "answer": "Stitch",
+  "matched": "Stitch",
+  "via": "Stitch"
+ },
+ "winnie-the-pooh": {
+  "answer": "Winnie the Pooh",
+  "matched": "Winnie the Pooh",
+  "via": "Winnie the Pooh"
+ },
+ "tigger": {
+  "answer": "Tigger",
+  "matched": "Tigger",
+  "via": "Tigger"
+ },
+ "eeyore": {
+  "answer": "Eeyore",
+  "matched": "Eeyore",
+  "via": "Eeyore"
+ },
+ "dumbo": {
+  "answer": "Dumbo",
+  "matched": "Dumbo (character)",
+  "via": "Dumbo (character)"
+ },
+ "bambi": {
+  "answer": "Bambi",
+  "matched": "Bambi (character)",
+  "via": "Bambi (character)"
+ },
+ "pinocchio": {
+  "answer": "Pinocchio",
+  "matched": "Pinocchio (character)",
+  "via": "Pinocchio (character)"
+ },
+ "peter-pan": {
+  "answer": "Peter Pan",
+  "matched": "Peter Pan (character)",
+  "via": "Peter Pan (character)"
+ },
+ "tinker-bell": {
+  "answer": "Tinker Bell",
+  "matched": "Tinker Bell",
+  "via": "Tinker Bell"
+ },
+ "captain-hook": {
+  "answer": "Captain Hook",
+  "matched": "Captain Hook",
+  "via": "Captain Hook"
+ },
+ "maleficent": {
+  "answer": "Maleficent",
+  "matched": "Maleficent",
+  "via": "Maleficent"
+ },
+ "ursula": {
+  "answer": "Ursula",
+  "matched": "Ursula",
+  "via": "Ursula"
+ },
+ "cruella-de-vil": {
+  "answer": "Cruella de Vil",
+  "matched": "Cruella De Vil",
+  "via": "Cruella de Vil"
+ },
+ "jafar": {
+  "answer": "Jafar",
+  "matched": "Jafar",
+  "via": "Jafar"
+ },
+ "mike-wazowski": {
+  "answer": "Mike Wazowski",
+  "matched": "Mike Wazowski",
+  "via": "Mike Wazowski"
+ },
+ "sulley": {
+  "answer": "Sulley",
+  "matched": "James P. Sullivan",
+  "via": "Sulley"
+ },
+ "nemo": {
+  "answer": "Nemo",
+  "matched": "Nemo",
+  "via": "Nemo"
+ },
+ "dory": {
+  "answer": "Dory",
+  "matched": "Dory",
+  "via": "Dory"
+ },
+ "lightning-mcqueen": {
+  "answer": "Lightning McQueen",
+  "matched": "Lightning McQueen",
+  "via": "Lightning McQueen"
+ },
+ "wall-e": {
+  "answer": "WALL-E",
+  "matched": "WALL-E",
+  "via": "WALL-E"
+ },
+ "baymax": {
+  "answer": "Baymax",
+  "matched": "Baymax",
+  "via": "Baymax"
+ },
+ "mulan": {
+  "answer": "Mulan",
+  "matched": "Mulan",
+  "via": "Mulan"
+ },
+ "rapunzel": {
+  "answer": "Rapunzel",
+  "matched": "Rapunzel",
+  "via": "Rapunzel"
+ },
+ "tiana": {
+  "answer": "Tiana",
+  "matched": "Tiana",
+  "via": "Tiana"
+ },
+ "hercules": {
+  "answer": "Hercules",
+  "matched": "Hercules (character)",
+  "via": "Hercules (character)"
+ },
+ "gaston": {
+  "answer": "Gaston",
+  "matched": "Gaston",
+  "via": "Gaston"
+ },
+ "daisy-duck": {
+  "answer": "Daisy Duck",
+  "matched": "Daisy Duck",
+  "via": "Daisy Duck"
+ },
+ "scrooge-mcduck": {
+  "answer": "Scrooge McDuck",
+  "matched": "Scrooge McDuck",
+  "via": "Scrooge McDuck"
+ },
+ "chip": {
+  "answer": "Chip",
+  "matched": "Chip (disambiguation)",
+  "via": "Chip"
+ },
+ "dale": {
+  "answer": "Dale",
+  "matched": "Chip and Dale",
+  "via": "Dale"
+ },
+ "jiminy-cricket": {
+  "answer": "Jiminy Cricket",
+  "matched": "Jiminy Cricket",
+  "via": "Jiminy Cricket"
+ },
+ "sebastian": {
+  "answer": "Sebastian",
+  "matched": "Sebastian",
+  "via": "Sebastian"
+ },
+ "flounder": {
+  "answer": "Flounder",
+  "matched": "Flounder",
+  "via": "Flounder"
+ },
+ "timon": {
+  "answer": "Timon",
+  "matched": "Timon",
+  "via": "Timon"
+ },
+ "pumbaa": {
+  "answer": "Pumbaa",
+  "matched": "Pumbaa",
+  "via": "Pumbaa"
+ },
+ "zazu": {
+  "answer": "Zazu",
+  "matched": "Zazu",
+  "via": "Zazu"
+ },
+ "abu": {
+  "answer": "Abu",
+  "matched": "Abu",
+  "via": "Abu"
+ },
+ "iago": {
+  "answer": "Iago",
+  "matched": "Iago",
+  "via": "Iago"
+ },
+ "mushu": {
+  "answer": "Mushu",
+  "matched": "Mushu",
+  "via": "Mushu"
+ },
+ "kristoff": {
+  "answer": "Kristoff",
+  "matched": "Kristoff",
+  "via": "Kristoff"
+ },
+ "sven": {
+  "answer": "Sven",
+  "matched": "Sven",
+  "via": "Sven"
+ },
+ "pascal": {
+  "answer": "Pascal",
+  "matched": "Pascal",
+  "via": "Pascal"
+ },
+ "lilo": {
+  "answer": "Lilo",
+  "matched": "Lilo Pelekai",
+  "via": "Lilo"
+ },
+ "jessie": {
+  "answer": "Jessie",
+  "matched": "Jessie",
+  "via": "Jessie"
+ },
+ "mr-potato-head": {
+  "answer": "Mr. Potato Head",
+  "matched": "Mr. Potato Head",
+  "via": "Mr. Potato Head"
+ },
+ "rex": {
+  "answer": "Rex",
+  "matched": "Rex",
+  "via": "Rex"
+ },
+ "hamm": {
+  "answer": "Hamm",
+  "matched": "Hamm",
+  "via": "Hamm"
+ },
+ "boo": {
+  "answer": "Boo",
+  "matched": "Boo",
+  "via": "Boo"
+ },
+ "randall": {
+  "answer": "Randall Boggs",
+  "matched": "Randall Boggs",
+  "via": "Randall Boggs"
+ },
+ "marlin": {
+  "answer": "Marlin",
+  "matched": "Marlin",
+  "via": "Marlin"
+ },
+ "crush": {
+  "answer": "Crush",
+  "matched": "Crush",
+  "via": "Crush"
+ },
+ "remy": {
+  "answer": "Remy",
+  "matched": "Remy",
+  "via": "Remy"
+ },
+ "mater": {
+  "answer": "Mater",
+  "matched": "Mater",
+  "via": "Mater"
+ },
+ "eve": {
+  "answer": "EVE",
+  "matched": "EVE",
+  "via": "EVE"
+ },
+ "carl-fredricksen": {
+  "answer": "Carl Fredricksen",
+  "matched": "Carl Fredricksen",
+  "via": "Carl Fredricksen"
+ },
+ "dug": {
+  "answer": "Dug",
+  "matched": "Dug",
+  "via": "Dug"
+ },
+ "russell": {
+  "answer": "Russell",
+  "matched": "Russell",
+  "via": "Russell"
+ },
+ "joy": {
+  "answer": "Joy",
+  "matched": "Joy",
+  "via": "Joy"
+ },
+ "sadness": {
+  "answer": "Sadness",
+  "matched": "Sadness",
+  "via": "Sadness"
+ },
+ "judy-hopps": {
+  "answer": "Judy Hopps",
+  "matched": "Judy Hopps",
+  "via": "Judy Hopps"
+ },
+ "nick-wilde": {
+  "answer": "Nick Wilde",
+  "matched": "Nick Wilde",
+  "via": "Nick Wilde"
+ },
+ "mr-incredible": {
+  "answer": "Mr. Incredible",
+  "matched": "Mr. Incredible",
+  "via": "Mr. Incredible"
+ },
+ "elastigirl": {
+  "answer": "Elastigirl",
+  "matched": "Elastigirl",
+  "via": "Elastigirl"
+ },
+ "frozone": {
+  "answer": "Frozone",
+  "matched": "Frozone",
+  "via": "Frozone"
+ },
+ "edna-mode": {
+  "answer": "Edna Mode",
+  "matched": "Edna Mode",
+  "via": "Edna Mode"
+ },
+ "miguel": {
+  "answer": "Miguel Rivera",
+  "matched": "Miguel Rivera",
+  "via": "Miguel Rivera"
+ },
+ "mirabel": {
+  "answer": "Mirabel Madrigal",
+  "matched": "Mirabel Madrigal",
+  "via": "Mirabel Madrigal"
+ },
+ "bruno": {
+  "answer": "Bruno Madrigal",
+  "matched": "Bruno Madrigal",
+  "via": "Bruno Madrigal"
+ },
+ "wreck-it-ralph": {
+  "answer": "Wreck-It Ralph",
+  "matched": "Wreck-It Ralph",
+  "via": "Wreck-It Ralph"
+ },
+ "vanellope": {
+  "answer": "Vanellope von Schweetz",
+  "matched": "Vanellope von Schweetz",
+  "via": "Vanellope von Schweetz"
+ },
+ "baloo": {
+  "answer": "Baloo",
+  "matched": "Baloo",
+  "via": "Baloo"
+ },
+ "mowgli": {
+  "answer": "Mowgli",
+  "matched": "Mowgli",
+  "via": "Mowgli"
+ },
+ "shere-khan": {
+  "answer": "Shere Khan",
+  "matched": "Shere Khan",
+  "via": "Shere Khan"
+ },
+ "robin-hood": {
+  "answer": "Robin Hood",
+  "matched": "Robin Hood (character)",
+  "via": "Robin Hood (character)"
+ },
+ "alice": {
+  "answer": "Alice",
+  "matched": "Alice",
+  "via": "Alice"
+ },
+ "cheshire-cat": {
+  "answer": "Cheshire Cat",
+  "matched": "Cheshire Cat",
+  "via": "Cheshire Cat"
+ },
+ "mad-hatter": {
+  "answer": "Mad Hatter",
+  "matched": "Mad Hatter",
+  "via": "Mad Hatter"
+ },
+ "queen-of-hearts": {
+  "answer": "Queen of Hearts",
+  "matched": "Queen of Hearts",
+  "via": "Queen of Hearts"
+ },
+ "evil-queen": {
+  "answer": "Evil Queen",
+  "matched": "Evil Queen",
+  "via": "Evil Queen"
+ },
+ "hades": {
+  "answer": "Hades",
+  "matched": "Hades",
+  "via": "Hades"
+ },
+ "dr-facilier": {
+  "answer": "Dr. Facilier",
+  "matched": "Dr. Facilier",
+  "via": "Dr. Facilier"
+ },
+ "mother-gothel": {
+  "answer": "Mother Gothel",
+  "matched": "Mother Gothel",
+  "via": "Mother Gothel"
+ },
+ "yzma": {
+  "answer": "Yzma",
+  "matched": "Yzma",
+  "via": "Yzma"
+ },
+ "kronk": {
+  "answer": "Kronk",
+  "matched": "Kronk",
+  "via": "Kronk"
+ },
+ "kuzco": {
+  "answer": "Kuzco",
+  "matched": "Kuzco",
+  "via": "Kuzco"
+ },
+ "frollo": {
+  "answer": "Claude Frollo",
+  "matched": "Claude Frollo",
+  "via": "Claude Frollo"
+ },
+ "quasimodo": {
+  "answer": "Quasimodo",
+  "matched": "Quasimodo",
+  "via": "Quasimodo"
+ },
+ "esmeralda": {
+  "answer": "Esmeralda",
+  "matched": "Esmeralda",
+  "via": "Esmeralda"
+ },
+ "pocahontas": {
+  "answer": "Pocahontas",
+  "matched": "Pocahontas (character)",
+  "via": "Pocahontas (character)"
+ },
+ "tarzan": {
+  "answer": "Tarzan",
+  "matched": "Tarzan (character)",
+  "via": "Tarzan (character)"
+ },
+ "lady": {
+  "answer": "Lady",
+  "matched": "Lady",
+  "via": "Lady"
+ },
+ "tramp": {
+  "answer": "Tramp",
+  "matched": "Tramp",
+  "via": "Tramp"
+ },
+ "pongo": {
+  "answer": "Pongo",
+  "matched": "Pongo",
+  "via": "Pongo"
+ },
+ "merida": {
+  "answer": "Merida",
+  "matched": "Merida",
+  "via": "Merida"
+ },
+ "raya": {
+  "answer": "Raya",
+  "matched": "Raya",
+  "via": "Raya"
+ },
+ "mickey-sorcerer": {
+  "answer": "Sorcerer Mickey",
+  "matched": "Mickey Mouse",
+  "via": "Sorcerer Mickey"
+ },
+ "yen-sid": {
+  "answer": "Yen Sid",
+  "matched": "Yen Sid",
+  "via": "Yen Sid"
+ },
+ "chernabog": {
+  "answer": "Chernabog",
+  "matched": "Chernabog",
+  "via": "Chernabog"
+ },
+ "oogie-boogie": {
+  "answer": "Oogie Boogie",
+  "matched": "Oogie Boogie",
+  "via": "Oogie Boogie"
+ },
+ "jack-skellington": {
+  "answer": "Jack Skellington",
+  "matched": "Jack Skellington",
+  "via": "Jack Skellington"
+ },
+ "sally": {
+  "answer": "Sally",
+  "matched": "Sally",
+  "via": "Sally"
+ },
+ "madam-mim": {
+  "answer": "Madam Mim",
+  "matched": "Madam Mim",
+  "via": "Madam Mim"
+ },
+ "merlin": {
+  "answer": "Merlin",
+  "matched": "Merlin",
+  "via": "Merlin"
+ },
+ "ratcliffe": {
+  "answer": "Governor Ratcliffe",
+  "matched": "Governor Ratcliffe",
+  "via": "Governor Ratcliffe"
+ },
+ "shan-yu": {
+  "answer": "Shan Yu",
+  "matched": "Shan Yu",
+  "via": "Shan Yu"
+ },
+ "lady-tremaine": {
+  "answer": "Lady Tremaine",
+  "matched": "Lady Tremaine",
+  "via": "Lady Tremaine"
+ },
+ "prince-john": {
+  "answer": "Prince John",
+  "matched": "Prince John",
+  "via": "Prince John"
+ },
+ "lotso": {
+  "answer": "Lots-o'-Huggin' Bear",
+  "matched": "Lots-o'-Huggin' Bear",
+  "via": "Lots-o'-Huggin' Bear"
+ },
+ "syndrome": {
+  "answer": "Syndrome",
+  "matched": "Syndrome",
+  "via": "Syndrome"
+ },
+ "hector": {
+  "answer": "Héctor",
+  "matched": "Héctor",
+  "via": "Héctor"
+ },
+ "kida": {
+  "answer": "Kida",
+  "matched": "Kida Nedakh",
+  "via": "Kida"
+ },
+ "milo-thatch": {
+  "answer": "Milo Thatch",
+  "matched": "Milo Thatch",
+  "via": "Milo Thatch"
+ },
+ "bolt": {
+  "answer": "Bolt",
+  "matched": "Bolt (character)",
+  "via": "Bolt (character)"
+ },
+ "meeko": {
+  "answer": "Meeko",
+  "matched": "Meeko",
+  "via": "Meeko"
+ },
+ "figaro": {
+  "answer": "Figaro",
+  "matched": "Figaro",
+  "via": "Figaro"
+ },
+ "gus": {
+  "answer": "Gus",
+  "matched": "Gus",
+  "via": "Gus"
+ },
+ "kaa": {
+  "answer": "Kaa",
+  "matched": "Kaa",
+  "via": "Kaa"
+ },
+ "king-louie": {
+  "answer": "King Louie",
+  "matched": "King Louie",
+  "via": "King Louie"
+ },
+ "thumper": {
+  "answer": "Thumper",
+  "matched": "Thumper",
+  "via": "Thumper"
+ },
+ "flower": {
+  "answer": "Flower",
+  "matched": "Flower",
+  "via": "Flower"
+ },
+ "te-fiti": {
+  "answer": "Te Fiti",
+  "matched": "Te Fiti",
+  "via": "Te Fiti"
+ },
+ "heihei": {
+  "answer": "Heihei",
+  "matched": "Heihei",
+  "via": "Heihei"
+ },
+ "pua": {
+  "answer": "Pua",
+  "matched": "Pua (Moana)",
+  "via": "Pua"
+ },
+ "luisa": {
+  "answer": "Luisa Madrigal",
+  "matched": "Luisa Madrigal",
+  "via": "Luisa Madrigal"
+ },
+ "isabela": {
+  "answer": "Isabela Madrigal",
+  "matched": "Isabela Madrigal",
+  "via": "Isabela Madrigal"
+ },
+ "namaari": {
+  "answer": "Namaari",
+  "matched": "Namaari",
+  "via": "Namaari"
+ },
+ "sisu": {
+  "answer": "Sisu",
+  "matched": "Sisu",
+  "via": "Sisu"
+ },
+ "asha": {
+  "answer": "Asha",
+  "matched": "Asha",
+  "via": "Asha"
+ },
+ "anger": {
+  "answer": "Anger",
+  "matched": "Anger",
+  "via": "Anger"
+ },
+ "bing-bong": {
+  "answer": "Bing Bong",
+  "matched": "Bing Bong",
+  "via": "Bing Bong"
+ },
+ "roz": {
+  "answer": "Roz",
+  "matched": "Roz",
+  "via": "Roz"
+ },
+ "colette": {
+  "answer": "Colette Tatou",
+  "matched": "Colette Tatou",
+  "via": "Colette Tatou"
+ },
+ "chip-and-dale": {
+  "answer": "Chip and Dale",
+  "matched": "Chip and Dale",
+  "via": "Chip and Dale"
+ }
+}

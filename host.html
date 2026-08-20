@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dawg House Duel — Host</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/host.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23deff66'/><text y='74' x='50' text-anchor='middle' font-size='64' font-family='Arial Black,sans-serif' fill='%2332328d'>H</text></svg>">
+</head>
+<body>
+
+<header class="hdr">
+  <img class="hdr__logo" src="assets/brand/logo.png" alt="Dawg House" onerror="this.remove()">
+  <span class="hdr__tag">HOST</span>
+  <span class="hdr__cat" id="cat">—</span>
+  <span class="hdr__count" id="count"></span>
+</header>
+
+<div class="clocks">
+  <div class="cl" id="cl0"><b id="cl0Name">—</b><span id="cl0Clock">45.0</span><i>CONTROL</i></div>
+  <div class="cl" id="cl1"><b id="cl1Name">—</b><span id="cl1Clock">45.0</span><i>CONTROL</i></div>
+</div>
+
+<main class="card">
+  <div class="card__thumbwrap"><img class="card__thumb" id="thumb" alt=""></div>
+  <div class="card__body">
+    <p class="card__eyebrow">ON SCREEN NOW — THE ANSWER IS</p>
+    <h1 class="card__answer" id="answer">—</h1>
+    <p class="card__alts" id="alts"></p>
+  </div>
+</main>
+
+<div class="acts">
+  <button class="act act--yes" data-cmd="correct">
+    <b>CORRECT</b><i>hands control to the other dawg</i><kbd>Enter</kbd>
+  </button>
+  <div class="acts__row">
+    <button class="act act--no" data-cmd="wrong"><b>WRONG <em id="wrongCost">−3s</em></b><i>same picture, same turn</i><kbd>X</kbd></button>
+    <button class="act act--pass" data-cmd="pass"><b>PASS <em id="passCost">−2s</em></b><i>new picture, same turn</i><kbd>Space</kbd></button>
+  </div>
+  <div class="acts__row acts__row--minor">
+    <button class="act act--ghost" data-cmd="skip"><b>SKIP PICTURE</b><kbd>S</kbd></button>
+    <button class="act act--ghost" data-cmd="pause"><b id="pauseLabel">PAUSE</b><kbd>P</kbd></button>
+  </div>
+</div>
+
+<footer class="foot">
+  <span class="foot__next">NEXT UP: <b id="next">—</b></span>
+  <span class="foot__link" id="status">waiting for the duel screen…</span>
+</footer>
+
+<script src="js/host.js"></script>
+</body>
+</html>
