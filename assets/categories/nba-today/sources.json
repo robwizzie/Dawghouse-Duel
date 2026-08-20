@@ -1,0 +1,1034 @@
+{
+ "lebron-james": {
+  "answer": "LeBron James",
+  "matched": "LeBron James",
+  "via": "LeBron James",
+  "file": "LeBron James (51959977144) (cropped2).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "stephen-curry": {
+  "answer": "Stephen Curry",
+  "matched": "Stephen Curry",
+  "via": "Stephen Curry",
+  "file": "Stephen Curry, Olympic Games 2024 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Clément Bardot"
+ },
+ "kevin-durant": {
+  "answer": "Kevin Durant",
+  "matched": "Kevin Durant",
+  "via": "Kevin Durant",
+  "file": "Kevin Durant, Paris 2024 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Clément Bardot"
+ },
+ "giannis-antetokounmpo": {
+  "answer": "Giannis Antetokounmpo",
+  "matched": "Giannis Antetokounmpo",
+  "via": "Giannis Antetokounmpo",
+  "file": "Giannis Antetokounmpo (51915153421) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "nikola-jokic": {
+  "answer": "Nikola Jokić",
+  "matched": "Nikola Jokić",
+  "via": "Nikola Jokić",
+  "file": "Nikola Jokic free throw (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "luka-doncic": {
+  "answer": "Luka Dončić",
+  "matched": "Luka Dončić",
+  "via": "Luka Dončić",
+  "file": "Luka Doncic (51914951721) (cropped1).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "joel-embiid": {
+  "answer": "Joel Embiid",
+  "matched": "Joel Embiid",
+  "via": "Joel Embiid",
+  "file": "Joel Embiid 2019.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "jayson-tatum": {
+  "answer": "Jayson Tatum",
+  "matched": "Jayson Tatum",
+  "via": "Jayson Tatum",
+  "file": "Celtics at Wizards 2024-12-044 (cropped 2).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Hameltion"
+ },
+ "anthony-edwards": {
+  "answer": "Anthony Edwards",
+  "matched": "Anthony Edwards (basketball)",
+  "via": "Anthony Edwards (basketball)",
+  "file": "Anthony Edwards Argentina v Egypt 7 July 2026-069 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Bryan Berlin"
+ },
+ "victor-wembanyama": {
+  "answer": "Victor Wembanyama",
+  "matched": "Victor Wembanyama",
+  "via": "Victor Wembanyama",
+  "file": "Victor Wembanyama San Antonio Spurs 2024.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Frenchieinportland"
+ },
+ "shai-gilgeous-alexander": {
+  "answer": "Shai Gilgeous-Alexander",
+  "matched": "Shai Gilgeous-Alexander",
+  "via": "Shai Gilgeous-Alexander",
+  "file": "2023-08-09 Deutschland gegen Kanada (Basketball-Länderspiel) by Sandro Halank–109.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Sandro Halank, Wikimedia Commons"
+ },
+ "jimmy-butler": {
+  "answer": "Jimmy Butler",
+  "matched": "Jimmy Butler",
+  "via": "Jimmy Butler",
+  "file": "CES 2026 - Jimmy Butler 01 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Xuthoria"
+ },
+ "damian-lillard": {
+  "answer": "Damian Lillard",
+  "matched": "Damian Lillard",
+  "via": "Damian Lillard",
+  "file": "Damian Lillard (2021) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "kawhi-leonard": {
+  "answer": "Kawhi Leonard",
+  "matched": "Kawhi Leonard",
+  "via": "Kawhi Leonard",
+  "file": "Kawhi Leonard (7440607) (cropped).jpg",
+  "licence": "Public domain",
+  "by": "U.S. Marine Corps photo by Lance Cpl. Mhecaela J. Watts"
+ },
+ "anthony-davis": {
+  "answer": "Anthony Davis",
+  "matched": "Anthony Davis",
+  "via": "Anthony Davis",
+  "file": "Anthony Davis pre-game (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "devin-booker": {
+  "answer": "Devin Booker",
+  "matched": "Devin Booker",
+  "via": "Devin Booker",
+  "file": "Devin Booker, Olympic Games 2024 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Clément Bardot"
+ },
+ "kyrie-irving": {
+  "answer": "Kyrie Irving",
+  "matched": "Kyrie Irving",
+  "via": "Kyrie Irving",
+  "file": "Kyrie Irving (51830909437) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "james-harden": {
+  "answer": "James Harden",
+  "matched": "James Harden",
+  "via": "James Harden",
+  "file": "Harden dribbling midcourt, Cavaliers vs Nets on January 17, 2022 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "ja-morant": {
+  "answer": "Ja Morant",
+  "matched": "Ja Morant",
+  "via": "Ja Morant",
+  "file": "Ja Morant 2021.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "donovan-mitchell": {
+  "answer": "Donovan Mitchell",
+  "matched": "Donovan Mitchell",
+  "via": "Donovan Mitchell",
+  "file": "Donovan Mitchell Pregame.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "trae-young": {
+  "answer": "Trae Young",
+  "matched": "Trae Young",
+  "via": "Trae Young",
+  "file": "Trae Young (2022 All-Star Weekend) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "zion-williamson": {
+  "answer": "Zion Williamson",
+  "matched": "Zion Williamson",
+  "via": "Zion Williamson",
+  "file": "Zion Williamson 2020 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "russell-westbrook": {
+  "answer": "Russell Westbrook",
+  "matched": "Russell Westbrook",
+  "via": "Russell Westbrook",
+  "file": "Russell Westbrook (March 21, 2022) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "chris-paul": {
+  "answer": "Chris Paul",
+  "matched": "Chris Paul",
+  "via": "Chris Paul",
+  "file": "Chris Paul (2022 All-Star Weekend) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "klay-thompson": {
+  "answer": "Klay Thompson",
+  "matched": "Klay Thompson",
+  "via": "Klay Thompson",
+  "file": "Klay Thompson (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Hanover, MD, USA"
+ },
+ "draymond-green": {
+  "answer": "Draymond Green",
+  "matched": "Draymond Green",
+  "via": "Draymond Green",
+  "file": "Draymond Green 2022.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "jaylen-brown": {
+  "answer": "Jaylen Brown",
+  "matched": "Jaylen Brown",
+  "via": "Jaylen Brown",
+  "file": "Celtics at Wizards 2024-12-015 (cropped) (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Hameltion"
+ },
+ "paul-george": {
+  "answer": "Paul George",
+  "matched": "Paul George",
+  "via": "Paul George",
+  "file": "1 paul george 2026 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Chensiyuan"
+ },
+ "tyrese-haliburton": {
+  "answer": "Tyrese Haliburton",
+  "matched": "Tyrese Haliburton",
+  "via": "Tyrese Haliburton",
+  "file": "1 tyrese haliburton 2025 (cropped 2).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Chensiyuan"
+ },
+ "jalen-brunson": {
+  "answer": "Jalen Brunson",
+  "matched": "Jalen Brunson",
+  "via": "Jalen Brunson",
+  "file": "Jalen Brunson 2023 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "karl-anthony-towns": {
+  "answer": "Karl-Anthony Towns",
+  "matched": "Karl-Anthony Towns",
+  "via": "Karl-Anthony Towns",
+  "file": "Karl-Anthony Towns (51914283512) (cropped) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "bam-adebayo": {
+  "answer": "Bam Adebayo",
+  "matched": "Bam Adebayo",
+  "via": "Bam Adebayo",
+  "file": "Bam Adebayo (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "File:Bam Adebayo.jpg: Joe Glorioso derivative work: Shakeydeal33"
+ },
+ "domantas-sabonis": {
+  "answer": "Domantas Sabonis",
+  "matched": "Domantas Sabonis",
+  "via": "Domantas Sabonis",
+  "file": "Domantas Sabonis by Augustas Didzgalvis (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Augustas Didžgalvis"
+ },
+ "pascal-siakam": {
+  "answer": "Pascal Siakam",
+  "matched": "Pascal Siakam",
+  "via": "Pascal Siakam",
+  "file": "1 pascal siakam 2025 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Chensiyuan"
+ },
+ "de-aaron-fox": {
+  "answer": "De'Aaron Fox",
+  "matched": "De'Aaron Fox",
+  "via": "De'Aaron Fox",
+  "file": "De'Aaron Fox (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "NewishIdeas"
+ },
+ "rudy-gobert": {
+  "answer": "Rudy Gobert",
+  "matched": "Rudy Gobert",
+  "via": "Rudy Gobert",
+  "file": "Rudy Gobert.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "jrue-holiday": {
+  "answer": "Jrue Holiday",
+  "matched": "Jrue Holiday",
+  "via": "Jrue Holiday",
+  "file": "Celtics at Wizards 2024-12-021 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Hameltion"
+ },
+ "kristaps-porzingis": {
+  "answer": "Kristaps Porziņģis",
+  "matched": "Kristaps Porziņģis",
+  "via": "Kristaps Porziņģis",
+  "file": "Celtics at Wizards 2024-12-005 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Hameltion"
+ },
+ "lauri-markkanen": {
+  "answer": "Lauri Markkanen",
+  "matched": "Lauri Markkanen",
+  "via": "Lauri Markkanen",
+  "file": "Lauri Markkanen, Cavaliers vs Rockets on December 15, 2021 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "franz-wagner": {
+  "answer": "Franz Wagner",
+  "matched": "Franz Wagner",
+  "via": "Franz Wagner",
+  "file": "2023-08-09 Deutschland gegen Kanada (Basketball-Länderspiel) by Sandro Halank–138.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Sandro Halank, Wikimedia Commons"
+ },
+ "paolo-banchero": {
+  "answer": "Paolo Banchero",
+  "matched": "Paolo Banchero",
+  "via": "Paolo Banchero",
+  "file": "Paolo Banchero.png",
+  "licence": "CC BY 3.0",
+  "by": "Al Ward"
+ },
+ "scottie-barnes": {
+  "answer": "Scottie Barnes",
+  "matched": "Scottie Barnes",
+  "via": "Scottie Barnes",
+  "file": "Scottie Barnes, Wizards vs Raptors on October 12, 2021.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels from District of Columbia, USA"
+ },
+ "cade-cunningham": {
+  "answer": "Cade Cunningham",
+  "matched": "Cade Cunningham",
+  "via": "Cade Cunningham",
+  "file": "1 cade cunningham 2024.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Chensiyuan"
+ },
+ "evan-mobley": {
+  "answer": "Evan Mobley",
+  "matched": "Evan Mobley",
+  "via": "Evan Mobley",
+  "file": "Evan Mobley (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "darius-garland": {
+  "answer": "Darius Garland",
+  "matched": "Darius Garland",
+  "via": "Darius Garland",
+  "file": "Darius Garland 2021-2022.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "DeAndre Patrick"
+ },
+ "tyrese-maxey": {
+  "answer": "Tyrese Maxey",
+  "matched": "Tyrese Maxey",
+  "via": "Tyrese Maxey",
+  "file": "1 tyrese maxey 2026.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Chensiyuan"
+ },
+ "alperen-sengun": {
+  "answer": "Alperen Şengün",
+  "matched": "Alperen Şengün",
+  "via": "Alperen Şengün",
+  "file": "Alperen Şengün 23 Türkiye 20250823 (1).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Zafer"
+ },
+ "chet-holmgren": {
+  "answer": "Chet Holmgren",
+  "matched": "Chet Holmgren",
+  "via": "Chet Holmgren",
+  "file": "Chet Holmgren.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Steve Cheng, Bruin Report Online"
+ },
+ "jalen-williams": {
+  "answer": "Jalen Williams",
+  "matched": "Jalen Williams",
+  "via": "Jalen Williams",
+  "file": "Jalen Williams OKCThunder 2025 NBA Cup (cropped) (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Daiei Onoguchi"
+ },
+ "jalen-green": {
+  "answer": "Jalen Green",
+  "matched": "Jalen Green",
+  "via": "Jalen Green",
+  "file": "Jalen Green 2022 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "mikal-bridges": {
+  "answer": "Mikal Bridges",
+  "matched": "Mikal Bridges",
+  "via": "Mikal Bridges",
+  "file": "Mikal Bridges, April 2024.jpg",
+  "licence": "CC BY 3.0",
+  "by": "Yes Network"
+ },
+ "og-anunoby": {
+  "answer": "OG Anunoby",
+  "matched": "OG Anunoby",
+  "via": "OG Anunoby",
+  "file": "OG Anunoby (41708749222) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison: Flickr, e-mail, Twitter, Instagram, website"
+ },
+ "julius-randle": {
+  "answer": "Julius Randle",
+  "matched": "Julius Randle",
+  "via": "Julius Randle",
+  "file": "Julius Randle with Lakers.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Hanover, MD, USA"
+ },
+ "jamal-murray": {
+  "answer": "Jamal Murray",
+  "matched": "Jamal Murray",
+  "via": "Jamal Murray",
+  "file": "Jamal Murray free throw (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "aaron-gordon": {
+  "answer": "Aaron Gordon",
+  "matched": "Aaron Gordon",
+  "via": "Aaron Gordon",
+  "file": "Aaron Gordon 2019 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Reggie Hildred"
+ },
+ "michael-porter-jr": {
+  "answer": "Michael Porter Jr.",
+  "matched": "Michael Porter Jr.",
+  "via": "Michael Porter Jr.",
+  "file": "Michael Porter Nuggets (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "zach-lavine": {
+  "answer": "Zach LaVine",
+  "matched": "Zach LaVine",
+  "via": "Zach LaVine",
+  "file": "Zach LaVine (2022 All-Star Weekend).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "demar-derozan": {
+  "answer": "DeMar DeRozan",
+  "matched": "DeMar DeRozan",
+  "via": "DeMar DeRozan",
+  "file": "DeMar DeRozan 2022.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "lamelo-ball": {
+  "answer": "LaMelo Ball",
+  "matched": "LaMelo Ball",
+  "via": "LaMelo Ball",
+  "file": "LaMelo Ball (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "brandon-ingram": {
+  "answer": "Brandon Ingram",
+  "matched": "Brandon Ingram",
+  "via": "Brandon Ingram",
+  "file": "Brandon Ingram 2020 (cropped2).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "tyler-herro": {
+  "answer": "Tyler Herro",
+  "matched": "Tyler Herro",
+  "via": "Tyler Herro",
+  "file": "Tyler Herro (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Thomas Savoja"
+ },
+ "jaren-jackson-jr": {
+  "answer": "Jaren Jackson Jr.",
+  "matched": "Jaren Jackson Jr.",
+  "via": "Jaren Jackson Jr.",
+  "file": "Jaren Jackson (51814052094) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "desmond-bane": {
+  "answer": "Desmond Bane",
+  "matched": "Desmond Bane",
+  "via": "Desmond Bane",
+  "file": "Desmond Bane, Magic vs Raptors.png",
+  "licence": "CC BY 4.0",
+  "by": "RJBTS"
+ },
+ "jalen-johnson": {
+  "answer": "Jalen Johnson",
+  "matched": "Jalen Johnson",
+  "via": "Jalen Johnson",
+  "file": "Jalen-Johnson.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Unknown authorUnknown author"
+ },
+ "jarrett-allen": {
+  "answer": "Jarrett Allen",
+  "matched": "Jarrett Allen",
+  "via": "Jarrett Allen",
+  "file": "Jarrett Allen (51657225262) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "myles-turner": {
+  "answer": "Myles Turner",
+  "matched": "Myles Turner",
+  "via": "Myles Turner",
+  "file": "Myles Turner (39916223764) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Hanover, MD, USA"
+ },
+ "jalen-duren": {
+  "answer": "Jalen Duren",
+  "matched": "Jalen Duren",
+  "via": "Jalen Duren",
+  "file": "Jalen Duren Free Throw 01252026 (cropped) 2.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Pikraken"
+ },
+ "nic-claxton": {
+  "answer": "Nic Claxton",
+  "matched": "Nic Claxton",
+  "via": "Nic Claxton",
+  "file": "Nicolas Claxton (49165813553) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost on Flickr"
+ },
+ "jaden-mcdaniels": {
+  "answer": "Jaden McDaniels",
+  "matched": "Jaden McDaniels",
+  "via": "Jaden McDaniels",
+  "file": "Jaden McDaniels 2023 Crawsover Pro-Am 02.png",
+  "licence": "CC BY 3.0",
+  "by": "AWProductions"
+ },
+ "austin-reaves": {
+  "answer": "Austin Reaves",
+  "matched": "Austin Reaves",
+  "via": "Austin Reaves",
+  "file": "Austin Reaves drives.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "norman-powell": {
+  "answer": "Norman Powell",
+  "matched": "Norman Powell",
+  "via": "Norman Powell",
+  "file": "Norman Powell at 2017 Toronto Film Festival.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "GabboT"
+ },
+ "cam-thomas": {
+  "answer": "Cam Thomas",
+  "matched": "Cam Thomas",
+  "via": "Cam Thomas",
+  "file": "Cameron Thomas (51874870188) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "josh-giddey": {
+  "answer": "Josh Giddey",
+  "matched": "Josh Giddey",
+  "via": "Josh Giddey",
+  "file": "Josh Giddey 2022.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "deni-avdija": {
+  "answer": "Deni Avdija",
+  "matched": "Deni Avdija",
+  "via": "Deni Avdija",
+  "file": "Deni Avdija 2022 (52380408867) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels from District of Columbia, USA"
+ },
+ "jalen-suggs": {
+  "answer": "Jalen Suggs",
+  "matched": "Jalen Suggs",
+  "via": "Jalen Suggs",
+  "file": "Jalen Suggs (51821102275) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "anfernee-simons": {
+  "answer": "Anfernee Simons",
+  "matched": "Anfernee Simons",
+  "via": "Anfernee Simons",
+  "file": "AnferneeSimons (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Frenchieinportland"
+ },
+ "coby-white": {
+  "answer": "Coby White",
+  "matched": "Coby White",
+  "via": "Coby White",
+  "file": "White with the Chicago Bulls on January 2022.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "nikola-vucevic": {
+  "answer": "Nikola Vučević",
+  "matched": "Nikola Vučević",
+  "via": "Nikola Vučević",
+  "file": "Nikola Vučević 4 Montenegro 20250823 (5) (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Zafer"
+ },
+ "kyle-kuzma": {
+  "answer": "Kyle Kuzma",
+  "matched": "Kyle Kuzma",
+  "via": "Kyle Kuzma",
+  "file": "Kyle Kuzma (51815879993) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "andrew-wiggins": {
+  "answer": "Andrew Wiggins",
+  "matched": "Andrew Wiggins",
+  "via": "Andrew Wiggins",
+  "file": "Andrew Wiggins 2022.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "jonathan-kuminga": {
+  "answer": "Jonathan Kuminga",
+  "matched": "Jonathan Kuminga",
+  "via": "Jonathan Kuminga",
+  "file": "Jonathan Kuminga 2 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Position Sports, Inc."
+ },
+ "immanuel-quickley": {
+  "answer": "Immanuel Quickley",
+  "matched": "Immanuel Quickley",
+  "via": "Immanuel Quickley",
+  "file": "Immanuel Quickley FanDuel interview 2.png",
+  "licence": "CC BY 3.0",
+  "by": "FanDuel"
+ },
+ "rj-barrett": {
+  "answer": "RJ Barrett",
+  "matched": "RJ Barrett",
+  "via": "RJ Barrett",
+  "file": "2023-08-09 Deutschland gegen Kanada (Basketball-Länderspiel) by Sandro Halank–063.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Sandro Halank, Wikimedia Commons"
+ },
+ "deandre-ayton": {
+  "answer": "Deandre Ayton",
+  "matched": "Deandre Ayton",
+  "via": "Deandre Ayton",
+  "file": "Deande Ayton Bahamas.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Jmnutt"
+ },
+ "jusuf-nurkic": {
+  "answer": "Jusuf Nurkić",
+  "matched": "Jusuf Nurkić",
+  "via": "Jusuf Nurkić",
+  "file": "Jusuf Nurkić 2021.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "bradley-beal": {
+  "answer": "Bradley Beal",
+  "matched": "Bradley Beal",
+  "via": "Bradley Beal",
+  "file": "Bradley Beal WSH Wizards 2022 (croppedface).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All Pro Reels"
+ },
+ "dejounte-murray": {
+  "answer": "Dejounte Murray",
+  "matched": "Dejounte Murray",
+  "via": "Dejounte Murray",
+  "file": "Dejounte Murray 2022.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "malik-monk": {
+  "answer": "Malik Monk",
+  "matched": "Malik Monk",
+  "via": "Malik Monk",
+  "file": "Malik Monk - 51960020214 (cropped2).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "walker-kessler": {
+  "answer": "Walker Kessler",
+  "matched": "Walker Kessler",
+  "via": "Walker Kessler",
+  "file": "Walker Kessler (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Gamecock Central"
+ },
+ "cooper-flagg": {
+  "answer": "Cooper Flagg",
+  "matched": "Cooper Flagg",
+  "via": "Cooper Flagg",
+  "file": "Duke at UNC, Mar 2025, Flagg.jpg",
+  "licence": "CC0",
+  "by": "Hameltion"
+ },
+ "amen-thompson": {
+  "answer": "Amen Thompson",
+  "matched": "Amen Thompson",
+  "via": "Amen Thompson",
+  "file": "Amen Thompson 2026.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Pikraken"
+ },
+ "ausar-thompson": {
+  "answer": "Ausar Thompson",
+  "matched": "Ausar Thompson",
+  "via": "Ausar Thompson",
+  "file": "Ausar Thompson free throw 1252026 (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Pikraken"
+ },
+ "stephon-castle": {
+  "answer": "Stephon Castle",
+  "matched": "Stephon Castle",
+  "via": "Stephon Castle",
+  "file": "Stephon Castle in 2026 Western Conference Finals (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Petsbikes"
+ },
+ "zaccharie-risacher": {
+  "answer": "Zaccharie Risacher",
+  "matched": "Zaccharie Risacher",
+  "via": "Zaccharie Risacher",
+  "file": "Zaccharie Risacher All Star Game (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Yoann210"
+ },
+ "reed-sheppard": {
+  "answer": "Reed Sheppard",
+  "matched": "Reed Sheppard",
+  "via": "Reed Sheppard",
+  "file": "Reed Sheppard Kentucky v. Kansas.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Brady Saylor"
+ },
+ "donovan-clingan": {
+  "answer": "Donovan Clingan",
+  "matched": "Donovan Clingan",
+  "via": "Donovan Clingan",
+  "file": "Donovan Clingan White House (cropped).jpg",
+  "licence": "Public domain",
+  "by": "The White House"
+ },
+ "matas-buzelis": {
+  "answer": "Matas Buzelis",
+  "matched": "Matas Buzelis",
+  "via": "Matas Buzelis",
+  "file": "Matas Buzelis Jan 14 2026.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Brady Saylor"
+ },
+ "dalton-knecht": {
+  "answer": "Dalton Knecht",
+  "matched": "Dalton Knecht",
+  "via": "Dalton Knecht",
+  "file": "Dalton Knecht, 2024.jpg",
+  "licence": "Public domain",
+  "by": "edwarddallas"
+ },
+ "bilal-coulibaly": {
+  "answer": "Bilal Coulibaly",
+  "matched": "Bilal Coulibaly",
+  "via": "Bilal Coulibaly",
+  "file": "2025 Washington Wizards Media Day 56.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "All-Pro Reels"
+ },
+ "alex-sarr": {
+  "answer": "Alex Sarr",
+  "matched": "Alex Sarr",
+  "via": "Alex Sarr",
+  "file": "2025 Washington Wizards Media Day 13.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "All-Pro Reels"
+ },
+ "scoot-henderson": {
+  "answer": "Scoot Henderson",
+  "matched": "Scoot Henderson",
+  "via": "Scoot Henderson",
+  "file": "Scoot Henderson 2024 (cropped2).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Frenchieinportland"
+ },
+ "keegan-murray": {
+  "answer": "Keegan Murray",
+  "matched": "Keegan Murray",
+  "via": "Keegan Murray",
+  "file": "Keegan Murray 2022 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Alexander Jonesi"
+ },
+ "bennedict-mathurin": {
+  "answer": "Bennedict Mathurin",
+  "matched": "Bennedict Mathurin",
+  "via": "Bennedict Mathurin",
+  "file": "Bennedict Mathurin (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "MGoBlog"
+ },
+ "jaime-jaquez-jr": {
+  "answer": "Jaime Jaquez Jr.",
+  "matched": "Jaime Jaquez Jr.",
+  "via": "Jaime Jaquez Jr.",
+  "file": "Jaime Jaquez Jr 2021 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Steve Cheng, Bruin Report Online"
+ },
+ "isaiah-hartenstein": {
+  "answer": "Isaiah Hartenstein",
+  "matched": "Isaiah Hartenstein",
+  "via": "Isaiah Hartenstein",
+  "file": "Isaiah Hartenstein OKC Thunder 2025 NBA Cup (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Daiei Onoguchi"
+ },
+ "luguentz-dort": {
+  "answer": "Luguentz Dort",
+  "matched": "Luguentz Dort",
+  "via": "Luguentz Dort",
+  "file": "2023-08-09 Deutschland gegen Kanada (Basketball-Länderspiel) by Sandro Halank–062.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Sandro Halank, Wikimedia Commons"
+ },
+ "naz-reid": {
+  "answer": "Naz Reid",
+  "matched": "Naz Reid",
+  "via": "Naz Reid",
+  "file": "Naz Reid (51733687822) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "daniel-gafford": {
+  "answer": "Daniel Gafford",
+  "matched": "Daniel Gafford",
+  "via": "Daniel Gafford",
+  "file": "WizardsRaptors 35 (51589304503) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels from District of Columbia, USA"
+ },
+ "pj-washington": {
+  "answer": "P.J. Washington",
+  "matched": "P. J. Washington",
+  "via": "P.J. Washington",
+  "file": "P. J. Washington Jr. (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "File:20170329 MCDAAG P. J. Washington Jr. listens to Kevin Knox II.jpg: TonyTheTiger derivative work: Shakeydeal33"
+ },
+ "mark-williams": {
+  "answer": "Mark Williams",
+  "matched": "Mark Williams (basketball)",
+  "via": "Mark Williams (basketball)",
+  "file": "Mark Williams.png",
+  "licence": "CC BY 3.0",
+  "by": "Hoop District"
+ },
+ "santi-aldama": {
+  "answer": "Santi Aldama",
+  "matched": "Santi Aldama",
+  "via": "Santi Aldama",
+  "file": "Santi Aldama (51812767732) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "quentin-grimes": {
+  "answer": "Quentin Grimes",
+  "matched": "Quentin Grimes",
+  "via": "Quentin Grimes",
+  "file": "Quentin Grimes (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Gamecock Central"
+ },
+ "toumani-camara": {
+  "answer": "Toumani Camara",
+  "matched": "Toumani Camara",
+  "via": "Toumani Camara",
+  "file": "Toumani Camara 2024 (cropped2).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Frenchieinportland"
+ },
+ "ryan-dunn": {
+  "answer": "Ryan Dunn",
+  "matched": "Ryan Dunn",
+  "via": "Ryan Dunn",
+  "file": "Ryan Dunn Jackass 3D London Premiere 2 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Thomas Love from Leigh-on-Sea, United Kingdom"
+ },
+ "gradey-dick": {
+  "answer": "Gradey Dick",
+  "matched": "Gradey Dick",
+  "via": "Gradey Dick",
+  "file": "Gradey Dick.jpg",
+  "licence": "CC0",
+  "by": "Kevindudes"
+ },
+ "jabari-smith-jr": {
+  "answer": "Jabari Smith Jr.",
+  "matched": "Jabari Smith Jr.",
+  "via": "Jabari Smith Jr.",
+  "file": "1 jabari smith jr.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Chensiyuan"
+ },
+ "jaden-ivey": {
+  "answer": "Jaden Ivey",
+  "matched": "Jaden Ivey",
+  "via": "Jaden Ivey",
+  "file": "Ivey Pistons.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "devin-vassell": {
+  "answer": "Devin Vassell",
+  "matched": "Devin Vassell",
+  "via": "Devin Vassell",
+  "file": "Devin Vassell with the Spurs in 2026.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Petsbikes"
+ },
+ "keyonte-george": {
+  "answer": "Keyonte George",
+  "matched": "Keyonte George",
+  "via": "Keyonte George",
+  "file": "Keyonte George Jan 14 2026.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Brady Saylor"
+ },
+ "ochai-agbaji": {
+  "answer": "Ochai Agbaji",
+  "matched": "Ochai Agbaji",
+  "via": "Ochai Agbaji",
+  "file": "Ochai Agbaji.png",
+  "licence": "CC BY 3.0",
+  "by": "Hoop District"
+ },
+ "grayson-allen": {
+  "answer": "Grayson Allen",
+  "matched": "Grayson Allen",
+  "via": "Grayson Allen",
+  "file": "Grayson Allen, Wizards vs. Bucks on November 7, 2021.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "duncan-robinson": {
+  "answer": "Duncan Robinson",
+  "matched": "Duncan Robinson",
+  "via": "Duncan Robinson",
+  "file": "Heat Duncan Robinson (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "payton-pritchard": {
+  "answer": "Payton Pritchard",
+  "matched": "Payton Pritchard",
+  "via": "Payton Pritchard",
+  "file": "Celtics at Wizards 2024-12-027 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Hameltion"
+ },
+ "derrick-white": {
+  "answer": "Derrick White",
+  "matched": "Derrick White",
+  "via": "Derrick White",
+  "file": "Boston Celtics player Derrick White on November 21, 2024 at the White House (cropped).jpg",
+  "licence": "Public domain",
+  "by": "The White House"
+ },
+ "alex-caruso": {
+  "answer": "Alex Caruso",
+  "matched": "Alex Caruso",
+  "via": "Alex Caruso",
+  "file": "Alex Caruso (52480104636) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "donte-divincenzo": {
+  "answer": "Donte DiVincenzo",
+  "matched": "Donte DiVincenzo",
+  "via": "Donte DiVincenzo",
+  "file": "Donte DiVincenzo (White House visit).jpg",
+  "licence": "Public domain",
+  "by": "The White House"
+ },
+ "zach-edey": {
+  "answer": "Zach Edey",
+  "matched": "Zach Edey",
+  "via": "Zach Edey",
+  "file": "Zach Edey 2 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Alexander Jonesi"
+ },
+ "herbert-jones": {
+  "answer": "Herbert Jones",
+  "matched": "Herbert Jones (basketball)",
+  "via": "Herb Jones (basketball)",
+  "file": "Herb Jones.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "TigerNet.com"
+ },
+ "brandon-miller": {
+  "answer": "Brandon Miller",
+  "matched": "Brandon Miller (basketball, born 2002)",
+  "via": "Brandon Miller (basketball, born 2002)",
+  "file": "Brandon Miller Alabama (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Gamecock Central"
+ }
+}

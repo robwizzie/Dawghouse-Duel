@@ -1,0 +1,922 @@
+{
+ "michael-jordan": {
+  "answer": "Michael Jordan",
+  "matched": "Michael Jordan",
+  "via": "Michael Jordan",
+  "file": "Michael Jordan in 2014.jpg",
+  "licence": "Public domain",
+  "by": "DOD photo by D. Myles Cullen"
+ },
+ "lebron-james": {
+  "answer": "LeBron James",
+  "matched": "LeBron James",
+  "via": "LeBron James",
+  "file": "LeBron James (51959977144) (cropped2).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "kobe-bryant": {
+  "answer": "Kobe Bryant",
+  "matched": "Kobe Bryant",
+  "via": "Kobe Bryant",
+  "file": "Kobe Bryant Dec 2014.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison"
+ },
+ "kareem-abdul-jabbar": {
+  "answer": "Kareem Abdul-Jabbar",
+  "matched": "Kareem Abdul-Jabbar",
+  "via": "Kareem Abdul-Jabbar",
+  "file": "Kareem Abdul-Jabbar May 2014.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Yahoo from Sunnyvale, California, USA"
+ },
+ "magic-johnson": {
+  "answer": "Magic Johnson",
+  "matched": "Magic Johnson",
+  "via": "Magic Johnson",
+  "file": "Magic Johnson at SXSW 2022 (51958828669) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Daniel Benavides from Austin, TX"
+ },
+ "larry-bird": {
+  "answer": "Larry Bird",
+  "matched": "Larry Bird",
+  "via": "Larry Bird",
+  "file": "Larrybird.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Kurt Shimala"
+ },
+ "bill-russell": {
+  "answer": "Bill Russell",
+  "matched": "Bill Russell",
+  "via": "Bill Russell",
+  "file": "Bill russell dribbling (cropped).jpg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "wilt-chamberlain": {
+  "answer": "Wilt Chamberlain",
+  "matched": "Wilt Chamberlain",
+  "via": "Wilt Chamberlain",
+  "file": "Wilt Chamberlain 1960 (cropped) (cropped).jpg",
+  "licence": "Public domain",
+  "by": "Bill Allen"
+ },
+ "shaquille-oneal": {
+  "answer": "Shaquille O'Neal",
+  "matched": "Shaquille O'Neal",
+  "via": "Shaquille O'Neal",
+  "file": "TechCrunch Disrupt 2023 - Day 1 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "TechCrunch"
+ },
+ "tim-duncan": {
+  "answer": "Tim Duncan",
+  "matched": "Tim Duncan",
+  "via": "Tim Duncan",
+  "file": "Tim Duncan Walks Verizon Center's Floor (cropped) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Geoff Livingston"
+ },
+ "hakeem-olajuwon": {
+  "answer": "Hakeem Olajuwon",
+  "matched": "Hakeem Olajuwon",
+  "via": "Hakeem Olajuwon",
+  "file": "Nigerian President Buhari Stands With Secretary Kerry, U.S. Delegation After They Attended His Inauguration Ceremony (cropped).jpg",
+  "licence": "Public domain",
+  "by": "U.S. Department of State"
+ },
+ "stephen-curry": {
+  "answer": "Stephen Curry",
+  "matched": "Stephen Curry",
+  "via": "Stephen Curry",
+  "file": "Stephen Curry, Olympic Games 2024 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Clément Bardot"
+ },
+ "kevin-durant": {
+  "answer": "Kevin Durant",
+  "matched": "Kevin Durant",
+  "via": "Kevin Durant",
+  "file": "Kevin Durant, Paris 2024 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Clément Bardot"
+ },
+ "charles-barkley": {
+  "answer": "Charles Barkley",
+  "matched": "Charles Barkley",
+  "via": "Charles Barkley",
+  "file": "Charles Barkley in 2026.jpg",
+  "licence": "Public domain",
+  "by": "Wright-Patt AFB"
+ },
+ "allen-iverson": {
+  "answer": "Allen Iverson",
+  "matched": "Allen Iverson",
+  "via": "Allen Iverson",
+  "file": "Allen Iverson headshot.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison"
+ },
+ "dwyane-wade": {
+  "answer": "Dwyane Wade",
+  "matched": "Dwyane Wade",
+  "via": "Dwyane Wade",
+  "file": "Dwyane Wade e1.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Flickr user Keith Allison"
+ },
+ "kevin-garnett": {
+  "answer": "Kevin Garnett",
+  "matched": "Kevin Garnett",
+  "via": "Kevin Garnett",
+  "file": "Kevin Garnett 2008-01-13.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Baltimore, USA"
+ },
+ "dirk-nowitzki": {
+  "answer": "Dirk Nowitzki",
+  "matched": "Dirk Nowitzki",
+  "via": "Dirk Nowitzki",
+  "file": "Dirk Nowitzki 2 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Baltimore, USA"
+ },
+ "karl-malone": {
+  "answer": "Karl Malone",
+  "matched": "Karl Malone",
+  "via": "Karl Malone",
+  "file": "NBA HOF’er Karl Malone visits Barksdale (9) (cropped).jpg",
+  "licence": "Public domain",
+  "by": "Airman 1st Class Jacob B. Wrightsman"
+ },
+ "scottie-pippen": {
+  "answer": "Scottie Pippen",
+  "matched": "Scottie Pippen",
+  "via": "Scottie Pippen",
+  "file": "Scottie Pippen 5-2-22 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Sea Cow"
+ },
+ "oscar-robertson": {
+  "answer": "Oscar Robertson",
+  "matched": "Oscar Robertson",
+  "via": "Oscar Robertson",
+  "file": "Oscar Robertson 2024.jpg",
+  "licence": "Public domain",
+  "by": "Governor Eric Holcomb"
+ },
+ "jerry-west": {
+  "answer": "Jerry West",
+  "matched": "Jerry West",
+  "via": "Jerry West",
+  "file": "Jerry West 1972.jpeg",
+  "licence": "Public domain",
+  "by": "Malcolm W. Emmons"
+ },
+ "moses-malone": {
+  "answer": "Moses Malone",
+  "matched": "Moses Malone",
+  "via": "Moses Malone",
+  "file": "Moses Malone cropped portrait.jpg",
+  "licence": "Public domain",
+  "by": "Cpl. Lameen Witter"
+ },
+ "david-robinson": {
+  "answer": "David Robinson",
+  "matched": "David Robinson",
+  "via": "David Robinson",
+  "file": "David Robinson 2017.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Mark Neyman"
+ },
+ "patrick-ewing": {
+  "answer": "Patrick Ewing",
+  "matched": "Patrick Ewing",
+  "via": "Patrick Ewing",
+  "file": "Patrick Ewing 2021 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "AlexanderJonesi"
+ },
+ "john-stockton": {
+  "answer": "John Stockton",
+  "matched": "John Stockton",
+  "via": "John Stockton",
+  "file": "John Stockton 2022.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "isiah-thomas": {
+  "answer": "Isiah Thomas",
+  "matched": "Isiah Thomas",
+  "via": "Isiah Thomas",
+  "file": "Isiah Thomas 2007 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison"
+ },
+ "clyde-drexler": {
+  "answer": "Clyde Drexler",
+  "matched": "Clyde Drexler",
+  "via": "Clyde Drexler",
+  "file": "Clyde Drexler 01.jpg",
+  "licence": "Public domain",
+  "by": "University of Houston"
+ },
+ "dominique-wilkins": {
+  "answer": "Dominique Wilkins",
+  "matched": "Dominique Wilkins",
+  "via": "Dominique Wilkins",
+  "file": "Dominique Wilkins 2022.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "julius-erving": {
+  "answer": "Julius Erving",
+  "matched": "Julius Erving",
+  "via": "Julius Erving",
+  "file": "Julius Erving 2016.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Ash Carter"
+ },
+ "elgin-baylor": {
+  "answer": "Elgin Baylor",
+  "matched": "Elgin Baylor",
+  "via": "Elgin Baylor",
+  "file": "Elgin Baylor Night program-(cropped).jpg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "rick-barry": {
+  "answer": "Rick Barry",
+  "matched": "Rick Barry",
+  "via": "Rick Barry",
+  "file": "Rick Barry.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Corey Carter from Fremont, US"
+ },
+ "bob-cousy": {
+  "answer": "Bob Cousy",
+  "matched": "Bob Cousy",
+  "via": "Bob Cousy",
+  "file": "Bob Cousy (1).jpeg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "george-mikan": {
+  "answer": "George Mikan",
+  "matched": "George Mikan",
+  "via": "George Mikan",
+  "file": "George Mikan 1945.jpeg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "walt-frazier": {
+  "answer": "Walt Frazier",
+  "matched": "Walt Frazier",
+  "via": "Walt Frazier",
+  "file": "Walt Frazier (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "willis-reed": {
+  "answer": "Willis Reed",
+  "matched": "Willis Reed",
+  "via": "Willis Reed",
+  "file": "Willis Reed 1972 publicity photo.jpg",
+  "licence": "Public domain",
+  "by": "New York Knicks"
+ },
+ "john-havlicek": {
+  "answer": "John Havlicek",
+  "matched": "John Havlicek",
+  "via": "John Havlicek",
+  "file": "John Havliceck, Boston Celtics, 1960s.jpg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "pete-maravich": {
+  "answer": "Pete Maravich",
+  "matched": "Pete Maravich",
+  "via": "Pete Maravich",
+  "file": "Pete Maravich 1977.jpeg",
+  "licence": "Public domain",
+  "by": "Robert Kingsbury"
+ },
+ "george-gervin": {
+  "answer": "George Gervin",
+  "matched": "George Gervin",
+  "via": "George Gervin",
+  "file": "George Gervin ABA.jpeg",
+  "licence": "Public domain",
+  "by": "Kevin Fitzgerald"
+ },
+ "elvin-hayes": {
+  "answer": "Elvin Hayes",
+  "matched": "Elvin Hayes",
+  "via": "Elvin Hayes",
+  "file": "Elvin Hayes 1975.jpeg",
+  "licence": "Public domain",
+  "by": "George Gojkovich"
+ },
+ "bob-pettit": {
+  "answer": "Bob Pettit",
+  "matched": "Bob Pettit",
+  "via": "Bob Pettit",
+  "file": "Bob Pettit 1961.jpeg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "earl-monroe": {
+  "answer": "Earl Monroe",
+  "matched": "Earl Monroe",
+  "via": "Earl Monroe",
+  "file": "Earl Monroe WSSU.jpg",
+  "licence": "Public domain",
+  "by": "Unknown Winston-Salem State University"
+ },
+ "robert-parish": {
+  "answer": "Robert Parish",
+  "matched": "Robert Parish",
+  "via": "Robert Parish",
+  "file": "Robert Parish.jpg",
+  "licence": "Public domain",
+  "by": "Basketball_Legends.jpg: Cpl. Lameen Witter derivative work: JoeJohnson2 (talk)"
+ },
+ "james-worthy": {
+  "answer": "James Worthy",
+  "matched": "James Worthy",
+  "via": "James Worthy",
+  "file": "James Worthy at UNC Basketball game. February 10, 2007.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Zeke Smith from Chapel Hill, NC, USA"
+ },
+ "dennis-rodman": {
+  "answer": "Dennis Rodman",
+  "matched": "Dennis Rodman",
+  "via": "Dennis Rodman",
+  "file": "Dennis Rodman 02 (34649289162) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "GabboT"
+ },
+ "reggie-miller": {
+  "answer": "Reggie Miller",
+  "matched": "Reggie Miller",
+  "via": "Reggie Miller",
+  "file": "Reggie Miller crop.png",
+  "licence": "CC BY-SA 2.0",
+  "by": "Flickr user Philadelphia 76ers"
+ },
+ "ray-allen": {
+  "answer": "Ray Allen",
+  "matched": "Ray Allen",
+  "via": "Ray Allen",
+  "file": "Ray Allen 161208-A-HE359-046 (31482070191).jpg",
+  "licence": "CC BY 2.0",
+  "by": "7th Army Training Command from Grafenwoehr, Germany"
+ },
+ "paul-pierce": {
+  "answer": "Paul Pierce",
+  "matched": "Paul Pierce",
+  "via": "Paul Pierce",
+  "file": "Paul Pierce 2008-01-13 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Baltimore, USA"
+ },
+ "gary-payton": {
+  "answer": "Gary Payton",
+  "matched": "Gary Payton",
+  "via": "Gary Payton",
+  "file": "Gary Payton, Miami Heat circa 2007 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison"
+ },
+ "jason-kidd": {
+  "answer": "Jason Kidd",
+  "matched": "Jason Kidd",
+  "via": "Jason Kidd",
+  "file": "Jason Kidd Nets coach cropped.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "File:Jason Kidd Nets coach.jpg: Keith Allison derivative work: Chrishmt0423"
+ },
+ "steve-nash": {
+  "answer": "Steve Nash",
+  "matched": "Steve Nash",
+  "via": "Steve Nash",
+  "file": "SteveNash2014.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Scott L from Los Angeles, United States of America"
+ },
+ "vince-carter": {
+  "answer": "Vince Carter",
+  "matched": "Vince Carter",
+  "via": "Vince Carter",
+  "file": "Vince Carter 2013-03-25 (1).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Danny Bollinger"
+ },
+ "tracy-mcgrady": {
+  "answer": "Tracy McGrady",
+  "matched": "Tracy McGrady",
+  "via": "Tracy McGrady",
+  "file": "Tracy McGrady 1.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Baltimore, USA"
+ },
+ "carmelo-anthony": {
+  "answer": "Carmelo Anthony",
+  "matched": "Carmelo Anthony",
+  "via": "Carmelo Anthony",
+  "file": "Carmelo Anthony at 2025 NBA All Star Weekend (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Tripsdubs"
+ },
+ "chris-paul": {
+  "answer": "Chris Paul",
+  "matched": "Chris Paul",
+  "via": "Chris Paul",
+  "file": "Chris Paul (2022 All-Star Weekend) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "russell-westbrook": {
+  "answer": "Russell Westbrook",
+  "matched": "Russell Westbrook",
+  "via": "Russell Westbrook",
+  "file": "Russell Westbrook (March 21, 2022) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "james-harden": {
+  "answer": "James Harden",
+  "matched": "James Harden",
+  "via": "James Harden",
+  "file": "Harden dribbling midcourt, Cavaliers vs Nets on January 17, 2022 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "chris-webber": {
+  "answer": "Chris Webber",
+  "matched": "Chris Webber",
+  "via": "Chris Webber",
+  "file": "Chris Webber NBA Asia Challenge 2010.jpg",
+  "licence": "CC BY 2.0",
+  "by": "inboundpass"
+ },
+ "alonzo-mourning": {
+  "answer": "Alonzo Mourning",
+  "matched": "Alonzo Mourning",
+  "via": "Alonzo Mourning",
+  "file": "Alonzo Mourning.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison"
+ },
+ "dikembe-mutombo": {
+  "answer": "Dikembe Mutombo",
+  "matched": "Dikembe Mutombo",
+  "via": "Dikembe Mutombo",
+  "file": "Lipofsky-Dikembe Mutombo (cropped).jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Cavic = Steve Lipofsky"
+ },
+ "ben-wallace": {
+  "answer": "Ben Wallace",
+  "matched": "Ben Wallace (basketball)",
+  "via": "Ben Wallace (basketball)",
+  "file": "Ben Wallace 4104263221 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison"
+ },
+ "manu-ginobili": {
+  "answer": "Manu Ginóbili",
+  "matched": "Manu Ginóbili",
+  "via": "Manu Ginóbili",
+  "file": "Manu Ginobili Spurs-Magic011 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Mike"
+ },
+ "tony-parker": {
+  "answer": "Tony Parker",
+  "matched": "Tony Parker",
+  "via": "Tony Parker",
+  "file": "Tony Parker France 20260704 (2).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Zafer"
+ },
+ "pau-gasol": {
+  "answer": "Pau Gasol",
+  "matched": "Pau Gasol",
+  "via": "Pau Gasol",
+  "file": "PauCaptura.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Dabryna"
+ },
+ "yao-ming": {
+  "answer": "Yao Ming",
+  "matched": "Yao Ming",
+  "via": "Yao Ming",
+  "file": "Yao Ming in 2014 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "World Travel &amp; Tourism Council"
+ },
+ "grant-hill": {
+  "answer": "Grant Hill",
+  "matched": "Grant Hill",
+  "via": "Grant Hill",
+  "file": "Grant Hill 2007-12-08.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Baltimore, USA"
+ },
+ "penny-hardaway": {
+  "answer": "Penny Hardaway",
+  "matched": "Penny Hardaway",
+  "via": "Penny Hardaway",
+  "file": "HBCUAllstarBasketball4223-118 (52802377149) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "2C2K Photography from Houston, TX, USA"
+ },
+ "shawn-kemp": {
+  "answer": "Shawn Kemp",
+  "matched": "Shawn Kemp",
+  "via": "Shawn Kemp",
+  "file": "Shawn Kemp (9523772347) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Bryan Horowitz: Flickr, website"
+ },
+ "chris-bosh": {
+  "answer": "Chris Bosh",
+  "matched": "Chris Bosh",
+  "via": "Chris Bosh",
+  "file": "Chris Bosh Open Congress 2022.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Larry D. Moore"
+ },
+ "bill-walton": {
+  "answer": "Bill Walton",
+  "matched": "Bill Walton",
+  "via": "Bill Walton",
+  "file": "Bill walton blazers photo.jpg",
+  "licence": "Public domain",
+  "by": "Portland Trail Blazers"
+ },
+ "wes-unseld": {
+  "answer": "Wes Unseld",
+  "matched": "Wes Unseld",
+  "via": "Wes Unseld",
+  "file": "Wes Unseld 1975.jpeg",
+  "licence": "Public domain",
+  "by": "Louis Requena"
+ },
+ "dave-cowens": {
+  "answer": "Dave Cowens",
+  "matched": "Dave Cowens",
+  "via": "Dave Cowens",
+  "file": "Dave Cowens - 2005 NBA Legends Tour - 1-21-05.jpg",
+  "licence": "Public domain",
+  "by": "Cpl. Lameen Witter"
+ },
+ "nate-archibald": {
+  "answer": "Nate Archibald",
+  "matched": "Nate Archibald",
+  "via": "Nate Archibald",
+  "file": "Nate Archibald 1974.jpeg",
+  "licence": "Public domain",
+  "by": "Malcolm W. Emmons"
+ },
+ "hal-greer": {
+  "answer": "Hal Greer",
+  "matched": "Hal Greer",
+  "via": "Hal Greer",
+  "file": "Hal Greer 1969.jpeg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "sam-jones": {
+  "answer": "Sam Jones",
+  "matched": "Sam Jones (basketball, born 1933)",
+  "via": "Sam Jones (basketball, born 1933)",
+  "file": "Sam Jones, Boston Celtics, 1969.jpg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "jerry-lucas": {
+  "answer": "Jerry Lucas",
+  "matched": "Jerry Lucas",
+  "via": "Jerry Lucas",
+  "file": "Jerry Lucas 1961.jpeg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "nate-thurmond": {
+  "answer": "Nate Thurmond",
+  "matched": "Nate Thurmond",
+  "via": "Nate Thurmond",
+  "file": "Nate Thurmond 1969.jpeg",
+  "licence": "Public domain",
+  "by": "Robert Kingsbury"
+ },
+ "dave-debusschere": {
+  "answer": "Dave DeBusschere",
+  "matched": "Dave DeBusschere",
+  "via": "Dave DeBusschere",
+  "file": "Dave DeBusschere.jpeg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "bob-mcadoo": {
+  "answer": "Bob McAdoo",
+  "matched": "Bob McAdoo",
+  "via": "Bob McAdoo",
+  "file": "Mcadoo 1973.jpg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "artis-gilmore": {
+  "answer": "Artis Gilmore",
+  "matched": "Artis Gilmore",
+  "via": "Artis Gilmore",
+  "file": "Artis Gilmore.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Mark Bruner"
+ },
+ "connie-hawkins": {
+  "answer": "Connie Hawkins",
+  "matched": "Connie Hawkins",
+  "via": "Connie Hawkins",
+  "file": "Connie Hawkins ABA MVP.jpeg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "dave-bing": {
+  "answer": "Dave Bing",
+  "matched": "Dave Bing",
+  "via": "Dave Bing",
+  "file": "David Bing 3928ded5aacd10b21cded561668a0444 (1).jpg",
+  "licence": "Public domain",
+  "by": "Department of Housing and Urban Development. Office of the Chief Human Capital Office. Office of Broadcasting Operations"
+ },
+ "lenny-wilkens": {
+  "answer": "Lenny Wilkens",
+  "matched": "Lenny Wilkens",
+  "via": "Lenny Wilkens",
+  "file": "Lenny Wilkens 1968 (cropped).jpeg",
+  "licence": "Public domain",
+  "by": "Malcolm Emmons"
+ },
+ "paul-arizin": {
+  "answer": "Paul Arizin",
+  "matched": "Paul Arizin",
+  "via": "Paul Arizin",
+  "file": "Paul Arizin 50-62.JPG",
+  "licence": "Public domain",
+  "by": "Philadelphia Warriors / NBA"
+ },
+ "dolph-schayes": {
+  "answer": "Dolph Schayes",
+  "matched": "Dolph Schayes",
+  "via": "Dolph Schayes",
+  "file": "Dolph Schayes 1955 (2).jpeg",
+  "licence": "Public domain",
+  "by": "Unknown authorUnknown author"
+ },
+ "bill-sharman": {
+  "answer": "Bill Sharman",
+  "matched": "Bill Sharman",
+  "via": "Bill Sharman",
+  "file": "SharmanatUSCjpeg.jpeg",
+  "licence": "Public domain",
+  "by": "Unidentified (El Rodeo is the USC yearbook published by Associated Students of USC)"
+ },
+ "bernard-king": {
+  "answer": "Bernard King",
+  "matched": "Bernard King",
+  "via": "Bernard King",
+  "file": "Bernard King.jpg",
+  "licence": "Public domain",
+  "by": "Associated Press"
+ },
+ "adrian-dantley": {
+  "answer": "Adrian Dantley",
+  "matched": "Adrian Dantley",
+  "via": "Adrian Dantley",
+  "file": "Adrian Dantley (38259978012) (cropped).jpg",
+  "licence": "Public domain",
+  "by": "U.S. Navy photo by Mass Communication Specialist 2nd Class William Phillips/Released"
+ },
+ "alex-english": {
+  "answer": "Alex English",
+  "matched": "Alex English",
+  "via": "Alex English",
+  "file": "Alex English.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Gamecock Central"
+ },
+ "sidney-moncrief": {
+  "answer": "Sidney Moncrief",
+  "matched": "Sidney Moncrief",
+  "via": "Sidney Moncrief",
+  "file": "Sidney Moncrief 2015.jpg",
+  "licence": "Public domain",
+  "by": "Milwaukee VA Medical Center"
+ },
+ "dan-issel": {
+  "answer": "Dan Issel",
+  "matched": "Dan Issel",
+  "via": "Dan Issel",
+  "file": "Dan Issel (1).jpeg",
+  "licence": "Public domain",
+  "by": "Malcolm W. Emmons"
+ },
+ "spencer-haywood": {
+  "answer": "Spencer Haywood",
+  "matched": "Spencer Haywood",
+  "via": "Spencer Haywood",
+  "file": "Spencer Haywood at Nellis (cropped).jpg",
+  "licence": "Public domain",
+  "by": "U.S. Air Force Photo/Staff Sgt. Kenny Kennemer"
+ },
+ "chris-mullin": {
+  "answer": "Chris Mullin",
+  "matched": "Chris Mullin",
+  "via": "Chris Mullin",
+  "file": "Chris Mullin.jpg",
+  "licence": "Public domain",
+  "by": "Petty Officer 1st Class Chad J. McNeeley, U.S. Navy."
+ },
+ "joe-dumars": {
+  "answer": "Joe Dumars",
+  "matched": "Joe Dumars",
+  "via": "Joe Dumars",
+  "file": "Joe Dumars.jpg",
+  "licence": "Public domain",
+  "by": "2004_Detroit_Pistons_congratulated_by_George_Bush.jpg: White House Press Secretary office. The link gives no specific ph"
+ },
+ "mark-price": {
+  "answer": "Mark Price",
+  "matched": "Mark Price",
+  "via": "Mark Price",
+  "file": "Mark Price (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Ubcwwong"
+ },
+ "tim-hardaway": {
+  "answer": "Tim Hardaway",
+  "matched": "Tim Hardaway",
+  "via": "Tim Hardaway",
+  "file": "20150902 Quest Multisport clinic Tim Hardaway (1).JPG",
+  "licence": "CC BY-SA 4.0",
+  "by": "TonyTheTiger"
+ },
+ "mitch-richmond": {
+  "answer": "Mitch Richmond",
+  "matched": "Mitch Richmond",
+  "via": "Mitch Richmond",
+  "file": "Mitch Richmond cropped.jpg",
+  "licence": "CC BY 2.0",
+  "by": "inboundpass"
+ },
+ "dennis-johnson": {
+  "answer": "Dennis Johnson",
+  "matched": "Dennis Johnson",
+  "via": "Dennis Johnson",
+  "file": "Dennis Johnson Lipofsky.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Steve Lipofsky at basketballphoto.com."
+ },
+ "jack-sikma": {
+  "answer": "Jack Sikma",
+  "matched": "Jack Sikma",
+  "via": "Jack Sikma",
+  "file": "Jack Sikma IWU.jpg",
+  "licence": "Public domain",
+  "by": "Unknown Illinois Wesleyan"
+ },
+ "arvydas-sabonis": {
+  "answer": "Arvydas Sabonis",
+  "matched": "Arvydas Sabonis",
+  "via": "Arvydas Sabonis",
+  "file": "Arvydas Sabonis.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Steve Lipofsky www.Basketballphoto.com"
+ },
+ "drazen-petrovic": {
+  "answer": "Dražen Petrović",
+  "matched": "Dražen Petrović",
+  "via": "Dražen Petrović",
+  "file": "Lipofsky-JDražen Petrović.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Cavic = Steve Lipofsky"
+ },
+ "toni-kukoc": {
+  "answer": "Toni Kukoč",
+  "matched": "Toni Kukoč",
+  "via": "Toni Kukoč",
+  "file": "Toni Kukoc 081423 cropped (cropped1).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "David Krichmar"
+ },
+ "detlef-schrempf": {
+  "answer": "Detlef Schrempf",
+  "matched": "Detlef Schrempf",
+  "via": "Detlef Schrempf",
+  "file": "Detlef Schrempf at NBA All-Star Center Court 2016 (24742228990).jpg",
+  "licence": "CC BY 2.0",
+  "by": "lam_chihang"
+ },
+ "amare-stoudemire": {
+  "answer": "Amar'e Stoudemire",
+  "matched": "Amar'e Stoudemire",
+  "via": "Amar'e Stoudemire",
+  "file": "Amar'e Stoudemire free throw.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Baltimore, USA"
+ },
+ "jermaine-oneal": {
+  "answer": "Jermaine O'Neal",
+  "matched": "Jermaine O'Neal",
+  "via": "Jermaine O'Neal",
+  "file": "Jermaine O'Neal smiling.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Noah Salzman"
+ },
+ "rasheed-wallace": {
+  "answer": "Rasheed Wallace",
+  "matched": "Rasheed Wallace",
+  "via": "Rasheed Wallace",
+  "file": "Rasheed Wallace 2 cropped.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Baltimore, USA"
+ },
+ "ralph-sampson": {
+  "answer": "Ralph Sampson",
+  "matched": "Ralph Sampson",
+  "via": "Ralph Sampson",
+  "file": "Ralph Sampson at Family farm in McGaheysville, Virginia on May 23, 2024 (cropped).jpg",
+  "licence": "Public domain",
+  "by": "USDAgov"
+ },
+ "marques-johnson": {
+  "answer": "Marques Johnson",
+  "matched": "Marques Johnson",
+  "via": "Marques Johnson",
+  "file": "Marques johnson ucla.JPG",
+  "licence": "Public domain",
+  "by": "Associated Students of the University of California at Los Angeles"
+ },
+ "world-b-free": {
+  "answer": "World B. Free",
+  "matched": "World B. Free",
+  "via": "World B. Free",
+  "file": "World B Free.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "TastyPoutine"
+ },
+ "maurice-cheeks": {
+  "answer": "Maurice Cheeks",
+  "matched": "Maurice Cheeks",
+  "via": "Maurice Cheeks",
+  "file": "Maurice Cheeks.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison from Owings Mills, USA"
+ },
+ "bob-lanier": {
+  "answer": "Bob Lanier",
+  "matched": "Bob Lanier",
+  "via": "Bob Lanier",
+  "file": "BobLanier.jpg",
+  "licence": "CC BY 2.0",
+  "by": "photo taken by flickr user compujeramey (Jeramey Jannene)"
+ },
+ "gail-goodrich": {
+  "answer": "Gail Goodrich",
+  "matched": "Gail Goodrich",
+  "via": "Gail Goodrich",
+  "file": "GailGoodrich-cropped.JPEG",
+  "licence": "Public domain",
+  "by": "TSGT PAUL R. CARON JR, USAF"
+ },
+ "marc-gasol": {
+  "answer": "Marc Gasol",
+  "matched": "Marc Gasol",
+  "via": "Marc Gasol",
+  "file": "Marc Gasol-jul 2018.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Patrickpedia"
+ },
+ "shane-battier": {
+  "answer": "Shane Battier",
+  "matched": "Shane Battier",
+  "via": "Shane Battier",
+  "file": "Shane Battier June 2023 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Collision Conf"
+ },
+ "kevin-mchale": {
+  "answer": "Kevin McHale",
+  "matched": "Kevin McHale (basketball)",
+  "via": "Kevin McHale (basketball)",
+  "file": "Kevin McHale 2012 press conference - headshot.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "thepanamerican"
+ }
+}
