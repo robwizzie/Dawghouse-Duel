@@ -75,6 +75,7 @@ html[data-screen="media"] .screen--media{display:flex}
 .brandmark--stack{flex-direction:column;gap:.15em}
 .brandmark.has-logo .brandmark__text{display:none}
 .brandmark__img{height:clamp(74px,10vw,168px);width:auto;object-fit:contain}
+.brandmark--stack .brandmark__img{padding-top:1.5rem;box-sizing:content-box}
 .brandmark--inline .brandmark__img{height:clamp(30px,3.3vw,52px)}
 .brandmark__text{
   font-family:var(--ff-display);
