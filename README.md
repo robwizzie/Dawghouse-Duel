@@ -112,6 +112,9 @@ It also unlocks audio, which browsers gate until the first click.
 | Superheroes | 113 | 113 | superhero-api + Wikipedia/Fandom |
 | Disney Characters | 152 | 152 | Disney Wiki |
 | Animals | 170 | 170 | Wikipedia |
+| Star Wars | 147 | 147 | Wookieepedia |
+
+**582 pictures across four categories.**
 
 Each is one file in `js/data/`, registered with a `<script>` tag in
 `index.html`. Difficulty tiers (`easy` / `mid` / `deep`) let the **deep cuts**
@@ -180,6 +183,19 @@ Because a lot of animals share a name with something broader, the answer is what
 you'd actually shout and the article is pinned separately — `name: 'Penguin'`
 with `page: 'Emperor penguin'`, and "Emperor penguin" accepted as an alternate.
 
+Star Wars comes from Wookieepedia:
+
+```bash
+node tools/fetch-wiki-images.js starwars
+```
+
+Two answers pin an exact image rather than a page, because the article's lead
+picture is the wrong picture of the right character: Darth Vader's article opens
+on Anakin's unmasked face, and Jango Fett's shows him out of the armour. There's
+an `image:` field for exactly this. "The Mandalorian" needed
+`page: 'Din Djarin'` too — the plain name matched the *show*, whose lead image
+is the title card with the answer written across it.
+
 If any answer ever loses its picture, the deck setting **Images only** (the
 default) simply doesn't deal it.
 
@@ -216,9 +232,14 @@ useful for rehearsing before art exists.
 
 ## Adding a category
 
-Copy `js/data/disney.js`, change the `id`/`name`/`wiki`, and add a `<script>`
+Copy `js/data/starwars.js`, change the `id`/`name`/`wiki`, and add a `<script>`
 tag for it in `index.html`. It shows up in the dropdown automatically, and
 `node tools/fetch-wiki-images.js <id>` will go and get the artwork.
+
+Then **look at every picture on a contact sheet before using it.** Roughly one
+answer in twenty comes back wrong in a way no script can catch — a poster with
+the answer printed on it, a pair shot where the answer is ambiguous, or simply a
+different character with the same name.
 
 ```js
 window.DHD_CATEGORIES.push({
@@ -229,7 +250,8 @@ window.DHD_CATEGORIES.push({
   items: [
     {slug:'macarena', name:'Macarena', alt:['Los del Rio'], tier:'easy',
      clue:'1996. Everyone at the wedding still knows the arm moves.',
-     page:'Los del Río'}               // optional lookup override
+     page:'Los del Río',               // optional: pin the wiki article
+     image:'https://…/pic.jpg'}        // optional: pin an exact picture
   ]
 });
 ```
@@ -251,6 +273,7 @@ js/app.js             clocks, control, pass logic, screens, host link
 js/host.js            host window controller
 js/data/disney.js     152 Disney answers
 js/data/animals.js    170 animal answers
+js/data/starwars.js   147 Star Wars answers
 js/net.js             local channel + relay transport
 js/config.js          relay URL and host URL — the one file to edit on deploy
 worker/               the Cloudflare Worker that pairs a phone to a duel screen

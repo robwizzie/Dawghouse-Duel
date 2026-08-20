@@ -7,6 +7,9 @@
 
    The category's data file names the wiki:  wiki: 'disney.fandom.com'
    Any item can override the lookup with:    page: 'Rex (Toy Story)'
+   ...or skip the lookup entirely with:      image: 'https://…/pic.png'
+   (the last one is for when a page's lead image is the wrong picture of
+   the right character — Darth Vader's article shows Anakin's face)
 
    Works against Wikipedia too (wiki: 'en.wikipedia.org'), where it also
    records each photo's licence and photographer in sources.json — those
@@ -150,7 +153,7 @@ async function credits(wiki, files) {
 
   // Ask for every title we might want in a handful of batched requests.
   const wanted = [];
-  todo.forEach(item => [item.page, item.name, ...(item.alt || [])]
+  todo.filter(i => !i.image).forEach(item => [item.page, item.name, ...(item.alt || [])]
     .filter(Boolean).forEach(t => { if (!wanted.includes(t)) wanted.push(t); }));
   process.stdout.write('Resolving ' + wanted.length + ' titles… ');
   const lookup = await pageImages(cat.wiki, wanted);
@@ -158,6 +161,10 @@ async function credits(wiki, files) {
 
   const plan = [];
   for (const item of todo) {
+    if (item.image) {
+      plan.push({ item, hit: { url: item.image, title: item.name + ' (pinned image)', file: null }, via: 'pinned image' });
+      continue;
+    }
     const tries = [item.page, item.name, ...(item.alt || [])].filter(Boolean);
     let hit = null, via = null;
     for (const t of tries) {
@@ -203,7 +210,7 @@ async function credits(wiki, files) {
   fs.writeFileSync(path.join(OUT, 'sources.json'), JSON.stringify(Object.assign(prev, sources), null, 1));
 
   console.log('\n\nDownloaded ' + got + ', already had ' + cached + ', missing ' + missing.length + '.');
-  const odd = Object.values(sources).filter(s =>
+  const odd = Object.values(sources).filter(s => s.via !== 'pinned image' &&
     s.answer.toLowerCase().replace(/[^a-z0-9]/g, '') !== s.matched.toLowerCase().replace(/[^a-z0-9]/g, ''));
   if (odd.length) {
     console.log('\nResolved to a different page title — worth an eyeball:');

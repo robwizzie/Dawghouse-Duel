@@ -1,0 +1,737 @@
+{
+ "luke-skywalker": {
+  "answer": "Luke Skywalker",
+  "matched": "Luke Skywalker",
+  "via": "Luke Skywalker"
+ },
+ "leia-organa": {
+  "answer": "Princess Leia",
+  "matched": "Leia Skywalker Organa Solo",
+  "via": "Leia Organa"
+ },
+ "han-solo": {
+  "answer": "Han Solo",
+  "matched": "Han Solo",
+  "via": "Han Solo"
+ },
+ "chewbacca": {
+  "answer": "Chewbacca",
+  "matched": "Chewbacca",
+  "via": "Chewbacca"
+ },
+ "r2-d2": {
+  "answer": "R2-D2",
+  "matched": "R2-D2",
+  "via": "R2-D2"
+ },
+ "c-3po": {
+  "answer": "C-3PO",
+  "matched": "C-3PO",
+  "via": "C-3PO"
+ },
+ "obi-wan-kenobi": {
+  "answer": "Obi-Wan Kenobi",
+  "matched": "Obi-Wan Kenobi",
+  "via": "Obi-Wan Kenobi"
+ },
+ "yoda": {
+  "answer": "Yoda",
+  "matched": "Yoda",
+  "via": "Yoda"
+ },
+ "darth-maul": {
+  "answer": "Darth Maul",
+  "matched": "Maul",
+  "via": "Darth Maul"
+ },
+ "boba-fett": {
+  "answer": "Boba Fett",
+  "matched": "Boba Fett",
+  "via": "Boba Fett"
+ },
+ "jabba-the-hutt": {
+  "answer": "Jabba the Hutt",
+  "matched": "Jabba Desilijic Tiure",
+  "via": "Jabba"
+ },
+ "palpatine": {
+  "answer": "Emperor Palpatine",
+  "matched": "Darth Sidious",
+  "via": "Emperor Palpatine"
+ },
+ "rey": {
+  "answer": "Rey",
+  "matched": "Rey Skywalker",
+  "via": "Rey"
+ },
+ "kylo-ren": {
+  "answer": "Kylo Ren",
+  "matched": "Ben Solo",
+  "via": "Kylo Ren"
+ },
+ "finn": {
+  "answer": "Finn",
+  "matched": "Finn",
+  "via": "Finn"
+ },
+ "poe-dameron": {
+  "answer": "Poe Dameron",
+  "matched": "Poe Dameron",
+  "via": "Poe Dameron"
+ },
+ "bb-8": {
+  "answer": "BB-8",
+  "matched": "BB-8",
+  "via": "BB-8"
+ },
+ "anakin-skywalker": {
+  "answer": "Anakin Skywalker",
+  "matched": "Anakin Skywalker (pinned image)",
+  "via": "pinned image"
+ },
+ "padme-amidala": {
+  "answer": "Padmé Amidala",
+  "matched": "Padmé Amidala Naberrie",
+  "via": "Padmé Amidala"
+ },
+ "mace-windu": {
+  "answer": "Mace Windu",
+  "matched": "Mace Windu",
+  "via": "Mace Windu"
+ },
+ "qui-gon-jinn": {
+  "answer": "Qui-Gon Jinn",
+  "matched": "Qui-Gon Jinn",
+  "via": "Qui-Gon Jinn"
+ },
+ "jar-jar-binks": {
+  "answer": "Jar Jar Binks",
+  "matched": "Jar Jar Binks",
+  "via": "Jar Jar Binks"
+ },
+ "lando-calrissian": {
+  "answer": "Lando Calrissian",
+  "matched": "Landonis Balthazar Calrissian",
+  "via": "Lando Calrissian"
+ },
+ "grogu": {
+  "answer": "Grogu",
+  "matched": "Din Grogu",
+  "via": "Grogu"
+ },
+ "din-djarin": {
+  "answer": "The Mandalorian",
+  "matched": "Din Djarin",
+  "via": "Din Djarin"
+ },
+ "ahsoka-tano": {
+  "answer": "Ahsoka Tano",
+  "matched": "Ahsoka Tano",
+  "via": "Ahsoka Tano"
+ },
+ "general-grievous": {
+  "answer": "General Grievous",
+  "matched": "Grievous",
+  "via": "General Grievous"
+ },
+ "count-dooku": {
+  "answer": "Count Dooku",
+  "matched": "Dooku",
+  "via": "Dooku"
+ },
+ "jango-fett": {
+  "answer": "Jango Fett",
+  "matched": "Jango Fett (pinned image)",
+  "via": "pinned image"
+ },
+ "stormtrooper": {
+  "answer": "Stormtrooper",
+  "matched": "Stormtrooper",
+  "via": "Stormtrooper"
+ },
+ "wicket": {
+  "answer": "Wicket",
+  "matched": "Wicket Wystri Warrick",
+  "via": "Wicket Wystri Warrick"
+ },
+ "admiral-ackbar": {
+  "answer": "Admiral Ackbar",
+  "matched": "Gial Ackbar",
+  "via": "Admiral Ackbar"
+ },
+ "captain-phasma": {
+  "answer": "Captain Phasma",
+  "matched": "Phasma",
+  "via": "Captain Phasma"
+ },
+ "grand-moff-tarkin": {
+  "answer": "Grand Moff Tarkin",
+  "matched": "Wilhuff Tarkin",
+  "via": "Tarkin"
+ },
+ "mon-mothma": {
+  "answer": "Mon Mothma",
+  "matched": "Mon Mothma",
+  "via": "Mon Mothma"
+ },
+ "bail-organa": {
+  "answer": "Bail Organa",
+  "matched": "Bail Prestor Organa",
+  "via": "Bail Organa"
+ },
+ "wedge-antilles": {
+  "answer": "Wedge Antilles",
+  "matched": "Wedge Antilles",
+  "via": "Wedge Antilles"
+ },
+ "greedo": {
+  "answer": "Greedo",
+  "matched": "Greedo",
+  "via": "Greedo"
+ },
+ "bossk": {
+  "answer": "Bossk",
+  "matched": "Bossk'wassak'Cradossk",
+  "via": "Bossk"
+ },
+ "ig-88": {
+  "answer": "IG-88",
+  "matched": "IG-88B",
+  "via": "IG-88"
+ },
+ "dengar": {
+  "answer": "Dengar",
+  "matched": "Dengar",
+  "via": "Dengar"
+ },
+ "zam-wesell": {
+  "answer": "Zam Wesell",
+  "matched": "Zam Wesell",
+  "via": "Zam Wesell"
+ },
+ "watto": {
+  "answer": "Watto",
+  "matched": "Watto",
+  "via": "Watto"
+ },
+ "sebulba": {
+  "answer": "Sebulba",
+  "matched": "Sebulba",
+  "via": "Sebulba"
+ },
+ "shmi-skywalker": {
+  "answer": "Shmi Skywalker",
+  "matched": "Shmi Skywalker Lars",
+  "via": "Shmi"
+ },
+ "owen-lars": {
+  "answer": "Owen Lars",
+  "matched": "Owen Lars",
+  "via": "Owen Lars"
+ },
+ "beru-lars": {
+  "answer": "Beru Lars",
+  "matched": "Beru Whitesun Lars",
+  "via": "Beru Lars"
+ },
+ "bib-fortuna": {
+  "answer": "Bib Fortuna",
+  "matched": "Bib Fortuna",
+  "via": "Bib Fortuna"
+ },
+ "salacious-crumb": {
+  "answer": "Salacious Crumb",
+  "matched": "Salacious B. Crumb",
+  "via": "Salacious Crumb"
+ },
+ "max-rebo": {
+  "answer": "Max Rebo",
+  "matched": "Maximilian Rebo",
+  "via": "Max Rebo"
+ },
+ "rancor": {
+  "answer": "Rancor",
+  "matched": "Rancor",
+  "via": "Rancor"
+ },
+ "tusken-raider": {
+  "answer": "Tusken Raider",
+  "matched": "Tusken Raider",
+  "via": "Tusken Raider"
+ },
+ "jawa": {
+  "answer": "Jawa",
+  "matched": "Jawa",
+  "via": "Jawa"
+ },
+ "gamorrean-guard": {
+  "answer": "Gamorrean Guard",
+  "matched": "Gamorrean Warrior",
+  "via": "Gamorrean Guard"
+ },
+ "nute-gunray": {
+  "answer": "Nute Gunray",
+  "matched": "Nute Gunray",
+  "via": "Nute Gunray"
+ },
+ "captain-rex": {
+  "answer": "Captain Rex",
+  "matched": "Rex",
+  "via": "Captain Rex"
+ },
+ "commander-cody": {
+  "answer": "Commander Cody",
+  "matched": "Cody",
+  "via": "Commander Cody"
+ },
+ "asajj-ventress": {
+  "answer": "Asajj Ventress",
+  "matched": "Asajj Ventress",
+  "via": "Asajj Ventress"
+ },
+ "cad-bane": {
+  "answer": "Cad Bane",
+  "matched": "Cad Bane",
+  "via": "Cad Bane"
+ },
+ "hondo-ohnaka": {
+  "answer": "Hondo Ohnaka",
+  "matched": "Hondo Ohnaka",
+  "via": "Hondo Ohnaka"
+ },
+ "ezra-bridger": {
+  "answer": "Ezra Bridger",
+  "matched": "Ezra Bridger",
+  "via": "Ezra Bridger"
+ },
+ "kanan-jarrus": {
+  "answer": "Kanan Jarrus",
+  "matched": "Kanan Jarrus",
+  "via": "Kanan Jarrus"
+ },
+ "hera-syndulla": {
+  "answer": "Hera Syndulla",
+  "matched": "Hera Syndulla",
+  "via": "Hera Syndulla"
+ },
+ "chopper": {
+  "answer": "Chopper",
+  "matched": "C1-10P",
+  "via": "Chopper"
+ },
+ "sabine-wren": {
+  "answer": "Sabine Wren",
+  "matched": "Sabine Wren",
+  "via": "Sabine Wren"
+ },
+ "zeb-orrelios": {
+  "answer": "Zeb Orrelios",
+  "matched": "Garazeb Orrelios",
+  "via": "Zeb Orrelios"
+ },
+ "thrawn": {
+  "answer": "Grand Admiral Thrawn",
+  "matched": "Mitth'raw'nuruodo",
+  "via": "Thrawn"
+ },
+ "saw-gerrera": {
+  "answer": "Saw Gerrera",
+  "matched": "Saw Gerrera",
+  "via": "Saw Gerrera"
+ },
+ "jyn-erso": {
+  "answer": "Jyn Erso",
+  "matched": "Jyn Erso",
+  "via": "Jyn Erso"
+ },
+ "cassian-andor": {
+  "answer": "Cassian Andor",
+  "matched": "Cassian Jeron Andor",
+  "via": "Cassian"
+ },
+ "k-2so": {
+  "answer": "K-2SO",
+  "matched": "K-2SO",
+  "via": "K-2SO"
+ },
+ "chirrut-imwe": {
+  "answer": "Chirrut Îmwe",
+  "matched": "Chirrut Îmwe",
+  "via": "Chirrut Îmwe"
+ },
+ "baze-malbus": {
+  "answer": "Baze Malbus",
+  "matched": "Baze Malbus",
+  "via": "Baze Malbus"
+ },
+ "orson-krennic": {
+  "answer": "Orson Krennic",
+  "matched": "Orson Callan Krennic",
+  "via": "Orson Krennic"
+ },
+ "qira": {
+  "answer": "Qi'ra",
+  "matched": "Qi'ra",
+  "via": "Qi'ra"
+ },
+ "tobias-beckett": {
+  "answer": "Tobias Beckett",
+  "matched": "Tobias Beckett",
+  "via": "Tobias Beckett"
+ },
+ "l3-37": {
+  "answer": "L3-37",
+  "matched": "L3-37",
+  "via": "L3-37"
+ },
+ "enfys-nest": {
+  "answer": "Enfys Nest",
+  "matched": "Enfys Nest",
+  "via": "Enfys Nest"
+ },
+ "maz-kanata": {
+  "answer": "Maz Kanata",
+  "matched": "Maz Kanata",
+  "via": "Maz Kanata"
+ },
+ "snoke": {
+  "answer": "Supreme Leader Snoke",
+  "matched": "Snoke",
+  "via": "Supreme Leader Snoke"
+ },
+ "general-hux": {
+  "answer": "General Hux",
+  "matched": "Armitage Hux",
+  "via": "Armitage Hux"
+ },
+ "rose-tico": {
+  "answer": "Rose Tico",
+  "matched": "Rose Tico",
+  "via": "Rose Tico"
+ },
+ "holdo": {
+  "answer": "Amilyn Holdo",
+  "matched": "Amilyn Holdo",
+  "via": "Amilyn Holdo"
+ },
+ "bo-katan-kryze": {
+  "answer": "Bo-Katan Kryze",
+  "matched": "Bo-Katan Kryze",
+  "via": "Bo-Katan Kryze"
+ },
+ "moff-gideon": {
+  "answer": "Moff Gideon",
+  "matched": "Gideon",
+  "via": "Moff Gideon"
+ },
+ "fennec-shand": {
+  "answer": "Fennec Shand",
+  "matched": "Fennec Shand",
+  "via": "Fennec Shand"
+ },
+ "greef-karga": {
+  "answer": "Greef Karga",
+  "matched": "Greef Karga",
+  "via": "Greef Karga"
+ },
+ "ig-11": {
+  "answer": "IG-11",
+  "matched": "IG-11",
+  "via": "IG-11"
+ },
+ "kuiil": {
+  "answer": "Kuiil",
+  "matched": "Kuiil",
+  "via": "Kuiil"
+ },
+ "the-armorer": {
+  "answer": "The Armorer",
+  "matched": "The Armorer",
+  "via": "The Armorer"
+ },
+ "wampa": {
+  "answer": "Wampa",
+  "matched": "Wampa",
+  "via": "Wampa"
+ },
+ "porg": {
+  "answer": "Porg",
+  "matched": "Porg",
+  "via": "Porg"
+ },
+ "sarlacc": {
+  "answer": "Sarlacc",
+  "matched": "Sarlacc",
+  "via": "Sarlacc"
+ },
+ "bantha": {
+  "answer": "Bantha",
+  "matched": "Bantha",
+  "via": "Bantha"
+ },
+ "nien-nunb": {
+  "answer": "Nien Nunb",
+  "matched": "Nien Nunb",
+  "via": "Nien Nunb"
+ },
+ "ewok": {
+  "answer": "Ewok",
+  "matched": "Ewok",
+  "via": "Ewok"
+ },
+ "plo-koon": {
+  "answer": "Plo Koon",
+  "matched": "Plo Koon",
+  "via": "Plo Koon"
+ },
+ "ki-adi-mundi": {
+  "answer": "Ki-Adi-Mundi",
+  "matched": "Ki-Adi-Mundi",
+  "via": "Ki-Adi-Mundi"
+ },
+ "kit-fisto": {
+  "answer": "Kit Fisto",
+  "matched": "Kit Fisto",
+  "via": "Kit Fisto"
+ },
+ "aayla-secura": {
+  "answer": "Aayla Secura",
+  "matched": "Aayla Secura",
+  "via": "Aayla Secura"
+ },
+ "shaak-ti": {
+  "answer": "Shaak Ti",
+  "matched": "Shaak Ti",
+  "via": "Shaak Ti"
+ },
+ "luminara-unduli": {
+  "answer": "Luminara Unduli",
+  "matched": "Luminara Unduli",
+  "via": "Luminara Unduli"
+ },
+ "barriss-offee": {
+  "answer": "Barriss Offee",
+  "matched": "Barriss Offee",
+  "via": "Barriss Offee"
+ },
+ "saesee-tiin": {
+  "answer": "Saesee Tiin",
+  "matched": "Saesee Tiin",
+  "via": "Saesee Tiin"
+ },
+ "adi-gallia": {
+  "answer": "Adi Gallia",
+  "matched": "Adi Gallia",
+  "via": "Adi Gallia"
+ },
+ "yaddle": {
+  "answer": "Yaddle",
+  "matched": "Yaddle",
+  "via": "Yaddle"
+ },
+ "dexter-jettster": {
+  "answer": "Dexter Jettster",
+  "matched": "Dexter Jettster",
+  "via": "Dexter Jettster"
+ },
+ "aurra-sing": {
+  "answer": "Aurra Sing",
+  "matched": "Aurra Sing",
+  "via": "Aurra Sing"
+ },
+ "savage-opress": {
+  "answer": "Savage Opress",
+  "matched": "Savage Opress",
+  "via": "Savage Opress"
+ },
+ "mother-talzin": {
+  "answer": "Mother Talzin",
+  "matched": "Talzin",
+  "via": "Mother Talzin"
+ },
+ "pre-vizsla": {
+  "answer": "Pre Vizsla",
+  "matched": "Pre Vizsla",
+  "via": "Pre Vizsla"
+ },
+ "satine-kryze": {
+  "answer": "Satine Kryze",
+  "matched": "Satine Kryze",
+  "via": "Satine Kryze"
+ },
+ "wat-tambor": {
+  "answer": "Wat Tambor",
+  "matched": "Wat Tambor",
+  "via": "Wat Tambor"
+ },
+ "poggle-the-lesser": {
+  "answer": "Poggle the Lesser",
+  "matched": "Poggle the Lesser",
+  "via": "Poggle the Lesser"
+ },
+ "mas-amedda": {
+  "answer": "Mas Amedda",
+  "matched": "Mas Amedda",
+  "via": "Mas Amedda"
+ },
+ "sly-moore": {
+  "answer": "Sly Moore",
+  "matched": "Sly Moore",
+  "via": "Sly Moore"
+ },
+ "lobot": {
+  "answer": "Lobot",
+  "matched": "Lobot",
+  "via": "Lobot"
+ },
+ "ponda-baba": {
+  "answer": "Ponda Baba",
+  "matched": "Ponda Baba",
+  "via": "Ponda Baba"
+ },
+ "dr-evazan": {
+  "answer": "Dr. Evazan",
+  "matched": "Cornelius Evazan",
+  "via": "Dr. Evazan"
+ },
+ "figrin-dan": {
+  "answer": "Figrin D'an",
+  "matched": "Figrin D'an",
+  "via": "Figrin D'an"
+ },
+ "garindan": {
+  "answer": "Garindan",
+  "matched": "Garindan ezz Zavor",
+  "via": "Garindan"
+ },
+ "oola": {
+  "answer": "Oola",
+  "matched": "Oola",
+  "via": "Oola"
+ },
+ "ephant-mon": {
+  "answer": "Ephant Mon",
+  "matched": "Ephant Mon",
+  "via": "Ephant Mon"
+ },
+ "logray": {
+  "answer": "Logray",
+  "matched": "Logray",
+  "via": "Logray"
+ },
+ "chief-chirpa": {
+  "answer": "Chief Chirpa",
+  "matched": "Chirpa",
+  "via": "Chief Chirpa"
+ },
+ "sy-snootles": {
+  "answer": "Sy Snootles",
+  "matched": "Sy Snootles",
+  "via": "Sy Snootles"
+ },
+ "momaw-nadon": {
+  "answer": "Momaw Nadon",
+  "matched": "Momaw Nadon",
+  "via": "Momaw Nadon"
+ },
+ "jocasta-nu": {
+  "answer": "Jocasta Nu",
+  "matched": "Jocasta Nu",
+  "via": "Jocasta Nu"
+ },
+ "cobb-vanth": {
+  "answer": "Cobb Vanth",
+  "matched": "Cobb Vanth",
+  "via": "Cobb Vanth"
+ },
+ "migs-mayfeld": {
+  "answer": "Migs Mayfeld",
+  "matched": "Migs Mayfeld",
+  "via": "Migs Mayfeld"
+ },
+ "cara-dune": {
+  "answer": "Cara Dune",
+  "matched": "Carasynthia Dune",
+  "via": "Cara Dune"
+ },
+ "bodhi-rook": {
+  "answer": "Bodhi Rook",
+  "matched": "Bodhi Rook",
+  "via": "Bodhi Rook"
+ },
+ "zorii-bliss": {
+  "answer": "Zorii Bliss",
+  "matched": "Zorii Bliss",
+  "via": "Zorii Bliss"
+ },
+ "babu-frik": {
+  "answer": "Babu Frik",
+  "matched": "Babu Frik",
+  "via": "Babu Frik"
+ },
+ "boss-nass": {
+  "answer": "Boss Nass",
+  "matched": "Rugor Nass",
+  "via": "Boss Nass"
+ },
+ "general-veers": {
+  "answer": "General Veers",
+  "matched": "Maximilian Veers",
+  "via": "General Veers"
+ },
+ "admiral-piett": {
+  "answer": "Admiral Piett",
+  "matched": "Firmus Piett",
+  "via": "Piett"
+ },
+ "grand-inquisitor": {
+  "answer": "The Grand Inquisitor",
+  "matched": "The Grand Inquisitor",
+  "via": "The Grand Inquisitor"
+ },
+ "second-sister": {
+  "answer": "Trilla Suduri",
+  "matched": "Second Sister",
+  "via": "Second Sister"
+ },
+ "ric-olie": {
+  "answer": "Ric Olié",
+  "matched": "Ric Olié",
+  "via": "Ric Olié"
+ },
+ "captain-panaka": {
+  "answer": "Captain Panaka",
+  "matched": "Quarsh Panaka",
+  "via": "Captain Panaka"
+ },
+ "sio-bibble": {
+  "answer": "Sio Bibble",
+  "matched": "Sio Bibble",
+  "via": "Sio Bibble"
+ },
+ "tion-medon": {
+  "answer": "Tion Medon",
+  "matched": "Tion Medon",
+  "via": "Tion Medon"
+ },
+ "rune-haako": {
+  "answer": "Rune Haako",
+  "matched": "Rune Haako",
+  "via": "Rune Haako"
+ },
+ "tarfful": {
+  "answer": "Tarfful",
+  "matched": "Tarfful",
+  "via": "Tarfful"
+ },
+ "sifo-dyas": {
+  "answer": "Sifo-Dyas",
+  "matched": "Sifo-Dyas",
+  "via": "Sifo-Dyas"
+ },
+ "darth-vader": {
+  "answer": "Darth Vader",
+  "matched": "Darth Vader (pinned image)",
+  "via": "pinned image"
+ }
+}
