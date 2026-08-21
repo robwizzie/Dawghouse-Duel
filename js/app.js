@@ -14,7 +14,7 @@
 (function () {
   'use strict';
 
-  var Store = DHD.Store, Sfx = DHD.Sfx, Net = DHD.Net, Match = DHD.Match;
+  var Store = DHD.Store, Sfx = DHD.Sfx, Net = DHD.Net, Match = DHD.Match, Daily = DHD.Daily;
   var $ = function (id) { return document.getElementById(id); };
   var html = document.documentElement;
 
@@ -36,6 +36,10 @@
     detailsSub: $('detailsSub'), readySub: $('readySub'), summary: $('summary'), rulesRecap: $('rulesRecap'),
     pairPanel: $('pairPanel'), hostBar: $('hostBar'), answerModeRow: $('answerModeRow'),
     joinGame: $('joinGame'),
+    dailyBtn: $('dailyBtn'), dailyCat: $('dailyCat'), dailyMeta: $('dailyMeta'),
+    resShare: $('resShare'), resultMarks: $('resultMarks'),
+    ovlTutorial: $('ovlTutorial'), tutSkip: $('tutSkip'), tutDots: $('tutDots'),
+    tutBack: $('tutBack'), tutNext: $('tutNext'), toTutorial: $('toTutorial'),
     silhouetteNote: $('silhouetteNote'),
     lobby: $('lobby'), lobbyCode: $('lobbyCode'), lobbyUrl: $('lobbyUrl'),
     lobbyCopy: $('lobbyCopy'), lobbyState: $('lobbyState'),
@@ -91,7 +95,7 @@
     active: 0, startMs: 45000,
     runStart: 0, lastTickSec: null,
     raf: 0, backstop: 0, peek: false,
-    lockUntil: 0, revealTimer: 0, introTimer: 0
+    lockUntil: 0, revealTimer: 0, introTimer: 0, pendingBeat: null
   };
 
   /* ── small helpers ───────────────────────────────────────── */
@@ -115,6 +119,67 @@
     return cat.items.filter(function (it) { return deep || it.tier !== 'deep'; });
   }
 
+  /* ══════════════════ TUTORIAL ══════════════════
+     Shown once, the first time somebody arrives, and never again unless
+     they ask. Skippable from the first frame — nobody should have to sit
+     through four panels to play a game. */
+  var TUT_SLIDES = 4, tutAt = 0;
+
+  function buildTutDots() {
+    el.tutDots.innerHTML = '';
+    for (var i = 0; i < TUT_SLIDES; i++) el.tutDots.appendChild(document.createElement('li'));
+  }
+
+  function showTutSlide(i) {
+    tutAt = Math.max(0, Math.min(TUT_SLIDES - 1, i));
+    [].forEach.call(el.ovlTutorial.querySelectorAll('.tut__slide'), function (n, n2) {
+      n.classList.toggle('now', n2 === tutAt);
+    });
+    [].forEach.call(el.tutDots.children, function (d, n2) { d.className = n2 === tutAt ? 'now' : ''; });
+    el.tutBack.style.visibility = tutAt === 0 ? 'hidden' : 'visible';
+    el.tutNext.textContent = tutAt === TUT_SLIDES - 1 ? "Let's play" : 'Next';
+  }
+
+  function openTutorial() { buildTutDots(); showTutSlide(0); el.ovlTutorial.hidden = false; }
+  function closeTutorial() {
+    el.ovlTutorial.hidden = true;
+    try { localStorage.setItem('dhd.seenTutorial', '1'); } catch (e) {}
+  }
+
+  /* ══════════════════ TODAY'S CHALLENGE ══════════════════
+     Ten pictures, sixty seconds, and the same ten for everybody. The
+     deck comes from the date alone (js/daily.js) so two people can
+     compare a score without either of them having a server. */
+  function refreshDaily() {
+    todaysPuzzle = Daily.build(CATS);
+    if (!todaysPuzzle) { el.dailyBtn.hidden = true; return; }
+    el.dailyBtn.hidden = false;
+
+    var done = Daily.resultFor(todaysPuzzle.key);
+    el.dailyCat.textContent = todaysPuzzle.cat.name;
+    el.dailyBtn.classList.toggle('is-done', !!done);
+    var streak = Daily.streak();
+    el.dailyMeta.textContent = done
+      ? 'Done — you got ' + done.score + '/' + Daily.LENGTH + (streak > 1 ? ' · ' + streak + ' day streak' : '')
+      : Daily.LENGTH + ' pictures · ' + (Daily.CLOCK_MS / 1000) + ' seconds' +
+        (streak ? ' · ' + streak + ' day streak' : '');
+  }
+
+  function startDaily() {
+    if (!todaysPuzzle) return;
+    Sfx.unlock();
+    cfg.play = 'solo';
+    cfg.answers = 'type';
+    cfg.catId = todaysPuzzle.cat.id;
+    cfg.clockMs = Daily.CLOCK_MS;
+    cfg.pictureMode = 'normal';
+    cfg.deck = 'images';
+    cfg.names = [cfg.names[0] || 'YOU', cfg.names[1] || ''];
+    Sfx.setEnabled(cfg.sound);
+    Sfx.setTick(cfg.tick);
+    startDuel({ daily: todaysPuzzle });
+  }
+
   /* ══════════════════ THE GUIDED FLOW ══════════════════
      The app began as a tool for one operator who knew the keyboard.
      A stranger arriving from a video knows none of it, so setup is a
@@ -122,6 +187,7 @@
      with a sensible default hides behind "More options". */
   var STEPS = ['mode', 'category', 'details', 'ready'];
   var stepAt = 0, chosenCat = null;
+  var todaysPuzzle = null;
 
   /* What this browser has played, per deck. Shown on the gallery so the
      decks stop being interchangeable strangers. */
@@ -129,12 +195,13 @@
     try { return JSON.parse(localStorage.getItem('dhd.stats') || '{}') || {}; }
     catch (e) { return {}; }
   }
-  function recordPlay(catId, mode, bestRally) {
+  function recordPlay(catId, mode, bestRally, score) {
     try {
       var all = loadStats();
-      var row = all[catId] || { duel: 0, solo: 0, rally: 0 };
+      var row = all[catId] || { duel: 0, solo: 0, rally: 0, best: 0 };
       row[mode] = (row[mode] || 0) + 1;
       if (bestRally > (row.rally || 0)) row.rally = bestRally;
+      if (score != null && score > (row.best || 0)) row.best = score;
       all[catId] = row;
       localStorage.setItem('dhd.stats', JSON.stringify(all));
     } catch (e) {}
@@ -145,7 +212,8 @@
     var bits = [];
     if (row.duel) bits.push('<b>' + row.duel + '</b> duel' + (row.duel > 1 ? 's' : ''));
     if (row.solo) bits.push('<b>' + row.solo + '</b> solo');
-    if (row.rally) bits.push('best rally <b>' + row.rally + '</b>');
+    if (row.best) bits.push('best <b>' + row.best + '</b>');
+    if (row.rally) bits.push('rally <b>' + row.rally + '</b>');
     return bits.join(' · ');
   }
 
@@ -467,7 +535,9 @@
     return withArt.concat(without);
   }
 
-  function startDuel() {
+  function startDuel(opts) {
+    opts = opts || {};
+    G.daily = opts.daily || null;
     pods[0].root.classList.remove('is-dead');
     pods[1].root.classList.remove('is-dead');
     el.reveal.hidden = el.penaltyPop.hidden = el.boardPeek.hidden = true;
@@ -475,9 +545,14 @@
     stopTicker();
     clearTimeout(G.introTimer);
     clearTimeout(G.revealTimer);
-    readSetup();
+    G.pendingBeat = null;
+    /* A daily's settings come from the puzzle, not from the wizard's
+       controls — reading those back would swap the day's category for
+       whatever the dropdown happens to hold. */
+    if (!G.daily) readSetup();
     G.cat = catById(cfg.catId);
-    G.queue = buildQueue();
+    G.queue = G.daily ? G.daily.items.slice() : buildQueue();
+    G.marks = [];
     if (!G.queue.length) { toast('That category is empty'); return; }
     G.idx = 0;
     G.startMs = cfg.clockMs;
@@ -634,6 +709,7 @@
     if (G.phase !== 'live') return;
     if (locked(200)) return;
     G.players[G.active].right++;
+    if (G.daily) G.marks[G.idx] = 1;
     bumpRally();
     renderStats();
     Sfx.correct();
@@ -652,6 +728,7 @@
     if (side != null && side !== G.active) return;   // only the dawg on the clock may pass
     if (locked(260)) return;
     G.players[G.active].passes++;
+    if (G.daily) G.marks[G.idx] = 0;
     breakRally();
     renderStats();
     Sfx.pass();
@@ -670,6 +747,7 @@
     if (G.phase !== 'live') return;
     if (locked(220)) return;
     Sfx.wrong();
+    if (G.daily && G.marks[G.idx] === undefined) G.marks[G.idx] = 0;
     breakRally();
     flash('is-no');
     charge(cfg.penaltyMs);
@@ -713,6 +791,9 @@
 
   function nextItem() {
     G.idx++;
+    /* A daily is a fixed ten. Running out is the end of the run, not a
+       cue to reshuffle. */
+    if (G.daily && G.idx >= G.queue.length) { commit(); return endSolo(); }
     if (G.idx >= G.queue.length) { G.queue = buildQueue(); G.idx = 0; }
     showItem();
     Store.preload(G.cat.id, G.queue.slice(G.idx + 1, G.idx + 5));
@@ -735,10 +816,14 @@
       el.reveal.hidden = false;
     }
     clearTimeout(G.revealTimer);
+    /* Held so a pause landing inside the beat doesn't swallow the handover.
+       togglePause() deliberately leaves this alone; resume runs it. */
+    G.pendingBeat = then;
     G.revealTimer = setTimeout(function () {
       el.reveal.hidden = true;
       document.body.classList.remove('is-revealing');
       if (G.phase !== 'reveal') return;   // reset/pause/quit landed mid-beat
+      G.pendingBeat = null;
       then();
     }, Math.max(60, ms));
   }
@@ -746,7 +831,7 @@
   function togglePause() {
     if (G.phase === 'live' || G.phase === 'reveal') {
       commit();
-      clearTimeout(G.revealTimer);
+      clearTimeout(G.revealTimer);   // the continuation is kept, not dropped
       el.reveal.hidden = true;
       G.phase = 'paused';
       stopTicker();
@@ -756,7 +841,12 @@
     } else if (G.phase === 'paused') {
       el.ovlPause.hidden = true;
       document.body.classList.remove('is-frozen');
-      goLive();
+      document.body.classList.remove('is-revealing');
+      /* Paused mid-reveal: finish that beat rather than resuming a picture
+         that has already been answered. The continuation calls goLive(). */
+      var pending = G.pendingBeat;
+      if (pending) { G.pendingBeat = null; G.phase = 'reveal'; pending(); }
+      else goLive();
     }
   }
 
@@ -764,6 +854,7 @@
     G.phase = 'over';
     stopTicker();
     clearTimeout(G.revealTimer);
+    G.pendingBeat = null;
     el.reveal.hidden = true;
     el.passBar.disabled = true;
     pods[0].root.classList.remove('is-hit');
@@ -796,18 +887,41 @@
 
   /* Solo has no loser — the card is a score, built to be screenshotted. */
   function endSolo() {
+    if (G.phase === 'over') return;
+    G.phase = 'over';
+    stopTicker();
+    clearTimeout(G.revealTimer);
+    G.pendingBeat = null;
+    el.reveal.hidden = true;
+    document.body.classList.remove('is-revealing');
+    el.passBar.disabled = true;
+    el.answerBar.hidden = true;
     var p = G.players[0];
     G.winnerName = p.name;
     el.resultName.textContent = p.name;
-    el.resultLabel.textContent = 'TIME';
+    el.resultLabel.textContent = G.daily ? "TODAY'S CHALLENGE" : 'TIME';
     el.resRematchLabel.innerHTML = 'GO AGAIN <i>(R)</i>';
     el.resNewLabel.innerHTML = 'NEW RUN <i>(N)</i>';
-    el.resultLine.textContent = G.cat.name + ' · ' + (G.startMs / 1000) + ' seconds';
+    el.resultLine.textContent = G.daily
+      ? G.cat.name + ' · day ' + G.daily.day
+      : G.cat.name + ' · ' + (G.startMs / 1000) + ' seconds';
+
+    if (G.daily) {
+      var marks = [];
+      for (var i = 0; i < Daily.LENGTH; i++) marks.push(G.marks[i] === 1 ? 1 : 0);
+      Daily.save(G.daily.key, p.right, marks);
+      el.resultMarks.innerHTML = marks.map(function (m) {
+        return '<i class="' + (m ? 'hit' : 'miss') + '"></i>';
+      }).join('');
+      el.resultMarks.hidden = false;
+    } else {
+      el.resultMarks.hidden = true;
+    }
     el.soloScore.textContent = p.right;
     el.soloBest.textContent = G.bestRally;
     el.resultSolo.hidden = false;
     el.resultTbl.hidden = true;
-    recordPlay(G.cat.id, 'solo', G.bestRally);
+    recordPlay(G.cat.id, 'solo', G.bestRally, p.right);
     setTimeout(function () { el.ovlResult.hidden = false; }, 900);
   }
 
@@ -816,10 +930,12 @@
     stopTicker();
     clearTimeout(G.introTimer);
     clearTimeout(G.revealTimer);
+    G.pendingBeat = null;
     el.ovlIntro.hidden = el.ovlResult.hidden = el.ovlPause.hidden = true;
     el.reveal.hidden = el.penaltyPop.hidden = el.boardPeek.hidden = true;
     document.body.classList.remove('is-revealing');
     clearTimeout(G.revealTimer);
+    G.pendingBeat = null;
     pods[0].root.classList.remove('is-dead');
     pods[1].root.classList.remove('is-dead');
     show('setup');
@@ -921,6 +1037,42 @@
     renderRally(true);
   }
 
+  /* ── sharing ──────────────────────────────────────────────────
+     Spoiler-free on purpose: squares, not answers. Somebody reading it
+     learns how you did without learning what was in it. */
+  function shareText() {
+    var url = (cfg.hostUrl || 'dawghouseduel.com').replace(/\/host$/, '');
+    if (G.daily) {
+      var marks = (G.marks || []).slice(0, Daily.LENGTH);
+      var grid = '';
+      for (var i = 0; i < Daily.LENGTH; i++) grid += (marks[i] === 1 ? '🟩' : '⬛');
+      var streak = Daily.streak();
+      return 'Dawg House Duel — Day ' + G.daily.day + '\n' +
+        G.cat.name + ' · ' + G.players[0].right + '/' + Daily.LENGTH + '\n' +
+        grid + (streak > 1 ? '\n' + streak + ' day streak' : '') + '\n' + url;
+    }
+    if (G.solo) {
+      return 'Dawg House Duel — ' + G.cat.name + '\n' +
+        G.players[0].right + ' correct · best rally ' + G.bestRally +
+        ' · ' + (G.startMs / 1000) + 's\n' + url;
+    }
+    var a = G.players[0], b = G.players[1];
+    return 'Dawg House Duel — ' + G.cat.name + '\n' +
+      a.name + ' ' + a.right + ' — ' + b.right + ' ' + b.name + '\n' +
+      G.winnerName + ' took it\n' + url;
+  }
+
+  function shareResult() {
+    var text = shareText();
+    if (navigator.share) {
+      navigator.share({ text: text }).catch(function () {});
+      return;
+    }
+    (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject())
+      .then(function () { toast('Result copied'); })
+      .catch(function () { window.prompt('Copy your result', text); });
+  }
+
   /* ── typed answers ───────────────────────────────────────────
      In typed mode nobody is marking, so the app is. Match.check is
      forgiving about spelling and strict about ambiguity — see
@@ -935,13 +1087,23 @@
     if (verdict) {
       el.answerInput.value = '';
       doCorrect();
-    } else {
-      el.answerBar.classList.remove('is-wrong');
-      void el.answerBar.offsetWidth;
-      el.answerBar.classList.add('is-wrong');
-      el.answerInput.select();
-      doWrong();
+      return;
     }
+
+    el.answerBar.classList.remove('is-wrong');
+    void el.answerBar.offsetWidth;
+    el.answerBar.classList.add('is-wrong');
+    el.answerInput.select();
+
+    /* If they named something else that is genuinely in this deck, say so.
+       "Wrong" is much less useful than "right idea, wrong one". */
+    var other = null;
+    for (var i = 0; i < G.queue.length && !other; i++) {
+      if (i === G.idx) continue;
+      if (Match.check(typed, G.queue[i], G.tokenIndex)) other = G.queue[i];
+    }
+    toast(other ? 'That\u2019s ' + other.name + ' — but not this one' : 'Not quite');
+    doWrong();
   }
 
   function focusAnswer() {
@@ -1274,6 +1436,16 @@
   });
   el.joinGame.addEventListener('click', function () { location.href = 'play.html'; });
 
+  el.dailyBtn.addEventListener('click', startDaily);
+  el.resShare.addEventListener('click', shareResult);
+  el.toTutorial.addEventListener('click', openTutorial);
+  el.tutSkip.addEventListener('click', closeTutorial);
+  el.tutBack.addEventListener('click', function () { showTutSlide(tutAt - 1); });
+  el.tutNext.addEventListener('click', function () {
+    if (tutAt === TUT_SLIDES - 1) closeTutorial(); else showTutSlide(tutAt + 1);
+  });
+  el.ovlTutorial.addEventListener('click', function (e) { if (e.target === el.ovlTutorial) closeTutorial(); });
+
   el.answerBar.addEventListener('submit', submitTyped);
   el.answerPass.addEventListener('click', function () { doPass(null); focusAnswer(); });
   el.catSelect.addEventListener('change', function () { cfg.catId = el.catSelect.value; refreshMediaCount(); refreshPictureModes(); });
@@ -1296,7 +1468,10 @@
     el.ovlHelp.hidden = true;
     if (helpPaused) { helpPaused = false; if (G.phase === 'paused') togglePause(); }
   }
-  el.toHelp.addEventListener('click', openHelp);
+  /* Optional controls: bind only if the markup actually has them, so
+     renaming a button in the HTML can never take the whole boot down. */
+  function on(node, ev, fn) { if (node) node.addEventListener(ev, fn); }
+  on(el.toHelp, 'click', function () { closeTutorial(); openHelp(); });
   el.soundCheck.addEventListener('click', function () {
     Sfx.unlock();
     Sfx.setEnabled(true);
@@ -1315,7 +1490,7 @@
 
   el.passBar.addEventListener('click', function () { Sfx.unlock(); doPass(null); el.passBar.blur(); });
   el.resRematch.addEventListener('click', function () { el.ovlResult.hidden = true; startDuel(); });
-  el.resNew.addEventListener('click', backToSetup);
+  el.resNew.addEventListener('click', function () { backToSetup(); refreshDaily(); });
 
   el.mediaCopy.addEventListener('click', function () {
     var text = mediaCat.items.map(function (it) { return it.slug + '.jpg    ' + it.name; }).join('\n');
@@ -1361,7 +1536,8 @@
 
     if (k === 'h' || k === 'H') { e.preventDefault(); openHost(); return; }
     if (k === '?' || k === '/') { e.preventDefault(); if (el.ovlHelp.hidden) openHelp(); else closeHelp(); return; }
-    if (k === 'Escape') { if (!el.ovlHelp.hidden) { closeHelp(); return; } if (html.dataset.screen !== 'setup') backToSetup(); return; }
+    if (k === 'Escape') { if (!el.ovlTutorial.hidden) { closeTutorial(); return; }
+                          if (!el.ovlHelp.hidden) { closeHelp(); return; } if (html.dataset.screen !== 'setup') backToSetup(); return; }
     if (k === 'f' || k === 'F') { e.preventDefault(); toggleFullscreen(); return; }
     if (!el.ovlHelp.hidden) return;
 
@@ -1413,6 +1589,12 @@
   refreshPictureModes();
   show('welcome');
 
+  /* First visit gets the tutorial once. After that it lives behind the
+     "How to play" button and never interrupts anyone again. */
+  try {
+    if (!localStorage.getItem('dhd.seenTutorial')) setTimeout(openTutorial, 400);
+  } catch (e) {}
+
   /* Someone who has played before shouldn't be walked through it again. */
   try {
     if (localStorage.getItem('dhd.cfg')) {
@@ -1427,6 +1609,7 @@
 
   Store.init(CATS.map(function (c) { return c.id; })).then(function () {
     refreshMediaCount();
+    refreshDaily();
     if (el.catGrid.childElementCount) { el.catGrid.innerHTML = ''; refreshCatGrid(); }
   });
 })();

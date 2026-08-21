@@ -115,13 +115,15 @@ It also unlocks audio, which browsers gate until the first click.
 | Star Wars | 147 | 147 | Wookieepedia |
 | Sitcom Characters | 135 | 135 | 29 per-show wikis |
 | Pokémon | 179 | 179 | PokeAPI official artwork |
-| Video Game Characters | 89 | 86 | 40 franchise wikis |
+| Video Game Characters | 89 | 89 | 40 franchise wikis |
 | Cartoon Characters | 89 | 89 | 15 network + show wikis |
 | Dog Breeds | 128 | 128 | Wikipedia |
 | NBA — Today | 129 | 129 | Wikipedia |
 | NBA — All-Time Greats | 115 | 115 | Wikipedia |
+| Attack on Titan | 46 | 46 | Attack on Titan Wiki |
+| SpongeBob | 37 | 37 | Encyclopedia SpongeBobia |
 
-**1,443 pictures across eleven categories.**
+**1,529 pictures across thirteen categories — every answer has a picture.**
 
 Each is one file in `js/data/`, registered with a `<script>` tag in
 `index.html`. Difficulty tiers (`easy` / `mid` / `deep`) let the **deep cuts**
@@ -353,13 +355,68 @@ being polite — see `to: 'host' | 'player'` in `worker/src/index.js`.
 
 ## Solo
 
-The setup screen picks between **Duel** (two dawgs, two clocks) and **Play
-Along** (one clock, one player, how many can you get). Solo hides the second
+The setup screen picks between **Duel** (two dawgs, two clocks) and **Solo**
+(one clock, one player, how many can you get). Solo hides the second
 pod, keeps you on the clock through a correct answer instead of handing over,
 and ends on a score card built to be screenshotted: category, clock, correct,
 best streak.
 
 It exists so a viewer can play too. Watching is a view; playing is a share.
+
+## The daily challenge
+
+One puzzle a day, the same one for everybody: **ten pictures, one 60-second
+clock**. The category rotates daily too, so Tuesday might be Pokémon and
+Wednesday Attack on Titan.
+
+There is no server behind it. The deck is derived from the date alone with a
+fixed hash (`js/daily.js`), which is what makes a shared score mean anything —
+two people on opposite sides of the world get an identical ten. For the same
+reason the build reads only the shipped category data, never what's cached in
+your browser: a puzzle that varied per device wouldn't be comparable.
+
+It ends when the deck runs out or the clock does, whichever comes first, and
+the result is saved so the button reads *done* for the rest of the day.
+Consecutive days build a **streak**.
+
+## Sharing a result
+
+**SHARE RESULT** on the score card copies a spoiler-free block — the picture
+names never appear, only whether each one landed:
+
+```
+Dawg House Duel — Day 233
+NBA — Today · 7/10
+🟩🟩⬛🟩🟩🟩⬛🟩🟩🟩
+4 day streak
+dawghouseduel.com
+```
+
+On a phone it opens the native share sheet instead. Duel and Solo runs share
+too, with the score line instead of the grid.
+
+## The tutorial
+
+Four slides — one picture at a time, only your clock runs, wrong answers cost
+you, first to zero loses. It opens **once**, on a first visit, before anyone
+reaches a game.
+
+After that it stays behind **How to play** on the welcome screen. Skip is
+always available on the first slide, so anyone who doesn't want it never sees
+it twice.
+
+## Personal bests
+
+Each category card carries its own history: **times played**, whether those
+were Solo or Duel, and the **longest rally** you've managed there. Stored in
+`localStorage` under `dhd.*`; clearing site data resets it.
+
+## When you're close
+
+In typed mode a wrong answer that happens to name *another* picture in the deck
+says so — *"That's Pikachu — but not this one"* — rather than a flat **Not
+quite**. It's the difference between "you don't know this" and "you know it,
+wrong card".
 
 ## The rally counter
 
@@ -431,6 +488,9 @@ js/data/cartoons.js   89 cartoon characters, every era
 js/data/dogs.js       128 dog breeds
 js/data/nba-today.js  129 current NBA players
 js/data/nba-goats.js  115 all-time NBA greats
+js/data/aot.js        46 Attack on Titan characters, Titans and references
+js/data/spongebob.js  37 SpongeBob characters and Bikini Bottom landmarks
+js/daily.js           the date-seeded daily puzzle, streaks and saved results
 js/net.js             local channel + relay transport
 js/config.js          relay URL and host URL — the one file to edit on deploy
 worker/               the Cloudflare Worker that pairs a phone to a duel screen

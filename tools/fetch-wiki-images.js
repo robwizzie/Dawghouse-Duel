@@ -99,8 +99,9 @@ async function fetchWithBackoff(url, label) {
 }
 
 function api(wiki) {
-  // Wikipedia serves the API from /w/, Fandom from the root.
-  return 'https://' + wiki + (/wiki[mp]edia\.org$/.test(wiki) ? '/w/api.php' : '/api.php');
+  // Fandom serves the API from the root; most other MediaWiki installs
+  // (Wikipedia, DoomWiki.org and friends) put it under /w/.
+  return 'https://' + wiki + (/\.fandom\.com$/.test(wiki) ? '/api.php' : '/w/api.php');
 }
 
 /* One request per 50 titles rather than one per answer — the difference
@@ -277,14 +278,22 @@ async function credits(wiki, files) {
         continue;
       }
 
-      const tmp = dest + '.tmp';
+      /* -Z preserves the source format, so in keepAlpha mode the name has
+         to follow the bytes. Forcing .png onto a JPEG makes a file the
+         browser refuses to render under nosniff. */
+      const alphaDest = keepAlpha ? path.join(OUT, item.slug + real) : dest;
+      const tmp = alphaDest + '.tmp';
       fs.writeFileSync(tmp, buf);
       if (keepAlpha) {
+        ['.jpg', '.png', '.webp', '.svg'].forEach(other => {
+          const stale = path.join(OUT, item.slug + other);
+          if (other !== real && fs.existsSync(stale)) fs.unlinkSync(stale);
+        });
         // -Z keeps the format, so the alpha channel survives the resize.
         try {
-          execFileSync('sips', ['-Z', String(MAX_EDGE), tmp, '--out', dest], { stdio: 'ignore' });
+          execFileSync('sips', ['-Z', String(MAX_EDGE), tmp, '--out', alphaDest], { stdio: 'ignore' });
           fs.unlinkSync(tmp);
-        } catch (e) { fs.renameSync(tmp, dest); }
+        } catch (e) { fs.renameSync(tmp, alphaDest); }
       } else {
         try {
           execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', '88', tmp, '--out', dest],
@@ -310,8 +319,9 @@ async function credits(wiki, files) {
      arrives flat would render as a black rectangle, so say so loudly. */
   if (keepAlpha) {
     const flat = cat.items.filter(it => {
-      const f = path.join(OUT, it.slug + EXT);
-      if (!fs.existsSync(f)) return false;
+      const f = ['.png', '.jpg', '.webp', '.svg']
+        .map(e => path.join(OUT, it.slug + e)).find(fs.existsSync);
+      if (!f) return false;
       const b = fs.readFileSync(f);
       if (!(b[0] === 0x89 && b[1] === 0x50)) return true;
       const colourType = b.readUInt8(25);

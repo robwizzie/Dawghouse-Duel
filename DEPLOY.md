@@ -105,7 +105,7 @@ the domain is **Active**. You can carry on with steps 3 and 4 while you wait.
 
 6. **Save and Deploy**.
 
-The first deploy uploads about 1,500 files and 305 MB of artwork, so give it a
+The first deploy uploads about 1,600 files and 310 MB of artwork, so give it a
 few minutes. Later deploys only upload what changed and take seconds.
 
 When it finishes you get a URL like `https://dawghouse-duel.pages.dev`.
@@ -135,8 +135,8 @@ Open <https://dawghouseduel.com>.
 From now on **every push to `main` redeploys the site within a minute.** Nothing
 else to do, ever.
 
-**If you only wanted the site, stop here.** Typed duels, Solo, all eleven
-categories, silhouette and zoom modes — all working. What needs the relay is
+**If you only wanted the site, stop here.** Typed duels, Solo, the daily
+challenge, all thirteen categories, silhouette and zoom modes — all working. What needs the relay is
 Online Duel and marking from a phone.
 
 ---

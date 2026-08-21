@@ -74,7 +74,7 @@ window.DHD_CATEGORIES.push({
     {slug:'kratos',       name:'Kratos',       alt:[],                 note:'God of War',    tier:'easy', clue:'Ash-white skin, red tattoo, extremely angry.',          wiki:'godofwar.fandom.com'},
     {slug:'lara-croft',   name:'Lara Croft',   alt:[],                 note:'Tomb Raider',   tier:'easy', clue:'Twin pistols, plait, archaeologist by claim.',          wiki:'tombraider.fandom.com', flat:true},
     {slug:'solid-snake',  name:'Solid Snake',  alt:['Snake'],          note:'Metal Gear',    tier:'mid',  clue:'Bandana, sneaking suit, hides in a cardboard box.',     wiki:'metalgear.fandom.com', flat:true},
-    {slug:'doom-slayer',  name:'Doom Slayer',  alt:['Doomguy'],        note:'DOOM',          tier:'mid',  clue:'Green armour and no interest in conversation.',         wiki:'doom.fandom.com'},
+    {slug:'doom-slayer',  name:'Doom Slayer',  alt:['Doomguy'],        note:'DOOM',          tier:'mid',  clue:'Green armour and no interest in conversation.',         wiki:'doomwiki.org', image:'https://doomwiki.org/w/images/5/5e/QC_doommarine1.jpg'},
     {slug:'gordon-freeman',name:'Gordon Freeman',alt:[],               note:'Half-Life',     tier:'mid',  clue:'Glasses, goatee, crowbar, never says a word.',          wiki:'half-life.fandom.com'},
     {slug:'leon-kennedy', name:'Leon S. Kennedy',alt:['Leon Kennedy'], note:'Resident Evil', tier:'mid',  clue:'Rookie cop on his first day in Raccoon City.',          wiki:'residentevil.fandom.com'},
     {slug:'jill-valentine',name:'Jill Valentine',alt:['Jill'],         note:'Resident Evil', tier:'mid',  clue:'S.T.A.R.S. member. The master of unlocking.',           wiki:'residentevil.fandom.com'},
@@ -89,8 +89,8 @@ window.DHD_CATEGORIES.push({
 
     /* ── PLATFORMERS & MASCOTS ── */
     {slug:'crash-bandicoot',name:'Crash Bandicoot',alt:['Crash'],      note:'Crash',         tier:'easy', clue:'Orange marsupial in blue shorts who spins.',            wiki:'crashbandicoot.fandom.com'},
-    {slug:'spyro',        name:'Spyro',        alt:[],                 note:'Spyro',         tier:'mid',  clue:'Small purple dragon with orange horns.',                wiki:'spyro.fandom.com'},
-    {slug:'rayman',       name:'Rayman',       alt:[],                 note:'Rayman',        tier:'mid',  clue:'No arms or legs. The hands just float there.',          wiki:'rayman.fandom.com'},
+    {slug:'spyro',        name:'Spyro',        alt:[],                 note:'Spyro',         tier:'mid',  clue:'Small purple dragon with orange horns.',                wiki:'spyro.fandom.com', page:'Spyro the Dragon (character)'},
+    {slug:'rayman',       name:'Rayman',       alt:[],                 note:'Rayman',        tier:'mid',  clue:'No arms or legs. The hands just float there.',          wiki:'raymanpedia.fandom.com'},
     {slug:'mega-man',     name:'Mega Man',     alt:['Megaman','Rockman'],note:'Mega Man',    tier:'mid',  clue:'Blue helmet and an arm cannon. Takes the boss weapon.', wiki:'megaman.fandom.com'},
     {slug:'pac-man',      name:'Pac-Man',      alt:['Pacman'],         note:'Pac-Man',       tier:'easy', clue:'A yellow circle with a wedge missing.',                 wiki:'pacman.fandom.com'},
     {slug:'banjo',        name:'Banjo',        alt:['Banjo-Kazooie'],  note:'Banjo-Kazooie', tier:'deep', clue:'Honey bear with a blue rucksack and a bird in it.',     wiki:'banjokazooie.fandom.com'},

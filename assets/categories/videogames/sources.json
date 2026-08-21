@@ -514,5 +514,23 @@
   "matched": "Gordon Freeman",
   "via": "Gordon Freeman",
   "wiki": "half-life.fandom.com"
+ },
+ "spyro": {
+  "answer": "Spyro",
+  "matched": "Spyro the Dragon (character)",
+  "via": "Spyro the Dragon (character)",
+  "wiki": "spyro.fandom.com"
+ },
+ "rayman": {
+  "answer": "Rayman",
+  "matched": "Rayman",
+  "via": "Rayman",
+  "wiki": "raymanpedia.fandom.com"
+ },
+ "doom-slayer": {
+  "answer": "Doom Slayer",
+  "matched": "Doom Slayer",
+  "via": "pinned image",
+  "wiki": "doomwiki.org"
  }
 }

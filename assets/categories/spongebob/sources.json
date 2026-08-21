@@ -1,0 +1,187 @@
+{
+ "spongebob-squarepants": {
+  "answer": "SpongeBob SquarePants",
+  "matched": "SpongeBob SquarePants (character)",
+  "via": "SpongeBob SquarePants (character)"
+ },
+ "patrick-star": {
+  "answer": "Patrick Star",
+  "matched": "Patrick Star",
+  "via": "Patrick Star"
+ },
+ "squidward-tentacles": {
+  "answer": "Squidward Tentacles",
+  "matched": "Squidward Tentacles",
+  "via": "Squidward Tentacles"
+ },
+ "mr-krabs": {
+  "answer": "Mr. Krabs",
+  "matched": "Eugene H. Krabs",
+  "via": "Eugene Krabs"
+ },
+ "sandy-cheeks": {
+  "answer": "Sandy Cheeks",
+  "matched": "Sandy Cheeks",
+  "via": "Sandy Cheeks"
+ },
+ "plankton": {
+  "answer": "Plankton",
+  "matched": "Sheldon J. Plankton",
+  "via": "Plankton"
+ },
+ "gary": {
+  "answer": "Gary the Snail",
+  "matched": "Gary the Snail",
+  "via": "Gary the Snail"
+ },
+ "pearl-krabs": {
+  "answer": "Pearl Krabs",
+  "matched": "Pearl Krabs",
+  "via": "Pearl Krabs"
+ },
+ "mrs-puff": {
+  "answer": "Mrs. Puff",
+  "matched": "Mrs. Puff",
+  "via": "Mrs. Puff"
+ },
+ "karen": {
+  "answer": "Karen",
+  "matched": "Karen Plankton",
+  "via": "Karen"
+ },
+ "squilliam-fancyson": {
+  "answer": "Squilliam Fancyson",
+  "matched": "Squilliam Fancyson",
+  "via": "Squilliam Fancyson"
+ },
+ "larry-the-lobster": {
+  "answer": "Larry the Lobster",
+  "matched": "Larry the Lobster",
+  "via": "Larry the Lobster"
+ },
+ "mermaid-man": {
+  "answer": "Mermaid Man",
+  "matched": "Mermaid Man",
+  "via": "Mermaid Man"
+ },
+ "barnacle-boy": {
+  "answer": "Barnacle Boy",
+  "matched": "Barnacle Boy",
+  "via": "Barnacle Boy"
+ },
+ "bubble-bass": {
+  "answer": "Bubble Bass",
+  "matched": "Bubble Bass",
+  "via": "Bubble Bass"
+ },
+ "flying-dutchman": {
+  "answer": "The Flying Dutchman",
+  "matched": "Flying Dutchman",
+  "via": "The Flying Dutchman"
+ },
+ "man-ray": {
+  "answer": "Man Ray",
+  "matched": "Man Ray",
+  "via": "Man Ray"
+ },
+ "dirty-bubble": {
+  "answer": "The Dirty Bubble",
+  "matched": "Dirty Bubble",
+  "via": "The Dirty Bubble"
+ },
+ "patchy-the-pirate": {
+  "answer": "Patchy the Pirate",
+  "matched": "Patchy the Pirate",
+  "via": "Patchy the Pirate"
+ },
+ "painty-the-pirate": {
+  "answer": "Painty the Pirate",
+  "matched": "Painty the Pirate",
+  "via": "Painty the Pirate"
+ },
+ "old-man-jenkins": {
+  "answer": "Old Man Jenkins",
+  "matched": "Old Man Jenkins",
+  "via": "Old Man Jenkins"
+ },
+ "kevin-c-cucumber": {
+  "answer": "Kevin C. Cucumber",
+  "matched": "Kevin C. Cucumber",
+  "via": "Kevin C. Cucumber"
+ },
+ "perch-perkins": {
+  "answer": "Perch Perkins",
+  "matched": "Perch Perkins",
+  "via": "Perch Perkins"
+ },
+ "harold-squarepants": {
+  "answer": "Harold SquarePants",
+  "matched": "Harold SquarePants",
+  "via": "Harold SquarePants"
+ },
+ "grandma-squarepants": {
+  "answer": "Grandma SquarePants",
+  "matched": "Grandma SquarePants",
+  "via": "Grandma SquarePants"
+ },
+ "nat-peterson": {
+  "answer": "Nat Peterson",
+  "matched": "Incidental 41",
+  "via": "Nat Peterson"
+ },
+ "fred": {
+  "answer": "Fred",
+  "matched": "Fred",
+  "via": "Fred"
+ },
+ "bubble-buddy": {
+  "answer": "Bubble Buddy",
+  "matched": "Bubble Buddy (character)",
+  "via": "Bubble Buddy (character)"
+ },
+ "doodlebob": {
+  "answer": "DoodleBob",
+  "matched": "DoodleBob",
+  "via": "DoodleBob"
+ },
+ "flats-the-flounder": {
+  "answer": "Flats the Flounder",
+  "matched": "Flats the Flounder",
+  "via": "Flats the Flounder"
+ },
+ "king-neptune": {
+  "answer": "King Neptune",
+  "matched": "King Neptune",
+  "via": "King Neptune"
+ },
+ "mindy": {
+  "answer": "Mindy",
+  "matched": "Princess Mindy",
+  "via": "Mindy"
+ },
+ "dennis": {
+  "answer": "Dennis",
+  "matched": "Dennis",
+  "via": "Dennis"
+ },
+ "bikini-bottom": {
+  "answer": "Bikini Bottom",
+  "matched": "Bikini Bottom",
+  "via": "Bikini Bottom"
+ },
+ "krusty-krab": {
+  "answer": "The Krusty Krab",
+  "matched": "Krusty Krab",
+  "via": "The Krusty Krab"
+ },
+ "chum-bucket": {
+  "answer": "The Chum Bucket",
+  "matched": "Chum Bucket",
+  "via": "The Chum Bucket"
+ },
+ "krabby-patty": {
+  "answer": "Krabby Patty",
+  "matched": "Krabby Patty",
+  "via": "Krabby Patty"
+ }
+}
