@@ -1,20 +1,35 @@
 # Putting Dawg House Duel on dawghouseduel.com
 
-A full walkthrough. Nothing here costs money — Cloudflare's free tiers cover all
-of it comfortably.
+A complete walkthrough. Nothing here costs money — Cloudflare's free tiers cover
+all of it comfortably.
 
-There are two pieces:
+There are two pieces, and **you only need the first one**:
 
 | | What it is | Needed for |
 | --- | --- | --- |
 | **The site** | The game itself, on Cloudflare Pages | Everything |
-| **The relay** | A tiny Cloudflare Worker | Using your **phone** as host |
+| **The relay** | A small Cloudflare Worker | Marking from your **phone** while filming |
 
-You can do just the site and stop. Without the relay the game runs exactly as it
-does now — you'd press `H` on the laptop for the Host View window instead of
-using your phone.
+Anyone visiting the site can play without the relay, because typed mode means
+the game marks its own answers. The relay is only for *say it out loud* mode
+with the answer key on a phone. If you skip it, you press `H` on the laptop for
+the Host View in a second window instead.
 
-Set aside about 30 minutes. Steps 1–4 are the site, 5–7 are the phone relay.
+Steps 1–5 are the site. Steps 6–8 are the phone relay.
+Budget about 30 minutes, most of it waiting for DNS.
+
+---
+
+## Before you start
+
+Check the game runs on your machine, so that if something breaks after
+deploying you know it's the deploy and not the game:
+
+```bash
+cd ~/Desktop/Dawghouse-Duel && node .server.js
+```
+
+Open <http://localhost:8777>, play one round, then stop it with `Ctrl-C`.
 
 ---
 
@@ -26,14 +41,52 @@ Set aside about 30 minutes. Steps 1–4 are the site, 5–7 are the phone relay.
 
 ---
 
-## Step 2 — Connect the repo to Cloudflare Pages
+## Step 2 — Move the domain's DNS to Cloudflare
 
-1. In the Cloudflare dashboard, click **Workers & Pages** in the left sidebar.
-2. Click **Create** → the **Pages** tab → **Connect to Git**.
-3. Click **Connect GitHub** and authorise Cloudflare. When GitHub asks which
-   repositories, you can pick just `Dawghouse-Duel`.
-4. Choose **`robwizzie/Dawghouse-Duel`** from the list → **Begin setup**.
-5. Fill in the build settings:
+**Do this before creating the site.** It saves a real headache later.
+
+The reason: `dawghouseduel.com` with no `www` in front is an *apex* domain, and
+the DNS standard doesn't allow apex domains to point at a hostname the way
+`www` can. Squarespace's DNS has no way around that, so if you leave DNS at
+Squarespace, `www.dawghouseduel.com` will work and `dawghouseduel.com` won't.
+Cloudflare works around it automatically, but only if Cloudflare is running the
+DNS.
+
+1. In the Cloudflare dashboard, click **Add a domain**.
+2. Type `dawghouseduel.com` → **Continue**.
+3. Choose the **Free** plan → **Continue**.
+4. Cloudflare scans your existing records and shows them. Click **Continue**.
+5. Cloudflare now shows **two nameservers**, something like:
+
+   ```
+   dana.ns.cloudflare.com
+   rick.ns.cloudflare.com
+   ```
+
+   Leave this page open.
+
+6. In another tab go to <https://account.squarespace.com/domains>
+7. Click **dawghouseduel.com** → **DNS** → **Nameservers**.
+8. Switch from Squarespace's nameservers to **Use custom nameservers**.
+9. Paste in Cloudflare's two. Save.
+10. Back on Cloudflare, click **Check nameservers now**.
+
+This takes anywhere from ten minutes to a few hours. Cloudflare emails you when
+the domain is **Active**. You can carry on with steps 3 and 4 while you wait.
+
+> **If the domain currently serves a Squarespace site you still want**, don't do
+> this step — skip to *Keeping DNS at Squarespace* at the bottom instead.
+
+---
+
+## Step 3 — Connect the repo to Cloudflare Pages
+
+1. In the Cloudflare dashboard, click **Workers & Pages** in the sidebar.
+2. **Create** → the **Pages** tab → **Connect to Git**.
+3. **Connect GitHub** and authorise Cloudflare. When GitHub asks which
+   repositories, you can grant just `Dawghouse-Duel`.
+4. Pick **`robwizzie/Dawghouse-Duel`** → **Begin setup**.
+5. Fill in:
 
    | Field | What to put |
    | --- | --- |
@@ -43,168 +96,181 @@ Set aside about 30 minutes. Steps 1–4 are the site, 5–7 are the phone relay.
    | Build command | **leave completely empty** |
    | Build output directory | `/` |
 
-   There's no build step — it's plain HTML, CSS and JavaScript.
+   There is no build step. It's plain HTML, CSS and JavaScript on purpose.
 
-6. Click **Save and Deploy**.
+6. **Save and Deploy**.
 
-It'll take a minute or two (there are ~580 images to upload). When it's done you
-get a URL like `https://dawghouse-duel.pages.dev`.
+The first deploy uploads about 1,500 files and 305 MB of artwork, so give it a
+few minutes. Later deploys only upload what changed and take seconds.
 
-**Check it:** open that URL. You should get the setup screen with the logo and
-all four categories. Start a duel and make sure pictures load.
+When it finishes you get a URL like `https://dawghouse-duel.pages.dev`.
 
----
-
-## Step 3 — Point dawghouseduel.com at it
-
-### 3a. Tell Cloudflare about the domain
-
-1. In your Pages project, click the **Custom domains** tab.
-2. **Set up a custom domain** → type `dawghouseduel.com` → **Continue**.
-3. Cloudflare shows you the DNS record it wants. **Leave this page open** — you
-   need to copy these values in a moment.
-4. Repeat for `www.dawghouseduel.com` so both work.
-
-### 3b. Change the DNS at Squarespace
-
-1. Go to <https://account.squarespace.com/domains>
-2. Click **dawghouseduel.com** → **DNS** → **DNS Settings**.
-3. **Delete Squarespace's existing records first.** Look for existing `A`
-   records on `@` and a `CNAME` on `www` pointing at Squarespace. If you leave
-   them the domain will keep going to Squarespace instead of your game.
-4. **Add** the records Cloudflare showed you in 3a. Usually:
-
-   | Type | Host | Data |
-   | --- | --- | --- |
-   | CNAME | `www` | `dawghouse-duel.pages.dev` |
-   | CNAME (or A) | `@` | whatever Cloudflare listed for the root |
-
-5. Save.
-
-Now wait. DNS usually updates in 10–30 minutes but can take a few hours.
-Cloudflare's Custom domains tab shows **Active** once it's through, and it sorts
-out the SSL certificate by itself — you don't need to do anything for `https`.
-
-> **Easier alternative:** transfer the domain to Cloudflare entirely
-> (Squarespace: **Domains → dawghouseduel.com → Transfer**). More faff up front,
-> but then it's all one dashboard and you never touch DNS again.
+**Check it:** open that URL. You should get the welcome screen. Press **PLAY**,
+walk through to a category, and start a round — make sure pictures load.
 
 ---
 
-## Step 4 — You're live
+## Step 4 — Attach the domain
 
-Open <https://dawghouseduel.com>. Every time you push to `main` from now on,
-Cloudflare redeploys within a minute. Nothing else to do.
+1. In your Pages project, open the **Custom domains** tab.
+2. **Set up a custom domain** → `dawghouseduel.com` → **Continue** → **Activate**.
+3. Do it again for `www.dawghouseduel.com`.
 
-**If you only wanted the site, you're finished here.**
+Because Cloudflare is now running your DNS (step 2), it adds the records itself.
+You don't touch DNS by hand, and the apex domain just works.
+
+SSL is automatic. Give it a few minutes and both addresses will be `https`.
 
 ---
 
-## Step 5 — Deploy the relay (for phone host mode)
+## Step 5 — You're live
 
-This is what lets your phone drive the duel screen.
+Open <https://dawghouseduel.com>.
 
-In Terminal:
+From now on **every push to `main` redeploys the site within a minute.** Nothing
+else to do, ever.
+
+**If you only wanted the site, stop here.** Everything works: typed answers,
+Play Along, all eleven categories, silhouette and zoom modes. The only thing
+missing is marking from a phone.
+
+---
+
+## Step 6 — Deploy the relay
+
+This is what lets your phone drive the laptop during a shoot.
 
 ```bash
-cd ~/Desktop/Dawghouse-Duel/worker
-npx wrangler deploy
+cd ~/Desktop/Dawghouse-Duel/worker && npx wrangler deploy
 ```
 
-- It'll ask to install `wrangler` the first time — say yes.
-- It opens a browser window to log in to Cloudflare — click **Allow**.
-- Come back to Terminal.
+- It offers to install `wrangler` the first time — say yes.
+- It opens a browser to log in to Cloudflare — click **Allow**.
+- Back in Terminal, it prints something like:
 
-When it finishes it prints something like:
+  ```
+  Deployed dawghouse-duel-relay
+    https://dawghouse-duel-relay.YOURNAME.workers.dev
+  ```
 
-```
-Deployed dawghouse-duel-relay
-  https://dawghouse-duel-relay.YOURNAME.workers.dev
-```
+**Copy that URL.** `YOURNAME` is the subdomain Cloudflare assigned you — it may
+not be `robwizzie`.
 
-**Copy that URL.** `YOURNAME` is a subdomain Cloudflare assigns you — it may not
-be `robwizzie`.
-
-**Check it:**
+Confirm it's alive:
 
 ```bash
 curl https://dawghouse-duel-relay.YOURNAME.workers.dev/health
 ```
 
-You want `{"ok":true}` back.
+You want `{"ok":true}`.
 
 ---
 
-## Step 6 — Tell the app where the relay is
+## Step 7 — Tell the app where the relay is
 
-Open [`js/config.js`](js/config.js) and change one line — the URL from step 5,
-but with **`wss://`** instead of `https://`:
+Open [`js/config.js`](js/config.js) and set one line to the URL from step 6, but
+with **`wss://`** in place of `https://`:
 
 ```js
 relay: 'wss://dawghouse-duel-relay.YOURNAME.workers.dev',
 ```
 
-Then:
+Then push it:
 
 ```bash
-cd ~/Desktop/Dawghouse-Duel
-git add js/config.js
-git commit -m "Point at my relay"
-git push
+cd ~/Desktop/Dawghouse-Duel && git add js/config.js && git commit -m "Point at my relay" && git push
 ```
 
-Cloudflare redeploys the site automatically.
+Cloudflare redeploys automatically.
 
 ---
 
-## Step 7 — Pair your phone
+## Step 8 — Pair your phone
 
-1. On the laptop, open <https://dawghouseduel.com>. The pairing panel at the
-   bottom of the setup screen shows a four-letter code and should say
-   **waiting for the host**.
-2. On your phone, open <https://dawghouseduel.com/host>
+1. Laptop: open <https://dawghouseduel.com>, press **PLAY**, choose **Duel**,
+   then **Say it out loud**. Carry on to the setup step — the pairing panel
+   there shows a four-letter code.
+2. Phone: open <https://dawghouseduel.com/host>
 3. Type the four letters → **JOIN**.
-4. The laptop now says **phone connected**, and your phone shows the answer plus
-   the big CORRECT / WRONG / PASS buttons.
-
-If the laptop still says *relay offline*, the URL in step 6 is wrong — check
-it's `wss://` and matches exactly what wrangler printed.
+4. The laptop should say **phone connected**, and the phone shows the answer,
+   the alternates that count, and big CORRECT / WRONG / PASS buttons.
 
 ---
 
 ## Shoot-day routine
 
-1. Laptop on `dawghouseduel.com`, under the camera, press `F` for full screen.
-2. Note the four-letter code.
-3. Phone on `dawghouseduel.com/host`, type the code, **JOIN**.
-4. Hand the dawgs the mouse — one click is a pass.
+1. Laptop on `dawghouseduel.com` under the camera. Press `F` for full screen.
+2. Set up a duel in **say it out loud** mode. Note the four-letter code.
+3. Phone on `dawghouseduel.com/host`, enter the code, **JOIN**.
+4. Hand the players the mouse — one click is a pass.
 
-The room code sticks between reloads, so if the laptop reloads mid-shoot the
-phone reconnects on its own. If the phone drops off entirely, the duel keeps
-running on the laptop and `H` opens the backup Host View window.
+The room code survives a reload, so if the laptop refreshes mid-shoot the phone
+reconnects by itself. If the phone drops off entirely the duel carries on
+regardless, and `H` opens the backup Host View window on the laptop.
+
+---
+
+## Keeping DNS at Squarespace
+
+Only if you can't move the nameservers — for instance the domain is still
+serving a Squarespace site you need.
+
+You can point `www` at the game, but **not** the bare domain, for the apex
+reason in step 2. So:
+
+1. Skip step 2 entirely. Do steps 3 and 4, but only add
+   `www.dawghouseduel.com` as the custom domain.
+2. Cloudflare gives you a CNAME target. In Squarespace: **Domains →
+   dawghouseduel.com → DNS → DNS Settings**, delete the existing `www` record,
+   and add:
+
+   | Type | Host | Data |
+   | --- | --- | --- |
+   | CNAME | `www` | `dawghouse-duel.pages.dev` |
+
+3. Then use Squarespace's **domain forwarding** to send the bare
+   `dawghouseduel.com` to `https://www.dawghouseduel.com`.
+
+The result works, but every link is `www.dawghouseduel.com`, and forwarding is
+slower than the real thing. Moving the nameservers is genuinely better.
 
 ---
 
 ## Troubleshooting
 
-**Domain still shows my Squarespace site** — the old Squarespace DNS records are
-still there. Go back to step 3b and delete them.
+**The domain still shows my Squarespace site** — the nameserver change hasn't
+propagated, or it didn't save. Check Cloudflare says **Active** for the domain.
+
+**`www` works but `dawghouseduel.com` doesn't** — DNS is still at Squarespace.
+That's the apex problem from step 2; move the nameservers.
 
 **"relay offline" on the pairing panel** — either the relay isn't deployed
-(step 5) or `js/config.js` has the wrong URL (step 6). It must start `wss://`.
+(step 6) or `js/config.js` has the wrong URL (step 7). It must start `wss://`,
+not `https://`. This message is only a warning: the game plays fine without it.
 
-**Phone says "no connection — check the code"** — the code is case-insensitive
-but must match. Tap the code on the laptop's setup screen to re-read it, or hit
-**new code** there and re-enter it.
+**Phone says "no connection — check the code"** — codes are case-insensitive but
+must match. Re-read it on the laptop, or hit **new code** and re-enter.
 
-**Pictures don't load** — check the deploy actually finished in the Cloudflare
-Pages dashboard; the image upload is the slow part of the first deploy.
+**Pictures don't load** — check the deploy actually finished in the Pages
+dashboard. The artwork upload is the slow part of the first deploy.
 
-**Site is showing an old version** — Cloudflare caches artwork hard but never
-caches the app itself (see `_headers`). Hard-refresh with Cmd-Shift-R.
+**Site shows an old version** — artwork is cached hard, the app never is (see
+[`_headers`](_headers)). Hard-refresh with Cmd-Shift-R.
+
+**One specific picture is broken** — its file extension probably doesn't match
+its actual contents, and `_headers` sets `nosniff` so the browser refuses to
+guess. Re-run `node tools/fetch-wiki-images.js <category>`; the fetcher checks
+the real bytes and names files honestly.
+
+---
 
 ## What it costs
 
-Nothing at this scale. Pages is free with unlimited bandwidth for static sites,
-Workers gives 100,000 requests a day free, and a Durable Object only exists while
-somebody is actually connected to a room.
+Nothing at this scale.
+
+- **Pages** — free, unlimited bandwidth for static sites. Limits are 20,000
+  files and 25 MB per file; you're at ~1,500 files and the largest is 1.3 MB.
+- **Workers** — 100,000 requests a day free. A duel is a handful of small
+  messages a second between two people.
+- **Durable Objects** — free tier, and a room only exists while somebody is
+  connected to it.
