@@ -15,9 +15,9 @@
 
 <div id="stage" class="stage">
 
-  <!-- ══════════════════════════ SETUP ══════════════════════════ -->
-  <section class="screen screen--setup" data-screen-id="setup">
-    <div class="setup__inner">
+  <!-- ══════════════════════════ WELCOME ══════════════════════════ -->
+  <section class="screen screen--welcome" data-screen-id="welcome">
+    <div class="welcome">
       <div class="brandmark brandmark--stack">
         <img class="brandmark__img" src="assets/brand/logo.png" alt="Dawg House"
              onload="this.closest('.brandmark').classList.add('has-logo')" onerror="this.remove()">
@@ -25,127 +25,223 @@
         <span class="brandmark__duel">DUEL</span>
       </div>
 
-      <p class="setup__tag">Two dawgs. Two clocks. One category. <b>Last one standing takes it.</b></p>
+      <p class="welcome__pitch">Two players. Two clocks. One picture at a time.<br>
+        <b>Only a right answer gets you off the clock.</b></p>
 
-      <form class="panel" id="setupForm" autocomplete="off">
-        <div class="row row--mode">
-          <label class="modepick"><input type="radio" name="playmode" value="duel" checked><span>Duel <i>two dawgs, two clocks</i></span></label>
-          <label class="modepick"><input type="radio" name="playmode" value="solo"><span>Play Along <i>one clock, how many can you get</i></span></label>
-        </div>
+      <div class="welcome__acts">
+        <button class="btn btn--go btn--huge" type="button" id="startFlow">PLAY</button>
+        <button class="btn btn--ghost" type="button" id="quickStart" hidden>Same setup as last time</button>
+      </div>
 
-        <div class="row row--players">
-          <label class="field field--p1">
-            <span class="field__label">Dawg 1 <i>(left)</i></span>
-            <input class="input input--name" id="p1Name" maxlength="14" placeholder="NAME" value="ROB">
-          </label>
-          <div class="vs">VS</div>
-          <label class="field field--p2">
-            <span class="field__label">Dawg 2 <i>(right)</i></span>
-            <input class="input input--name" id="p2Name" maxlength="14" placeholder="NAME" value="MIKE">
-          </label>
-        </div>
+      <button class="welcome__how" type="button" id="toHelp">How it works</button>
 
-        <div class="row row--3">
-          <label class="field">
-            <span class="field__label">Category</span>
-            <select class="input" id="catSelect"></select>
-          </label>
-          <label class="field">
-            <span class="field__label">Clock (each)</span>
-            <select class="input" id="clockSelect">
-              <option value="30">30 sec</option>
-              <option value="45" selected>45 sec &mdash; show standard</option>
-              <option value="60">60 sec</option>
-              <option value="90">90 sec</option>
-            </select>
-          </label>
-          <label class="field">
-            <span class="field__label">First control</span>
-            <select class="input" id="firstSelect">
-              <option value="flip" selected>Coin flip</option>
-              <option value="0">Dawg 1</option>
-              <option value="1">Dawg 2</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="row row--4">
-          <label class="field">
-            <span class="field__label">Wrong answer costs</span>
-            <select class="input" id="penaltySelect">
-              <option value="0">Nothing</option>
-              <option value="2">2 seconds</option>
-              <option value="3" selected>3 seconds</option>
-              <option value="5">5 seconds</option>
-            </select>
-          </label>
-          <label class="field">
-            <span class="field__label">Pass costs</span>
-            <select class="input" id="passCostSelect">
-              <option value="0">Nothing</option>
-              <option value="2" selected>2 seconds</option>
-              <option value="3">3 seconds</option>
-              <option value="5">5 seconds</option>
-            </select>
-          </label>
-          <label class="field">
-            <span class="field__label">Answer reveal</span>
-            <select class="input" id="revealSelect">
-              <option value="0">Off &mdash; straight to the next</option>
-              <option value="900">Quick (0.9s)</option>
-              <option value="1400" selected>Standard (1.4s)</option>
-              <option value="2000">Long (2.0s)</option>
-            </select>
-          </label>
-          <label class="field">
-            <span class="field__label">Picture mode</span>
-            <select class="input" id="revealModeSelect">
-              <option value="normal" selected>Normal</option>
-              <option value="silhouette">Silhouette</option>
-              <option value="zoom">Extreme zoom &mdash; pulls back</option>
-              <option value="blur">Blurred &mdash; sharpens up</option>
-            </select>
-          </label>
-          <label class="field">
-            <span class="field__label">Deck</span>
-            <select class="input" id="deckSelect">
-              <option value="images" selected>Images only</option>
-              <option value="all">Everything (clue cards for missing art)</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="row row--toggles">
-          <label class="toggle"><input type="checkbox" id="optDeep" checked><span></span>Include deep cuts</label>
-          <label class="toggle"><input type="checkbox" id="optSound" checked><span></span>Sound FX</label>
-          <label class="toggle"><input type="checkbox" id="optTick" checked><span></span>Tick under 10s</label>
-          <label class="toggle"><input type="checkbox" id="optClue"><span></span>Clue text (practice)</label>
-        </div>
-
-        <div class="row row--go">
-          <button class="btn btn--go" type="submit">START THE DUEL</button>
-          <button class="btn btn--ghost" type="button" id="toMedia">Image Library <b id="mediaCount"></b></button>
-          <button class="btn btn--ghost btn--host" type="button" id="openHost">Host View &#8599;</button>
-          <button class="btn btn--ghost" type="button" id="soundCheck">Sound Check</button>
-          <button class="btn btn--ghost" type="button" id="toHelp">How It Works</button>
-        </div>
-      </form>
-
-      <section class="pair">
-        <div class="pair__left">
-          <span class="pair__eyebrow">PAIR YOUR PHONE AS HOST</span>
-          <p class="pair__how">Open <b id="pairUrlBig">dawghouseduel.com/host</b> on your phone and punch in this code.</p>
-          <span class="pair__state" id="pairStateBig">same computer only</span>
-        </div>
-        <div class="pair__right">
-          <b class="pair__code" id="pairCodeBig">----</b>
-          <button class="pair__new" type="button" id="newCode">new code</button>
-        </div>
-      </section>
-
-      <p class="setup__foot">Contestant clicks the mouse to <b>PASS</b> &middot; Operator hits <b>ENTER</b> for correct &middot; <b>?</b> for all controls</p>
+      <p class="welcome__stats" id="welcomeStats"></p>
     </div>
   </section>
+
+  <!-- ══════════════════════════ GUIDED SETUP ══════════════════════════ -->
+  <section class="screen screen--setup" data-screen-id="setup">
+    <form id="setupForm" autocomplete="off" class="flow">
+
+      <header class="flow__bar">
+        <button class="flow__back" type="button" id="flowBack" aria-label="Back">&larr;</button>
+        <ol class="flow__dots" id="flowDots"></ol>
+        <span class="flow__count" id="flowCount"></span>
+      </header>
+
+      <!-- 1 ── who is playing ── -->
+      <div class="step" data-step="mode">
+        <h2 class="step__q">Who&rsquo;s playing?</h2>
+        <p class="step__sub">You can change any of this later.</p>
+        <div class="pickgrid pickgrid--2">
+          <label class="pick">
+            <input type="radio" name="playmode" value="duel" checked>
+            <span class="pick__body">
+              <span class="pick__icon">&#128100;&#8202;&#128100;</span>
+              <b>Duel</b>
+              <i>Two players, two clocks. Last one standing wins.</i>
+            </span>
+          </label>
+          <label class="pick">
+            <input type="radio" name="playmode" value="solo">
+            <span class="pick__body">
+              <span class="pick__icon">&#128100;</span>
+              <b>Play Along</b>
+              <i>Just you and one clock. How many can you get?</i>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 2 ── how answers are judged ── -->
+      <div class="step" data-step="answers">
+        <h2 class="step__q">How do you want to answer?</h2>
+        <p class="step__sub">This is the big one &mdash; it decides who decides.</p>
+        <div class="pickgrid pickgrid--2">
+          <label class="pick">
+            <input type="radio" name="answermode" value="type" checked>
+            <span class="pick__body">
+              <span class="pick__icon">&#9000;</span>
+              <b>Type it in</b>
+              <i>The game marks your answer. Nobody else needed &mdash; best if you&rsquo;re just playing.</i>
+            </span>
+          </label>
+          <label class="pick">
+            <input type="radio" name="answermode" value="say">
+            <span class="pick__body">
+              <span class="pick__icon">&#127908;</span>
+              <b>Say it out loud</b>
+              <i>Somebody else marks it from a phone or a second window. Best for filming.</i>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 3 ── the deck ── -->
+      <div class="step step--wide" data-step="category">
+        <h2 class="step__q">Pick a category</h2>
+        <p class="step__sub" id="catSubtitle">Eleven decks. Some are much harder than they look.</p>
+        <div class="catgrid" id="catGrid"></div>
+        <select id="catSelect" class="visually-hidden" tabindex="-1" aria-hidden="true"></select>
+      </div>
+
+      <!-- 4 ── the details ── -->
+      <div class="step" data-step="details">
+        <h2 class="step__q">Set it up</h2>
+        <p class="step__sub" id="detailsSub">Names and clock. Everything else has a sensible default.</p>
+
+        <div class="fields">
+          <div class="row row--players" id="nameRow">
+            <label class="field field--p1">
+              <span class="field__label">Player 1</span>
+              <input class="input input--name" id="p1Name" maxlength="14" placeholder="NAME" value="ROB">
+            </label>
+            <div class="vs">VS</div>
+            <label class="field field--p2">
+              <span class="field__label">Player 2</span>
+              <input class="input input--name" id="p2Name" maxlength="14" placeholder="NAME" value="MIKE">
+            </label>
+          </div>
+
+          <div class="row row--2">
+            <label class="field">
+              <span class="field__label">Clock each</span>
+              <select class="input" id="clockSelect">
+                <option value="30">30 seconds</option>
+                <option value="45" selected>45 seconds &mdash; standard</option>
+                <option value="60">60 seconds</option>
+                <option value="90">90 seconds</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Picture mode</span>
+              <select class="input" id="revealModeSelect">
+                <option value="normal" selected>Normal</option>
+                <option value="silhouette">Silhouette</option>
+                <option value="zoom">Extreme zoom &mdash; pulls back</option>
+                <option value="blur">Blurred &mdash; sharpens up</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <details class="more" id="moreOptions">
+          <summary>More options</summary>
+          <div class="more__body">
+            <div class="row row--3">
+              <label class="field">
+                <span class="field__label">Who starts</span>
+                <select class="input" id="firstSelect">
+                  <option value="flip" selected>Coin flip</option>
+                  <option value="0">Player 1</option>
+                  <option value="1">Player 2</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="field__label">Wrong costs</span>
+                <select class="input" id="penaltySelect">
+                  <option value="0">Nothing</option>
+                  <option value="2">2 seconds</option>
+                  <option value="3" selected>3 seconds</option>
+                  <option value="5">5 seconds</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="field__label">Pass costs</span>
+                <select class="input" id="passCostSelect">
+                  <option value="0">Nothing</option>
+                  <option value="2" selected>2 seconds</option>
+                  <option value="3">3 seconds</option>
+                  <option value="5">5 seconds</option>
+                </select>
+              </label>
+            </div>
+            <div class="row row--3">
+              <label class="field">
+                <span class="field__label">Answer reveal</span>
+                <select class="input" id="revealSelect">
+                  <option value="0">Off</option>
+                  <option value="900">Quick (0.9s)</option>
+                  <option value="1400" selected>Standard (1.4s)</option>
+                  <option value="2000">Long (2.0s)</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="field__label">Deck</span>
+                <select class="input" id="deckSelect">
+                  <option value="images" selected>Pictures only</option>
+                  <option value="all">Everything</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="field__label">Library</span>
+                <button class="btn btn--ghost btn--sm" type="button" id="toMedia">Images <b id="mediaCount"></b></button>
+              </label>
+            </div>
+            <div class="row row--toggles">
+              <label class="toggle"><input type="checkbox" id="optDeep" checked><span></span>Include deep cuts</label>
+              <label class="toggle"><input type="checkbox" id="optSound" checked><span></span>Sound effects</label>
+              <label class="toggle"><input type="checkbox" id="optTick" checked><span></span>Tick under 10s</label>
+              <label class="toggle"><input type="checkbox" id="optClue"><span></span>Show clue text</label>
+            </div>
+            <div class="row row--2">
+              <button class="btn btn--ghost btn--sm" type="button" id="soundCheck">Sound check</button>
+              <button class="btn btn--ghost btn--sm" type="button" id="openHost">Open Host View &#8599;</button>
+            </div>
+          </div>
+        </details>
+
+        <section class="pair" id="pairPanel" hidden>
+          <div class="pair__left">
+            <span class="pair__eyebrow">MARKING FROM A PHONE?</span>
+            <p class="pair__how">Open <b id="pairUrlBig">dawghouseduel.com/host</b> and enter this code.</p>
+            <span class="pair__state" id="pairStateBig">same computer only</span>
+          </div>
+          <div class="pair__right">
+            <b class="pair__code" id="pairCodeBig">----</b>
+            <button class="pair__new" type="button" id="newCode">new code</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- 5 ── go ── -->
+      <div class="step" data-step="ready">
+        <h2 class="step__q">Ready?</h2>
+        <p class="step__sub" id="readySub"></p>
+
+        <div class="summary" id="summary"></div>
+
+        <ol class="rules" id="rulesRecap"></ol>
+
+        <button class="btn btn--go btn--huge" type="submit">START</button>
+      </div>
+
+      <footer class="flow__foot">
+        <button class="btn btn--ghost btn--sm" type="button" id="flowNext">Next &rarr;</button>
+      </footer>
+    </form>
+  </section>
+
 
   <!-- ══════════════════════════ DUEL ══════════════════════════ -->
   <section class="screen screen--duel" data-screen-id="duel">
@@ -158,7 +254,6 @@
         <span class="brandmark__duel">DUEL</span>
       </div>
       <div class="topbar__cat"><i>CATEGORY</i><b id="duelCat">—</b></div>
-      <div class="rally" id="rally" hidden><i>RALLY</i><b id="rallyNum">0</b></div>
       <div class="topbar__right">
         <div class="topbar__pair"><i id="pairUrl">dawghouseduel.com/host</i><b id="pairCode">----</b><span id="pairState"></span></div>
         <div class="topbar__meta"><span id="duelProgress">1</span><i>of</i><span id="duelTotal">1</span></div>
@@ -176,6 +271,7 @@
       </aside>
 
       <div class="board">
+        <div class="rally" id="rally" hidden><i>RALLY</i><b id="rallyNum">0</b></div>
         <div class="board__frame" id="boardFrame">
           <img class="board__img" id="boardImg" alt="" hidden>
           <div class="board__card" id="boardCard" hidden>
@@ -203,6 +299,15 @@
 
     </main>
 
+    <form class="answerbar" id="answerBar" hidden autocomplete="off">
+      <span class="answerbar__who" id="answerWho">PLAYER 1</span>
+      <input class="answerbar__input" id="answerInput" type="text" autocomplete="off"
+             autocorrect="off" autocapitalize="off" spellcheck="false"
+             placeholder="type your answer" aria-label="Your answer">
+      <button class="answerbar__go" type="submit">ENTER</button>
+      <button class="answerbar__skip" type="button" id="answerPass">PASS</button>
+    </form>
+
     <button class="passbar" id="passBar" type="button">
       <span class="passbar__who" id="passWho">DAWG 1</span>
       <span class="passbar__word">PASS</span>
@@ -210,7 +315,7 @@
       <span class="passbar__hint">shows the answer &middot; new picture &middot; still your clock</span>
     </button>
 
-    <div class="hostbar">
+    <div class="hostbar" id="hostBar">
       <span class="hostbar__k"><b>ENTER</b> correct &rarr; hand off</span>
       <span class="hostbar__k"><b>SPACE</b> pass &minus;<span id="hostPassCost">2</span>s</span>
       <span class="hostbar__k"><b>X</b> wrong &minus;<span id="hostPenalty">3</span>s</span>
@@ -290,37 +395,39 @@
   <div class="help">
     <button class="help__close" id="helpClose" aria-label="Close">&times;</button>
     <h2>How Dawg House Duel works</h2>
+
     <ol class="help__rules">
-      <li>Two dawgs sit facing the laptop. Each gets <b>45 seconds</b> on their own clock.</li>
-      <li>One picture at a time. Whoever has <b>CONTROL</b> is the only clock running.</li>
-      <li>Name it right &rarr; the answer flashes up and <b>control hands over</b> to the other dawg with a fresh picture. Your clock stops.</li>
-      <li>Wrong &rarr; <b>3 seconds off your clock</b>, same picture, still your turn. Guess again.</li>
-      <li>Stuck? <b>Click the mouse to PASS.</b> The answer is revealed and you get a different picture &mdash; but it costs you <b>2 seconds</b>, and it is <b>still your turn and still your clock</b>.</li>
-      <li>Only a correct answer gets you off the clock. First one to hit <b>00.0</b> loses.</li>
+      <li>Two players. Each gets their own clock &mdash; <b>45 seconds</b> is standard.</li>
+      <li>One picture at a time. Only the player with <b>control</b> has a running clock.</li>
+      <li>Name it right &rarr; the answer flashes up and <b>control hands over</b>. Your clock stops.</li>
+      <li>Wrong &rarr; <b>3 seconds off your clock</b>, same picture, still your turn.</li>
+      <li>Stuck? <b>Pass</b> &mdash; the answer is revealed and you get a different picture, but it&rsquo;s <b>still your turn</b> and it costs you 2 seconds.</li>
+      <li>Only a right answer gets you off the clock. First to hit <b>00.0</b> loses.</li>
     </ol>
-    <h3>Controls</h3>
+
+    <h3>Two ways to answer</h3>
+    <p class="help__note"><b>Type it in</b> &mdash; the game marks your answer. Nobody else needed. Spelling is forgiving, and short forms count: <i>jokic</i>, <i>spongebob</i> and <i>doc ock</i> all pass.</p>
+    <p class="help__note"><b>Say it out loud</b> &mdash; somebody else marks it. This is the one for filming: put the laptop under the camera, and whoever&rsquo;s marking uses the <b>Host View</b> on their phone or a second window. It shows the answer, the alternates that count, and big correct / wrong / pass buttons.</p>
+
+    <h3>Play Along</h3>
+    <p class="help__note">One clock, one player. Keep going until it runs out, and see how many you got. Your best streak is on the score card.</p>
+
+    <h3>Picture modes</h3>
+    <p class="help__note"><b>Silhouette</b> blacks the picture out and fills it in after a few seconds. <b>Extreme zoom</b> starts far too close and pulls back. <b>Blurred</b> sharpens up. On a correct answer or a pass you always see the real picture.</p>
+
+    <h3>Keys (when someone is marking)</h3>
     <div class="help__keys">
       <div><kbd>Click</kbd> <kbd>Space</kbd><span>Pass &mdash; reveal, new picture, same turn</span></div>
-      <div><kbd>Z</kbd><span>Left dawg passes (their own button)</span></div>
-      <div><kbd>M</kbd><span>Right dawg passes (their own button)</span></div>
-      <div><kbd>Enter</kbd> <kbd>&rarr;</kbd><span>Correct &mdash; reveal, hand off, new picture</span></div>
+      <div><kbd>Enter</kbd> <kbd>&rarr;</kbd><span>Correct &mdash; reveal, hand off</span></div>
       <div><kbd>X</kbd><span>Wrong &mdash; time penalty, same picture</span></div>
-      <div><kbd>S</kbd><span>Skip a bad picture (no reveal, no cost)</span></div>
+      <div><kbd>Z</kbd> <kbd>M</kbd><span>Left / right player passes</span></div>
+      <div><kbd>S</kbd><span>Skip a bad picture, costs nothing</span></div>
       <div><kbd>P</kbd><span>Pause both clocks</span></div>
-      <div><kbd>A</kbd><span>Peek the answer (operator only)</span></div>
+      <div><kbd>H</kbd><span>Open the Host View</span></div>
       <div><kbd>F</kbd><span>Full screen</span></div>
-      <div><kbd>R</kbd><span>Restart duel</span></div>
-      <div><kbd>H</kbd><span>Open the Host View window (same computer)</span></div>
+      <div><kbd>R</kbd><span>Restart</span></div>
       <div><kbd>Esc</kbd><span>Back to setup</span></div>
     </div>
-    <h3>Judging the answers &mdash; open the Host View</h3>
-    <p class="help__note">The answer key can&rsquo;t live on the screen the dawgs are reading, so it gets its own screen showing <b>the answer, the alternates that also count, and the next one up</b> &mdash; plus big CORRECT / WRONG / PASS buttons.</p>
-    <p class="help__note"><b>On your phone:</b> open the host URL shown on the setup screen, type the four-letter room code, and you&rsquo;re in. Best setup for filming &mdash; the laptop faces the dawgs and you judge from your hand.</p>
-    <p class="help__note"><b>On the same computer:</b> hit <b>Host View</b> on setup (or <kbd>H</kbd> mid-duel) for a second window. No pairing, no internet needed.</p>
-    <p class="help__note">Either way the duel screen is the one running the game &mdash; if the phone drops off, the duel carries on and reconnects by itself.</p>
-
-    <h3>Filming setup</h3>
-    <p class="help__note">Put the laptop just under the camera lens so the dawgs read the screen and look down the barrel. Give whoever has control the mouse &mdash; one click is a pass. Hit <kbd>F</kbd> for full screen before you roll.</p>
   </div>
 </div>
 
@@ -339,6 +446,7 @@
 <script src="js/data/nba-today.js"></script>
 <script src="js/data/nba-goats.js"></script>
 <script src="js/net.js"></script>
+<script src="js/match.js"></script>
 <script src="js/store.js"></script>
 <script src="js/audio.js"></script>
 <script src="js/app.js"></script>

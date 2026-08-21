@@ -36,6 +36,19 @@ const THUMB = 800, MIN_BYTES = 3000, MAX_EDGE = 900;
    bare file path 404s on most wikis, because the cache-buster and
    path-prefix in the query are load-bearing. Keeping the thumbnail also
    means the file arrives already scaled. */
+/* What the bytes actually are, whatever the URL claimed. Saving webp
+   inside a .png (or SVG inside a .jpg) means the server later serves the
+   wrong content type and the picture simply fails to render. */
+function sniff(buf) {
+  if (buf[0] === 0xFF && buf[1] === 0xD8) return '.jpg';
+  if (buf[0] === 0x89 && buf[1] === 0x50) return '.png';
+  if (buf.slice(0, 4).toString('ascii') === 'RIFF' && buf.slice(8, 12).toString('ascii') === 'WEBP') return '.webp';
+  if (buf[0] === 0x47 && buf[1] === 0x49) return '.gif';
+  var head = buf.slice(0, 400).toString('utf8');
+  if (/<svg[\s>]/i.test(head) || /^\s*<\?xml/.test(head)) return '.svg';
+  return null;
+}
+
 const originalUrl = u =>
   String(u) + (String(u).indexOf('?') === -1 ? '?' : '&') + 'format=original';
 const GAP_MS = 350, RETRIES = 4;   // Wikimedia returns 429 if you lean on it
@@ -241,6 +254,29 @@ async function credits(wiki, files) {
       const wantOriginal = keepAlpha && /fandom\.com|wikia\./.test(hit.url);
       const buf = await fetchWithBackoff(wantOriginal ? originalUrl(hit.url) : hit.url, item.name);
       if (buf.length < MIN_BYTES) throw new Error('image too small');
+      const real = sniff(buf);
+      if (!real) throw new Error('unrecognised image data');
+
+      /* Vector and webp files can't be transcoded here and don't need to
+         be — the browser renders both. Just give them an honest extension
+         so the server sends the right content type. */
+      const passthrough = real === '.svg' || real === '.webp';
+      const finalDest = passthrough ? path.join(OUT, item.slug + real) : dest;
+      if (passthrough) {
+        [EXT, '.jpg', '.png'].forEach(other => {
+          const stale = path.join(OUT, item.slug + other);
+          if (other !== real && fs.existsSync(stale)) fs.unlinkSync(stale);
+        });
+        fs.writeFileSync(finalDest, buf);
+        sources[item.slug] = { answer: item.name, matched: hit.title, via: via };
+        if (item.wiki) sources[item.slug].wiki = item.wiki;
+        got++;
+        process.stdout.write('\r  ' + (got + cached) + '/' + cat.items.length + '  ' +
+                            item.name.padEnd(26).slice(0, 26));
+        await sleep(GAP_MS);
+        continue;
+      }
+
       const tmp = dest + '.tmp';
       fs.writeFileSync(tmp, buf);
       if (keepAlpha) {

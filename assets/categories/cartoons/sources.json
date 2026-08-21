@@ -128,7 +128,7 @@
  "yogi-bear": {
   "answer": "Yogi Bear",
   "matched": "Yogi Bear",
-  "via": "Yogi Bear",
+  "via": "Yogi",
   "wiki": "hanna-barbera.fandom.com"
  },
  "tom-cat": {
@@ -145,9 +145,9 @@
  },
  "spongebob": {
   "answer": "SpongeBob SquarePants",
-  "matched": "SpongeBob SquarePants",
-  "via": "SpongeBob SquarePants",
-  "wiki": "nickelodeon.fandom.com"
+  "matched": "SpongeBob SquarePants (character)",
+  "via": "SpongeBob SquarePants (character)",
+  "wiki": "spongebob.fandom.com"
  },
  "patrick-star": {
   "answer": "Patrick Star",
@@ -225,13 +225,13 @@
   "answer": "Jimmy Neutron",
   "matched": "Jimmy Neutron",
   "via": "Jimmy Neutron",
-  "wiki": "nickelodeon.fandom.com"
+  "wiki": "jimmyneutron.fandom.com"
  },
  "danny-phantom": {
   "answer": "Danny Phantom",
-  "matched": "Danny Phantom",
-  "via": "Danny Phantom",
-  "wiki": "nickelodeon.fandom.com"
+  "matched": "Danny Phantom (character)",
+  "via": "Danny Fenton",
+  "wiki": "dannyphantom.fandom.com"
  },
  "zim": {
   "answer": "Zim",
@@ -254,8 +254,8 @@
  "rocko": {
   "answer": "Rocko",
   "matched": "Rocko Rama",
-  "via": "Rocko",
-  "wiki": "nickelodeon.fandom.com"
+  "via": "Rocko Rama",
+  "wiki": "rockosmodernlife.fandom.com"
  },
  "catdog": {
   "answer": "CatDog",
@@ -279,7 +279,7 @@
   "answer": "Dexter",
   "matched": "Dexter",
   "via": "Dexter",
-  "wiki": "cartoonnetwork.fandom.com"
+  "wiki": "dexterslab.fandom.com"
  },
  "blossom": {
   "answer": "Blossom",
@@ -301,15 +301,15 @@
  },
  "johnny-bravo": {
   "answer": "Johnny Bravo",
-  "matched": "Johnny Bravo",
-  "via": "Johnny Bravo",
-  "wiki": "cartoonnetwork.fandom.com"
+  "matched": "Johnny Bravo (character)",
+  "via": "Johnny Bravo (character)",
+  "wiki": "johnnybravo.fandom.com"
  },
  "courage": {
   "answer": "Courage",
   "matched": "Courage",
   "via": "Courage",
-  "wiki": "cartoonnetwork.fandom.com"
+  "wiki": "courage.fandom.com"
  },
  "ed": {
   "answer": "Ed",
@@ -319,9 +319,9 @@
  },
  "samurai-jack": {
   "answer": "Samurai Jack",
-  "matched": "Samurai Jack",
-  "via": "Samurai Jack",
-  "wiki": "cartoonnetwork.fandom.com"
+  "matched": "Samurai Jack (character)",
+  "via": "Jack",
+  "wiki": "samuraijack.fandom.com"
  },
  "finn": {
   "answer": "Finn",
@@ -355,15 +355,15 @@
  },
  "steven-universe": {
   "answer": "Steven Universe",
-  "matched": "Steven Universe",
-  "via": "Steven Universe",
-  "wiki": "cartoonnetwork.fandom.com"
+  "matched": "Steven Universe (character)",
+  "via": "Steven Universe (character)",
+  "wiki": "steven-universe.fandom.com"
  },
  "kim-possible": {
   "answer": "Kim Possible",
   "matched": "Kim Possible",
   "via": "Kim Possible",
-  "wiki": "disney.fandom.com"
+  "wiki": "kimpossible.fandom.com"
  },
  "ron-stoppable": {
   "answer": "Ron Stoppable",
@@ -409,9 +409,9 @@
  },
  "darkwing-duck": {
   "answer": "Darkwing Duck",
-  "matched": "Darkwing Duck",
-  "via": "Darkwing Duck",
-  "wiki": "disney.fandom.com"
+  "matched": "Darkwing Duck (character)",
+  "via": "Darkwing Duck (character)",
+  "wiki": "darkwingduck.fandom.com"
  },
  "launchpad": {
   "answer": "Launchpad McQuack",

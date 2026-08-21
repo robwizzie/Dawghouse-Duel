@@ -301,6 +301,36 @@ The reveal freezes whenever the clocks do: during the intro countdown, during
 the answer-reveal beat, and on pause. Without that, the first picture of every
 duel would burn its whole window behind the 3-2-1.
 
+## Setting up a game
+
+The app started as a tool for one operator who knew the keyboard. Somebody
+arriving from a video knows none of it, so setup is a sequence of single
+questions rather than one dense form:
+
+1. **Who's playing** — Duel or Play Along
+2. **How you answer** — type it in, or say it and have someone mark it
+3. **Category** — a gallery of all eleven decks with cover art and counts
+4. **Details** — names and clock; everything with a sensible default hides
+   behind *More options*
+5. **Ready** — it reads the setup back to you, with the rules, then starts
+
+Anyone who has played before gets a *Play again* button on the welcome screen
+that skips the lot.
+
+## Two ways to answer
+
+**Type it in** — the game marks the answer, so nobody else is needed. Matching
+is handled by `js/match.js`, which is deliberately forgiving about how people
+type and strict about ambiguity: accents and punctuation are ignored, typos
+within a length-scaled edit distance pass, and a single distinctive word counts
+(*jokic*, *spongebob*, *doc ock*). What it will **not** accept is a word two
+answers share — typing "green" in a deck holding both Draymond and Jalen Green
+is wrong, because there's no way to know which was meant.
+
+**Say it out loud** — someone marks it from the Host View. This is the filming
+mode, and it's what the keyboard shortcuts are for. In typed mode those
+shortcuts are switched off, since the app is the judge.
+
 ## Play Along — solo mode
 
 The setup screen picks between **Duel** (two dawgs, two clocks) and **Play

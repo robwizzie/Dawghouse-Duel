@@ -14,7 +14,7 @@
 (function () {
   'use strict';
 
-  var Store = DHD.Store, Sfx = DHD.Sfx, Net = DHD.Net;
+  var Store = DHD.Store, Sfx = DHD.Sfx, Net = DHD.Net, Match = DHD.Match;
   var $ = function (id) { return document.getElementById(id); };
   var html = document.documentElement;
 
@@ -29,6 +29,13 @@
     resultSolo: $('resultSolo'), soloScore: $('soloScore'), soloBest: $('soloBest'),
     resultLabel: document.querySelector('.result__label'), resultTbl: document.querySelector('.result__tbl'),
     resRematchLabel: document.querySelector('#resRematch'), resNewLabel: document.querySelector('#resNew'),
+    flow: document.querySelector('.flow'), flowBack: $('flowBack'), flowNext: $('flowNext'),
+    flowDots: $('flowDots'), flowCount: $('flowCount'),
+    startFlow: $('startFlow'), quickStart: $('quickStart'), welcomeStats: $('welcomeStats'),
+    catGrid: $('catGrid'), catSubtitle: $('catSubtitle'), nameRow: $('nameRow'),
+    detailsSub: $('detailsSub'), readySub: $('readySub'), summary: $('summary'), rulesRecap: $('rulesRecap'),
+    pairPanel: $('pairPanel'), hostBar: $('hostBar'),
+    answerBar: $('answerBar'), answerInput: $('answerInput'), answerWho: $('answerWho'), answerPass: $('answerPass'),
     hostPenalty: $('hostPenalty'), hostPassCost: $('hostPassCost'), passCost: $('passCost'),
     optDeep: $('optDeep'), optSound: $('optSound'), optTick: $('optTick'), optClue: $('optClue'),
     toMedia: $('toMedia'), toHelp: $('toHelp'), soundCheck: $('soundCheck'),
@@ -67,7 +74,7 @@
   var CATS = window.DHD_CATEGORIES || [];
   var cfg = {
     catId: (CATS[0] || {}).id, clockMs: 45000, first: 'flip',
-    penaltyMs: 3000, passCostMs: 2000, revealMs: 1400, deck: 'images', pictureMode: 'normal', revealSecs: 7, play: 'duel',
+    penaltyMs: 3000, passCostMs: 2000, revealMs: 1400, deck: 'images', pictureMode: 'normal', revealSecs: 7, play: 'duel', answers: 'type',
     deep: true, sound: true, tick: true, clue: false, names: ['ROB', 'MIKE']
   };
 
@@ -102,6 +109,139 @@
   }
   function pool(cat, deep) {
     return cat.items.filter(function (it) { return deep || it.tier !== 'deep'; });
+  }
+
+  /* ══════════════════ THE GUIDED FLOW ══════════════════
+     The app began as a tool for one operator who knew the keyboard.
+     A stranger arriving from a video knows none of it, so setup is a
+     sequence of single questions rather than one dense form. Everything
+     with a sensible default hides behind "More options". */
+  var STEPS = ['mode', 'answers', 'category', 'details', 'ready'];
+  var stepAt = 0;
+
+  /* One good picture per deck for the category gallery. */
+  var COVERS = {
+    superheroes: 'spider-man', disney: 'mickey-mouse', animals: 'lion',
+    starwars: 'darth-vader', sitcoms: 'michael-scott', videogames: 'mario',
+    cartoons: 'spongebob', pokemon: 'pikachu', dogs: 'golden-retriever',
+    'nba-today': 'lebron-james', 'nba-goats': 'michael-jordan'
+  };
+
+  function goStep(i) {
+    stepAt = Math.max(0, Math.min(STEPS.length - 1, i));
+    var name = STEPS[stepAt];
+    el.flow.setAttribute('data-step', name);
+    el.flowBack.disabled = stepAt === 0;
+    el.flowCount.textContent = 'Step ' + (stepAt + 1) + ' of ' + STEPS.length;
+    [].forEach.call(el.flowDots.children, function (dot, n) {
+      dot.className = n < stepAt ? 'done' : n === stepAt ? 'now' : '';
+    });
+    if (name === 'details') refreshDetails();
+    if (name === 'ready') refreshReady();
+    if (name === 'category') refreshCatGrid();
+    try { el.flow.scrollIntoView({ block: 'start' }); } catch (e) {}
+  }
+
+  function buildDots() {
+    el.flowDots.innerHTML = '';
+    STEPS.forEach(function () { el.flowDots.appendChild(document.createElement('li')); });
+  }
+
+  /* ── the category gallery ── */
+  function refreshCatGrid() {
+    if (el.catGrid.childElementCount) { markChosenCat(); return; }
+    CATS.forEach(function (cat) {
+      var card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'catcard';
+      card.dataset.cat = cat.id;
+
+      var withArt = cat.items.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
+      card.innerHTML =
+        '<div class="catcard__art"></div>' +
+        (cat.silhouette ? '<span class="catcard__tag">SILHOUETTE</span>' : '') +
+        '<div class="catcard__body">' +
+          '<span class="catcard__name"></span>' +
+          '<span class="catcard__blurb"></span>' +
+          '<span class="catcard__count">' + (withArt || cat.items.length) + ' answers</span>' +
+        '</div>';
+      card.querySelector('.catcard__name').textContent = cat.name;
+      card.querySelector('.catcard__blurb').textContent = cat.blurb || '';
+
+      var coverSlug = COVERS[cat.id];
+      var cover = (coverSlug && cat.items.filter(function (i) { return i.slug === coverSlug; })[0]) || cat.items[0];
+      if (cover) {
+        Store.resolve(cat.id, cover).then(function (url) {
+          if (!url) return;
+          var img = new Image();
+          img.alt = '';
+          img.src = url;
+          card.querySelector('.catcard__art').appendChild(img);
+        });
+      }
+
+      card.addEventListener('click', function () {
+        el.catSelect.value = cat.id;
+        el.catSelect.dispatchEvent(new Event('change'));
+        markChosenCat();
+        goStep(stepAt + 1);
+      });
+      el.catGrid.appendChild(card);
+    });
+    markChosenCat();
+  }
+
+  function markChosenCat() {
+    [].forEach.call(el.catGrid.children, function (card) {
+      card.classList.toggle('is-on', card.dataset.cat === el.catSelect.value);
+    });
+  }
+
+  /* ── step 4: only show what this configuration actually needs ── */
+  function refreshDetails() {
+    var solo = document.querySelector('input[name="playmode"]:checked').value === 'solo';
+    var say  = document.querySelector('input[name="answermode"]:checked').value === 'say';
+    el.nameRow.hidden = solo;
+    el.detailsSub.textContent = solo
+      ? 'Just the clock and how the picture arrives.'
+      : 'Names and clock. Everything else has a sensible default.';
+    el.pairPanel.hidden = !say;
+    refreshPictureModes();
+  }
+
+  /* ── step 5: say back exactly what is about to happen ── */
+  function refreshReady() {
+    readSetup();
+    var cat = catById(cfg.catId);
+    var solo = cfg.play === 'solo';
+    var typed = cfg.answers === 'type';
+
+    el.readySub.textContent = typed
+      ? 'Type the answer and press enter. The game marks it.'
+      : 'Say the answer out loud. Whoever is marking hits correct.';
+
+    var bits = [
+      solo ? '<b>' + cfg.names[0] + '</b>' : '<b>' + cfg.names[0] + '</b> vs <b>' + cfg.names[1] + '</b>',
+      '<b>' + cat.name + '</b>',
+      '<b>' + (cfg.clockMs / 1000) + 's</b> each',
+      typed ? 'you <b>type</b> answers' : 'you <b>say</b> answers'
+    ];
+    if (cfg.pictureMode !== 'normal') bits.push('<b>' + cfg.pictureMode + '</b> pictures');
+    el.summary.innerHTML = bits.map(function (b) { return '<span>' + b + '</span>'; }).join('');
+
+    var rules = solo
+      ? ['One picture at a time, and your clock is always running.',
+         'Get it right and you keep going with a fresh picture.',
+         typed ? 'Wrong answer costs you <b>' + (cfg.penaltyMs / 1000) + ' seconds</b>.'
+               : 'A wrong call costs you <b>' + (cfg.penaltyMs / 1000) + ' seconds</b>.',
+         'Stuck? <b>Pass</b> for a new picture &mdash; it costs <b>' + (cfg.passCostMs / 1000) + 's</b>.',
+         'When the clock hits zero, your score is how many you got.']
+      : ['One picture at a time. Only the player with <b>control</b> has a running clock.',
+         'Right answer &rarr; the answer flashes up and <b>control hands over</b>. Your clock stops.',
+         'Wrong &rarr; <b>&minus;' + (cfg.penaltyMs / 1000) + 's</b>, same picture, still your turn.',
+         'Pass &rarr; the answer is shown and you get a new picture, but it is <b>still your turn</b> and costs <b>' + (cfg.passCostMs / 1000) + 's</b>.',
+         'First clock to hit <b>00.0</b> loses.'];
+    el.rulesRecap.innerHTML = rules.map(function (r) { return '<li>' + r + '</li>'; }).join('');
   }
 
   /* ══════════════════ SETUP SCREEN ══════════════════ */
@@ -156,6 +296,8 @@
     cfg.pictureMode = el.revealModeSelect.value;
     var modeRadio = document.querySelector('input[name="playmode"]:checked');
     cfg.play = modeRadio ? modeRadio.value : 'duel';
+    var ansRadio = document.querySelector('input[name="answermode"]:checked');
+    cfg.answers = ansRadio ? ansRadio.value : 'type';
     cfg.deep    = el.optDeep.checked;
     cfg.sound   = el.optSound.checked;
     cfg.tick    = el.optTick.checked;
@@ -193,6 +335,8 @@
         pick(el.revealModeSelect, saved.pictureMode || 'normal');
         var pm = document.querySelector('input[name="playmode"][value="' + (saved.play || 'duel') + '"]');
         if (pm) pm.checked = true;
+        var am = document.querySelector('input[name="answermode"][value="' + (saved.answers || 'type') + '"]');
+        if (am) am.checked = true;
         if (typeof saved.deep === 'boolean') el.optDeep.checked = saved.deep;
         if (typeof saved.sound === 'boolean') el.optSound.checked = saved.sound;
         if (typeof saved.tick === 'boolean') el.optTick.checked = saved.tick;
@@ -262,6 +406,13 @@
     el.hostPenalty.textContent = (cfg.penaltyMs / 1000).toFixed(0);
     el.rally.hidden = false;
     renderRally(true);
+
+    G.typed = cfg.answers === 'type';
+    G.tokenIndex = G.typed ? Match.index(G.queue) : null;
+    document.body.classList.toggle('is-typing', G.typed);
+    el.answerBar.hidden = !G.typed;
+    el.passBar.hidden = G.typed;
+    el.answerInput.value = '';
     el.hostPassCost.textContent = (cfg.passCostMs / 1000).toFixed(0);
     el.passCost.textContent = '\u2212' + (cfg.passCostMs / 1000).toFixed(0) + 's';
     el.passCost.hidden = !(cfg.passCostMs > 0);
@@ -326,6 +477,7 @@
   function goLive() {
     document.body.classList.remove('is-frozen');
     G.phase = 'live';
+    setTimeout(focusAnswer, 0);
     el.passBar.disabled = false;
     G.runStart = now();
     startTicker();
@@ -567,6 +719,7 @@
     pods[0].root.classList.remove('is-dead');
     pods[1].root.classList.remove('is-dead');
     show('setup');
+    goStep(STEPS.length - 1);
     refreshMediaCount();
   }
 
@@ -646,6 +799,40 @@
     renderRally(true);
   }
 
+  /* ── typed answers ───────────────────────────────────────────
+     In typed mode nobody is marking, so the app is. Match.check is
+     forgiving about spelling and strict about ambiguity — see
+     js/match.js. A wrong guess costs the same as a wrong call. */
+  function submitTyped(e) {
+    if (e) e.preventDefault();
+    if (G.phase !== 'live' || !G.typed) return;
+    var typed = el.answerInput.value.trim();
+    if (!typed) return;
+
+    var verdict = Match.check(typed, G.queue[G.idx], G.tokenIndex);
+    if (verdict) {
+      el.answerInput.value = '';
+      doCorrect();
+    } else {
+      el.answerBar.classList.remove('is-wrong');
+      void el.answerBar.offsetWidth;
+      el.answerBar.classList.add('is-wrong');
+      el.answerInput.select();
+      doWrong();
+    }
+  }
+
+  function focusAnswer() {
+    if (!G.typed || G.phase !== 'live') return;
+    try { el.answerInput.focus({ preventScroll: true }); } catch (err) { el.answerInput.focus(); }
+  }
+
+  function renderAnswerBar() {
+    if (!G.typed) return;
+    el.answerWho.textContent = G.solo ? '' : G.players[G.active].name;
+    el.answerInput.placeholder = G.solo ? 'type your answer' : G.players[G.active].name + ', type your answer';
+  }
+
   function flash(cls) {
     el.boardFlash.className = 'board__flash';
     void el.boardFlash.offsetWidth;
@@ -681,6 +868,7 @@
   }
 
   function renderAll() {
+    renderAnswerBar();
     pods[0].root.classList.toggle('is-active', G.active === 0);
     pods[1].root.classList.toggle('is-active', G.active === 1);
     el.passWho.textContent = G.players[G.active].name;
@@ -872,7 +1060,31 @@
   }
 
   /* ══════════════════ EVENTS ══════════════════ */
-  el.setupForm.addEventListener('submit', function (e) { e.preventDefault(); Sfx.unlock(); startDuel(); });
+  /* The form only starts a duel from the last step; earlier steps advance. */
+  el.setupForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    Sfx.unlock();
+    if (STEPS[stepAt] !== 'ready') return goStep(stepAt + 1);
+    startDuel();
+  });
+
+  el.startFlow.addEventListener('click', function () { Sfx.unlock(); show('setup'); goStep(0); });
+  el.quickStart.addEventListener('click', function () { Sfx.unlock(); startDuel(); });
+  el.flowBack.addEventListener('click', function () {
+    if (stepAt === 0) { show('welcome'); return; }
+    goStep(stepAt - 1);
+  });
+  el.flowNext.addEventListener('click', function () { goStep(stepAt + 1); });
+
+  /* Answering style changes what step 4 needs to show. */
+  document.querySelectorAll('input[name="playmode"], input[name="answermode"]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      if (STEPS[stepAt] === 'mode' || STEPS[stepAt] === 'answers') goStep(stepAt + 1);
+    });
+  });
+
+  el.answerBar.addEventListener('submit', submitTyped);
+  el.answerPass.addEventListener('click', function () { doPass(null); focusAnswer(); });
   el.catSelect.addEventListener('change', function () { cfg.catId = el.catSelect.value; refreshMediaCount(); refreshPictureModes(); });
   el.toMedia.addEventListener('click', function () { openMedia(); });
   el.mediaRescan.addEventListener('click', function () { toast('Re-checking the assets folder…'); openMedia(true); });
@@ -938,7 +1150,11 @@
 
   document.addEventListener('keydown', function (e) {
     var t = e.target;
-    if (t && /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName)) return;
+    if (t && /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName)) {
+      /* The answer box owns Enter; Escape lets go of it. */
+      if (t === el.answerInput && e.key === 'Escape') { t.blur(); }
+      return;
+    }
     Sfx.unlock();
     var k = e.key;
 
@@ -956,6 +1172,14 @@
     if (G.phase === 'over') {
       if (k === 'r' || k === 'R') { el.ovlResult.hidden = true; startDuel(); }
       if (k === 'n' || k === 'N') backToSetup();
+      return;
+    }
+
+    if (G.typed) {
+      /* Only the things that aren't marking decisions stay live. */
+      if (k === 'p' || k === 'P') { e.preventDefault(); togglePause(); }
+      else if (k === 'r' || k === 'R') { e.preventDefault(); startDuel(); }
+      else focusAnswer();
       return;
     }
 
@@ -983,5 +1207,25 @@
   Sfx.setEnabled(cfg.sound);
   Sfx.setTick(cfg.tick);
 
-  Store.init(CATS.map(function (c) { return c.id; })).then(refreshMediaCount);
+  buildDots();
+  goStep(0);
+  refreshPictureModes();
+  show('welcome');
+
+  /* Someone who has played before shouldn't be walked through it again. */
+  try {
+    if (localStorage.getItem('dhd.cfg')) {
+      var prev = catById(cfg.catId);
+      el.quickStart.hidden = false;
+      el.quickStart.textContent = 'Play again — ' + prev.name + ', ' + (cfg.clockMs / 1000) + 's';
+    }
+  } catch (e) {}
+
+  el.welcomeStats.textContent = CATS.length + ' categories · ' +
+    CATS.reduce(function (n, c) { return n + c.items.length; }, 0).toLocaleString() + ' pictures';
+
+  Store.init(CATS.map(function (c) { return c.id; })).then(function () {
+    refreshMediaCount();
+    if (el.catGrid.childElementCount) { el.catGrid.innerHTML = ''; refreshCatGrid(); }
+  });
 })();
