@@ -38,6 +38,9 @@
     joinGame: $('joinGame'),
     dailyBtn: $('dailyBtn'), dailyCat: $('dailyCat'), dailyMeta: $('dailyMeta'),
     resShare: $('resShare'), resultMarks: $('resultMarks'),
+    lastUp: $('lastUp'), lastUpImg: $('lastUpImg'),
+    lastUpEyebrow: $('lastUpEyebrow'), lastUpName: $('lastUpName'),
+    recap: $('recap'), recapToggle: $('recapToggle'),
     ovlTutorial: $('ovlTutorial'), tutSkip: $('tutSkip'), tutDots: $('tutDots'),
     tutBack: $('tutBack'), tutNext: $('tutNext'), toTutorial: $('toTutorial'),
     silhouetteNote: $('silhouetteNote'),
@@ -95,7 +98,8 @@
     active: 0, startMs: 45000,
     runStart: 0, lastTickSec: null,
     raf: 0, backstop: 0, peek: false,
-    lockUntil: 0, revealTimer: 0, introTimer: 0, pendingBeat: null
+    lockUntil: 0, revealTimer: 0, introTimer: 0, pendingBeat: null,
+    history: [], curWrongs: 0
   };
 
   /* ── small helpers ───────────────────────────────────────── */
@@ -553,6 +557,10 @@
     G.cat = catById(cfg.catId);
     G.queue = G.daily ? G.daily.items.slice() : buildQueue();
     G.marks = [];
+    G.history = [];        // every picture played, for the end-of-game recap
+    G.curWrongs = 0;
+    G.curLogged = false;
+    G.ranOut = null;
     if (!G.queue.length) { toast('That category is empty'); return; }
     G.idx = 0;
     G.startMs = cfg.clockMs;
@@ -705,11 +713,29 @@
      never costs anybody time.
      ───────────────────────────────────────────────────────── */
 
+  /* Every picture that leaves the board gets a line in the recap: what it
+     was, how it ended, and who was on the clock for it. `timeout` is the
+     one nobody answered — the clock ran out while it was still up. */
+  function logItem(outcome) {
+    var item = G.queue[G.idx];
+    if (!item || G.curLogged) return null;   // a pass that empties the clock
+    G.curLogged = true;                      // is still one line, not two
+
+    var rec = {
+      slug: item.slug, name: item.name, outcome: outcome,
+      who: G.solo ? -1 : G.active, wrongs: G.curWrongs
+    };
+    G.history.push(rec);
+    G.curWrongs = 0;
+    return rec;
+  }
+
   function doCorrect() {
     if (G.phase !== 'live') return;
     if (locked(200)) return;
     G.players[G.active].right++;
     if (G.daily) G.marks[G.idx] = 1;
+    logItem('yes');
     bumpRally();
     renderStats();
     Sfx.correct();
@@ -729,6 +755,7 @@
     if (locked(260)) return;
     G.players[G.active].passes++;
     if (G.daily) G.marks[G.idx] = 0;
+    logItem('pass');
     breakRally();
     renderStats();
     Sfx.pass();
@@ -748,6 +775,7 @@
     if (locked(220)) return;
     Sfx.wrong();
     if (G.daily && G.marks[G.idx] === undefined) G.marks[G.idx] = 0;
+    G.curWrongs++;          // the picture stays up, so this isn't a line yet
     breakRally();
     flash('is-no');
     charge(cfg.penaltyMs);
@@ -850,13 +878,105 @@
     }
   }
 
+  /* ── end-of-round recap ─────────────────────────────────────
+     Two parts. The strip names the picture that was on the board when
+     the round ended — without it people rewind the footage arguing about
+     what the last one was. The grid below is every picture of the round,
+     colour-coded, collapsed by default so it doesn't bury the score. */
+
+  var OUTCOME_TAG = { yes: '\u2713', pass: '\u2192', timeout: '\u2715' };
+
+  function renderLastUp() {
+    var last = G.history[G.history.length - 1];
+    if (!last) { el.lastUp.hidden = true; return; }
+    el.lastUpEyebrow.textContent =
+      last.outcome === 'timeout' ? 'TIME RAN OUT ON' :
+      last.outcome === 'pass'    ? 'LAST PICTURE — PASSED' :
+                                   'LAST PICTURE';
+    el.lastUpName.textContent = last.name;
+    el.lastUp.hidden = false;
+    el.lastUpImg.hidden = true;
+    el.lastUpImg.removeAttribute('src');
+    Store.resolve(G.cat.id, { slug: last.slug, name: last.name }).then(function (url) {
+      if (!url || el.lastUpName.textContent !== last.name) return;
+      el.lastUpImg.onerror = function () { el.lastUpImg.hidden = true; };
+      el.lastUpImg.src = url;
+      el.lastUpImg.hidden = false;
+    });
+  }
+
+  function renderRecap() {
+    var list = G.history;
+    el.recap.innerHTML = '';
+    if (!list.length) { el.recap.hidden = true; el.recapToggle.hidden = true; return; }
+
+    el.recapToggle.hidden = false;
+    el.recapToggle.textContent = 'See every picture (' + list.length + ')';
+    el.recap.hidden = true;                 // collapsed until asked for
+
+    list.forEach(function (h) {
+      var cell = document.createElement('div');
+      cell.className = 'recap__cell recap__cell--' + h.outcome;
+
+      var img = document.createElement('img');
+      img.className = 'recap__img';
+      img.alt = h.name;
+      img.loading = 'lazy';
+      cell.appendChild(img);
+      Store.resolve(G.cat.id, { slug: h.slug, name: h.name }).then(function (url) {
+        if (url) img.src = url;
+      });
+
+      var tag = document.createElement('span');
+      tag.className = 'recap__tag';
+      tag.textContent = OUTCOME_TAG[h.outcome] || '';
+      tag.title = h.outcome === 'yes' ? 'Correct' : h.outcome === 'pass' ? 'Passed' : 'Ran out of clock';
+      cell.appendChild(tag);
+
+      /* In a duel it matters who was on the clock for each one. */
+      if (h.who >= 0 && G.players[h.who]) {
+        var who = document.createElement('span');
+        who.className = 'recap__who';
+        who.textContent = G.players[h.who].name.slice(0, 6);
+        cell.appendChild(who);
+      }
+
+      var name = document.createElement('b');
+      name.className = 'recap__name';
+      name.textContent = h.name;
+      if (h.wrongs) name.textContent += ' \u00b7 ' + h.wrongs + ' wrong';
+      cell.appendChild(name);
+
+      el.recap.appendChild(cell);
+    });
+  }
+
+  function showRecap() {
+    renderLastUp();
+    renderRecap();
+  }
+
   function endDuel(winner) {
+    var ranOut = logItem('timeout');   // whatever was on the board when time ran out
+    G.ranOut = ranOut;                 // endSolo runs before this function's tail
     G.phase = 'over';
     stopTicker();
     clearTimeout(G.revealTimer);
     G.pendingBeat = null;
-    el.reveal.hidden = true;
     el.passBar.disabled = true;
+
+    /* Put the answer up before the card covers the board. Without this the
+       last picture vanishes unanswered and everyone argues about what it
+       was. Silhouette and zoom drop away too, so it's the real image. */
+    if (ranOut) {
+      document.body.classList.add('is-revealing');
+      el.reveal.className = 'reveal reveal--pass';
+      el.revealEyebrow.textContent = 'TIME — IT WAS';
+      el.revealName.textContent = ranOut.name;
+      el.reveal.hidden = false;
+    } else {
+      el.reveal.hidden = true;
+    }
     pods[0].root.classList.remove('is-hit');
     pods[1].root.classList.remove('is-hit');
     pods[1 - winner].root.classList.remove('is-active');
@@ -882,7 +1002,12 @@
       pods[i].resClock.textContent = fmt(G.players[i].ms);
     });
     recordPlay(G.cat.id, 'duel', G.bestRally);
-    setTimeout(function () { el.ovlResult.hidden = false; }, 900);
+    showRecap();
+    setTimeout(function () {
+      el.reveal.hidden = true;
+      document.body.classList.remove('is-revealing');
+      el.ovlResult.hidden = false;
+    }, ranOut ? 2200 : 900);
   }
 
   /* Solo has no loser — the card is a score, built to be screenshotted. */
@@ -892,10 +1017,23 @@
     stopTicker();
     clearTimeout(G.revealTimer);
     G.pendingBeat = null;
-    el.reveal.hidden = true;
-    document.body.classList.remove('is-revealing');
     el.passBar.disabled = true;
     el.answerBar.hidden = true;
+
+    /* Same as the duel: if the clock ran out on a picture, that answer goes
+       up before the card lands. A daily that simply reached its tenth has
+       nothing outstanding, so it skips straight through. */
+    var ranOut = G.ranOut;
+    if (ranOut) {
+      document.body.classList.add('is-revealing');
+      el.reveal.className = 'reveal reveal--pass';
+      el.revealEyebrow.textContent = 'TIME — IT WAS';
+      el.revealName.textContent = ranOut.name;
+      el.reveal.hidden = false;
+    } else {
+      el.reveal.hidden = true;
+      document.body.classList.remove('is-revealing');
+    }
     var p = G.players[0];
     G.winnerName = p.name;
     el.resultName.textContent = p.name;
@@ -922,7 +1060,12 @@
     el.resultSolo.hidden = false;
     el.resultTbl.hidden = true;
     recordPlay(G.cat.id, 'solo', G.bestRally, p.right);
-    setTimeout(function () { el.ovlResult.hidden = false; }, 900);
+    showRecap();
+    setTimeout(function () {
+      el.reveal.hidden = true;
+      document.body.classList.remove('is-revealing');
+      el.ovlResult.hidden = false;
+    }, ranOut ? 2200 : 900);
   }
 
   function backToSetup() {
@@ -933,6 +1076,8 @@
     G.pendingBeat = null;
     el.ovlIntro.hidden = el.ovlResult.hidden = el.ovlPause.hidden = true;
     el.reveal.hidden = el.penaltyPop.hidden = el.boardPeek.hidden = true;
+    el.lastUp.hidden = el.recap.hidden = el.recapToggle.hidden = true;
+    el.recap.innerHTML = '';
     document.body.classList.remove('is-revealing');
     clearTimeout(G.revealTimer);
     G.pendingBeat = null;
@@ -962,6 +1107,8 @@
   /* ── board rendering ── */
   function showItem() {
     var item = G.queue[G.idx];
+    G.curLogged = false;
+    G.curWrongs = 0;
     el.duelProgress.textContent = G.idx + 1;
     el.boardCardClue.textContent = item.clue;
     el.boardClue.textContent = cfg.clue ? item.clue : '';
@@ -1438,6 +1585,19 @@
 
   el.dailyBtn.addEventListener('click', startDaily);
   el.resShare.addEventListener('click', shareResult);
+  on(el.recapToggle, 'click', function () {
+    var open = el.recap.hidden;
+    el.recap.hidden = !open;
+    el.recapToggle.textContent = (open ? 'Hide the pictures' : 'See every picture (' + G.history.length + ')');
+    /* Opening the grid pushes the buttons past the fold on a laptop screen.
+       Follow it down so the grid and the actions are both in view. */
+    if (open) {
+      requestAnimationFrame(function () {
+        try { el.ovlResult.scrollTo({ top: el.ovlResult.scrollHeight, behavior: 'smooth' }); }
+        catch (e) { el.ovlResult.scrollTop = el.ovlResult.scrollHeight; }
+      });
+    }
+  });
   el.toTutorial.addEventListener('click', openTutorial);
   el.tutSkip.addEventListener('click', closeTutorial);
   el.tutBack.addEventListener('click', function () { showTutSlide(tutAt - 1); });

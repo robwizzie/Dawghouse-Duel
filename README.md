@@ -418,6 +418,31 @@ says so — *"That's Pikachu — but not this one"* — rather than a flat **Not
 quite**. It's the difference between "you don't know this" and "you know it,
 wrong card".
 
+## The end-of-round card
+
+Two things sit under the score, both there to settle arguments.
+
+**The last picture.** When a clock hits zero there is always a picture on the
+board nobody answered. The answer goes up on the board first — *TIME — IT WAS
+Iceman* — and then again on the result card with its thumbnail, so nobody has
+to scrub back through the footage asking what the last one was. If the round
+ended by running out of deck instead, it just reads *last picture*.
+
+**Every picture of the round**, behind *See every picture*. Each tile is the
+artwork, the answer, who was on the clock for it, and how it went:
+
+| | |
+| --- | --- |
+| lime, ✓ | got it |
+| amber, → | passed |
+| red, ✕ | the clock ran out on this one |
+
+Wrong guesses don't end a picture, so they're counted on the tile instead —
+*Ultron · 2 wrong* means two misses before somebody passed it.
+
+It's collapsed by default so it doesn't bury the winner, and opening it scrolls
+the buttons back into view.
+
 ## The rally counter
 
 A two-line chip on its own row between the category and the board:
