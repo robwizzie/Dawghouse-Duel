@@ -440,6 +440,7 @@ tools/fetch-extra-images.sh  the six the dataset doesn't carry
 tools/fetch-wiki-images.js   pulls a category's art from a Fandom wiki or Wikipedia
 tools/search-commons.js      finds text-free photos on Wikimedia Commons
 assets/brand/           the wordmark, plus a slot for a real brand font
+assets/icons/           Lucide icons (ISC), vendored rather than CDN-loaded
 assets/categories/<cat>/
   *.jpg / *.png           the pictures
   index.json              folder listing (generated)

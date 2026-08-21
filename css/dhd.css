@@ -265,7 +265,7 @@ select.input option{background:var(--indigo-900);color:#fff}
   border:3px solid var(--indigo-600);border-radius:18px;padding:clamp(16px,2.6vh,30px) clamp(14px,2vw,26px);
   background:rgba(14,14,45,.45);transition:.16s var(--ease);height:100%}
 .pick__icon{width:clamp(34px,4vw,52px);height:clamp(34px,4vw,52px);display:block;
-  fill:none;stroke:rgba(255,255,255,.55);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;
+  fill:none;stroke:rgba(255,255,255,.62);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
   transition:stroke .16s}
 .pick input:checked + .pick__body .pick__icon{stroke:var(--lime)}
 .pick__body b{font-family:var(--ff-display);color:#fff;font-size:clamp(19px,2.2vw,30px)}
