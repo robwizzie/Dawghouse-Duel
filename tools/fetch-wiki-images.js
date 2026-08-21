@@ -28,7 +28,16 @@ const { execFileSync } = require('child_process');
 
 const CAT = process.argv[2] || 'disney';
 const OUT = path.join(__dirname, '..', 'assets', 'categories', CAT);
-const THUMB = 800, MIN_BYTES = 3000;
+const THUMB = 800, MIN_BYTES = 3000, MAX_EDGE = 900;
+
+/* Fandom's CDN converts on delivery — a .png render comes back as webp or
+   jpeg with the alpha gone. `format=original` opts out of the conversion.
+   It has to be appended to the thumbnail URL as-is: stripping back to the
+   bare file path 404s on most wikis, because the cache-buster and
+   path-prefix in the query are load-bearing. Keeping the thumbnail also
+   means the file arrives already scaled. */
+const originalUrl = u =>
+  String(u) + (String(u).indexOf('?') === -1 ? '?' : '&') + 'format=original';
 const GAP_MS = 350, RETRIES = 4;   // Wikimedia returns 429 if you lean on it
 const UA = 'dawghouse-duel/1.0 (https://dawghouseduel.com; https://github.com/robwizzie/Dawghouse-Duel) node-https';
 
@@ -61,7 +70,11 @@ async function fetchWithBackoff(url, label) {
   for (let attempt = 0; ; attempt++) {
     try { return await get(url); }
     catch (e) {
-      const soft = e.status === 429 || e.status === 503 || !e.status;
+      /* Fandom answers 404 to a perfectly good API call when it is being
+         leaned on — a category spanning 40 wikis triggers it constantly.
+         Retry those too; a genuinely missing page just exhausts the
+         attempts and gets reported as missing, same as before. */
+      const soft = e.status === 429 || e.status === 503 || e.status === 404 || !e.status;
       if (!soft || attempt >= RETRIES) throw e;
       const pause = e.retryAfter ? e.retryAfter * 1000 : wait;
       process.stdout.write('\r  waiting ' + Math.round(pause / 100) / 10 + 's after ' +
@@ -183,6 +196,7 @@ async function credits(wiki, files) {
     titleCount += titles.length;
     process.stdout.write('\r  resolving ' + titles.length + ' titles on ' + w.padEnd(34));
     lookups.set(w, await pageImages(w, titles));
+    if (byWiki.size > 3) await sleep(GAP_MS);   // be a good guest across many wikis
   }
   console.log('\r  resolved ' + titleCount + ' titles across ' + byWiki.size + ' wiki(s)' + ' '.repeat(30));
 
@@ -224,12 +238,17 @@ async function credits(wiki, files) {
     if (cr) Object.assign(sources[item.slug], cr);
     if (have.has(item.slug)) continue;      // picture already on disk; we only wanted the credit
     try {
-      const buf = await fetchWithBackoff(hit.url, item.name);
+      const wantOriginal = keepAlpha && /fandom\.com|wikia\./.test(hit.url);
+      const buf = await fetchWithBackoff(wantOriginal ? originalUrl(hit.url) : hit.url, item.name);
       if (buf.length < MIN_BYTES) throw new Error('image too small');
       const tmp = dest + '.tmp';
       fs.writeFileSync(tmp, buf);
       if (keepAlpha) {
-        fs.renameSync(tmp, dest);          // transparency is the whole point here
+        // -Z keeps the format, so the alpha channel survives the resize.
+        try {
+          execFileSync('sips', ['-Z', String(MAX_EDGE), tmp, '--out', dest], { stdio: 'ignore' });
+          fs.unlinkSync(tmp);
+        } catch (e) { fs.renameSync(tmp, dest); }
       } else {
         try {
           execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', '88', tmp, '--out', dest],
@@ -250,6 +269,23 @@ async function credits(wiki, files) {
   const prev = fs.existsSync(path.join(OUT, 'sources.json'))
     ? JSON.parse(fs.readFileSync(path.join(OUT, 'sources.json'), 'utf8')) : {};
   fs.writeFileSync(path.join(OUT, 'sources.json'), JSON.stringify(Object.assign(prev, sources), null, 1));
+
+  /* A keepAlpha category exists so silhouette mode works. An image that
+     arrives flat would render as a black rectangle, so say so loudly. */
+  if (keepAlpha) {
+    const flat = cat.items.filter(it => {
+      const f = path.join(OUT, it.slug + EXT);
+      if (!fs.existsSync(f)) return false;
+      const b = fs.readFileSync(f);
+      if (!(b[0] === 0x89 && b[1] === 0x50)) return true;
+      const colourType = b.readUInt8(25);
+      return !(colourType === 6 || colourType === 4 || colourType === 3);
+    }).map(it => it.slug);
+    if (flat.length) {
+      console.log('\nNo alpha channel (silhouette would be a black box) — mark these `flat: true`:');
+      flat.forEach(f => console.log('  ' + f));
+    }
+  }
 
   console.log('\n\nDownloaded ' + got + ', already had ' + cached + ', missing ' + missing.length + '.');
   const odd = Object.values(sources).filter(s => s.via !== 'pinned image' &&

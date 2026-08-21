@@ -198,10 +198,54 @@ select.input option{background:var(--indigo-900);color:#fff}
   font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:2px}
 .pair__new:hover{color:var(--lime)}
 
+/* ── mode picker ── */
+.row--mode{grid-template-columns:1fr 1fr;gap:10px}
+.modepick{cursor:pointer;display:block}
+.modepick input{position:absolute;opacity:0;pointer-events:none}
+.modepick span{
+  display:flex;flex-direction:column;gap:.1em;text-align:center;
+  border:2px solid var(--indigo-600);border-radius:12px;padding:.6em .8em;
+  font-family:var(--ff-display);font-size:clamp(14px,1.5vw,21px);color:rgba(255,255,255,.75);
+  transition:.15s;
+}
+.modepick span i{font-style:normal;font-family:var(--ff-ui);font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;font-size:clamp(9px,.9vw,12px);opacity:.55}
+.modepick input:checked + span{border-color:var(--lime);color:var(--lime);background:rgba(222,255,102,.1);
+  box-shadow:0 0 26px -8px rgba(222,255,102,.6)}
+.modepick input:focus-visible + span{box-shadow:0 0 0 4px rgba(222,255,102,.25)}
+
+/* ── rally counter — the number that makes a clip find itself ── */
+.rally{
+  position:absolute;left:50%;top:clamp(48px,7vh,74px);transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.05em;z-index:3;pointer-events:none;
+}
+.rally[hidden]{display:none}
+.rally i{font-style:normal;font-family:var(--ff-cond);font-weight:900;letter-spacing:.42em;text-indent:.42em;
+  font-size:clamp(8px,.85vw,12px);color:rgba(255,255,255,.4)}
+.rally b{font-family:var(--ff-cond);font-weight:900;font-variant-numeric:tabular-nums;line-height:.85;
+  font-size:clamp(26px,3.4vw,54px);color:var(--lime);text-shadow:0 0 26px rgba(222,255,102,.5)}
+.rally.is-hot b{color:var(--lime-hot);text-shadow:0 0 40px rgba(222,255,102,.9)}
+.rally.is-bump b{animation:rallyBump .34s var(--ease)}
+@keyframes rallyBump{0%{transform:scale(1)}40%{transform:scale(1.35)}100%{transform:scale(1)}}
+
+/* ── solo layout: one pod, no pass bar handoff ── */
+body.is-solo .pod--right{display:none}
+body.is-solo .arena{grid-template-columns:var(--pod-w) minmax(0,1fr)}
+body.is-solo .pod__control{display:none}
+body.is-solo .passbar__word::after{content:' / SKIP'}
+
+.result__solo{display:flex;gap:clamp(20px,5vw,60px);justify-content:center;margin:.2em 0 .4em}
+.result__solo[hidden]{display:none}
+.result__score,.result__best{display:flex;flex-direction:column;align-items:center;line-height:1}
+.result__solo b{font-family:var(--ff-cond);font-weight:900;font-variant-numeric:tabular-nums;
+  font-size:clamp(48px,9vw,120px);color:var(--lime)}
+.result__solo i{font-style:normal;font-weight:800;letter-spacing:.24em;text-transform:uppercase;
+  font-size:clamp(10px,1.1vw,15px);color:rgba(255,255,255,.5);margin-top:.3em}
+
 /* ══════════════════ DUEL ══════════════════ */
 .screen--duel{padding:clamp(8px,1.4vh,18px) clamp(10px,1.6vw,26px) 0;gap:clamp(6px,1vh,14px)}
 
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex:none}
+.topbar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;flex:none}
 .topbar__cat{display:flex;flex-direction:column;align-items:center;line-height:1;gap:.28em}
 .topbar__cat i{font-style:normal;font-size:clamp(9px,.85vw,13px);letter-spacing:.42em;text-indent:.42em;color:rgba(255,255,255,.45);font-weight:700}
 .topbar__cat b{font-family:var(--ff-display);color:var(--lime);font-size:clamp(18px,2.5vw,40px);letter-spacing:.02em;text-transform:uppercase}
@@ -341,6 +385,16 @@ select.input option{background:var(--indigo-900);color:#fff}
 /* Freezing the clocks has to freeze the reveal too, or a pause
    would quietly hand the picture over for nothing. */
 .is-frozen .board__img{animation-play-state:paused !important}
+
+/* ...but the answer beat is the one moment the picture must be plain.
+   Showing a black shape next to the words "IT WAS SNORLAX" tells nobody
+   anything, so every mode drops for the length of the reveal. */
+.is-revealing .board__img{
+  animation:none !important;
+  filter:none !important;
+  transform:none !important;
+  transition:filter .25s ease-out, transform .25s ease-out;
+}
 
 /* Answer nameplate — the reveal beat after a correct answer or a pass. */
 .reveal{

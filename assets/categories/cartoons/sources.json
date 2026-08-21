@@ -1,0 +1,536 @@
+{
+ "bugs-bunny": {
+  "answer": "Bugs Bunny",
+  "matched": "Bugs Bunny",
+  "via": "Bugs Bunny",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "daffy-duck": {
+  "answer": "Daffy Duck",
+  "matched": "Daffy Duck",
+  "via": "Daffy Duck",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "porky-pig": {
+  "answer": "Porky Pig",
+  "matched": "Porky Pig",
+  "via": "Porky Pig",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "tweety": {
+  "answer": "Tweety",
+  "matched": "Tweety",
+  "via": "Tweety",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "sylvester": {
+  "answer": "Sylvester",
+  "matched": "Sylvester",
+  "via": "Sylvester",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "wile-e-coyote": {
+  "answer": "Wile E. Coyote",
+  "matched": "Wile E. Coyote",
+  "via": "Wile E. Coyote",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "road-runner": {
+  "answer": "Road Runner",
+  "matched": "Road Runner",
+  "via": "Road Runner",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "taz": {
+  "answer": "Tasmanian Devil",
+  "matched": "Tasmanian Devil",
+  "via": "Tasmanian Devil",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "elmer-fudd": {
+  "answer": "Elmer Fudd",
+  "matched": "Elmer Fudd",
+  "via": "Elmer Fudd",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "yosemite-sam": {
+  "answer": "Yosemite Sam",
+  "matched": "Yosemite Sam",
+  "via": "Yosemite Sam",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "marvin-the-martian": {
+  "answer": "Marvin the Martian",
+  "matched": "Marvin the Martian",
+  "via": "Marvin the Martian",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "foghorn-leghorn": {
+  "answer": "Foghorn Leghorn",
+  "matched": "Foghorn Leghorn",
+  "via": "Foghorn Leghorn",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "speedy-gonzales": {
+  "answer": "Speedy Gonzales",
+  "matched": "Speedy Gonzales",
+  "via": "Speedy Gonzales",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "scooby-doo": {
+  "answer": "Scooby-Doo",
+  "matched": "Scooby-Doo",
+  "via": "Scooby-Doo",
+  "wiki": "scoobydoo.fandom.com"
+ },
+ "shaggy": {
+  "answer": "Shaggy Rogers",
+  "matched": "Shaggy Rogers",
+  "via": "Shaggy Rogers",
+  "wiki": "scoobydoo.fandom.com"
+ },
+ "velma": {
+  "answer": "Velma Dinkley",
+  "matched": "Velma Dinkley",
+  "via": "Velma Dinkley",
+  "wiki": "scoobydoo.fandom.com"
+ },
+ "daphne": {
+  "answer": "Daphne Blake",
+  "matched": "Daphne Blake",
+  "via": "Daphne Blake",
+  "wiki": "scoobydoo.fandom.com"
+ },
+ "fred-jones": {
+  "answer": "Fred Jones",
+  "matched": "Fred Jones",
+  "via": "Fred Jones",
+  "wiki": "scoobydoo.fandom.com"
+ },
+ "fred-flintstone": {
+  "answer": "Fred Flintstone",
+  "matched": "Fred Flintstone",
+  "via": "Fred Flintstone",
+  "wiki": "hanna-barbera.fandom.com"
+ },
+ "barney-rubble": {
+  "answer": "Barney Rubble",
+  "matched": "Barney Rubble",
+  "via": "Barney Rubble",
+  "wiki": "hanna-barbera.fandom.com"
+ },
+ "george-jetson": {
+  "answer": "George Jetson",
+  "matched": "George Jetson",
+  "via": "George Jetson",
+  "wiki": "hanna-barbera.fandom.com"
+ },
+ "yogi-bear": {
+  "answer": "Yogi Bear",
+  "matched": "Yogi Bear",
+  "via": "Yogi Bear",
+  "wiki": "hanna-barbera.fandom.com"
+ },
+ "tom-cat": {
+  "answer": "Tom",
+  "matched": "Tom Cat",
+  "via": "Tom Cat",
+  "wiki": "tomandjerry.fandom.com"
+ },
+ "jerry-mouse": {
+  "answer": "Jerry",
+  "matched": "Jerry Mouse",
+  "via": "Jerry Mouse",
+  "wiki": "tomandjerry.fandom.com"
+ },
+ "spongebob": {
+  "answer": "SpongeBob SquarePants",
+  "matched": "SpongeBob SquarePants",
+  "via": "SpongeBob SquarePants",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "patrick-star": {
+  "answer": "Patrick Star",
+  "matched": "Patrick Star",
+  "via": "Patrick Star",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "squidward": {
+  "answer": "Squidward Tentacles",
+  "matched": "Squidward Tentacles",
+  "via": "Squidward Tentacles",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "mr-krabs": {
+  "answer": "Mr. Krabs",
+  "matched": "Eugene H. Krabs",
+  "via": "Eugene Krabs",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "plankton": {
+  "answer": "Plankton",
+  "matched": "Sheldon J. Plankton",
+  "via": "Plankton",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "sandy-cheeks": {
+  "answer": "Sandy Cheeks",
+  "matched": "Sandy Cheeks",
+  "via": "Sandy Cheeks",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "tommy-pickles": {
+  "answer": "Tommy Pickles",
+  "matched": "Tommy Pickles",
+  "via": "Tommy Pickles",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "chuckie-finster": {
+  "answer": "Chuckie Finster",
+  "matched": "Chuckie Finster",
+  "via": "Chuckie Finster",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "angelica-pickles": {
+  "answer": "Angelica Pickles",
+  "matched": "Angelica Pickles",
+  "via": "Angelica Pickles",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "arnold": {
+  "answer": "Arnold",
+  "matched": "Arnold Shortman",
+  "via": "Arnold",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "helga-pataki": {
+  "answer": "Helga Pataki",
+  "matched": "Helga Pataki",
+  "via": "Helga Pataki",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "timmy-turner": {
+  "answer": "Timmy Turner",
+  "matched": "Timmy Turner",
+  "via": "Timmy Turner",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "cosmo": {
+  "answer": "Cosmo",
+  "matched": "Cosmo",
+  "via": "Cosmo",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "jimmy-neutron": {
+  "answer": "Jimmy Neutron",
+  "matched": "Jimmy Neutron",
+  "via": "Jimmy Neutron",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "danny-phantom": {
+  "answer": "Danny Phantom",
+  "matched": "Danny Phantom",
+  "via": "Danny Phantom",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "zim": {
+  "answer": "Zim",
+  "matched": "Zim",
+  "via": "Zim",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "ren-hoek": {
+  "answer": "Ren Höek",
+  "matched": "Ren Höek",
+  "via": "Ren Höek",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "stimpy": {
+  "answer": "Stimpy",
+  "matched": "Stimpy J. Cat",
+  "via": "Stimpy",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "rocko": {
+  "answer": "Rocko",
+  "matched": "Rocko Rama",
+  "via": "Rocko",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "catdog": {
+  "answer": "CatDog",
+  "matched": "CatDog",
+  "via": "CatDog",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "aang": {
+  "answer": "Aang",
+  "matched": "Aang",
+  "via": "Aang",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "lincoln-loud": {
+  "answer": "Lincoln Loud",
+  "matched": "Lincoln Loud",
+  "via": "Lincoln Loud",
+  "wiki": "nickelodeon.fandom.com"
+ },
+ "dexter": {
+  "answer": "Dexter",
+  "matched": "Dexter",
+  "via": "Dexter",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "blossom": {
+  "answer": "Blossom",
+  "matched": "Blossom",
+  "via": "Blossom",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "bubbles-ppg": {
+  "answer": "Bubbles",
+  "matched": "Bubbles",
+  "via": "Bubbles",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "buttercup-ppg": {
+  "answer": "Buttercup",
+  "matched": "Buttercup",
+  "via": "Buttercup",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "johnny-bravo": {
+  "answer": "Johnny Bravo",
+  "matched": "Johnny Bravo",
+  "via": "Johnny Bravo",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "courage": {
+  "answer": "Courage",
+  "matched": "Courage",
+  "via": "Courage",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "ed": {
+  "answer": "Ed",
+  "matched": "Ed",
+  "via": "Ed",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "samurai-jack": {
+  "answer": "Samurai Jack",
+  "matched": "Samurai Jack",
+  "via": "Samurai Jack",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "finn": {
+  "answer": "Finn",
+  "matched": "Finn",
+  "via": "Finn",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "jake-the-dog": {
+  "answer": "Jake",
+  "matched": "Jake",
+  "via": "Jake",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "mordecai": {
+  "answer": "Mordecai",
+  "matched": "Mordecai",
+  "via": "Mordecai",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "rigby": {
+  "answer": "Rigby",
+  "matched": "Rigby",
+  "via": "Rigby",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "gumball": {
+  "answer": "Gumball Watterson",
+  "matched": "Gumball Watterson",
+  "via": "Gumball Watterson",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "steven-universe": {
+  "answer": "Steven Universe",
+  "matched": "Steven Universe",
+  "via": "Steven Universe",
+  "wiki": "cartoonnetwork.fandom.com"
+ },
+ "kim-possible": {
+  "answer": "Kim Possible",
+  "matched": "Kim Possible",
+  "via": "Kim Possible",
+  "wiki": "disney.fandom.com"
+ },
+ "ron-stoppable": {
+  "answer": "Ron Stoppable",
+  "matched": "Ron Stoppable",
+  "via": "Ron Stoppable",
+  "wiki": "disney.fandom.com"
+ },
+ "phineas": {
+  "answer": "Phineas Flynn",
+  "matched": "Phineas Flynn",
+  "via": "Phineas Flynn",
+  "wiki": "disney.fandom.com"
+ },
+ "ferb": {
+  "answer": "Ferb Fletcher",
+  "matched": "Ferb Fletcher",
+  "via": "Ferb Fletcher",
+  "wiki": "disney.fandom.com"
+ },
+ "perry": {
+  "answer": "Perry the Platypus",
+  "matched": "Perry the Platypus",
+  "via": "Perry the Platypus",
+  "wiki": "disney.fandom.com"
+ },
+ "dipper-pines": {
+  "answer": "Dipper Pines",
+  "matched": "Dipper Pines",
+  "via": "Dipper Pines",
+  "wiki": "disney.fandom.com"
+ },
+ "mabel-pines": {
+  "answer": "Mabel Pines",
+  "matched": "Mabel Pines",
+  "via": "Mabel Pines",
+  "wiki": "disney.fandom.com"
+ },
+ "bill-cipher": {
+  "answer": "Bill Cipher",
+  "matched": "Bill Cipher",
+  "via": "Bill Cipher",
+  "wiki": "disney.fandom.com"
+ },
+ "darkwing-duck": {
+  "answer": "Darkwing Duck",
+  "matched": "Darkwing Duck",
+  "via": "Darkwing Duck",
+  "wiki": "disney.fandom.com"
+ },
+ "launchpad": {
+  "answer": "Launchpad McQuack",
+  "matched": "Launchpad McQuack",
+  "via": "Launchpad McQuack",
+  "wiki": "disney.fandom.com"
+ },
+ "tj-detweiler": {
+  "answer": "T.J. Detweiler",
+  "matched": "T.J. Detweiler",
+  "via": "T.J. Detweiler",
+  "wiki": "disney.fandom.com"
+ },
+ "goofy-goof": {
+  "answer": "Max Goof",
+  "matched": "Max Goof",
+  "via": "Max Goof",
+  "wiki": "disney.fandom.com"
+ },
+ "ash-ketchum": {
+  "answer": "Ash Ketchum",
+  "matched": "Ash Ketchum",
+  "via": "Ash Ketchum",
+  "wiki": "pokemon.fandom.com"
+ },
+ "goku-dbz": {
+  "answer": "Goku",
+  "matched": "Goku",
+  "via": "Goku",
+  "wiki": "dragonball.fandom.com"
+ },
+ "vegeta": {
+  "answer": "Vegeta",
+  "matched": "Vegeta",
+  "via": "Vegeta",
+  "wiki": "dragonball.fandom.com"
+ },
+ "naruto": {
+  "answer": "Naruto Uzumaki",
+  "matched": "Naruto Uzumaki",
+  "via": "Naruto Uzumaki",
+  "wiki": "naruto.fandom.com"
+ },
+ "sasuke": {
+  "answer": "Sasuke Uchiha",
+  "matched": "Sasuke Uchiha",
+  "via": "Sasuke Uchiha",
+  "wiki": "naruto.fandom.com"
+ },
+ "luffy": {
+  "answer": "Monkey D. Luffy",
+  "matched": "Monkey D. Luffy",
+  "via": "Monkey D. Luffy",
+  "wiki": "onepiece.fandom.com"
+ },
+ "sailor-moon": {
+  "answer": "Sailor Moon",
+  "matched": "Usagi Tsukino / Sailor Moon (manga)",
+  "via": "Sailor Moon",
+  "wiki": "sailormoon.fandom.com"
+ },
+ "bluey": {
+  "answer": "Bluey",
+  "matched": "Bluey Heeler",
+  "via": "Bluey",
+  "wiki": "bluey.fandom.com"
+ },
+ "bingo-heeler": {
+  "answer": "Bingo",
+  "matched": "Bingo Heeler",
+  "via": "Bingo",
+  "wiki": "bluey.fandom.com"
+ },
+ "chase-pp": {
+  "answer": "Chase",
+  "matched": "Chase",
+  "via": "Chase",
+  "wiki": "pawpatrol.fandom.com"
+ },
+ "marshall-pp": {
+  "answer": "Marshall",
+  "matched": "Marshall",
+  "via": "Marshall",
+  "wiki": "pawpatrol.fandom.com"
+ },
+ "skye-pp": {
+  "answer": "Skye",
+  "matched": "Skye",
+  "via": "Skye",
+  "wiki": "pawpatrol.fandom.com"
+ },
+ "peppa-pig": {
+  "answer": "Peppa Pig",
+  "matched": "Peppa Pig (character)",
+  "via": "Peppa",
+  "wiki": "peppapig.fandom.com"
+ },
+ "george-pig": {
+  "answer": "George Pig",
+  "matched": "George Pig",
+  "via": "George Pig",
+  "wiki": "peppapig.fandom.com"
+ },
+ "raven-tt": {
+  "answer": "Raven",
+  "matched": "Raven",
+  "via": "Raven",
+  "wiki": "teentitans.fandom.com"
+ },
+ "starfire": {
+  "answer": "Starfire",
+  "matched": "Starfire",
+  "via": "Starfire",
+  "wiki": "teentitans.fandom.com"
+ },
+ "beast-boy": {
+  "answer": "Beast Boy",
+  "matched": "Beast Boy",
+  "via": "Beast Boy",
+  "wiki": "teentitans.fandom.com"
+ }
+}

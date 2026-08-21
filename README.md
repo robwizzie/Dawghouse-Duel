@@ -115,11 +115,13 @@ It also unlocks audio, which browsers gate until the first click.
 | Star Wars | 147 | 147 | Wookieepedia |
 | Sitcom Characters | 135 | 135 | 29 per-show wikis |
 | Pokémon | 179 | 179 | PokeAPI official artwork |
+| Video Game Characters | 89 | 86 | 40 franchise wikis |
+| Cartoon Characters | 89 | 89 | 15 network + show wikis |
 | Dog Breeds | 128 | 128 | Wikipedia |
 | NBA — Today | 129 | 129 | Wikipedia |
 | NBA — All-Time Greats | 115 | 115 | Wikipedia |
 
-**1,268 pictures across nine categories.**
+**1,443 pictures across eleven categories.**
 
 Each is one file in `js/data/`, registered with a `<script>` tag in
 `index.html`. Difficulty tiers (`easy` / `mid` / `deep`) let the **deep cuts**
@@ -274,10 +276,20 @@ deck you already have:
 | **Extreme zoom** | Starts at 7× and pulls back. |
 | **Blurred** | Starts unreadable and sharpens up. |
 
+On a **correct answer or a pass** the picture drops to plain for the reveal
+beat, whatever mode is running — a black shape next to the words "IT WAS
+SNORLAX" tells nobody anything.
+
 The point is to move the tension from *who reads fastest* to *who calls it
 first*. The window is seven seconds, or 28% of the clock on a short duel,
 whichever is less — no sense spending twelve seconds unblurring on a 30-second
 round.
+
+Two decks carry cut-out artwork and so offer silhouette: **Pokémon** and
+**Video Game Characters**. Eleven game characters only exist as flat images on
+their wiki; they're marked `flat: true` and sit out silhouette rounds rather
+than turning up as a black rectangle. The fetcher checks the alpha channel
+after every `keepAlpha` download and names any that came back flat.
 
 **Silhouette is only offered on decks whose artwork is cut out.** On a
 photograph it would render a black rectangle, so the option greys itself out and
@@ -288,6 +300,25 @@ stop the fetcher flattening it to JPEG.
 The reveal freezes whenever the clocks do: during the intro countdown, during
 the answer-reveal beat, and on pause. Without that, the first picture of every
 duel would burn its whole window behind the 3-2-1.
+
+## Play Along — solo mode
+
+The setup screen picks between **Duel** (two dawgs, two clocks) and **Play
+Along** (one clock, one player, how many can you get). Solo hides the second
+pod, keeps you on the clock through a correct answer instead of handing over,
+and ends on a score card built to be screenshotted: category, clock, correct,
+best streak.
+
+It exists so a viewer can play too. Watching is a view; playing is a share.
+
+## The rally counter
+
+A single number above the board: **consecutive correct answers with no wrong
+and no pass**. In a duel it's shared, so the pair of them build it together and
+either one can break it. In solo it's your own streak.
+
+It goes lime-bright at five. Mostly it means you stop hunting through footage
+for the good moment — the number tells you where it is.
 
 ## Adding a category
 
@@ -337,6 +368,8 @@ js/data/animals.js    170 animal answers
 js/data/starwars.js   147 Star Wars answers
 js/data/sitcoms.js    135 sitcom answers across 29 shows
 js/data/pokemon.js    179 Pokémon, transparent official artwork
+js/data/videogames.js 89 game characters, cut-out renders
+js/data/cartoons.js   89 cartoon characters, every era
 js/data/dogs.js       128 dog breeds
 js/data/nba-today.js  129 current NBA players
 js/data/nba-goats.js  115 all-time NBA greats

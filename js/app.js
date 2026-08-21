@@ -25,6 +25,10 @@
     penaltySelect: $('penaltySelect'), passCostSelect: $('passCostSelect'),
     revealSelect: $('revealSelect'), deckSelect: $('deckSelect'),
     revealModeSelect: $('revealModeSelect'),
+    rally: $('rally'), rallyNum: $('rallyNum'),
+    resultSolo: $('resultSolo'), soloScore: $('soloScore'), soloBest: $('soloBest'),
+    resultLabel: document.querySelector('.result__label'), resultTbl: document.querySelector('.result__tbl'),
+    resRematchLabel: document.querySelector('#resRematch'), resNewLabel: document.querySelector('#resNew'),
     hostPenalty: $('hostPenalty'), hostPassCost: $('hostPassCost'), passCost: $('passCost'),
     optDeep: $('optDeep'), optSound: $('optSound'), optTick: $('optTick'), optClue: $('optClue'),
     toMedia: $('toMedia'), toHelp: $('toHelp'), soundCheck: $('soundCheck'),
@@ -63,7 +67,7 @@
   var CATS = window.DHD_CATEGORIES || [];
   var cfg = {
     catId: (CATS[0] || {}).id, clockMs: 45000, first: 'flip',
-    penaltyMs: 3000, passCostMs: 2000, revealMs: 1400, deck: 'images', pictureMode: 'normal', revealSecs: 7,
+    penaltyMs: 3000, passCostMs: 2000, revealMs: 1400, deck: 'images', pictureMode: 'normal', revealSecs: 7, play: 'duel',
     deep: true, sound: true, tick: true, clue: false, names: ['ROB', 'MIKE']
   };
 
@@ -150,6 +154,8 @@
     cfg.revealMs   = num(el.revealSelect, 1400);
     cfg.deck       = el.deckSelect.value;
     cfg.pictureMode = el.revealModeSelect.value;
+    var modeRadio = document.querySelector('input[name="playmode"]:checked');
+    cfg.play = modeRadio ? modeRadio.value : 'duel';
     cfg.deep    = el.optDeep.checked;
     cfg.sound   = el.optSound.checked;
     cfg.tick    = el.optTick.checked;
@@ -185,6 +191,8 @@
         pick(el.revealSelect, saved.revealMs);
         pick(el.deckSelect, saved.deck);
         pick(el.revealModeSelect, saved.pictureMode || 'normal');
+        var pm = document.querySelector('input[name="playmode"][value="' + (saved.play || 'duel') + '"]');
+        if (pm) pm.checked = true;
         if (typeof saved.deep === 'boolean') el.optDeep.checked = saved.deep;
         if (typeof saved.sound === 'boolean') el.optSound.checked = saved.sound;
         if (typeof saved.tick === 'boolean') el.optTick.checked = saved.tick;
@@ -201,6 +209,12 @@
   /* ══════════════════ DUEL ══════════════════ */
   function buildQueue() {
     var items = pool(G.cat, cfg.deep);
+    /* A picture with no alpha channel is a black rectangle in silhouette
+       mode, so those answers sit the round out rather than being unguessable. */
+    if ((cfg.pictureMode || 'normal') === 'silhouette' && G.cat.silhouette) {
+      var lit = items.filter(function (it) { return !it.flat; });
+      if (lit.length >= 12) items = lit;
+    }
     var withArt = shuffle(items.filter(function (it) { return Store.hasArt(G.cat.id, it.slug); }));
     var without = shuffle(items.filter(function (it) { return !Store.hasArt(G.cat.id, it.slug); }));
     // It's a picture round — only fall back to clue cards if there is no art at all.
@@ -212,6 +226,7 @@
     pods[0].root.classList.remove('is-dead');
     pods[1].root.classList.remove('is-dead');
     el.reveal.hidden = el.penaltyPop.hidden = el.boardPeek.hidden = true;
+    document.body.classList.remove('is-revealing');
     stopTicker();
     clearTimeout(G.introTimer);
     clearTimeout(G.revealTimer);
@@ -225,9 +240,15 @@
       { name: cfg.names[0], ms: cfg.clockMs, right: 0, passes: 0 },
       { name: cfg.names[1], ms: cfg.clockMs, right: 0, passes: 0 }
     ];
-    G.active = cfg.first === 'flip' ? (Math.random() < 0.5 ? 0 : 1) : parseInt(cfg.first, 10);
+    G.solo = cfg.play === 'solo';
+    G.active = G.solo ? 0
+             : cfg.first === 'flip' ? (Math.random() < 0.5 ? 0 : 1)
+             : parseInt(cfg.first, 10);
+    document.body.classList.toggle('is-solo', G.solo);
     G.peek = false;
     G.winnerName = '';
+    G.rally = 0;
+    G.bestRally = 0;
     G.lastTickSec = null;
 
     el.duelCat.textContent = G.cat.name;
@@ -239,6 +260,8 @@
     el.boardClue.hidden = !cfg.clue;
     applyPictureMode();
     el.hostPenalty.textContent = (cfg.penaltyMs / 1000).toFixed(0);
+    el.rally.hidden = false;
+    renderRally(true);
     el.hostPassCost.textContent = (cfg.passCostMs / 1000).toFixed(0);
     el.passCost.textContent = '\u2212' + (cfg.passCostMs / 1000).toFixed(0) + 's';
     el.passCost.hidden = !(cfg.passCostMs > 0);
@@ -357,11 +380,12 @@
     if (G.phase !== 'live') return;
     if (locked(200)) return;
     G.players[G.active].right++;
+    bumpRally();
     renderStats();
     Sfx.correct();
     flash('is-yes');
     beat('yes', 'CORRECT', G.queue[G.idx].name, function () {
-      G.active = 1 - G.active;      // hand off
+      if (!G.solo) G.active = 1 - G.active;      // hand off
       Sfx.handoff();
       nextItem();
       renderAll();
@@ -374,6 +398,7 @@
     if (side != null && side !== G.active) return;   // only the dawg on the clock may pass
     if (locked(260)) return;
     G.players[G.active].passes++;
+    breakRally();
     renderStats();
     Sfx.pass();
     flash('is-pass');
@@ -391,6 +416,7 @@
     if (G.phase !== 'live') return;
     if (locked(220)) return;
     Sfx.wrong();
+    breakRally();
     flash('is-no');
     charge(cfg.penaltyMs);
   }
@@ -444,6 +470,7 @@
     G.phase = 'reveal';
     stopTicker();
     document.body.classList.add('is-frozen');
+    document.body.classList.add('is-revealing');   // show the real picture, not the shape
     el.passBar.disabled = true;
 
     var ms = cfg.revealMs;
@@ -456,6 +483,7 @@
     clearTimeout(G.revealTimer);
     G.revealTimer = setTimeout(function () {
       el.reveal.hidden = true;
+      document.body.classList.remove('is-revealing');
       if (G.phase !== 'reveal') return;   // reset/pause/quit landed mid-beat
       then();
     }, Math.max(60, ms));
@@ -493,14 +521,37 @@
     setTimeout(function () { Sfx.fanfare(); }, 700);
 
     var w = G.players[winner];
+    if (G.solo) return endSolo();
     G.winnerName = w.name;
     el.resultName.textContent = w.name;
-    el.resultLine.textContent = 'Survived with ' + fmt(remaining(winner)) + ' on the clock · ' + w.right + ' correct';
+    el.resultLabel.textContent = 'WINNER';
+    el.resRematchLabel.innerHTML = 'REMATCH <i>(R)</i>';
+    el.resNewLabel.innerHTML = 'NEW DUEL <i>(N)</i>';
+    el.resultSolo.hidden = true;
+    el.resultTbl.hidden = false;
+    el.resultLine.textContent = 'Survived with ' + fmt(remaining(winner)) + ' on the clock · ' +
+      w.right + ' correct · best rally ' + G.bestRally;
     [0, 1].forEach(function (i) {
       pods[i].resRight.textContent = G.players[i].right;
       pods[i].resPass.textContent = G.players[i].passes;
       pods[i].resClock.textContent = fmt(G.players[i].ms);
     });
+    setTimeout(function () { el.ovlResult.hidden = false; }, 900);
+  }
+
+  /* Solo has no loser — the card is a score, built to be screenshotted. */
+  function endSolo() {
+    var p = G.players[0];
+    G.winnerName = p.name;
+    el.resultName.textContent = p.name;
+    el.resultLabel.textContent = 'TIME';
+    el.resRematchLabel.innerHTML = 'GO AGAIN <i>(R)</i>';
+    el.resNewLabel.innerHTML = 'NEW RUN <i>(N)</i>';
+    el.resultLine.textContent = G.cat.name + ' · ' + (G.startMs / 1000) + ' seconds';
+    el.soloScore.textContent = p.right;
+    el.soloBest.textContent = G.bestRally;
+    el.resultSolo.hidden = false;
+    el.resultTbl.hidden = true;
     setTimeout(function () { el.ovlResult.hidden = false; }, 900);
   }
 
@@ -511,6 +562,7 @@
     clearTimeout(G.revealTimer);
     el.ovlIntro.hidden = el.ovlResult.hidden = el.ovlPause.hidden = true;
     el.reveal.hidden = el.penaltyPop.hidden = el.boardPeek.hidden = true;
+    document.body.classList.remove('is-revealing');
     clearTimeout(G.revealTimer);
     pods[0].root.classList.remove('is-dead');
     pods[1].root.classList.remove('is-dead');
@@ -567,6 +619,31 @@
     n.style.animation = 'none';
     void n.offsetWidth;
     n.style.animation = '';
+  }
+
+  /* One shared number in duel mode — the run the pair of them are on
+     together — and the player's own streak in solo. Either way it is the
+     thing on screen that tells you where the clip is. */
+  function renderRally(silent) {
+    el.rallyNum.textContent = G.rally;
+    el.rally.classList.toggle('is-hot', G.rally >= 5);
+    if (!silent) {
+      el.rally.classList.remove('is-bump');
+      void el.rally.offsetWidth;
+      el.rally.classList.add('is-bump');
+    }
+  }
+
+  function bumpRally() {
+    G.rally++;
+    if (G.rally > G.bestRally) G.bestRally = G.rally;
+    renderRally();
+  }
+
+  function breakRally() {
+    if (!G.rally) return;
+    G.rally = 0;
+    renderRally(true);
   }
 
   function flash(cls) {

@@ -1,0 +1,518 @@
+{
+ "mario": {
+  "answer": "Mario",
+  "matched": "Mario",
+  "via": "Mario",
+  "wiki": "mario.fandom.com"
+ },
+ "luigi": {
+  "answer": "Luigi",
+  "matched": "Luigi",
+  "via": "Luigi",
+  "wiki": "mario.fandom.com"
+ },
+ "princess-peach": {
+  "answer": "Princess Peach",
+  "matched": "Princess Peach",
+  "via": "Princess Peach",
+  "wiki": "mario.fandom.com"
+ },
+ "bowser": {
+  "answer": "Bowser",
+  "matched": "Bowser",
+  "via": "Bowser",
+  "wiki": "mario.fandom.com"
+ },
+ "yoshi": {
+  "answer": "Yoshi",
+  "matched": "Yoshi (character)",
+  "via": "Yoshi",
+  "wiki": "mario.fandom.com"
+ },
+ "toad-mario": {
+  "answer": "Toad",
+  "matched": "Toad (character)",
+  "via": "Toad",
+  "wiki": "mario.fandom.com"
+ },
+ "wario": {
+  "answer": "Wario",
+  "matched": "Wario",
+  "via": "Wario",
+  "wiki": "mario.fandom.com"
+ },
+ "waluigi": {
+  "answer": "Waluigi",
+  "matched": "Waluigi",
+  "via": "Waluigi",
+  "wiki": "mario.fandom.com"
+ },
+ "donkey-kong": {
+  "answer": "Donkey Kong",
+  "matched": "Donkey Kong (character)",
+  "via": "Donkey Kong",
+  "wiki": "mario.fandom.com"
+ },
+ "diddy-kong": {
+  "answer": "Diddy Kong",
+  "matched": "Diddy Kong",
+  "via": "Diddy Kong",
+  "wiki": "mario.fandom.com"
+ },
+ "bowser-jr": {
+  "answer": "Bowser Jr.",
+  "matched": "Bowser Jr.",
+  "via": "Bowser Jr.",
+  "wiki": "mario.fandom.com"
+ },
+ "rosalina": {
+  "answer": "Rosalina",
+  "matched": "Rosalina",
+  "via": "Rosalina",
+  "wiki": "mario.fandom.com"
+ },
+ "princess-daisy": {
+  "answer": "Princess Daisy",
+  "matched": "Princess Daisy",
+  "via": "Princess Daisy",
+  "wiki": "mario.fandom.com"
+ },
+ "shy-guy": {
+  "answer": "Shy Guy",
+  "matched": "Shy Guy",
+  "via": "Shy Guy",
+  "wiki": "mario.fandom.com"
+ },
+ "goomba": {
+  "answer": "Goomba",
+  "matched": "Goomba",
+  "via": "Goomba",
+  "wiki": "mario.fandom.com"
+ },
+ "boo-mario": {
+  "answer": "Boo",
+  "matched": "Boo",
+  "via": "Boo",
+  "wiki": "mario.fandom.com"
+ },
+ "link": {
+  "answer": "Link",
+  "matched": "Link",
+  "via": "Link",
+  "wiki": "zelda.fandom.com"
+ },
+ "zelda": {
+  "answer": "Princess Zelda",
+  "matched": "Princess Zelda",
+  "via": "Princess Zelda",
+  "wiki": "zelda.fandom.com"
+ },
+ "ganondorf": {
+  "answer": "Ganondorf",
+  "matched": "Ganondorf",
+  "via": "Ganondorf",
+  "wiki": "zelda.fandom.com"
+ },
+ "samus-aran": {
+  "answer": "Samus Aran",
+  "matched": "Samus Aran",
+  "via": "Samus Aran",
+  "wiki": "metroid.fandom.com"
+ },
+ "fox-mccloud": {
+  "answer": "Fox McCloud",
+  "matched": "Fox McCloud",
+  "via": "Fox McCloud",
+  "wiki": "starfox.fandom.com"
+ },
+ "captain-falcon": {
+  "answer": "Captain Falcon",
+  "matched": "Captain Falcon",
+  "via": "Captain Falcon",
+  "wiki": "mario.fandom.com"
+ },
+ "isabelle": {
+  "answer": "Isabelle",
+  "matched": "Isabelle",
+  "via": "Isabelle",
+  "wiki": "animalcrossing.fandom.com"
+ },
+ "tom-nook": {
+  "answer": "Tom Nook",
+  "matched": "Tom Nook",
+  "via": "Tom Nook",
+  "wiki": "animalcrossing.fandom.com"
+ },
+ "sonic": {
+  "answer": "Sonic the Hedgehog",
+  "matched": "Sonic the Hedgehog",
+  "via": "Sonic the Hedgehog",
+  "wiki": "sonic.fandom.com"
+ },
+ "tails": {
+  "answer": "Tails",
+  "matched": "Miles \"Tails\" Prower",
+  "via": "Miles Prower",
+  "wiki": "sonic.fandom.com"
+ },
+ "knuckles": {
+  "answer": "Knuckles the Echidna",
+  "matched": "Knuckles the Echidna",
+  "via": "Knuckles the Echidna",
+  "wiki": "sonic.fandom.com"
+ },
+ "shadow-hedgehog": {
+  "answer": "Shadow the Hedgehog",
+  "matched": "Shadow the Hedgehog",
+  "via": "Shadow the Hedgehog",
+  "wiki": "sonic.fandom.com"
+ },
+ "amy-rose": {
+  "answer": "Amy Rose",
+  "matched": "Amy Rose",
+  "via": "Amy Rose",
+  "wiki": "sonic.fandom.com"
+ },
+ "doctor-eggman": {
+  "answer": "Doctor Eggman",
+  "matched": "Doctor Eggman",
+  "via": "Doctor Eggman",
+  "wiki": "sonic.fandom.com"
+ },
+ "ryu": {
+  "answer": "Ryu",
+  "matched": "Ryu",
+  "via": "Ryu",
+  "wiki": "streetfighter.fandom.com"
+ },
+ "ken-masters": {
+  "answer": "Ken Masters",
+  "matched": "Ken Masters",
+  "via": "Ken Masters",
+  "wiki": "streetfighter.fandom.com"
+ },
+ "chun-li": {
+  "answer": "Chun-Li",
+  "matched": "Chun-Li",
+  "via": "Chun-Li",
+  "wiki": "streetfighter.fandom.com"
+ },
+ "m-bison": {
+  "answer": "M. Bison",
+  "matched": "M. Bison",
+  "via": "M. Bison",
+  "wiki": "streetfighter.fandom.com"
+ },
+ "blanka": {
+  "answer": "Blanka",
+  "matched": "Blanka",
+  "via": "Blanka",
+  "wiki": "streetfighter.fandom.com"
+ },
+ "guile": {
+  "answer": "Guile",
+  "matched": "Guile",
+  "via": "Guile",
+  "wiki": "streetfighter.fandom.com"
+ },
+ "akuma": {
+  "answer": "Akuma",
+  "matched": "Akuma",
+  "via": "Akuma",
+  "wiki": "streetfighter.fandom.com"
+ },
+ "raiden-mk": {
+  "answer": "Raiden",
+  "matched": "Raiden",
+  "via": "Raiden",
+  "wiki": "mortalkombat.fandom.com"
+ },
+ "liu-kang": {
+  "answer": "Liu Kang",
+  "matched": "Liu Kang",
+  "via": "Liu Kang",
+  "wiki": "mortalkombat.fandom.com"
+ },
+ "kitana": {
+  "answer": "Kitana",
+  "matched": "Kitana",
+  "via": "Kitana",
+  "wiki": "mortalkombat.fandom.com"
+ },
+ "master-chief": {
+  "answer": "Master Chief",
+  "matched": "John-117",
+  "via": "Master Chief",
+  "wiki": "halo.fandom.com"
+ },
+ "cortana": {
+  "answer": "Cortana",
+  "matched": "Cortana",
+  "via": "Cortana",
+  "wiki": "halo.fandom.com"
+ },
+ "kratos": {
+  "answer": "Kratos",
+  "matched": "Kratos",
+  "via": "Kratos",
+  "wiki": "godofwar.fandom.com"
+ },
+ "lara-croft": {
+  "answer": "Lara Croft",
+  "matched": "Lara Croft",
+  "via": "Lara Croft",
+  "wiki": "tombraider.fandom.com"
+ },
+ "solid-snake": {
+  "answer": "Solid Snake",
+  "matched": "Solid Snake",
+  "via": "Solid Snake",
+  "wiki": "metalgear.fandom.com"
+ },
+ "leon-kennedy": {
+  "answer": "Leon S. Kennedy",
+  "matched": "Leon Scott Kennedy",
+  "via": "Leon S. Kennedy",
+  "wiki": "residentevil.fandom.com"
+ },
+ "jill-valentine": {
+  "answer": "Jill Valentine",
+  "matched": "Jill Valentine",
+  "via": "Jill Valentine",
+  "wiki": "residentevil.fandom.com"
+ },
+ "nemesis-re": {
+  "answer": "Nemesis",
+  "matched": "Nemesis-T Type",
+  "via": "Nemesis",
+  "wiki": "residentevil.fandom.com"
+ },
+ "pyramid-head": {
+  "answer": "Pyramid Head",
+  "matched": "Pyramid Head",
+  "via": "Pyramid Head",
+  "wiki": "silenthill.fandom.com"
+ },
+ "geralt": {
+  "answer": "Geralt of Rivia",
+  "matched": "Geralt of Rivia",
+  "via": "Geralt of Rivia",
+  "wiki": "witcher.fandom.com"
+ },
+ "ezio": {
+  "answer": "Ezio Auditore",
+  "matched": "Ezio Auditore da Firenze",
+  "via": "Ezio Auditore",
+  "wiki": "assassinscreed.fandom.com"
+ },
+ "big-daddy": {
+  "answer": "Big Daddy",
+  "matched": "Big Daddy",
+  "via": "Big Daddy",
+  "wiki": "bioshock.fandom.com"
+ },
+ "vault-boy": {
+  "answer": "Vault Boy",
+  "matched": "Vault Boy",
+  "via": "Vault Boy",
+  "wiki": "fallout.fandom.com"
+ },
+ "tracer": {
+  "answer": "Tracer",
+  "matched": "Tracer",
+  "via": "Tracer",
+  "wiki": "overwatch.fandom.com"
+ },
+ "reinhardt": {
+  "answer": "Reinhardt",
+  "matched": "Reinhardt",
+  "via": "Reinhardt",
+  "wiki": "overwatch.fandom.com"
+ },
+ "crash-bandicoot": {
+  "answer": "Crash Bandicoot",
+  "matched": "Crash Bandicoot",
+  "via": "Crash Bandicoot",
+  "wiki": "crashbandicoot.fandom.com"
+ },
+ "mega-man": {
+  "answer": "Mega Man",
+  "matched": "Mega Man",
+  "via": "Mega Man",
+  "wiki": "megaman.fandom.com"
+ },
+ "pac-man": {
+  "answer": "Pac-Man",
+  "matched": "Pac-Man",
+  "via": "Pac-Man",
+  "wiki": "pacman.fandom.com"
+ },
+ "banjo": {
+  "answer": "Banjo",
+  "matched": "Banjo",
+  "via": "Banjo",
+  "wiki": "banjokazooie.fandom.com"
+ },
+ "sly-cooper": {
+  "answer": "Sly Cooper",
+  "matched": "Sly Cooper",
+  "via": "Sly Cooper",
+  "wiki": "slycooper.fandom.com"
+ },
+ "sackboy": {
+  "answer": "Sackboy",
+  "matched": "Sackboy",
+  "via": "Sackboy",
+  "wiki": "littlebigplanet.fandom.com"
+ },
+ "cloud-strife": {
+  "answer": "Cloud Strife",
+  "matched": "Cloud Strife",
+  "via": "Cloud Strife",
+  "wiki": "finalfantasy.fandom.com"
+ },
+ "sephiroth": {
+  "answer": "Sephiroth",
+  "matched": "Sephiroth",
+  "via": "Sephiroth",
+  "wiki": "finalfantasy.fandom.com"
+ },
+ "tifa": {
+  "answer": "Tifa Lockhart",
+  "matched": "Tifa Lockhart",
+  "via": "Tifa Lockhart",
+  "wiki": "finalfantasy.fandom.com"
+ },
+ "chocobo": {
+  "answer": "Chocobo",
+  "matched": "Chocobo",
+  "via": "Chocobo",
+  "wiki": "finalfantasy.fandom.com"
+ },
+ "sora": {
+  "answer": "Sora",
+  "matched": "Sora",
+  "via": "Sora",
+  "wiki": "kingdomhearts.fandom.com"
+ },
+ "steve-minecraft": {
+  "answer": "Steve",
+  "matched": "Player",
+  "via": "Steve",
+  "wiki": "minecraft.fandom.com"
+ },
+ "creeper": {
+  "answer": "Creeper",
+  "matched": "Creeper",
+  "via": "Creeper",
+  "wiki": "minecraft.fandom.com"
+ },
+ "enderman": {
+  "answer": "Enderman",
+  "matched": "Enderman",
+  "via": "Enderman",
+  "wiki": "minecraft.fandom.com"
+ },
+ "freddy-fazbear": {
+  "answer": "Freddy Fazbear",
+  "matched": "Freddy Fazbear",
+  "via": "Freddy Fazbear",
+  "wiki": "freddy-fazbears-pizza.fandom.com"
+ },
+ "sans": {
+  "answer": "Sans",
+  "matched": "Sans",
+  "via": "Sans",
+  "wiki": "undertale.fandom.com"
+ },
+ "2b": {
+  "answer": "2B",
+  "matched": "YoRHa No.2 Type B",
+  "via": "2B",
+  "wiki": "nier.fandom.com"
+ },
+ "dante-dmc": {
+  "answer": "Dante",
+  "matched": "Dante",
+  "via": "Dante",
+  "wiki": "devilmaycry.fandom.com"
+ },
+ "alucard": {
+  "answer": "Alucard",
+  "matched": "Alucard",
+  "via": "Alucard",
+  "wiki": "castlevania.fandom.com"
+ },
+ "inkling": {
+  "answer": "Inkling",
+  "matched": "Inklings",
+  "via": "Inkling",
+  "wiki": "splatoon.fandom.com"
+ },
+ "scorpion": {
+  "answer": "Scorpion",
+  "matched": "Hanzo Hasashi",
+  "via": "Hanzo Hasashi",
+  "wiki": "mortalkombat.fandom.com"
+ },
+ "sub-zero": {
+  "answer": "Sub-Zero",
+  "matched": "Kuai Liang",
+  "via": "Kuai Liang",
+  "wiki": "mortalkombat.fandom.com"
+ },
+ "ratchet": {
+  "answer": "Ratchet",
+  "matched": "Ratchet",
+  "via": "Ratchet",
+  "wiki": "ratchetandclank.fandom.com"
+ },
+ "clank": {
+  "answer": "Clank",
+  "matched": "Clank",
+  "via": "Clank",
+  "wiki": "ratchetandclank.fandom.com"
+ },
+ "cuphead": {
+  "answer": "Cuphead",
+  "matched": "Cuphead (character)",
+  "via": "Cuphead (character)",
+  "wiki": "cuphead.fandom.com"
+ },
+ "kirby": {
+  "answer": "Kirby",
+  "matched": "Kirby",
+  "via": "Kirby",
+  "wiki": "kirby.fandom.com"
+ },
+ "king-dedede": {
+  "answer": "King Dedede",
+  "matched": "King Dedede",
+  "via": "King Dedede",
+  "wiki": "kirby.fandom.com"
+ },
+ "meta-knight": {
+  "answer": "Meta Knight",
+  "matched": "Meta Knight",
+  "via": "Meta Knight",
+  "wiki": "kirby.fandom.com"
+ },
+ "heihachi": {
+  "answer": "Heihachi Mishima",
+  "matched": "Heihachi Mishima",
+  "via": "Heihachi Mishima",
+  "wiki": "tekken.fandom.com"
+ },
+ "jin-kazama": {
+  "answer": "Jin Kazama",
+  "matched": "Jin Kazama",
+  "via": "Jin Kazama",
+  "wiki": "tekken.fandom.com"
+ },
+ "gordon-freeman": {
+  "answer": "Gordon Freeman",
+  "matched": "Gordon Freeman",
+  "via": "Gordon Freeman",
+  "wiki": "half-life.fandom.com"
+ }
+}
