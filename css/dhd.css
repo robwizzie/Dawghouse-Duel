@@ -658,6 +658,23 @@ body.is-typing .topbar__pair{display:none}
 .hostbar{flex:none;display:flex;gap:clamp(10px,1.6vw,26px);justify-content:center;align-items:center;flex-wrap:wrap;
   padding:clamp(5px,.8vh,10px) 12px clamp(6px,.9vh,12px);background:var(--indigo-950)}
 @media (max-width:720px), (pointer:coarse){ .hostbar{display:none} }
+
+/* Fingers are not cursors. Anything tappable gets a 44px target on touch
+   and on small screens, which is where the audit found buttons down at
+   21px. Padding rather than height, so labels stay centred. */
+@media (max-width:820px), (pointer:coarse){
+  .btn, .btn--sm,
+  .flow__back, .flow__foot .btn,
+  .welcome__how, .pair__new, .lobby .btn,
+  .help__close, .join__go, .mediabar .btn{
+    min-height:44px;
+  }
+  .welcome__how{padding:.6em 1em}
+  .help__close{width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+  .flow__back{min-width:44px}
+  .answerbar__go,.answerbar__skip{min-height:46px}
+  .toggle{min-height:44px}
+}
 @media (max-width:640px){
   .topbar{grid-template-columns:auto 1fr auto}
   .topbar .brandmark--inline .brandmark__text,
