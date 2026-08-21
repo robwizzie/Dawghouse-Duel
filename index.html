@@ -58,11 +58,10 @@
           <label class="pick pick--card">
             <input type="radio" name="playmode" value="duel">
             <span class="pick__body">
-              <span class="mockup" aria-hidden="true">
-                <span class="mockup__pod on"><i></i></span>
-                <span class="mockup__board"></span>
-                <span class="mockup__pod"><i></i></span>
-              </span>
+              <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="17" cy="15" r="6.5"/><path d="M6 39c0-6.1 4.9-11 11-11s11 4.9 11 11"/>
+                <circle cx="34" cy="17" r="5.5"/><path d="M27 39c0-5 3.1-9 7-9s8 4 8 9"/>
+              </svg>
               <b>Duel</b>
               <i>Two of you, one screen. Take turns at the same keyboard.</i>
             </span>
@@ -71,11 +70,11 @@
           <label class="pick pick--card">
             <input type="radio" name="playmode" value="online">
             <span class="pick__body">
-              <span class="mockup mockup--online" aria-hidden="true">
-                <span class="mockup__screen"><em></em></span>
-                <span class="mockup__link"></span>
-                <span class="mockup__phone"><em></em></span>
-              </span>
+              <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="3" y="11" width="24" height="17" rx="2.5"/><path d="M9 34h12"/>
+                <rect x="33" y="19" width="12" height="21" rx="2.5"/><path d="M37.5 36h3"/>
+                <path d="M27 19.5h6" stroke-dasharray="2.5 3"/>
+              </svg>
               <b>Online Duel</b>
               <i>Two of you, anywhere. They join with a code on their own device.</i>
             </span>
@@ -84,14 +83,14 @@
           <label class="pick pick--card">
             <input type="radio" name="playmode" value="solo">
             <span class="pick__body">
-              <span class="mockup mockup--solo" aria-hidden="true">
-                <span class="mockup__pod on"><i></i></span>
-                <span class="mockup__board"></span>
-              </span>
+              <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="15" r="7.5"/><path d="M10 40c0-7.7 6.3-14 14-14s14 6.3 14 14"/>
+              </svg>
               <b>Solo</b>
               <i>Just you and one clock. How many can you get?</i>
             </span>
           </label>
+        </div>
       </div>
 
       <!-- 2 ── the deck ── -->
@@ -287,7 +286,7 @@
         <span class="brandmark__text">dawg<em>house</em></span>
         <span class="brandmark__duel">DUEL</span>
       </div>
-      <div class="topbar__cat"><i>CATEGORY</i><b id="duelCat">—</b></div>
+      <div class="topbar__cat"><i>CATEGORY</i><b id="duelCat">&mdash;</b></div>
       <div class="topbar__right">
         <div class="topbar__pair"><i id="pairUrl">dawghouseduel.com/host</i><b id="pairCode">----</b><span id="pairState"></span></div>
         <div class="topbar__meta"><span id="duelProgress">1</span><i>of</i><span id="duelTotal">1</span></div>
