@@ -1,0 +1,897 @@
+{
+ "pikachu": {
+  "answer": "Pikachu",
+  "matched": "Pikachu",
+  "via": "pattern #25"
+ },
+ "charizard": {
+  "answer": "Charizard",
+  "matched": "Charizard",
+  "via": "pattern #6"
+ },
+ "bulbasaur": {
+  "answer": "Bulbasaur",
+  "matched": "Bulbasaur",
+  "via": "pattern #1"
+ },
+ "squirtle": {
+  "answer": "Squirtle",
+  "matched": "Squirtle",
+  "via": "pattern #7"
+ },
+ "charmander": {
+  "answer": "Charmander",
+  "matched": "Charmander",
+  "via": "pattern #4"
+ },
+ "eevee": {
+  "answer": "Eevee",
+  "matched": "Eevee",
+  "via": "pattern #133"
+ },
+ "snorlax": {
+  "answer": "Snorlax",
+  "matched": "Snorlax",
+  "via": "pattern #143"
+ },
+ "gengar": {
+  "answer": "Gengar",
+  "matched": "Gengar",
+  "via": "pattern #94"
+ },
+ "mewtwo": {
+  "answer": "Mewtwo",
+  "matched": "Mewtwo",
+  "via": "pattern #150"
+ },
+ "mew": {
+  "answer": "Mew",
+  "matched": "Mew",
+  "via": "pattern #151"
+ },
+ "jigglypuff": {
+  "answer": "Jigglypuff",
+  "matched": "Jigglypuff",
+  "via": "pattern #39"
+ },
+ "meowth": {
+  "answer": "Meowth",
+  "matched": "Meowth",
+  "via": "pattern #52"
+ },
+ "psyduck": {
+  "answer": "Psyduck",
+  "matched": "Psyduck",
+  "via": "pattern #54"
+ },
+ "magikarp": {
+  "answer": "Magikarp",
+  "matched": "Magikarp",
+  "via": "pattern #129"
+ },
+ "gyarados": {
+  "answer": "Gyarados",
+  "matched": "Gyarados",
+  "via": "pattern #130"
+ },
+ "blastoise": {
+  "answer": "Blastoise",
+  "matched": "Blastoise",
+  "via": "pattern #9"
+ },
+ "venusaur": {
+  "answer": "Venusaur",
+  "matched": "Venusaur",
+  "via": "pattern #3"
+ },
+ "pidgey": {
+  "answer": "Pidgey",
+  "matched": "Pidgey",
+  "via": "pattern #16"
+ },
+ "rattata": {
+  "answer": "Rattata",
+  "matched": "Rattata",
+  "via": "pattern #19"
+ },
+ "zubat": {
+  "answer": "Zubat",
+  "matched": "Zubat",
+  "via": "pattern #41"
+ },
+ "onix": {
+  "answer": "Onix",
+  "matched": "Onix",
+  "via": "pattern #95"
+ },
+ "machamp": {
+  "answer": "Machamp",
+  "matched": "Machamp",
+  "via": "pattern #68"
+ },
+ "arcanine": {
+  "answer": "Arcanine",
+  "matched": "Arcanine",
+  "via": "pattern #59"
+ },
+ "lapras": {
+  "answer": "Lapras",
+  "matched": "Lapras",
+  "via": "pattern #131"
+ },
+ "ditto": {
+  "answer": "Ditto",
+  "matched": "Ditto",
+  "via": "pattern #132"
+ },
+ "dragonite": {
+  "answer": "Dragonite",
+  "matched": "Dragonite",
+  "via": "pattern #149"
+ },
+ "articuno": {
+  "answer": "Articuno",
+  "matched": "Articuno",
+  "via": "pattern #144"
+ },
+ "zapdos": {
+  "answer": "Zapdos",
+  "matched": "Zapdos",
+  "via": "pattern #145"
+ },
+ "moltres": {
+  "answer": "Moltres",
+  "matched": "Moltres",
+  "via": "pattern #146"
+ },
+ "bellsprout": {
+  "answer": "Bellsprout",
+  "matched": "Bellsprout",
+  "via": "pattern #69"
+ },
+ "geodude": {
+  "answer": "Geodude",
+  "matched": "Geodude",
+  "via": "pattern #74"
+ },
+ "diglett": {
+  "answer": "Diglett",
+  "matched": "Diglett",
+  "via": "pattern #50"
+ },
+ "slowpoke": {
+  "answer": "Slowpoke",
+  "matched": "Slowpoke",
+  "via": "pattern #79"
+ },
+ "cubone": {
+  "answer": "Cubone",
+  "matched": "Cubone",
+  "via": "pattern #104"
+ },
+ "hitmonlee": {
+  "answer": "Hitmonlee",
+  "matched": "Hitmonlee",
+  "via": "pattern #106"
+ },
+ "voltorb": {
+  "answer": "Voltorb",
+  "matched": "Voltorb",
+  "via": "pattern #100"
+ },
+ "exeggutor": {
+  "answer": "Exeggutor",
+  "matched": "Exeggutor",
+  "via": "pattern #103"
+ },
+ "kangaskhan": {
+  "answer": "Kangaskhan",
+  "matched": "Kangaskhan",
+  "via": "pattern #115"
+ },
+ "scyther": {
+  "answer": "Scyther",
+  "matched": "Scyther",
+  "via": "pattern #123"
+ },
+ "pinsir": {
+  "answer": "Pinsir",
+  "matched": "Pinsir",
+  "via": "pattern #127"
+ },
+ "tauros": {
+  "answer": "Tauros",
+  "matched": "Tauros",
+  "via": "pattern #128"
+ },
+ "aerodactyl": {
+  "answer": "Aerodactyl",
+  "matched": "Aerodactyl",
+  "via": "pattern #142"
+ },
+ "vaporeon": {
+  "answer": "Vaporeon",
+  "matched": "Vaporeon",
+  "via": "pattern #134"
+ },
+ "jolteon": {
+  "answer": "Jolteon",
+  "matched": "Jolteon",
+  "via": "pattern #135"
+ },
+ "flareon": {
+  "answer": "Flareon",
+  "matched": "Flareon",
+  "via": "pattern #136"
+ },
+ "espeon": {
+  "answer": "Espeon",
+  "matched": "Espeon",
+  "via": "pattern #196"
+ },
+ "umbreon": {
+  "answer": "Umbreon",
+  "matched": "Umbreon",
+  "via": "pattern #197"
+ },
+ "leafeon": {
+  "answer": "Leafeon",
+  "matched": "Leafeon",
+  "via": "pattern #470"
+ },
+ "glaceon": {
+  "answer": "Glaceon",
+  "matched": "Glaceon",
+  "via": "pattern #471"
+ },
+ "sylveon": {
+  "answer": "Sylveon",
+  "matched": "Sylveon",
+  "via": "pattern #700"
+ },
+ "togepi": {
+  "answer": "Togepi",
+  "matched": "Togepi",
+  "via": "pattern #175"
+ },
+ "pichu": {
+  "answer": "Pichu",
+  "matched": "Pichu",
+  "via": "pattern #172"
+ },
+ "marill": {
+  "answer": "Marill",
+  "matched": "Marill",
+  "via": "pattern #183"
+ },
+ "ampharos": {
+  "answer": "Ampharos",
+  "matched": "Ampharos",
+  "via": "pattern #181"
+ },
+ "wobbuffet": {
+  "answer": "Wobbuffet",
+  "matched": "Wobbuffet",
+  "via": "pattern #202"
+ },
+ "heracross": {
+  "answer": "Heracross",
+  "matched": "Heracross",
+  "via": "pattern #214"
+ },
+ "tyranitar": {
+  "answer": "Tyranitar",
+  "matched": "Tyranitar",
+  "via": "pattern #248"
+ },
+ "lugia": {
+  "answer": "Lugia",
+  "matched": "Lugia",
+  "via": "pattern #249"
+ },
+ "ho-oh": {
+  "answer": "Ho-Oh",
+  "matched": "Ho-Oh",
+  "via": "pattern #250"
+ },
+ "celebi": {
+  "answer": "Celebi",
+  "matched": "Celebi",
+  "via": "pattern #251"
+ },
+ "blaziken": {
+  "answer": "Blaziken",
+  "matched": "Blaziken",
+  "via": "pattern #257"
+ },
+ "swampert": {
+  "answer": "Swampert",
+  "matched": "Swampert",
+  "via": "pattern #260"
+ },
+ "gardevoir": {
+  "answer": "Gardevoir",
+  "matched": "Gardevoir",
+  "via": "pattern #282"
+ },
+ "sableye": {
+  "answer": "Sableye",
+  "matched": "Sableye",
+  "via": "pattern #302"
+ },
+ "aggron": {
+  "answer": "Aggron",
+  "matched": "Aggron",
+  "via": "pattern #306"
+ },
+ "wailord": {
+  "answer": "Wailord",
+  "matched": "Wailord",
+  "via": "pattern #321"
+ },
+ "absol": {
+  "answer": "Absol",
+  "matched": "Absol",
+  "via": "pattern #359"
+ },
+ "salamence": {
+  "answer": "Salamence",
+  "matched": "Salamence",
+  "via": "pattern #373"
+ },
+ "metagross": {
+  "answer": "Metagross",
+  "matched": "Metagross",
+  "via": "pattern #376"
+ },
+ "rayquaza": {
+  "answer": "Rayquaza",
+  "matched": "Rayquaza",
+  "via": "pattern #384"
+ },
+ "kyogre": {
+  "answer": "Kyogre",
+  "matched": "Kyogre",
+  "via": "pattern #382"
+ },
+ "groudon": {
+  "answer": "Groudon",
+  "matched": "Groudon",
+  "via": "pattern #383"
+ },
+ "garchomp": {
+  "answer": "Garchomp",
+  "matched": "Garchomp",
+  "via": "pattern #445"
+ },
+ "lucario": {
+  "answer": "Lucario",
+  "matched": "Lucario",
+  "via": "pattern #448"
+ },
+ "infernape": {
+  "answer": "Infernape",
+  "matched": "Infernape",
+  "via": "pattern #392"
+ },
+ "empoleon": {
+  "answer": "Empoleon",
+  "matched": "Empoleon",
+  "via": "pattern #395"
+ },
+ "luxray": {
+  "answer": "Luxray",
+  "matched": "Luxray",
+  "via": "pattern #405"
+ },
+ "drifloon": {
+  "answer": "Drifloon",
+  "matched": "Drifloon",
+  "via": "pattern #425"
+ },
+ "spiritomb": {
+  "answer": "Spiritomb",
+  "matched": "Spiritomb",
+  "via": "pattern #442"
+ },
+ "rotom": {
+  "answer": "Rotom",
+  "matched": "Rotom",
+  "via": "pattern #479"
+ },
+ "weavile": {
+  "answer": "Weavile",
+  "matched": "Weavile",
+  "via": "pattern #461"
+ },
+ "mamoswine": {
+  "answer": "Mamoswine",
+  "matched": "Mamoswine",
+  "via": "pattern #473"
+ },
+ "togekiss": {
+  "answer": "Togekiss",
+  "matched": "Togekiss",
+  "via": "pattern #468"
+ },
+ "darkrai": {
+  "answer": "Darkrai",
+  "matched": "Darkrai",
+  "via": "pattern #491"
+ },
+ "giratina": {
+  "answer": "Giratina",
+  "matched": "Giratina",
+  "via": "pattern #487"
+ },
+ "arceus": {
+  "answer": "Arceus",
+  "matched": "Arceus",
+  "via": "pattern #493"
+ },
+ "zorua": {
+  "answer": "Zorua",
+  "matched": "Zorua",
+  "via": "pattern #570"
+ },
+ "zoroark": {
+  "answer": "Zoroark",
+  "matched": "Zoroark",
+  "via": "pattern #571"
+ },
+ "reshiram": {
+  "answer": "Reshiram",
+  "matched": "Reshiram",
+  "via": "pattern #643"
+ },
+ "zekrom": {
+  "answer": "Zekrom",
+  "matched": "Zekrom",
+  "via": "pattern #644"
+ },
+ "greninja": {
+  "answer": "Greninja",
+  "matched": "Greninja",
+  "via": "pattern #658"
+ },
+ "talonflame": {
+  "answer": "Talonflame",
+  "matched": "Talonflame",
+  "via": "pattern #663"
+ },
+ "goodra": {
+  "answer": "Goodra",
+  "matched": "Goodra",
+  "via": "pattern #706"
+ },
+ "xerneas": {
+  "answer": "Xerneas",
+  "matched": "Xerneas",
+  "via": "pattern #716"
+ },
+ "yveltal": {
+  "answer": "Yveltal",
+  "matched": "Yveltal",
+  "via": "pattern #717"
+ },
+ "mimikyu": {
+  "answer": "Mimikyu",
+  "matched": "Mimikyu",
+  "via": "pattern #778"
+ },
+ "solgaleo": {
+  "answer": "Solgaleo",
+  "matched": "Solgaleo",
+  "via": "pattern #791"
+ },
+ "lunala": {
+  "answer": "Lunala",
+  "matched": "Lunala",
+  "via": "pattern #792"
+ },
+ "corviknight": {
+  "answer": "Corviknight",
+  "matched": "Corviknight",
+  "via": "pattern #823"
+ },
+ "toxtricity": {
+  "answer": "Toxtricity",
+  "matched": "Toxtricity",
+  "via": "pattern #849"
+ },
+ "dragapult": {
+  "answer": "Dragapult",
+  "matched": "Dragapult",
+  "via": "pattern #887"
+ },
+ "zacian": {
+  "answer": "Zacian",
+  "matched": "Zacian",
+  "via": "pattern #888"
+ },
+ "grookey": {
+  "answer": "Grookey",
+  "matched": "Grookey",
+  "via": "pattern #810"
+ },
+ "scorbunny": {
+  "answer": "Scorbunny",
+  "matched": "Scorbunny",
+  "via": "pattern #813"
+ },
+ "sobble": {
+  "answer": "Sobble",
+  "matched": "Sobble",
+  "via": "pattern #816"
+ },
+ "sprigatito": {
+  "answer": "Sprigatito",
+  "matched": "Sprigatito",
+  "via": "pattern #906"
+ },
+ "fuecoco": {
+  "answer": "Fuecoco",
+  "matched": "Fuecoco",
+  "via": "pattern #909"
+ },
+ "quaxly": {
+  "answer": "Quaxly",
+  "matched": "Quaxly",
+  "via": "pattern #912"
+ },
+ "lechonk": {
+  "answer": "Lechonk",
+  "matched": "Lechonk",
+  "via": "pattern #915"
+ },
+ "koraidon": {
+  "answer": "Koraidon",
+  "matched": "Koraidon",
+  "via": "pattern #1007"
+ },
+ "miraidon": {
+  "answer": "Miraidon",
+  "matched": "Miraidon",
+  "via": "pattern #1008"
+ },
+ "kadabra": {
+  "answer": "Kadabra",
+  "matched": "Kadabra",
+  "via": "pattern #64"
+ },
+ "alakazam": {
+  "answer": "Alakazam",
+  "matched": "Alakazam",
+  "via": "pattern #65"
+ },
+ "machop": {
+  "answer": "Machop",
+  "matched": "Machop",
+  "via": "pattern #66"
+ },
+ "haunter": {
+  "answer": "Haunter",
+  "matched": "Haunter",
+  "via": "pattern #93"
+ },
+ "weezing": {
+  "answer": "Weezing",
+  "matched": "Weezing",
+  "via": "pattern #110"
+ },
+ "rhydon": {
+  "answer": "Rhydon",
+  "matched": "Rhydon",
+  "via": "pattern #112"
+ },
+ "chansey": {
+  "answer": "Chansey",
+  "matched": "Chansey",
+  "via": "pattern #113"
+ },
+ "starmie": {
+  "answer": "Starmie",
+  "matched": "Starmie",
+  "via": "pattern #121"
+ },
+ "scizor": {
+  "answer": "Scizor",
+  "matched": "Scizor",
+  "via": "pattern #212"
+ },
+ "ursaring": {
+  "answer": "Ursaring",
+  "matched": "Ursaring",
+  "via": "pattern #217"
+ },
+ "skarmory": {
+  "answer": "Skarmory",
+  "matched": "Skarmory",
+  "via": "pattern #227"
+ },
+ "houndoom": {
+  "answer": "Houndoom",
+  "matched": "Houndoom",
+  "via": "pattern #229"
+ },
+ "kingdra": {
+  "answer": "Kingdra",
+  "matched": "Kingdra",
+  "via": "pattern #230"
+ },
+ "blissey": {
+  "answer": "Blissey",
+  "matched": "Blissey",
+  "via": "pattern #242"
+ },
+ "suicune": {
+  "answer": "Suicune",
+  "matched": "Suicune",
+  "via": "pattern #245"
+ },
+ "entei": {
+  "answer": "Entei",
+  "matched": "Entei",
+  "via": "pattern #244"
+ },
+ "raikou": {
+  "answer": "Raikou",
+  "matched": "Raikou",
+  "via": "pattern #243"
+ },
+ "feraligatr": {
+  "answer": "Feraligatr",
+  "matched": "Feraligatr",
+  "via": "pattern #160"
+ },
+ "typhlosion": {
+  "answer": "Typhlosion",
+  "matched": "Typhlosion",
+  "via": "pattern #157"
+ },
+ "meganium": {
+  "answer": "Meganium",
+  "matched": "Meganium",
+  "via": "pattern #154"
+ },
+ "ariados": {
+  "answer": "Ariados",
+  "matched": "Ariados",
+  "via": "pattern #168"
+ },
+ "crobat": {
+  "answer": "Crobat",
+  "matched": "Crobat",
+  "via": "pattern #169"
+ },
+ "sudowoodo": {
+  "answer": "Sudowoodo",
+  "matched": "Sudowoodo",
+  "via": "pattern #185"
+ },
+ "girafarig": {
+  "answer": "Girafarig",
+  "matched": "Girafarig",
+  "via": "pattern #203"
+ },
+ "dunsparce": {
+  "answer": "Dunsparce",
+  "matched": "Dunsparce",
+  "via": "pattern #206"
+ },
+ "shuckle": {
+  "answer": "Shuckle",
+  "matched": "Shuckle",
+  "via": "pattern #213"
+ },
+ "delibird": {
+  "answer": "Delibird",
+  "matched": "Delibird",
+  "via": "pattern #225"
+ },
+ "smeargle": {
+  "answer": "Smeargle",
+  "matched": "Smeargle",
+  "via": "pattern #235"
+ },
+ "miltank": {
+  "answer": "Miltank",
+  "matched": "Miltank",
+  "via": "pattern #241"
+ },
+ "milotic": {
+  "answer": "Milotic",
+  "matched": "Milotic",
+  "via": "pattern #350"
+ },
+ "flygon": {
+  "answer": "Flygon",
+  "matched": "Flygon",
+  "via": "pattern #330"
+ },
+ "torkoal": {
+  "answer": "Torkoal",
+  "matched": "Torkoal",
+  "via": "pattern #324"
+ },
+ "spinda": {
+  "answer": "Spinda",
+  "matched": "Spinda",
+  "via": "pattern #327"
+ },
+ "banette": {
+  "answer": "Banette",
+  "matched": "Banette",
+  "via": "pattern #354"
+ },
+ "glalie": {
+  "answer": "Glalie",
+  "matched": "Glalie",
+  "via": "pattern #362"
+ },
+ "latias": {
+  "answer": "Latias",
+  "matched": "Latias",
+  "via": "pattern #380"
+ },
+ "latios": {
+  "answer": "Latios",
+  "matched": "Latios",
+  "via": "pattern #381"
+ },
+ "jirachi": {
+  "answer": "Jirachi",
+  "matched": "Jirachi",
+  "via": "pattern #385"
+ },
+ "deoxys": {
+  "answer": "Deoxys",
+  "matched": "Deoxys",
+  "via": "pattern #386"
+ },
+ "bidoof": {
+  "answer": "Bidoof",
+  "matched": "Bidoof",
+  "via": "pattern #399"
+ },
+ "pachirisu": {
+  "answer": "Pachirisu",
+  "matched": "Pachirisu",
+  "via": "pattern #417"
+ },
+ "gastrodon": {
+  "answer": "Gastrodon",
+  "matched": "Gastrodon",
+  "via": "pattern #423"
+ },
+ "lopunny": {
+  "answer": "Lopunny",
+  "matched": "Lopunny",
+  "via": "pattern #428"
+ },
+ "honchkrow": {
+  "answer": "Honchkrow",
+  "matched": "Honchkrow",
+  "via": "pattern #430"
+ },
+ "toxicroak": {
+  "answer": "Toxicroak",
+  "matched": "Toxicroak",
+  "via": "pattern #454"
+ },
+ "magnezone": {
+  "answer": "Magnezone",
+  "matched": "Magnezone",
+  "via": "pattern #462"
+ },
+ "electivire": {
+  "answer": "Electivire",
+  "matched": "Electivire",
+  "via": "pattern #466"
+ },
+ "porygon-z": {
+  "answer": "Porygon-Z",
+  "matched": "Porygon-Z",
+  "via": "pattern #474"
+ },
+ "froslass": {
+  "answer": "Froslass",
+  "matched": "Froslass",
+  "via": "pattern #478"
+ },
+ "cresselia": {
+  "answer": "Cresselia",
+  "matched": "Cresselia",
+  "via": "pattern #488"
+ },
+ "samurott": {
+  "answer": "Samurott",
+  "matched": "Samurott",
+  "via": "pattern #503"
+ },
+ "chandelure": {
+  "answer": "Chandelure",
+  "matched": "Chandelure",
+  "via": "pattern #609"
+ },
+ "hydreigon": {
+  "answer": "Hydreigon",
+  "matched": "Hydreigon",
+  "via": "pattern #635"
+ },
+ "aegislash": {
+  "answer": "Aegislash",
+  "matched": "Aegislash",
+  "via": "pattern #681"
+ },
+ "noivern": {
+  "answer": "Noivern",
+  "matched": "Noivern",
+  "via": "pattern #715"
+ },
+ "decidueye": {
+  "answer": "Decidueye",
+  "matched": "Decidueye",
+  "via": "pattern #724"
+ },
+ "incineroar": {
+  "answer": "Incineroar",
+  "matched": "Incineroar",
+  "via": "pattern #727"
+ },
+ "necrozma": {
+  "answer": "Necrozma",
+  "matched": "Necrozma",
+  "via": "pattern #800"
+ },
+ "regieleki": {
+  "answer": "Regieleki",
+  "matched": "Regieleki",
+  "via": "pattern #894"
+ },
+ "calyrex": {
+  "answer": "Calyrex",
+  "matched": "Calyrex",
+  "via": "pattern #898"
+ },
+ "baxcalibur": {
+  "answer": "Baxcalibur",
+  "matched": "Baxcalibur",
+  "via": "pattern #998"
+ },
+ "tinkaton": {
+  "answer": "Tinkaton",
+  "matched": "Tinkaton",
+  "via": "pattern #959"
+ },
+ "ceruledge": {
+  "answer": "Ceruledge",
+  "matched": "Ceruledge",
+  "via": "pattern #937"
+ },
+ "armarouge": {
+  "answer": "Armarouge",
+  "matched": "Armarouge",
+  "via": "pattern #936"
+ },
+ "annihilape": {
+  "answer": "Annihilape",
+  "matched": "Annihilape",
+  "via": "pattern #979"
+ },
+ "wooper": {
+  "answer": "Wooper",
+  "matched": "Wooper",
+  "via": "pattern #194"
+ },
+ "slowking": {
+  "answer": "Slowking",
+  "matched": "Slowking",
+  "via": "pattern #199"
+ },
+ "klefki": {
+  "answer": "Klefki",
+  "matched": "Klefki",
+  "via": "pattern #707"
+ }
+}

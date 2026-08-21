@@ -24,6 +24,7 @@
     catSelect: $('catSelect'), clockSelect: $('clockSelect'), firstSelect: $('firstSelect'),
     penaltySelect: $('penaltySelect'), passCostSelect: $('passCostSelect'),
     revealSelect: $('revealSelect'), deckSelect: $('deckSelect'),
+    revealModeSelect: $('revealModeSelect'),
     hostPenalty: $('hostPenalty'), hostPassCost: $('hostPassCost'), passCost: $('passCost'),
     optDeep: $('optDeep'), optSound: $('optSound'), optTick: $('optTick'), optClue: $('optClue'),
     toMedia: $('toMedia'), toHelp: $('toHelp'), soundCheck: $('soundCheck'),
@@ -62,7 +63,7 @@
   var CATS = window.DHD_CATEGORIES || [];
   var cfg = {
     catId: (CATS[0] || {}).id, clockMs: 45000, first: 'flip',
-    penaltyMs: 3000, passCostMs: 2000, revealMs: 1400, deck: 'images',
+    penaltyMs: 3000, passCostMs: 2000, revealMs: 1400, deck: 'images', pictureMode: 'normal', revealSecs: 7,
     deep: true, sound: true, tick: true, clue: false, names: ['ROB', 'MIKE']
   };
 
@@ -113,6 +114,19 @@
     refreshMediaCount();
   }
 
+  /* Silhouette only reads on artwork with a transparent background.
+     On a photograph it is a black rectangle, so hide the option
+     rather than let someone pick a broken round. */
+  function refreshPictureModes() {
+    var cat = catById(el.catSelect.value);
+    var opt = el.revealModeSelect.querySelector('option[value="silhouette"]');
+    if (!opt) return;
+    var ok = !!cat.silhouette;
+    opt.disabled = !ok;
+    opt.textContent = ok ? 'Silhouette' : 'Silhouette (needs cut-out artwork)';
+    if (!ok && el.revealModeSelect.value === 'silhouette') el.revealModeSelect.value = 'normal';
+  }
+
   function refreshMediaCount() {
     var cat = catById(el.catSelect.value);
     var n = cat.items.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
@@ -135,6 +149,7 @@
     cfg.passCostMs = num(el.passCostSelect, 2, 1000);
     cfg.revealMs   = num(el.revealSelect, 1400);
     cfg.deck       = el.deckSelect.value;
+    cfg.pictureMode = el.revealModeSelect.value;
     cfg.deep    = el.optDeep.checked;
     cfg.sound   = el.optSound.checked;
     cfg.tick    = el.optTick.checked;
@@ -169,6 +184,7 @@
         pick(el.passCostSelect, saved.passCostMs / 1000);
         pick(el.revealSelect, saved.revealMs);
         pick(el.deckSelect, saved.deck);
+        pick(el.revealModeSelect, saved.pictureMode || 'normal');
         if (typeof saved.deep === 'boolean') el.optDeep.checked = saved.deep;
         if (typeof saved.sound === 'boolean') el.optSound.checked = saved.sound;
         if (typeof saved.tick === 'boolean') el.optTick.checked = saved.tick;
@@ -221,6 +237,7 @@
     pods[0].resHead.textContent = G.players[0].name;
     pods[1].resHead.textContent = G.players[1].name;
     el.boardClue.hidden = !cfg.clue;
+    applyPictureMode();
     el.hostPenalty.textContent = (cfg.penaltyMs / 1000).toFixed(0);
     el.hostPassCost.textContent = (cfg.passCostMs / 1000).toFixed(0);
     el.passCost.textContent = '\u2212' + (cfg.passCostMs / 1000).toFixed(0) + 's';
@@ -237,6 +254,10 @@
 
   function runIntro() {
     G.phase = 'intro';
+    /* The picture is already on the board behind the intro card, so hold the
+       reveal frozen until the clock actually starts — otherwise the first
+       answer of every duel loses its whole reveal window to the countdown. */
+    document.body.classList.add('is-frozen');
     el.passBar.disabled = true;
     el.introCat.textContent = G.cat.name;
     el.introP1.textContent = G.players[0].name;
@@ -280,6 +301,7 @@
   }
 
   function goLive() {
+    document.body.classList.remove('is-frozen');
     G.phase = 'live';
     el.passBar.disabled = false;
     G.runStart = now();
@@ -421,6 +443,7 @@
     commit();
     G.phase = 'reveal';
     stopTicker();
+    document.body.classList.add('is-frozen');
     el.passBar.disabled = true;
 
     var ms = cfg.revealMs;
@@ -445,10 +468,12 @@
       el.reveal.hidden = true;
       G.phase = 'paused';
       stopTicker();
+      document.body.classList.add('is-frozen');
       el.ovlPause.hidden = false;
       el.passBar.disabled = true;
     } else if (G.phase === 'paused') {
       el.ovlPause.hidden = true;
+      document.body.classList.remove('is-frozen');
       goLive();
     }
   }
@@ -510,6 +535,7 @@
         };
         el.boardImg.src = url;
         el.boardImg.hidden = false;
+        restartReveal();
         el.boardCard.hidden = true;
         lastImageUrl = url;
       } else {
@@ -521,6 +547,27 @@
     });
   }
   showItem._n = 0;
+
+  /* The reveal window is the shorter of 7s and the clock itself — no point
+     spending twelve seconds unblurring a picture on a 30-second duel. */
+  function applyPictureMode() {
+    var mode = cfg.pictureMode || 'normal';
+    if (mode === 'silhouette' && !(G.cat && G.cat.silhouette)) mode = 'normal';
+    ['normal', 'silhouette', 'zoom', 'blur'].forEach(function (m) {
+      document.body.classList.toggle('mode-' + m, m === mode);
+    });
+    var secs = Math.max(2.5, Math.min(cfg.revealSecs, (G.startMs / 1000) * 0.28));
+    el.boardImg.style.setProperty('--dhd-reveal', secs.toFixed(1) + 's');
+  }
+
+  /* Restart the reveal animation from the top for each new picture. */
+  function restartReveal() {
+    if ((cfg.pictureMode || 'normal') === 'normal') return;
+    var n = el.boardImg;
+    n.style.animation = 'none';
+    void n.offsetWidth;
+    n.style.animation = '';
+  }
 
   function flash(cls) {
     el.boardFlash.className = 'board__flash';
@@ -749,7 +796,7 @@
 
   /* ══════════════════ EVENTS ══════════════════ */
   el.setupForm.addEventListener('submit', function (e) { e.preventDefault(); Sfx.unlock(); startDuel(); });
-  el.catSelect.addEventListener('change', function () { cfg.catId = el.catSelect.value; refreshMediaCount(); });
+  el.catSelect.addEventListener('change', function () { cfg.catId = el.catSelect.value; refreshMediaCount(); refreshPictureModes(); });
   el.toMedia.addEventListener('click', function () { openMedia(); });
   el.mediaRescan.addEventListener('click', function () { toast('Re-checking the assets folder…'); openMedia(true); });
   el.mediaBack.addEventListener('click', function () { show('setup'); refreshMediaCount(); });

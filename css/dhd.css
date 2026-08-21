@@ -122,6 +122,7 @@ html[data-screen="media"] .screen--media{display:flex}
 .row--players{grid-template-columns:1fr auto 1fr;align-items:end}
 .row--3{grid-template-columns:repeat(3,1fr)}
 .row--4{grid-template-columns:repeat(4,1fr)}
+.row--4{grid-template-columns:repeat(4,1fr)}
 .row--toggles{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));padding-top:2px}
 .row--go{grid-template-columns:2fr repeat(4,1fr);align-items:stretch;padding-top:4px}
 .vs{font-family:var(--ff-display);color:var(--lime);font-size:clamp(20px,2.6vw,40px);padding-bottom:.28em;transform:rotate(-4deg)}
@@ -310,6 +311,37 @@ select.input option{background:var(--indigo-900);color:#fff}
 .board__flash.is-pass{background:#fff;animation:flashNo .3s ease-out}
 @keyframes flashYes{0%{opacity:.55}100%{opacity:0}}
 @keyframes flashNo{0%{opacity:.5}100%{opacity:0}}
+/* ── picture modes ──────────────────────────────────────────
+   Each hides the picture at first and gives it back over the
+   reveal window, so the tension is "who calls it first" rather
+   than "who reads fastest". Silhouette needs artwork with a
+   transparent background — on a photo it would just be a black
+   rectangle — so the setup screen only offers it where the
+   category declares `silhouette: true`.
+   ───────────────────────────────────────────────────────── */
+.board__img{--dhd-reveal:7s}
+
+.mode-silhouette .board__img{
+  filter:brightness(0) contrast(3);
+  animation:pop .28s var(--ease), silhouetteOut .6s linear var(--dhd-reveal) forwards;
+}
+@keyframes silhouetteOut{to{filter:brightness(1) contrast(1)}}
+
+.mode-zoom .board__img{
+  animation:pop .28s var(--ease), zoomBack var(--dhd-reveal) cubic-bezier(.22,.85,.3,1) forwards;
+  transform-origin:50% 42%;
+}
+@keyframes zoomBack{from{transform:scale(7)}to{transform:scale(1)}}
+
+.mode-blur .board__img{
+  animation:pop .28s var(--ease), blurOff var(--dhd-reveal) cubic-bezier(.4,0,.5,1) forwards;
+}
+@keyframes blurOff{from{filter:blur(34px)}to{filter:blur(0)}}
+
+/* Freezing the clocks has to freeze the reveal too, or a pause
+   would quietly hand the picture over for nothing. */
+.is-frozen .board__img{animation-play-state:paused !important}
+
 /* Answer nameplate — the reveal beat after a correct answer or a pass. */
 .reveal{
   position:absolute;left:0;right:0;bottom:0;

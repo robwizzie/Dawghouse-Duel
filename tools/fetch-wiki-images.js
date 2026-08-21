@@ -8,6 +8,11 @@
    The category's data file names the wiki:  wiki: 'disney.fandom.com'
    Any item can override the lookup with:    page: 'Rex (Toy Story)'
    ...or point at a different wiki entirely:  wiki: 'theoffice.fandom.com'
+   A category can also skip wikis altogether with an `imagePattern`
+   containing {id}, and an `id` on each answer (that's how Pokémon
+   pulls official artwork straight from the PokeAPI sprite repo).
+   `keepAlpha: true` stops transparent PNGs being flattened to JPEG —
+   without it, silhouette picture mode would render a black rectangle.
    (sitcom characters live on one wiki per show, so that category sets a
    wiki per answer rather than one for the lot)
    ...or skip the lookup entirely with:      image: 'https://…/pic.png'
@@ -140,9 +145,14 @@ async function credits(wiki, files) {
   require('../js/data/' + CAT + '.js');
   const cat = window.DHD_CATEGORIES.find(c => c.id === CAT);
   if (!cat) throw new Error('no category ' + CAT);
-  if (!cat.wiki && !cat.items.every(i => i.wiki || i.image)) {
-    throw new Error(CAT + ' needs a `wiki` on the category or on every answer');
+  const patterned = !!cat.imagePattern;
+  if (!patterned && !cat.wiki && !cat.items.every(i => i.wiki || i.image)) {
+    throw new Error(CAT + ' needs a `wiki`, an `imagePattern`, or a source on every answer');
   }
+  const keepAlpha = !!cat.keepAlpha;
+  const EXT = keepAlpha ? '.png' : '.jpg';
+  const patternUrl = item =>
+    cat.imagePattern && item.id != null ? cat.imagePattern.replace('{id}', item.id) : null;
   const wikiFor = item => item.wiki || cat.wiki;
 
   fs.mkdirSync(OUT, { recursive: true });
@@ -151,7 +161,7 @@ async function credits(wiki, files) {
 
   const have = new Set();
   cat.items.forEach(item => {
-    const dest = path.join(OUT, item.slug + '.jpg');
+    const dest = path.join(OUT, item.slug + EXT);
     if (fs.existsSync(dest) && fs.statSync(dest).size > MIN_BYTES) { have.add(item.slug); cached++; }
   });
   const todo = cat.items;
@@ -159,7 +169,7 @@ async function credits(wiki, files) {
 
   // Ask for every title we might want, batched, grouped by which wiki it's on.
   const byWiki = new Map();
-  todo.filter(i => !i.image).forEach(item => {
+  todo.filter(i => !i.image && !patternUrl(i)).forEach(item => {
     const w = wikiFor(item);
     if (!byWiki.has(w)) byWiki.set(w, []);
     const list = byWiki.get(w);
@@ -178,8 +188,13 @@ async function credits(wiki, files) {
 
   const plan = [];
   for (const item of todo) {
-    if (item.image) {
-      plan.push({ item, hit: { url: item.image, title: item.name + ' (pinned image)', file: null }, via: 'pinned image' });
+    const pat = patternUrl(item);
+    if (item.image || pat) {
+      plan.push({
+        item,
+        hit: { url: item.image || pat, title: item.name, file: null },
+        via: item.image ? 'pinned image' : 'pattern #' + item.id
+      });
       continue;
     }
     const lookup = lookups.get(wikiFor(item)) || new Map();
@@ -202,7 +217,7 @@ async function credits(wiki, files) {
   }
 
   for (const { item, hit, via } of plan) {
-    const dest = path.join(OUT, item.slug + '.jpg');
+    const dest = path.join(OUT, item.slug + EXT);
     sources[item.slug] = { answer: item.name, matched: hit.title, via: via };
     if (item.wiki) sources[item.slug].wiki = item.wiki;
     const cr = hit.file && lic.get(fileKey(hit.file));
@@ -213,11 +228,15 @@ async function credits(wiki, files) {
       if (buf.length < MIN_BYTES) throw new Error('image too small');
       const tmp = dest + '.tmp';
       fs.writeFileSync(tmp, buf);
-      try {
-        execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', '88', tmp, '--out', dest],
-                     { stdio: 'ignore' });
-        fs.unlinkSync(tmp);
-      } catch (e) { fs.renameSync(tmp, dest); }
+      if (keepAlpha) {
+        fs.renameSync(tmp, dest);          // transparency is the whole point here
+      } else {
+        try {
+          execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', '88', tmp, '--out', dest],
+                       { stdio: 'ignore' });
+          fs.unlinkSync(tmp);
+        } catch (e) { fs.renameSync(tmp, dest); }
+      }
       got++;
       process.stdout.write('\r  ' + (got + cached) + '/' + cat.items.length + '  ' +
                           item.name.padEnd(26).slice(0, 26));

@@ -114,10 +114,12 @@ It also unlocks audio, which browsers gate until the first click.
 | Animals | 170 | 170 | Wikipedia |
 | Star Wars | 147 | 147 | Wookieepedia |
 | Sitcom Characters | 135 | 135 | 29 per-show wikis |
+| Pokémon | 179 | 179 | PokeAPI official artwork |
+| Dog Breeds | 128 | 128 | Wikipedia |
 | NBA — Today | 129 | 129 | Wikipedia |
 | NBA — All-Time Greats | 115 | 115 | Wikipedia |
 
-**961 pictures across seven categories.**
+**1,268 pictures across nine categories.**
 
 Each is one file in `js/data/`, registered with a `<script>` tag in
 `index.html`. Difficulty tiers (`easy` / `mid` / `deep`) let the **deep cuts**
@@ -260,6 +262,33 @@ Set the deck to **Everything** on setup if you want answers without artwork
 dealt too — they show a typographic clue card instead of a picture, which is
 useful for rehearsing before art exists.
 
+## Picture modes
+
+A setup dropdown that changes how the picture arrives, and it works on every
+deck you already have:
+
+| Mode | What happens |
+| --- | --- |
+| **Normal** | The picture, straight away. |
+| **Silhouette** | Solid black shape, colour drops in after the reveal window. |
+| **Extreme zoom** | Starts at 7× and pulls back. |
+| **Blurred** | Starts unreadable and sharpens up. |
+
+The point is to move the tension from *who reads fastest* to *who calls it
+first*. The window is seven seconds, or 28% of the clock on a short duel,
+whichever is less — no sense spending twelve seconds unblurring on a 30-second
+round.
+
+**Silhouette is only offered on decks whose artwork is cut out.** On a
+photograph it would render a black rectangle, so the option greys itself out and
+says why. Right now that means Pokémon, whose art comes from the PokeAPI sprite
+repo as transparent PNGs — which is also why the category sets `keepAlpha` to
+stop the fetcher flattening it to JPEG.
+
+The reveal freezes whenever the clocks do: during the intro countdown, during
+the answer-reveal beat, and on pause. Without that, the first picture of every
+duel would burn its whole window behind the 3-2-1.
+
 ## Adding a category
 
 Copy `js/data/starwars.js`, change the `id`/`name`/`wiki`, and add a `<script>`
@@ -307,6 +336,8 @@ js/data/disney.js     152 Disney answers
 js/data/animals.js    170 animal answers
 js/data/starwars.js   147 Star Wars answers
 js/data/sitcoms.js    135 sitcom answers across 29 shows
+js/data/pokemon.js    179 Pokémon, transparent official artwork
+js/data/dogs.js       128 dog breeds
 js/data/nba-today.js  129 current NBA players
 js/data/nba-goats.js  115 all-time NBA greats
 js/net.js             local channel + relay transport
