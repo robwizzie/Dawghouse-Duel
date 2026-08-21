@@ -27,6 +27,11 @@
   --ease:cubic-bezier(.2,.9,.25,1);
 }
 
+/* The real brand face, when there is one. Commented out because a missing
+   font file is three 404s on every page load for every visitor — drop
+   brand.woff2 (or .otf/.ttf) into assets/brand/ and uncomment. Until then
+   --ff-display falls through to Luckiest Guy, which is the closer match. */
+/*
 @font-face{
   font-family:'DawgHouse Brand';
   src:url('../assets/brand/brand.woff2') format('woff2'),
@@ -34,6 +39,7 @@
       url('../assets/brand/brand.ttf')   format('truetype');
   font-weight:400 900;font-display:swap;
 }
+*/
 
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none !important}   /* beats the display:flex/grid set below */
