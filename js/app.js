@@ -36,6 +36,7 @@
     detailsSub: $('detailsSub'), readySub: $('readySub'), summary: $('summary'), rulesRecap: $('rulesRecap'),
     pairPanel: $('pairPanel'), hostBar: $('hostBar'), answerModeRow: $('answerModeRow'),
     joinGame: $('joinGame'),
+    silhouetteNote: $('silhouetteNote'),
     lobby: $('lobby'), lobbyCode: $('lobbyCode'), lobbyUrl: $('lobbyUrl'),
     lobbyCopy: $('lobbyCopy'), lobbyState: $('lobbyState'),
     answerBar: $('answerBar'), answerInput: $('answerInput'), answerWho: $('answerWho'), answerPass: $('answerPass'),
@@ -223,7 +224,6 @@
       var withArt = cat.items.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
       card.innerHTML =
         '<div class="catcard__art"></div>' +
-        (cat.silhouette ? '<span class="catcard__tag">SILHOUETTE</span>' : '') +
         '<div class="catcard__body">' +
           '<span class="catcard__name"></span>' +
           '<span class="catcard__blurb"></span>' +
@@ -368,6 +368,11 @@
     opt.disabled = !ok;
     opt.textContent = ok ? 'Silhouette' : 'Silhouette (needs cut-out artwork)';
     if (!ok && el.revealModeSelect.value === 'silhouette') el.revealModeSelect.value = 'normal';
+    if (el.silhouetteNote) {
+      el.silhouetteNote.textContent = ok
+        ? 'This deck has cut-out artwork, so Silhouette works on it.'
+        : '';
+    }
   }
 
   function refreshMediaCount() {
@@ -500,6 +505,7 @@
     el.boardClue.hidden = !cfg.clue;
     applyPictureMode();
     el.hostPenalty.textContent = (cfg.penaltyMs / 1000).toFixed(0);
+    renderShortcuts();
     el.rally.hidden = false;
     renderRally(true);
 
@@ -819,6 +825,22 @@
     show('setup');
     goStep(STEPS.length - 1);
     refreshMediaCount();
+  }
+
+  /* The shortcut strip is genuinely useful on a desktop, but half of it is a
+     lie in typed mode — nobody is marking, so the marking keys do nothing.
+     Show the keys that actually work. */
+  function renderShortcuts() {
+    var typed = cfg.answers === 'type';
+    var keys = typed
+      ? [['ENTER', 'submit answer'], ['P', 'pause'], ['A', 'peek'],
+         ['F', 'full screen'], ['R', 'restart'], ['?', 'help']]
+      : [['ENTER', 'correct → hand off'], ['SPACE', 'pass −' + (cfg.passCostMs / 1000) + 's'],
+         ['X', 'wrong −' + (cfg.penaltyMs / 1000) + 's'], ['P', 'pause'], ['A', 'peek'],
+         ['F', 'full screen'], ['H', 'host view'], ['?', 'help']];
+    el.hostBar.innerHTML = keys.map(function (k) {
+      return '<span class="hostbar__k"><b>' + k[0] + '</b> ' + k[1] + '</span>';
+    }).join('');
   }
 
   /* ── board rendering ── */

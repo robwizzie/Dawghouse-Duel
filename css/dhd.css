@@ -155,6 +155,7 @@ select.input option{background:var(--indigo-900);color:#fff}
 .toggle input:focus-visible + span{box-shadow:0 0 0 4px rgba(222,255,102,.25)}
 
 .btn{
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;
   border:2px solid var(--lime);border-radius:12px;cursor:pointer;
   font-family:var(--ff-cond);font-weight:900;letter-spacing:.14em;text-transform:uppercase;
   padding:.7em 1em;background:transparent;color:var(--lime);
@@ -295,9 +296,9 @@ select.input option{background:var(--indigo-900);color:#fff}
 .catcard__history{font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   font-size:clamp(10px,.95vw,12px);color:rgba(255,255,255,.45);margin-top:.1em}
 .catcard__history b{color:var(--lime)}
-.catcard__tag{position:absolute;top:8px;right:8px;background:var(--lime);color:var(--indigo);
-  font-family:var(--ff-cond);font-weight:900;letter-spacing:.12em;font-size:10px;
-  padding:.2em .5em .26em;border-radius:99px}
+.modenote{font-size:clamp(11px,1.1vw,14px);font-weight:700;letter-spacing:.06em;
+  color:var(--lime-deep);margin-top:.3em;display:block}
+.modenote:empty{display:none}
 
 .fields{width:100%;display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px)}
 .row--2{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
@@ -322,6 +323,41 @@ select.input option{background:var(--indigo-900);color:#fff}
 .flow__foot .btn{min-width:200px}
 .flow[data-step="ready"] .flow__foot{display:none}
 .visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ── mode thumbnails: a small drawing of the layout each mode gives you,
+      so the choice is visible rather than described ── */
+.pick--card .pick__body{gap:.5em}
+.mockup{
+  display:flex;align-items:stretch;gap:5px;width:100%;aspect-ratio:16/8;
+  background:var(--indigo-950);border:2px solid var(--indigo-600);border-radius:10px;
+  padding:6px;transition:border-color .16s;
+}
+.pick input:checked + .pick__body .mockup{border-color:var(--lime)}
+.mockup__pod{
+  flex:0 0 20%;border-radius:5px;background:rgba(110,110,211,.28);
+  display:flex;align-items:center;justify-content:center;
+}
+.mockup__pod i{display:block;width:64%;height:16%;border-radius:2px;background:rgba(255,255,255,.35)}
+.mockup__pod.on{background:rgba(222,255,102,.18);box-shadow:inset 0 0 0 1.5px var(--lime)}
+.mockup__pod.on i{background:var(--lime)}
+.mockup__board{flex:1;border-radius:5px;background:rgba(110,110,211,.18);box-shadow:inset 0 0 0 1.5px rgba(222,255,102,.45)}
+.mockup--solo .mockup__board{flex:1}
+
+.mockup--online{align-items:center;justify-content:center;gap:8px}
+.mockup--online .mockup__screen{
+  flex:0 0 44%;aspect-ratio:16/10;border-radius:5px;background:rgba(110,110,211,.2);
+  box-shadow:inset 0 0 0 1.5px var(--lime);display:flex;align-items:center;justify-content:center;
+}
+.mockup--online .mockup__phone{
+  flex:0 0 15%;aspect-ratio:9/16;border-radius:4px;background:rgba(110,110,211,.2);
+  box-shadow:inset 0 0 0 1.5px var(--lime);display:flex;align-items:center;justify-content:center;
+}
+.mockup--online em{display:block;width:52%;height:22%;border-radius:2px;background:var(--lime);opacity:.75}
+.mockup--online .mockup__phone em{width:56%;height:12%}
+.mockup__link{
+  flex:0 0 14%;height:2px;border-radius:2px;
+  background:repeating-linear-gradient(90deg,var(--lime) 0 5px,transparent 5px 10px);opacity:.8;
+}
 
 /* ── online lobby ── */
 .lobby{display:flex;flex-direction:column;align-items:center;gap:.5em;width:100%;
@@ -356,16 +392,18 @@ select.input option{background:var(--indigo-900);color:#fff}
 .modepick input:focus-visible + span{box-shadow:0 0 0 4px rgba(222,255,102,.25)}
 
 /* ── rally counter — the number that makes a clip find itself ── */
+.rallyrow{flex:none;display:flex;justify-content:center;min-height:0}
 .rally{
-  align-self:center;display:flex;align-items:baseline;gap:.4em;flex:none;
-  background:var(--indigo-950);border:2px solid var(--lime);border-radius:99px;
-  padding:.14em .8em .2em;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.05em;
+  background:var(--indigo-950);border:2px solid var(--lime);border-radius:14px;
+  padding:clamp(4px,.7vh,9px) clamp(14px,2vw,26px) clamp(5px,.8vh,10px);
+  text-align:center;line-height:1;
 }
 .rally[hidden]{display:none}
-.rally i{font-style:normal;font-family:var(--ff-cond);font-weight:900;letter-spacing:.28em;text-indent:.28em;
-  font-size:clamp(9px,.95vw,13px);color:var(--lime-deep)}
-.rally b{font-family:var(--ff-cond);font-weight:900;font-variant-numeric:tabular-nums;line-height:1;
-  font-size:clamp(20px,2.4vw,36px);color:var(--lime)}
+.rally i{font-style:normal;font-family:var(--ff-cond);font-weight:900;letter-spacing:.24em;text-indent:.24em;
+  font-size:clamp(9px,.9vw,13px);color:var(--lime-deep);display:block}
+.rally b{font-family:var(--ff-cond);font-weight:900;font-variant-numeric:tabular-nums;line-height:.95;
+  font-size:clamp(22px,2.6vw,40px);color:var(--lime);display:block;margin-top:.06em}
 .rally.is-hot{background:var(--lime);border-color:var(--lime-hot)}
 .rally.is-hot b{color:var(--indigo)}
 .rally.is-hot i{color:rgba(14,14,45,.7)}
@@ -389,11 +427,13 @@ body.is-solo .passbar__word::after{content:' / SKIP'}
 /* ══════════════════ DUEL ══════════════════ */
 .screen--duel{padding:clamp(8px,1.4vh,18px) clamp(10px,1.6vw,26px) 0;gap:clamp(6px,1vh,14px)}
 
-.topbar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;flex:none}
+.topbar{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;flex:none}
+.topbar > :first-child{justify-self:start}
+.topbar__right{justify-self:end}
 .topbar__cat{display:flex;flex-direction:column;align-items:center;line-height:1;gap:.28em}
 .topbar__cat i{font-style:normal;font-size:clamp(9px,.85vw,13px);letter-spacing:.42em;text-indent:.42em;color:rgba(255,255,255,.45);font-weight:700}
 .topbar__cat b{font-family:var(--ff-display);color:var(--lime);font-size:clamp(18px,2.5vw,40px);letter-spacing:.02em;text-transform:uppercase}
-.topbar__right{display:flex;align-items:center;gap:clamp(8px,1.4vw,20px)}
+.topbar__right{display:flex;align-items:center;gap:clamp(8px,1.4vw,20px);justify-self:end}
 .topbar__pair{display:flex;flex-direction:column;align-items:flex-end;gap:1px;line-height:1}
 .topbar__pair i{font-style:normal;font-size:clamp(9px,.8vw,12px);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 .topbar__pair b{font-family:var(--ff-display);color:var(--lime);font-size:clamp(12px,1.35vw,20px);letter-spacing:.1em}
@@ -478,6 +518,7 @@ body.is-solo .passbar__word::after{content:' / SKIP'}
 
 /* ── board ── */
 .board{display:flex;flex-direction:column;min-height:0;min-width:0;gap:clamp(4px,.8vh,8px)}
+.arena{align-items:stretch}
 .board__frame{
   position:relative;flex:1;min-height:0;border-radius:20px;overflow:hidden;
   border:4px solid var(--lime);
@@ -606,18 +647,20 @@ body.is-solo .passbar__word::after{content:' / SKIP'}
 .answerbar__input:focus{border-color:var(--lime);box-shadow:0 0 0 4px rgba(222,255,102,.2)}
 .answerbar__input::placeholder{color:rgba(255,255,255,.3);font-weight:700}
 .answerbar__go,.answerbar__skip{
-  border:0;border-radius:12px;cursor:pointer;font-family:var(--ff-display);
-  font-size:clamp(13px,1.5vw,22px);padding:.35em .9em .42em;letter-spacing:.06em;white-space:nowrap;
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;
+  border:2px solid transparent;border-radius:12px;cursor:pointer;font-family:var(--ff-display);
+  font-size:clamp(13px,1.5vw,22px);letter-spacing:.06em;white-space:nowrap;
+  line-height:1;height:clamp(40px,5.4vh,58px);padding:0 clamp(12px,1.6vw,24px);
 }
-.answerbar__go{background:var(--lime);color:var(--indigo);box-shadow:0 4px 0 var(--lime-deep)}
+.answerbar__go{background:var(--lime);color:var(--indigo);border-color:var(--lime);box-shadow:0 4px 0 var(--lime-deep)}
 .answerbar__go:active{transform:translateY(3px);box-shadow:0 1px 0 var(--lime-deep)}
-.answerbar__skip{background:transparent;border:2px solid var(--amber);color:var(--amber)}
+.answerbar__skip{background:transparent;border-color:var(--amber);color:var(--amber)}
 .answerbar__skip:hover{background:var(--amber);color:var(--indigo)}
+.answerbar__input{height:clamp(40px,5.4vh,58px);padding:0 .55em}
 .answerbar.is-wrong .answerbar__input{border-color:var(--red);animation:shake .3s}
 @keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
 
 body.is-typing .passbar{display:none}
-body.is-typing .hostbar{display:none}
 body.is-typing .topbar__pair{display:none}
 
 /* ── pass bar ── */
@@ -643,8 +686,9 @@ body.is-typing .topbar__pair{display:none}
 .passbar__hint{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:clamp(10px,1vw,15px);text-align:right;opacity:.78;line-height:1.2}
 .passbar[disabled]{opacity:.28;pointer-events:none;filter:grayscale(.6)}
 
-.hostbar{flex:none;display:flex;gap:clamp(8px,1.4vw,22px);justify-content:center;flex-wrap:wrap;
-  padding:clamp(4px,.7vh,9px) 0 clamp(5px,.8vh,10px);background:var(--indigo-950)}
+.hostbar{flex:none;display:flex;gap:clamp(10px,1.6vw,26px);justify-content:center;align-items:center;flex-wrap:wrap;
+  padding:clamp(5px,.8vh,10px) 12px clamp(6px,.9vh,12px);background:var(--indigo-950)}
+@media (max-width:720px), (pointer:coarse){ .hostbar{display:none} }
 .hostbar__k{font-size:clamp(11px,1.05vw,15px);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:700}
 .hostbar__k b{color:var(--lime);font-weight:900;margin-right:.35em}
 
@@ -760,6 +804,12 @@ kbd{font-family:var(--ff-cond);font-weight:900;background:var(--lime);color:var(
   .answerbar__go{grid-area:go}
   .answerbar__skip{grid-area:skip}
   .lobby__code{font-size:clamp(30px,11vw,54px)}
+}
+
+/* Portrait: stop the frame stretching far taller than the picture inside it. */
+@media (max-aspect-ratio:3/4){
+  .board__frame{max-height:min(58vh,72vw)}
+  .board{justify-content:flex-start}
 }
 
 @media (max-aspect-ratio:1/1), (max-width:820px){

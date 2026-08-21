@@ -363,9 +363,14 @@ It exists so a viewer can play too. Watching is a view; playing is a share.
 
 ## The rally counter
 
-A single number above the board: **consecutive correct answers with no wrong
-and no pass**. Each player keeps their own — one player's wrong answer can't
-wipe out the other's run — and the chip names whose streak is showing.
+A two-line chip on its own row between the category and the board:
+**consecutive correct answers with no wrong and no pass**. Each player keeps
+their own — one player's wrong answer can't wipe out the other's run — and the
+chip names whose streak is showing.
+
+It sits in its own row rather than over the picture so the clocks and the
+picture frame line up to exactly the same height, and so the category title,
+the rally and the board all share one centre line.
 
 It goes lime-bright at five. Mostly it means you stop hunting through footage
 for the good moment — the number tells you where it is.

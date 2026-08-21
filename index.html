@@ -55,38 +55,43 @@
         <h2 class="step__q">How do you want to play?</h2>
         <p class="step__sub">Everything after this you can change.</p>
         <div class="pickgrid pickgrid--3">
-          <label class="pick">
+          <label class="pick pick--card">
             <input type="radio" name="playmode" value="duel">
             <span class="pick__body">
-              <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
-                <circle cx="17" cy="16" r="7"/><path d="M5 40c0-6.6 5.4-12 12-12s12 5.4 12 12"/>
-                <circle cx="35" cy="18" r="5.5"/><path d="M27.5 40c0-5.2 3.4-9.5 7.5-9.5s8 4.3 8 9.5"/>
-              </svg>
+              <span class="mockup" aria-hidden="true">
+                <span class="mockup__pod on"><i></i></span>
+                <span class="mockup__board"></span>
+                <span class="mockup__pod"><i></i></span>
+              </span>
               <b>Duel</b>
               <i>Two of you, one screen. Take turns at the same keyboard.</i>
             </span>
           </label>
-          <label class="pick">
+
+          <label class="pick pick--card">
             <input type="radio" name="playmode" value="online">
             <span class="pick__body">
-              <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
-                <circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c4.5 5 6.8 10.6 6.8 17S28.5 41 24 41s-6.8-5.6-6.8-12S19.5 12 24 7z"/>
-              </svg>
+              <span class="mockup mockup--online" aria-hidden="true">
+                <span class="mockup__screen"><em></em></span>
+                <span class="mockup__link"></span>
+                <span class="mockup__phone"><em></em></span>
+              </span>
               <b>Online Duel</b>
               <i>Two of you, anywhere. They join with a code on their own device.</i>
             </span>
           </label>
-          <label class="pick">
+
+          <label class="pick pick--card">
             <input type="radio" name="playmode" value="solo">
             <span class="pick__body">
-              <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
-                <circle cx="24" cy="16" r="8"/><path d="M9 41c0-8.3 6.7-15 15-15s15 6.7 15 15"/>
-              </svg>
+              <span class="mockup mockup--solo" aria-hidden="true">
+                <span class="mockup__pod on"><i></i></span>
+                <span class="mockup__board"></span>
+              </span>
               <b>Solo</b>
               <i>Just you and one clock. How many can you get?</i>
             </span>
           </label>
-        </div>
       </div>
 
       <!-- 2 ── the deck ── -->
@@ -161,6 +166,7 @@
                 <option value="zoom">Extreme zoom &mdash; pulls back</option>
                 <option value="blur">Blurred &mdash; sharpens up</option>
               </select>
+              <span class="modenote" id="silhouetteNote"></span>
             </label>
           </div>
         </div>
@@ -288,6 +294,8 @@
       </div>
     </header>
 
+    <div class="rallyrow"><div class="rally" id="rally" hidden><i id="rallyWho">RALLY</i><b id="rallyNum">0</b></div></div>
+
     <main class="arena">
 
       <aside class="pod pod--left" id="pod0">
@@ -299,7 +307,6 @@
       </aside>
 
       <div class="board">
-        <div class="rally" id="rally" hidden><i id="rallyWho">RALLY</i><b id="rallyNum">0</b></div>
         <div class="board__frame" id="boardFrame">
           <img class="board__img" id="boardImg" alt="" hidden>
           <div class="board__card" id="boardCard" hidden>
