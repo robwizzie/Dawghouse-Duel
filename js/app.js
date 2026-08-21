@@ -25,7 +25,7 @@
     penaltySelect: $('penaltySelect'), passCostSelect: $('passCostSelect'),
     revealSelect: $('revealSelect'), deckSelect: $('deckSelect'),
     revealModeSelect: $('revealModeSelect'),
-    rally: $('rally'), rallyNum: $('rallyNum'),
+    rally: $('rally'), rallyNum: $('rallyNum'), rallyWho: $('rallyWho'),
     resultSolo: $('resultSolo'), soloScore: $('soloScore'), soloBest: $('soloBest'),
     resultLabel: document.querySelector('.result__label'), resultTbl: document.querySelector('.result__tbl'),
     resRematchLabel: document.querySelector('#resRematch'), resNewLabel: document.querySelector('#resNew'),
@@ -34,7 +34,10 @@
     startFlow: $('startFlow'), quickStart: $('quickStart'), welcomeStats: $('welcomeStats'),
     catGrid: $('catGrid'), catSubtitle: $('catSubtitle'), nameRow: $('nameRow'),
     detailsSub: $('detailsSub'), readySub: $('readySub'), summary: $('summary'), rulesRecap: $('rulesRecap'),
-    pairPanel: $('pairPanel'), hostBar: $('hostBar'),
+    pairPanel: $('pairPanel'), hostBar: $('hostBar'), answerModeRow: $('answerModeRow'),
+    joinGame: $('joinGame'),
+    lobby: $('lobby'), lobbyCode: $('lobbyCode'), lobbyUrl: $('lobbyUrl'),
+    lobbyCopy: $('lobbyCopy'), lobbyState: $('lobbyState'),
     answerBar: $('answerBar'), answerInput: $('answerInput'), answerWho: $('answerWho'), answerPass: $('answerPass'),
     hostPenalty: $('hostPenalty'), hostPassCost: $('hostPassCost'), passCost: $('passCost'),
     optDeep: $('optDeep'), optSound: $('optSound'), optTick: $('optTick'), optClue: $('optClue'),
@@ -116,8 +119,34 @@
      A stranger arriving from a video knows none of it, so setup is a
      sequence of single questions rather than one dense form. Everything
      with a sensible default hides behind "More options". */
-  var STEPS = ['mode', 'answers', 'category', 'details', 'ready'];
-  var stepAt = 0;
+  var STEPS = ['mode', 'category', 'details', 'ready'];
+  var stepAt = 0, chosenCat = null;
+
+  /* What this browser has played, per deck. Shown on the gallery so the
+     decks stop being interchangeable strangers. */
+  function loadStats() {
+    try { return JSON.parse(localStorage.getItem('dhd.stats') || '{}') || {}; }
+    catch (e) { return {}; }
+  }
+  function recordPlay(catId, mode, bestRally) {
+    try {
+      var all = loadStats();
+      var row = all[catId] || { duel: 0, solo: 0, rally: 0 };
+      row[mode] = (row[mode] || 0) + 1;
+      if (bestRally > (row.rally || 0)) row.rally = bestRally;
+      all[catId] = row;
+      localStorage.setItem('dhd.stats', JSON.stringify(all));
+    } catch (e) {}
+  }
+  function historyLine(catId) {
+    var row = loadStats()[catId];
+    if (!row || (!row.duel && !row.solo)) return 'Never played';
+    var bits = [];
+    if (row.duel) bits.push('<b>' + row.duel + '</b> duel' + (row.duel > 1 ? 's' : ''));
+    if (row.solo) bits.push('<b>' + row.solo + '</b> solo');
+    if (row.rally) bits.push('best rally <b>' + row.rally + '</b>');
+    return bits.join(' · ');
+  }
 
   /* One good picture per deck for the category gallery. */
   var COVERS = {
@@ -126,6 +155,33 @@
     cartoons: 'spongebob', pokemon: 'pikachu', dogs: 'golden-retriever',
     'nba-today': 'lebron-james', 'nba-goats': 'michael-jordan'
   };
+
+  /* Deliberately no defaults: an option that is already selected reads as a
+     recommendation, and the point of the wizard is that the user decides. */
+  function clearChoices() {
+    document.querySelectorAll('input[name="playmode"], input[name="answermode"]').forEach(function (r) {
+      r.checked = false;
+    });
+    chosenCat = null;
+    if (el.catGrid) markChosenCat();
+    syncGates();
+  }
+
+  function chosen(group) {
+    var hit = document.querySelector('input[name="' + group + '"]:checked');
+    return hit ? hit.value : null;
+  }
+
+  /* Next is only available once this step has an answer. */
+  function syncGates() {
+    var name = STEPS[stepAt];
+    var ok = name === 'mode'     ? !!chosen('playmode')
+           : name === 'category' ? !!chosenCat
+           : name === 'details'  ? !!chosen('answermode')
+           : true;
+    el.flowNext.disabled = !ok;
+    el.flowNext.textContent = ok ? 'Next →' : 'Choose one to continue';
+  }
 
   function goStep(i) {
     stepAt = Math.max(0, Math.min(STEPS.length - 1, i));
@@ -139,6 +195,7 @@
     if (name === 'details') refreshDetails();
     if (name === 'ready') refreshReady();
     if (name === 'category') refreshCatGrid();
+    syncGates();
     try { el.flow.scrollIntoView({ block: 'start' }); } catch (e) {}
   }
 
@@ -149,7 +206,14 @@
 
   /* ── the category gallery ── */
   function refreshCatGrid() {
-    if (el.catGrid.childElementCount) { markChosenCat(); return; }
+    if (el.catGrid.childElementCount) {
+      [].forEach.call(el.catGrid.children, function (card) {
+        var line = card.querySelector('.catcard__history');
+        if (line) line.innerHTML = historyLine(card.dataset.cat);
+      });
+      markChosenCat();
+      return;
+    }
     CATS.forEach(function (cat) {
       var card = document.createElement('button');
       card.type = 'button';
@@ -164,6 +228,7 @@
           '<span class="catcard__name"></span>' +
           '<span class="catcard__blurb"></span>' +
           '<span class="catcard__count">' + (withArt || cat.items.length) + ' answers</span>' +
+          '<span class="catcard__history">' + historyLine(cat.id) + '</span>' +
         '</div>';
       card.querySelector('.catcard__name').textContent = cat.name;
       card.querySelector('.catcard__blurb').textContent = cat.blurb || '';
@@ -175,16 +240,24 @@
           if (!url) return;
           var img = new Image();
           img.alt = '';
+          img.onload = function () {
+            /* Cut-out artwork on a transparent background looks wrong cropped;
+               photographs look wrong letterboxed. Decide per picture. */
+            if (/\.(png|svg|webp)$/i.test(url) || img.naturalHeight > img.naturalWidth * 1.25) {
+              img.classList.add('fit');
+            }
+          };
           img.src = url;
           card.querySelector('.catcard__art').appendChild(img);
         });
       }
 
       card.addEventListener('click', function () {
+        chosenCat = cat.id;
         el.catSelect.value = cat.id;
         el.catSelect.dispatchEvent(new Event('change'));
         markChosenCat();
-        goStep(stepAt + 1);
+        goStep(stepAt + 1);          // picking is the decision; move on
       });
       el.catGrid.appendChild(card);
     });
@@ -193,20 +266,33 @@
 
   function markChosenCat() {
     [].forEach.call(el.catGrid.children, function (card) {
-      card.classList.toggle('is-on', card.dataset.cat === el.catSelect.value);
+      card.classList.toggle('is-on', !!chosenCat && card.dataset.cat === chosenCat);
     });
   }
 
   /* ── step 4: only show what this configuration actually needs ── */
   function refreshDetails() {
-    var solo = document.querySelector('input[name="playmode"]:checked').value === 'solo';
-    var say  = document.querySelector('input[name="answermode"]:checked').value === 'say';
+    var mode = chosen('playmode');
+    var solo = mode === 'solo';
+    var online = mode === 'online';
+    var say = chosen('answermode') === 'say';
+
     el.nameRow.hidden = solo;
+    /* Online play is typed by definition — there is nobody in the room to
+       hear you say it, so the choice would be a lie. */
+    el.answerModeRow.hidden = online;
+    if (online) {
+      var typeRadio = document.querySelector('input[name="answermode"][value="type"]');
+      if (typeRadio) typeRadio.checked = true;
+    }
     el.detailsSub.textContent = solo
-      ? 'Just the clock and how the picture arrives.'
-      : 'Names and clock. Everything else has a sensible default.';
-    el.pairPanel.hidden = !say;
+      ? 'Your clock, and how the picture arrives.'
+      : online
+        ? 'Your name and the clock. Answers are typed, since you are in different places.'
+        : 'How answers get marked, then names and clock.';
+    el.pairPanel.hidden = !say || online;
     refreshPictureModes();
+    syncGates();
   }
 
   /* ── step 5: say back exactly what is about to happen ── */
@@ -214,14 +300,19 @@
     readSetup();
     var cat = catById(cfg.catId);
     var solo = cfg.play === 'solo';
+    var online = cfg.play === 'online';
     var typed = cfg.answers === 'type';
 
-    el.readySub.textContent = typed
-      ? 'Type the answer and press enter. The game marks it.'
-      : 'Say the answer out loud. Whoever is marking hits correct.';
+    el.readySub.textContent = online
+      ? 'You will get a code to send them. The duel starts when they join.'
+      : typed
+        ? 'Type the answer and press enter. The game marks it.'
+        : 'Say the answer out loud. Whoever is marking hits correct.';
 
     var bits = [
-      solo ? '<b>' + cfg.names[0] + '</b>' : '<b>' + cfg.names[0] + '</b> vs <b>' + cfg.names[1] + '</b>',
+      solo ? '<b>' + cfg.names[0] + '</b> solo'
+           : online ? '<b>' + cfg.names[0] + '</b> vs whoever joins'
+           : '<b>' + cfg.names[0] + '</b> vs <b>' + cfg.names[1] + '</b>',
       '<b>' + cat.name + '</b>',
       '<b>' + (cfg.clockMs / 1000) + 's</b> each',
       typed ? 'you <b>type</b> answers' : 'you <b>say</b> answers'
@@ -242,6 +333,14 @@
          'Pass &rarr; the answer is shown and you get a new picture, but it is <b>still your turn</b> and costs <b>' + (cfg.passCostMs / 1000) + 's</b>.',
          'First clock to hit <b>00.0</b> loses.'];
     el.rulesRecap.innerHTML = rules.map(function (r) { return '<li>' + r + '</li>'; }).join('');
+
+    el.lobby.hidden = !online;
+    if (online) {
+      if (!Net.room()) Net.join(Net.newCode());
+      el.lobbyCode.textContent = Net.room();
+      el.lobbyUrl.textContent = (cfg.hostUrl || 'dawghouseduel.com').replace(/\/host$/, '') + '/play';
+      renderLobby();
+    }
   }
 
   /* ══════════════════ SETUP SCREEN ══════════════════ */
@@ -294,10 +393,9 @@
     cfg.revealMs   = num(el.revealSelect, 1400);
     cfg.deck       = el.deckSelect.value;
     cfg.pictureMode = el.revealModeSelect.value;
-    var modeRadio = document.querySelector('input[name="playmode"]:checked');
-    cfg.play = modeRadio ? modeRadio.value : 'duel';
-    var ansRadio = document.querySelector('input[name="answermode"]:checked');
-    cfg.answers = ansRadio ? ansRadio.value : 'type';
+    cfg.play = chosen('playmode') || cfg.play || 'duel';
+    cfg.answers = cfg.play === 'online' ? 'type' : (chosen('answermode') || cfg.answers || 'type');
+    cfg.catId = chosenCat || cfg.catId;
     cfg.deep    = el.optDeep.checked;
     cfg.sound   = el.optSound.checked;
     cfg.tick    = el.optTick.checked;
@@ -333,10 +431,8 @@
         pick(el.revealSelect, saved.revealMs);
         pick(el.deckSelect, saved.deck);
         pick(el.revealModeSelect, saved.pictureMode || 'normal');
-        var pm = document.querySelector('input[name="playmode"][value="' + (saved.play || 'duel') + '"]');
-        if (pm) pm.checked = true;
-        var am = document.querySelector('input[name="answermode"][value="' + (saved.answers || 'type') + '"]');
-        if (am) am.checked = true;
+        /* Saved values drive the Play-again shortcut only. The wizard itself
+           starts blank on purpose — see clearChoices(). */
         if (typeof saved.deep === 'boolean') el.optDeep.checked = saved.deep;
         if (typeof saved.sound === 'boolean') el.optSound.checked = saved.sound;
         if (typeof saved.tick === 'boolean') el.optTick.checked = saved.tick;
@@ -391,7 +487,7 @@
     document.body.classList.toggle('is-solo', G.solo);
     G.peek = false;
     G.winnerName = '';
-    G.rally = 0;
+    G.rallies = [0, 0];
     G.bestRally = 0;
     G.lastTickSec = null;
 
@@ -688,6 +784,7 @@
       pods[i].resPass.textContent = G.players[i].passes;
       pods[i].resClock.textContent = fmt(G.players[i].ms);
     });
+    recordPlay(G.cat.id, 'duel', G.bestRally);
     setTimeout(function () { el.ovlResult.hidden = false; }, 900);
   }
 
@@ -704,6 +801,7 @@
     el.soloBest.textContent = G.bestRally;
     el.resultSolo.hidden = false;
     el.resultTbl.hidden = true;
+    recordPlay(G.cat.id, 'solo', G.bestRally);
     setTimeout(function () { el.ovlResult.hidden = false; }, 900);
   }
 
@@ -774,12 +872,14 @@
     n.style.animation = '';
   }
 
-  /* One shared number in duel mode — the run the pair of them are on
-     together — and the player's own streak in solo. Either way it is the
-     thing on screen that tells you where the clip is. */
+  /* Each player owns their own streak. A shared number let one player's
+     wrong answer wipe out the other's run, which is nobody's idea of fair. */
   function renderRally(silent) {
-    el.rallyNum.textContent = G.rally;
-    el.rally.classList.toggle('is-hot', G.rally >= 5);
+    var n = G.rallies[G.active] || 0;
+    /* Name it, so there is no doubt whose streak the number is. */
+    el.rallyWho.textContent = G.solo ? 'RALLY' : G.players[G.active].name + "'S RALLY";
+    el.rallyNum.textContent = n;
+    el.rally.classList.toggle('is-hot', n >= 5);
     if (!silent) {
       el.rally.classList.remove('is-bump');
       void el.rally.offsetWidth;
@@ -788,14 +888,14 @@
   }
 
   function bumpRally() {
-    G.rally++;
-    if (G.rally > G.bestRally) G.bestRally = G.rally;
+    G.rallies[G.active] = (G.rallies[G.active] || 0) + 1;
+    if (G.rallies[G.active] > G.bestRally) G.bestRally = G.rallies[G.active];
     renderRally();
   }
 
   function breakRally() {
-    if (!G.rally) return;
-    G.rally = 0;
+    if (!G.rallies[G.active]) return;
+    G.rallies[G.active] = 0;
     renderRally(true);
   }
 
@@ -869,6 +969,7 @@
 
   function renderAll() {
     renderAnswerBar();
+    renderRally(true);        // control moved, so the chip belongs to someone else now
     pods[0].root.classList.toggle('is-active', G.active === 0);
     pods[1].root.classList.toggle('is-active', G.active === 1);
     el.passWho.textContent = G.players[G.active].name;
@@ -913,10 +1014,55 @@
 
   function broadcast() {
     if (!G.players[0]) return;
-    Net.send(busState());
+    var full = busState();
+
+    /* Whoever is marking needs the answer. The other player must never
+       be sent it, so they get their own frame with it stripped out and
+       the relay keeps the two audiences apart. */
+    full.to = 'host';
+    Net.send(full);
+
+    var forPlayer = busState();
+    delete forPlayer.answer;
+    delete forPlayer.alts;
+    delete forPlayer.nextAnswer;
+    delete forPlayer.show;
+    forPlayer.to = 'player';
+    forPlayer.startMs = G.startMs;
+    forPlayer.rally = G.rallies ? (G.rallies[G.active] || 0) : 0;
+    forPlayer.rallyWho = G.players[G.active] ? G.players[G.active].name : '';
+    if (!el.reveal.hidden) {
+      forPlayer.revealName = el.revealName.textContent;
+      forPlayer.revealEyebrow = el.revealEyebrow.textContent;
+      forPlayer.revealKind = /pass/.test(el.reveal.className) ? 'pass' : 'yes';
+    }
+    Net.send(forPlayer);
   }
 
-  function runCommand(cmd) {
+  function runCommand(cmd, msg) {
+    /* A remote player may only act on their own turn, and only ever as
+       seat 1 — the joining player is always the right-hand pod. */
+    if (msg && msg.from === 'player') {
+      if (cmd === 'hello') {
+        if (msg.name && G.players[1] && G.players[1].name !== msg.name) {
+          G.players[1].name = msg.name;
+          pods[1].name.textContent = msg.name;
+          pods[1].resHead.textContent = msg.name;
+          renderAll();
+        }
+        broadcast();
+        return;
+      }
+      if (G.phase !== 'live' || G.active !== 1) return;
+      if (cmd === 'answer') {
+        var verdict = Match.check(msg.text || '', G.queue[G.idx], G.tokenIndex);
+        if (verdict) doCorrect(); else doWrong();
+        broadcast();
+        return;
+      }
+      if (cmd !== 'pass') return;
+    }
+
     switch (cmd) {
       case 'correct': doCorrect(); break;
       case 'wrong':   doWrong();   break;
@@ -931,11 +1077,22 @@
   Net.start({
     role: 'duel',
     room: Net.rememberedRoom() || Net.newCode(),
-    onMessage: function (m) { if (m && m.from === 'host') runCommand(m.cmd); },
+    onMessage: function (m) {
+      if (!m) return;
+      if (m.from === 'host' || m.from === 'player') runCommand(m.cmd, m);
+    },
     onStatus: renderPairing
   });
 
   setInterval(broadcast, 120);
+
+  function renderLobby() {
+    if (el.lobby.hidden) return;
+    var peers = Net.peers();
+    var joined = peers.players > 0;
+    el.lobbyState.textContent = joined ? 'they are in — start when ready' : 'waiting for them to join…';
+    el.lobbyState.classList.toggle('is-on', joined);
+  }
 
   /* ── pairing panel ── */
   function renderPairing() {
@@ -952,6 +1109,7 @@
     else if (st === 'connecting') { label = 'connecting…'; cls = 'wait'; }
     else                       { label = 'relay offline — game still fine'; cls = 'off'; }
 
+    renderLobby();
     [el.pairState, el.pairStateBig].forEach(function (n) {
       if (!n) return;
       n.textContent = label;
@@ -1068,7 +1226,7 @@
     startDuel();
   });
 
-  el.startFlow.addEventListener('click', function () { Sfx.unlock(); show('setup'); goStep(0); });
+  el.startFlow.addEventListener('click', function () { Sfx.unlock(); clearChoices(); show('setup'); goStep(0); });
   el.quickStart.addEventListener('click', function () { Sfx.unlock(); startDuel(); });
   el.flowBack.addEventListener('click', function () {
     if (stepAt === 0) { show('welcome'); return; }
@@ -1077,11 +1235,22 @@
   el.flowNext.addEventListener('click', function () { goStep(stepAt + 1); });
 
   /* Answering style changes what step 4 needs to show. */
-  document.querySelectorAll('input[name="playmode"], input[name="answermode"]').forEach(function (r) {
+  document.querySelectorAll('input[name="playmode"]').forEach(function (r) {
     r.addEventListener('change', function () {
-      if (STEPS[stepAt] === 'mode' || STEPS[stepAt] === 'answers') goStep(stepAt + 1);
+      if (STEPS[stepAt] === 'mode') goStep(stepAt + 1);   // a choice is the decision
     });
   });
+  document.querySelectorAll('input[name="answermode"]').forEach(function (r) {
+    r.addEventListener('change', function () { refreshDetails(); });
+  });
+
+  el.lobbyCopy.addEventListener('click', function () {
+    var link = location.origin + '/play#' + Net.room();
+    (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject())
+      .then(function () { toast('Link copied'); })
+      .catch(function () { toast(link); });
+  });
+  el.joinGame.addEventListener('click', function () { location.href = 'play.html'; });
 
   el.answerBar.addEventListener('submit', submitTyped);
   el.answerPass.addEventListener('click', function () { doPass(null); focusAnswer(); });
@@ -1095,7 +1264,17 @@
     renderPairing();
     toast('New room code — re-pair the phone');
   });
-  el.toHelp.addEventListener('click', function () { el.ovlHelp.hidden = false; });
+  /* Reading the rules must never cost you the duel. */
+  var helpPaused = false;
+  function openHelp() {
+    if (G.phase === 'live' || G.phase === 'reveal') { togglePause(); helpPaused = true; }
+    el.ovlHelp.hidden = false;
+  }
+  function closeHelp() {
+    el.ovlHelp.hidden = true;
+    if (helpPaused) { helpPaused = false; if (G.phase === 'paused') togglePause(); }
+  }
+  el.toHelp.addEventListener('click', openHelp);
   el.soundCheck.addEventListener('click', function () {
     Sfx.unlock();
     Sfx.setEnabled(true);
@@ -1109,8 +1288,8 @@
       toast(DHD.Sfx.ready() ? 'Sound check done' : 'No audio — check the system volume');
     });
   });
-  el.helpClose.addEventListener('click', function () { el.ovlHelp.hidden = true; });
-  el.ovlHelp.addEventListener('click', function (e) { if (e.target === el.ovlHelp) el.ovlHelp.hidden = true; });
+  el.helpClose.addEventListener('click', closeHelp);
+  el.ovlHelp.addEventListener('click', function (e) { if (e.target === el.ovlHelp) closeHelp(); });
 
   el.passBar.addEventListener('click', function () { Sfx.unlock(); doPass(null); el.passBar.blur(); });
   el.resRematch.addEventListener('click', function () { el.ovlResult.hidden = true; startDuel(); });
@@ -1159,8 +1338,8 @@
     var k = e.key;
 
     if (k === 'h' || k === 'H') { e.preventDefault(); openHost(); return; }
-    if (k === '?' || k === '/') { e.preventDefault(); el.ovlHelp.hidden = !el.ovlHelp.hidden; return; }
-    if (k === 'Escape') { if (!el.ovlHelp.hidden) { el.ovlHelp.hidden = true; return; } if (html.dataset.screen !== 'setup') backToSetup(); return; }
+    if (k === '?' || k === '/') { e.preventDefault(); if (el.ovlHelp.hidden) openHelp(); else closeHelp(); return; }
+    if (k === 'Escape') { if (!el.ovlHelp.hidden) { closeHelp(); return; } if (html.dataset.screen !== 'setup') backToSetup(); return; }
     if (k === 'f' || k === 'F') { e.preventDefault(); toggleFullscreen(); return; }
     if (!el.ovlHelp.hidden) return;
 

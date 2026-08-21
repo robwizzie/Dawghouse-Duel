@@ -1,0 +1,24 @@
+/* Player-side view: the same board, driven from the other machine. */
+.playbody{overflow:hidden}
+.playstage{display:none;flex-direction:column;
+  padding:clamp(8px,1.4vh,18px) clamp(10px,1.6vw,26px) 0;gap:clamp(6px,1vh,14px)}
+body.paired .playstage{display:flex}
+body.paired .join{display:none}
+
+.playstage .pod__control{opacity:0}
+.playstage .pod.is-active .pod__control{opacity:1}
+.playstage .answerbar{opacity:1;transition:opacity .2s}
+.playstage .answerbar.is-idle{opacity:.4;pointer-events:none}
+
+.playfoot{flex:none;text-align:center;padding:clamp(4px,.7vh,9px) 0 clamp(5px,.8vh,10px);
+  background:var(--indigo-950);font-size:clamp(10px,1vw,14px);font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.playfoot .on{color:var(--lime)}
+.playfoot .off{color:var(--red)}
+
+.join__name{display:flex;flex-direction:column;gap:4px;width:min(420px,100%);align-items:center}
+.join__name span{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.join__nameinput{width:100%;background:rgba(14,14,45,.9);border:2px solid var(--indigo-600);border-radius:10px;
+  color:#fff;font-family:var(--ff-display);font-size:clamp(16px,4vw,24px);text-align:center;
+  text-transform:uppercase;padding:.25em .5em;outline:none}
+.join__nameinput:focus{border-color:var(--lime)}

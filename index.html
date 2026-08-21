@@ -30,7 +30,8 @@
 
       <div class="welcome__acts">
         <button class="btn btn--go btn--huge" type="button" id="startFlow">PLAY</button>
-        <button class="btn btn--ghost" type="button" id="quickStart" hidden>Same setup as last time</button>
+        <button class="btn btn--ghost" type="button" id="joinGame">Join a game with a code</button>
+        <button class="btn btn--ghost btn--quiet" type="button" id="quickStart" hidden>Play again</button>
       </div>
 
       <button class="welcome__how" type="button" id="toHelp">How it works</button>
@@ -51,53 +52,44 @@
 
       <!-- 1 ── who is playing ── -->
       <div class="step" data-step="mode">
-        <h2 class="step__q">Who&rsquo;s playing?</h2>
-        <p class="step__sub">You can change any of this later.</p>
-        <div class="pickgrid pickgrid--2">
+        <h2 class="step__q">How do you want to play?</h2>
+        <p class="step__sub">Everything after this you can change.</p>
+        <div class="pickgrid pickgrid--3">
           <label class="pick">
-            <input type="radio" name="playmode" value="duel" checked>
+            <input type="radio" name="playmode" value="duel">
             <span class="pick__body">
-              <span class="pick__icon">&#128100;&#8202;&#128100;</span>
+              <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="17" cy="16" r="7"/><path d="M5 40c0-6.6 5.4-12 12-12s12 5.4 12 12"/>
+                <circle cx="35" cy="18" r="5.5"/><path d="M27.5 40c0-5.2 3.4-9.5 7.5-9.5s8 4.3 8 9.5"/>
+              </svg>
               <b>Duel</b>
-              <i>Two players, two clocks. Last one standing wins.</i>
+              <i>Two of you, one screen. Take turns at the same keyboard.</i>
+            </span>
+          </label>
+          <label class="pick">
+            <input type="radio" name="playmode" value="online">
+            <span class="pick__body">
+              <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c4.5 5 6.8 10.6 6.8 17S28.5 41 24 41s-6.8-5.6-6.8-12S19.5 12 24 7z"/>
+              </svg>
+              <b>Online Duel</b>
+              <i>Two of you, anywhere. They join with a code on their own device.</i>
             </span>
           </label>
           <label class="pick">
             <input type="radio" name="playmode" value="solo">
             <span class="pick__body">
-              <span class="pick__icon">&#128100;</span>
-              <b>Play Along</b>
+              <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="16" r="8"/><path d="M9 41c0-8.3 6.7-15 15-15s15 6.7 15 15"/>
+              </svg>
+              <b>Solo</b>
               <i>Just you and one clock. How many can you get?</i>
             </span>
           </label>
         </div>
       </div>
 
-      <!-- 2 ── how answers are judged ── -->
-      <div class="step" data-step="answers">
-        <h2 class="step__q">How do you want to answer?</h2>
-        <p class="step__sub">This is the big one &mdash; it decides who decides.</p>
-        <div class="pickgrid pickgrid--2">
-          <label class="pick">
-            <input type="radio" name="answermode" value="type" checked>
-            <span class="pick__body">
-              <span class="pick__icon">&#9000;</span>
-              <b>Type it in</b>
-              <i>The game marks your answer. Nobody else needed &mdash; best if you&rsquo;re just playing.</i>
-            </span>
-          </label>
-          <label class="pick">
-            <input type="radio" name="answermode" value="say">
-            <span class="pick__body">
-              <span class="pick__icon">&#127908;</span>
-              <b>Say it out loud</b>
-              <i>Somebody else marks it from a phone or a second window. Best for filming.</i>
-            </span>
-          </label>
-        </div>
-      </div>
-
-      <!-- 3 ── the deck ── -->
+      <!-- 2 ── the deck ── -->
       <div class="step step--wide" data-step="category">
         <h2 class="step__q">Pick a category</h2>
         <p class="step__sub" id="catSubtitle">Eleven decks. Some are much harder than they look.</p>
@@ -105,12 +97,40 @@
         <select id="catSelect" class="visually-hidden" tabindex="-1" aria-hidden="true"></select>
       </div>
 
-      <!-- 4 ── the details ── -->
+      <!-- 3 ── the settings, answer method included ── -->
       <div class="step" data-step="details">
         <h2 class="step__q">Set it up</h2>
         <p class="step__sub" id="detailsSub">Names and clock. Everything else has a sensible default.</p>
 
         <div class="fields">
+          <fieldset class="answermode" id="answerModeRow">
+            <legend class="field__label">How are answers marked?</legend>
+            <div class="pickgrid pickgrid--2 pickgrid--tight">
+              <label class="pick pick--sm">
+                <input type="radio" name="answermode" value="type">
+                <span class="pick__body">
+                  <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
+                    <rect x="4" y="13" width="40" height="24" rx="4"/>
+                    <path d="M12 21h2M20 21h2M28 21h2M36 21h0M12 28h0M17 28h14M36 28h0"/>
+                  </svg>
+                  <b>Type it in</b>
+                  <i>The game marks it. Nobody else needed.</i>
+                </span>
+              </label>
+              <label class="pick pick--sm">
+                <input type="radio" name="answermode" value="say">
+                <span class="pick__body">
+                  <svg class="pick__icon" viewBox="0 0 48 48" aria-hidden="true">
+                    <rect x="18" y="6" width="12" height="22" rx="6"/>
+                    <path d="M12 22a12 12 0 0 0 24 0M24 34v8M17 42h14"/>
+                  </svg>
+                  <b>Say it out loud</b>
+                  <i>Someone else marks it. For filming.</i>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
           <div class="row row--players" id="nameRow">
             <label class="field field--p1">
               <span class="field__label">Player 1</span>
@@ -224,7 +244,7 @@
         </section>
       </div>
 
-      <!-- 5 ── go ── -->
+      <!-- 4 ── go ── -->
       <div class="step" data-step="ready">
         <h2 class="step__q">Ready?</h2>
         <p class="step__sub" id="readySub"></p>
@@ -232,6 +252,14 @@
         <div class="summary" id="summary"></div>
 
         <ol class="rules" id="rulesRecap"></ol>
+
+        <section class="lobby" id="lobby" hidden>
+          <span class="lobby__eyebrow">SEND THEM THIS</span>
+          <b class="lobby__code" id="lobbyCode">----</b>
+          <p class="lobby__how">They open <b id="lobbyUrl">dawghouseduel.com/play</b> and enter it.</p>
+          <button class="btn btn--ghost btn--sm" type="button" id="lobbyCopy">Copy the link</button>
+          <span class="lobby__state" id="lobbyState">waiting for them to join…</span>
+        </section>
 
         <button class="btn btn--go btn--huge" type="submit">START</button>
       </div>
@@ -271,7 +299,7 @@
       </aside>
 
       <div class="board">
-        <div class="rally" id="rally" hidden><i>RALLY</i><b id="rallyNum">0</b></div>
+        <div class="rally" id="rally" hidden><i id="rallyWho">RALLY</i><b id="rallyNum">0</b></div>
         <div class="board__frame" id="boardFrame">
           <img class="board__img" id="boardImg" alt="" hidden>
           <div class="board__card" id="boardCard" hidden>
@@ -405,12 +433,20 @@
       <li>Only a right answer gets you off the clock. First to hit <b>00.0</b> loses.</li>
     </ol>
 
+    <h3>Three ways to play</h3>
+    <p class="help__note"><b>Duel</b> &mdash; two of you at one screen, taking turns at the keyboard.</p>
+    <p class="help__note"><b>Online Duel</b> &mdash; two of you anywhere. You get a four-letter code; they open <b>dawghouseduel.com/play</b>, type the code, and their screen mirrors yours. They type their own answers on their own device. The answer key is never sent to them.</p>
+    <p class="help__note"><b>Solo</b> &mdash; one clock, and a score at the end.</p>
+
+    <h3>The rally</h3>
+    <p class="help__note">The number above the picture is the streak of the player currently on the clock &mdash; their own consecutive correct answers, with no wrong and no pass. Each player keeps their own; you can&rsquo;t break theirs and they can&rsquo;t break yours.</p>
+
     <h3>Two ways to answer</h3>
     <p class="help__note"><b>Type it in</b> &mdash; the game marks your answer. Nobody else needed. Spelling is forgiving, and short forms count: <i>jokic</i>, <i>spongebob</i> and <i>doc ock</i> all pass.</p>
     <p class="help__note"><b>Say it out loud</b> &mdash; somebody else marks it. This is the one for filming: put the laptop under the camera, and whoever&rsquo;s marking uses the <b>Host View</b> on their phone or a second window. It shows the answer, the alternates that count, and big correct / wrong / pass buttons.</p>
 
-    <h3>Play Along</h3>
-    <p class="help__note">One clock, one player. Keep going until it runs out, and see how many you got. Your best streak is on the score card.</p>
+    <h3>Solo</h3>
+    <p class="help__note">One clock, one player. Keep going until it runs out and see how many you got. Your longest streak is on the score card.</p>
 
     <h3>Picture modes</h3>
     <p class="help__note"><b>Silhouette</b> blacks the picture out and fills it in after a few seconds. <b>Extreme zoom</b> starts far too close and pulls back. <b>Blurred</b> sharpens up. On a correct answer or a pass you always see the real picture.</p>

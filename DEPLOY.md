@@ -10,10 +10,15 @@ There are two pieces, and **you only need the first one**:
 | **The site** | The game itself, on Cloudflare Pages | Everything |
 | **The relay** | A small Cloudflare Worker | Marking from your **phone** while filming |
 
-Anyone visiting the site can play without the relay, because typed mode means
-the game marks its own answers. The relay is only for *say it out loud* mode
-with the answer key on a phone. If you skip it, you press `H` on the laptop for
-the Host View in a second window instead.
+Anyone visiting the site can play **Duel** and **Solo** without the relay,
+because typed mode means the game marks its own answers. The relay is needed
+for two things:
+
+- **Online Duel** — two people in different places
+- **Say it out loud** — the answer key on a phone while you film
+
+Skip it and both still work locally: `H` opens the marking view in a second
+window on the same machine.
 
 Steps 1–5 are the site. Steps 6–8 are the phone relay.
 Budget about 30 minutes, most of it waiting for DNS.
@@ -130,9 +135,9 @@ Open <https://dawghouseduel.com>.
 From now on **every push to `main` redeploys the site within a minute.** Nothing
 else to do, ever.
 
-**If you only wanted the site, stop here.** Everything works: typed answers,
-Play Along, all eleven categories, silhouette and zoom modes. The only thing
-missing is marking from a phone.
+**If you only wanted the site, stop here.** Typed duels, Solo, all eleven
+categories, silhouette and zoom modes — all working. What needs the relay is
+Online Duel and marking from a phone.
 
 ---
 
@@ -185,7 +190,15 @@ Cloudflare redeploys automatically.
 
 ---
 
-## Step 8 — Pair your phone
+## Step 8 — Check online play
+
+1. On one machine: **PLAY → Online Duel →** pick a category → **START**. The
+   Ready screen shows a four-letter code and a *Copy the link* button.
+2. On another device, open <https://dawghouseduel.com/play> and enter the code.
+3. Their board should fill in — picture, both clocks, whose turn it is — and
+   the first screen should say *they are in*.
+
+## Step 9 — Pair your phone for marking
 
 1. Laptop: open <https://dawghouseduel.com>, press **PLAY**, choose **Duel**,
    then **Say it out loud**. Carry on to the setup step — the pairing panel

@@ -34,6 +34,7 @@
   var wasHearing = false;
   function onIncoming(m) {
     if (!m || m.from !== 'duel') return;
+    if (m.to && m.to !== 'host') return;   // player frames are redacted; ignore them
     lastSeen = Date.now();
     document.body.classList.add('paired');
     if (!wasHearing) { wasHearing = true; onStatus(); }

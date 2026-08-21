@@ -307,12 +307,16 @@ The app started as a tool for one operator who knew the keyboard. Somebody
 arriving from a video knows none of it, so setup is a sequence of single
 questions rather than one dense form:
 
-1. **Who's playing** — Duel or Play Along
-2. **How you answer** — type it in, or say it and have someone mark it
-3. **Category** — a gallery of all eleven decks with cover art and counts
-4. **Details** — names and clock; everything with a sensible default hides
-   behind *More options*
-5. **Ready** — it reads the setup back to you, with the rules, then starts
+1. **How you want to play** — Duel, Online Duel, or Solo
+2. **Category** — a gallery of all eleven decks with cover art, answer counts,
+   and what you've played on each
+3. **Settings** — how answers get marked, names, clock; anything with a
+   sensible default hides behind *More options*
+4. **Ready** — it reads the setup back to you, with the rules, then starts
+
+Nothing is pre-selected at any step, and **Next** stays disabled until you
+choose. An already-ticked option reads as a recommendation, and the point of
+the wizard is that the player decides. Choosing advances automatically.
 
 Anyone who has played before gets a *Play again* button on the welcome screen
 that skips the lot.
@@ -331,7 +335,23 @@ is wrong, because there's no way to know which was meant.
 mode, and it's what the keyboard shortcuts are for. In typed mode those
 shortcuts are switched off, since the app is the judge.
 
-## Play Along — solo mode
+## Online Duel
+
+Two people, two places, one duel. The person who sets it up gets a four-letter
+code; the other opens `/play`, enters it, and their screen mirrors the board —
+picture, both clocks, whose turn it is.
+
+The duel screen stays the only authority. The remote player's device renders
+what it's sent and sends back one thing: what they typed. Clocks are
+interpolated locally between frames so the tenths still move smoothly rather
+than stepping eight times a second.
+
+**The answer is never sent to a player.** The relay routes frames by audience:
+the marking view gets a frame containing the answer and the alternates, the
+player gets a redacted one. That's a property of the relay, not of the client
+being polite — see `to: 'host' | 'player'` in `worker/src/index.js`.
+
+## Solo
 
 The setup screen picks between **Duel** (two dawgs, two clocks) and **Play
 Along** (one clock, one player, how many can you get). Solo hides the second
@@ -344,8 +364,8 @@ It exists so a viewer can play too. Watching is a view; playing is a share.
 ## The rally counter
 
 A single number above the board: **consecutive correct answers with no wrong
-and no pass**. In a duel it's shared, so the pair of them build it together and
-either one can break it. In solo it's your own streak.
+and no pass**. Each player keeps their own — one player's wrong answer can't
+wipe out the other's run — and the chip names whose streak is showing.
 
 It goes lime-bright at five. Mostly it means you stop hunting through footage
 for the good moment — the number tells you where it is.
@@ -385,14 +405,17 @@ window.DHD_CATEGORIES.push({
 
 ```
 index.html            stage markup — setup, duel, image library, overlays
-host.html             the host's answer-key + control window
+host.html             the marking view: answer key + control buttons
+play.html             player two's mirrored board, for online duels
 css/dhd.css           brand tokens + all styling
 css/host.css          host window styling
 js/data/superheroes.js  113 answers with alt names, difficulty tiers, fallback clues
 js/store.js           image resolution: uploads → assets folder → clue card
 js/audio.js           synthesized buzzers and stings — no audio files to lose
 js/app.js             clocks, control, pass logic, screens, host link
-js/host.js            host window controller
+js/host.js            marking view controller
+js/play.js            mirrored board for the remote player
+js/match.js           typed-answer matching
 js/data/disney.js     152 Disney answers
 js/data/animals.js    170 animal answers
 js/data/starwars.js   147 Star Wars answers

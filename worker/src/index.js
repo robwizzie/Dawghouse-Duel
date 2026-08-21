@@ -8,8 +8,13 @@
    One Durable Object per room code, so every room is its own
    isolated little server that exists only while someone is in it.
 
-     wss://<worker>/room/WXYZ?role=duel
-     wss://<worker>/room/WXYZ?role=host
+     wss://<worker>/room/WXYZ?role=duel     the screen running the game
+     wss://<worker>/room/WXYZ?role=host     someone marking spoken answers
+     wss://<worker>/room/WXYZ?role=player   the other player, on their own device
+
+   A frame may carry `to: 'host' | 'player'`, and then only peers of that
+   role receive it. That is not decoration: the host frame contains the
+   answer, and a player must never be sent it.
    ══════════════════════════════════════════════════════════════ */
 
 const MAX_MESSAGE = 256 * 1024;   // a state frame carries an image URL, not an image
@@ -19,7 +24,7 @@ export class Room {
   constructor(state) {
     this.state = state;
     this.peers = new Map();       // ws -> role
-    this.lastDuelState = null;    // so a phone joining mid-duel sees it at once
+    this.lastFor = new Map();     // audience -> last frame, so a latecomer catches up
   }
 
   async fetch(request) {
@@ -29,7 +34,8 @@ export class Room {
     if (this.peers.size >= MAX_PEERS) {
       return new Response('room full', { status: 429 });
     }
-    const role = new URL(request.url).searchParams.get('role') === 'duel' ? 'duel' : 'host';
+    const asked = new URL(request.url).searchParams.get('role');
+    const role = asked === 'duel' || asked === 'player' ? asked : 'host';
     const { 0: client, 1: server } = new WebSocketPair();
     this.accept(server, role);
     return new Response(null, { status: 101, webSocket: client });
@@ -40,7 +46,10 @@ export class Room {
     this.peers.set(ws, role);
 
     // Catch the newcomer up before anything else happens.
-    if (role !== 'duel' && this.lastDuelState) this.post(ws, this.lastDuelState);
+    if (role !== 'duel') {
+      const caught = this.lastFor.get(role) || this.lastFor.get('all');
+      if (caught) this.post(ws, caught);
+    }
     this.announce();
 
     ws.addEventListener('message', ev => {
@@ -52,14 +61,19 @@ export class Room {
       if (!msg || typeof msg !== 'object') return;
 
       // Only the duel screen's own frames are worth replaying to latecomers.
-      if (msg.from === 'duel') this.lastDuelState = raw;
+      const audience = msg.to === 'host' || msg.to === 'player' ? msg.to : 'all';
+      if (msg.from === 'duel') this.lastFor.set(audience, raw);
 
-      for (const peer of this.peers.keys()) if (peer !== ws) this.post(peer, raw);
+      for (const [peer, peerRole] of this.peers) {
+        if (peer === ws) continue;
+        if (audience !== 'all' && peerRole !== audience) continue;
+        this.post(peer, raw);
+      }
     });
 
     const drop = () => {
       this.peers.delete(ws);
-      if (role === 'duel') this.lastDuelState = null;   // don't serve a stale board
+      if (role === 'duel') this.lastFor.clear();   // don't serve a stale board
       this.announce();
     };
     ws.addEventListener('close', drop);
@@ -77,7 +91,8 @@ export class Room {
       from: 'relay',
       peers: roles.length,
       duel: roles.includes('duel'),
-      hosts: roles.filter(r => r === 'host').length
+      hosts: roles.filter(r => r === 'host').length,
+      players: roles.filter(r => r === 'player').length
     });
     for (const ws of this.peers.keys()) this.post(ws, msg);
   }

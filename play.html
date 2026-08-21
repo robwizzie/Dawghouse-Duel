@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dawg House Duel — Play</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/dhd.css">
+<link rel="stylesheet" href="css/play.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2332328d'/><text y='72' x='50' text-anchor='middle' font-size='62' font-family='Arial Black,sans-serif' fill='%23deff66'>D</text></svg>">
+</head>
+<body class="playbody">
+
+<!-- ── join ── -->
+<section class="join" id="join">
+  <img class="join__logo" src="assets/brand/logo.png" alt="Dawg House" onerror="this.remove()">
+  <span class="join__tag">PLAYER 2</span>
+  <p class="join__lead">Enter the code they sent you.</p>
+  <form class="join__form" id="joinForm" autocomplete="off">
+    <input class="join__input" id="joinCode" inputmode="latin" autocapitalize="characters"
+           autocomplete="off" spellcheck="false" maxlength="6" placeholder="CODE" aria-label="Room code">
+    <button class="join__go" type="submit">JOIN</button>
+  </form>
+  <label class="join__name">
+    <span>Your name</span>
+    <input class="join__nameinput" id="joinName" maxlength="14" placeholder="NAME" value="">
+  </label>
+  <p class="join__state" id="joinState">not connected</p>
+</section>
+
+<!-- ── the mirrored board ── -->
+<div class="stage playstage" id="playStage">
+  <header class="topbar">
+    <div class="brandmark brandmark--inline">
+      <img class="brandmark__img" src="assets/brand/logo.png" alt=""
+           onload="this.closest('.brandmark').classList.add('has-logo')" onerror="this.remove()">
+      <span class="brandmark__text">dawg<em>house</em></span>
+      <span class="brandmark__duel">DUEL</span>
+    </div>
+    <div class="topbar__cat"><i>CATEGORY</i><b id="pCat">—</b></div>
+    <div class="topbar__meta"><span id="pProgress">1</span><i>of</i><span id="pTotal">1</span></div>
+  </header>
+
+  <main class="arena">
+    <aside class="pod pod--left" id="pPod0">
+      <div class="pod__name" id="pName0">—</div>
+      <div class="pod__clock"><span class="clock" id="pClock0">45.0</span></div>
+      <div class="pod__bar"><i id="pBar0"></i></div>
+      <div class="pod__stats"><span class="chip chip--right"><b id="pRight0">0</b> RIGHT</span></div>
+      <div class="pod__control">CONTROL</div>
+    </aside>
+
+    <div class="board">
+      <div class="rally" id="pRally" hidden><i id="pRallyWho">RALLY</i><b id="pRallyNum">0</b></div>
+      <div class="board__frame">
+        <img class="board__img" id="pImg" alt="" hidden>
+        <div class="board__card" id="pCard" hidden><span class="board__cardmark">?</span></div>
+        <div class="reveal" id="pReveal" hidden>
+          <i class="reveal__eyebrow" id="pRevealEyebrow">CORRECT</i>
+          <b class="reveal__name" id="pRevealName">—</b>
+        </div>
+      </div>
+    </div>
+
+    <aside class="pod pod--right" id="pPod1">
+      <div class="pod__name" id="pName1">—</div>
+      <div class="pod__clock"><span class="clock" id="pClock1">45.0</span></div>
+      <div class="pod__bar"><i id="pBar1"></i></div>
+      <div class="pod__stats"><span class="chip chip--right"><b id="pRight1">0</b> RIGHT</span></div>
+      <div class="pod__control">CONTROL</div>
+    </aside>
+  </main>
+
+  <form class="answerbar" id="pAnswerBar" autocomplete="off">
+    <span class="answerbar__who" id="pWho">YOU</span>
+    <input class="answerbar__input" id="pInput" type="text" autocomplete="off"
+           autocorrect="off" autocapitalize="off" spellcheck="false"
+           placeholder="type your answer" aria-label="Your answer">
+    <button class="answerbar__go" type="submit">ENTER</button>
+    <button class="answerbar__skip" type="button" id="pPass">PASS</button>
+  </form>
+
+  <div class="playfoot"><span id="pStatus">connected</span></div>
+</div>
+
+<div class="ovl ovl--result" id="pResult" hidden>
+  <div class="result">
+    <img class="result__logo" src="assets/brand/logo.png" alt="" onerror="this.remove()">
+    <div class="result__label" id="pResultLabel">WINNER</div>
+    <div class="result__name" id="pResultName">—</div>
+    <div class="result__line" id="pResultLine"></div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/net.js"></script>
+<script src="js/play.js"></script>
+</body>
+</html>
