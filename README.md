@@ -133,6 +133,38 @@ Each is one file in `js/data/`, registered with a `<script>` tag in
 `index.html`. Difficulty tiers (`easy` / `mid` / `deep`) let the **deep cuts**
 toggle drop the hard third for a friendlier round.
 
+## Decks people make themselves
+
+A deck somebody builds is the same shape a built-in category is, so once it's
+registered the engine can't tell the difference. The only real difference is
+where the pictures come from: a shipped deck reads
+`assets/categories/<id>/<slug>.jpg`; a custom one carries its picture on the
+item as `imgUrl` — a `data:` URL while it's yours alone, the relay's
+`/img/...` once published.
+
+**Building one.** Last card in the category gallery. Each row is one answer
+with either a picture or a line of text. Mix them and it plays as a picture
+deck with text where the pictures aren't. Photos are scaled to 900px on the
+way in — a deck of forty phone photos would blow both `localStorage` and the
+upload limit. *Paste a list* builds a text deck quickly. Right-click your own
+deck in the gallery to edit it.
+
+**Sharing one.** *Share* uploads the pictures, then the deck, and hands back a
+six-character code. The alphabet has no vowels and no look-alikes, so a code
+read down a phone can't be mistyped and can't spell anything. Opening
+`?deck=CODE` offers to add it.
+
+**Plays and votes.** A published deck counts how many times it's been played
+and carries a thumbs up/down, shown on its gallery card and asked for on the
+card at the end of a round. Counters need to be atomic, so they live in a
+Durable Object keyed on the code. One vote per browser; press the same thumb
+again to take it back.
+
+**The limits are the whole defence** — there are no accounts, and adding them
+to a party game isn't worth it. 300 answers, 512KB of deck JSON, 3MB an
+image, and the server rebuilds every deck from only the fields it can play
+rather than trusting what a client sent.
+
 ## The text deck
 
 **Musicals** is the one category with no pictures in it, and that is on

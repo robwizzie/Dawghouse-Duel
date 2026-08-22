@@ -8,7 +8,7 @@ There are two pieces, and **you only need the first one**:
 | | What it is | Needed for |
 | --- | --- | --- |
 | **The site** | The game itself, on Cloudflare Pages | Everything |
-| **The relay** | A small Cloudflare Worker | Marking from your **phone** while filming |
+| **The relay** | A small Cloudflare Worker | Marking from your **phone**, online duels, and **sharing decks** |
 
 Anyone visiting the site can play **Duel** and **Solo** without the relay,
 because typed mode means the game marks its own answers. The relay is needed
@@ -16,6 +16,7 @@ for two things:
 
 - **Online Duel** — two people in different places
 - **Say it out loud** — the answer key on a phone while you film
+- **Sharing a deck** — publishing one you made so other people can play it
 
 Skip it and both still work locally: `H` opens the marking view in a second
 window on the same machine.
@@ -143,7 +144,19 @@ Online Duel and marking from a phone.
 
 ## Step 6 — Deploy the relay
 
-This is what lets your phone drive the laptop during a shoot.
+This is what lets your phone drive the laptop during a shoot, and what
+stores decks people make.
+
+First make the bucket the decks live in. Once, ever:
+
+```bash
+cd ~/Desktop/Dawghouse-Duel/worker && npx wrangler r2 bucket create dawghouse-duel-decks
+```
+
+If you skip it the relay still deploys and everything else works — the
+publish button just says deck storage isn't configured.
+
+Then deploy:
 
 ```bash
 cd ~/Desktop/Dawghouse-Duel/worker && npx wrangler deploy
@@ -198,7 +211,21 @@ Cloudflare redeploys automatically.
 3. Their board should fill in — picture, both clocks, whose turn it is — and
    the first screen should say *they are in*.
 
-## Step 9 — Pair your phone for marking
+## Step 9 — Check deck sharing
+
+1. On the site: **PLAY → Duel →** scroll to the end of the categories and
+   press **Make your own**.
+2. Give it a name and two or three answers — a line of text each is enough
+   to test with. **Save deck**, then **Share**.
+3. You get a six-letter code and a link. Open that link on your phone: it
+   should offer the deck and drop you on the category screen with it added.
+
+If **Share** says storage isn't configured, the bucket in step 6 wasn't
+created — make it and redeploy.
+
+---
+
+## Step 10 — Pair your phone for marking
 
 1. Laptop: open <https://dawghouseduel.com>, press **PLAY**, choose **Duel**,
    then **Say it out loud**. Carry on to the setup step — the pairing panel
@@ -270,6 +297,10 @@ dashboard. The artwork upload is the slow part of the first deploy.
 **Site shows an old version** — artwork is cached hard, the app never is (see
 [`_headers`](_headers)). Hard-refresh with Cmd-Shift-R.
 
+**Share says deck storage is not configured** — the R2 bucket from step 6
+doesn't exist, or the relay was deployed before it did. Create it, then
+`npx wrangler deploy` again.
+
 **One specific picture is broken** — its file extension probably doesn't match
 its actual contents, and `_headers` sets `nosniff` so the browser refuses to
 guess. Re-run `node tools/fetch-wiki-images.js <category>`; the fetcher checks
@@ -286,4 +317,15 @@ Nothing at this scale.
 - **Workers** — 100,000 requests a day free. A duel is a handful of small
   messages a second between two people.
 - **Durable Objects** — free tier, and a room only exists while somebody is
-  connected to it.
+  connected to it. Deck vote counters are one tiny object per published deck.
+- **R2** — 10 GB free. Pictures are scaled to 900px before they leave the
+  browser, so a published deck of forty is a few megabytes.
+
+One thing worth knowing: anyone with the link can publish a deck, and there
+are no accounts. The limits are 300 answers, 3 MB a picture, and the server
+keeps only the fields it can actually play. If something gets published you
+don't want hosted, delete it from the bucket:
+
+```bash
+npx wrangler r2 object delete dawghouse-duel-decks/deck/CODE.json
+```
