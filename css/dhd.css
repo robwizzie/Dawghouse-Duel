@@ -216,7 +216,11 @@ select.input option{background:var(--indigo-900);color:#fff}
 .welcome__pitch{margin:0;font-size:clamp(17px,2.1vw,28px);font-weight:600;line-height:1.45;color:rgba(255,255,255,.82)}
 .welcome__pitch b{color:var(--lime);font-weight:800}
 .welcome__acts{display:flex;flex-direction:column;gap:clamp(14px,2.2vh,22px);align-items:center;width:min(440px,100%)}
-.welcome__acts .btn{width:100%}
+/* One height down the stack. PLAY still leads — on the lime fill and a
+   bigger type size — rather than by being a different shape to its
+   neighbours. */
+.welcome__acts .btn{width:100%;min-height:clamp(58px,7vh,72px);padding-block:.35em}
+.welcome__acts .btn--huge{font-size:clamp(20px,2.2vw,30px)}
 .btn--huge{font-size:clamp(22px,2.8vw,38px);padding:.62em 1.4em}
 .welcome__how{background:none;border:0;cursor:pointer;color:rgba(255,255,255,.6);font-weight:700;
   letter-spacing:.16em;text-transform:uppercase;font-size:clamp(12px,1.2vw,15px);
@@ -921,10 +925,14 @@ body.is-typing .topbar__pair{display:none}
 .shot__arrow:disabled{opacity:.28;cursor:default;border-color:var(--indigo-600);color:#fff}
 .shot__arrow--prev{left:clamp(8px,2vw,26px)}
 .shot__arrow--next{right:clamp(8px,2vw,26px)}
+/* An SVG, not a "\00d7" glyph — the character sits off-centre in the font's
+   box and no amount of line-height fixes it reliably. */
 .shot__close{position:fixed;top:clamp(10px,2vh,22px);right:clamp(10px,2vw,26px);z-index:2;
   width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;
   background:rgba(23,23,76,.9);border:2px solid var(--indigo-600);color:#fff;
-  font-size:30px;line-height:1;cursor:pointer;transition:border-color .15s,color .15s}
+  padding:0;cursor:pointer;transition:border-color .15s,color .15s}
+.shot__close svg{width:22px;height:22px;display:block;fill:none;stroke:currentColor;
+  stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .shot__close:hover{border-color:var(--red);color:var(--red)}
 .recap__cell{cursor:zoom-in}
 
