@@ -113,21 +113,45 @@ It also unlocks audio, which browsers gate until the first click.
 | Disney Characters | 152 | 152 | Disney Wiki |
 | Animals | 170 | 170 | Wikipedia |
 | Star Wars | 147 | 147 | Wookieepedia |
-| Sitcom Characters | 135 | 135 | 29 per-show wikis |
+| Sitcom Characters | 103 | 103 | per-show wikis, live action only |
 | Pokémon | 179 | 179 | PokeAPI official artwork |
 | Video Game Characters | 89 | 89 | 40 franchise wikis |
-| Cartoon Characters | 89 | 89 | 15 network + show wikis |
+| Cartoon Characters | 232 | 232 | 68 network + show wikis |
 | Dog Breeds | 128 | 128 | Wikipedia |
 | NBA — Today | 129 | 129 | Wikipedia |
 | NBA — All-Time Greats | 115 | 115 | Wikipedia |
 | Attack on Titan | 46 | 46 | Attack on Titan Wiki |
 | SpongeBob | 37 | 37 | Encyclopedia SpongeBobia |
+| Celebrities | 97 | 97 | Wikipedia |
+| Streamers | 39 | 39 | Wikipedia |
+| Musicals | 102 | — | songs, no artwork by design |
 
-**1,529 pictures across thirteen categories — every answer has a picture.**
+**1,776 pictures across fifteen picture decks — every answer has a picture.**
+A sixteenth, Musicals, is deliberately text: songs, not artwork.
 
 Each is one file in `js/data/`, registered with a `<script>` tag in
 `index.html`. Difficulty tiers (`easy` / `mid` / `deep`) let the **deep cuts**
 toggle drop the hard third for a friendlier round.
+
+## The text deck
+
+**Musicals** is the one category with no pictures in it, and that is on
+purpose. A musical is almost always photographed as a poster or a playbill,
+and both have the answer printed across them — which makes for a very short
+round. Songs don't have that problem: everyone knows the number, far fewer
+people can place the show.
+
+So the board shows the song where the artwork usually goes, and the answer is
+the musical. Everything else is identical — same clocks, same rally, same
+pass, same recap, which shows the song on the tile and the show underneath.
+Picture modes are locked to Normal and say why, since there is no picture to
+put a silhouette on.
+
+Song *titles*, deliberately, not lyrics. A title is a name; lyrics are
+somebody's copyrighted text and not ours to ship.
+
+A deck becomes a text deck by setting `text: true` on the category and giving
+each item a `prompt`. Nothing else in the engine needs to know.
 
 ## Images
 
@@ -310,7 +334,7 @@ arriving from a video knows none of it, so setup is a sequence of single
 questions rather than one dense form:
 
 1. **How you want to play** — Duel, Online Duel, or Solo
-2. **Category** — a gallery of all eleven decks with cover art, answer counts,
+2. **Category** — a gallery of all sixteen decks with cover art, answer counts,
    and what you've played on each
 3. **Settings** — how answers get marked, names, clock; anything with a
    sensible default hides behind *More options*

@@ -1,0 +1,775 @@
+{
+ "tom-hanks": {
+  "answer": "Tom Hanks",
+  "matched": "Tom Hanks",
+  "via": "Tom Hanks",
+  "file": "TomHanksPrincEdw031223 (11 of 41) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Raph_PH"
+ },
+ "denzel-washington": {
+  "answer": "Denzel Washington",
+  "matched": "Denzel Washington",
+  "via": "Denzel Washington",
+  "file": "Denzel Washington at the 2025 Cannes Film Festival.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Gabriel Hutchinson"
+ },
+ "meryl-streep": {
+  "answer": "Meryl Streep",
+  "matched": "Meryl Streep",
+  "via": "Meryl Streep",
+  "file": "Meryl Streep- Press conference for the film \"The Devil Wears Prada 2\" - 55194765350 (cropped1).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Ministry of culture, sports and Tourism- Lee Jeong-woo"
+ },
+ "leonardo-dicaprio": {
+  "answer": "Leonardo DiCaprio",
+  "matched": "Leonardo DiCaprio",
+  "via": "Leonardo DiCaprio",
+  "file": "LeoPTABFI191125-28 (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Raph_PH"
+ },
+ "brad-pitt": {
+  "answer": "Brad Pitt",
+  "matched": "Brad Pitt",
+  "via": "Brad Pitt",
+  "file": "Brad Pitt-69858.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Harald Krichel"
+ },
+ "angelina-jolie": {
+  "answer": "Angelina Jolie",
+  "matched": "Angelina Jolie",
+  "via": "Angelina Jolie",
+  "file": "Angelina Jolie-643531 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Harald Krichel"
+ },
+ "will-smith": {
+  "answer": "Will Smith",
+  "matched": "Will Smith",
+  "via": "Will Smith",
+  "file": "TechCrunch Disrupt San Francisco 2019 - Day 1 (48834070763) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "TechCrunch"
+ },
+ "johnny-depp": {
+  "answer": "Johnny Depp",
+  "matched": "Johnny Depp",
+  "via": "Johnny Depp",
+  "file": "Johnny Depp 2020.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Harald Krichel"
+ },
+ "robert-downey-jr": {
+  "answer": "Robert Downey Jr.",
+  "matched": "Robert Downey Jr.",
+  "via": "Robert Downey Jr.",
+  "file": "RobertDowneyJr-byPhilipRomano7 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "PhilipRomano"
+ },
+ "scarlett-johansson": {
+  "answer": "Scarlett Johansson",
+  "matched": "Scarlett Johansson",
+  "via": "Scarlett Johansson",
+  "file": "Scarlett Johansson-8588.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Harald Krichel"
+ },
+ "chris-hemsworth": {
+  "answer": "Chris Hemsworth",
+  "matched": "Chris Hemsworth",
+  "via": "Chris Hemsworth",
+  "file": "Chris Hemsworth - Crime 101.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Kevin Paul"
+ },
+ "chris-evans": {
+  "answer": "Chris Evans",
+  "matched": "Chris Evans (actor)",
+  "via": "Chris Evans (actor)",
+  "file": "Chris Evans at the 2025 Toronto International Film Festival (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Sara Komatsu"
+ },
+ "ryan-reynolds": {
+  "answer": "Ryan Reynolds",
+  "matched": "Ryan Reynolds",
+  "via": "Ryan Reynolds",
+  "file": "Deadpool 2 Japan Premiere Red Carpet Ryan Reynolds (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Dick Thomas Johnson from Tokyo, Japan"
+ },
+ "dwayne-johnson": {
+  "answer": "Dwayne Johnson",
+  "matched": "Dwayne Johnson",
+  "via": "Dwayne Johnson",
+  "file": "Dwayne Johnson-1764 (4x5 cropped with moderate headroom).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Harald Krichel"
+ },
+ "jennifer-lawrence": {
+  "answer": "Jennifer Lawrence",
+  "matched": "Jennifer Lawrence",
+  "via": "Jennifer Lawrence",
+  "file": "Jennifer Lawrence in 2018.png",
+  "licence": "CC BY 3.0",
+  "by": "MTV International"
+ },
+ "emma-stone": {
+  "answer": "Emma Stone",
+  "matched": "Emma Stone",
+  "via": "Emma Stone",
+  "file": "Emma Stone at the 2025 Venice Film Festival-6313 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Harald Krichel"
+ },
+ "margot-robbie": {
+  "answer": "Margot Robbie",
+  "matched": "Margot Robbie",
+  "via": "Margot Robbie",
+  "file": "Margot Robbie at the Paris premiere of \"Wuthering Heights\".jpg",
+  "licence": "CC0",
+  "by": "Ondine Goat"
+ },
+ "zendaya": {
+  "answer": "Zendaya",
+  "matched": "Zendaya",
+  "via": "Zendaya",
+  "file": "Zendaya-byPhilipRomano.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "PhilipRomano"
+ },
+ "timothee-chalamet": {
+  "answer": "Timothée Chalamet",
+  "matched": "Timothée Chalamet",
+  "via": "Timothée Chalamet",
+  "file": "Timothée Chalamet-63482 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Harald Krichel"
+ },
+ "florence-pugh": {
+  "answer": "Florence Pugh",
+  "matched": "Florence Pugh",
+  "via": "Florence Pugh",
+  "file": "Florence Pugh at the 2024 Toronto International Film Festival 13 (cropped 2 – color adjusted).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Frank Sun"
+ },
+ "ryan-gosling": {
+  "answer": "Ryan Gosling",
+  "matched": "Ryan Gosling",
+  "via": "Ryan Gosling",
+  "file": "GoslingBFI081223 (22 of 30) (53388157347) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Raph_PH"
+ },
+ "keanu-reeves": {
+  "answer": "Keanu Reeves",
+  "matched": "Keanu Reeves",
+  "via": "Keanu Reeves",
+  "file": "Keanu Reeves at TIFF 2025 02 (Cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Gabriel Hutchinson"
+ },
+ "tom-cruise": {
+  "answer": "Tom Cruise",
+  "matched": "Tom Cruise",
+  "via": "Tom Cruise",
+  "file": "Tom Cruise at 53rd Saturn Awards 2026-01.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Kevin Paul"
+ },
+ "morgan-freeman": {
+  "answer": "Morgan Freeman",
+  "matched": "Morgan Freeman",
+  "via": "Morgan Freeman",
+  "file": "Morgan Freeman at The Pentagon on 2 August 2023 - 230802-D-PM193-3363 (cropped).jpg",
+  "licence": "Public domain",
+  "by": "U.S. Secretary of Defense"
+ },
+ "samuel-l-jackson": {
+  "answer": "Samuel L. Jackson",
+  "matched": "Samuel L. Jackson",
+  "via": "Samuel L. Jackson",
+  "file": "SamuelLJackson.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Philip Romano"
+ },
+ "viola-davis": {
+  "answer": "Viola Davis",
+  "matched": "Viola Davis",
+  "via": "Viola Davis",
+  "file": "Viola Davis at the Air Premiere at SXSW (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Nomoretitanic"
+ },
+ "idris-elba": {
+  "answer": "Idris Elba",
+  "matched": "Idris Elba",
+  "via": "Idris Elba",
+  "file": "Idris Elba A House of Dynamite-21 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Bryan Berlin"
+ },
+ "michael-b-jordan": {
+  "answer": "Michael B. Jordan",
+  "matched": "Michael B. Jordan",
+  "via": "Michael B. Jordan",
+  "file": "Michael B Jordan - Sinners (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Kevin Paul"
+ },
+ "chadwick-boseman": {
+  "answer": "Chadwick Boseman",
+  "matched": "Chadwick Boseman",
+  "via": "Chadwick Boseman",
+  "file": "Chadwick Boseman by Gage Skidmore July 2017 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Gage Skidmore"
+ },
+ "anne-hathaway": {
+  "answer": "Anne Hathaway",
+  "matched": "Anne Hathaway",
+  "via": "Anne Hathaway",
+  "file": "Anne Hathaway- Press conference for the film \"The Devil Wears Prada 2\" - 55194764955 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Ministry of culture, sports and Tourism- Lee Jeong-woo"
+ },
+ "natalie-portman": {
+  "answer": "Natalie Portman",
+  "matched": "Natalie Portman",
+  "via": "Natalie Portman",
+  "file": "NataliePortman.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Colleen Sturtevant"
+ },
+ "nicole-kidman": {
+  "answer": "Nicole Kidman",
+  "matched": "Nicole Kidman",
+  "via": "Nicole Kidman",
+  "file": "MKr384262 Nicole Kidman (Women In Motion, Cannes 2025).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Martin Kraft"
+ },
+ "julia-roberts": {
+  "answer": "Julia Roberts",
+  "matched": "Julia Roberts",
+  "via": "Julia Roberts",
+  "file": "Julia Roberts 2025.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Colleen Sturtevant"
+ },
+ "sandra-bullock": {
+  "answer": "Sandra Bullock",
+  "matched": "Sandra Bullock",
+  "via": "Sandra Bullock",
+  "file": "Sandra Bullock at The Egyptian Theatre 2024.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Kevin Paul"
+ },
+ "reese-witherspoon": {
+  "answer": "Reese Witherspoon",
+  "matched": "Reese Witherspoon",
+  "via": "Reese Witherspoon",
+  "file": "Reese Witherspoon (29144489784) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "GabboT"
+ },
+ "charlize-theron": {
+  "answer": "Charlize Theron",
+  "matched": "Charlize Theron",
+  "via": "Charlize Theron",
+  "file": "CharlizeTheron-byPhilipRomano2.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "PhilipRomano"
+ },
+ "cate-blanchett": {
+  "answer": "Cate Blanchett",
+  "matched": "Cate Blanchett",
+  "via": "Cate Blanchett",
+  "file": "Cate Blanchett-63298 (cropped 2).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Harald Krichel"
+ },
+ "kate-winslet": {
+  "answer": "Kate Winslet",
+  "matched": "Kate Winslet",
+  "via": "Kate Winslet",
+  "file": "KateWinslet (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Colleen Sturtevant"
+ },
+ "hugh-jackman": {
+  "answer": "Hugh Jackman",
+  "matched": "Hugh Jackman",
+  "via": "Hugh Jackman",
+  "file": "Hugh Jackman by Gage Skidmore 3.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Gage Skidmore"
+ },
+ "christian-bale": {
+  "answer": "Christian Bale",
+  "matched": "Christian Bale",
+  "via": "Christian Bale",
+  "file": "Christian Bale-7837.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Harald Krichel"
+ },
+ "matt-damon": {
+  "answer": "Matt Damon",
+  "matched": "Matt Damon",
+  "via": "Matt Damon",
+  "file": "MattDamon-byPhilipRomano2.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "PhilipRomano"
+ },
+ "ben-affleck": {
+  "answer": "Ben Affleck",
+  "matched": "Ben Affleck",
+  "via": "Ben Affleck",
+  "file": "Ben Affleck on the Red Carpet, SXSW 2023 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Nomoretitanic"
+ },
+ "george-clooney": {
+  "answer": "George Clooney",
+  "matched": "George Clooney",
+  "via": "George Clooney",
+  "file": "George Clooney Jay Kelly-19 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Bryan Berlin"
+ },
+ "jennifer-aniston": {
+  "answer": "Jennifer Aniston",
+  "matched": "Jennifer Aniston",
+  "via": "Jennifer Aniston",
+  "file": "JenniferAnistonHWoFFeb2012.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Angela George"
+ },
+ "courteney-cox": {
+  "answer": "Courteney Cox",
+  "matched": "Courteney Cox",
+  "via": "Courteney Cox",
+  "file": "Courteney Cox '10 PaleyFest.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Albert Domasin at https://www.flickr.com/photos/goalbert/"
+ },
+ "jim-carrey": {
+  "answer": "Jim Carrey",
+  "matched": "Jim Carrey",
+  "via": "Jim Carrey",
+  "file": "Jim Carrey 2020 (cropped2).jpg",
+  "licence": "CC BY 3.0",
+  "by": "SHOWTIME"
+ },
+ "adam-sandler": {
+  "answer": "Adam Sandler",
+  "matched": "Adam Sandler",
+  "via": "Adam Sandler",
+  "file": "Jackie Sandler Adam Sandler Jay Kelly-36 (3x4).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Bryan Berlin"
+ },
+ "steve-carell": {
+  "answer": "Steve Carell",
+  "matched": "Steve Carell",
+  "via": "Steve Carell",
+  "file": "Steve Carell - The 40-Year-Old-Virgin.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Kevin Paul"
+ },
+ "tina-fey": {
+  "answer": "Tina Fey",
+  "matched": "Tina Fey",
+  "via": "Tina Fey",
+  "file": "TinaFey-byPhilipRomano2.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "PhilipRomanoPhoto"
+ },
+ "amy-poehler": {
+  "answer": "Amy Poehler",
+  "matched": "Amy Poehler",
+  "via": "Amy Poehler",
+  "file": "Amy Poehler (53671989427) cropped.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Gage Skidmore from Surprise, AZ, United States of America"
+ },
+ "kevin-hart": {
+  "answer": "Kevin Hart",
+  "matched": "Kevin Hart",
+  "via": "Kevin Hart",
+  "file": "Kevin Hart 2014 (cropped 2).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Eva Rinaldi"
+ },
+ "eddie-murphy": {
+  "answer": "Eddie Murphy",
+  "matched": "Eddie Murphy",
+  "via": "Eddie Murphy",
+  "file": "Eddie Murphy by David Shankbone.jpg",
+  "licence": "Public domain",
+  "by": "David Shankbone"
+ },
+ "chris-rock": {
+  "answer": "Chris Rock",
+  "matched": "Chris Rock",
+  "via": "Chris Rock",
+  "file": "Chris Rock 2014.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "gdcgraphics"
+ },
+ "dave-chappelle": {
+  "answer": "Dave Chappelle",
+  "matched": "Dave Chappelle",
+  "via": "Dave Chappelle",
+  "file": "Dave Chappelle at Preamiere of \"Dave Chappelle In Real Life\" (2) (cropped 2).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Kolby Ari"
+ },
+ "jerry-seinfeld": {
+  "answer": "Jerry Seinfeld",
+  "matched": "Jerry Seinfeld",
+  "via": "Jerry Seinfeld",
+  "file": "Jerry Seinfeld 2023.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Zafrir Keren - צפריר קרן"
+ },
+ "oprah-winfrey": {
+  "answer": "Oprah Winfrey",
+  "matched": "Oprah Winfrey",
+  "via": "Oprah Winfrey",
+  "file": "Oprah Winfrey 2016.jpg",
+  "licence": "Public domain",
+  "by": "US Embassy South Africa"
+ },
+ "ellen-degeneres": {
+  "answer": "Ellen DeGeneres",
+  "matched": "Ellen DeGeneres",
+  "via": "Ellen DeGeneres",
+  "file": "Ellen DeGeneres-2009-enh5.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Ellen_DeGeneres-2009.jpg: Tulane Public Relations derivative work: Smalljim (talk)"
+ },
+ "jimmy-fallon": {
+  "answer": "Jimmy Fallon",
+  "matched": "Jimmy Fallon",
+  "via": "Jimmy Fallon",
+  "file": "Jimmy Fallon-TTL 4575 (11046141004) (5x7 cropped and rotated).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Montclair Film"
+ },
+ "jimmy-kimmel": {
+  "answer": "Jimmy Kimmel",
+  "matched": "Jimmy Kimmel",
+  "via": "Jimmy Kimmel",
+  "file": "Jimmy Kimmel June 2022.jpg",
+  "licence": "Public domain",
+  "by": "Erin Scott"
+ },
+ "conan-obrien": {
+  "answer": "Conan O’Brien",
+  "matched": "Conan O'Brien",
+  "via": "Conan O’Brien",
+  "file": "Conan O'Brien at the 2025 Sundance Film Festival 03 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Adam Chitayat"
+ },
+ "stephen-colbert": {
+  "answer": "Stephen Colbert",
+  "matched": "Stephen Colbert",
+  "via": "Stephen Colbert",
+  "file": "StephenColbert-byPhilipRomano.jpg",
+  "licence": "CC BY 4.0",
+  "by": "PhilipRomanoPhoto"
+ },
+ "john-oliver": {
+  "answer": "John Oliver",
+  "matched": "John Oliver",
+  "via": "John Oliver",
+  "file": "John Oliver November 2016.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Neil Grabowsky / Montclair Film Festival"
+ },
+ "trevor-noah": {
+  "answer": "Trevor Noah",
+  "matched": "Trevor Noah",
+  "via": "Trevor Noah",
+  "file": "Trevor Noah (53554114243) (portrait crop).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Web Summit Qatar"
+ },
+ "beyonce": {
+  "answer": "Beyoncé",
+  "matched": "Beyoncé",
+  "via": "Beyoncé",
+  "file": "Beyoncé - Tottenham Hotspur Stadium - 1st June 2023 (10 of 118) (52946364598) (best crop).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Raph_PH"
+ },
+ "taylor-swift": {
+  "answer": "Taylor Swift",
+  "matched": "Taylor Swift",
+  "via": "Taylor Swift",
+  "file": "Taylor Swift at the 2023 MTV Video Music Awards (3).png",
+  "licence": "CC BY 3.0",
+  "by": "iHeartRadioCA"
+ },
+ "rihanna": {
+  "answer": "Rihanna",
+  "matched": "Rihanna",
+  "via": "Rihanna",
+  "file": "Rihanna Fenty 2018.png",
+  "licence": "CC BY 3.0",
+  "by": "SIGMA"
+ },
+ "adele": {
+  "answer": "Adele",
+  "matched": "Adele",
+  "via": "Adele",
+  "file": "Adele 2016.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Marc E."
+ },
+ "lady-gaga": {
+  "answer": "Lady Gaga",
+  "matched": "Lady Gaga",
+  "via": "Lady Gaga",
+  "file": "Lady Gaga at Joe Biden's inauguration (cropped 5).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Carlos M. Vazquez II"
+ },
+ "ariana-grande": {
+  "answer": "Ariana Grande",
+  "matched": "Ariana Grande",
+  "via": "Ariana Grande",
+  "file": "Ariana Grande promoting Wicked (2024).jpg",
+  "licence": "CC BY 3.0",
+  "by": "Barbie Simons"
+ },
+ "billie-eilish": {
+  "answer": "Billie Eilish",
+  "matched": "Billie Eilish",
+  "via": "Billie Eilish",
+  "file": "BillieEilishO2140725-39 - 54665577407 (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Raph_PH"
+ },
+ "dua-lipa": {
+  "answer": "Dua Lipa",
+  "matched": "Dua Lipa",
+  "via": "Dua Lipa",
+  "file": "Dua Lipa-69798 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Harald Krichel"
+ },
+ "bruno-mars": {
+  "answer": "Bruno Mars",
+  "matched": "Bruno Mars",
+  "via": "Bruno Mars",
+  "file": "BrunoMars24KMagicWorldTourLive (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "slgckgc"
+ },
+ "ed-sheeran": {
+  "answer": "Ed Sheeran",
+  "matched": "Ed Sheeran",
+  "via": "Ed Sheeran",
+  "file": "Ed Sheeran-6886 (cropped 2).jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Harald Krichel"
+ },
+ "justin-bieber": {
+  "answer": "Justin Bieber",
+  "matched": "Justin Bieber",
+  "via": "Justin Bieber",
+  "file": "P20260719DT-1213 President Donald J. Trump and First Lady Melania Trump attend the FIFA World Cup Final (cropped 2).jpg",
+  "licence": "Public domain",
+  "by": "Daniel Torok"
+ },
+ "drake": {
+  "answer": "Drake",
+  "matched": "Drake (musician)",
+  "via": "Drake (musician)",
+  "file": "Drake at The Carter Effect 2017 (36818935200) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "GabboT"
+ },
+ "kendrick-lamar": {
+  "answer": "Kendrick Lamar",
+  "matched": "Kendrick Lamar",
+  "via": "Kendrick Lamar",
+  "file": "KendrickSZASPurs230725-144 (cropped) desaturated.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Raph_PH"
+ },
+ "jay-z": {
+  "answer": "Jay-Z",
+  "matched": "Jay-Z",
+  "via": "Jay-Z"
+ },
+ "eminem": {
+  "answer": "Eminem",
+  "matched": "Eminem",
+  "via": "Eminem",
+  "file": "Eminem 2021 Color Corrected.jpg",
+  "licence": "CC0",
+  "by": "Brendan_linden"
+ },
+ "snoop-dogg": {
+  "answer": "Snoop Dogg",
+  "matched": "Snoop Dogg",
+  "via": "Snoop Dogg",
+  "file": "Snoop Dogg, WrestleMania XL (cropped) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Diego Serrano"
+ },
+ "post-malone": {
+  "answer": "Post Malone",
+  "matched": "Post Malone",
+  "via": "Post Malone",
+  "file": "Post Malone July 2021 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Chrisallmeid"
+ },
+ "the-weeknd": {
+  "answer": "The Weeknd",
+  "matched": "The Weeknd",
+  "via": "The Weeknd",
+  "file": "The Weeknd Portrait by Brian Ziff.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Brian Ziff"
+ },
+ "harry-styles": {
+  "answer": "Harry Styles",
+  "matched": "Harry Styles",
+  "via": "Harry Styles",
+  "file": "HarryStylesWembley170623 (65 of 93) (52982678051) (cropped 2).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Raph_PH"
+ },
+ "olivia-rodrigo": {
+  "answer": "Olivia Rodrigo",
+  "matched": "Olivia Rodrigo",
+  "via": "Olivia Rodrigo",
+  "file": "Glasto2025-546 (cropped) 2.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Raph_PH"
+ },
+ "doja-cat": {
+  "answer": "Doja Cat",
+  "matched": "Doja Cat",
+  "via": "Doja Cat",
+  "file": "Doja Cat x Amazon1.1 (cropped).jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Nate the Director"
+ },
+ "sza": {
+  "answer": "SZA",
+  "matched": "SZA",
+  "via": "SZA",
+  "file": "KendrickSZASPurs230725-19 - 54683179509 (cropped) (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Raph_PH"
+ },
+ "bad-bunny": {
+  "answer": "Bad Bunny",
+  "matched": "Bad Bunny",
+  "via": "Bad Bunny",
+  "file": "Bad Bunny 2019 by Glenn Francis (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Toglenn"
+ },
+ "shakira": {
+  "answer": "Shakira",
+  "matched": "Shakira",
+  "via": "Shakira",
+  "file": "2023-11-16 Gala de los Latin Grammy, 03 (cropped)02.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Junta de Andalucía"
+ },
+ "jennifer-lopez": {
+  "answer": "Jennifer Lopez",
+  "matched": "Jennifer Lopez",
+  "via": "Jennifer Lopez",
+  "file": "Jennifer Lopez at the 2025 Sundance Film Festival (cropped 3).jpg",
+  "licence": "CC BY 4.0",
+  "by": "Everwest"
+ },
+ "madonna": {
+  "answer": "Madonna",
+  "matched": "Madonna",
+  "via": "Madonna",
+  "file": "MadonnaO2171023 (97 of 133) (53269593787) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Raph_PH"
+ },
+ "elton-john": {
+  "answer": "Elton John",
+  "matched": "Elton John",
+  "via": "Elton John",
+  "file": "EltonDocBFILFF101024 (4 of 17) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Raph_PH"
+ },
+ "paul-mccartney": {
+  "answer": "Paul McCartney",
+  "matched": "Paul McCartney",
+  "via": "Paul McCartney",
+  "file": "MaccaLyricsRFH051121 (15 of 18) (updated) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Raph_PH"
+ },
+ "mick-jagger": {
+  "answer": "Mick Jagger",
+  "matched": "Mick Jagger",
+  "via": "Mick Jagger",
+  "file": "RStonesHydePark030722 (49 of 125) (52193656268) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Raph_PH"
+ },
+ "bruce-springsteen": {
+  "answer": "Bruce Springsteen",
+  "matched": "Bruce Springsteen",
+  "via": "Bruce Springsteen",
+  "file": "Bruce Springsteen Springsteen-79 (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Bryan Berlin"
+ },
+ "stevie-wonder": {
+  "answer": "Stevie Wonder",
+  "matched": "Stevie Wonder",
+  "via": "Stevie Wonder",
+  "file": "SWonderBSTHyde060719-72 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Raph_PH"
+ },
+ "dolly-parton": {
+  "answer": "Dolly Parton",
+  "matched": "Dolly Parton",
+  "via": "Dolly Parton",
+  "file": "Dolly Parton in 2022.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Peabody Awards"
+ },
+ "willie-nelson": {
+  "answer": "Willie Nelson",
+  "matched": "Willie Nelson",
+  "via": "Willie Nelson",
+  "file": "Willie UK2K7 2.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Robbiework at English Wikipedia (Original text: Robbiework (talk))"
+ },
+ "kanye-west": {
+  "answer": "Kanye West",
+  "matched": "Kanye West",
+  "via": "Kanye West",
+  "file": "Kanye West at the 2009 Tribeca Film Festival (crop 2).jpg",
+  "licence": "Public domain",
+  "by": "David Shankbone"
+ }
+}

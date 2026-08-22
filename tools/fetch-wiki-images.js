@@ -340,6 +340,15 @@ async function credits(wiki, files) {
     console.log('\nResolved to a different page title — worth an eyeball:');
     odd.forEach(s => console.log('  ' + s.answer.padEnd(26) + ' -> ' + s.matched));
   }
+  /* A signature or a logo has the answer written across it, which makes the
+     round unplayable. Wikipedia falls back to one when a person has no free
+     photograph — Pokimane, Technoblade and Corpse Husband all did. */
+    const TEXTY = /signature|autograph|[-_ ]sig[-_. ]|logo|wordmark|emblem|monogram/i;
+  const texty = Object.values(sources).filter(s => TEXTY.test(decodeURIComponent(s.file || s.url || '')));
+  if (texty.length) {
+    console.log('\nLooks like a signature or logo, not a picture — these spell the answer:');
+    texty.forEach(s => console.log('  ' + s.answer.padEnd(26) + decodeURIComponent((s.file || s.url || '').split('/').pop()).slice(0, 60)));
+  }
   if (missing.length) console.log('\nNo image found for:\n  ' + missing.join('\n  '));
   const tally = {};
   Object.values(sources).forEach(s => { if (s.licence) tally[s.licence] = (tally[s.licence] || 0) + 1; });

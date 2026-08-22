@@ -41,7 +41,10 @@
     lastUp: $('lastUp'), lastUpImg: $('lastUpImg'),
     lastUpEyebrow: $('lastUpEyebrow'), lastUpName: $('lastUpName'),
     recap: $('recap'), recapToggle: $('recapToggle'), recapLegend: $('recapLegend'),
+    boardPrompt: $('boardPrompt'), boardPromptText: $('boardPromptText'),
+    boardPromptKicker: $('boardPromptKicker'),
     ovlShot: $('ovlShot'), shotImg: $('shotImg'), shotName: $('shotName'),
+    shotPrompt: $('shotPrompt'),
     shotBadge: $('shotBadge'), shotMeta: $('shotMeta'), shotCount: $('shotCount'),
     shotPrev: $('shotPrev'), shotNext: $('shotNext'), shotClose: $('shotClose'),
     muteBtn: $('muteBtn'), muteLabel: $('muteLabel'),
@@ -231,7 +234,8 @@
     superheroes: 'spider-man', disney: 'mickey-mouse', animals: 'lion',
     starwars: 'darth-vader', sitcoms: 'michael-scott', videogames: 'mario',
     cartoons: 'bugs-bunny', pokemon: 'pikachu', dogs: 'golden-retriever',
-    'nba-today': 'lebron-james', 'nba-goats': 'michael-jordan'
+    'nba-today': 'lebron-james', 'nba-goats': 'michael-jordan',
+    celebrities: 'tom-hanks', streamers: 'mrbeast'
   };
 
   /* Deliberately no defaults: an option that is already selected reads as a
@@ -301,7 +305,8 @@
       card.className = 'catcard';
       card.dataset.cat = cat.id;
 
-      var withArt = cat.items.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
+      var withArt = cat.text ? cat.items.length
+                 : cat.items.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
       card.innerHTML =
         '<div class="catcard__art"></div>' +
         '<div class="catcard__body">' +
@@ -313,9 +318,17 @@
       card.querySelector('.catcard__name').textContent = cat.name;
       card.querySelector('.catcard__blurb').textContent = cat.blurb || '';
 
+      /* A text deck has no artwork to lead with, so the card carries a mark
+         and the deck's own colour instead of an empty grey box. */
+      if (cat.text) {
+        card.classList.add('catcard--text');
+        card.querySelector('.catcard__art').innerHTML =
+          '<span class="catcard__glyph">\u266a</span>';
+      }
+
       var coverSlug = COVERS[cat.id];
       var cover = (coverSlug && cat.items.filter(function (i) { return i.slug === coverSlug; })[0]) || cat.items[0];
-      if (cover) {
+      if (!cat.text && cover) {
         Store.resolve(cat.id, cover).then(function (url) {
           if (!url) return;
           var img = new Image();
@@ -455,6 +468,17 @@
     var cat = catById(el.catSelect.value);
     var opt = el.revealModeSelect.querySelector('option[value="silhouette"]');
     if (!opt) return;
+
+    /* A deck with no pictures can't have a picture mode. Lock the control to
+       Normal and say why, rather than offering settings that do nothing. */
+    if (cat.text) {
+      el.revealModeSelect.value = 'normal';
+      el.revealModeSelect.disabled = true;
+      if (el.silhouetteNote) el.silhouetteNote.textContent = 'This deck is songs, not pictures — picture modes don\u2019t apply.';
+      return;
+    }
+    el.revealModeSelect.disabled = false;
+
     var ok = !!cat.silhouette;
     opt.disabled = !ok;
     opt.textContent = ok ? 'Silhouette' : 'Silhouette (needs cut-out artwork)';
@@ -468,7 +492,8 @@
 
   function refreshMediaCount() {
     var cat = catById(el.catSelect.value);
-    var n = cat.items.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
+    var n = cat.text ? cat.items.length
+            : cat.items.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
     el.mediaCount.textContent = n + '/' + cat.items.length;
   }
 
@@ -545,6 +570,7 @@
   /* ══════════════════ DUEL ══════════════════ */
   function buildQueue() {
     var items = pool(G.cat, cfg.deep);
+    if (G.cat.text) return shuffle(items.slice());   // nothing to resolve, all playable
     /* A picture with no alpha channel is a black rectangle in silhouette
        mode, so those answers sit the round out rather than being unguessable. */
     if ((cfg.pictureMode || 'normal') === 'silhouette' && G.cat.silhouette) {
@@ -564,6 +590,7 @@
     pods[0].root.classList.remove('is-dead');
     pods[1].root.classList.remove('is-dead');
     el.reveal.hidden = el.penaltyPop.hidden = el.boardPeek.hidden = true;
+    el.boardPrompt.hidden = true;
     document.body.classList.remove('is-revealing');
     stopTicker();
     clearTimeout(G.introTimer);
@@ -757,7 +784,7 @@
     G.curLogged = true;                      // is still one line, not two
 
     var rec = {
-      slug: item.slug, name: item.name, outcome: outcome,
+      slug: item.slug, name: item.name, outcome: outcome, prompt: item.prompt || null,
       who: G.solo ? -1 : G.active, wrongs: G.curWrongs
     };
     G.history.push(rec);
@@ -932,6 +959,12 @@
     el.lastUp.hidden = false;
     el.lastUpImg.hidden = true;
     el.lastUpImg.removeAttribute('src');
+    if (last.prompt) {                       // a text deck has nothing to show
+      el.lastUpEyebrow.textContent = last.outcome === 'timeout'
+        ? 'TIME RAN OUT ON \u201c' + last.prompt + '\u201d'
+        : '\u201c' + last.prompt + '\u201d WAS FROM';
+      return;
+    }
     Store.resolve(G.cat.id, { slug: last.slug, name: last.name }).then(function (url) {
       if (!url || el.lastUpName.textContent !== last.name) return;
       el.lastUpImg.onerror = function () { el.lastUpImg.hidden = true; };
@@ -977,14 +1010,21 @@
         (h.who >= 0 ? ' recap__cell--p' + h.who : '');
       (function (n) { cell.addEventListener('click', function () { openShot(n); }); })(i);
 
-      var img = document.createElement('img');
-      img.className = 'recap__img';
-      img.alt = h.name;
-      img.loading = 'lazy';
-      cell.appendChild(img);
-      Store.resolve(G.cat.id, { slug: h.slug, name: h.name }).then(function (url) {
-        if (url) img.src = url;
-      });
+      if (h.prompt) {
+        var pr = document.createElement('span');
+        pr.className = 'recap__prompt';
+        pr.textContent = h.prompt;
+        cell.appendChild(pr);
+      } else {
+        var img = document.createElement('img');
+        img.className = 'recap__img';
+        img.alt = h.name;
+        img.loading = 'lazy';
+        cell.appendChild(img);
+        Store.resolve(G.cat.id, { slug: h.slug, name: h.name }).then(function (url) {
+          if (url) img.src = url;
+        });
+      }
 
       var tag = document.createElement('span');
       tag.className = 'recap__tag';
@@ -1061,10 +1101,18 @@
     el.shotImg.removeAttribute('src');
     el.shotImg.alt = h.name;
     var stamp = ++openShot._n;
-    Store.resolve(G.cat.id, { slug: h.slug, name: h.name }).then(function (url) {
-      if (stamp !== openShot._n) return;          // arrowed on before this landed
-      if (url) el.shotImg.src = url;
-    });
+    if (h.prompt) {
+      el.shotImg.hidden = true;
+      el.shotPrompt.textContent = h.prompt;
+      el.shotPrompt.hidden = false;
+    } else {
+      el.shotPrompt.hidden = true;
+      el.shotImg.hidden = false;
+      Store.resolve(G.cat.id, { slug: h.slug, name: h.name }).then(function (url) {
+        if (stamp !== openShot._n) return;        // arrowed on before this landed
+        if (url) el.shotImg.src = url;
+      });
+    }
 
     el.ovlShot.hidden = false;
     document.body.classList.add('is-shot');
@@ -1249,6 +1297,20 @@
     el.boardCardClue.textContent = item.clue;
     el.boardClue.textContent = cfg.clue ? item.clue : '';
     renderPeek(item);
+
+    /* A text deck puts the prompt on the board instead of a picture, and
+       there is nothing to go and resolve. */
+    if (G.cat.text) {
+      el.boardPromptKicker.textContent = G.cat.promptLabel || 'SONG';
+      el.boardPromptText.textContent = item.prompt || item.name;
+      el.boardPrompt.hidden = false;
+      el.boardImg.hidden = el.boardCard.hidden = true;
+      el.boardImg.removeAttribute('src');
+      lastImageUrl = null;
+      showItem._n++;
+      return;
+    }
+    el.boardPrompt.hidden = true;
 
     var stamp = ++showItem._n;
     Store.resolve(G.cat.id, item).then(function (url) {

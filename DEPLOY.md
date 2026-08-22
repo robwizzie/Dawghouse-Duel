@@ -136,7 +136,7 @@ From now on **every push to `main` redeploys the site within a minute.** Nothing
 else to do, ever.
 
 **If you only wanted the site, stop here.** Typed duels, Solo, the daily
-challenge, all thirteen categories, silhouette and zoom modes — all working. What needs the relay is
+challenge, all sixteen categories, silhouette and zoom modes — all working. What needs the relay is
 Online Duel and marking from a phone.
 
 ---
