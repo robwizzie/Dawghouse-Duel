@@ -4,6 +4,9 @@
    Name the character, not the show — a show's own wiki page leads with
    its logo, which has the answer written across it. Characters it is.
 
+   Live action only. The animated sitcoms that used to live here moved
+   to the Cartoons deck, where people actually look for them.
+
    Each answer carries its own `wiki`, because sitcom characters live on
    one wiki per show. `show` is context for the host, not an answer.
    Artwork: node tools/fetch-wiki-images.js sitcoms
@@ -43,18 +46,6 @@ window.DHD_CATEGORIES.push({
     {slug:'newman',          name:'Newman',          alt:[],                    show:'Seinfeld',          tier:'mid',  clue:'Postal worker across the hall. Hello, Jerry.',          wiki:'seinfeld.fandom.com'},
     {slug:'frank-costanza',  name:'Frank Costanza',  alt:[],                    show:'Seinfeld',          tier:'deep', clue:'Serenity now. Inventor of Festivus.',                   wiki:'seinfeld.fandom.com'},
 
-    /* ── THE SIMPSONS ── */
-    {slug:'homer-simpson',   name:'Homer Simpson',   alt:['Homer'],             show:'The Simpsons',      tier:'easy', clue:'Safety inspector, sector 7-G. D\'oh.',                   wiki:'simpsons.fandom.com'},
-    {slug:'marge-simpson',   name:'Marge Simpson',   alt:['Marge'],             show:'The Simpsons',      tier:'easy', clue:'Blue tower of hair and infinite patience.',             wiki:'simpsons.fandom.com'},
-    {slug:'bart-simpson',    name:'Bart Simpson',    alt:['Bart'],              show:'The Simpsons',      tier:'easy', clue:'Eat my shorts.',                                        wiki:'simpsons.fandom.com'},
-    {slug:'lisa-simpson',    name:'Lisa Simpson',    alt:['Lisa'],              show:'The Simpsons',      tier:'easy', clue:'Saxophone, vegetarian, smartest one in Springfield.',   wiki:'simpsons.fandom.com'},
-    {slug:'mr-burns',        name:'Mr. Burns',       alt:['Montgomery Burns','Burns'],show:'The Simpsons',tier:'easy', clue:'Excellent. Releases the hounds.',                        wiki:'simpsons.fandom.com'},
-    {slug:'ned-flanders',    name:'Ned Flanders',    alt:['Flanders'],          show:'The Simpsons',      tier:'easy', clue:'Okily dokily, neighbourino.',                           wiki:'simpsons.fandom.com'},
-    {slug:'krusty-the-clown',name:'Krusty the Clown',alt:['Krusty'],            show:'The Simpsons',      tier:'mid',  clue:'Green hair, hacking cough, endless merchandise.',       wiki:'simpsons.fandom.com'},
-    {slug:'milhouse',        name:'Milhouse',        alt:['Milhouse Van Houten'],show:'The Simpsons',     tier:'mid',  clue:'Blue hair, thick glasses, everything is coming up him.',wiki:'simpsons.fandom.com'},
-    {slug:'ralph-wiggum',    name:'Ralph Wiggum',    alt:['Ralph'],             show:'The Simpsons',      tier:'mid',  clue:'Me fail English? That\'s unpossible.',                   wiki:'simpsons.fandom.com'},
-    {slug:'moe-szyslak',     name:'Moe Szyslak',     alt:['Moe'],               show:'The Simpsons',      tier:'mid',  clue:'Runs the tavern, takes the prank calls badly.',         wiki:'simpsons.fandom.com'},
-    {slug:'principal-skinner',name:'Principal Skinner',alt:['Seymour Skinner','Skinner'],show:'The Simpsons',tier:'deep',clue:'Steamed hams. Lives with his mother.',                wiki:'simpsons.fandom.com'},
 
     /* ── PARKS AND RECREATION ── */
     {slug:'leslie-knope',    name:'Leslie Knope',    alt:['Leslie','Amy Poehler'],show:'Parks and Recreation',tier:'easy',clue:'Pawnee Parks Department. Waffles and binders.',      wiki:'parksandrecreation.fandom.com'},
@@ -99,27 +90,8 @@ window.DHD_CATEGORIES.push({
     {slug:'dee-reynolds',    name:'Dee Reynolds',    alt:['Dee','Sweet Dee'],   show:"It's Always Sunny in Philadelphia",tier:'deep',clue:'Aspiring actress. The gang calls her a bird.', wiki:'itsalwayssunny.fandom.com',
       image:'https://static.wikia.nocookie.net/itsalwayssunny/images/3/32/Sweetdee.jpg/revision/latest/scale-to-width-down/700'},
 
-    /* ── SOUTH PARK ── */
-    {slug:'eric-cartman',    name:'Eric Cartman',    alt:['Cartman'],           show:'South Park',        tier:'easy', clue:'Respect my authoritah.',                                wiki:'southpark.fandom.com'},
-    {slug:'stan-marsh',      name:'Stan Marsh',      alt:['Stan'],              show:'South Park',        tier:'easy', clue:'Blue hat with a red pom-pom. The normal one.',           wiki:'southpark.fandom.com'},
-    {slug:'kyle-broflovski', name:'Kyle Broflovski', alt:['Kyle'],              show:'South Park',        tier:'easy', clue:'Green ushanka. Cartman\'s permanent target.',            wiki:'southpark.fandom.com'},
-    {slug:'kenny-mccormick', name:'Kenny McCormick', alt:['Kenny'],             show:'South Park',        tier:'easy', clue:'Orange parka. You can\'t make out a word.',              wiki:'southpark.fandom.com'},
-    {slug:'butters-stotch',  name:'Butters',         alt:['Butters Stotch','Leopold Stotch'],show:'South Park',tier:'mid',clue:'Oh hamburgers. Grounded again.',                      wiki:'southpark.fandom.com'},
-    {slug:'randy-marsh',     name:'Randy Marsh',     alt:['Randy'],             show:'South Park',        tier:'mid',  clue:'Geologist, Tegridy Farms, dad of the year he is not.',  wiki:'southpark.fandom.com'},
 
-    /* ── FAMILY GUY ── */
-    {slug:'peter-griffin',   name:'Peter Griffin',   alt:['Peter'],             show:'Family Guy',        tier:'easy', clue:'Green trousers, white shirt, hehehehe.',                wiki:'familyguy.fandom.com'},
-    {slug:'stewie-griffin',  name:'Stewie Griffin',  alt:['Stewie'],            show:'Family Guy',        tier:'easy', clue:'Football-shaped head, English accent, wants his mother dead.', wiki:'familyguy.fandom.com'},
-    {slug:'brian-griffin',   name:'Brian Griffin',   alt:['Brian'],             show:'Family Guy',        tier:'easy', clue:'The dog. Writes a novel nobody reads. Drinks martinis.',wiki:'familyguy.fandom.com'},
-    {slug:'lois-griffin',    name:'Lois Griffin',    alt:['Lois'],              show:'Family Guy',        tier:'mid',  clue:'Red hair, piano lessons, married far below herself.',   wiki:'familyguy.fandom.com'},
-    {slug:'glenn-quagmire',  name:'Quagmire',        alt:['Glenn Quagmire'],    show:'Family Guy',        tier:'mid',  clue:'Giggity.',                                              wiki:'familyguy.fandom.com'},
-    {slug:'meg-griffin',     name:'Meg Griffin',     alt:['Meg'],               show:'Family Guy',        tier:'mid',  clue:'Pink hat, glasses, shut up Meg.',                       wiki:'familyguy.fandom.com'},
 
-    /* ── KING OF THE HILL ── */
-    {slug:'hank-hill',       name:'Hank Hill',       alt:['Hank'],              show:'King of the Hill',  tier:'mid',  clue:'Propane and propane accessories. I tell you hwhat.',    wiki:'kingofthehill.fandom.com'},
-    {slug:'bobby-hill',      name:'Bobby Hill',      alt:['Bobby'],             show:'King of the Hill',  tier:'mid',  clue:'That boy ain\'t right.',                                wiki:'kingofthehill.fandom.com'},
-    {slug:'dale-gribble',    name:'Dale Gribble',    alt:['Dale'],              show:'King of the Hill',  tier:'deep', clue:'Sunglasses, cap, exterminator, deep conspiracy theorist.',wiki:'kingofthehill.fandom.com'},
-    {slug:'boomhauer',       name:'Boomhauer',       alt:[],                    show:'King of the Hill',  tier:'deep', clue:'Dang ol\' talk so fast man, you can\'t tell what he\'s sayin\'.', wiki:'kingofthehill.fandom.com'},
 
     /* ── BOB'S BURGERS ── */
     {slug:'bob-belcher',     name:'Bob Belcher',     alt:['Bob'],               show:"Bob's Burgers",     tier:'mid',  clue:'Moustache, apron, burger of the day.',                  wiki:'bobs-burgers.fandom.com'},
@@ -128,12 +100,6 @@ window.DHD_CATEGORIES.push({
     {slug:'gene-belcher',    name:'Gene Belcher',    alt:['Gene'],              show:"Bob's Burgers",     tier:'deep', clue:'Yellow shirt and a keyboard he will not stop playing.', wiki:'bobs-burgers.fandom.com'},
     {slug:'linda-belcher',   name:'Linda Belcher',   alt:['Linda'],             show:"Bob's Burgers",     tier:'deep', clue:'Alriiiight. Red glasses and a glass of wine.',          wiki:'bobs-burgers.fandom.com'},
 
-    /* ── FUTURAMA ── */
-    {slug:'bender',          name:'Bender',          alt:['Bender Rodriguez'],  show:'Futurama',          tier:'easy', clue:'Bite my shiny metal ass.',                              wiki:'futurama.fandom.com'},
-    {slug:'philip-fry',      name:'Fry',             alt:['Philip J. Fry'],     show:'Futurama',          tier:'mid',  clue:'Delivery boy, frozen in 1999, own grandfather.',        wiki:'futurama.fandom.com'},
-    {slug:'turanga-leela',   name:'Leela',           alt:['Turanga Leela'],     show:'Futurama',          tier:'mid',  clue:'One eye, purple ponytail, captain of the ship.',        wiki:'futurama.fandom.com'},
-    {slug:'zoidberg',        name:'Zoidberg',        alt:['Dr. Zoidberg'],      show:'Futurama',          tier:'mid',  clue:'Lobster doctor. Why not Zoidberg?',                     wiki:'futurama.fandom.com'},
-    {slug:'professor-farnsworth',name:'Professor Farnsworth',alt:['Farnsworth'],show:'Futurama',          tier:'deep', clue:'Good news, everyone.',                                  wiki:'futurama.fandom.com'},
 
     /* ── CHEERS & FRASIER ── */
     {slug:'sam-malone',      name:'Sam Malone',      alt:['Sam'],               show:'Cheers',            tier:'mid',  clue:'Ex-ballplayer behind the bar where everybody knows your name.', wiki:'cheers.fandom.com'},

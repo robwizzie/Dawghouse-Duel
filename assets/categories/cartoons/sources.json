@@ -532,5 +532,899 @@
   "matched": "Beast Boy",
   "via": "Beast Boy",
   "wiki": "teentitans.fandom.com"
+ },
+ "homer-simpson": {
+  "answer": "Homer Simpson",
+  "matched": "Homer Simpson",
+  "via": "Homer Simpson",
+  "wiki": "simpsons.fandom.com"
+ },
+ "marge-simpson": {
+  "answer": "Marge Simpson",
+  "matched": "Marge Simpson",
+  "via": "Marge Simpson",
+  "wiki": "simpsons.fandom.com"
+ },
+ "bart-simpson": {
+  "answer": "Bart Simpson",
+  "matched": "Bart Simpson",
+  "via": "Bart Simpson",
+  "wiki": "simpsons.fandom.com"
+ },
+ "lisa-simpson": {
+  "answer": "Lisa Simpson",
+  "matched": "Lisa Simpson",
+  "via": "Lisa Simpson",
+  "wiki": "simpsons.fandom.com"
+ },
+ "mr-burns": {
+  "answer": "Mr. Burns",
+  "matched": "Charles Montgomery Burns",
+  "via": "Burns",
+  "wiki": "simpsons.fandom.com"
+ },
+ "ned-flanders": {
+  "answer": "Ned Flanders",
+  "matched": "Ned Flanders",
+  "via": "Ned Flanders",
+  "wiki": "simpsons.fandom.com"
+ },
+ "krusty-the-clown": {
+  "answer": "Krusty the Clown",
+  "matched": "Krusty the Clown",
+  "via": "Krusty the Clown",
+  "wiki": "simpsons.fandom.com"
+ },
+ "milhouse": {
+  "answer": "Milhouse",
+  "matched": "Milhouse Van Houten",
+  "via": "Milhouse",
+  "wiki": "simpsons.fandom.com"
+ },
+ "ralph-wiggum": {
+  "answer": "Ralph Wiggum",
+  "matched": "Ralph Wiggum",
+  "via": "Ralph Wiggum",
+  "wiki": "simpsons.fandom.com"
+ },
+ "moe-szyslak": {
+  "answer": "Moe Szyslak",
+  "matched": "Moe Szyslak",
+  "via": "Moe Szyslak",
+  "wiki": "simpsons.fandom.com"
+ },
+ "principal-skinner": {
+  "answer": "Principal Skinner",
+  "matched": "Seymour Skinner",
+  "via": "Principal Skinner",
+  "wiki": "simpsons.fandom.com"
+ },
+ "eric-cartman": {
+  "answer": "Eric Cartman",
+  "matched": "Eric Cartman",
+  "via": "Eric Cartman",
+  "wiki": "southpark.fandom.com"
+ },
+ "stan-marsh": {
+  "answer": "Stan Marsh",
+  "matched": "Stan Marsh",
+  "via": "Stan Marsh",
+  "wiki": "southpark.fandom.com"
+ },
+ "kyle-broflovski": {
+  "answer": "Kyle Broflovski",
+  "matched": "Kyle Broflovski",
+  "via": "Kyle Broflovski",
+  "wiki": "southpark.fandom.com"
+ },
+ "kenny-mccormick": {
+  "answer": "Kenny McCormick",
+  "matched": "Kenny McCormick",
+  "via": "Kenny McCormick",
+  "wiki": "southpark.fandom.com"
+ },
+ "butters-stotch": {
+  "answer": "Butters",
+  "matched": "Butters Stotch",
+  "via": "Butters",
+  "wiki": "southpark.fandom.com"
+ },
+ "randy-marsh": {
+  "answer": "Randy Marsh",
+  "matched": "Randy Marsh",
+  "via": "Randy Marsh",
+  "wiki": "southpark.fandom.com"
+ },
+ "peter-griffin": {
+  "answer": "Peter Griffin",
+  "matched": "Peter Griffin",
+  "via": "Peter Griffin",
+  "wiki": "familyguy.fandom.com"
+ },
+ "stewie-griffin": {
+  "answer": "Stewie Griffin",
+  "matched": "Stewie Griffin",
+  "via": "Stewie Griffin",
+  "wiki": "familyguy.fandom.com"
+ },
+ "brian-griffin": {
+  "answer": "Brian Griffin",
+  "matched": "Brian Griffin",
+  "via": "Brian Griffin",
+  "wiki": "familyguy.fandom.com"
+ },
+ "lois-griffin": {
+  "answer": "Lois Griffin",
+  "matched": "Lois Griffin",
+  "via": "Lois Griffin",
+  "wiki": "familyguy.fandom.com"
+ },
+ "glenn-quagmire": {
+  "answer": "Quagmire",
+  "matched": "Glenn Quagmire",
+  "via": "Quagmire",
+  "wiki": "familyguy.fandom.com"
+ },
+ "meg-griffin": {
+  "answer": "Meg Griffin",
+  "matched": "Meg Griffin",
+  "via": "Meg Griffin",
+  "wiki": "familyguy.fandom.com"
+ },
+ "hank-hill": {
+  "answer": "Hank Hill",
+  "matched": "Hank Hill",
+  "via": "Hank Hill",
+  "wiki": "kingofthehill.fandom.com"
+ },
+ "bobby-hill": {
+  "answer": "Bobby Hill",
+  "matched": "Bobby Hill",
+  "via": "Bobby Hill",
+  "wiki": "kingofthehill.fandom.com"
+ },
+ "dale-gribble": {
+  "answer": "Dale Gribble",
+  "matched": "Dale Gribble",
+  "via": "Dale Gribble",
+  "wiki": "kingofthehill.fandom.com"
+ },
+ "boomhauer": {
+  "answer": "Boomhauer",
+  "matched": "Jeff Boomhauer",
+  "via": "Boomhauer",
+  "wiki": "kingofthehill.fandom.com"
+ },
+ "bender": {
+  "answer": "Bender",
+  "matched": "Bender Bending Rodríguez",
+  "via": "Bender",
+  "wiki": "futurama.fandom.com"
+ },
+ "philip-fry": {
+  "answer": "Fry",
+  "matched": "Philip J. Fry",
+  "via": "Fry",
+  "wiki": "futurama.fandom.com"
+ },
+ "turanga-leela": {
+  "answer": "Leela",
+  "matched": "Turanga Leela",
+  "via": "Leela",
+  "wiki": "futurama.fandom.com"
+ },
+ "zoidberg": {
+  "answer": "Zoidberg",
+  "matched": "John A. Zoidberg",
+  "via": "Dr. Zoidberg",
+  "wiki": "futurama.fandom.com"
+ },
+ "professor-farnsworth": {
+  "answer": "Professor Farnsworth",
+  "matched": "Hubert J. Farnsworth",
+  "via": "Professor Farnsworth",
+  "wiki": "futurama.fandom.com"
+ },
+ "rick-sanchez": {
+  "answer": "Rick Sanchez",
+  "matched": "Rick Sanchez",
+  "via": "Rick Sanchez",
+  "wiki": "rickandmorty.fandom.com"
+ },
+ "morty-smith": {
+  "answer": "Morty Smith",
+  "matched": "Morty Smith",
+  "via": "Morty Smith",
+  "wiki": "rickandmorty.fandom.com"
+ },
+ "summer-smith": {
+  "answer": "Summer Smith",
+  "matched": "Summer Smith",
+  "via": "Summer Smith",
+  "wiki": "rickandmorty.fandom.com"
+ },
+ "jerry-smith": {
+  "answer": "Jerry Smith",
+  "matched": "Jerry Smith",
+  "via": "Jerry Smith",
+  "wiki": "rickandmorty.fandom.com"
+ },
+ "beth-smith": {
+  "answer": "Beth Smith",
+  "matched": "Beth Smith",
+  "via": "Beth Smith",
+  "wiki": "rickandmorty.fandom.com"
+ },
+ "mr-meeseeks": {
+  "answer": "Mr. Meeseeks",
+  "matched": "Mr. Meeseeks",
+  "via": "Mr. Meeseeks",
+  "wiki": "rickandmorty.fandom.com"
+ },
+ "birdperson": {
+  "answer": "Birdperson",
+  "matched": "Birdperson",
+  "via": "Birdperson",
+  "wiki": "rickandmorty.fandom.com"
+ },
+ "bob-belcher": {
+  "answer": "Bob Belcher",
+  "matched": "Bob Belcher",
+  "via": "Bob Belcher",
+  "wiki": "bobs-burgers.fandom.com"
+ },
+ "linda-belcher": {
+  "answer": "Linda Belcher",
+  "matched": "Linda Belcher",
+  "via": "Linda Belcher",
+  "wiki": "bobs-burgers.fandom.com"
+ },
+ "tina-belcher": {
+  "answer": "Tina Belcher",
+  "matched": "Tina Belcher",
+  "via": "Tina Belcher",
+  "wiki": "bobs-burgers.fandom.com"
+ },
+ "gene-belcher": {
+  "answer": "Gene Belcher",
+  "matched": "Gene Belcher",
+  "via": "Gene Belcher",
+  "wiki": "bobs-burgers.fandom.com"
+ },
+ "louise-belcher": {
+  "answer": "Louise Belcher",
+  "matched": "Louise Belcher",
+  "via": "Louise Belcher",
+  "wiki": "bobs-burgers.fandom.com"
+ },
+ "roger-ad": {
+  "answer": "Roger",
+  "matched": "Roger",
+  "via": "Roger",
+  "wiki": "americandad.fandom.com"
+ },
+ "stan-smith": {
+  "answer": "Stan Smith",
+  "matched": "Stan Smith",
+  "via": "Stan Smith",
+  "wiki": "americandad.fandom.com"
+ },
+ "steve-smith": {
+  "answer": "Steve Smith",
+  "matched": "Steve Smith",
+  "via": "Steve Smith",
+  "wiki": "americandad.fandom.com"
+ },
+ "klaus-heisler": {
+  "answer": "Klaus",
+  "matched": "Klaus Heisler",
+  "via": "Klaus",
+  "wiki": "americandad.fandom.com"
+ },
+ "francine-smith": {
+  "answer": "Francine Smith",
+  "matched": "Francine Smith",
+  "via": "Francine Smith",
+  "wiki": "americandad.fandom.com"
+ },
+ "sterling-archer": {
+  "answer": "Sterling Archer",
+  "matched": "Sterling Archer",
+  "via": "Sterling Archer",
+  "wiki": "archer.fandom.com"
+ },
+ "lana-kane": {
+  "answer": "Lana Kane",
+  "matched": "Lana Kane",
+  "via": "Lana Kane",
+  "wiki": "archer.fandom.com"
+ },
+ "malory-archer": {
+  "answer": "Malory Archer",
+  "matched": "Malory Archer",
+  "via": "Malory Archer",
+  "wiki": "archer.fandom.com"
+ },
+ "pam-poovey": {
+  "answer": "Pam Poovey",
+  "matched": "Pam Poovey",
+  "via": "Pam Poovey",
+  "wiki": "archer.fandom.com"
+ },
+ "bojack-horseman": {
+  "answer": "BoJack Horseman",
+  "matched": "BoJack Horseman",
+  "via": "BoJack Horseman",
+  "wiki": "bojackhorseman.fandom.com"
+ },
+ "mr-peanutbutter": {
+  "answer": "Mr. Peanutbutter",
+  "matched": "Mr. Peanutbutter",
+  "via": "Mr. Peanutbutter",
+  "wiki": "bojackhorseman.fandom.com"
+ },
+ "princess-carolyn": {
+  "answer": "Princess Carolyn",
+  "matched": "Princess Carolyn",
+  "via": "Princess Carolyn",
+  "wiki": "bojackhorseman.fandom.com"
+ },
+ "todd-chavez": {
+  "answer": "Todd Chavez",
+  "matched": "Todd Chavez",
+  "via": "Todd Chavez",
+  "wiki": "bojackhorseman.fandom.com"
+ },
+ "diane-nguyen": {
+  "answer": "Diane Nguyen",
+  "matched": "Diane Nguyen",
+  "via": "Diane Nguyen",
+  "wiki": "bojackhorseman.fandom.com"
+ },
+ "beavis": {
+  "answer": "Beavis",
+  "matched": "Beavis",
+  "via": "Beavis",
+  "wiki": "beavisandbutthead.fandom.com"
+ },
+ "butt-head": {
+  "answer": "Butt-Head",
+  "matched": "Butt-Head",
+  "via": "Butt-Head",
+  "wiki": "beavisandbutthead.fandom.com"
+ },
+ "daria-morgendorffer": {
+  "answer": "Daria Morgendorffer",
+  "matched": "Daria Morgendorffer",
+  "via": "Daria Morgendorffer",
+  "wiki": "daria.fandom.com"
+ },
+ "jane-lane": {
+  "answer": "Jane Lane",
+  "matched": "Jane Lane",
+  "via": "Jane Lane",
+  "wiki": "daria.fandom.com"
+ },
+ "ben-tennyson": {
+  "answer": "Ben Tennyson",
+  "matched": "Ben Tennyson",
+  "via": "Ben Tennyson",
+  "wiki": "ben10.fandom.com"
+ },
+ "gwen-tennyson": {
+  "answer": "Gwen Tennyson",
+  "matched": "Gwen Tennyson",
+  "via": "Gwen Tennyson",
+  "wiki": "ben10.fandom.com"
+ },
+ "heatblast": {
+  "answer": "Heatblast",
+  "matched": "Heatblast",
+  "via": "Heatblast",
+  "wiki": "ben10.fandom.com"
+ },
+ "four-arms": {
+  "answer": "Four Arms",
+  "matched": "Four Arms",
+  "via": "Four Arms",
+  "wiki": "ben10.fandom.com"
+ },
+ "grim": {
+  "answer": "Grim",
+  "matched": "Grim",
+  "via": "Grim",
+  "wiki": "grimadventures.fandom.com"
+ },
+ "billy-grim": {
+  "answer": "Billy",
+  "matched": "Billy",
+  "via": "Billy",
+  "wiki": "grimadventures.fandom.com"
+ },
+ "mandy": {
+  "answer": "Mandy",
+  "matched": "Mandy",
+  "via": "Mandy",
+  "wiki": "grimadventures.fandom.com"
+ },
+ "numbuh-1": {
+  "answer": "Numbuh 1",
+  "matched": "Numbuh 1",
+  "via": "Numbuh 1",
+  "wiki": "knd.fandom.com"
+ },
+ "numbuh-5": {
+  "answer": "Numbuh 5",
+  "matched": "Numbuh 5",
+  "via": "Numbuh 5",
+  "wiki": "knd.fandom.com"
+ },
+ "grizzly-bear": {
+  "answer": "Grizz",
+  "matched": "Grizzly Bear",
+  "via": "Grizzly Bear",
+  "wiki": "webarebears.fandom.com"
+ },
+ "panda-bear": {
+  "answer": "Panda",
+  "matched": "Panda Bear",
+  "via": "Panda Bear",
+  "wiki": "webarebears.fandom.com"
+ },
+ "ice-bear": {
+  "answer": "Ice Bear",
+  "matched": "Ice Bear",
+  "via": "Ice Bear",
+  "wiki": "webarebears.fandom.com"
+ },
+ "ice-king": {
+  "answer": "Ice King",
+  "matched": "Ice King",
+  "via": "Ice King",
+  "wiki": "adventuretime.fandom.com"
+ },
+ "princess-bubblegum": {
+  "answer": "Princess Bubblegum",
+  "matched": "Princess Bubblegum",
+  "via": "Princess Bubblegum",
+  "wiki": "adventuretime.fandom.com"
+ },
+ "marceline": {
+  "answer": "Marceline",
+  "matched": "Marceline",
+  "via": "Marceline",
+  "wiki": "adventuretime.fandom.com"
+ },
+ "bmo": {
+  "answer": "BMO",
+  "matched": "BMO",
+  "via": "BMO",
+  "wiki": "adventuretime.fandom.com"
+ },
+ "lumpy-space-princess": {
+  "answer": "Lumpy Space Princess",
+  "matched": "Lumpy Space Princess",
+  "via": "Lumpy Space Princess",
+  "wiki": "adventuretime.fandom.com"
+ },
+ "garnet": {
+  "answer": "Garnet",
+  "matched": "Garnet",
+  "via": "Garnet",
+  "wiki": "steven-universe.fandom.com"
+ },
+ "amethyst": {
+  "answer": "Amethyst",
+  "matched": "Amethyst",
+  "via": "Amethyst",
+  "wiki": "steven-universe.fandom.com"
+ },
+ "pearl": {
+  "answer": "Pearl",
+  "matched": "Pearl",
+  "via": "Pearl",
+  "wiki": "steven-universe.fandom.com"
+ },
+ "peridot": {
+  "answer": "Peridot",
+  "matched": "Peridot",
+  "via": "Peridot",
+  "wiki": "steven-universe.fandom.com"
+ },
+ "robin-tt": {
+  "answer": "Robin",
+  "matched": "Robin",
+  "via": "Robin",
+  "wiki": "teentitans.fandom.com"
+ },
+ "cyborg-tt": {
+  "answer": "Cyborg",
+  "matched": "Cyborg",
+  "via": "Cyborg",
+  "wiki": "teentitans.fandom.com"
+ },
+ "mojo-jojo": {
+  "answer": "Mojo Jojo",
+  "matched": "Mojo Jojo",
+  "via": "Mojo Jojo",
+  "wiki": "powerpuffgirls.fandom.com"
+ },
+ "professor-utonium": {
+  "answer": "Professor Utonium",
+  "matched": "Professor Utonium",
+  "via": "Professor Utonium",
+  "wiki": "powerpuffgirls.fandom.com"
+ },
+ "dee-dee": {
+  "answer": "Dee Dee",
+  "matched": "Dee Dee",
+  "via": "Dee Dee",
+  "wiki": "dexterslab.fandom.com"
+ },
+ "mandark": {
+  "answer": "Mandark",
+  "matched": "Mandark",
+  "via": "Mandark",
+  "wiki": "dexterslab.fandom.com"
+ },
+ "benson": {
+  "answer": "Benson",
+  "matched": "Benson",
+  "via": "Benson",
+  "wiki": "regularshow.fandom.com"
+ },
+ "pops-maellard": {
+  "answer": "Pops",
+  "matched": "Pops",
+  "via": "Pops",
+  "wiki": "regularshow.fandom.com"
+ },
+ "muscle-man": {
+  "answer": "Muscle Man",
+  "matched": "Muscle Man",
+  "via": "Muscle Man",
+  "wiki": "regularshow.fandom.com"
+ },
+ "skips": {
+  "answer": "Skips",
+  "matched": "Skips",
+  "via": "Skips",
+  "wiki": "regularshow.fandom.com"
+ },
+ "chowder": {
+  "answer": "Chowder",
+  "matched": "Chowder",
+  "via": "Chowder",
+  "wiki": "chowder.fandom.com"
+ },
+ "chris-mclean": {
+  "answer": "Chris McLean",
+  "matched": "Chris",
+  "via": "Chris",
+  "wiki": "totaldrama.fandom.com"
+ },
+ "leonardo-tmnt": {
+  "answer": "Leonardo",
+  "matched": "Leonardo",
+  "via": "Leonardo",
+  "wiki": "tmnt.fandom.com"
+ },
+ "donatello-tmnt": {
+  "answer": "Donatello",
+  "matched": "Donatello",
+  "via": "Donatello",
+  "wiki": "tmnt.fandom.com"
+ },
+ "raphael-tmnt": {
+  "answer": "Raphael",
+  "matched": "Raphael",
+  "via": "Raphael",
+  "wiki": "tmnt.fandom.com"
+ },
+ "michelangelo-tmnt": {
+  "answer": "Michelangelo",
+  "matched": "Michelangelo",
+  "via": "Michelangelo",
+  "wiki": "tmnt.fandom.com"
+ },
+ "splinter": {
+  "answer": "Splinter",
+  "matched": "Splinter",
+  "via": "Splinter",
+  "wiki": "tmnt.fandom.com"
+ },
+ "shredder": {
+  "answer": "Shredder",
+  "matched": "Shredder",
+  "via": "Shredder",
+  "wiki": "tmnt.fandom.com"
+ },
+ "april-oneil": {
+  "answer": "April O’Neil",
+  "matched": "April O'Neil",
+  "via": "April O'Neil",
+  "wiki": "tmnt.fandom.com"
+ },
+ "charlie-brown": {
+  "answer": "Charlie Brown",
+  "matched": "Charlie Brown",
+  "via": "Charlie Brown",
+  "wiki": "peanuts.fandom.com"
+ },
+ "snoopy": {
+  "answer": "Snoopy",
+  "matched": "Snoopy",
+  "via": "Snoopy",
+  "wiki": "peanuts.fandom.com"
+ },
+ "woodstock": {
+  "answer": "Woodstock",
+  "matched": "Woodstock",
+  "via": "Woodstock",
+  "wiki": "peanuts.fandom.com"
+ },
+ "lucy-van-pelt": {
+  "answer": "Lucy van Pelt",
+  "matched": "Lucy van Pelt",
+  "via": "Lucy van Pelt",
+  "wiki": "peanuts.fandom.com"
+ },
+ "linus-van-pelt": {
+  "answer": "Linus van Pelt",
+  "matched": "Linus van Pelt",
+  "via": "Linus van Pelt",
+  "wiki": "peanuts.fandom.com"
+ },
+ "yakko-warner": {
+  "answer": "Yakko",
+  "matched": "Yakko Warner",
+  "via": "Yakko Warner",
+  "wiki": "animaniacs.fandom.com"
+ },
+ "wakko-warner": {
+  "answer": "Wakko",
+  "matched": "Wakko Warner",
+  "via": "Wakko Warner",
+  "wiki": "animaniacs.fandom.com"
+ },
+ "dot-warner": {
+  "answer": "Dot",
+  "matched": "Dot Warner",
+  "via": "Dot Warner",
+  "wiki": "animaniacs.fandom.com"
+ },
+ "pinky": {
+  "answer": "Pinky",
+  "matched": "Pinky",
+  "via": "Pinky",
+  "wiki": "animaniacs.fandom.com"
+ },
+ "the-brain": {
+  "answer": "The Brain",
+  "matched": "The Brain",
+  "via": "The Brain",
+  "wiki": "animaniacs.fandom.com"
+ },
+ "garfield": {
+  "answer": "Garfield",
+  "matched": "Garfield (character)",
+  "via": "Garfield (character)",
+  "wiki": "garfield.fandom.com"
+ },
+ "odie": {
+  "answer": "Odie",
+  "matched": "Odie",
+  "via": "Odie",
+  "wiki": "garfield.fandom.com"
+ },
+ "katara": {
+  "answer": "Katara",
+  "matched": "Katara",
+  "via": "Katara",
+  "wiki": "avatar.fandom.com"
+ },
+ "sokka": {
+  "answer": "Sokka",
+  "matched": "Sokka",
+  "via": "Sokka",
+  "wiki": "avatar.fandom.com"
+ },
+ "toph-beifong": {
+  "answer": "Toph",
+  "matched": "Toph Beifong",
+  "via": "Toph Beifong",
+  "wiki": "avatar.fandom.com"
+ },
+ "zuko": {
+  "answer": "Zuko",
+  "matched": "Zuko",
+  "via": "Zuko",
+  "wiki": "avatar.fandom.com"
+ },
+ "iroh": {
+  "answer": "Iroh",
+  "matched": "Iroh",
+  "via": "Iroh",
+  "wiki": "avatar.fandom.com"
+ },
+ "appa": {
+  "answer": "Appa",
+  "matched": "Appa",
+  "via": "Appa",
+  "wiki": "avatar.fandom.com"
+ },
+ "korra": {
+  "answer": "Korra",
+  "matched": "Korra",
+  "via": "Korra",
+  "wiki": "avatar.fandom.com"
+ },
+ "susie-carmichael": {
+  "answer": "Susie Carmichael",
+  "matched": "Susie Carmichael",
+  "via": "Susie Carmichael",
+  "wiki": "rugrats.fandom.com"
+ },
+ "reptar": {
+  "answer": "Reptar",
+  "matched": "Reptar (character)",
+  "via": "Reptar (character)",
+  "wiki": "rugrats.fandom.com"
+ },
+ "gerald-johanssen": {
+  "answer": "Gerald",
+  "matched": "Gerald Johanssen",
+  "via": "Gerald Johanssen",
+  "wiki": "heyarnold.fandom.com"
+ },
+ "wanda-fop": {
+  "answer": "Wanda",
+  "matched": "Wanda",
+  "via": "Wanda",
+  "wiki": "fairlyoddparents.fandom.com"
+ },
+ "vicky": {
+  "answer": "Vicky",
+  "matched": "Vicky",
+  "via": "Vicky",
+  "wiki": "fairlyoddparents.fandom.com"
+ },
+ "grunkle-stan": {
+  "answer": "Grunkle Stan",
+  "matched": "Stan Pines",
+  "via": "Stan Pines",
+  "wiki": "gravityfalls.fandom.com"
+ },
+ "soos-ramirez": {
+  "answer": "Soos",
+  "matched": "Soos Ramirez",
+  "via": "Soos Ramirez",
+  "wiki": "gravityfalls.fandom.com"
+ },
+ "candace-flynn": {
+  "answer": "Candace Flynn",
+  "matched": "Candace Flynn",
+  "via": "Candace Flynn",
+  "wiki": "phineasandferb.fandom.com"
+ },
+ "doofenshmirtz": {
+  "answer": "Dr. Doofenshmirtz",
+  "matched": "Heinz Doofenshmirtz",
+  "via": "Heinz Doofenshmirtz",
+  "wiki": "phineasandferb.fandom.com"
+ },
+ "shego": {
+  "answer": "Shego",
+  "matched": "Shego",
+  "via": "Shego",
+  "wiki": "kimpossible.fandom.com"
+ },
+ "luz-noceda": {
+  "answer": "Luz Noceda",
+  "matched": "Luz Noceda",
+  "via": "Luz Noceda",
+  "wiki": "theowlhouse.fandom.com"
+ },
+ "papa-smurf": {
+  "answer": "Papa Smurf",
+  "matched": "Papa Smurf",
+  "via": "Papa Smurf",
+  "wiki": "smurfs.fandom.com"
+ },
+ "smurfette": {
+  "answer": "Smurfette",
+  "matched": "Smurfette",
+  "via": "Smurfette",
+  "wiki": "smurfs.fandom.com"
+ },
+ "optimus-prime": {
+  "answer": "Optimus Prime",
+  "matched": "Optimus Prime (disambiguation)",
+  "via": "Optimus Prime",
+  "wiki": "transformers.fandom.com"
+ },
+ "he-man": {
+  "answer": "He-Man",
+  "matched": "He-Man",
+  "via": "He-Man",
+  "wiki": "he-man.fandom.com"
+ },
+ "skeletor": {
+  "answer": "Skeletor",
+  "matched": "Skeletor",
+  "via": "Skeletor",
+  "wiki": "he-man.fandom.com"
+ },
+ "lion-o": {
+  "answer": "Lion-O",
+  "matched": "Lion-O",
+  "via": "Lion-O",
+  "wiki": "thundercats.fandom.com"
+ },
+ "pepe-le-pew": {
+  "answer": "Pepé Le Pew",
+  "matched": "Pepé Le Pew",
+  "via": "Pepé Le Pew",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "lola-bunny": {
+  "answer": "Lola Bunny",
+  "matched": "Lola Bunny",
+  "via": "Lola Bunny",
+  "wiki": "looneytunes.fandom.com"
+ },
+ "arthur-read": {
+  "answer": "Arthur",
+  "matched": "Arthur Read",
+  "via": "Arthur Read",
+  "wiki": "arthur.fandom.com"
+ },
+ "izuku-midoriya": {
+  "answer": "Deku",
+  "matched": "Izuku Midoriya",
+  "via": "Izuku Midoriya",
+  "wiki": "myheroacademia.fandom.com"
+ },
+ "all-might": {
+  "answer": "All Might",
+  "matched": "Toshinori Yagi",
+  "via": "All Might",
+  "wiki": "myheroacademia.fandom.com"
+ },
+ "tanjiro-kamado": {
+  "answer": "Tanjiro Kamado",
+  "matched": "Tanjiro Kamado",
+  "via": "Tanjiro Kamado",
+  "wiki": "kimetsu-no-yaiba.fandom.com"
+ },
+ "nezuko-kamado": {
+  "answer": "Nezuko",
+  "matched": "Nezuko Kamado",
+  "via": "Nezuko Kamado",
+  "wiki": "kimetsu-no-yaiba.fandom.com"
+ },
+ "light-yagami": {
+  "answer": "Light Yagami",
+  "matched": "Light Yagami",
+  "via": "Light Yagami",
+  "wiki": "deathnote.fandom.com"
+ },
+ "edward-elric": {
+  "answer": "Edward Elric",
+  "matched": "Edward Elric",
+  "via": "Edward Elric",
+  "wiki": "fma.fandom.com"
+ },
+ "totoro": {
+  "answer": "Totoro",
+  "matched": "Totoro",
+  "via": "Totoro",
+  "wiki": "ghibli.fandom.com"
+ },
+ "no-face": {
+  "answer": "No-Face",
+  "matched": "No-Face",
+  "via": "No-Face",
+  "wiki": "ghibli.fandom.com"
  }
 }

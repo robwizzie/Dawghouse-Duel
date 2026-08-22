@@ -230,7 +230,7 @@
   var COVERS = {
     superheroes: 'spider-man', disney: 'mickey-mouse', animals: 'lion',
     starwars: 'darth-vader', sitcoms: 'michael-scott', videogames: 'mario',
-    cartoons: 'spongebob', pokemon: 'pikachu', dogs: 'golden-retriever',
+    cartoons: 'bugs-bunny', pokemon: 'pikachu', dogs: 'golden-retriever',
     'nba-today': 'lebron-james', 'nba-goats': 'michael-jordan'
   };
 

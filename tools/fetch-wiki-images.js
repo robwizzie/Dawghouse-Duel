@@ -348,4 +348,4 @@ async function credits(wiki, files) {
     Object.entries(tally).sort((a, b) => b[1] - a[1]).forEach(([k, n]) => console.log('  ' + String(n).padStart(4) + '  ' + k));
   }
   console.log('\nNow run ./tools/build-manifest.sh');
-})().catch(e => { console.error('\n' + e.message); process.exit(1); });
+})().catch(e => { console.error('\n' + (e.stack || e.message)); process.exit(1); });
