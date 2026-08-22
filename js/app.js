@@ -279,7 +279,10 @@
     });
     if (name === 'details') refreshDetails();
     if (name === 'ready') refreshReady();
-    if (name === 'category') refreshCatGrid();
+    /* Arriving at the picker clears the previous pick. A card left glowing
+       from last time reads as a recommendation, and the wizard's whole point
+       is that the choice is made fresh each visit. */
+    if (name === 'category') { chosenCat = null; refreshCatGrid(); }
     syncGates();
     try { el.flow.scrollIntoView({ block: 'start' }); } catch (e) {}
   }
@@ -318,12 +321,21 @@
       card.querySelector('.catcard__name').textContent = cat.name;
       card.querySelector('.catcard__blurb').textContent = cat.blurb || '';
 
-      /* A text deck has no artwork to lead with, so the card carries a mark
-         and the deck's own colour instead of an empty grey box. */
+      /* A text deck has no answer artwork to lead with, so it may name a
+         picture of its own; failing that, a mark on the deck's own colour. */
       if (cat.text) {
         card.classList.add('catcard--text');
-        card.querySelector('.catcard__art').innerHTML =
-          '<span class="catcard__glyph">\u266a</span>';
+        if (cat.cover) {
+          var ci = new Image();
+          ci.alt = '';
+          ci.src = cat.cover;
+          var artT = card.querySelector('.catcard__art');
+          artT.style.setProperty('--cover', 'url("' + cat.cover + '")');
+          artT.appendChild(ci);
+        } else {
+          card.querySelector('.catcard__art').innerHTML =
+            '<span class="catcard__glyph">\u266a</span>';
+        }
       }
 
       var coverSlug = COVERS[cat.id];
@@ -341,7 +353,9 @@
             }
           };
           img.src = url;
-          card.querySelector('.catcard__art').appendChild(img);
+          var art = card.querySelector('.catcard__art');
+          art.style.setProperty('--cover', 'url("' + url.replace(/"/g, '\\"') + '")');
+          art.appendChild(img);
         });
       }
 

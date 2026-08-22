@@ -15,10 +15,3 @@ body.paired .join{display:none}
   letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 .playfoot .on{color:var(--lime)}
 .playfoot .off{color:var(--red)}
-
-.join__name{display:flex;flex-direction:column;gap:4px;width:min(420px,100%);align-items:center}
-.join__name span{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)}
-.join__nameinput{width:100%;background:rgba(14,14,45,.9);border:2px solid var(--indigo-600);border-radius:10px;
-  color:#fff;font-family:var(--ff-display);font-size:clamp(16px,4vw,24px);text-align:center;
-  text-transform:uppercase;padding:.25em .5em;outline:none}
-.join__nameinput:focus{border-color:var(--lime)}

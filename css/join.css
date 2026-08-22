@@ -1,0 +1,50 @@
+/* ══════════════════════════════════════════════════════════════
+   The join screen, shared by the two phone pages.
+
+   host.html (marking) and play.html (a remote player) both open on the
+   same "type the code" screen. It used to live in host.css alone, which
+   meant play.html rendered it unstyled — a full-size logo and browser
+   default form controls.
+   ══════════════════════════════════════════════════════════════ */
+/* ── join screen ── */
+.join{
+  position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:14px;padding:24px;text-align:center;
+  background:linear-gradient(180deg,var(--indigo-900),var(--indigo-950));
+}
+body.paired .join{display:none}
+.join__logo{width:min(260px,62vw);height:auto}
+.join__tag{font-family:var(--ff-display);background:var(--lime);color:var(--indigo);
+  padding:.12em .6em .18em;border-radius:8px;font-size:15px;letter-spacing:.24em;text-indent:.24em}
+.join__lead{margin:6px 0 0;font-size:17px;font-weight:700;color:rgba(255,255,255,.72)}
+.join__form{display:flex;gap:10px;width:min(420px,100%)}
+.join__input{
+  flex:1;min-width:0;background:rgba(14,14,45,.9);border:3px solid var(--indigo-600);border-radius:14px;
+  color:var(--lime);font-family:var(--ff-display);font-size:clamp(28px,9vw,46px);letter-spacing:.18em;
+  text-align:center;text-transform:uppercase;padding:.24em .1em .3em;outline:none;width:100%;
+}
+.join__input:focus{border-color:var(--lime);box-shadow:0 0 0 5px rgba(222,255,102,.16)}
+.join__input::placeholder{color:rgba(255,255,255,.18);letter-spacing:.14em}
+.join__go{
+  flex:none;border:0;border-radius:14px;background:var(--lime);color:var(--indigo);
+  font-family:var(--ff-display);font-size:clamp(17px,4.4vw,24px);letter-spacing:.1em;
+  padding:0 clamp(14px,4vw,26px);box-shadow:0 5px 0 var(--lime-deep);
+}
+.join__go:active{transform:translateY(3px);box-shadow:0 2px 0 var(--lime-deep)}
+.join__go:disabled{opacity:.4;pointer-events:none}
+.join__state{margin:0;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.join__state.is-on{color:var(--lime)}
+.join__state.is-wait{color:var(--amber)}
+.join__state.is-off{color:var(--red)}
+.join__note{margin:4px 0 0;font-size:13px;color:rgba(255,255,255,.35);max-width:34ch;line-height:1.35}
+
+/* The name field, which only the player page asks for. */
+.join__name{display:flex;flex-direction:column;gap:6px;width:min(420px,100%);align-items:stretch}
+.join__name span{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);text-align:center}
+.join__nameinput{width:100%;background:rgba(14,14,45,.9);border:3px solid var(--indigo-600);
+  border-radius:14px;color:#fff;font-family:var(--ff-display);font-size:clamp(18px,5vw,26px);
+  text-align:center;text-transform:uppercase;padding:.28em .5em .34em;outline:none;
+  min-height:52px}
+.join__nameinput:focus{border-color:var(--lime);box-shadow:0 0 0 5px rgba(222,255,102,.16)}
+.join__nameinput::placeholder{color:rgba(255,255,255,.18)}

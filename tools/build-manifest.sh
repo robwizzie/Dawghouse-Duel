@@ -22,7 +22,9 @@ for dir in assets/categories/*/; do
     printf '{"files":['
     sep=""
     for f in "${files[@]}"; do
-      printf '%s"%s"' "$sep" "$(basename "$f")"
+      base="$(basename "$f")"
+    case "$base" in _*) continue;; esac   # _cover.jpg and friends aren't answers
+    printf '%s"%s"' "$sep" "$base"
       sep=","
     done
     printf ']}\n'

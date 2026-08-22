@@ -354,9 +354,18 @@ select.input option{background:var(--indigo-900);color:#fff}
   display:flex;flex-direction:column;color:inherit}
 .catcard:hover{border-color:var(--indigo-400);transform:translateY(-3px)}
 .catcard.is-on{border-color:var(--lime);box-shadow:0 0 40px -10px rgba(222,255,102,.75)}
-.catcard__art{aspect-ratio:16/10;background:var(--indigo-950);display:grid;place-items:center;overflow:hidden}
-.catcard__art img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
-.catcard__art img.fit{object-fit:contain;padding:10px;object-position:50% 50%}
+/* Covers are shown whole. Cropping to fill a 16:10 box guillotined the
+   portraits — half of Tom Hanks' head, the top of a poster — so the picture
+   is contained and a blurred copy of itself fills the space behind it. */
+.catcard__art{position:relative;aspect-ratio:16/10;background:var(--indigo-950);
+  display:grid;place-items:center;overflow:hidden;isolation:isolate}
+.catcard__art::before{content:'';position:absolute;inset:-12%;
+  background-image:var(--cover);background-size:cover;background-position:50% 35%;
+  filter:blur(16px) saturate(1.25) brightness(.62);z-index:0}
+.catcard__art img{position:relative;z-index:1;
+  width:100%;height:100%;object-fit:contain;object-position:50% 50%;display:block;
+  padding:6px;filter:drop-shadow(0 6px 16px rgba(14,14,45,.6))}
+.catcard__art img.fit{padding:10px}
 .catcard--text .catcard__art{background:linear-gradient(150deg,var(--indigo-800),var(--indigo-950))}
 .catcard__glyph{font-family:var(--ff-display);font-size:clamp(40px,5vw,68px);
   color:rgba(222,255,102,.5);line-height:1}

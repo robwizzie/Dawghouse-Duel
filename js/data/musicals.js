@@ -19,6 +19,10 @@ window.DHD_CATEGORIES.push({
   name: 'Musicals',
   blurb: 'Name the show from one of its songs.',
   text: true,
+  /* No answer artwork, so the gallery card needs its own picture. A
+     proscenium with the house lights up — no title on it, which is the
+     whole reason this deck is songs. */
+  cover: 'assets/categories/musicals/_cover.jpg',
   items: [
     /* ── the ones everybody gets ── */
     {slug:'defying-gravity',   prompt:'Defying Gravity',            name:'Wicked',                 alt:[],                          tier:'easy', clue:'Act one closer. She flies.'},
