@@ -14,7 +14,8 @@
 (function () {
   'use strict';
 
-  var Store = DHD.Store, Sfx = DHD.Sfx, Net = DHD.Net, Match = DHD.Match, Daily = DHD.Daily;
+  var Store = DHD.Store, Sfx = DHD.Sfx, Net = DHD.Net, Match = DHD.Match, Daily = DHD.Daily,
+      Decks = DHD.Decks;
   var $ = function (id) { return document.getElementById(id); };
   var html = document.documentElement;
 
@@ -41,6 +42,15 @@
     lastUp: $('lastUp'), lastUpImg: $('lastUpImg'),
     lastUpEyebrow: $('lastUpEyebrow'), lastUpName: $('lastUpName'),
     recap: $('recap'), recapToggle: $('recapToggle'), recapLegend: $('recapLegend'),
+    builderBack: $('builderBack'), builderSave: $('builderSave'), builderShare: $('builderShare'),
+    builderDelete: $('builderDelete'), deckName: $('deckName'), deckBlurb: $('deckBlurb'),
+    deckRows: $('deckRows'), deckAddRow: $('deckAddRow'), deckAddMany: $('deckAddMany'),
+    deckCount: $('deckCount'),
+    ovlDeckShare: $('ovlDeckShare'), deckShareCode: $('deckShareCode'), deckShareUrl: $('deckShareUrl'),
+    deckShareCopy: $('deckShareCopy'), deckShareDone: $('deckShareDone'), deckShareClose: $('deckShareClose'),
+    deckShareEyebrow: $('deckShareEyebrow'),
+    ovlDeckGet: $('ovlDeckGet'), deckGetForm: $('deckGetForm'), deckGetCode: $('deckGetCode'),
+    deckGetGo: $('deckGetGo'), deckGetState: $('deckGetState'), deckGetClose: $('deckGetClose'),
     boardPrompt: $('boardPrompt'), boardPromptText: $('boardPromptText'),
     boardPromptKicker: $('boardPromptKicker'),
     ovlShot: $('ovlShot'), shotImg: $('shotImg'), shotName: $('shotName'),
@@ -90,7 +100,16 @@
   });
 
   /* ── state ───────────────────────────────────────────────── */
-  var CATS = window.DHD_CATEGORIES || [];
+  var BUILT_IN = window.DHD_CATEGORIES || [];
+  var CATS = BUILT_IN.slice();
+
+  /* Custom decks sit at the end of the gallery, in the order they were
+     made. Rebuilt from storage rather than mutated in place, so deleting
+     one can never leave a stale entry behind. */
+  function syncCats() {
+    CATS = BUILT_IN.concat(Decks.categories());
+    return CATS;
+  }
   var cfg = {
     catId: (CATS[0] || {}).id, clockMs: 45000, first: 'flip',
     penaltyMs: 3000, passCostMs: 2000, revealMs: 1400, deck: 'images', pictureMode: 'normal', revealSecs: 7, play: 'duel', answers: 'type',
@@ -293,7 +312,8 @@
   }
 
   /* ── the category gallery ── */
-  function refreshCatGrid() {
+  function refreshCatGrid(force) {
+    if (force) el.catGrid.innerHTML = '';
     if (el.catGrid.childElementCount) {
       [].forEach.call(el.catGrid.children, function (card) {
         var line = card.querySelector('.catcard__history');
@@ -359,6 +379,21 @@
         });
       }
 
+      if (cat.custom) {
+        var badge = document.createElement('span');
+        badge.className = 'catcard__badge';
+        badge.textContent = cat.code ? 'shared' : 'yours';
+        card.appendChild(badge);
+
+        /* Long-press or right-click to edit, so the ordinary tap still
+           just starts a game with it. */
+        card.addEventListener('contextmenu', function (ev) {
+          ev.preventDefault();
+          var deck = Decks.get(cat.id);
+          if (deck) openBuilder(deck);
+        });
+      }
+
       card.addEventListener('click', function () {
         chosenCat = cat.id;
         el.catSelect.value = cat.id;
@@ -368,7 +403,26 @@
       });
       el.catGrid.appendChild(card);
     });
+
+    el.catGrid.appendChild(makeTile('\u002b', 'Make your own',
+      'Your pictures, or just text. Then share it.', function () { openBuilder(null); }));
+    el.catGrid.appendChild(makeTile('\u2193', 'Play someone\u2019s deck',
+      'Got a code from a friend? Put it in here.', openDeckGet));
+
     markChosenCat();
+  }
+
+  /* The two tiles at the end of the gallery that aren't decks. */
+  function makeTile(glyph, title, sub, onClick) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'catcard catcard--new';
+    b.innerHTML = '<span class="catcard__glyph"></span><b></b><span></span>';
+    b.querySelector('.catcard__glyph').textContent = glyph;
+    b.querySelector('b').textContent = title;
+    b.querySelectorAll('span')[1].textContent = sub;
+    b.addEventListener('click', onClick);
+    return b;
   }
 
   function markChosenCat() {
@@ -584,15 +638,16 @@
   /* ══════════════════ DUEL ══════════════════ */
   function buildQueue() {
     var items = pool(G.cat, cfg.deep);
-    if (G.cat.text) return shuffle(items.slice());   // nothing to resolve, all playable
+    /* Nothing to go and look for: these decks carry what they show. */
+    if (G.cat.text || G.cat.custom) return shuffle(items.slice());
     /* A picture with no alpha channel is a black rectangle in silhouette
        mode, so those answers sit the round out rather than being unguessable. */
     if ((cfg.pictureMode || 'normal') === 'silhouette' && G.cat.silhouette) {
       var lit = items.filter(function (it) { return !it.flat; });
       if (lit.length >= 12) items = lit;
     }
-    var withArt = shuffle(items.filter(function (it) { return Store.hasArt(G.cat.id, it.slug); }));
-    var without = shuffle(items.filter(function (it) { return !Store.hasArt(G.cat.id, it.slug); }));
+    var withArt = shuffle(items.filter(function (it) { return Store.hasArt(G.cat.id, it.slug, it); }));
+    var without = shuffle(items.filter(function (it) { return !Store.hasArt(G.cat.id, it.slug, it); }));
     // It's a picture round — only fall back to clue cards if there is no art at all.
     if (cfg.deck === 'images' && withArt.length) return withArt;
     return withArt.concat(without);
@@ -1312,9 +1367,10 @@
     el.boardClue.textContent = cfg.clue ? item.clue : '';
     renderPeek(item);
 
-    /* A text deck puts the prompt on the board instead of a picture, and
-       there is nothing to go and resolve. */
-    if (G.cat.text) {
+    /* Text goes on the board instead of a picture whenever this answer has
+       no picture to show — a whole text deck, or one text row inside a
+       custom deck that mixes the two. */
+    if (G.cat.text || (item.prompt && !item.imgUrl)) {
       el.boardPromptKicker.textContent = G.cat.promptLabel || 'SONG';
       el.boardPromptText.textContent = item.prompt || item.name;
       el.boardPrompt.hidden = false;
@@ -1796,6 +1852,59 @@
   el.joinGame.addEventListener('click', function () { location.href = 'play.html'; });
 
   el.dailyBtn.addEventListener('click', startDaily);
+  on(el.builderBack, 'click', function () { show('setup'); goStep(STEPS.indexOf('category')); });
+  on(el.builderSave, 'click', function () { if (saveDeck()) { show('setup'); goStep(STEPS.indexOf('category')); } });
+  on(el.builderShare, 'click', shareDeck);
+  on(el.builderDelete, 'click', function () {
+    if (!draft) return;
+    Decks.remove(draft.id);
+    syncCats();
+    buildSetup();
+    refreshCatGrid(true);
+    toast('Deck deleted');
+    show('setup');
+    goStep(STEPS.indexOf('category'));
+  });
+  on(el.deckAddRow, 'click', function () {
+    draft.items.push(blankRow());
+    renderDeckRows();
+    var rows = el.deckRows.querySelectorAll('.input--answer');
+    if (rows.length) rows[rows.length - 1].focus();
+  });
+  on(el.deckAddMany, 'click', function () {
+    var text = window.prompt('One answer per line. Add a picture to each afterwards, or leave them as a text deck by putting the line to show first, then a comma, then the answer.');
+    if (!text) return;
+    text.split('\n').forEach(function (line) {
+      line = line.trim();
+      if (!line) return;
+      var bits = line.split(',');
+      var row = blankRow();
+      if (bits.length > 1) { row.prompt = bits[0].trim(); row.answer = bits.slice(1).join(',').trim(); }
+      else { row.answer = line; }
+      draft.items.push(row);
+    });
+    draft.items = draft.items.filter(function (r) { return r.answer.trim() || r.prompt.trim() || r.imgUrl; });
+    if (!draft.items.length) draft.items.push(blankRow());
+    renderDeckRows();
+  });
+  on(el.deckName, 'input', function () { draft && (draft.name = el.deckName.value); });
+  on(el.deckBlurb, 'input', function () { draft && (draft.blurb = el.deckBlurb.value); });
+
+  on(el.deckShareClose, 'click', function () { el.ovlDeckShare.hidden = true; });
+  on(el.deckShareDone, 'click', function () {
+    el.ovlDeckShare.hidden = true;
+    show('setup');
+    goStep(STEPS.indexOf('category'));
+  });
+  on(el.deckShareCopy, 'click', function () {
+    var link = deckLink(el.deckShareCode.textContent);
+    (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject())
+      .then(function () { toast('Link copied'); })
+      .catch(function () { window.prompt('Copy this link', link); });
+  });
+  on(el.deckGetClose, 'click', function () { el.ovlDeckGet.hidden = true; });
+  on(el.deckGetForm, 'submit', function (e) { e.preventDefault(); getDeckByCode(el.deckGetCode.value); });
+
   el.resShare.addEventListener('click', shareResult);
   on(el.muteBtn, 'click', toggleMute);
   on(el.shotClose, 'click', closeShot);
@@ -1972,7 +2081,277 @@
     if (document.hidden && G.phase === 'live') togglePause();
   });
 
+  /* ══════════════════════════════════════════════════════════
+     Make a deck
+
+     A deck being edited lives in `draft` until it is saved. Rows are
+     built from the draft rather than read out of the DOM, so a half-typed
+     row can never be lost by a re-render.
+     ══════════════════════════════════════════════════════════════ */
+  var draft = null;
+
+  function blankRow() {
+    return { answer: '', alt: [], prompt: '', imgUrl: '' };
+  }
+
+  function newDraft() {
+    return {
+      id: Decks.newId(),
+      name: '',
+      blurb: '',
+      code: null,
+      items: [blankRow(), blankRow(), blankRow()]
+    };
+  }
+
+  function openBuilder(deck) {
+    draft = deck || newDraft();
+    el.deckName.value = draft.name || '';
+    el.deckBlurb.value = draft.blurb || '';
+    el.builderDelete.hidden = !Decks.get(draft.id);
+    el.builderShare.hidden = !draft.items.length;
+    renderDeckRows();
+    show('builder');
+  }
+
+  function renderDeckRows() {
+    el.deckRows.innerHTML = '';
+    draft.items.forEach(function (row, i) {
+      el.deckRows.appendChild(buildDeckRow(row, i));
+    });
+    updateDeckCount();
+  }
+
+  function updateDeckCount() {
+    var usable = draft.items.filter(function (r) {
+      return r.answer.trim() && (r.prompt.trim() || r.imgUrl);
+    }).length;
+    el.deckCount.textContent = usable + (usable === 1 ? ' answer' : ' answers') +
+      (usable < draft.items.length ? ' \u00b7 ' + (draft.items.length - usable) + ' unfinished' : '');
+  }
+
+  function buildDeckRow(row, i) {
+    var wrap = document.createElement('div');
+    wrap.className = 'deckrow';
+
+    /* Picture. A hidden file input behind a button, so the tile itself is
+       the target and there is no naked "Choose file" control. */
+    var pic = document.createElement('button');
+    pic.type = 'button';
+    pic.className = 'deckrow__pic' + (row.imgUrl ? ' has-pic' : '');
+    pic.title = row.imgUrl ? 'Change or remove this picture' : 'Add a picture';
+    if (row.imgUrl) {
+      var im = new Image();
+      im.alt = '';
+      im.src = row.imgUrl;
+      pic.appendChild(im);
+    } else {
+      var lab = document.createElement('span');
+      lab.textContent = '+ picture';
+      pic.appendChild(lab);
+    }
+    pic.addEventListener('click', function () {
+      if (row.imgUrl) {
+        row.imgUrl = '';
+        renderDeckRows();
+        return;
+      }
+      pickImage(function (dataUrl) { row.imgUrl = dataUrl; renderDeckRows(); });
+    });
+
+    var answer = document.createElement('input');
+    answer.className = 'input input--answer';
+    answer.maxLength = 80;
+    answer.placeholder = 'The answer';
+    answer.value = row.answer;
+    answer.addEventListener('input', function () {
+      row.answer = answer.value;
+      updateDeckCount();
+    });
+
+    var prompt = document.createElement('input');
+    prompt.className = 'input input--prompt';
+    prompt.maxLength = 160;
+    prompt.placeholder = row.imgUrl ? 'Also accept… (optional)' : 'Or the text to show on the board';
+    prompt.value = row.imgUrl ? (row.alt || []).join(', ') : row.prompt;
+    prompt.addEventListener('input', function () {
+      if (row.imgUrl) {
+        row.alt = prompt.value.split(',').map(function (t) { return t.trim(); }).filter(Boolean);
+      } else {
+        row.prompt = prompt.value;
+      }
+      updateDeckCount();
+    });
+
+    var kill = document.createElement('button');
+    kill.type = 'button';
+    kill.className = 'deckrow__kill';
+    kill.title = 'Remove this answer';
+    kill.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+    kill.addEventListener('click', function () {
+      draft.items.splice(i, 1);
+      if (!draft.items.length) draft.items.push(blankRow());
+      renderDeckRows();
+    });
+
+    wrap.appendChild(pic);
+    wrap.appendChild(answer);
+    wrap.appendChild(prompt);
+    wrap.appendChild(kill);
+    return wrap;
+  }
+
+  /* Pictures are held as data URLs and scaled down on the way in. A phone
+     photo is several megabytes and a deck of forty would blow both the
+     browser's storage and the upload limit. */
+  var PIC_MAX = 900;
+  function pickImage(then) {
+    var input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.addEventListener('change', function () {
+      var file = input.files && input.files[0];
+      if (!file) return;
+      shrink(file, function (url) {
+        if (url) then(url); else toast('Could not read that picture');
+      });
+    });
+    input.click();
+  }
+
+  function shrink(file, then) {
+    var reader = new FileReader();
+    reader.onerror = function () { then(null); };
+    reader.onload = function () {
+      var img = new Image();
+      img.onerror = function () { then(null); };
+      img.onload = function () {
+        var w = img.naturalWidth, h = img.naturalHeight;
+        var scale = Math.min(1, PIC_MAX / Math.max(w, h));
+        var cw = Math.max(1, Math.round(w * scale)), ch = Math.max(1, Math.round(h * scale));
+        var c = document.createElement('canvas');
+        c.width = cw; c.height = ch;
+        c.getContext('2d').drawImage(img, 0, 0, cw, ch);
+        try { then(c.toDataURL('image/jpeg', 0.82)); }
+        catch (e) { then(reader.result); }      // tainted canvas — keep the original
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function readDraft() {
+    draft.name = el.deckName.value.trim();
+    draft.blurb = el.deckBlurb.value.trim();
+    draft.items = draft.items.filter(function (r) {
+      return r.answer.trim() && (r.prompt.trim() || r.imgUrl);
+    }).map(function (r) {
+      return {
+        answer: r.answer.trim(),
+        alt: (r.alt || []).filter(Boolean),
+        prompt: (r.prompt || '').trim(),
+        imgUrl: r.imgUrl || ''
+      };
+    });
+    return draft;
+  }
+
+  function saveDeck() {
+    var d = readDraft();
+    if (!d.name) { toast('Give the deck a name'); el.deckName.focus(); return false; }
+    if (!d.items.length) { toast('Add at least one answer with a picture or some text'); return false; }
+    if (!Decks.save(d)) {
+      toast('No room left in this browser — try fewer or smaller pictures');
+      return false;
+    }
+    syncCats();
+    buildSetup();
+    refreshCatGrid(true);
+    toast('Deck saved');
+    el.builderDelete.hidden = false;
+    return true;
+  }
+
+  function shareDeck() {
+    if (!saveDeck()) return;
+    var d = draft;
+    var was = el.builderShare.textContent;
+    el.builderShare.disabled = true;
+    el.builderShare.textContent = 'Publishing…';
+    Decks.publish(d, function (done, total) {
+      el.builderShare.textContent = total ? 'Uploading ' + done + '/' + total + '…' : 'Publishing…';
+    }).then(function (code) {
+      Decks.save(d);
+      el.builderShare.disabled = false;
+      el.builderShare.textContent = was;
+      openDeckShare(code);
+    }).catch(function (err) {
+      el.builderShare.disabled = false;
+      el.builderShare.textContent = was;
+      toast(err.message || 'Could not publish that deck');
+    });
+  }
+
+  function deckLink(code) {
+    var base = (cfg.hostUrl || 'dawghouseduel.com').replace(/\/host$/, '');
+    if (!/^https?:/.test(base)) base = 'https://' + base;
+    return base.replace(/\/$/, '') + '/?deck=' + code;
+  }
+
+  function openDeckShare(code) {
+    el.deckShareCode.textContent = code;
+    el.deckShareUrl.textContent = deckLink(code).replace(/^https?:\/\//, '').split('/?')[0];
+    el.ovlDeckShare.hidden = false;
+  }
+
+  function openDeckGet() {
+    el.deckGetCode.value = '';
+    el.deckGetState.textContent = '';
+    el.deckGetState.className = 'deckshare__state';
+    el.ovlDeckGet.hidden = false;
+    setTimeout(function () { try { el.deckGetCode.focus(); } catch (e) {} }, 60);
+  }
+
+  function getDeckByCode(code) {
+    code = String(code || '').trim().toUpperCase();
+    if (!code) return;
+    el.deckGetState.className = 'deckshare__state';
+    el.deckGetState.textContent = 'Looking…';
+    el.deckGetGo.disabled = true;
+    Decks.fetchCode(code).then(function (deck) {
+      el.deckGetGo.disabled = false;
+      if (!Decks.save(deck)) { throw new Error('No room left in this browser'); }
+      syncCats();
+      buildSetup();
+      refreshCatGrid(true);
+      el.deckGetState.className = 'deckshare__state is-good';
+      el.deckGetState.textContent = 'Added “' + deck.name + '”';
+      setTimeout(function () {
+        el.ovlDeckGet.hidden = true;
+        show('setup');
+        goStep(STEPS.indexOf('category'));
+      }, 900);
+    }).catch(function (err) {
+      el.deckGetGo.disabled = false;
+      el.deckGetState.className = 'deckshare__state is-bad';
+      el.deckGetState.textContent = err.message || 'No deck with that code';
+    });
+  }
+
+  /* A ?deck=CODE link is somebody handing you their deck. */
+  function importFromUrl() {
+    var m = /[?&]deck=([A-Za-z0-9]{4,12})/.exec(location.search);
+    if (!m) return;
+    history.replaceState(null, '', location.pathname);
+    openDeckGet();
+    el.deckGetCode.value = m[1].toUpperCase();
+    getDeckByCode(m[1]);
+  }
+
   /* ══════════════════ BOOT ══════════════════ */
+  /* Custom decks have to be in CATS before the setup controls are built,
+     or a saved choice pointing at one won't match anything. */
+  syncCats();
   buildSetup();     // category options must exist before a saved choice can match
   restoreSetup();
   Sfx.setEnabled(cfg.sound);
@@ -1983,6 +2362,8 @@
   goStep(0);
   refreshPictureModes();
   show('welcome');
+
+  importFromUrl();
 
   /* First visit gets the tutorial once. After that it lives behind the
      "How to play" button and never interrupts anyone again. */

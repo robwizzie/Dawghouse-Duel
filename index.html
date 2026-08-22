@@ -357,6 +357,46 @@
   </section>
 
   <!-- ══════════════════════════ MEDIA LIBRARY ══════════════════════════ -->
+  <!-- ── build your own deck ── -->
+  <section class="screen screen--builder" data-screen-id="builder">
+    <header class="mediabar">
+      <button class="btn btn--ghost btn--sm" id="builderBack">&larr; Back</button>
+      <h2 class="mediabar__title">Make a deck</h2>
+      <div class="mediabar__acts">
+        <button class="btn btn--ghost btn--sm btn--danger" id="builderDelete" hidden>Delete deck</button>
+        <button class="btn btn--ghost btn--sm" id="builderShare" hidden>Share</button>
+        <button class="btn btn--go btn--sm" id="builderSave">Save deck</button>
+      </div>
+    </header>
+
+    <div class="builder">
+      <div class="builder__head">
+        <label class="field">
+          <span class="field__label">Deck name</span>
+          <input class="input" id="deckName" maxlength="40" placeholder="Our inside jokes">
+        </label>
+        <label class="field">
+          <span class="field__label">One line about it</span>
+          <input class="input" id="deckBlurb" maxlength="120" placeholder="Name the face. Harder than it looks.">
+        </label>
+      </div>
+
+      <p class="builder__how">
+        Each row is one answer. Give it <b>a picture</b> or <b>a line of text</b> —
+        a picture deck shows the image, a text deck shows the words. Mix them and
+        it plays as a picture deck.
+      </p>
+
+      <div class="builder__rows" id="deckRows"></div>
+
+      <div class="builder__acts">
+        <button class="btn btn--ghost btn--sm" type="button" id="deckAddRow">+ Add an answer</button>
+        <button class="btn btn--ghost btn--sm" type="button" id="deckAddMany">Paste a list</button>
+        <span class="builder__count" id="deckCount">0 answers</span>
+      </div>
+    </div>
+  </section>
+
   <section class="screen screen--media" data-screen-id="media">
     <header class="mediabar">
       <button class="btn btn--ghost btn--sm" id="mediaBack">&larr; Back</button>
@@ -455,6 +495,36 @@
   <svg class="mutebtn__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>
   <span class="mutebtn__label" id="muteLabel">Sound on</span>
 </button>
+
+<div class="ovl ovl--share" id="ovlDeckShare" hidden>
+  <div class="deckshare">
+    <button class="shot__close" type="button" id="deckShareClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <span class="deckshare__eyebrow" id="deckShareEyebrow">YOUR DECK IS LIVE</span>
+    <b class="deckshare__code" id="deckShareCode">----</b>
+    <p class="deckshare__how">Anyone can play it &mdash; they open <b id="deckShareUrl">dawghouseduel.com</b> and enter this code.</p>
+    <div class="deckshare__acts">
+      <button class="btn btn--go" type="button" id="deckShareCopy">Copy the link</button>
+      <button class="btn btn--ghost" type="button" id="deckShareDone">Done</button>
+    </div>
+  </div>
+</div>
+
+<div class="ovl ovl--share" id="ovlDeckGet" hidden>
+  <div class="deckshare">
+    <button class="shot__close" type="button" id="deckGetClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <span class="deckshare__eyebrow">PLAY SOMEONE ELSE&rsquo;S DECK</span>
+    <form class="deckshare__form" id="deckGetForm" autocomplete="off">
+      <input class="deckshare__input" id="deckGetCode" maxlength="8" placeholder="CODE"
+             autocapitalize="characters" spellcheck="false" aria-label="Deck code">
+      <button class="btn btn--go" type="submit" id="deckGetGo">Get it</button>
+    </form>
+    <p class="deckshare__state" id="deckGetState"></p>
+  </div>
+</div>
 
 <div class="ovl ovl--pause" id="ovlPause" hidden>
   <div class="pausecard"><b>PAUSED</b><span>Press <kbd>P</kbd> to resume</span></div>
@@ -570,6 +640,7 @@
 <script src="js/net.js"></script>
 <script src="js/match.js"></script>
 <script src="js/daily.js"></script>
+<script src="js/decks.js"></script>
 <script src="js/store.js"></script>
 <script src="js/audio.js"></script>
 <script src="js/app.js"></script>

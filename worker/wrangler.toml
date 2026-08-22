@@ -12,5 +12,13 @@ class_name = "Room"
 tag = "v1"
 new_sqlite_classes = ["Room"]
 
+# Published decks: the JSON under deck/, the pictures under img/.
+# Create it once with:  npx wrangler r2 bucket create dawghouse-duel-decks
+# Without this binding the deck endpoints answer 501 and the rest of the
+# relay carries on working.
+[[r2_buckets]]
+binding = "DECKS"
+bucket_name = "dawghouse-duel-decks"
+
 [observability]
 enabled = true

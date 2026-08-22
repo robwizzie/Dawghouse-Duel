@@ -1,3 +1,6 @@
 .DS_Store
 *.tmp
 _*.html
+
+# wrangler dev leaves a local R2/DO simulation here
+worker/.wrangler/

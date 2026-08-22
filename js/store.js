@@ -173,7 +173,8 @@ DHD.Store = (function () {
     },
 
     /** Sync: does this answer have artwork we already know about? */
-    hasArt: function (cat, slug) {
+    hasArt: function (cat, slug, item) {
+      if (item && item.imgUrl) return true;
       var k = key(cat, slug);
       return !!hasUpload[k] || !!known[k];
     },
@@ -185,6 +186,11 @@ DHD.Store = (function () {
 
     /** Async: final URL for an answer, or null. Memoised. */
     resolve: function (cat, item) {
+      /* A custom deck carries its picture with it — a data: URL while it is
+         still local, the relay's /img/... once it has been published. There
+         is no folder to go and look in. */
+      if (item && item.imgUrl) return Promise.resolve(item.imgUrl);
+
       var k = key(cat, item.slug);
       if (k in resolvedUrl) return Promise.resolve(resolvedUrl[k]);
 

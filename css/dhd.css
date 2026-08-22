@@ -76,7 +76,8 @@ img{max-width:100%;display:block}
 html[data-screen="welcome"] .screen--welcome,
 html[data-screen="setup"] .screen--setup,
 html[data-screen="duel"]  .screen--duel,
-html[data-screen="media"] .screen--media{display:flex}
+html[data-screen="media"] .screen--media,
+html[data-screen="builder"] .screen--builder{display:flex}
 
 /* ── brandmark ────────────────────────────────────────────── */
 .brandmark{display:flex;align-items:center;gap:.5em;line-height:1;user-select:none}
@@ -255,6 +256,91 @@ select.input option{background:var(--indigo-900);color:#fff}
 .result__marks i{width:clamp(16px,2.2vw,26px);height:clamp(16px,2.2vw,26px);border-radius:5px;display:block}
 .result__marks i.hit{background:var(--lime)}
 .result__marks i.miss{background:var(--indigo-600)}
+
+/* ══════════════════════════════════════════════════════════════
+   Make a deck
+   ══════════════════════════════════════════════════════════════ */
+.screen--builder{flex-direction:column;overflow:hidden}
+.builder{flex:1;overflow-y:auto;padding:clamp(12px,2vh,22px) clamp(12px,3vw,40px) clamp(20px,4vh,50px);
+  display:flex;flex-direction:column;gap:clamp(10px,1.8vh,18px);width:100%;
+  max-width:1100px;margin-inline:auto}
+.builder__head{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.builder__how{margin:0;font-size:clamp(12px,1.2vw,15px);line-height:1.45;color:rgba(255,255,255,.6);
+  border-left:3px solid var(--indigo-600);padding-left:12px}
+.builder__how b{color:#fff}
+.builder__rows{display:flex;flex-direction:column;gap:10px}
+.builder__acts{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.builder__count{margin-left:auto;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  font-size:clamp(10px,1vw,13px);color:rgba(255,255,255,.45)}
+
+.deckrow{display:grid;gap:10px;align-items:center;
+  grid-template-columns:96px minmax(0,1.1fr) minmax(0,1.4fr) 44px;
+  background:rgba(255,255,255,.04);border:2px solid var(--indigo-600);
+  border-radius:14px;padding:10px}
+.deckrow__pic{position:relative;width:96px;height:72px;border-radius:10px;overflow:hidden;
+  background:var(--indigo-950);border:2px dashed rgba(255,255,255,.22);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;padding:0}
+.deckrow__pic img{width:100%;height:100%;object-fit:cover;display:block}
+.deckrow__pic span{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);text-align:center;padding:4px}
+.deckrow__pic.has-pic{border-style:solid;border-color:var(--lime)}
+.deckrow__pic:hover{border-color:var(--lime)}
+.deckrow__kill{width:44px;height:44px;border-radius:10px;background:transparent;
+  border:2px solid rgba(255,255,255,.18);color:rgba(255,255,255,.55);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;padding:0}
+.deckrow__kill svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.5;
+  stroke-linecap:round;stroke-linejoin:round}
+.deckrow__kill:hover{border-color:var(--red);color:var(--red)}
+
+@media (max-width:720px), (pointer:coarse){
+  .deckrow{grid-template-columns:96px minmax(0,1fr) 44px;grid-template-areas:'pic answer kill' 'pic prompt kill'}
+  .deckrow__pic{grid-area:pic}
+  .deckrow__kill{grid-area:kill}
+  .deckrow .input--answer{grid-area:answer}
+  .deckrow .input--prompt{grid-area:prompt}
+}
+
+/* ── the share / import cards ── */
+.deckshare{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;
+  gap:clamp(10px,1.8vh,18px);width:min(560px,100%);
+  background:linear-gradient(180deg,var(--indigo-900),var(--indigo-950));
+  border:3px solid var(--lime);border-radius:22px;
+  padding:clamp(26px,4vh,44px) clamp(20px,3vw,40px)}
+.deckshare .shot__close{position:absolute;top:10px;right:10px}
+.deckshare__eyebrow{letter-spacing:.32em;text-indent:.32em;text-transform:uppercase;font-weight:900;
+  font-size:clamp(10px,1.1vw,14px);color:var(--lime)}
+.deckshare__code{font-family:var(--ff-display);color:var(--indigo);background:var(--lime);
+  font-size:clamp(38px,7vw,72px);letter-spacing:.16em;text-indent:.16em;line-height:1;
+  padding:.417em .3em .123em;border-radius:14px;box-shadow:0 5px 0 var(--lime-deep)}
+.deckshare__how{margin:0;font-size:clamp(13px,1.3vw,17px);color:rgba(255,255,255,.7);line-height:1.4}
+.deckshare__how b{color:#fff}
+.deckshare__acts{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;width:100%}
+.deckshare__acts .btn{flex:1 1 0;min-width:0}
+.deckshare__form{display:flex;gap:10px;width:100%}
+.deckshare__input{flex:1;min-width:0;background:rgba(14,14,45,.9);border:3px solid var(--indigo-600);
+  border-radius:14px;color:var(--lime);font-family:var(--ff-display);
+  font-size:clamp(26px,7vw,42px);letter-spacing:.18em;text-align:center;text-transform:uppercase;
+  padding:.24em .1em .3em;outline:none}
+.deckshare__input:focus{border-color:var(--lime);box-shadow:0 0 0 5px rgba(222,255,102,.16)}
+.deckshare__input::placeholder{color:rgba(255,255,255,.18)}
+.deckshare__state{margin:0;min-height:1.2em;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  font-size:clamp(10px,1.1vw,13px);color:rgba(255,255,255,.45)}
+.deckshare__state.is-bad{color:var(--red)}
+.deckshare__state.is-good{color:var(--lime)}
+
+/* the "make your own" tile at the end of the gallery */
+.catcard--new{border-style:dashed;border-color:rgba(222,255,102,.45);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.5em;min-height:100%;background:rgba(222,255,102,.05)}
+.catcard--new:hover{border-color:var(--lime);background:rgba(222,255,102,.09)}
+.catcard--new b{font-family:var(--ff-display);color:var(--lime);
+  font-size:clamp(15px,1.5vw,20px);line-height:1.1;text-align:center}
+.catcard--new span{font-size:clamp(11px,1.1vw,13px);color:rgba(255,255,255,.55);
+  text-align:center;max-width:22ch;line-height:1.35}
+.catcard--new .catcard__glyph{font-size:clamp(34px,4vw,54px)}
+.catcard__badge{position:absolute;top:8px;left:8px;z-index:2;padding:2px 8px 3px;border-radius:99px;
+  background:var(--lime);color:var(--indigo-950);font-size:10px;font-weight:900;
+  letter-spacing:.1em;text-transform:uppercase}
 
 /* ── tutorial ── */
 .tut{position:relative;width:min(560px,100%);max-height:92vh;overflow:auto;text-align:center;
