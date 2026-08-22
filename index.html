@@ -35,12 +35,16 @@
       </button>
 
       <div class="welcome__acts">
+        <button class="btn btn--ghost" type="button" id="browseDecks">Browse decks people made</button>
         <button class="btn btn--go btn--huge" type="button" id="startFlow">PLAY</button>
         <button class="btn btn--ghost" type="button" id="joinGame">Join a game with a code</button>
         <button class="btn btn--ghost btn--quiet" type="button" id="quickStart" hidden>Play again</button>
       </div>
 
-      <button class="welcome__how" type="button" id="toTutorial">How to play</button>
+      <div class="welcome__links">
+        <button class="welcome__how" type="button" id="toTutorial">How to play</button>
+        <button class="welcome__how" type="button" id="toMyDecks" hidden>My decks</button>
+      </div>
 
       <p class="welcome__stats" id="welcomeStats"></p>
     </div>
@@ -375,6 +379,19 @@
     </header>
 
     <div class="builder">
+      <div class="builder__cover">
+        <button class="builder__coverpick" type="button" id="deckCoverPick">
+          <span class="builder__coverempty" id="deckCoverEmpty">+ Cover picture</span>
+          <img id="deckCoverImg" alt="" hidden>
+        </button>
+        <div class="builder__covertext">
+          <b>Deck cover</b>
+          <span>The picture people see when they're browsing. Optional &mdash; without one it
+            uses your first answer.</span>
+          <button class="builder__coverclear" type="button" id="deckCoverClear" hidden>Remove cover</button>
+        </div>
+      </div>
+
       <div class="builder__head">
         <label class="field">
           <span class="field__label">Deck name</span>
@@ -515,6 +532,24 @@
   <svg class="mutebtn__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>
   <span class="mutebtn__label" id="muteLabel">Sound on</span>
 </button>
+
+<div class="ovl ovl--mine" id="ovlMyDecks" hidden>
+  <div class="gallery">
+    <button class="shot__close" type="button" id="myDecksClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <div class="gallery__head">
+      <span class="deckshare__eyebrow">DECKS YOU'VE MADE</span>
+      <p class="gallery__note">These live in this browser. Published ones show their code and
+        the edit key that proves they&rsquo;re yours.</p>
+    </div>
+    <div class="minedecks" id="myDecksList"></div>
+    <p class="gallery__state" id="myDecksState"></p>
+    <div class="gallery__code">
+      <button class="btn btn--go" type="button" id="myDecksNew">Make a new deck</button>
+    </div>
+  </div>
+</div>
 
 <div class="ovl ovl--paste" id="ovlPaste" hidden>
   <div class="paste">

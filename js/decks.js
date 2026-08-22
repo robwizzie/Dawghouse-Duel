@@ -184,6 +184,14 @@ DHD.Decks = (function () {
 
       var items = (deck.items || []).slice(0, MAX_ITEMS);
       var pictures = items.filter(function (i) { return i.imgUrl && /^data:/.test(i.imgUrl); });
+
+      /* The deck's own cover is a picture too, and gets uploaded with the
+         rest rather than being a special case at the end. */
+      var coverRow = null;
+      if (deck.cover && /^data:/.test(deck.cover)) {
+        coverRow = { imgUrl: deck.cover };
+        pictures = pictures.concat([coverRow]);
+      }
       var done = 0;
       if (onProgress) onProgress(0, pictures.length);
 
@@ -212,10 +220,16 @@ DHD.Decks = (function () {
       pictures.forEach(function (it) { chain = chain.then(function () { return upload(it); }); });
 
       return chain.then(function () {
+        if (coverRow && coverRow.__key) deck.coverKey = coverRow.__key;
+        else if (deck.cover && !/^data:/.test(deck.cover)) {
+          var tail = String(deck.cover).split('/img/')[1];
+          if (tail) deck.coverKey = tail;
+        }
         var body = {
           name: deck.name,
           blurb: deck.blurb || '',
           private: !!(opts && opts.private),
+          cover: deck.coverKey || undefined,
           items: items.map(function (it) {
             var row = { answer: it.answer };
             if (it.alt && it.alt.length) row.alt = it.alt;
@@ -247,6 +261,7 @@ DHD.Decks = (function () {
         items.forEach(function (it) {
           if (it.__key) { it.imgUrl = base + '/img/' + it.__key; delete it.__key; }
         });
+        if (coverRow && coverRow.__key) deck.cover = base + '/img/' + coverRow.__key;
         deck.code = out.code;
         /* Returned exactly once, on first publish. Kept locally because
            it is the only proof of ownership there is. */
@@ -272,6 +287,15 @@ DHD.Decks = (function () {
         delete deck.code; delete deck.secret; delete deck.private;
         return true;
       });
+    },
+
+    /* Flag a deck. Enough of these and it drops out of the gallery on
+       its own; it stays playable by code. */
+    report: function (code) {
+      var base = relay();
+      if (!base) return Promise.reject(new Error('No relay configured'));
+      return fetch(base + '/deck/' + code + '/report', { method: 'POST' })
+        .then(function (r) { return r.json(); });
     },
 
     /* The public gallery. Unlisted decks are not in here at all. */

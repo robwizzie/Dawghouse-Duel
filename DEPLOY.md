@@ -184,6 +184,42 @@ You want `{"ok":true}`.
 
 ---
 
+## Moderation
+
+The gallery makes published decks browsable, which means anything anyone
+uploads is discoverable from your own site rather than only reachable by
+code. Two things guard that.
+
+**Reporting.** Every gallery card has a flag. Three reports and the deck
+drops out of the gallery on its own — it stays playable by code, because
+hiding something on three clicks should not destroy somebody's work.
+
+**Takedown.** Set an admin token as a Worker secret:
+
+```bash
+cd ~/Desktop/Dawghouse-Duel/worker && npx wrangler secret put ADMIN_TOKEN
+```
+
+Then, with that token:
+
+```bash
+curl -H "Authorization: Bearer YOURTOKEN" https://YOUR-RELAY/admin/flagged
+```
+
+lists everything that has been reported, and
+
+```bash
+curl -X DELETE -H "Authorization: Bearer YOURTOKEN" https://YOUR-RELAY/admin/deck/CODE
+```
+
+removes a deck and its pictures for good. `POST` to that same address
+instead clears the flags and puts it back.
+
+Without `ADMIN_TOKEN` set, those two endpoints are simply off rather than
+open to anyone.
+
+---
+
 ## What publishing a deck stores
 
 Worth knowing before you turn it on, because it is your bucket.
@@ -203,7 +239,9 @@ the honest description: anyone with the link can play it.
 Uploaded pictures are checked against their actual bytes, not the
 content-type the uploader claimed, and served back with `nosniff` and a
 locked-down CSP. SVG is refused — it can carry script. Publishing and
-uploading are rate limited per caller; playing a deck never is.
+uploading are rate limited per caller, and uploads are also rationed by
+total size (120MB an hour), because a 3MB-per-picture cap on its own still
+allows a 900MB deck. Playing a deck is never rationed.
 
 To take something down yourself:
 

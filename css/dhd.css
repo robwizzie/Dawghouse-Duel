@@ -1416,3 +1416,63 @@ kbd{font-family:var(--ff-cond);font-weight:900;background:var(--lime);color:var(
 .gallery__code{border-top:2px solid rgba(255,255,255,.1);padding-top:14px;
   display:flex;flex-direction:column;gap:10px;align-items:center}
 .gallery__code p{margin:0;color:rgba(255,255,255,.5);font-size:clamp(12px,1.2vw,14px)}
+
+
+/* ── deck cover picker ── */
+.builder__cover{display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+  padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.04);
+  border:2px solid var(--indigo-600)}
+.builder__coverpick{position:relative;flex:0 0 auto;width:132px;aspect-ratio:16/10;
+  border-radius:10px;overflow:hidden;cursor:pointer;padding:0;
+  background:var(--indigo-950);border:2px dashed rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;transition:border-color .15s}
+.builder__coverpick:hover{border-color:var(--lime)}
+.builder__coverpick img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.builder__coverempty{font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  font-size:10px;color:rgba(255,255,255,.45);text-align:center;padding:0 8px}
+.builder__covertext{flex:1 1 220px;display:flex;flex-direction:column;gap:3px}
+.builder__covertext b{font-family:var(--ff-cond);font-weight:900;letter-spacing:.08em;
+  text-transform:uppercase;font-size:clamp(12px,1.2vw,15px)}
+.builder__covertext span{font-size:clamp(11px,1.15vw,13px);color:rgba(255,255,255,.55);line-height:1.4}
+.builder__coverclear{align-self:flex-start;margin-top:4px;background:none;border:0;cursor:pointer;
+  padding:4px 0;min-height:32px;color:rgba(255,255,255,.4);
+  font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:11px}
+.builder__coverclear:hover{color:var(--red)}
+
+/* ── report control on a gallery card ── */
+.gcard__wrap{position:relative;display:flex}
+.gcard__wrap .gcard{flex:1}
+.gcard__flag{position:absolute;top:6px;right:6px;z-index:2;width:30px;height:30px;padding:0;
+  border-radius:50%;cursor:pointer;border:0;background:rgba(14,14,45,.72);
+  color:rgba(255,255,255,.5);font-size:14px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .15s,color .15s,background .15s}
+.gcard__wrap:hover .gcard__flag,.gcard__flag:focus-visible{opacity:1}
+.gcard__flag:hover{color:var(--red);background:rgba(14,14,45,.92)}
+.gcard__flag:disabled{opacity:.4;cursor:default}
+@media (pointer:coarse){ .gcard__flag{opacity:1;width:38px;height:38px} }
+
+/* ── your own decks ── */
+.gallery__note{margin:0;color:rgba(255,255,255,.5);font-size:clamp(12px,1.2vw,14px);line-height:1.4}
+.minedecks{display:flex;flex-direction:column;gap:10px}
+.minedeck{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:14px;
+  background:rgba(255,255,255,.04);border:2px solid var(--indigo-600)}
+.minedeck__head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.minedeck__head b{font-family:var(--ff-display);font-size:clamp(15px,1.6vw,20px);
+  overflow-wrap:anywhere}
+.minedeck__tag{padding:2px 9px 3px;border-radius:99px;font-weight:900;letter-spacing:.12em;
+  text-transform:uppercase;font-size:10px;
+  background:rgba(255,255,255,.1);color:rgba(255,255,255,.6)}
+.minedeck__tag.is-live{background:var(--lime);color:var(--indigo-950)}
+.minedeck__meta{font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  font-size:clamp(9px,.95vw,11px);color:rgba(255,255,255,.45)}
+.minedeck__codes{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.minedeck__code{font-family:var(--ff-display);color:var(--indigo-950);background:var(--lime);
+  border-radius:7px;padding:.34em .5em .1em;font-size:clamp(13px,1.4vw,17px);letter-spacing:.1em}
+.minedeck__key{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;
+  color:rgba(255,255,255,.55);background:var(--indigo-950);border-radius:6px;padding:4px 8px;
+  word-break:break-all}
+.minedeck__warn{font-size:11px;color:var(--amber);font-weight:700}
+.minedeck__acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+
+.welcome__links{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap}

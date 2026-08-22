@@ -61,6 +61,11 @@
     ovlDeckGet: $('ovlDeckGet'), deckGetForm: $('deckGetForm'), deckGetCode: $('deckGetCode'),
     deckGetGo: $('deckGetGo'), deckGetState: $('deckGetState'), deckGetClose: $('deckGetClose'),
     deckList: $('deckList'), deckListState: $('deckListState'), deckSearch: $('deckSearch'),
+    deckCoverPick: $('deckCoverPick'), deckCoverImg: $('deckCoverImg'),
+    deckCoverEmpty: $('deckCoverEmpty'), deckCoverClear: $('deckCoverClear'),
+    browseDecks: $('browseDecks'), toMyDecks: $('toMyDecks'),
+    ovlMyDecks: $('ovlMyDecks'), myDecksList: $('myDecksList'), myDecksState: $('myDecksState'),
+    myDecksClose: $('myDecksClose'), myDecksNew: $('myDecksNew'),
     deckSort: $('deckSort'), deckPager: $('deckPager'), deckPrev: $('deckPrev'),
     deckNext: $('deckNext'), deckPageLabel: $('deckPageLabel'),
     boardPrompt: $('boardPrompt'), boardPromptText: $('boardPromptText'),
@@ -142,7 +147,12 @@
   };
 
   /* ── small helpers ───────────────────────────────────────── */
-  function show(screen) { html.setAttribute('data-screen', screen); }
+  function show(screen) {
+    html.setAttribute('data-screen', screen);
+    /* The menu's "My decks" link only makes sense once there is one, and
+       a deck can be made at any point in between. */
+    if (screen === 'welcome') refreshMyDecksLink();
+  }
   function shuffle(a) {
     for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
     return a;
@@ -2061,6 +2071,23 @@
     renderDeckRows();
     saveDraft();
   });
+  on(el.deckCoverPick, 'click', function () {
+    pickImage(function (dataUrl) {
+      if (!draft) return;
+      draft.cover = dataUrl;
+      delete draft.coverKey;      // a new picture needs uploading again
+      renderDeckCover();
+      saveDraft();
+    });
+  });
+  on(el.deckCoverClear, 'click', function (e) {
+    e.stopPropagation();
+    if (!draft) return;
+    delete draft.cover; delete draft.coverKey;
+    renderDeckCover();
+    saveDraft();
+  });
+
   on(el.deckName, 'input', function () { draft && (draft.name = el.deckName.value); saveDraft(); });
   on(el.deckBlurb, 'input', function () { draft && (draft.blurb = el.deckBlurb.value); saveDraft(); });
 
@@ -2090,6 +2117,7 @@
   });
   on(el.deckShareDone, 'click', function () {
     el.ovlDeckShare.hidden = true;
+    refreshMyDecksLink();
     show('setup');
     goStep(STEPS.indexOf('category'));
   });
@@ -2101,6 +2129,11 @@
   });
   on(el.deckGetClose, 'click', function () { el.ovlDeckGet.hidden = true; });
   on(el.deckGetForm, 'submit', function (e) { e.preventDefault(); getDeckByCode(el.deckGetCode.value); });
+  on(el.browseDecks, 'click', openDeckGet);
+  on(el.toMyDecks, 'click', openMyDecks);
+  on(el.myDecksClose, 'click', function () { el.ovlMyDecks.hidden = true; });
+  on(el.myDecksNew, 'click', function () { el.ovlMyDecks.hidden = true; openBuilder(null); });
+
   on(el.deckSearch, 'input', function () {
     clearTimeout(searchTimer);
     searchTimer = setTimeout(function () {
@@ -2351,6 +2384,16 @@
     saveTimer = setTimeout(write, 600);
   }
 
+  function renderDeckCover() {
+    if (!el.deckCoverPick) return;
+    var url = draft && draft.cover;
+    el.deckCoverImg.hidden = !url;
+    el.deckCoverEmpty.hidden = !!url;
+    el.deckCoverClear.hidden = !url;
+    if (url) el.deckCoverImg.src = url;
+    else el.deckCoverImg.removeAttribute('src');
+  }
+
   function openBuilder(deck) {
     draft = deck || newDraft();
     if (el.deckPrivate) el.deckPrivate.checked = !!draft.private;
@@ -2360,6 +2403,7 @@
     el.builderDelete.hidden = !Decks.get(draft.id);
     el.builderShare.hidden = !draft.items.length;
     renderDeckRows();
+    renderDeckCover();
     show('builder');
   }
 
@@ -2570,6 +2614,112 @@
     el.ovlDeckShare.hidden = false;
   }
 
+  /* ── your own decks ─────────────────────────────────────────
+     Drafts and published decks in one place, with the code and the edit
+     key for anything that went up — the key exists nowhere else, so this
+     is where you come to find it again. */
+  function renderMyDecks() {
+    var mine = Decks.all();
+    el.myDecksList.innerHTML = '';
+    if (!mine.length) {
+      el.myDecksState.textContent = 'You haven\u2019t made one yet.';
+      return;
+    }
+    el.myDecksState.textContent = '';
+
+    mine.sort(function (a, b) { return (b.updated || 0) - (a.updated || 0); });
+    mine.forEach(function (d) {
+      var row = document.createElement('div');
+      row.className = 'minedeck';
+
+      var head = document.createElement('div');
+      head.className = 'minedeck__head';
+      var name = document.createElement('b');
+      name.textContent = d.name || 'Untitled deck';
+      head.appendChild(name);
+
+      var tag = document.createElement('span');
+      tag.className = 'minedeck__tag' + (d.code ? ' is-live' : '');
+      tag.textContent = d.code ? (d.private ? 'Unlisted' : 'Published') : 'Draft';
+      head.appendChild(tag);
+      row.appendChild(head);
+
+      var meta = document.createElement('span');
+      meta.className = 'minedeck__meta';
+      var rows = (d.items || []).filter(function (r) { return (r.answer || '').trim(); }).length;
+      var usable = (d.items || []).filter(function (r) {
+        return (r.answer || '').trim() && ((r.prompt || '').trim() || r.imgUrl);
+      }).length;
+      /* An answer with no picture and no prompt has nothing to put on the
+         board, so say that rather than reporting it as zero answers. */
+      var bits = [usable + (usable === 1 ? ' answer' : ' answers')];
+      if (rows > usable) bits.push((rows - usable) + ' still need a picture');
+      else if (!Decks.playable(d)) bits.push('needs 4 to play');
+      meta.textContent = bits.join(' \u00b7 ');
+      row.appendChild(meta);
+
+      if (d.code) {
+        var codes = document.createElement('div');
+        codes.className = 'minedeck__codes';
+        var c1 = document.createElement('span');
+        c1.className = 'minedeck__code';
+        c1.textContent = d.code;
+        codes.appendChild(c1);
+        if (d.secret) {
+          var k = document.createElement('code');
+          k.className = 'minedeck__key';
+          k.textContent = d.secret;
+          codes.appendChild(k);
+        } else {
+          var warn = document.createElement('span');
+          warn.className = 'minedeck__warn';
+          warn.textContent = 'no edit key on this device';
+          codes.appendChild(warn);
+        }
+        row.appendChild(codes);
+      }
+
+      var acts = document.createElement('div');
+      acts.className = 'minedeck__acts';
+
+      var edit = document.createElement('button');
+      edit.className = 'btn btn--ghost btn--sm';
+      edit.type = 'button';
+      edit.textContent = d.code ? 'Edit' : 'Carry on';
+      edit.addEventListener('click', function () {
+        el.ovlMyDecks.hidden = true;
+        openBuilder(d);
+      });
+      acts.appendChild(edit);
+
+      if (d.code) {
+        var copy = document.createElement('button');
+        copy.className = 'btn btn--ghost btn--sm';
+        copy.type = 'button';
+        copy.textContent = 'Copy link';
+        copy.addEventListener('click', function () {
+          var link = deckLink(d.code);
+          (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject())
+            .then(function () { toast('Link copied'); })
+            .catch(function () { window.prompt('Copy the link', link); });
+        });
+        acts.appendChild(copy);
+      }
+
+      row.appendChild(acts);
+      el.myDecksList.appendChild(row);
+    });
+  }
+
+  function openMyDecks() {
+    renderMyDecks();
+    el.ovlMyDecks.hidden = false;
+  }
+
+  function refreshMyDecksLink() {
+    if (el.toMyDecks) el.toMyDecks.hidden = !Decks.all().length;
+  }
+
   /* ── the deck gallery ───────────────────────────────────────
      Typing a code you had to be told is fine for a private deck and
      hopeless as the only way in, so public decks are browsable:
@@ -2670,7 +2820,29 @@
 
       card.appendChild(body);
       card.addEventListener('click', function () { getDeckByCode(d.code); });
-      el.deckList.appendChild(card);
+
+      /* Reporting sits outside the card's own click, or flagging a deck
+         would open it. */
+      var flag = document.createElement('button');
+      flag.className = 'gcard__flag';
+      flag.type = 'button';
+      flag.title = 'Report this deck';
+      flag.setAttribute('aria-label', 'Report this deck');
+      flag.textContent = '\u2691';
+      flag.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (!window.confirm('Report \u201c' + (d.name || 'this deck') + '\u201d as inappropriate?')) return;
+        flag.disabled = true;
+        Decks.report(d.code)
+          .then(function () { toast('Reported \u2014 thank you'); })
+          .catch(function () { flag.disabled = false; toast('Could not send that report'); });
+      });
+
+      var wrap = document.createElement('div');
+      wrap.className = 'gcard__wrap';
+      wrap.appendChild(card);
+      wrap.appendChild(flag);
+      el.deckList.appendChild(wrap);
     });
 
     el.deckPager.hidden = galleryState.pages <= 1;
@@ -2680,7 +2852,11 @@
   }
 
   function getDeckByCode(code) {
-    code = String(code || '').trim().toUpperCase();
+    /* People paste the whole link far more often than they retype the
+       code out of it. Take either. */
+    var raw = String(code || '').trim();
+    var fromLink = /[?&]deck=([A-Za-z0-9]{4,12})/i.exec(raw);
+    code = (fromLink ? fromLink[1] : raw.replace(/^.*\/+/, '')).trim().toUpperCase();
     if (!code) return;
     el.deckGetState.className = 'deckshare__state';
     el.deckGetState.textContent = 'Looking…';
@@ -2721,6 +2897,7 @@
   syncCats();
   buildSetup();     // category options must exist before a saved choice can match
   restoreSetup();
+  refreshMyDecksLink();
   Sfx.setEnabled(cfg.sound);
   Sfx.setTick(cfg.tick);
   renderMute();

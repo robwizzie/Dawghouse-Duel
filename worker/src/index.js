@@ -226,6 +226,11 @@ const CORS = {
    between unlisted and public — not a flag checked at read time, but
    never being written down anywhere that can be browsed.
    ══════════════════════════════════════════════════════════════ */
+/* Flags needed before a deck drops out of the gallery on its own. Low
+   enough to react without anyone watching, high enough that one person
+   with a grudge cannot bury a deck. */
+const REPORTS_TO_HIDE = 3;
+
 export class DeckIndex {
   constructor(state) {
     this.state = state;
@@ -238,8 +243,13 @@ export class DeckIndex {
       'CREATE TABLE IF NOT EXISTS decks (' +
         'code TEXT PRIMARY KEY, name TEXT, blurb TEXT, items INTEGER, ' +
         'at INTEGER, updated INTEGER, txt INTEGER, cover TEXT, ' +
-        'plays INTEGER DEFAULT 0, up INTEGER DEFAULT 0, down INTEGER DEFAULT 0)'
+        'plays INTEGER DEFAULT 0, up INTEGER DEFAULT 0, down INTEGER DEFAULT 0, ' +
+        'reports INTEGER DEFAULT 0, hidden INTEGER DEFAULT 0)'
     );
+    /* Older rows predate these two columns. */
+    for (const col of ['reports INTEGER DEFAULT 0', 'hidden INTEGER DEFAULT 0']) {
+      try { this.state.storage.sql.exec('ALTER TABLE decks ADD COLUMN ' + col); } catch (e) {}
+    }
     this.ready = true;
   }
 
@@ -271,6 +281,32 @@ export class DeckIndex {
       return Response.json({ ok: true });
     }
 
+    /* Enough people flagging a deck pulls it out of the gallery on its
+       own. It stays playable by code — this hides it from browsing, it
+       does not delete somebody's work on a handful of clicks. A real
+       takedown is a separate, deliberate act. */
+    if (action === 'report') {
+      const d = await request.json();
+      sql.exec('UPDATE decks SET reports = reports + 1 WHERE code = ?', d.code);
+      const row = [...sql.exec('SELECT reports FROM decks WHERE code = ?', d.code)][0];
+      const n = row ? row.reports : 0;
+      if (n >= REPORTS_TO_HIDE) sql.exec('UPDATE decks SET hidden = 1 WHERE code = ?', d.code);
+      return Response.json({ reports: n, hidden: n >= REPORTS_TO_HIDE });
+    }
+
+    if (action === 'flagged') {
+      const rows = [...sql.exec(
+        'SELECT code,name,blurb,reports,hidden,plays,at FROM decks WHERE reports > 0 ORDER BY reports DESC LIMIT 200'
+      )];
+      return Response.json({ decks: rows });
+    }
+
+    if (action === 'show') {
+      const d = await request.json();
+      sql.exec('UPDATE decks SET hidden = 0, reports = 0 WHERE code = ?', d.code);
+      return Response.json({ ok: true });
+    }
+
     if (action === 'bump') {
       const d = await request.json();
       sql.exec(
@@ -291,7 +327,9 @@ export class DeckIndex {
          than spliced. LIKE's own wildcards are escaped so a name with a
          % in it searches for a % . */
       const like = '%' + q.replace(/[\\%_]/g, c => '\\' + c) + '%';
-      const where = q ? "WHERE (name LIKE ? ESCAPE '\\' OR blurb LIKE ? ESCAPE '\\')" : '';
+      const where = q
+        ? "WHERE hidden = 0 AND (name LIKE ? ESCAPE '\\' OR blurb LIKE ? ESCAPE '\\')"
+        : 'WHERE hidden = 0';
       const args = q ? [like, like] : [];
 
       /* Popular leans on plays but lets votes move it, and a brand new
@@ -338,7 +376,8 @@ async function indexPut(env, deck) {
       body: JSON.stringify({
         code: deck.code, name: deck.name, blurb: deck.blurb,
         items: (deck.items || []).length, at: deck.at, updated: deck.updated,
-        text: deck.text, cover: (deck.items || []).map(i => i.img).filter(Boolean)[0] || ''
+        text: deck.text,
+        cover: deck.cover || (deck.items || []).map(i => i.img).filter(Boolean)[0] || ''
       })
     });
   } catch (e) {}
@@ -350,6 +389,24 @@ async function indexDel(env, code) {
   try {
     await stub.fetch('https://index/?do=del', { method: 'POST', body: JSON.stringify({ code: code }) });
   } catch (e) {}
+}
+
+async function indexReport(env, code) {
+  const stub = indexStub(env);
+  if (!stub) return { reports: 0 };
+  const res = await stub.fetch('https://index/?do=report', {
+    method: 'POST', body: JSON.stringify({ code: code })
+  });
+  return res.json();
+}
+
+async function indexAdmin(env, action, code) {
+  const stub = indexStub(env);
+  if (!stub) return {};
+  const res = await stub.fetch('https://index/?do=' + action, {
+    method: 'POST', body: JSON.stringify({ code: code || '' })
+  });
+  return res.json();
 }
 
 async function indexBump(env, code, delta) {
@@ -372,31 +429,42 @@ export class RateLimit {
   constructor(state) { this.state = state; }
 
   async fetch(request) {
-    const { key, limit, windowMs } = await request.json();
+    const { key, limit, windowMs, cost } = await request.json();
     const now = Date.now();
-    const hits = (await this.state.storage.get(key)) || [];
-    const live = hits.filter(t => now - t < windowMs);
-    if (live.length >= limit) {
-      return Response.json({ ok: false, retryMs: windowMs - (now - live[0]) });
+    const weight = Math.max(1, cost || 1);
+    /* Entries are [when, howMuch] so the same object can ration calls
+       and bytes — a picture upload costs its own size. */
+    /* Tolerate the older shape (a bare timestamp) from before entries
+       carried a weight. */
+    const hits = ((await this.state.storage.get(key)) || [])
+      .map(h => (Array.isArray(h) ? h : [h, 1]));
+    const live = hits.filter(h => now - h[0] < windowMs);
+    const used = live.reduce((n, h) => n + h[1], 0);
+    if (used + weight > limit) {
+      /* An empty window here means this one request is bigger than the
+         whole allowance, so there is nothing to wait for. */
+      const retryMs = live.length ? windowMs - (now - live[0][0]) : 0;
+      return Response.json({ ok: false, retryMs: retryMs, tooBig: !live.length });
     }
-    live.push(now);
+    live.push([now, weight]);
     await this.state.storage.put(key, live);
-    return Response.json({ ok: true, left: limit - live.length });
+    return Response.json({ ok: true, left: limit - used - weight });
   }
 }
 
 /* Returns null when the caller is inside their allowance, or a 429. */
-async function rateLimit(request, env, bucket, limit, windowMs) {
+async function rateLimit(request, env, bucket, limit, windowMs, cost) {
   if (!env.LIMITS) return null;            // not bound: fail open, don't break publishing
   const ip = request.headers.get('cf-connecting-ip') || 'unknown';
   const id = env.LIMITS.idFromName(bucket + ':' + ip);
   try {
     const res = await env.LIMITS.get(id).fetch('https://limit/', {
       method: 'POST',
-      body: JSON.stringify({ key: bucket, limit, windowMs })
+      body: JSON.stringify({ key: bucket, limit, windowMs, cost: cost })
     });
     const out = await res.json();
     if (out.ok) return null;
+    if (out.tooBig) return json({ error: 'that is larger than one upload is allowed to be' }, 413);
     return json({ error: 'slow down a moment', retryAfter: Math.ceil((out.retryMs || windowMs) / 1000) }, 429);
   } catch (e) {
     return null;                           // a broken limiter must not block real users
@@ -423,6 +491,7 @@ const DECK_LIMITS = {
   items: 300,
   json: 512 * 1024,          // the deck itself, without pictures
   image: 3 * 1024 * 1024,    // one picture
+  uploadBudget: 120 * 1024 * 1024,   // all pictures, per caller, per hour
   name: 40,
   blurb: 120,
   answer: 80,
@@ -543,12 +612,18 @@ function sanitiseDeck(raw) {
     out.push(row);
   }
   if (!out.length) return null;
-  return {
+  const deck = {
     name: clean(raw.name, DECK_LIMITS.name) || 'Custom deck',
     blurb: clean(raw.blurb, DECK_LIMITS.blurb),
     text: out.every(i => !i.img),
     items: out
   };
+  /* A cover the maker chose, rather than whichever answer happened to be
+     first. Same key shape as any other picture. */
+  if (typeof raw.cover === 'string' && /^[A-Za-z0-9_-]{1,64}\.(jpg|png|webp|gif)$/.test(raw.cover)) {
+    deck.cover = raw.cover;
+  }
+  return deck;
 }
 
 async function publishDeck(request, env) {
@@ -668,6 +743,12 @@ async function putImage(request, env) {
   const real = sniffImage(body);
   if (!real) return json({ error: 'that file is not a JPEG, PNG, GIF or WebP' }, 415);
 
+  /* A per-image cap alone lets someone publish 300 answers of 3MB each.
+     This rations total bytes per caller per hour, not just calls. */
+  const budget = await rateLimit(request, env, 'imgbytes', DECK_LIMITS.uploadBudget,
+                                 60 * 60 * 1000, body.byteLength);
+  if (budget) return budget;
+
   const key = newCode(16) + '.' + real.ext;
   await env.DECKS.put('img/' + key, body, { httpMetadata: { contentType: real.type } });
   return json({ key: key });
@@ -741,6 +822,45 @@ export default {
 
     const pl = url.pathname.match(/^\/deck\/([A-Za-z0-9]{4,12})\/played$/);
     if (pl && request.method === 'POST') return deckStats(env, pl[1], 'played');
+
+    const rp = url.pathname.match(/^\/deck\/([A-Za-z0-9]{4,12})\/report$/);
+    if (rp && request.method === 'POST') {
+      const limited = await rateLimit(request, env, 'report', 20, 60 * 60 * 1000);
+      if (limited) return limited;
+      return json(await indexReport(env, rp[1]));
+    }
+
+    /* Moderation. Needs ADMIN_TOKEN set as a Worker secret; without one
+       these are simply off rather than open. */
+    const adminOk = () => {
+      const tok = bearer(request);
+      return !!env.ADMIN_TOKEN && !!tok && sameSecret(tok, env.ADMIN_TOKEN);
+    };
+
+    if (url.pathname === '/admin/flagged' && request.method === 'GET') {
+      if (!adminOk()) return json({ error: 'no' }, 403);
+      return json(await indexAdmin(env, 'flagged'));
+    }
+
+    const ad = url.pathname.match(/^\/admin\/deck\/([A-Za-z0-9]{4,12})$/);
+    if (ad && request.method === 'DELETE') {
+      if (!adminOk()) return json({ error: 'no' }, 403);
+      const deck = await readDeck(env, ad[1]);
+      if (deck) {
+        for (const key of (deck.items || []).map(i => i.img).filter(Boolean)) {
+          if (/^[A-Za-z0-9_-]{1,64}\.(jpg|png|webp|gif)$/.test(key)) {
+            try { await env.DECKS.delete('img/' + key); } catch (e) {}
+          }
+        }
+        await env.DECKS.delete('deck/' + ad[1].toUpperCase() + '.json');
+      }
+      await indexDel(env, ad[1].toUpperCase());
+      return json({ removed: ad[1].toUpperCase() });
+    }
+    if (ad && request.method === 'POST') {          // clear the flags, put it back
+      if (!adminOk()) return json({ error: 'no' }, 403);
+      return json(await indexAdmin(env, 'show', ad[1].toUpperCase()));
+    }
 
     const vt = url.pathname.match(/^\/deck\/([A-Za-z0-9]{4,12})\/vote$/);
     if (vt && request.method === 'POST') {
