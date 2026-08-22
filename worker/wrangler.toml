@@ -13,6 +13,12 @@ class_name = "Room"
 name = "STATS"
 class_name = "DeckStats"
 
+# Per-caller counters for publishing and uploading, so one script can't
+# fill the bucket. Reads are never rationed.
+[[durable_objects.bindings]]
+name = "LIMITS"
+class_name = "RateLimit"
+
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["Room"]
@@ -20,6 +26,10 @@ new_sqlite_classes = ["Room"]
 [[migrations]]
 tag = "v2"
 new_sqlite_classes = ["DeckStats"]
+
+[[migrations]]
+tag = "v3"
+new_sqlite_classes = ["RateLimit"]
 
 # Published decks: the JSON under deck/, the pictures under img/.
 # Create it once with:  npx wrangler r2 bucket create dawghouse-duel-decks

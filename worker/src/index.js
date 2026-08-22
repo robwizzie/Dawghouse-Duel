@@ -172,9 +172,50 @@ async function deckStats(env, code, action, params) {
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
-  'Access-Control-Allow-Headers': 'content-type'
+  'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
+  'Access-Control-Allow-Headers': 'content-type,authorization',
+  'Access-Control-Max-Age': '86400'
 };
+
+/* ── slowing down abuse ─────────────────────────────────────
+   Publishing and uploading both cost storage, and both are open to
+   anyone. One object holds a rolling count per caller so a script
+   can't fill the bucket overnight. Reads are untouched — playing
+   somebody's deck should never be rationed. */
+export class RateLimit {
+  constructor(state) { this.state = state; }
+
+  async fetch(request) {
+    const { key, limit, windowMs } = await request.json();
+    const now = Date.now();
+    const hits = (await this.state.storage.get(key)) || [];
+    const live = hits.filter(t => now - t < windowMs);
+    if (live.length >= limit) {
+      return Response.json({ ok: false, retryMs: windowMs - (now - live[0]) });
+    }
+    live.push(now);
+    await this.state.storage.put(key, live);
+    return Response.json({ ok: true, left: limit - live.length });
+  }
+}
+
+/* Returns null when the caller is inside their allowance, or a 429. */
+async function rateLimit(request, env, bucket, limit, windowMs) {
+  if (!env.LIMITS) return null;            // not bound: fail open, don't break publishing
+  const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+  const id = env.LIMITS.idFromName(bucket + ':' + ip);
+  try {
+    const res = await env.LIMITS.get(id).fetch('https://limit/', {
+      method: 'POST',
+      body: JSON.stringify({ key: bucket, limit, windowMs })
+    });
+    const out = await res.json();
+    if (out.ok) return null;
+    return json({ error: 'slow down a moment', retryAfter: Math.ceil((out.retryMs || windowMs) / 1000) }, 429);
+  } catch (e) {
+    return null;                           // a broken limiter must not block real users
+  }
+}
 
 /* ══════════════════════════════════════════════════════════════
    Published decks
@@ -209,6 +250,70 @@ const IMAGE_TYPES = {
 /* No vowels and no look-alikes: a code gets read down a phone and
    typed by somebody else, and it must never spell anything. */
 const CODE_ALPHABET = '23456789BCDFGHJKLMNPQRSTVWXYZ';
+
+/* ── who owns a deck ────────────────────────────────────────
+   No accounts. Publishing mints a secret, we keep only its SHA-256,
+   and editing or deleting means presenting the secret again. Nothing
+   here is a credential worth stealing: it unlocks one deck and there
+   is no account behind it, no email, and no password to reuse
+   somewhere else. Lose the secret and the deck stays published,
+   which is the trade for having nobody to sign in as.
+
+   Private decks aren't a permission — they're an unguessable code
+   that is never listed anywhere. Twelve characters of this alphabet
+   is about 2^58, which is not something anyone walks into. */
+const SECRET_BYTES = 24;
+const PUBLIC_CODE_LEN = 6;
+const PRIVATE_CODE_LEN = 12;
+
+async function sha256Hex(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+/* Compare in constant time so a wrong secret can't be narrowed down by
+   timing how long the rejection took. */
+function sameSecret(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
+function bearer(request) {
+  const h = request.headers.get('authorization') || '';
+  const m = /^Bearer\s+([A-Za-z0-9]{8,64})$/.exec(h.trim());
+  return m ? m[1] : null;
+}
+
+/* The deck as its owner stored it, or null. Never handed to a caller
+   as-is — it carries the secret's hash. */
+async function readDeck(env, code) {
+  const obj = await env.DECKS.get('deck/' + code.toUpperCase() + '.json');
+  if (!obj) return null;
+  try { return JSON.parse(await obj.text()); } catch (e) { return null; }
+}
+
+function publicDeck(deck) {
+  const out = { ...deck };
+  delete out.secretHash;          // the whole point
+  return out;
+}
+
+/* A client can claim any content-type it likes, so believe the bytes
+   instead. Serving a file that says "image/jpeg" but is really HTML is
+   how a picture upload turns into stored XSS. */
+function sniffImage(bytes) {
+  const b = new Uint8Array(bytes);
+  if (b.length < 12) return null;
+  if (b[0] === 0xFF && b[1] === 0xD8 && b[2] === 0xFF) return { ext: 'jpg', type: 'image/jpeg' };
+  if (b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4E && b[3] === 0x47 &&
+      b[4] === 0x0D && b[5] === 0x0A && b[6] === 0x1A && b[7] === 0x0A) return { ext: 'png', type: 'image/png' };
+  if (b[0] === 0x47 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x38) return { ext: 'gif', type: 'image/gif' };
+  if (b[0] === 0x52 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x46 &&
+      b[8] === 0x57 && b[9] === 0x45 && b[10] === 0x42 && b[11] === 0x50) return { ext: 'webp', type: 'image/webp' };
+  return null;                    // SVG included: it is a script container
+}
 
 function newCode(n) {
   const bytes = crypto.getRandomValues(new Uint8Array(n || 6));
@@ -271,45 +376,117 @@ async function publishDeck(request, env) {
   const deck = sanitiseDeck(parsed);
   if (!deck) return json({ error: 'a deck needs at least one answer with a picture or a prompt' }, 400);
 
+  const unlisted = parsed.private === true;
+  const secret = newCode(SECRET_BYTES);
+  deck.secretHash = await sha256Hex(secret);
+  deck.unlisted = unlisted;
+
   /* Retry on the vanishingly unlikely collision rather than overwrite
      somebody else's deck. */
   for (let i = 0; i < 5; i++) {
-    const code = newCode(6);
+    const code = newCode(unlisted ? PRIVATE_CODE_LEN : PUBLIC_CODE_LEN);
     const key = 'deck/' + code + '.json';
     if (await env.DECKS.head(key)) continue;
     deck.code = code;
     deck.at = Date.now();
+    deck.updated = deck.at;
     await env.DECKS.put(key, JSON.stringify(deck), {
       httpMetadata: { contentType: 'application/json' }
     });
-    return json({ code: code, items: deck.items.length });
+    /* The secret is returned exactly once and never stored in the clear.
+       If the maker loses it, the deck stays up and read-only. */
+    return json({ code: code, secret: secret, items: deck.items.length, private: unlisted });
   }
   return json({ error: 'could not allocate a code' }, 503);
 }
 
+/* Replace a deck you can prove you made. */
+async function updateDeck(request, env, code) {
+  if (!env.DECKS) return json({ error: 'deck storage is not configured' }, 501);
+  const secret = bearer(request);
+  if (!secret) return json({ error: 'this needs the edit key you got when you published' }, 401);
+
+  const existing = await readDeck(env, code);
+  if (!existing) return json({ error: 'no deck with that code' }, 404);
+  if (!existing.secretHash) return json({ error: 'this deck predates editing and cannot be changed' }, 409);
+  if (!sameSecret(await sha256Hex(secret), existing.secretHash)) {
+    return json({ error: 'that edit key does not match this deck' }, 403);
+  }
+
+  const raw = await request.text();
+  if (raw.length > DECK_LIMITS.json) return json({ error: 'deck too big' }, 413);
+  let parsed;
+  try { parsed = JSON.parse(raw); } catch (e) { return json({ error: 'bad json' }, 400); }
+
+  const deck = sanitiseDeck(parsed);
+  if (!deck) return json({ error: 'a deck needs at least one answer with a picture or a prompt' }, 400);
+
+  /* Identity and ownership are the server's, not the client's. */
+  deck.code = existing.code;
+  deck.at = existing.at;
+  deck.secretHash = existing.secretHash;
+  deck.unlisted = parsed.private === undefined ? !!existing.unlisted : parsed.private === true;
+  deck.updated = Date.now();
+
+  await env.DECKS.put('deck/' + existing.code + '.json', JSON.stringify(deck), {
+    httpMetadata: { contentType: 'application/json' }
+  });
+  return json({ code: deck.code, items: deck.items.length, private: deck.unlisted });
+}
+
+/* Take it down, pictures and all. */
+async function deleteDeck(request, env, code) {
+  if (!env.DECKS) return json({ error: 'deck storage is not configured' }, 501);
+  const secret = bearer(request);
+  if (!secret) return json({ error: 'this needs the edit key you got when you published' }, 401);
+
+  const existing = await readDeck(env, code);
+  if (!existing) return json({ error: 'no deck with that code' }, 404);
+  if (!existing.secretHash) return json({ error: 'this deck predates editing and cannot be removed here' }, 409);
+  if (!sameSecret(await sha256Hex(secret), existing.secretHash)) {
+    return json({ error: 'that edit key does not match this deck' }, 403);
+  }
+
+  /* The pictures go too, or they sit in the bucket forever paying rent. */
+  const imgs = (existing.items || []).map(i => i.img).filter(Boolean);
+  for (const key of imgs) {
+    if (/^[A-Za-z0-9_-]{1,64}\.(jpg|png|webp|gif)$/.test(key)) {
+      try { await env.DECKS.delete('img/' + key); } catch (e) {}
+    }
+  }
+  await env.DECKS.delete('deck/' + existing.code + '.json');
+  return json({ deleted: existing.code, images: imgs.length });
+}
+
 async function putImage(request, env) {
   if (!env.DECKS) return json({ error: 'deck storage is not configured' }, 501);
-  const type = (request.headers.get('content-type') || '').split(';')[0].trim();
-  const ext = IMAGE_TYPES[type];
-  if (!ext) return json({ error: 'unsupported image type' }, 415);
+  const claimed = (request.headers.get('content-type') || '').split(';')[0].trim();
+  if (!IMAGE_TYPES[claimed]) return json({ error: 'unsupported image type' }, 415);
 
   const body = await request.arrayBuffer();
   if (!body.byteLength) return json({ error: 'empty image' }, 400);
   if (body.byteLength > DECK_LIMITS.image) return json({ error: 'image too big' }, 413);
 
-  const key = newCode(16) + '.' + ext;
-  await env.DECKS.put('img/' + key, body, { httpMetadata: { contentType: type } });
+  /* The header is the uploader's word for it. The bytes are the truth,
+     and the bytes are what we serve this file back as. */
+  const real = sniffImage(body);
+  if (!real) return json({ error: 'that file is not a JPEG, PNG, GIF or WebP' }, 415);
+
+  const key = newCode(16) + '.' + real.ext;
+  await env.DECKS.put('img/' + key, body, { httpMetadata: { contentType: real.type } });
   return json({ key: key });
 }
 
 async function getDeck(env, code) {
   if (!env.DECKS) return json({ error: 'deck storage is not configured' }, 501);
-  const obj = await env.DECKS.get('deck/' + code.toUpperCase() + '.json');
-  if (!obj) return json({ error: 'no deck with that code' }, 404);
-  return new Response(obj.body, {
+  const deck = await readDeck(env, code);
+  if (!deck) return json({ error: 'no deck with that code' }, 404);
+  /* Parsed and re-serialised rather than streamed straight through, so
+     the owner's secret hash never leaves the bucket. */
+  return new Response(JSON.stringify(publicDeck(deck)), {
     headers: {
       'content-type': 'application/json',
-      'cache-control': 'public, max-age=300',
+      'cache-control': 'public, max-age=60',
       ...CORS
     }
   });
@@ -319,9 +496,15 @@ async function getImage(env, key) {
   if (!env.DECKS) return new Response('not configured', { status: 501, headers: CORS });
   const obj = await env.DECKS.get('img/' + key);
   if (!obj) return new Response('not found', { status: 404, headers: CORS });
+  /* Only ever the four types we sniffed on the way in, and never
+     sniffed again by the browser. */
+  const stored = obj.httpMetadata?.contentType || '';
+  const type = IMAGE_TYPES[stored] ? stored : 'application/octet-stream';
   return new Response(obj.body, {
     headers: {
-      'content-type': obj.httpMetadata?.contentType || 'application/octet-stream',
+      'content-type': type,
+      'content-security-policy': "default-src 'none'; sandbox",
+      'x-content-type-options': 'nosniff',
       'cache-control': 'public, max-age=31536000, immutable',
       ...CORS
     }
@@ -339,11 +522,21 @@ export default {
       });
     }
 
-    if (url.pathname === '/deck' && request.method === 'POST') return publishDeck(request, env);
-    if (url.pathname === '/deck/img' && request.method === 'POST') return putImage(request, env);
+    if (url.pathname === '/deck' && request.method === 'POST') {
+      return (await rateLimit(request, env, 'publish', 12, 60 * 60 * 1000)) || publishDeck(request, env);
+    }
+    if (url.pathname === '/deck/img' && request.method === 'POST') {
+      return (await rateLimit(request, env, 'img', 400, 60 * 60 * 1000)) || putImage(request, env);
+    }
 
     const d = url.pathname.match(/^\/deck\/([A-Za-z0-9]{4,12})$/);
     if (d && request.method === 'GET') return getDeck(env, d[1]);
+    if (d && request.method === 'PUT') {
+      return (await rateLimit(request, env, 'edit', 60, 60 * 60 * 1000)) || updateDeck(request, env, d[1]);
+    }
+    if (d && request.method === 'DELETE') {
+      return (await rateLimit(request, env, 'edit', 60, 60 * 60 * 1000)) || deleteDeck(request, env, d[1]);
+    }
 
     const st = url.pathname.match(/^\/deck\/([A-Za-z0-9]{4,12})\/stats$/);
     if (st && request.method === 'GET') return deckStats(env, st[1], null);

@@ -130,9 +130,17 @@
 
     el.answer.textContent = s.answer || '—';
     el.show.textContent = s.show || '';
-    el.alts.innerHTML = '';
+    /* Built as nodes, not markup: these strings come off the relay and
+       were typed by whoever made the deck. */
+    el.alts.textContent = '';
     if (s.alts && s.alts.length) {
-      el.alts.innerHTML = 'also counts: ' + s.alts.map(function (a) { return '<b>' + a + '</b>'; }).join(' · ');
+      el.alts.appendChild(document.createTextNode('also counts: '));
+      s.alts.forEach(function (a, i) {
+        if (i) el.alts.appendChild(document.createTextNode(' \u00b7 '));
+        var b = document.createElement('b');
+        b.textContent = a;
+        el.alts.appendChild(b);
+      });
     }
     el.next.textContent = s.nextAnswer || '—';
 

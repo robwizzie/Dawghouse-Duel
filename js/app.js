@@ -490,16 +490,38 @@
         ? 'Type the answer and press enter. The game marks it.'
         : 'Say the answer out loud. Whoever is marking hits correct.';
 
-    var bits = [
-      solo ? '<b>' + cfg.names[0] + '</b> solo'
-           : online ? '<b>' + cfg.names[0] + '</b> vs whoever joins'
-           : '<b>' + cfg.names[0] + '</b> vs <b>' + cfg.names[1] + '</b>',
-      '<b>' + cat.name + '</b>',
-      '<b>' + (cfg.clockMs / 1000) + 's</b> each',
-      typed ? 'you <b>type</b> answers' : 'you <b>say</b> answers'
-    ];
-    if (cfg.pictureMode !== 'normal') bits.push('<b>' + cfg.pictureMode + '</b> pictures');
-    el.summary.innerHTML = bits.map(function (b) { return '<span>' + b + '</span>'; }).join('');
+    /* Built as nodes throughout. Two of these are user text — the players'
+       own names and, for a custom deck, a name somebody else published —
+       and assembling this as a string put that text through the HTML
+       parser. Repairing it afterwards is too late: the parser runs the
+       moment innerHTML is assigned. */
+    function bit() {
+      var span = document.createElement('span');
+      for (var i = 0; i < arguments.length; i++) {
+        var part = arguments[i];
+        /* `typeof part === 'object'`, not `part.bold !== undefined` —
+           every string carries a legacy String.prototype.bold method, so
+           the looser test treated plain text as a bold marker. */
+        if (part && typeof part === 'object') {
+          var b = document.createElement('b');
+          b.textContent = part.bold;
+          span.appendChild(b);
+        } else {
+          span.appendChild(document.createTextNode(part));
+        }
+      }
+      el.summary.appendChild(span);
+      return span;
+    }
+
+    el.summary.textContent = '';
+    if (solo)        bit({ bold: cfg.names[0] }, ' solo');
+    else if (online) bit({ bold: cfg.names[0] }, ' vs whoever joins');
+    else             bit({ bold: cfg.names[0] }, ' vs ', { bold: cfg.names[1] });
+    bit({ bold: cat.name });
+    bit({ bold: (cfg.clockMs / 1000) + 's' }, ' each');
+    bit('you ', { bold: typed ? 'type' : 'say' }, ' answers');
+    if (cfg.pictureMode !== 'normal') bit({ bold: cfg.pictureMode }, ' pictures');
 
     var rules = solo
       ? ['One picture at a time, and your clock is always running.',
@@ -1799,14 +1821,32 @@
       tile.className = 'tile' + (row.url ? ' has-img' : '');
       tile.dataset.slug = it.slug;
       tile.title = row.url ? 'Click to replace · shift-click to remove' : 'Click to add an image';
+      /* A custom deck's slugs and image URLs are user text, so the tile is
+         assembled rather than concatenated. */
       tile.innerHTML =
-        '<div class="tile__thumb">' +
-          (row.url ? '<img alt="" src="' + row.url + '">' : '<span class="tile__none">NO IMAGE</span>') +
-        '</div>' +
+        '<div class="tile__thumb"></div>' +
         '<div class="tile__name"></div>' +
-        '<div class="tile__file">' + it.slug + '.jpg</div>' +
-        (row.source ? '<span class="tile__src ' + row.source + '">' + (row.source === 'upload' ? 'ADDED' : 'FOLDER') + '</span>' : '');
+        '<div class="tile__file"></div>' +
+        (row.source ? '<span class="tile__src"></span>' : '');
+      var thumb = tile.querySelector('.tile__thumb');
+      if (row.url) {
+        var timg = document.createElement('img');
+        timg.alt = '';
+        timg.src = row.url;
+        thumb.appendChild(timg);
+      } else {
+        var none = document.createElement('span');
+        none.className = 'tile__none';
+        none.textContent = 'NO IMAGE';
+        thumb.appendChild(none);
+      }
       tile.querySelector('.tile__name').textContent = it.name;
+      tile.querySelector('.tile__file').textContent = it.slug + '.jpg';
+      var src = tile.querySelector('.tile__src');
+      if (src) {
+        src.classList.add(row.source === 'upload' ? 'upload' : 'folder');
+        src.textContent = row.source === 'upload' ? 'ADDED' : 'FOLDER';
+      }
 
       tile.addEventListener('click', function (e) {
         if (e.shiftKey && row.source === 'upload') {
