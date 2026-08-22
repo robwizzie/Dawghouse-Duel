@@ -15,6 +15,15 @@
   --lime-deep:#a4c72e;
   --red:#ff4d5e;
   --p1:#8ea2ff;          /* second player's accent — indigo side of the brand */
+
+  /* One set of page margins, so a screen doesn't invent its own. Every
+     full-page screen except the duel uses these; the duel is deliberately
+     tighter because the board wants the room. */
+  --pad-y:clamp(14px,2.4vh,28px);
+  --pad-x:clamp(16px,3.2vw,40px);
+  --pad-bottom:clamp(22px,4vh,48px);
+  --page-max:1120px;
+  --bar-min:44px;
   --amber:#ffc247;
   --paper:#ffffff;
 
@@ -215,7 +224,7 @@ select.input option{background:var(--indigo-900);color:#fff}
 .pair__new:hover{color:var(--lime)}
 
 /* ══════════════════ WELCOME ══════════════════ */
-.screen--welcome{align-items:center;justify-content:center;padding:5vh 6vw;overflow-y:auto}
+.screen--welcome{align-items:center;justify-content:center;padding:var(--pad-y) var(--pad-x) var(--pad-bottom);overflow-y:auto}
 .welcome{display:flex;flex-direction:column;align-items:center;gap:clamp(16px,3vh,34px);text-align:center;max-width:760px}
 .welcome__pitch{margin:0;font-size:clamp(17px,2.1vw,28px);font-weight:600;line-height:1.45;color:rgba(255,255,255,.82)}
 .welcome__pitch b{color:var(--lime);font-weight:800}
@@ -260,10 +269,10 @@ select.input option{background:var(--indigo-900);color:#fff}
 /* ══════════════════════════════════════════════════════════════
    Make a deck
    ══════════════════════════════════════════════════════════════ */
-.screen--builder{flex-direction:column;overflow:hidden}
-.builder{flex:1;overflow-y:auto;padding:clamp(12px,2vh,22px) clamp(12px,3vw,40px) clamp(20px,4vh,50px);
+.screen--builder{flex-direction:column;overflow:hidden;padding-top:var(--pad-y)}
+.builder{flex:1;overflow-y:auto;padding:var(--pad-y) var(--pad-x) var(--pad-bottom);
   display:flex;flex-direction:column;gap:clamp(10px,1.8vh,18px);width:100%;
-  max-width:1100px;margin-inline:auto}
+  max-width:var(--page-max);margin-inline:auto}
 .builder__head{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
 .builder__how{margin:0;font-size:clamp(12px,1.2vw,15px);line-height:1.45;color:rgba(255,255,255,.6);
   border-left:3px solid var(--indigo-600);padding-left:12px}
@@ -377,9 +386,9 @@ select.input option{background:var(--indigo-900);color:#fff}
 /* ══════════════════ GUIDED SETUP ══════════════════ */
 .screen--setup{overflow-y:auto;padding:0}
 .flow{width:100%;min-height:100%;display:flex;flex-direction:column;align-items:center;
-  gap:clamp(14px,2.4vh,28px);padding:clamp(14px,2.6vh,30px) clamp(16px,4vw,40px) clamp(20px,4vh,44px)}
+  gap:clamp(14px,2.4vh,28px);padding:var(--pad-y) var(--pad-x) var(--pad-bottom)}
 
-.flow__bar{width:min(1180px,100%);display:flex;align-items:center;gap:16px;flex:none}
+.flow__bar{width:min(var(--page-max),100%);display:flex;align-items:center;gap:16px;flex:none;min-height:var(--bar-min)}
 .flow__back{background:none;border:2px solid var(--indigo-600);border-radius:10px;color:rgba(255,255,255,.75);
   cursor:pointer;font-size:20px;line-height:1;padding:.25em .6em;transition:.15s}
 .flow__back:hover{border-color:var(--lime);color:var(--lime)}
@@ -860,10 +869,12 @@ body.is-typing .topbar__pair{display:none}
   .flow__back, .flow__foot .btn,
   .welcome__how, .pair__new, .lobby .btn,
   .help__close, .join__go, .mediabar .btn,
-  .tut__rules, .result__recaptoggle,
+  .tut__rules, .result__recaptoggle, .builder__private,
   .input, select.input{
     min-height:44px;
   }
+  /* The box is small but the label around it is the tap target. */
+  .builder__private input{width:20px;height:20px}
   .tut__acts .btn i{display:none}
   .tut__skip{min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;
     top:6px;right:8px;padding:0}
@@ -1172,8 +1183,10 @@ kbd{font-family:var(--ff-cond);font-weight:900;background:var(--lime);color:var(
 .help__close:hover{color:var(--lime)}
 
 /* ══════════════════ MEDIA LIBRARY ══════════════════ */
-.screen--media{padding:clamp(12px,2vh,24px) clamp(14px,2.4vw,40px);gap:14px;overflow:hidden}
-.mediabar{display:flex;align-items:center;gap:14px;flex:none;flex-wrap:wrap}
+.screen--media{padding:var(--pad-y) var(--pad-x);gap:14px;overflow:hidden}
+.mediabar{display:flex;align-items:center;gap:14px;flex:none;flex-wrap:wrap;
+  min-height:var(--bar-min);width:100%;max-width:var(--page-max);margin-inline:auto;
+  padding-inline:var(--pad-x)}
 .mediabar__title{font-family:var(--ff-display);color:var(--lime);margin:0;font-size:clamp(18px,2.2vw,32px);flex:1}
 .mediabar__title span{color:rgba(255,255,255,.45);font-size:.7em}
 .mediabar__acts{display:flex;gap:8px;flex-wrap:wrap}
