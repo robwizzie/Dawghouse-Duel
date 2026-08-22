@@ -363,6 +363,7 @@
       <button class="btn btn--ghost btn--sm" id="builderBack">&larr; Back</button>
       <h2 class="mediabar__title">Make a deck</h2>
       <div class="mediabar__acts">
+        <span class="builder__saved" id="deckSaved"></span>
         <button class="btn btn--ghost btn--sm btn--danger" id="builderDelete" hidden>Delete deck</button>
         <button class="btn btn--ghost btn--sm" id="builderShare" hidden>Share</button>
         <button class="btn btn--go btn--sm" id="builderSave">Save deck</button>
@@ -510,6 +511,35 @@
   <svg class="mutebtn__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>
   <span class="mutebtn__label" id="muteLabel">Sound on</span>
 </button>
+
+<div class="ovl ovl--paste" id="ovlPaste" hidden>
+  <div class="paste">
+    <button class="paste__close" type="button" id="pasteClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+    <h2 class="paste__title">Paste a list</h2>
+    <p class="paste__lead">One answer per line. Paste straight from a note or a spreadsheet.</p>
+
+    <div class="paste__modes" id="pasteModes">
+      <button class="paste__mode is-on" type="button" data-paste-mode="answers">
+        <b>Just answers</b><i>One per line. You add the pictures after.</i>
+      </button>
+      <button class="paste__mode" type="button" data-paste-mode="pairs">
+        <b>Prompt, answer</b><i>Two columns split by a comma or a tab.</i>
+      </button>
+    </div>
+
+    <textarea class="paste__box" id="pasteBox" spellcheck="false"
+      placeholder="Michael Jordan&#10;LeBron James&#10;Kobe Bryant"></textarea>
+
+    <div class="paste__preview" id="pastePreview"></div>
+
+    <div class="paste__acts">
+      <button class="btn btn--ghost" type="button" id="pasteCancel">Cancel</button>
+      <button class="btn btn--go" type="button" id="pasteAdd" disabled>Add 0 answers</button>
+    </div>
+  </div>
+</div>
 
 <div class="ovl ovl--share" id="ovlDeckShare" hidden>
   <div class="deckshare">

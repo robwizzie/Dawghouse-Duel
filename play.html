@@ -12,13 +12,31 @@
 <link rel="stylesheet" href="css/play.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2332328d'/><text y='72' x='50' text-anchor='middle' font-size='62' font-family='Arial Black,sans-serif' fill='%23deff66'>D</text></svg>">
 </head>
-<body class="playbody">
+<body class="playbody" data-join-role="player">
 
 <!-- ── join ── -->
 <section class="join" id="join">
   <img class="join__logo" src="assets/brand/logo.png" alt="Dawg House" onerror="this.remove()">
+  <div class="join__step" data-join-step="role">
+    <p class="join__lead join__lead--ask">What are you here for?</p>
+    <div class="join__roles">
+      <button class="joinrole" type="button" data-role="player">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+        <b>Playing a duel</b>
+        <i>You&rsquo;re the second player, answering on your own device.</i>
+      </button>
+      <button class="joinrole" type="button" data-role="host">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <b>Marking answers</b>
+        <i>You see the answer and call it right or wrong while they film.</i>
+      </button>
+    </div>
+  </div>
+
+  <div class="join__step" data-join-step="code" hidden>
+  <button class="join__back" type="button" id="joinBack">&larr; Not that</button>
   <span class="join__tag">PLAYING</span>
-  <p class="join__lead">You&rsquo;re joining a duel as the second player.<br>Enter the code from the other player&rsquo;s screen.</p>
+  <p class="join__lead">Enter the code from the other player&rsquo;s screen.</p>
   <form class="join__form" id="joinForm" autocomplete="off">
     <input class="join__input" id="joinCode" inputmode="latin" autocapitalize="characters"
            autocomplete="off" spellcheck="false" maxlength="6" placeholder="CODE" aria-label="Room code">
@@ -29,10 +47,9 @@
     <input class="join__nameinput" id="joinName" maxlength="14" placeholder="NAME" value="">
   </label>
   <p class="join__state" id="joinState">not connected</p>
-  <div class="join__switch">
-    <p>Here to mark someone else&rsquo;s answers instead? That&rsquo;s the
-       <a href="host.html">host view</a> &mdash; same code, different job.</p>
   </div>
+
+  <a class="join__home" href="index.html">&larr; Back to dawghouseduel.com</a>
 </section>
 
 <!-- ── the mirrored board ── -->
@@ -102,6 +119,7 @@
 
 <script src="js/config.js"></script>
 <script src="js/net.js"></script>
+<script src="js/joinui.js"></script>
 <script src="js/play.js"></script>
 </body>
 </html>

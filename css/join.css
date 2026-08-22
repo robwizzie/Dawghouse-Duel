@@ -27,7 +27,9 @@
 body.paired .join{display:none}
 .join__logo{width:min(260px,62vw);height:auto}
 .join__tag{font-family:var(--ff-display);background:var(--lime);color:var(--indigo);
-  padding:.12em .6em .18em;border-radius:8px;font-size:15px;letter-spacing:.24em;text-indent:.24em}
+  /* Same ink-above-centre correction the codes need. */
+  padding:.385em .6em .155em;border-radius:8px;font-size:15px;line-height:1;
+  letter-spacing:.24em;text-indent:.24em}
 .join__lead{margin:6px 0 0;font-size:17px;font-weight:700;color:rgba(255,255,255,.72)}
 .join__form{display:flex;gap:10px;width:min(420px,100%)}
 .join__input{
@@ -69,3 +71,35 @@ body.paired .join{display:none}
 .join__switch a{color:var(--lime);font-weight:800;text-decoration:none;
   border-bottom:2px solid rgba(222,255,102,.35);padding-bottom:1px}
 .join__switch a:hover{border-bottom-color:var(--lime)}
+
+/* ── which job are you here to do? ───────────────────────────
+   The two phone pages do different things and a small link at the
+   bottom was easy to miss, so the screen asks outright. Picking the
+   one this page isn't takes you to the other page. */
+.join__step{display:flex;flex-direction:column;align-items:center;gap:14px;width:min(460px,100%)}
+.join__step[hidden]{display:none}
+.join__lead--ask{font-size:clamp(17px,4.6vw,22px);color:#fff}
+
+.join__roles{display:flex;flex-direction:column;gap:12px;width:100%}
+.joinrole{display:grid;grid-template-columns:44px 1fr;grid-template-areas:'icon title' 'icon sub';
+  gap:2px 14px;align-items:center;text-align:left;cursor:pointer;
+  padding:16px 18px;border-radius:16px;
+  background:rgba(255,255,255,.05);border:3px solid var(--indigo-600);color:#fff;
+  transition:border-color .15s,background .15s,transform .12s var(--ease)}
+.joinrole:hover,.joinrole:focus-visible{border-color:var(--lime);background:rgba(222,255,102,.07);transform:translateY(-2px)}
+.joinrole svg{grid-area:icon;width:30px;height:30px;fill:none;stroke:var(--lime);
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.joinrole b{grid-area:title;font-family:var(--ff-display);font-size:clamp(17px,4.4vw,21px);line-height:1.1}
+.joinrole i{grid-area:sub;font-style:normal;font-size:clamp(12px,3.2vw,14px);
+  color:rgba(255,255,255,.6);line-height:1.35}
+
+.join__back{align-self:flex-start;background:none;border:0;cursor:pointer;padding:6px 2px;
+  min-height:44px;color:rgba(255,255,255,.5);font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;font-size:12px}
+.join__back:hover{color:var(--lime)}
+
+/* A way off these pages entirely, which there wasn't one of. */
+.join__home{margin-top:4px;min-height:44px;display:flex;align-items:center;
+  color:rgba(255,255,255,.42);font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  font-size:12px;text-decoration:none}
+.join__home:hover{color:var(--lime)}

@@ -49,6 +49,15 @@ DHD.Decks = (function () {
 
   /* The engine's category shape. `custom` marks it so the UI can offer
      edit and delete on it, which makes no sense for a shipped deck. */
+  var MIN_PLAYABLE = 4;
+
+  function playable(deck) {
+    var done = (deck.items || []).filter(function (it) {
+      return (it.answer || '').trim() && ((it.prompt || '').trim() || it.imgUrl);
+    });
+    return done.length >= MIN_PLAYABLE;
+  }
+
   function toCategory(deck) {
     var items = (deck.items || []).slice(0, MAX_ITEMS).map(function (it, n) {
       var row = {
@@ -152,8 +161,18 @@ DHD.Decks = (function () {
 
     toCategory: toCategory,
 
+    /* A deck being written is still in here — it saves as you type so a
+       closed tab doesn't lose it — but a half-finished one has no business
+       in the category picker. It shows up once it can actually be played. */
     categories: function () {
-      return load().map(toCategory);
+      return load().filter(playable).map(toCategory);
+    },
+
+    /* Enough finished rows to be worth dealing. */
+    playable: playable,
+
+    drafts: function () {
+      return load().filter(function (d) { return !playable(d); });
     },
 
     /* ── the relay ─────────────────────────────────────────────

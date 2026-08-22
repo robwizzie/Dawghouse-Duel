@@ -443,15 +443,22 @@ select.input option{background:var(--indigo-900);color:#fff}
 /* Covers are shown whole. Cropping to fill a 16:10 box guillotined the
    portraits — half of Tom Hanks' head, the top of a poster — so the picture
    is contained and a blurred copy of itself fills the space behind it. */
+/* Covers are shown whole. The picture is pinned to the frame rather than
+   laid out in it: as a centred grid item it sized itself to its own natural
+   height, the row grew to match, `height:100%` resolved to that, and the
+   frame's overflow clipped the difference — which is why portraits still
+   lost their heads. `position:absolute; inset:0` gives it a definite box. */
 .catcard__art{position:relative;aspect-ratio:16/10;background:var(--indigo-950);
-  display:grid;place-items:center;overflow:hidden;isolation:isolate}
+  overflow:hidden;isolation:isolate}
 .catcard__art::before{content:'';position:absolute;inset:-12%;
   background-image:var(--cover);background-size:cover;background-position:50% 35%;
   filter:blur(16px) saturate(1.25) brightness(.62);z-index:0}
-.catcard__art img{position:relative;z-index:1;
+.catcard__art img{position:absolute;inset:0;z-index:1;
   width:100%;height:100%;object-fit:contain;object-position:50% 50%;display:block;
   padding:6px;filter:drop-shadow(0 6px 16px rgba(14,14,45,.6))}
 .catcard__art img.fit{padding:10px}
+.catcard__glyph{position:relative;z-index:1}
+.catcard--text .catcard__art{display:flex;align-items:center;justify-content:center}
 .catcard--text .catcard__art{background:linear-gradient(150deg,var(--indigo-800),var(--indigo-950))}
 .catcard__glyph{font-family:var(--ff-display);font-size:clamp(40px,5vw,68px);
   color:rgba(222,255,102,.5);line-height:1}
@@ -1102,22 +1109,45 @@ body.is-typing .topbar__pair{display:none}
 .recap__cell{cursor:zoom-in}
 
 /* ── mute, reachable from anywhere ── */
-.mutebtn{position:fixed;left:clamp(10px,1.4vw,18px);bottom:clamp(10px,1.4vh,18px);z-index:60;
-  display:flex;align-items:center;gap:.5em;min-height:44px;padding:0 14px 0 11px;
-  border-radius:99px;cursor:pointer;
-  background:rgba(23,23,76,.86);border:2px solid var(--indigo-600);color:rgba(255,255,255,.8);
+/* A quiet icon in the corner. It used to be a labelled pill sitting on
+   every screen, which is a lot of furniture for a control most people
+   touch once. The word only appears on hover, and the whole thing only
+   appears where sound is actually in play. */
+.mutebtn{position:fixed;left:clamp(8px,1.2vw,14px);bottom:clamp(8px,1.2vh,14px);z-index:60;
+  display:flex;align-items:center;gap:0;width:38px;height:38px;padding:0;
+  justify-content:center;border-radius:99px;cursor:pointer;overflow:hidden;
+  background:rgba(23,23,76,.6);border:1px solid rgba(255,255,255,.14);
+  color:rgba(255,255,255,.55);
   font-family:var(--ff-cond);font-weight:900;letter-spacing:.14em;text-transform:uppercase;
-  font-size:clamp(10px,1vw,13px);backdrop-filter:blur(6px);
-  transition:border-color .15s,color .15s,opacity .2s;opacity:.55}
-.mutebtn:hover,.mutebtn:focus-visible{opacity:1;border-color:var(--lime);color:var(--lime)}
-.mutebtn svg{width:20px;height:20px;flex:0 0 auto;fill:none;stroke:currentColor;
+  font-size:11px;backdrop-filter:blur(6px);
+  transition:width .18s var(--ease),gap .18s var(--ease),border-color .15s,color .15s,background .15s}
+.mutebtn svg{width:17px;height:17px;flex:0 0 auto;fill:none;stroke:currentColor;
   stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mutebtn__label{white-space:nowrap;max-width:0;opacity:0;
+  transition:max-width .18s var(--ease),opacity .15s}
+.mutebtn:hover,.mutebtn:focus-visible{width:auto;gap:.5em;padding:0 14px 0 11px;
+  border-color:var(--lime);color:var(--lime);background:rgba(23,23,76,.92)}
+.mutebtn:hover .mutebtn__label,.mutebtn:focus-visible .mutebtn__label{max-width:12ch;opacity:1}
 .mutebtn__off{display:none}
-.mutebtn.is-muted{opacity:1;border-color:var(--red);color:var(--red)}
+.mutebtn.is-muted{border-color:rgba(255,77,94,.55);color:var(--red)}
 .mutebtn.is-muted .mutebtn__on{display:none}
 .mutebtn.is-muted .mutebtn__off{display:block}
-/* Out of the way while the picture viewer is up. */
+
+/* Only where sound happens: the menu, setting a game up, and the duel.
+   Not the deck builder or the image library, which make no noise. */
+.mutebtn{display:none}
+html[data-screen="welcome"] .mutebtn,
+html[data-screen="setup"] .mutebtn,
+html[data-screen="duel"] .mutebtn{display:flex}
 body.is-shot .mutebtn{display:none}
+
+/* A phone has no hover, so the label would never show — keep it an icon
+   and give it a real touch target. */
+@media (pointer:coarse){
+  .mutebtn{width:44px;height:44px}
+  .mutebtn__label{display:none}
+  .mutebtn:hover{width:44px;gap:0;padding:0}
+}
 
 .pausecard{display:flex;flex-direction:column;align-items:center;gap:.4em}
 .pausecard b{font-family:var(--ff-display);color:var(--lime);font-size:clamp(40px,8vw,130px);letter-spacing:.1em}
@@ -1230,3 +1260,57 @@ kbd{font-family:var(--ff-cond);font-weight:900;background:var(--lime);color:var(
   .board__clue{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+
+
+/* ── the builder's save state ──────────────────────────────
+   It saves as you type, so it says so. */
+.builder__saved{align-self:center;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  font-size:clamp(9px,.95vw,12px);color:rgba(255,255,255,.35);white-space:nowrap;
+  transition:color .2s}
+.builder__saved.is-wait{color:rgba(255,255,255,.55)}
+.builder__saved.is-on{color:var(--lime)}
+.builder__saved.is-off{color:var(--red)}
+
+/* ── paste a list ──────────────────────────────────────────
+   Was a window.prompt: one line, no wrapping, no preview. */
+.paste{position:relative;width:min(620px,100%);max-height:92vh;overflow:auto;
+  display:flex;flex-direction:column;gap:14px;
+  background:linear-gradient(180deg,var(--indigo-900),var(--indigo-950));
+  border:3px solid var(--lime);border-radius:22px;
+  padding:clamp(20px,3.2vh,32px) clamp(18px,2.6vw,32px)}
+.paste__close{position:absolute;top:10px;right:12px;width:40px;height:40px;padding:0;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;
+  background:none;border:0;color:rgba(255,255,255,.5)}
+.paste__close:hover{color:var(--lime)}
+.paste__close svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.5;
+  stroke-linecap:round;stroke-linejoin:round}
+.paste__title{margin:0;font-family:var(--ff-display);color:var(--lime);
+  font-size:clamp(22px,3.4vw,34px);line-height:1}
+.paste__lead{margin:0;color:rgba(255,255,255,.7);font-size:clamp(13px,1.4vw,16px);line-height:1.4}
+
+.paste__modes{display:flex;gap:10px;flex-wrap:wrap}
+.paste__mode{flex:1 1 200px;text-align:left;cursor:pointer;padding:10px 14px;border-radius:12px;
+  background:rgba(255,255,255,.04);border:2px solid var(--indigo-600);color:#fff;
+  display:flex;flex-direction:column;gap:2px;transition:border-color .15s,background .15s}
+.paste__mode:hover{border-color:var(--indigo-400)}
+.paste__mode.is-on{border-color:var(--lime);background:rgba(222,255,102,.08)}
+.paste__mode b{font-family:var(--ff-cond);font-weight:900;letter-spacing:.06em;
+  text-transform:uppercase;font-size:clamp(12px,1.2vw,15px)}
+.paste__mode i{font-style:normal;font-size:clamp(11px,1.1vw,13px);color:rgba(255,255,255,.55);line-height:1.3}
+
+.paste__box{width:100%;min-height:150px;resize:vertical;border-radius:12px;padding:12px 14px;
+  background:var(--indigo-950);border:2px solid var(--indigo-600);color:#fff;
+  font-family:var(--ff-cond);font-weight:600;font-size:clamp(14px,1.4vw,17px);line-height:1.5}
+.paste__box:focus{outline:none;border-color:var(--lime)}
+
+.paste__preview{display:flex;flex-direction:column;gap:4px;min-height:2em;
+  font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.45)}
+.paste__row{display:flex;gap:8px;align-items:baseline;
+  padding:5px 10px;border-radius:8px;background:rgba(255,255,255,.04)}
+.paste__rowprompt{color:rgba(255,255,255,.5);font-weight:700}
+.paste__rowprompt::after{content:'\2192';margin-left:8px;color:rgba(255,255,255,.3)}
+.paste__row b{color:var(--lime);font-weight:900}
+.paste__more{padding:2px 10px;font-weight:700}
+
+.paste__acts{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
+.paste__acts .btn{min-width:150px}

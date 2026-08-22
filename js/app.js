@@ -45,6 +45,10 @@
     builderBack: $('builderBack'), builderSave: $('builderSave'), builderShare: $('builderShare'),
     builderDelete: $('builderDelete'), deckName: $('deckName'), deckBlurb: $('deckBlurb'),
     deckRows: $('deckRows'), deckAddRow: $('deckAddRow'), deckAddMany: $('deckAddMany'),
+    deckSaved: $('deckSaved'),
+    ovlPaste: $('ovlPaste'), pasteBox: $('pasteBox'), pastePreview: $('pastePreview'),
+    pasteAdd: $('pasteAdd'), pasteCancel: $('pasteCancel'), pasteClose: $('pasteClose'),
+    pasteModes: $('pasteModes'),
     deckCount: $('deckCount'),
     deckVote: $('deckVote'), deckVoteUp: $('deckVoteUp'), deckVoteDown: $('deckVoteDown'),
     deckVoteUpN: $('deckVoteUpN'), deckVoteDownN: $('deckVoteDownN'), deckVotePlays: $('deckVotePlays'),
@@ -1921,24 +1925,98 @@
     var rows = el.deckRows.querySelectorAll('.input--answer');
     if (rows.length) rows[rows.length - 1].focus();
   });
-  on(el.deckAddMany, 'click', function () {
-    var text = window.prompt('One answer per line. Add a picture to each afterwards, or leave them as a text deck by putting the line to show first, then a comma, then the answer.');
-    if (!text) return;
+  /* ── paste a list ──────────────────────────────────────────
+     This used to be a window.prompt, which is a single line with no
+     wrapping, no preview, and no way to fix a typo without starting
+     again. It's a panel now that shows what it is about to make. */
+  var pasteMode = 'answers';
+
+  function parsePaste(text, mode) {
+    var rows = [];
     text.split('\n').forEach(function (line) {
       line = line.trim();
       if (!line) return;
-      var bits = line.split(',');
+      if (mode === 'pairs') {
+        /* A tab is what a spreadsheet actually pastes; a comma is what
+           people type. Split on whichever shows up first. */
+        var at = line.search(/[\t,]/);
+        if (at > 0) {
+          rows.push({ prompt: line.slice(0, at).trim(), answer: line.slice(at + 1).trim() });
+          return;
+        }
+      }
+      rows.push({ prompt: '', answer: line });
+    });
+    return rows.filter(function (r) { return r.answer; });
+  }
+
+  function refreshPaste() {
+    var rows = parsePaste(el.pasteBox.value, pasteMode);
+    el.pasteAdd.disabled = !rows.length;
+    el.pasteAdd.textContent = 'Add ' + rows.length + ' answer' + (rows.length === 1 ? '' : 's');
+    el.pastePreview.innerHTML = '';
+    if (!rows.length) {
+      el.pastePreview.textContent = 'Nothing to add yet.';
+      return;
+    }
+    rows.slice(0, 6).forEach(function (r) {
+      var line = document.createElement('div');
+      line.className = 'paste__row';
+      if (r.prompt) {
+        var p1 = document.createElement('span');
+        p1.className = 'paste__rowprompt';
+        p1.textContent = r.prompt;
+        line.appendChild(p1);
+      }
+      var a = document.createElement('b');
+      a.textContent = r.answer;
+      line.appendChild(a);
+      el.pastePreview.appendChild(line);
+    });
+    if (rows.length > 6) {
+      var more = document.createElement('div');
+      more.className = 'paste__more';
+      more.textContent = '+ ' + (rows.length - 6) + ' more';
+      el.pastePreview.appendChild(more);
+    }
+  }
+
+  function closePaste() { el.ovlPaste.hidden = true; }
+
+  on(el.deckAddMany, 'click', function () {
+    el.pasteBox.value = '';
+    refreshPaste();
+    el.ovlPaste.hidden = false;
+    setTimeout(function () { try { el.pasteBox.focus(); } catch (e) {} }, 60);
+  });
+  on(el.pasteBox, 'input', refreshPaste);
+  on(el.pasteCancel, 'click', closePaste);
+  on(el.pasteClose, 'click', closePaste);
+  on(el.pasteModes, 'click', function (e) {
+    var btn = e.target.closest('[data-paste-mode]');
+    if (!btn) return;
+    pasteMode = btn.getAttribute('data-paste-mode');
+    [].forEach.call(el.pasteModes.children, function (b) {
+      b.classList.toggle('is-on', b === btn);
+    });
+    refreshPaste();
+  });
+  on(el.pasteAdd, 'click', function () {
+    if (!draft) return;
+    parsePaste(el.pasteBox.value, pasteMode).forEach(function (r) {
       var row = blankRow();
-      if (bits.length > 1) { row.prompt = bits[0].trim(); row.answer = bits.slice(1).join(',').trim(); }
-      else { row.answer = line; }
+      row.prompt = r.prompt;
+      row.answer = r.answer;
       draft.items.push(row);
     });
     draft.items = draft.items.filter(function (r) { return r.answer.trim() || r.prompt.trim() || r.imgUrl; });
     if (!draft.items.length) draft.items.push(blankRow());
+    closePaste();
     renderDeckRows();
+    saveDraft();
   });
-  on(el.deckName, 'input', function () { draft && (draft.name = el.deckName.value); });
-  on(el.deckBlurb, 'input', function () { draft && (draft.blurb = el.deckBlurb.value); });
+  on(el.deckName, 'input', function () { draft && (draft.name = el.deckName.value); saveDraft(); });
+  on(el.deckBlurb, 'input', function () { draft && (draft.blurb = el.deckBlurb.value); saveDraft(); });
 
   on(el.deckVoteUp, 'click', function () { castVote(1); });
   on(el.deckVoteDown, 'click', function () { castVote(-1); });
@@ -2156,8 +2234,37 @@
     };
   }
 
+  /* ── drafts ─────────────────────────────────────────────────
+     The builder saves as you type. Losing twenty answers to a closed tab
+     is the kind of thing people don't come back from, and "did that
+     save?" is a question the screen should answer rather than the user
+     having to wonder. */
+  var saveTimer = 0, savedAt = 0;
+
+  function setSaveState(text, cls) {
+    if (!el.deckSaved) return;
+    el.deckSaved.textContent = text;
+    el.deckSaved.className = 'builder__saved' + (cls ? ' is-' + cls : '');
+  }
+
+  function saveDraft(now) {
+    if (!draft) return;
+    clearTimeout(saveTimer);
+    var write = function () {
+      draft.updated = Date.now();
+      var ok = Decks.save(draft);
+      savedAt = Date.now();
+      setSaveState(ok ? 'Draft saved' : 'Too big to save — remove a picture', ok ? 'on' : 'off');
+      el.builderDelete.hidden = false;
+    };
+    if (now) return write();
+    setSaveState('Saving\u2026', 'wait');
+    saveTimer = setTimeout(write, 600);
+  }
+
   function openBuilder(deck) {
     draft = deck || newDraft();
+    setSaveState(Decks.get(draft.id) ? 'Draft saved' : '', Decks.get(draft.id) ? 'on' : '');
     el.deckName.value = draft.name || '';
     el.deckBlurb.value = draft.blurb || '';
     el.builderDelete.hidden = !Decks.get(draft.id);
@@ -2206,9 +2313,11 @@
       if (row.imgUrl) {
         row.imgUrl = '';
         renderDeckRows();
+        saveDraft();
         return;
       }
-      pickImage(function (dataUrl) { row.imgUrl = dataUrl; renderDeckRows(); });
+      pickImage(function (dataUrl) { row.imgUrl = dataUrl; renderDeckRows();
+        saveDraft(); });
     });
 
     var answer = document.createElement('input');
@@ -2219,6 +2328,7 @@
     answer.addEventListener('input', function () {
       row.answer = answer.value;
       updateDeckCount();
+      saveDraft();
     });
 
     var prompt = document.createElement('input');
@@ -2233,6 +2343,7 @@
         row.prompt = prompt.value;
       }
       updateDeckCount();
+      saveDraft();
     });
 
     var kill = document.createElement('button');
@@ -2244,6 +2355,7 @@
       draft.items.splice(i, 1);
       if (!draft.items.length) draft.items.push(blankRow());
       renderDeckRows();
+        saveDraft();
     });
 
     wrap.appendChild(pic);
