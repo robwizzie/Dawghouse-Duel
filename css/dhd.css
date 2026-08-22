@@ -811,14 +811,17 @@ body.is-typing .topbar__pair{display:none}
    card's content is narrow enough that 100% left the longest label with less
    room than it needs. The floor widens the card instead of clipping the text;
    88vw keeps it inside the overlay's padding on a phone. */
-.result__acts,.tut__acts{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+.result__acts,.tut__acts{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;
   width:min(620px,100%);min-width:min(430px,88vw);margin-inline:auto}
+/* The row gap has to clear the 8px shadow under each button, or the two rows
+   read as one solid block. */
+.result__acts{gap:26px 16px}
 .result__acts{margin-top:.6em}
 .result__acts .btn,.tut__acts .btn{flex:1 1 0;min-width:0;padding:.7em .5em;
   letter-spacing:.09em;gap:.35em}
 /* Four actions is one too many for a single row at this width — they wrap to
    a 2x2 rather than squeezing every label. */
-.result__acts .btn{flex:1 1 calc(50% - 6px)}
+.result__acts .btn{flex:1 1 calc(50% - 8px)}
 /* --go carries a solid 8px shadow under it. Measured, the boxes already
    matched; what didn't was the ink under them, so the lime pair read as
    taller than the outlined one next to it. The ghost gets the same lift in
