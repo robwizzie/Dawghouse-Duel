@@ -70,7 +70,7 @@
     introEyebrow: $('introEyebrow'), introVs: $('introVs'), introX: $('introX'),
     introFirst: $('introFirst'), introCount: $('introCount'),
     ovlResult: $('ovlResult'), resultName: $('resultName'), resultLine: $('resultLine'),
-    resRematch: $('resRematch'), resNew: $('resNew'),
+    resRematch: $('resRematch'), resNew: $('resNew'), resMenu: $('resMenu'),
     ovlPause: $('ovlPause'), ovlHelp: $('ovlHelp'), helpClose: $('helpClose'),
 
     mediaBack: $('mediaBack'), mediaCat: $('mediaCat'), mediaGrid: $('mediaGrid'),
@@ -1125,7 +1125,7 @@
     el.resultName.textContent = w.name;
     el.resultLabel.textContent = 'WINNER';
     el.resRematchLabel.innerHTML = 'REMATCH <i>(R)</i>';
-    el.resNewLabel.innerHTML = 'NEW DUEL <i>(N)</i>';
+    el.resNewLabel.innerHTML = 'CATEGORIES <i>(C)</i>';
     el.resultSolo.hidden = true;
     el.resultTbl.hidden = false;
     el.resultLine.textContent = 'Survived with ' + fmt(remaining(winner)) + ' on the clock · ' +
@@ -1174,7 +1174,7 @@
     el.resultName.textContent = p.name;
     el.resultLabel.textContent = G.daily ? "TODAY'S CHALLENGE" : 'TIME';
     el.resRematchLabel.innerHTML = 'GO AGAIN <i>(R)</i>';
-    el.resNewLabel.innerHTML = 'NEW RUN <i>(N)</i>';
+    el.resNewLabel.innerHTML = 'CATEGORIES <i>(C)</i>';
     el.resultLine.textContent = G.daily
       ? G.cat.name + ' · day ' + G.daily.day
       : G.cat.name + ' · ' + (G.startMs / 1000) + ' seconds';
@@ -1794,7 +1794,10 @@
 
   el.passBar.addEventListener('click', function () { Sfx.unlock(); doPass(null); el.passBar.blur(); });
   el.resRematch.addEventListener('click', function () { el.ovlResult.hidden = true; startDuel(); });
-  el.resNew.addEventListener('click', function () { backToSetup(); refreshDaily(); });
+  el.resNew.addEventListener('click', function () {
+    backToSetup(); refreshDaily(); show('setup'); goStep(STEPS.indexOf('category'));
+  });
+  on(el.resMenu, 'click', function () { backToSetup(); refreshDaily(); show('welcome'); });
 
   el.mediaCopy.addEventListener('click', function () {
     var text = mediaCat.items.map(function (it) { return it.slug + '.jpg    ' + it.name; }).join('\n');
@@ -1860,7 +1863,10 @@
 
     if (G.phase === 'over') {
       if (k === 'r' || k === 'R') { el.ovlResult.hidden = true; startDuel(); }
-      if (k === 'n' || k === 'N') backToSetup();
+      if (k === 'c' || k === 'C' || k === 'n' || k === 'N') {
+        backToSetup(); refreshDaily(); show('setup'); goStep(STEPS.indexOf('category'));
+      }
+      if (k === 'm' || k === 'M') { backToSetup(); refreshDaily(); show('welcome'); }
       return;
     }
 

@@ -204,7 +204,10 @@ select.input option{background:var(--indigo-900);color:#fff}
 .pair__code{
   font-family:var(--ff-display);color:var(--indigo);background:var(--lime);
   font-size:clamp(28px,4.4vw,58px);letter-spacing:.14em;text-indent:.14em;line-height:1;
-  padding:.16em .34em .22em;border-radius:12px;box-shadow:0 5px 0 var(--lime-deep);
+  /* The display face carries its ink 0.158em above the line box's centre, so
+     the top padding has to run twice that heavier than the bottom to sit the
+     code in the middle. Even padding prints it high. */
+  padding:.417em .34em .123em;border-radius:12px;box-shadow:0 5px 0 var(--lime-deep);
 }
 .pair__new{background:none;border:0;cursor:pointer;color:rgba(255,255,255,.42);
   font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:2px}
@@ -404,7 +407,7 @@ select.input option{background:var(--indigo-900);color:#fff}
   font-weight:800;color:var(--lime)}
 .lobby__code{font-family:var(--ff-display);color:var(--indigo);background:var(--lime);
   font-size:clamp(34px,6vw,68px);letter-spacing:.16em;text-indent:.16em;line-height:1;
-  padding:.14em .3em .2em;border-radius:12px;box-shadow:0 5px 0 var(--lime-deep)}
+  padding:.417em .3em .123em;border-radius:12px;box-shadow:0 5px 0 var(--lime-deep)}
 .lobby__how{margin:0;font-size:clamp(13px,1.3vw,18px);color:rgba(255,255,255,.72);font-weight:600}
 .lobby__how b{color:#fff}
 .lobby__state{font-size:clamp(11px,1.1vw,15px);letter-spacing:.14em;text-transform:uppercase;
@@ -813,6 +816,9 @@ body.is-typing .topbar__pair{display:none}
 .result__acts{margin-top:.6em}
 .result__acts .btn,.tut__acts .btn{flex:1 1 0;min-width:0;padding:.7em .5em;
   letter-spacing:.09em;gap:.35em}
+/* Four actions is one too many for a single row at this width — they wrap to
+   a 2x2 rather than squeezing every label. */
+.result__acts .btn{flex:1 1 calc(50% - 6px)}
 /* --go carries a solid 8px shadow under it. Measured, the boxes already
    matched; what didn't was the ink under them, so the lime pair read as
    taller than the outlined one next to it. The ghost gets the same lift in
