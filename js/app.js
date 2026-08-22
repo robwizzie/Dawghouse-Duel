@@ -53,6 +53,9 @@
     deckVote: $('deckVote'), deckVoteUp: $('deckVoteUp'), deckVoteDown: $('deckVoteDown'),
     deckVoteUpN: $('deckVoteUpN'), deckVoteDownN: $('deckVoteDownN'), deckVotePlays: $('deckVotePlays'),
     ovlDeckShare: $('ovlDeckShare'), deckShareCode: $('deckShareCode'), deckShareUrl: $('deckShareUrl'),
+    deckShareEyebrow: $('deckShareEyebrow'),
+    deckPrivate: $('deckPrivate'), deckKeyBox: $('deckKeyBox'), deckKeyValue: $('deckKeyValue'),
+    deckKeyCopy: $('deckKeyCopy'), deckUnpublish: $('deckUnpublish'),
     deckShareCopy: $('deckShareCopy'), deckShareDone: $('deckShareDone'), deckShareClose: $('deckShareClose'),
     deckShareEyebrow: $('deckShareEyebrow'),
     ovlDeckGet: $('ovlDeckGet'), deckGetForm: $('deckGetForm'), deckGetCode: $('deckGetCode'),
@@ -2061,6 +2064,27 @@
   on(el.deckVoteUp, 'click', function () { castVote(1); });
   on(el.deckVoteDown, 'click', function () { castVote(-1); });
   on(el.deckShareClose, 'click', function () { el.ovlDeckShare.hidden = true; });
+  on(el.deckKeyCopy, 'click', function () {
+    var key = el.deckKeyValue.textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(key) : Promise.reject())
+      .then(function () { toast('Edit key copied'); })
+      .catch(function () { window.prompt('Copy your edit key', key); });
+  });
+  on(el.deckUnpublish, 'click', function () {
+    if (!draft || !Decks.owns(draft)) return;
+    if (!window.confirm('Take this deck down? Anyone holding the code will stop being able to play it. Your own copy stays here.')) return;
+    el.deckUnpublish.disabled = true;
+    Decks.unpublish(draft).then(function () {
+      Decks.save(draft);
+      el.deckUnpublish.disabled = false;
+      el.ovlDeckShare.hidden = true;
+      el.builderShare.textContent = 'Share';
+      toast('Taken down');
+    }).catch(function (err) {
+      el.deckUnpublish.disabled = false;
+      toast(err.message || 'Could not take it down');
+    });
+  });
   on(el.deckShareDone, 'click', function () {
     el.ovlDeckShare.hidden = true;
     show('setup');
@@ -2304,6 +2328,7 @@
 
   function openBuilder(deck) {
     draft = deck || newDraft();
+    if (el.deckPrivate) el.deckPrivate.checked = !!draft.private;
     setSaveState(Decks.get(draft.id) ? 'Draft saved' : '', Decks.get(draft.id) ? 'on' : '');
     el.deckName.value = draft.name || '';
     el.deckBlurb.value = draft.blurb || '';
@@ -2484,7 +2509,7 @@
     el.builderShare.textContent = 'Publishing…';
     Decks.publish(d, function (done, total) {
       el.builderShare.textContent = total ? 'Uploading ' + done + '/' + total + '…' : 'Publishing…';
-    }).then(function (code) {
+    }, { private: !!(el.deckPrivate && el.deckPrivate.checked) }).then(function (code) {
       Decks.save(d);
       el.builderShare.disabled = false;
       el.builderShare.textContent = was;
@@ -2505,6 +2530,18 @@
   function openDeckShare(code) {
     el.deckShareCode.textContent = code;
     el.deckShareUrl.textContent = deckLink(code).replace(/^https?:\/\//, '').split('/?')[0];
+
+    /* The key is the only proof this deck is theirs, and the server has
+       only its hash — nobody can hand it back later. Show it plainly and
+       let them keep a copy. */
+    var mine = draft && Decks.owns(draft);
+    el.deckKeyBox.hidden = !mine;
+    if (mine) el.deckKeyValue.textContent = draft.secret;
+    el.deckUnpublish.hidden = !mine;
+
+    el.deckShareEyebrow.textContent = draft && draft.private
+      ? 'YOUR DECK IS UP \u00b7 UNLISTED'
+      : 'YOUR DECK IS LIVE';
     el.ovlDeckShare.hidden = false;
   }
 

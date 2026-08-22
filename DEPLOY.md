@@ -184,6 +184,35 @@ You want `{"ok":true}`.
 
 ---
 
+## What publishing a deck stores
+
+Worth knowing before you turn it on, because it is your bucket.
+
+When someone publishes a deck, the relay mints an **edit key**, keeps only
+its SHA-256, and hands the key back once. Editing or deleting that deck
+means presenting the key again. There are no accounts, no emails and no
+passwords anywhere in this — the key unlocks one deck and nothing else, so
+there is nothing worth stealing and nothing for you to protect. The trade
+is that somebody who loses their key can't edit their deck any more; it
+stays up, read-only.
+
+**Unlisted** decks get a twelve-character code instead of six and are never
+listed anywhere. That is unguessable rather than access-controlled, which is
+the honest description: anyone with the link can play it.
+
+Uploaded pictures are checked against their actual bytes, not the
+content-type the uploader claimed, and served back with `nosniff` and a
+locked-down CSP. SVG is refused — it can carry script. Publishing and
+uploading are rate limited per caller; playing a deck never is.
+
+To take something down yourself:
+
+```bash
+cd ~/Desktop/Dawghouse-Duel/worker && npx wrangler r2 object delete dawghouse-duel-decks/deck/CODE.json
+```
+
+---
+
 ## Step 7 — Tell the app where the relay is
 
 Open [`js/config.js`](js/config.js) and set one line to the URL from step 6, but

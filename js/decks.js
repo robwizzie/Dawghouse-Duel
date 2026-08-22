@@ -178,7 +178,7 @@ DHD.Decks = (function () {
     /* ── the relay ─────────────────────────────────────────────
        Publishing uploads every local picture, then the deck itself.
        `onProgress(done, total)` drives the button's label. */
-    publish: function (deck, onProgress) {
+    publish: function (deck, onProgress, opts) {
       var base = relay();
       if (!base) return Promise.reject(new Error('No relay configured — see js/config.js'));
 
@@ -215,6 +215,7 @@ DHD.Decks = (function () {
         var body = {
           name: deck.name,
           blurb: deck.blurb || '',
+          private: !!(opts && opts.private),
           items: items.map(function (it) {
             var row = { answer: it.answer };
             if (it.alt && it.alt.length) row.alt = it.alt;
@@ -227,9 +228,14 @@ DHD.Decks = (function () {
             return row;
           })
         };
-        return fetch(base + '/deck', {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
+        /* An existing deck we hold the key for is replaced in place, so
+           editing keeps the code people already have. */
+        var editing = deck.code && deck.secret;
+        return fetch(base + '/deck' + (editing ? '/' + deck.code : ''), {
+          method: editing ? 'PUT' : 'POST',
+          headers: editing
+            ? { 'content-type': 'application/json', authorization: 'Bearer ' + deck.secret }
+            : { 'content-type': 'application/json' },
           body: JSON.stringify(body)
         });
       }).then(function (r) {
@@ -242,9 +248,34 @@ DHD.Decks = (function () {
           if (it.__key) { it.imgUrl = base + '/img/' + it.__key; delete it.__key; }
         });
         deck.code = out.code;
+        /* Returned exactly once, on first publish. Kept locally because
+           it is the only proof of ownership there is. */
+        if (out.secret) deck.secret = out.secret;
+        deck.private = !!out.private;
         return out.code;
       });
     },
+
+    /* Take a published deck down. Needs the key from when it went up. */
+    unpublish: function (deck) {
+      var base = relay();
+      if (!base) return Promise.reject(new Error('No relay configured'));
+      if (!deck.code) return Promise.resolve(false);
+      if (!deck.secret) return Promise.reject(new Error('No edit key for this deck on this device'));
+      return fetch(base + '/deck/' + deck.code, {
+        method: 'DELETE',
+        headers: { authorization: 'Bearer ' + deck.secret }
+      }).then(function (r) {
+        if (!r.ok) return r.json().catch(function () { return {}; }).then(function (b) {
+          throw new Error(b.error || ('could not remove it (' + r.status + ')'));
+        });
+        delete deck.code; delete deck.secret; delete deck.private;
+        return true;
+      });
+    },
+
+    /* Whether this browser can edit what it published. */
+    owns: function (deck) { return !!(deck && deck.code && deck.secret); },
 
     /* Pull a published deck down by its code and turn it into something
        playable. The pictures stay on the relay — they are not copied

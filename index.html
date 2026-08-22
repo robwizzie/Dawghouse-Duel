@@ -364,6 +364,10 @@
       <h2 class="mediabar__title">Make a deck</h2>
       <div class="mediabar__acts">
         <span class="builder__saved" id="deckSaved"></span>
+        <label class="builder__private" title="An unlisted deck is only findable by its code">
+          <input type="checkbox" id="deckPrivate">
+          <span>Unlisted</span>
+        </label>
         <button class="btn btn--ghost btn--sm btn--danger" id="builderDelete" hidden>Delete deck</button>
         <button class="btn btn--ghost btn--sm" id="builderShare" hidden>Share</button>
         <button class="btn btn--go btn--sm" id="builderSave">Save deck</button>
@@ -549,10 +553,21 @@
     <span class="deckshare__eyebrow" id="deckShareEyebrow">YOUR DECK IS LIVE</span>
     <b class="deckshare__code" id="deckShareCode">----</b>
     <p class="deckshare__how">Anyone can play it &mdash; they open <b id="deckShareUrl">dawghouseduel.com</b> and enter this code.</p>
+
+    <div class="deckkey" id="deckKeyBox" hidden>
+      <span class="deckkey__eyebrow">Your edit key &mdash; keep it</span>
+      <code class="deckkey__value" id="deckKeyValue"></code>
+      <p class="deckkey__how">This is the only proof the deck is yours. It&rsquo;s saved in this
+        browser, so you can edit or delete the deck from here. Copy it somewhere safe and you can
+        still do that after clearing your history or moving to another device.</p>
+      <button class="btn btn--ghost btn--sm" type="button" id="deckKeyCopy">Copy the key</button>
+    </div>
+
     <div class="deckshare__acts">
       <button class="btn btn--go" type="button" id="deckShareCopy">Copy the link</button>
       <button class="btn btn--ghost" type="button" id="deckShareDone">Done</button>
     </div>
+    <button class="deckshare__pull" type="button" id="deckUnpublish" hidden>Take it down</button>
   </div>
 </div>
 

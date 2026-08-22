@@ -1314,3 +1314,33 @@ kbd{font-family:var(--ff-cond);font-weight:900;background:var(--lime);color:var(
 
 .paste__acts{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
 .paste__acts .btn{min-width:150px}
+
+
+/* ── unlisted toggle in the builder bar ── */
+.builder__private{display:flex;align-items:center;gap:.45em;cursor:pointer;
+  align-self:center;padding:0 6px;min-height:40px;
+  font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  font-size:clamp(9px,.95vw,12px);color:rgba(255,255,255,.5)}
+.builder__private:hover{color:var(--lime)}
+.builder__private input{width:16px;height:16px;accent-color:var(--lime);cursor:pointer}
+
+/* ── the edit key ───────────────────────────────────────────
+   Shown once, because the server keeps only its hash and cannot hand
+   it back. It is what makes a deck editable rather than permanent. */
+.deckkey{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;
+  padding:14px 16px;border-radius:14px;
+  background:rgba(255,255,255,.05);border:2px dashed rgba(222,255,102,.4)}
+.deckkey[hidden]{display:none}
+.deckkey__eyebrow{font-weight:900;letter-spacing:.2em;text-transform:uppercase;
+  font-size:clamp(9px,.95vw,12px);color:var(--lime)}
+.deckkey__value{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:clamp(12px,1.5vw,17px);color:#fff;word-break:break-all;text-align:center;
+  background:var(--indigo-950);border-radius:8px;padding:8px 12px;width:100%}
+.deckkey__how{margin:0;font-size:clamp(11px,1.15vw,13px);line-height:1.45;
+  color:rgba(255,255,255,.6);text-align:center}
+
+.deckshare__pull{background:none;border:0;cursor:pointer;padding:8px;min-height:44px;
+  color:rgba(255,255,255,.35);font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  font-size:11px}
+.deckshare__pull:hover{color:var(--red)}
+.deckshare__pull[hidden]{display:none}
