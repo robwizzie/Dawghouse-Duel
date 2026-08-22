@@ -800,11 +800,15 @@ body.is-typing .topbar__pair{display:none}
    shrink-to-fit: these live inside centred cards that size to their content,
    so without it the row collapses to each button's minimum and the longest
    label wraps while its neighbours don't. */
+/* min-width, not just width: these cards size to their content, and a solo
+   card's content is narrow enough that 100% left the longest label with less
+   room than it needs. The floor widens the card instead of clipping the text;
+   88vw keeps it inside the overlay's padding on a phone. */
 .result__acts,.tut__acts{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
-  width:min(620px,100%);margin-inline:auto}
+  width:min(620px,100%);min-width:min(430px,88vw);margin-inline:auto}
 .result__acts{margin-top:.6em}
 .result__acts .btn,.tut__acts .btn{flex:1 1 0;min-width:0;padding:.7em .5em;
-  white-space:nowrap;gap:.35em}
+  letter-spacing:.09em;gap:.35em}
 .result__acts .btn i,.tut__acts .btn i{font-size:.8em}
 
 /* ── the last picture, so nobody has to ask what it was ── */

@@ -100,7 +100,7 @@
     runStart: 0, lastTickSec: null,
     raf: 0, backstop: 0, peek: false,
     lockUntil: 0, revealTimer: 0, introTimer: 0, pendingBeat: null,
-    history: [], curWrongs: 0
+    history: [], curWrongs: 0, carded: false
   };
 
   /* ── small helpers ───────────────────────────────────────── */
@@ -573,6 +573,7 @@
     G.curWrongs = 0;
     G.curLogged = false;
     G.ranOut = null;
+    G.carded = false;
     if (!G.queue.length) { toast('That category is empty'); return; }
     G.idx = 0;
     G.startMs = cfg.clockMs;
@@ -1063,7 +1064,8 @@
 
   /* Solo has no loser — the card is a score, built to be screenshotted. */
   function endSolo() {
-    if (G.phase === 'over') return;
+    if (G.carded) return;   // not `phase === over`: endDuel sets that before
+    G.carded = true;        // it delegates here, which used to bail every time
     G.phase = 'over';
     stopTicker();
     clearTimeout(G.revealTimer);
