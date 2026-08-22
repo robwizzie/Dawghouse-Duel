@@ -7,11 +7,23 @@
    default form controls.
    ══════════════════════════════════════════════════════════════ */
 /* ── join screen ── */
+/* The same house lighting the app uses, so walking from the menu to this
+   page doesn't feel like landing on a different site. */
 .join{
   position:fixed;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:14px;padding:24px;text-align:center;
-  background:linear-gradient(180deg,var(--indigo-900),var(--indigo-950));
+  gap:14px;padding:24px;text-align:center;overflow-y:auto;
+  background:
+    radial-gradient(120% 85% at 50% -10%, var(--indigo-600) 0%, rgba(59,59,196,0) 62%),
+    radial-gradient(90% 70% at 50% 118%, rgba(222,255,102,.16) 0%, rgba(222,255,102,0) 60%),
+    linear-gradient(180deg,var(--indigo) 0%,var(--indigo-900) 58%,var(--indigo-950) 100%);
 }
+.join::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;z-index:-1;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:74px 74px;
+}
+.join > *{position:relative;z-index:1}
 body.paired .join{display:none}
 .join__logo{width:min(260px,62vw);height:auto}
 .join__tag{font-family:var(--ff-display);background:var(--lime);color:var(--indigo);
@@ -21,14 +33,15 @@ body.paired .join{display:none}
 .join__input{
   flex:1;min-width:0;background:rgba(14,14,45,.9);border:3px solid var(--indigo-600);border-radius:14px;
   color:var(--lime);font-family:var(--ff-display);font-size:clamp(28px,9vw,46px);letter-spacing:.18em;
-  text-align:center;text-transform:uppercase;padding:.24em .1em .3em;outline:none;width:100%;
+  text-align:center;text-transform:uppercase;padding:.432em .1em .108em;outline:none;width:100%;
+  text-indent:.18em;                      /* balance the tracking on the last letter */
 }
 .join__input:focus{border-color:var(--lime);box-shadow:0 0 0 5px rgba(222,255,102,.16)}
 .join__input::placeholder{color:rgba(255,255,255,.18);letter-spacing:.14em}
 .join__go{
   flex:none;border:0;border-radius:14px;background:var(--lime);color:var(--indigo);
   font-family:var(--ff-display);font-size:clamp(17px,4.4vw,24px);letter-spacing:.1em;
-  padding:0 clamp(14px,4vw,26px);box-shadow:0 5px 0 var(--lime-deep);
+  padding:.35em clamp(14px,4vw,26px) .1em;box-shadow:0 5px 0 var(--lime-deep);
 }
 .join__go:active{transform:translateY(3px);box-shadow:0 2px 0 var(--lime-deep)}
 .join__go:disabled{opacity:.4;pointer-events:none}
@@ -44,7 +57,15 @@ body.paired .join{display:none}
   color:rgba(255,255,255,.5);text-align:center}
 .join__nameinput{width:100%;background:rgba(14,14,45,.9);border:3px solid var(--indigo-600);
   border-radius:14px;color:#fff;font-family:var(--ff-display);font-size:clamp(18px,5vw,26px);
-  text-align:center;text-transform:uppercase;padding:.28em .5em .34em;outline:none;
-  min-height:52px}
+  text-align:center;text-transform:uppercase;padding:.9em .5em .58em;outline:none}
 .join__nameinput:focus{border-color:var(--lime);box-shadow:0 0 0 5px rgba(222,255,102,.16)}
 .join__nameinput::placeholder{color:rgba(255,255,255,.18)}
+
+/* ── which page am I on? ──────────────────────────────────────
+   Both phone pages open on this screen and they do different jobs, so
+   each one says which it is and offers the other. */
+.join__switch{margin-top:6px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.join__switch p{margin:0;font-size:13px;color:rgba(255,255,255,.45);max-width:30ch;line-height:1.4}
+.join__switch a{color:var(--lime);font-weight:800;text-decoration:none;
+  border-bottom:2px solid rgba(222,255,102,.35);padding-bottom:1px}
+.join__switch a:hover{border-bottom-color:var(--lime)}

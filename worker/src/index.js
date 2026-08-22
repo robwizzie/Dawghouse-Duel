@@ -98,6 +98,78 @@ export class Room {
   }
 }
 
+/* ══════════════════════════════════════════════════════════════
+   Deck stats
+
+   Plays and votes have to be counted atomically, so they live in a
+   Durable Object keyed on the deck code rather than in R2. One object
+   per deck, holding three integers.
+
+   A vote is one per browser, enforced by the client remembering what
+   it sent; the server just applies the delta. That is the right trade
+   for a party game — the alternative is accounts.
+   ══════════════════════════════════════════════════════════════ */
+export class DeckStats {
+  constructor(state) {
+    this.state = state;
+  }
+
+  async fetch(request) {
+    const url = new URL(request.url);
+    const action = url.searchParams.get('do');
+    const store = this.state.storage;
+
+    if (request.method === 'GET' || !action) {
+      const got = await store.get(['plays', 'up', 'down']);
+      return Response.json({
+        plays: got.get('plays') || 0,
+        up: got.get('up') || 0,
+        down: got.get('down') || 0
+      });
+    }
+
+    if (action === 'played') {
+      const n = ((await store.get('plays')) || 0) + 1;
+      await store.put('plays', n);
+      return Response.json({ plays: n });
+    }
+
+    if (action === 'vote') {
+      /* `up` and `down` move together so a browser changing its mind
+         sends -1/+1 in one request rather than two that can half-fail. */
+      const du = parseInt(url.searchParams.get('up') || '0', 10);
+      const dd = parseInt(url.searchParams.get('down') || '0', 10);
+      if (!Number.isFinite(du) || !Number.isFinite(dd) ||
+          Math.abs(du) > 1 || Math.abs(dd) > 1) {
+        return Response.json({ error: 'bad vote' }, { status: 400 });
+      }
+      const got = await store.get(['up', 'down']);
+      const up = Math.max(0, (got.get('up') || 0) + du);
+      const down = Math.max(0, (got.get('down') || 0) + dd);
+      await store.put({ up: up, down: down });
+      return Response.json({ up: up, down: down });
+    }
+
+    return Response.json({ error: 'unknown action' }, { status: 400 });
+  }
+}
+
+function statsStub(env, code) {
+  return env.STATS.get(env.STATS.idFromName(code.toUpperCase()));
+}
+
+async function deckStats(env, code, action, params) {
+  if (!env.STATS) return json({ plays: 0, up: 0, down: 0 });
+  const qs = new URLSearchParams(params || {});
+  if (action) qs.set('do', action);
+  const res = await statsStub(env, code).fetch(
+    'https://stats/?' + qs.toString(),
+    { method: action ? 'POST' : 'GET' }
+  );
+  const body = await res.json();
+  return json(body, res.status);
+}
+
 const CORS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
@@ -272,6 +344,20 @@ export default {
 
     const d = url.pathname.match(/^\/deck\/([A-Za-z0-9]{4,12})$/);
     if (d && request.method === 'GET') return getDeck(env, d[1]);
+
+    const st = url.pathname.match(/^\/deck\/([A-Za-z0-9]{4,12})\/stats$/);
+    if (st && request.method === 'GET') return deckStats(env, st[1], null);
+
+    const pl = url.pathname.match(/^\/deck\/([A-Za-z0-9]{4,12})\/played$/);
+    if (pl && request.method === 'POST') return deckStats(env, pl[1], 'played');
+
+    const vt = url.pathname.match(/^\/deck\/([A-Za-z0-9]{4,12})\/vote$/);
+    if (vt && request.method === 'POST') {
+      return deckStats(env, vt[1], 'vote', {
+        up: url.searchParams.get('up') || '0',
+        down: url.searchParams.get('down') || '0'
+      });
+    }
 
     const i = url.pathname.match(/^\/img\/([A-Za-z0-9_-]{1,64}\.(?:jpg|png|webp|gif))$/);
     if (i && request.method === 'GET') return getImage(env, i[1]);

@@ -8,9 +8,18 @@ compatibility_date = "2025-06-01"
 name = "ROOMS"
 class_name = "Room"
 
+# One object per published deck code, holding plays and votes.
+[[durable_objects.bindings]]
+name = "STATS"
+class_name = "DeckStats"
+
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["Room"]
+
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["DeckStats"]
 
 # Published decks: the JSON under deck/, the pictures under img/.
 # Create it once with:  npx wrangler r2 bucket create dawghouse-duel-decks

@@ -75,8 +75,58 @@ DHD.Decks = (function () {
     };
   }
 
+  /* Which way this browser voted on each deck, so the buttons can show
+     their state and a change of mind sends one balanced delta. */
+  var VOTE_KEY = 'dhd.deckvotes';
+  function votes() {
+    try { return JSON.parse(localStorage.getItem(VOTE_KEY) || '{}') || {}; }
+    catch (e) { return {}; }
+  }
+  function rememberVote(code, v) {
+    var all = votes();
+    if (v) all[code] = v; else delete all[code];
+    try { localStorage.setItem(VOTE_KEY, JSON.stringify(all)); } catch (e) {}
+  }
+
   return {
     MAX_ITEMS: MAX_ITEMS,
+
+    myVote: function (code) { return votes()[code] || 0; },
+
+    stats: function (code) {
+      var base = relay();
+      if (!base || !code) return Promise.resolve(null);
+      return fetch(base + '/deck/' + encodeURIComponent(code) + '/stats')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .catch(function () { return null; });
+    },
+
+    /* Fire-and-forget: a play that fails to register is not worth
+       interrupting the game for. */
+    played: function (code) {
+      var base = relay();
+      if (!base || !code) return;
+      fetch(base + '/deck/' + encodeURIComponent(code) + '/played', { method: 'POST' })
+        .catch(function () {});
+    },
+
+    /* `want` is 1, -1, or 0 to take a vote back. Returns the new totals. */
+    vote: function (code, want) {
+      var base = relay();
+      if (!base || !code) return Promise.reject(new Error('No relay configured'));
+      var had = votes()[code] || 0;
+      if (want === had) want = 0;                 // pressing it again undoes it
+      var up = (want === 1 ? 1 : 0) - (had === 1 ? 1 : 0);
+      var down = (want === -1 ? 1 : 0) - (had === -1 ? 1 : 0);
+      if (!up && !down) return Promise.resolve(null);
+      return fetch(base + '/deck/' + encodeURIComponent(code) +
+                   '/vote?up=' + up + '&down=' + down, { method: 'POST' })
+        .then(function (r) {
+          if (!r.ok) throw new Error('vote failed');
+          return r.json();
+        })
+        .then(function (out) { rememberVote(code, want); out.mine = want; return out; });
+    },
 
     all: load,
 

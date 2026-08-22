@@ -944,6 +944,36 @@ body.is-typing .topbar__pair{display:none}
 .result__acts .btn--ghost:active,.tut__acts .btn--ghost:active{box-shadow:0 3px 0 var(--indigo-800);transform:translateY(5px)}
 .result__acts .btn i,.tut__acts .btn i{font-size:.8em}
 
+/* ── was this deck any good? ──────────────────────────────────
+   Only shown for a deck somebody published, since the built-in ones
+   aren't up for a vote. */
+.deckvote{display:flex;flex-direction:column;align-items:center;gap:8px;
+  padding:12px 18px;border-radius:16px;background:rgba(255,255,255,.05);
+  border:2px solid var(--indigo-600)}
+.deckvote[hidden]{display:none}
+.deckvote__q{font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  font-size:clamp(10px,1vw,13px);color:rgba(255,255,255,.55)}
+.deckvote__acts{display:flex;gap:10px}
+.deckvote__btn{display:flex;align-items:center;gap:7px;cursor:pointer;
+  min-height:44px;padding:0 16px;border-radius:99px;
+  background:transparent;border:2px solid var(--indigo-400);color:rgba(255,255,255,.8)}
+.deckvote__btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.deckvote__btn b{font-weight:900;font-size:clamp(13px,1.3vw,16px);min-width:1ch}
+.deckvote__btn:hover{border-color:var(--lime);color:var(--lime)}
+.deckvote__btn--down:hover{border-color:var(--red);color:var(--red)}
+.deckvote__btn[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:var(--indigo-950)}
+.deckvote__btn--down[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.deckvote__plays{font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  font-size:clamp(9px,.95vw,12px);color:rgba(255,255,255,.4)}
+
+/* the same numbers, small, on the gallery card */
+.catcard__stats{display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  font-size:clamp(9px,.9vw,11px);color:rgba(255,255,255,.45)}
+.catcard__stats .up{color:var(--lime)}
+.catcard__stats .down{color:var(--red)}
+
 /* ── the last picture, so nobody has to ask what it was ── */
 .lastup{display:flex;align-items:center;gap:clamp(10px,1.4vw,18px);
   background:rgba(255,255,255,.05);border:2px solid var(--indigo-600);

@@ -46,6 +46,8 @@
     builderDelete: $('builderDelete'), deckName: $('deckName'), deckBlurb: $('deckBlurb'),
     deckRows: $('deckRows'), deckAddRow: $('deckAddRow'), deckAddMany: $('deckAddMany'),
     deckCount: $('deckCount'),
+    deckVote: $('deckVote'), deckVoteUp: $('deckVoteUp'), deckVoteDown: $('deckVoteDown'),
+    deckVoteUpN: $('deckVoteUpN'), deckVoteDownN: $('deckVoteDownN'), deckVotePlays: $('deckVotePlays'),
     ovlDeckShare: $('ovlDeckShare'), deckShareCode: $('deckShareCode'), deckShareUrl: $('deckShareUrl'),
     deckShareCopy: $('deckShareCopy'), deckShareDone: $('deckShareDone'), deckShareClose: $('deckShareClose'),
     deckShareEyebrow: $('deckShareEyebrow'),
@@ -379,6 +381,20 @@
         });
       }
 
+      if (cat.custom && cat.code) {
+        var stats = document.createElement('span');
+        stats.className = 'catcard__stats';
+        card.querySelector('.catcard__body').appendChild(stats);
+        (function (node, code) {
+          Decks.stats(code).then(function (st) {
+            if (!st) return;
+            node.innerHTML = '<span class="up">\u25b2 ' + (st.up || 0) + '</span>' +
+                             '<span class="down">\u25bc ' + (st.down || 0) + '</span>' +
+                             '<span>' + (st.plays || 0) + ' played</span>';
+          });
+        })(stats, cat.code);
+      }
+
       if (cat.custom) {
         var badge = document.createElement('span');
         badge.className = 'catcard__badge';
@@ -707,6 +723,8 @@
     renderShortcuts();
     el.rally.hidden = false;
     renderRally(true);
+
+    if (G.cat.code) Decks.played(G.cat.code);
 
     G.typed = cfg.answers === 'type';
     G.tokenIndex = G.typed ? Match.index(G.queue) : null;
@@ -1205,6 +1223,38 @@
   function showRecap() {
     renderLastUp();
     renderRecap();
+    renderDeckVote();
+  }
+
+  /* A published deck can be voted on from the card that ends the round —
+     the moment you actually have an opinion about it. */
+  function renderDeckVote() {
+    var code = G.cat && G.cat.code;
+    if (!code) { el.deckVote.hidden = true; return; }
+    el.deckVote.hidden = false;
+    paintVote(null, Decks.myVote(code));
+    Decks.stats(code).then(function (st) {
+      if (!st || (G.cat && G.cat.code) !== code) return;
+      paintVote(st, Decks.myVote(code));
+    });
+  }
+
+  function paintVote(st, mine) {
+    if (st) {
+      el.deckVoteUpN.textContent = st.up || 0;
+      el.deckVoteDownN.textContent = st.down || 0;
+      el.deckVotePlays.textContent = (st.plays || 0) === 1 ? 'played once' : 'played ' + (st.plays || 0) + ' times';
+    }
+    el.deckVoteUp.setAttribute('aria-pressed', mine === 1 ? 'true' : 'false');
+    el.deckVoteDown.setAttribute('aria-pressed', mine === -1 ? 'true' : 'false');
+  }
+
+  function castVote(want) {
+    var code = G.cat && G.cat.code;
+    if (!code) return;
+    Decks.vote(code, want).then(function (out) {
+      if (out) paintVote(out, out.mine);
+    }).catch(function () { toast('Could not send that vote'); });
   }
 
   function endDuel(winner) {
@@ -1890,6 +1940,8 @@
   on(el.deckName, 'input', function () { draft && (draft.name = el.deckName.value); });
   on(el.deckBlurb, 'input', function () { draft && (draft.blurb = el.deckBlurb.value); });
 
+  on(el.deckVoteUp, 'click', function () { castVote(1); });
+  on(el.deckVoteDown, 'click', function () { castVote(-1); });
   on(el.deckShareClose, 'click', function () { el.ovlDeckShare.hidden = true; });
   on(el.deckShareDone, 'click', function () {
     el.ovlDeckShare.hidden = true;

@@ -17,8 +17,8 @@
 <!-- ── join ── -->
 <section class="join" id="join">
   <img class="join__logo" src="assets/brand/logo.png" alt="Dawg House" onerror="this.remove()">
-  <span class="join__tag">PLAYER 2</span>
-  <p class="join__lead">Enter the code they sent you.</p>
+  <span class="join__tag">PLAYING</span>
+  <p class="join__lead">You&rsquo;re joining a duel as the second player.<br>Enter the code from the other player&rsquo;s screen.</p>
   <form class="join__form" id="joinForm" autocomplete="off">
     <input class="join__input" id="joinCode" inputmode="latin" autocapitalize="characters"
            autocomplete="off" spellcheck="false" maxlength="6" placeholder="CODE" aria-label="Room code">
@@ -29,6 +29,10 @@
     <input class="join__nameinput" id="joinName" maxlength="14" placeholder="NAME" value="">
   </label>
   <p class="join__state" id="joinState">not connected</p>
+  <div class="join__switch">
+    <p>Here to mark someone else&rsquo;s answers instead? That&rsquo;s the
+       <a href="host.html">host view</a> &mdash; same code, different job.</p>
+  </div>
 </section>
 
 <!-- ── the mirrored board ── -->
