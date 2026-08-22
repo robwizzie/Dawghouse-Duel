@@ -448,7 +448,16 @@ Wrong guesses don't end a picture, so they're counted on the tile instead —
 *Ultron · 2 wrong* means two misses before somebody passed it.
 
 It's collapsed by default so it doesn't bury the winner, and opening it scrolls
-the buttons back into view.
+the buttons back into view. **Tap any tile** to see that picture full size with
+its answer, and step through the round with the arrows or the ← → keys. Escape
+closes it.
+
+## Muting
+
+Bottom-left corner, on every screen, including mid-round. It's the same setting
+as the sound checkbox in the wizard — the two stay in step — and it's
+remembered. There's deliberately no keyboard shortcut for it: `M` is already
+the pass key for the right-hand player.
 
 ## The rally counter
 

@@ -809,6 +809,13 @@ body.is-typing .topbar__pair{display:none}
 .result__acts{margin-top:.6em}
 .result__acts .btn,.tut__acts .btn{flex:1 1 0;min-width:0;padding:.7em .5em;
   letter-spacing:.09em;gap:.35em}
+/* --go carries a solid 8px shadow under it. Measured, the boxes already
+   matched; what didn't was the ink under them, so the lime pair read as
+   taller than the outlined one next to it. The ghost gets the same lift in
+   its own colour. */
+.result__acts .btn--ghost,.tut__acts .btn--ghost{box-shadow:0 8px 0 var(--indigo-800)}
+.result__acts .btn--ghost:hover,.tut__acts .btn--ghost:hover{box-shadow:0 10px 0 var(--indigo-800)}
+.result__acts .btn--ghost:active,.tut__acts .btn--ghost:active{box-shadow:0 3px 0 var(--indigo-800);transform:translateY(5px)}
 .result__acts .btn i,.tut__acts .btn i{font-size:.8em}
 
 /* ── the last picture, so nobody has to ask what it was ── */
@@ -882,6 +889,62 @@ body.is-typing .topbar__pair{display:none}
 /* A tint down the side of the tile so a player's run reads as a block. */
 .recap__cell--p0{box-shadow:inset 4px 0 0 var(--lime)}
 .recap__cell--p1{box-shadow:inset 4px 0 0 var(--p1)}
+
+/* ── the picture viewer ──────────────────────────────────────
+   Tap any tile in the recap to see it big. Same overlay pattern as
+   everything else, plus arrows and the keyboard. */
+.ovl--shot{padding:0;background:rgba(14,14,45,.96)}
+.shot{display:flex;flex-direction:column;align-items:center;gap:clamp(10px,2vh,20px);
+  margin:0;max-width:min(900px,92vw);max-height:92vh}
+.shot__img{max-width:100%;max-height:min(66vh,720px);width:auto;height:auto;
+  border-radius:18px;border:3px solid var(--indigo-600);background:var(--indigo-950);
+  object-fit:contain;animation:pop .28s var(--ease)}
+.shot__cap{display:flex;flex-direction:column;align-items:center;gap:.3em;text-align:center}
+.shot__badge{display:inline-flex;align-items:center;gap:.4em;padding:3px 12px 4px;border-radius:99px;
+  font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(10px,1vw,13px)}
+.shot__badge--yes{background:var(--lime);color:var(--indigo-950)}
+.shot__badge--pass{background:#e8b53c;color:var(--indigo-950)}
+.shot__badge--timeout{background:#ff5470;color:#fff}
+.shot__name{font-family:var(--ff-display);color:var(--lime);line-height:1.05;
+  font-size:clamp(26px,4.6vw,64px);text-transform:uppercase;overflow-wrap:anywhere}
+.shot__meta{font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.65);font-size:clamp(11px,1.1vw,15px)}
+.shot__count{font-weight:800;letter-spacing:.2em;color:rgba(255,255,255,.4);
+  font-size:clamp(10px,1vw,13px)}
+.shot__arrow{position:fixed;top:50%;transform:translateY(-50%);z-index:2;
+  width:clamp(48px,5vw,64px);height:clamp(48px,5vw,64px);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  background:rgba(23,23,76,.9);border:2px solid var(--indigo-600);color:#fff;
+  font-size:clamp(26px,3vw,38px);line-height:1;padding-bottom:.12em;
+  transition:border-color .15s,color .15s,background .15s}
+.shot__arrow:hover{border-color:var(--lime);color:var(--lime)}
+.shot__arrow:disabled{opacity:.28;cursor:default;border-color:var(--indigo-600);color:#fff}
+.shot__arrow--prev{left:clamp(8px,2vw,26px)}
+.shot__arrow--next{right:clamp(8px,2vw,26px)}
+.shot__close{position:fixed;top:clamp(10px,2vh,22px);right:clamp(10px,2vw,26px);z-index:2;
+  width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:rgba(23,23,76,.9);border:2px solid var(--indigo-600);color:#fff;
+  font-size:30px;line-height:1;cursor:pointer;transition:border-color .15s,color .15s}
+.shot__close:hover{border-color:var(--red);color:var(--red)}
+.recap__cell{cursor:zoom-in}
+
+/* ── mute, reachable from anywhere ── */
+.mutebtn{position:fixed;left:clamp(10px,1.4vw,18px);bottom:clamp(10px,1.4vh,18px);z-index:60;
+  display:flex;align-items:center;gap:.5em;min-height:44px;padding:0 14px 0 11px;
+  border-radius:99px;cursor:pointer;
+  background:rgba(23,23,76,.86);border:2px solid var(--indigo-600);color:rgba(255,255,255,.8);
+  font-family:var(--ff-cond);font-weight:900;letter-spacing:.14em;text-transform:uppercase;
+  font-size:clamp(10px,1vw,13px);backdrop-filter:blur(6px);
+  transition:border-color .15s,color .15s,opacity .2s;opacity:.55}
+.mutebtn:hover,.mutebtn:focus-visible{opacity:1;border-color:var(--lime);color:var(--lime)}
+.mutebtn svg{width:20px;height:20px;flex:0 0 auto;fill:none;stroke:currentColor;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mutebtn__off{display:none}
+.mutebtn.is-muted{opacity:1;border-color:var(--red);color:var(--red)}
+.mutebtn.is-muted .mutebtn__on{display:none}
+.mutebtn.is-muted .mutebtn__off{display:block}
+/* Out of the way while the picture viewer is up. */
+body.is-shot .mutebtn{display:none}
 
 .pausecard{display:flex;flex-direction:column;align-items:center;gap:.4em}
 .pausecard b{font-family:var(--ff-display);color:var(--lime);font-size:clamp(40px,8vw,130px);letter-spacing:.1em}

@@ -41,6 +41,10 @@
     lastUp: $('lastUp'), lastUpImg: $('lastUpImg'),
     lastUpEyebrow: $('lastUpEyebrow'), lastUpName: $('lastUpName'),
     recap: $('recap'), recapToggle: $('recapToggle'), recapLegend: $('recapLegend'),
+    ovlShot: $('ovlShot'), shotImg: $('shotImg'), shotName: $('shotName'),
+    shotBadge: $('shotBadge'), shotMeta: $('shotMeta'), shotCount: $('shotCount'),
+    shotPrev: $('shotPrev'), shotNext: $('shotNext'), shotClose: $('shotClose'),
+    muteBtn: $('muteBtn'), muteLabel: $('muteLabel'),
     ovlTutorial: $('ovlTutorial'), tutSkip: $('tutSkip'), tutDots: $('tutDots'),
     tutBack: $('tutBack'), tutNext: $('tutNext'), toTutorial: $('toTutorial'),
     silhouetteNote: $('silhouetteNote'),
@@ -261,7 +265,10 @@
     stepAt = Math.max(0, Math.min(STEPS.length - 1, i));
     var name = STEPS[stepAt];
     el.flow.setAttribute('data-step', name);
-    el.flowBack.disabled = stepAt === 0;
+    /* Step 1's back arrow goes to the menu — it used to be disabled here,
+       which left no way out of the wizard once you'd pressed PLAY. */
+    el.flowBack.title = stepAt === 0 ? 'Back to the menu' : 'Back a step';
+    el.flowBack.setAttribute('aria-label', el.flowBack.title);
     el.flowCount.textContent = 'Step ' + (stepAt + 1) + ' of ' + STEPS.length;
     [].forEach.call(el.flowDots.children, function (dot, n) {
       dot.className = n < stepAt ? 'done' : n === stepAt ? 'now' : '';
@@ -945,7 +952,7 @@
     if (!list.length) { el.recap.hidden = true; el.recapToggle.hidden = true; return; }
 
     el.recapToggle.hidden = false;
-    el.recapToggle.textContent = 'See every picture (' + list.length + ')';
+    el.recapToggle.textContent = 'View results (' + list.length + ')';
     el.recap.hidden = el.recapLegend.hidden = true;   // collapsed until asked for
 
     /* A key, so the colours don't need explaining. Only a duel has players
@@ -963,10 +970,12 @@
     }
     el.recapLegend.innerHTML = key;
 
-    list.forEach(function (h) {
-      var cell = document.createElement('div');
+    list.forEach(function (h, i) {
+      var cell = document.createElement('button');
+      cell.type = 'button';
       cell.className = 'recap__cell recap__cell--' + h.outcome +
         (h.who >= 0 ? ' recap__cell--p' + h.who : '');
+      (function (n) { cell.addEventListener('click', function () { openShot(n); }); })(i);
 
       var img = document.createElement('img');
       img.className = 'recap__img';
@@ -1001,6 +1010,79 @@
 
       el.recap.appendChild(cell);
     });
+  }
+
+  /* ── mute ────────────────────────────────────────────────────
+     The wizard has a sound checkbox, but it's four steps deep and useless
+     once a round is running. This is the same setting, reachable from any
+     screen and from the M key. */
+  function renderMute() {
+    var on = !!cfg.sound;
+    el.muteBtn.classList.toggle('is-muted', !on);
+    el.muteBtn.setAttribute('aria-pressed', on ? 'false' : 'true');
+    el.muteBtn.title = on ? 'Mute sound' : 'Unmute sound';
+    el.muteLabel.textContent = on ? 'Sound on' : 'Muted';
+    if (el.optSound) el.optSound.checked = on;   // keep the wizard honest
+  }
+
+  function toggleMute() {
+    cfg.sound = !cfg.sound;
+    Sfx.setEnabled(cfg.sound);
+    if (cfg.sound) Sfx.unlock();
+    try { localStorage.setItem('dhd.cfg', JSON.stringify(cfg)); } catch (e) {}
+    renderMute();
+  }
+
+  /* ── the picture viewer ──────────────────────────────────────
+     One picture at a time, big, with the answer under it. Arrows and the
+     keyboard step through the round in the order it was played. */
+  var shotAt = -1;
+
+  var OUTCOME_WORD = { yes: 'Got it', pass: 'Passed', timeout: 'Ran out of clock' };
+
+  function openShot(i) {
+    if (!G.history.length) return;
+    shotAt = Math.max(0, Math.min(G.history.length - 1, i));
+    var h = G.history[shotAt];
+
+    el.shotBadge.className = 'shot__badge shot__badge--' + h.outcome;
+    el.shotBadge.textContent = (OUTCOME_TAG[h.outcome] || '') + ' ' + (OUTCOME_WORD[h.outcome] || '');
+    el.shotName.textContent = h.name;
+
+    var meta = [];
+    if (h.who >= 0 && G.players[h.who]) meta.push(G.players[h.who].name);
+    if (h.wrongs) meta.push(h.wrongs + ' wrong ' + (h.wrongs === 1 ? 'guess' : 'guesses'));
+    el.shotMeta.textContent = meta.join(' \u00b7 ');
+    el.shotCount.textContent = (shotAt + 1) + ' of ' + G.history.length;
+
+    el.shotPrev.disabled = shotAt === 0;
+    el.shotNext.disabled = shotAt === G.history.length - 1;
+
+    el.shotImg.removeAttribute('src');
+    el.shotImg.alt = h.name;
+    var stamp = ++openShot._n;
+    Store.resolve(G.cat.id, { slug: h.slug, name: h.name }).then(function (url) {
+      if (stamp !== openShot._n) return;          // arrowed on before this landed
+      if (url) el.shotImg.src = url;
+    });
+
+    el.ovlShot.hidden = false;
+    document.body.classList.add('is-shot');
+    el.shotClose.focus({ preventScroll: true });
+  }
+  openShot._n = 0;
+
+  function closeShot() {
+    el.ovlShot.hidden = true;
+    document.body.classList.remove('is-shot');
+    shotAt = -1;
+  }
+
+  function stepShot(d) {
+    if (shotAt < 0) return;
+    var next = shotAt + d;
+    if (next < 0 || next >= G.history.length) return;
+    openShot(next);
   }
 
   function showRecap() {
@@ -1639,10 +1721,16 @@
 
   el.dailyBtn.addEventListener('click', startDaily);
   el.resShare.addEventListener('click', shareResult);
+  on(el.muteBtn, 'click', toggleMute);
+  on(el.shotClose, 'click', closeShot);
+  on(el.shotPrev, 'click', function () { stepShot(-1); });
+  on(el.shotNext, 'click', function () { stepShot(1); });
+  /* Click the backdrop to dismiss, but not the picture itself. */
+  on(el.ovlShot, 'click', function (e) { if (e.target === el.ovlShot) closeShot(); });
   on(el.recapToggle, 'click', function () {
     var open = el.recap.hidden;
     el.recap.hidden = el.recapLegend.hidden = !open;
-    el.recapToggle.textContent = (open ? 'Hide the pictures' : 'See every picture (' + G.history.length + ')');
+    el.recapToggle.textContent = (open ? 'Hide results' : 'View results (' + G.history.length + ')');
     /* Opening the grid pushes the buttons past the fold on a laptop screen.
        Follow it down so the grid and the actions are both in view. */
     if (open) {
@@ -1695,6 +1783,8 @@
     Sfx.demo(function () {
       el.soundCheck.disabled = false;
       Sfx.setEnabled(el.optSound.checked);
+      cfg.sound = el.optSound.checked;
+      renderMute();
       Sfx.setTick(el.optTick.checked);
       toast(DHD.Sfx.ready() ? 'Sound check done' : 'No audio — check the system volume');
     });
@@ -1749,6 +1839,14 @@
     var k = e.key;
 
     if (k === 'h' || k === 'H') { e.preventDefault(); openHost(); return; }
+    /* The picture viewer takes the keyboard while it's up — otherwise R
+       would restart the duel from under it. */
+    if (!el.ovlShot.hidden) {
+      if (k === 'Escape') { e.preventDefault(); closeShot(); }
+      else if (k === 'ArrowLeft')  { e.preventDefault(); stepShot(-1); }
+      else if (k === 'ArrowRight') { e.preventDefault(); stepShot(1); }
+      return;
+    }
     if (k === '?' || k === '/') { e.preventDefault(); if (el.ovlHelp.hidden) openHelp(); else closeHelp(); return; }
     if (k === 'Escape') { if (!el.ovlTutorial.hidden) { closeTutorial(); return; }
                           if (!el.ovlHelp.hidden) { closeHelp(); return; } if (html.dataset.screen !== 'setup') backToSetup(); return; }
@@ -1797,6 +1895,7 @@
   restoreSetup();
   Sfx.setEnabled(cfg.sound);
   Sfx.setTick(cfg.tick);
+  renderMute();
 
   buildDots();
   goStep(0);

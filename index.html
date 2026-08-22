@@ -416,7 +416,7 @@
     </div>
 
     <button class="result__recaptoggle" type="button" id="recapToggle" hidden>
-      See every picture
+      View results
     </button>
     <div class="recap__legend" id="recapLegend" hidden></div>
     <div class="recap" id="recap" hidden></div>
@@ -428,6 +428,27 @@
     </div>
   </div>
 </div>
+
+<div class="ovl ovl--shot" id="ovlShot" hidden>
+  <button class="shot__close" type="button" id="shotClose" aria-label="Close">&times;</button>
+  <button class="shot__arrow shot__arrow--prev" type="button" id="shotPrev" aria-label="Previous">&#8249;</button>
+  <figure class="shot">
+    <img class="shot__img" id="shotImg" alt="">
+    <figcaption class="shot__cap">
+      <span class="shot__badge" id="shotBadge"></span>
+      <b class="shot__name" id="shotName"></b>
+      <span class="shot__meta" id="shotMeta"></span>
+      <span class="shot__count" id="shotCount"></span>
+    </figcaption>
+  </figure>
+  <button class="shot__arrow shot__arrow--next" type="button" id="shotNext" aria-label="Next">&#8250;</button>
+</div>
+
+<button class="mutebtn" type="button" id="muteBtn" aria-pressed="false" title="Mute sound">
+  <svg class="mutebtn__on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg>
+  <svg class="mutebtn__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>
+  <span class="mutebtn__label" id="muteLabel">Sound on</span>
+</button>
 
 <div class="ovl ovl--pause" id="ovlPause" hidden>
   <div class="pausecard"><b>PAUSED</b><span>Press <kbd>P</kbd> to resume</span></div>
