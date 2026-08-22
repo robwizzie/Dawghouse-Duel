@@ -572,17 +572,41 @@
 </div>
 
 <div class="ovl ovl--share" id="ovlDeckGet" hidden>
-  <div class="deckshare">
+  <div class="gallery">
     <button class="shot__close" type="button" id="deckGetClose" aria-label="Close">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     </button>
-    <span class="deckshare__eyebrow">PLAY SOMEONE ELSE&rsquo;S DECK</span>
-    <form class="deckshare__form" id="deckGetForm" autocomplete="off">
-      <input class="deckshare__input" id="deckGetCode" maxlength="8" placeholder="CODE"
-             autocapitalize="characters" spellcheck="false" aria-label="Deck code">
-      <button class="btn btn--go" type="submit" id="deckGetGo">Get it</button>
-    </form>
-    <p class="deckshare__state" id="deckGetState"></p>
+
+    <div class="gallery__head">
+      <span class="deckshare__eyebrow">DECKS PEOPLE HAVE MADE</span>
+      <div class="gallery__tools">
+        <input class="gallery__search" id="deckSearch" type="search" placeholder="Search decks"
+               autocomplete="off" spellcheck="false" aria-label="Search decks">
+        <div class="gallery__sort" id="deckSort" role="group" aria-label="Sort">
+          <button class="gallery__sortbtn is-on" type="button" data-sort="popular">Popular</button>
+          <button class="gallery__sortbtn" type="button" data-sort="new">Newest</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery__grid" id="deckList"></div>
+    <p class="gallery__state" id="deckListState"></p>
+
+    <div class="gallery__pager" id="deckPager" hidden>
+      <button class="btn btn--ghost btn--sm" type="button" id="deckPrev">&larr; Back</button>
+      <span class="gallery__page" id="deckPageLabel">1 of 1</span>
+      <button class="btn btn--ghost btn--sm" type="button" id="deckNext">Next &rarr;</button>
+    </div>
+
+    <div class="gallery__code">
+      <p>Got a code or a link for a private deck?</p>
+      <form class="deckshare__form" id="deckGetForm" autocomplete="off">
+        <input class="deckshare__input" id="deckGetCode" maxlength="12" placeholder="CODE"
+               autocapitalize="characters" spellcheck="false" aria-label="Deck code">
+        <button class="btn btn--go" type="submit" id="deckGetGo">Get it</button>
+      </form>
+      <p class="deckshare__state" id="deckGetState"></p>
+    </div>
   </div>
 </div>
 

@@ -19,6 +19,12 @@ class_name = "DeckStats"
 name = "LIMITS"
 class_name = "RateLimit"
 
+# One object for the whole site holding a row per listed deck, so the
+# gallery can be searched and ordered. Unlisted decks are never in it.
+[[durable_objects.bindings]]
+name = "INDEX"
+class_name = "DeckIndex"
+
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["Room"]
@@ -30,6 +36,10 @@ new_sqlite_classes = ["DeckStats"]
 [[migrations]]
 tag = "v3"
 new_sqlite_classes = ["RateLimit"]
+
+[[migrations]]
+tag = "v4"
+new_sqlite_classes = ["DeckIndex"]
 
 # Published decks: the JSON under deck/, the pictures under img/.
 # Create it once with:  npx wrangler r2 bucket create dawghouse-duel-decks

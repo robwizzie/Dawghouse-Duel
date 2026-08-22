@@ -474,6 +474,17 @@ says so — *"That's Pikachu — but not this one"* — rather than a flat **Not
 quite**. It's the difference between "you don't know this" and "you know it,
 wrong card".
 
+## Finding other people's decks
+
+Public decks are browsable rather than something you have to be told about:
+search by name, order by **Popular** or **Newest**, twelve to a page. Popular
+leans on how many times a deck has been played and lets votes nudge it.
+
+**Unlisted** decks aren't in there at all. That is the actual difference
+between the two — not a flag checked when you ask, but never being written
+into the index in the first place. The only way into one is its code or its
+link, which is why the code box is still at the bottom of the gallery.
+
 ## The end-of-round card
 
 Two things sit under the score, both there to settle arguments.

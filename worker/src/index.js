@@ -167,7 +167,43 @@ async function deckStats(env, code, action, params) {
     { method: action ? 'POST' : 'GET' }
   );
   const body = await res.json();
+
+  /* Keep the gallery's ordering in step with the counters it sorts on.
+     Fire-and-forget: a deck that misses one play is not worth failing
+     the request over. */
+  if (res.ok && action === 'played') await indexBump(env, code, { plays: 1 });
+  if (res.ok && action === 'vote') {
+    await indexBump(env, code, {
+      up: parseInt((params && params.up) || '0', 10) || 0,
+      down: parseInt((params && params.down) || '0', 10) || 0
+    });
+  }
+
   return json(body, res.status);
+}
+
+/* The browsable list. Public decks only — an unlisted deck was never
+   written into the index in the first place. */
+async function listDecks(request, env) {
+  const stub = indexStub(env);
+  if (!stub) return json({ decks: [], total: 0, page: 1, pages: 1 });
+  const url = new URL(request.url);
+  const qs = new URLSearchParams({
+    do: 'list',
+    q: url.searchParams.get('q') || '',
+    sort: url.searchParams.get('sort') || 'popular',
+    page: url.searchParams.get('page') || '1',
+    per: url.searchParams.get('per') || '12'
+  });
+  const res = await stub.fetch('https://index/?' + qs.toString());
+  const body = await res.json();
+  return new Response(JSON.stringify(body), {
+    headers: {
+      'content-type': 'application/json',
+      'cache-control': 'public, max-age=30',
+      ...CORS
+    }
+  });
 }
 
 const CORS = {
@@ -176,6 +212,156 @@ const CORS = {
   'Access-Control-Allow-Headers': 'content-type,authorization',
   'Access-Control-Max-Age': '86400'
 };
+
+/* ── the public gallery ─────────────────────────────────────
+   One object holding a row per listed deck, so decks can be browsed,
+   searched and ordered without anybody having to be told a code.
+
+   It has to be one object rather than a file in the bucket: publishes
+   arrive concurrently, and read-modify-write on a shared JSON blob
+   loses decks. A Durable Object serialises its own writes, which is
+   exactly the property needed here.
+
+   Unlisted decks never reach this. That is the whole difference
+   between unlisted and public — not a flag checked at read time, but
+   never being written down anywhere that can be browsed.
+   ══════════════════════════════════════════════════════════════ */
+export class DeckIndex {
+  constructor(state) {
+    this.state = state;
+    this.ready = false;
+  }
+
+  init() {
+    if (this.ready) return;
+    this.state.storage.sql.exec(
+      'CREATE TABLE IF NOT EXISTS decks (' +
+        'code TEXT PRIMARY KEY, name TEXT, blurb TEXT, items INTEGER, ' +
+        'at INTEGER, updated INTEGER, txt INTEGER, cover TEXT, ' +
+        'plays INTEGER DEFAULT 0, up INTEGER DEFAULT 0, down INTEGER DEFAULT 0)'
+    );
+    this.ready = true;
+  }
+
+  async fetch(request) {
+    this.init();
+    const url = new URL(request.url);
+    const action = url.searchParams.get('do');
+    const sql = this.state.storage.sql;
+
+    if (action === 'put') {
+      const d = await request.json();
+      /* Counters live on their own row-wise updates, so an edit must not
+         reset them to zero. */
+      sql.exec(
+        'INSERT INTO decks (code,name,blurb,items,at,updated,txt,cover) ' +
+        'VALUES (?,?,?,?,?,?,?,?) ' +
+        'ON CONFLICT(code) DO UPDATE SET ' +
+        'name=excluded.name, blurb=excluded.blurb, items=excluded.items, ' +
+        'updated=excluded.updated, txt=excluded.txt, cover=excluded.cover',
+        d.code, d.name || '', d.blurb || '', d.items || 0,
+        d.at || Date.now(), d.updated || Date.now(), d.text ? 1 : 0, d.cover || ''
+      );
+      return Response.json({ ok: true });
+    }
+
+    if (action === 'del') {
+      const d = await request.json();
+      sql.exec('DELETE FROM decks WHERE code = ?', d.code);
+      return Response.json({ ok: true });
+    }
+
+    if (action === 'bump') {
+      const d = await request.json();
+      sql.exec(
+        'UPDATE decks SET plays = MAX(0, plays + ?), up = MAX(0, up + ?), down = MAX(0, down + ?) WHERE code = ?',
+        d.plays || 0, d.up || 0, d.down || 0, d.code
+      );
+      return Response.json({ ok: true });
+    }
+
+    if (action === 'list') {
+      const q = (url.searchParams.get('q') || '').trim().slice(0, 60);
+      const sort = url.searchParams.get('sort') === 'new' ? 'new' : 'popular';
+      const per = Math.min(48, Math.max(6, parseInt(url.searchParams.get('per') || '12', 10) || 12));
+      const page = Math.max(1, parseInt(url.searchParams.get('page') || '1', 10) || 1);
+      const off = (page - 1) * per;
+
+      /* Parameterised, and the only user string in here is bound rather
+         than spliced. LIKE's own wildcards are escaped so a name with a
+         % in it searches for a % . */
+      const like = '%' + q.replace(/[\\%_]/g, c => '\\' + c) + '%';
+      const where = q ? "WHERE (name LIKE ? ESCAPE '\\' OR blurb LIKE ? ESCAPE '\\')" : '';
+      const args = q ? [like, like] : [];
+
+      /* Popular leans on plays but lets votes move it, and a brand new
+         deck with nothing yet still surfaces near the top of Newest. */
+      const order = sort === 'new'
+        ? 'ORDER BY at DESC'
+        : 'ORDER BY (plays + (up - down) * 3) DESC, at DESC';
+
+      const total = [...sql.exec('SELECT COUNT(*) AS n FROM decks ' + where, ...args)][0].n;
+      const rows = [...sql.exec(
+        'SELECT code,name,blurb,items,at,txt,cover,plays,up,down FROM decks ' +
+        where + ' ' + order + ' LIMIT ? OFFSET ?',
+        ...args, per, off
+      )];
+
+      return Response.json({
+        decks: rows.map(r => ({
+          code: r.code, name: r.name, blurb: r.blurb, items: r.items,
+          at: r.at, text: !!r.txt, cover: r.cover || null,
+          plays: r.plays, up: r.up, down: r.down
+        })),
+        total: total,
+        page: page,
+        pages: Math.max(1, Math.ceil(total / per))
+      });
+    }
+
+    return Response.json({ error: 'unknown action' }, { status: 400 });
+  }
+}
+
+/* One index for the whole site. */
+function indexStub(env) {
+  if (!env.INDEX) return null;
+  return env.INDEX.get(env.INDEX.idFromName('public-v1'));
+}
+
+async function indexPut(env, deck) {
+  const stub = indexStub(env);
+  if (!stub || deck.unlisted) return;
+  try {
+    await stub.fetch('https://index/?do=put', {
+      method: 'POST',
+      body: JSON.stringify({
+        code: deck.code, name: deck.name, blurb: deck.blurb,
+        items: (deck.items || []).length, at: deck.at, updated: deck.updated,
+        text: deck.text, cover: (deck.items || []).map(i => i.img).filter(Boolean)[0] || ''
+      })
+    });
+  } catch (e) {}
+}
+
+async function indexDel(env, code) {
+  const stub = indexStub(env);
+  if (!stub) return;
+  try {
+    await stub.fetch('https://index/?do=del', { method: 'POST', body: JSON.stringify({ code: code }) });
+  } catch (e) {}
+}
+
+async function indexBump(env, code, delta) {
+  const stub = indexStub(env);
+  if (!stub) return;
+  try {
+    await stub.fetch('https://index/?do=bump', {
+      method: 'POST',
+      body: JSON.stringify({ code: code, ...delta })
+    });
+  } catch (e) {}
+}
 
 /* ── slowing down abuse ─────────────────────────────────────
    Publishing and uploading both cost storage, and both are open to
@@ -393,6 +579,10 @@ async function publishDeck(request, env) {
     await env.DECKS.put(key, JSON.stringify(deck), {
       httpMetadata: { contentType: 'application/json' }
     });
+    /* A public deck joins the gallery. An unlisted one never does — that
+       is the entire difference between them. */
+    await indexPut(env, deck);
+
     /* The secret is returned exactly once and never stored in the clear.
        If the maker loses it, the deck stays up and read-only. */
     return json({ code: code, secret: secret, items: deck.items.length, private: unlisted });
@@ -431,6 +621,11 @@ async function updateDeck(request, env, code) {
   await env.DECKS.put('deck/' + existing.code + '.json', JSON.stringify(deck), {
     httpMetadata: { contentType: 'application/json' }
   });
+
+  /* Made private in an edit? Come out of the gallery. Made public? Go in. */
+  if (deck.unlisted) await indexDel(env, deck.code);
+  else await indexPut(env, deck);
+
   return json({ code: deck.code, items: deck.items.length, private: deck.unlisted });
 }
 
@@ -455,6 +650,7 @@ async function deleteDeck(request, env, code) {
     }
   }
   await env.DECKS.delete('deck/' + existing.code + '.json');
+  await indexDel(env, existing.code);
   return json({ deleted: existing.code, images: imgs.length });
 }
 
@@ -521,6 +717,8 @@ export default {
         headers: { 'content-type': 'application/json', ...CORS }
       });
     }
+
+    if (url.pathname === '/decks' && request.method === 'GET') return listDecks(request, env);
 
     if (url.pathname === '/deck' && request.method === 'POST') {
       return (await rateLimit(request, env, 'publish', 12, 60 * 60 * 1000)) || publishDeck(request, env);

@@ -60,6 +60,9 @@
     deckShareEyebrow: $('deckShareEyebrow'),
     ovlDeckGet: $('ovlDeckGet'), deckGetForm: $('deckGetForm'), deckGetCode: $('deckGetCode'),
     deckGetGo: $('deckGetGo'), deckGetState: $('deckGetState'), deckGetClose: $('deckGetClose'),
+    deckList: $('deckList'), deckListState: $('deckListState'), deckSearch: $('deckSearch'),
+    deckSort: $('deckSort'), deckPager: $('deckPager'), deckPrev: $('deckPrev'),
+    deckNext: $('deckNext'), deckPageLabel: $('deckPageLabel'),
     boardPrompt: $('boardPrompt'), boardPromptText: $('boardPromptText'),
     boardPromptKicker: $('boardPromptKicker'),
     ovlShot: $('ovlShot'), shotImg: $('shotImg'), shotName: $('shotName'),
@@ -2098,6 +2101,28 @@
   });
   on(el.deckGetClose, 'click', function () { el.ovlDeckGet.hidden = true; });
   on(el.deckGetForm, 'submit', function (e) { e.preventDefault(); getDeckByCode(el.deckGetCode.value); });
+  on(el.deckSearch, 'input', function () {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(function () {
+      galleryState.q = el.deckSearch.value.trim();
+      galleryState.page = 1;
+      loadGallery();
+    }, 280);
+  });
+  on(el.deckSort, 'click', function (e) {
+    var btn = e.target.closest('[data-sort]');
+    if (!btn) return;
+    galleryState.sort = btn.getAttribute('data-sort');
+    galleryState.page = 1;
+    [].forEach.call(el.deckSort.children, function (b) { b.classList.toggle('is-on', b === btn); });
+    loadGallery();
+  });
+  on(el.deckPrev, 'click', function () {
+    if (galleryState.page > 1) { galleryState.page--; loadGallery(); }
+  });
+  on(el.deckNext, 'click', function () {
+    if (galleryState.page < galleryState.pages) { galleryState.page++; loadGallery(); }
+  });
 
   el.resShare.addEventListener('click', shareResult);
   on(el.muteBtn, 'click', toggleMute);
@@ -2545,12 +2570,113 @@
     el.ovlDeckShare.hidden = false;
   }
 
+  /* ── the deck gallery ───────────────────────────────────────
+     Typing a code you had to be told is fine for a private deck and
+     hopeless as the only way in, so public decks are browsable:
+     searched, ordered, and paged. */
+  var galleryState = { q: '', sort: 'popular', page: 1, pages: 1, busy: false };
+  var searchTimer = 0;
+
   function openDeckGet() {
     el.deckGetCode.value = '';
     el.deckGetState.textContent = '';
     el.deckGetState.className = 'deckshare__state';
     el.ovlDeckGet.hidden = false;
-    setTimeout(function () { try { el.deckGetCode.focus(); } catch (e) {} }, 60);
+    galleryState.q = '';
+    galleryState.page = 1;
+    if (el.deckSearch) el.deckSearch.value = '';
+    loadGallery();
+  }
+
+  function galleryMessage(text) {
+    el.deckList.innerHTML = '';
+    el.deckListState.textContent = text;
+    el.deckPager.hidden = true;
+  }
+
+  function loadGallery() {
+    if (galleryState.busy) return;
+    galleryState.busy = true;
+    el.deckListState.textContent = 'Loading\u2026';
+    Decks.browse({ q: galleryState.q, sort: galleryState.sort, page: galleryState.page, per: 12 })
+      .then(function (out) {
+        galleryState.busy = false;
+        galleryState.pages = out.pages || 1;
+        renderGallery(out);
+      })
+      .catch(function () {
+        galleryState.busy = false;
+        galleryMessage('Could not reach the deck list. A code still works.');
+      });
+  }
+
+  function renderGallery(out) {
+    el.deckList.innerHTML = '';
+    var decks = out.decks || [];
+    if (!decks.length) {
+      galleryMessage(galleryState.q
+        ? 'Nothing matches \u201c' + galleryState.q + '\u201d.'
+        : 'No decks published yet. Yours could be the first.');
+      return;
+    }
+    el.deckListState.textContent = '';
+
+    decks.forEach(function (d) {
+      /* Every string on this tile was typed by a stranger, so all of it
+         goes in as text. */
+      var card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'gcard';
+
+      var art = document.createElement('div');
+      art.className = 'gcard__art';
+      if (d.cover) {
+        var img = new Image();
+        img.alt = '';
+        img.loading = 'lazy';
+        img.src = (cfg.relay || '').replace(/^wss:/, 'https:').replace(/\/$/, '') + '/img/' + d.cover;
+        art.style.setProperty('--cover', 'url("' + img.src.replace(/"/g, '\\"') + '")');
+        art.appendChild(img);
+      } else {
+        var glyph = document.createElement('span');
+        glyph.className = 'gcard__glyph';
+        glyph.textContent = d.text ? '\u266a' : '\u2726';
+        art.appendChild(glyph);
+      }
+      card.appendChild(art);
+
+      var body = document.createElement('div');
+      body.className = 'gcard__body';
+
+      var name = document.createElement('b');
+      name.className = 'gcard__name';
+      name.textContent = d.name || 'Untitled deck';
+      body.appendChild(name);
+
+      if (d.blurb) {
+        var blurb = document.createElement('span');
+        blurb.className = 'gcard__blurb';
+        blurb.textContent = d.blurb;
+        body.appendChild(blurb);
+      }
+
+      var meta = document.createElement('span');
+      meta.className = 'gcard__meta';
+      var bits = [d.items + (d.items === 1 ? ' answer' : ' answers')];
+      if (d.plays) bits.push(d.plays + (d.plays === 1 ? ' play' : ' plays'));
+      if (d.up) bits.push('\u25b2 ' + d.up);
+      meta.textContent = bits.join(' \u00b7 ');
+      body.appendChild(meta);
+
+      card.appendChild(body);
+      card.addEventListener('click', function () { getDeckByCode(d.code); });
+      el.deckList.appendChild(card);
+    });
+
+    el.deckPager.hidden = galleryState.pages <= 1;
+    el.deckPageLabel.textContent = (out.page || 1) + ' of ' + galleryState.pages;
+    el.deckPrev.disabled = (out.page || 1) <= 1;
+    el.deckNext.disabled = (out.page || 1) >= galleryState.pages;
   }
 
   function getDeckByCode(code) {

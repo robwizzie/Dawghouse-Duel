@@ -274,6 +274,23 @@ DHD.Decks = (function () {
       });
     },
 
+    /* The public gallery. Unlisted decks are not in here at all. */
+    browse: function (opts) {
+      var base = relay();
+      if (!base) return Promise.reject(new Error('No relay configured'));
+      var o = opts || {};
+      var qs = new URLSearchParams({
+        q: o.q || '',
+        sort: o.sort === 'new' ? 'new' : 'popular',
+        page: String(o.page || 1),
+        per: String(o.per || 12)
+      });
+      return fetch(base + '/decks?' + qs.toString()).then(function (r) {
+        if (!r.ok) throw new Error('could not load the gallery');
+        return r.json();
+      });
+    },
+
     /* Whether this browser can edit what it published. */
     owns: function (deck) { return !!(deck && deck.code && deck.secret); },
 

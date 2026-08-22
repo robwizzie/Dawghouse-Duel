@@ -1357,3 +1357,62 @@ kbd{font-family:var(--ff-cond);font-weight:900;background:var(--lime);color:var(
   font-size:11px}
 .deckshare__pull:hover{color:var(--red)}
 .deckshare__pull[hidden]{display:none}
+
+
+/* ── the deck gallery ───────────────────────────────────────
+   Browsing beats being told a code. A private deck still has the code
+   box at the bottom, because that is the only way into one. */
+.gallery{position:relative;width:min(860px,100%);max-height:92vh;overflow-y:auto;
+  display:flex;flex-direction:column;gap:16px;
+  background:linear-gradient(180deg,var(--indigo-900),var(--indigo-950));
+  border:3px solid var(--lime);border-radius:22px;
+  padding:clamp(20px,3.2vh,32px) clamp(18px,2.6vw,32px)}
+.gallery__head{display:flex;flex-direction:column;gap:12px}
+.gallery__tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.gallery__search{flex:1 1 220px;min-height:44px;border-radius:12px;padding:0 14px;
+  background:var(--indigo-950);border:2px solid var(--indigo-600);color:#fff;
+  font-family:var(--ff-cond);font-weight:700;font-size:clamp(14px,1.4vw,17px)}
+.gallery__search:focus{outline:none;border-color:var(--lime)}
+.gallery__sort{display:flex;gap:0;border:2px solid var(--indigo-600);border-radius:12px;overflow:hidden}
+.gallery__sortbtn{min-height:44px;padding:0 16px;cursor:pointer;background:none;border:0;
+  color:rgba(255,255,255,.6);font-family:var(--ff-cond);font-weight:900;
+  letter-spacing:.1em;text-transform:uppercase;font-size:clamp(11px,1.1vw,13px);
+  transition:background .15s,color .15s}
+.gallery__sortbtn:hover{color:#fff}
+.gallery__sortbtn.is-on{background:var(--lime);color:var(--indigo-950)}
+
+.gallery__grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.gallery__state{margin:0;text-align:center;color:rgba(255,255,255,.5);
+  font-size:clamp(12px,1.2vw,15px);min-height:1.2em}
+
+.gcard{display:flex;flex-direction:column;text-align:left;cursor:pointer;overflow:hidden;
+  border-radius:14px;background:rgba(255,255,255,.04);border:2px solid var(--indigo-600);
+  color:#fff;padding:0;transition:border-color .15s,transform .12s var(--ease)}
+.gcard:hover{border-color:var(--lime);transform:translateY(-2px)}
+.gcard__art{position:relative;aspect-ratio:16/10;overflow:hidden;isolation:isolate;
+  background:var(--indigo-950);display:flex;align-items:center;justify-content:center}
+.gcard__art::before{content:'';position:absolute;inset:-12%;background-image:var(--cover);
+  background-size:cover;background-position:50% 35%;
+  filter:blur(16px) saturate(1.2) brightness(.6);z-index:0}
+.gcard__art img{position:absolute;inset:0;z-index:1;width:100%;height:100%;
+  object-fit:contain;padding:6px;filter:drop-shadow(0 6px 16px rgba(14,14,45,.6))}
+.gcard__glyph{position:relative;z-index:1;font-family:var(--ff-display);
+  font-size:clamp(28px,4vw,44px);color:rgba(222,255,102,.45)}
+.gcard__body{display:flex;flex-direction:column;gap:3px;padding:10px 12px 12px}
+.gcard__name{font-family:var(--ff-display);font-size:clamp(14px,1.5vw,18px);line-height:1.1;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  overflow-wrap:anywhere;min-height:calc(2 * 1.1em)}
+.gcard__blurb{font-size:clamp(11px,1.15vw,13px);color:rgba(255,255,255,.55);line-height:1.35;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  overflow-wrap:anywhere}
+.gcard__meta{margin-top:2px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  font-size:clamp(9px,.95vw,11px);color:var(--lime)}
+
+.gallery__pager{display:flex;align-items:center;justify-content:center;gap:14px}
+.gallery__pager[hidden]{display:none}
+.gallery__page{font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  font-size:clamp(10px,1.05vw,13px);color:rgba(255,255,255,.5)}
+
+.gallery__code{border-top:2px solid rgba(255,255,255,.1);padding-top:14px;
+  display:flex;flex-direction:column;gap:10px;align-items:center}
+.gallery__code p{margin:0;color:rgba(255,255,255,.5);font-size:clamp(12px,1.2vw,14px)}
