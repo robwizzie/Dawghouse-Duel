@@ -375,10 +375,10 @@
 <!-- ══════════════════════════ OVERLAYS ══════════════════════════ -->
 <div class="ovl ovl--intro" id="ovlIntro" hidden>
   <div class="intro">
-    <div class="intro__cat"><i>CATEGORY</i><b id="introCat">SUPERHEROES</b></div>
-    <div class="intro__vs">
+    <div class="intro__cat"><i id="introEyebrow">CATEGORY</i><b id="introCat">SUPERHEROES</b></div>
+    <div class="intro__vs" id="introVs">
       <span class="intro__p" id="introP1">DAWG 1</span>
-      <span class="intro__x">VS</span>
+      <span class="intro__x" id="introX">VS</span>
       <span class="intro__p" id="introP2">DAWG 2</span>
     </div>
     <div class="intro__first" id="introFirst">DAWG 1 STARTS WITH CONTROL</div>
@@ -418,6 +418,7 @@
     <button class="result__recaptoggle" type="button" id="recapToggle" hidden>
       See every picture
     </button>
+    <div class="recap__legend" id="recapLegend" hidden></div>
     <div class="recap" id="recap" hidden></div>
 
     <div class="result__acts">
@@ -513,7 +514,7 @@
     </div>
 
     <div class="tut__acts">
-      <button class="btn btn--ghost btn--sm" type="button" id="tutBack">Back</button>
+      <button class="btn btn--ghost" type="button" id="tutBack">Back</button>
       <button class="btn btn--go" type="button" id="tutNext">Next</button>
     </div>
     <button class="tut__rules" type="button" id="toHelp">Read the full rules</button>

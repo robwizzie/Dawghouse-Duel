@@ -429,13 +429,20 @@ to scrub back through the footage asking what the last one was. If the round
 ended by running out of deck instead, it just reads *last picture*.
 
 **Every picture of the round**, behind *See every picture*. Each tile is the
-artwork, the answer, who was on the clock for it, and how it went:
+artwork, the answer, who was on the clock for it, and how it went. A key sits
+above the grid so none of it needs explaining:
 
 | | |
 | --- | --- |
 | lime, ✓ | got it |
 | amber, → | passed |
 | red, ✕ | the clock ran out on this one |
+
+In a duel the two players get a colour each — the name sits in a filled pill on
+the tile and tints its edge, so one player's run reads as a block and you can
+settle who had which picture at a glance. Outcome lives on the badge top-left
+and the player on the pill top-right, so the two never compete for the same
+signal. Solo and the daily have nobody to tell apart, so the pills don't appear.
 
 Wrong guesses don't end a picture, so they're counted on the tile instead —
 *Ultron · 2 wrong* means two misses before somebody passed it.

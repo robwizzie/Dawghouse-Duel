@@ -40,7 +40,7 @@
     resShare: $('resShare'), resultMarks: $('resultMarks'),
     lastUp: $('lastUp'), lastUpImg: $('lastUpImg'),
     lastUpEyebrow: $('lastUpEyebrow'), lastUpName: $('lastUpName'),
-    recap: $('recap'), recapToggle: $('recapToggle'),
+    recap: $('recap'), recapToggle: $('recapToggle'), recapLegend: $('recapLegend'),
     ovlTutorial: $('ovlTutorial'), tutSkip: $('tutSkip'), tutDots: $('tutDots'),
     tutBack: $('tutBack'), tutNext: $('tutNext'), toTutorial: $('toTutorial'),
     silhouetteNote: $('silhouetteNote'),
@@ -63,6 +63,7 @@
     passBar: $('passBar'), passWho: $('passWho'),
 
     ovlIntro: $('ovlIntro'), introCat: $('introCat'), introP1: $('introP1'), introP2: $('introP2'),
+    introEyebrow: $('introEyebrow'), introVs: $('introVs'), introX: $('introX'),
     introFirst: $('introFirst'), introCount: $('introCount'),
     ovlResult: $('ovlResult'), resultName: $('resultName'), resultLine: $('resultLine'),
     resRematch: $('resRematch'), resNew: $('resNew'),
@@ -416,7 +417,18 @@
   }
 
   /* ══════════════════ SETUP SCREEN ══════════════════ */
+  var NUMBER_WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
+    'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
+    'seventeen', 'eighteen', 'nineteen', 'twenty'];
+
   function buildSetup() {
+    /* Counted from the data, not typed into the markup — this line said
+       "Eleven decks" for two categories longer than it was true. */
+    var n = CATS.length;
+    el.catSubtitle.textContent =
+      (NUMBER_WORDS[n] ? NUMBER_WORDS[n].charAt(0).toUpperCase() + NUMBER_WORDS[n].slice(1) : n) +
+      ' decks. Some are much harder than they look.';
+
     el.catSelect.innerHTML = '';
     CATS.forEach(function (c) {
       var o = document.createElement('option');
@@ -621,7 +633,22 @@
     el.introCat.textContent = G.cat.name;
     el.introP1.textContent = G.players[0].name;
     el.introP2.textContent = G.players[1].name;
-    el.introFirst.textContent = (cfg.first === 'flip' ? 'COIN FLIP — ' : '') + G.players[G.active].name + ' STARTS WITH CONTROL';
+
+    /* Nobody is playing against anybody in solo, and a daily least of all —
+       a coin flip and a "VS" there is just wrong. */
+    var secs = Math.round(G.startMs / 1000);
+    el.introX.hidden = el.introP2.hidden = G.solo;
+    if (G.daily) {
+      el.introEyebrow.textContent = "TODAY'S CHALLENGE \u00b7 DAY " + G.daily.day;
+      el.introFirst.textContent = G.queue.length + ' PICTURES \u00b7 ' + secs + ' SECONDS';
+    } else if (G.solo) {
+      el.introEyebrow.textContent = 'CATEGORY';
+      el.introFirst.textContent = 'AS MANY AS YOU CAN IN ' + secs + ' SECONDS';
+    } else {
+      el.introEyebrow.textContent = 'CATEGORY';
+      el.introFirst.textContent = (cfg.first === 'flip' ? 'COIN FLIP — ' : '') +
+        G.players[G.active].name + ' STARTS WITH CONTROL';
+    }
     el.ovlIntro.hidden = false;
 
     var seq = ['3', '2', '1', 'GO'], i = 0;
@@ -905,6 +932,12 @@
     });
   }
 
+  function esc(t) {
+    return String(t).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
   function renderRecap() {
     var list = G.history;
     el.recap.innerHTML = '';
@@ -912,11 +945,27 @@
 
     el.recapToggle.hidden = false;
     el.recapToggle.textContent = 'See every picture (' + list.length + ')';
-    el.recap.hidden = true;                 // collapsed until asked for
+    el.recap.hidden = el.recapLegend.hidden = true;   // collapsed until asked for
+
+    /* A key, so the colours don't need explaining. Only a duel has players
+       to tell apart. */
+    var key = '';
+    if (!G.solo) {
+      key += '<span class="rlg rlg--p0">' + esc(G.players[0].name) + '</span>' +
+             '<span class="rlg rlg--p1">' + esc(G.players[1].name) + '</span>' +
+             '<span class="rlg__gap"></span>';
+    }
+    key += '<span class="rlg rlg--yes">\u2713 got it</span>' +
+           '<span class="rlg rlg--pass">\u2192 passed</span>';
+    if (list.some(function (h) { return h.outcome === 'timeout'; })) {
+      key += '<span class="rlg rlg--timeout">\u2715 ran out</span>';
+    }
+    el.recapLegend.innerHTML = key;
 
     list.forEach(function (h) {
       var cell = document.createElement('div');
-      cell.className = 'recap__cell recap__cell--' + h.outcome;
+      cell.className = 'recap__cell recap__cell--' + h.outcome +
+        (h.who >= 0 ? ' recap__cell--p' + h.who : '');
 
       var img = document.createElement('img');
       img.className = 'recap__img';
@@ -933,11 +982,13 @@
       tag.title = h.outcome === 'yes' ? 'Correct' : h.outcome === 'pass' ? 'Passed' : 'Ran out of clock';
       cell.appendChild(tag);
 
-      /* In a duel it matters who was on the clock for each one. */
+      /* In a duel the whole point of the recap is settling who had which
+         picture, so the name is a filled pill in the player's colour rather
+         than small print somebody has to squint at. */
       if (h.who >= 0 && G.players[h.who]) {
         var who = document.createElement('span');
         who.className = 'recap__who';
-        who.textContent = G.players[h.who].name.slice(0, 6);
+        who.textContent = G.players[h.who].name.slice(0, 8);
         cell.appendChild(who);
       }
 
@@ -1077,7 +1128,8 @@
     el.ovlIntro.hidden = el.ovlResult.hidden = el.ovlPause.hidden = true;
     el.reveal.hidden = el.penaltyPop.hidden = el.boardPeek.hidden = true;
     el.lastUp.hidden = el.recap.hidden = el.recapToggle.hidden = true;
-    el.recap.innerHTML = '';
+    el.recapLegend.hidden = true;
+    el.recap.innerHTML = el.recapLegend.innerHTML = '';
     document.body.classList.remove('is-revealing');
     clearTimeout(G.revealTimer);
     G.pendingBeat = null;
@@ -1587,7 +1639,7 @@
   el.resShare.addEventListener('click', shareResult);
   on(el.recapToggle, 'click', function () {
     var open = el.recap.hidden;
-    el.recap.hidden = !open;
+    el.recap.hidden = el.recapLegend.hidden = !open;
     el.recapToggle.textContent = (open ? 'Hide the pictures' : 'See every picture (' + G.history.length + ')');
     /* Opening the grid pushes the buttons past the fold on a laptop screen.
        Follow it down so the grid and the actions are both in view. */
