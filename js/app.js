@@ -276,7 +276,9 @@
     starwars: 'darth-vader', sitcoms: 'michael-scott', videogames: 'mario',
     cartoons: 'bugs-bunny', pokemon: 'pikachu', dogs: 'golden-retriever',
     'nba-today': 'lebron-james', 'nba-goats': 'michael-jordan',
-    celebrities: 'tom-hanks', streamers: 'mrbeast'
+    celebrities: 'tom-hanks', streamers: 'mrbeast',
+    'nfl-today': 'patrick-mahomes', 'nfl-goats': 'tom-brady',
+    got: 'jon-snow', dnd: 'beholder'
   };
 
   /* Deliberately no defaults: an option that is already selected reads as a

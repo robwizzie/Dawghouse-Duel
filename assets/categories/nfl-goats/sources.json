@@ -1,0 +1,394 @@
+{
+ "tom-brady": {
+  "answer": "Tom Brady",
+  "matched": "Tom Brady",
+  "via": "Tom Brady",
+  "file": "25th Laureus World Sports Awards - Red Carpet - Tom Brady - 240422 191334 (cropped) (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Barcex"
+ },
+ "joe-montana": {
+  "answer": "Joe Montana",
+  "matched": "Joe Montana",
+  "via": "Joe Montana",
+  "file": "Joe Montana Super Bowl 50 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Arnie Papp"
+ },
+ "peyton-manning": {
+  "answer": "Peyton Manning",
+  "matched": "Peyton Manning",
+  "via": "Peyton Manning",
+  "file": "Peyton Manning (51665689271).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "john-elway": {
+  "answer": "John Elway",
+  "matched": "John Elway",
+  "via": "John Elway",
+  "file": "John Elway OCT2021 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "All-Pro Reels"
+ },
+ "dan-marino": {
+  "answer": "Dan Marino",
+  "matched": "Dan Marino",
+  "via": "Dan Marino",
+  "file": "Danmarino.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": ""
+ },
+ "brett-favre": {
+  "answer": "Brett Favre",
+  "matched": "Brett Favre",
+  "via": "Brett Favre",
+  "file": "Brett Favre Super Bowl 50.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Arnie Papp"
+ },
+ "johnny-unitas": {
+  "answer": "Johnny Unitas",
+  "matched": "Johnny Unitas",
+  "via": "Johnny Unitas",
+  "file": "Unitas-Johnny-1963.jpg",
+  "licence": "PD-US",
+  "by": ""
+ },
+ "otto-graham": {
+  "answer": "Otto Graham",
+  "matched": "Otto Graham",
+  "via": "Otto Graham",
+  "file": "A photo of Otto Graham.jpg",
+  "licence": "Public domain",
+  "by": "United States Coast Guard photo"
+ },
+ "sammy-baugh": {
+  "answer": "Sammy Baugh",
+  "matched": "Sammy Baugh",
+  "via": "Sammy Baugh",
+  "file": "\"Slingin Sammy\" Baugh, Washington, D.C., Sept. 11. \"Slinging Sammy\" Baugh, new addition to the Washington Redskins, the Texas Christian U. star is rated as one of the greatest of this LCCN2016877914 (cropped).jpg",
+  "licence": "Public domain",
+  "by": "Harris &amp; Ewing, photographer"
+ },
+ "steve-young": {
+  "answer": "Steve Young",
+  "matched": "Steve Young",
+  "via": "Steve Young",
+  "file": "Steve Young (6837509849) (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "SAB0TEUR"
+ },
+ "troy-aikman": {
+  "answer": "Troy Aikman",
+  "matched": "Troy Aikman",
+  "via": "Troy Aikman",
+  "file": "Troy aikman 2011 cropped.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Leahdi"
+ },
+ "aaron-rodgers": {
+  "answer": "Aaron Rodgers",
+  "matched": "Aaron Rodgers",
+  "via": "Aaron Rodgers",
+  "file": "AaronRodgersSteelers (cropped).jpg",
+  "licence": "CC0",
+  "by": "Cramerwiki"
+ },
+ "drew-brees": {
+  "answer": "Drew Brees",
+  "matched": "Drew Brees",
+  "via": "Drew Brees",
+  "file": "MedalCeremony 1 011520 (61 of 69) (49396271982) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Senate Democrats"
+ },
+ "ben-roethlisberger": {
+  "answer": "Ben Roethlisberger",
+  "matched": "Ben Roethlisberger",
+  "via": "Ben Roethlisberger",
+  "file": "Ben Roethlisberger (51654680119) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "terry-bradshaw": {
+  "answer": "Terry Bradshaw",
+  "matched": "Terry Bradshaw",
+  "via": "Terry Bradshaw",
+  "file": "Terry Bradshaw Meet and Greet ASI Chicago show 071521-7 (51321819538).jpg",
+  "licence": "CC BY 2.0",
+  "by": "The ASI Show"
+ },
+ "jerry-rice": {
+  "answer": "Jerry Rice",
+  "matched": "Jerry Rice",
+  "via": "Jerry Rice",
+  "file": "Super Bowl 44 Miami Florida NFL Network South Beach Set Deon Sanders interviews Jerry Rice (4331549867) (cropped) - Jerry Rice.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Anthony Quintano from Honolulu, HI, United States"
+ },
+ "randy-moss": {
+  "answer": "Randy Moss",
+  "matched": "Randy Moss",
+  "via": "Randy Moss",
+  "file": "Randy Moss 2016.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison"
+ },
+ "terrell-owens": {
+  "answer": "Terrell Owens",
+  "matched": "Terrell Owens",
+  "via": "Terrell Owens",
+  "file": "Terrell Owens 2017-05-02 (34255853692) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Collision Conf from New Orleans, Louisiana, USA"
+ },
+ "walter-payton": {
+  "answer": "Walter Payton",
+  "matched": "Walter Payton",
+  "via": "Walter Payton",
+  "file": "1986 Jeno's Pizza - 12 - Walter Payton (Walter Payton crop) (cropped).jpg",
+  "licence": "Public domain",
+  "by": "Jeno's"
+ },
+ "barry-sanders": {
+  "answer": "Barry Sanders",
+  "matched": "Barry Sanders",
+  "via": "Barry Sanders",
+  "file": "Barry Sanders 2019.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Greg2600"
+ },
+ "emmitt-smith": {
+  "answer": "Emmitt Smith",
+  "matched": "Emmitt Smith",
+  "via": "Emmitt Smith",
+  "file": "Super Bowl 44 Emmitt Smith (4344089199) (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Anthony Quintano from Honolulu, HI, United States"
+ },
+ "jim-brown": {
+  "answer": "Jim Brown",
+  "matched": "Jim Brown",
+  "via": "Jim Brown",
+  "file": "Jim Brown (1961) (cropped).jpg",
+  "licence": "Public domain",
+  "by": "Kahn's Weiners"
+ },
+ "gale-sayers": {
+  "answer": "Gale Sayers",
+  "matched": "Gale Sayers",
+  "via": "Gale Sayers",
+  "file": "Gale sayers playing.jpg",
+  "licence": "Public domain",
+  "by": "Unknown"
+ },
+ "earl-campbell": {
+  "answer": "Earl Campbell",
+  "matched": "Earl Campbell",
+  "via": "Earl Campbell",
+  "file": "Earl campbell shaggybevo.jpg",
+  "licence": "CC BY 2.5",
+  "by": "TankedBevo of ShaggyBevo.com"
+ },
+ "marshall-faulk": {
+  "answer": "Marshall Faulk",
+  "matched": "Marshall Faulk",
+  "via": "Marshall Faulk",
+  "file": "Marshall Faulk by Gage Skidmore.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Gage Skidmore"
+ },
+ "ladainian-tomlinson": {
+  "answer": "LaDainian Tomlinson",
+  "matched": "LaDainian Tomlinson",
+  "via": "LaDainian Tomlinson",
+  "file": "LaDainian Tomlinson 2017 closeup.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "original: U.S. Navy MC2 Jesse Monford on behalf of Naval Surface Warriorsderivative: Diddykong1130"
+ },
+ "adrian-peterson": {
+  "answer": "Adrian Peterson",
+  "matched": "Adrian Peterson",
+  "via": "Adrian Peterson",
+  "file": "Adrian Peterson 2026 (cropped).jpg",
+  "licence": "CC BY 4.0",
+  "by": "2C2K Photography"
+ },
+ "marcus-allen": {
+  "answer": "Marcus Allen",
+  "matched": "Marcus Allen",
+  "via": "Marcus Allen",
+  "file": "Pro Football Hall of Famer Speaks at Award Ceremony 130104-A-GX635-439 (cropped).jpg",
+  "licence": "Public domain",
+  "by": "Pfc. Victor Blanco"
+ },
+ "franco-harris": {
+  "answer": "Franco Harris",
+  "matched": "Franco Harris",
+  "via": "Franco Harris",
+  "file": "Franco Harris 2022.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Governor Tom Wolf from Harrisburg, PA"
+ },
+ "bo-jackson": {
+  "answer": "Bo Jackson",
+  "matched": "Bo Jackson",
+  "via": "Bo Jackson",
+  "file": "Bo Jackson, 2011 NCAA Honors Celebration, San Antonio, TX.jpg",
+  "licence": "CC BY 2.0",
+  "by": "U.S. Army Materiel Command (AMC Photo by Chris Putman)"
+ },
+ "rob-gronkowski": {
+  "answer": "Rob Gronkowski",
+  "matched": "Rob Gronkowski",
+  "via": "Rob Gronkowski",
+  "file": "231208-N-QE848-2422 (53391476156) (Rob Gronkowski).jpg",
+  "licence": "Public domain",
+  "by": "United States Naval Academy Photo Archive from United States"
+ },
+ "tony-gonzalez": {
+  "answer": "Tony Gonzalez",
+  "matched": "Tony Gonzalez",
+  "via": "Tony Gonzalez",
+  "file": "Tony Gonzalez Thursday Night Football DEC2023 (cropped).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Erik Drost"
+ },
+ "lawrence-taylor": {
+  "answer": "Lawrence Taylor",
+  "matched": "Lawrence Taylor",
+  "via": "Lawrence Taylor",
+  "file": "Lawrence Taylor in 2025 (cropped).jpg",
+  "licence": "Public domain",
+  "by": "The White House"
+ },
+ "reggie-white": {
+  "answer": "Reggie White",
+  "matched": "Reggie White",
+  "via": "Reggie White",
+  "file": "Reggie White at the White House.jpg",
+  "licence": "Public domain",
+  "by": "Barbara Kinney"
+ },
+ "deion-sanders": {
+  "answer": "Deion Sanders",
+  "matched": "Deion Sanders",
+  "via": "Deion Sanders",
+  "file": "Deion Sanders (8216060) (cropped).jpg",
+  "licence": "Public domain",
+  "by": "U.S. Marine Corps photo by Sgt. Lydia Gordon"
+ },
+ "dick-butkus": {
+  "answer": "Dick Butkus",
+  "matched": "Dick Butkus",
+  "via": "Dick Butkus",
+  "file": "Dickbutkus.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Alan Light"
+ },
+ "ronnie-lott": {
+  "answer": "Ronnie Lott",
+  "matched": "Ronnie Lott",
+  "via": "Ronnie Lott",
+  "file": "Ronnie Lott and Jim Plunkett (CrashCouse Launch PSA) (cropped)Lott.png",
+  "licence": "CC BY-SA 2.0",
+  "by": "TeachAids"
+ },
+ "bruce-smith": {
+  "answer": "Bruce Smith",
+  "matched": "Bruce Smith",
+  "via": "Bruce Smith",
+  "file": "Bruce Smith Virginia Tech.jpg",
+  "licence": "CC BY 2.0",
+  "by": "VaMedia"
+ },
+ "ray-lewis": {
+  "answer": "Ray Lewis",
+  "matched": "Ray Lewis",
+  "via": "Ray Lewis",
+  "file": "Ray Lewis 2015 (cropped).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Keith Allison"
+ },
+ "joe-greene": {
+  "answer": "Joe Greene",
+  "matched": "Joe Greene",
+  "via": "Joe Greene",
+  "file": "Mean Joe Greene 1975.JPG",
+  "licence": "Public domain",
+  "by": "The Steelers / NFL"
+ },
+ "ed-reed": {
+  "answer": "Ed Reed",
+  "matched": "Ed Reed",
+  "via": "Ed Reed",
+  "file": "Ed Reed by Gage Skidmore.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Gage Skidmore"
+ },
+ "champ-bailey": {
+  "answer": "Champ Bailey",
+  "matched": "Champ Bailey",
+  "via": "Champ Bailey",
+  "file": "Champ Bailey 2010.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Jeffrey Beall"
+ },
+ "charles-woodson": {
+  "answer": "Charles Woodson",
+  "matched": "Charles Woodson",
+  "via": "Charles Woodson",
+  "file": "Charles Woodson 2014 2.JPG",
+  "licence": "CC BY 3.0",
+  "by": "Jeffrey Beall"
+ },
+ "michael-strahan": {
+  "answer": "Michael Strahan",
+  "matched": "Michael Strahan",
+  "via": "Michael Strahan",
+  "file": "Michael Strahan 2022 (cropped).jpg",
+  "licence": "Public domain",
+  "by": "Airman 1st Class Andrew Britten"
+ },
+ "warren-sapp": {
+  "answer": "Warren Sapp",
+  "matched": "Warren Sapp",
+  "via": "Warren Sapp",
+  "file": "Warren Sapp by Gage Skidmore.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Gage Skidmore"
+ },
+ "junior-seau": {
+  "answer": "Junior Seau",
+  "matched": "Junior Seau",
+  "via": "Junior Seau",
+  "file": "Junior Seau 2.JPG",
+  "licence": "CC BY 2.0",
+  "by": "JJ Hall"
+ },
+ "rod-woodson": {
+  "answer": "Rod Woodson",
+  "matched": "Rod Woodson",
+  "via": "Rod Woodson",
+  "file": "Rod Woodson Jan 2019.jpg",
+  "licence": "CC0",
+  "by": "Thomson200"
+ },
+ "anthony-munoz": {
+  "answer": "Anthony Muñoz",
+  "matched": "Anthony Muñoz",
+  "via": "Anthony Muñoz",
+  "file": "Anthony Muñoz 2015.jpg",
+  "licence": "Public domain",
+  "by": "Cheryle Rivas"
+ },
+ "jim-thorpe": {
+  "answer": "Jim Thorpe",
+  "matched": "Jim Thorpe",
+  "via": "Jim Thorpe",
+  "file": "Jim Thorpe 1913b-cr.jpg",
+  "licence": "Public domain",
+  "by": "Underwood &amp; Underwood"
+ }
+}

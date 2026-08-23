@@ -1,0 +1,442 @@
+{
+ "beholder": {
+  "answer": "Beholder",
+  "matched": "Beholder",
+  "via": "Beholder"
+ },
+ "mind-flayer": {
+  "answer": "Mind Flayer",
+  "matched": "Mind flayer",
+  "via": "Mind Flayer"
+ },
+ "owlbear": {
+  "answer": "Owlbear",
+  "matched": "Owlbear",
+  "via": "Owlbear"
+ },
+ "mimic": {
+  "answer": "Mimic",
+  "matched": "Mimic",
+  "via": "Mimic"
+ },
+ "tarrasque": {
+  "answer": "Tarrasque",
+  "matched": "Tarrasque",
+  "via": "Tarrasque"
+ },
+ "lich": {
+  "answer": "Lich",
+  "matched": "Lich",
+  "via": "Lich"
+ },
+ "bulette": {
+  "answer": "Bulette",
+  "matched": "Bulette",
+  "via": "Bulette"
+ },
+ "aboleth": {
+  "answer": "Aboleth",
+  "matched": "Aboleth",
+  "via": "Aboleth"
+ },
+ "red-dragon": {
+  "answer": "Red Dragon",
+  "matched": "Red dragon",
+  "via": "Red Dragon"
+ },
+ "green-dragon": {
+  "answer": "Green Dragon",
+  "matched": "Green dragon",
+  "via": "Green Dragon"
+ },
+ "gold-dragon": {
+  "answer": "Gold Dragon",
+  "matched": "Gold dragon",
+  "via": "Gold Dragon"
+ },
+ "dracolich": {
+  "answer": "Dracolich",
+  "matched": "Dracolich",
+  "via": "Dracolich"
+ },
+ "tiamat": {
+  "answer": "Tiamat",
+  "matched": "Tiamat",
+  "via": "Tiamat"
+ },
+ "bahamut": {
+  "answer": "Bahamut",
+  "matched": "Bahamut",
+  "via": "Bahamut"
+ },
+ "kobold": {
+  "answer": "Kobold",
+  "matched": "Kobold",
+  "via": "Kobold"
+ },
+ "goblin": {
+  "answer": "Goblin",
+  "matched": "Goblin",
+  "via": "Goblin"
+ },
+ "hobgoblin": {
+  "answer": "Hobgoblin",
+  "matched": "Hobgoblin",
+  "via": "Hobgoblin"
+ },
+ "bugbear": {
+  "answer": "Bugbear",
+  "matched": "Bugbear",
+  "via": "Bugbear"
+ },
+ "gnoll": {
+  "answer": "Gnoll",
+  "matched": "Gnoll",
+  "via": "Gnoll"
+ },
+ "drow": {
+  "answer": "Drow",
+  "matched": "Drow",
+  "via": "Drow"
+ },
+ "githyanki": {
+  "answer": "Githyanki",
+  "matched": "Githyanki",
+  "via": "Githyanki"
+ },
+ "yuan-ti": {
+  "answer": "Yuan-ti",
+  "matched": "Yuan-ti",
+  "via": "Yuan-ti"
+ },
+ "troll": {
+  "answer": "Troll",
+  "matched": "Troll",
+  "via": "Troll"
+ },
+ "ogre": {
+  "answer": "Ogre",
+  "matched": "Ogre",
+  "via": "Ogre"
+ },
+ "hill-giant": {
+  "answer": "Hill Giant",
+  "matched": "Hill giant",
+  "via": "Hill Giant"
+ },
+ "remorhaz": {
+  "answer": "Remorhaz",
+  "matched": "Remorhaz",
+  "via": "Remorhaz"
+ },
+ "roc": {
+  "answer": "Roc",
+  "matched": "Roc",
+  "via": "Roc"
+ },
+ "basilisk": {
+  "answer": "Basilisk",
+  "matched": "Basilisk",
+  "via": "Basilisk"
+ },
+ "cockatrice": {
+  "answer": "Cockatrice",
+  "matched": "Cockatrice",
+  "via": "Cockatrice"
+ },
+ "chimera": {
+  "answer": "Chimera",
+  "matched": "Chimera",
+  "via": "Chimera"
+ },
+ "manticore": {
+  "answer": "Manticore",
+  "matched": "Manticore",
+  "via": "Manticore"
+ },
+ "hydra": {
+  "answer": "Hydra",
+  "matched": "Hydra",
+  "via": "Hydra"
+ },
+ "wyvern": {
+  "answer": "Wyvern",
+  "matched": "Wyvern",
+  "via": "Wyvern"
+ },
+ "griffon": {
+  "answer": "Griffon",
+  "matched": "Griffon",
+  "via": "Griffon"
+ },
+ "hippogriff": {
+  "answer": "Hippogriff",
+  "matched": "Hippogriff",
+  "via": "Hippogriff"
+ },
+ "sphinx": {
+  "answer": "Sphinx",
+  "matched": "Sphinx",
+  "via": "Sphinx"
+ },
+ "unicorn": {
+  "answer": "Unicorn",
+  "matched": "Unicorn",
+  "via": "Unicorn"
+ },
+ "pegasus": {
+  "answer": "Pegasus",
+  "matched": "Pegasus",
+  "via": "Pegasus"
+ },
+ "treant": {
+  "answer": "Treant",
+  "matched": "Treant",
+  "via": "Treant"
+ },
+ "dryad": {
+  "answer": "Dryad",
+  "matched": "Dryad",
+  "via": "Dryad"
+ },
+ "ghoul": {
+  "answer": "Ghoul",
+  "matched": "Ghoul",
+  "via": "Ghoul"
+ },
+ "ghast": {
+  "answer": "Ghast",
+  "matched": "Ghast",
+  "via": "Ghast"
+ },
+ "wight": {
+  "answer": "Wight",
+  "matched": "Wight",
+  "via": "Wight"
+ },
+ "wraith": {
+  "answer": "Wraith",
+  "matched": "Wraith",
+  "via": "Wraith"
+ },
+ "banshee": {
+  "answer": "Banshee",
+  "matched": "Banshee",
+  "via": "Banshee"
+ },
+ "balor": {
+  "answer": "Balor",
+  "matched": "Balor",
+  "via": "Balor"
+ },
+ "erinyes": {
+  "answer": "Erinyes",
+  "matched": "Erinyes",
+  "via": "Erinyes"
+ },
+ "marilith": {
+  "answer": "Marilith",
+  "matched": "Marilith",
+  "via": "Marilith"
+ },
+ "vrock": {
+  "answer": "Vrock",
+  "matched": "Vrock",
+  "via": "Vrock"
+ },
+ "hezrou": {
+  "answer": "Hezrou",
+  "matched": "Hezrou",
+  "via": "Hezrou"
+ },
+ "nalfeshnee": {
+  "answer": "Nalfeshnee",
+  "matched": "Nalfeshnee",
+  "via": "Nalfeshnee"
+ },
+ "succubus": {
+  "answer": "Succubus",
+  "matched": "Succubus",
+  "via": "Succubus"
+ },
+ "flumph": {
+  "answer": "Flumph",
+  "matched": "Flumph",
+  "via": "Flumph"
+ },
+ "grell": {
+  "answer": "Grell",
+  "matched": "Grell",
+  "via": "Grell"
+ },
+ "chuul": {
+  "answer": "Chuul",
+  "matched": "Chuul",
+  "via": "Chuul"
+ },
+ "nothic": {
+  "answer": "Nothic",
+  "matched": "Nothic",
+  "via": "Nothic"
+ },
+ "otyugh": {
+  "answer": "Otyugh",
+  "matched": "Otyugh",
+  "via": "Otyugh"
+ },
+ "roper": {
+  "answer": "Roper",
+  "matched": "Roper",
+  "via": "Roper"
+ },
+ "ankheg": {
+  "answer": "Ankheg",
+  "matched": "Ankheg",
+  "via": "Ankheg"
+ },
+ "myconid": {
+  "answer": "Myconid",
+  "matched": "Myconid",
+  "via": "Myconid"
+ },
+ "modron": {
+  "answer": "Modron",
+  "matched": "Modron",
+  "via": "Modron"
+ },
+ "slaad": {
+  "answer": "Slaad",
+  "matched": "Slaad",
+  "via": "Slaad"
+ },
+ "drizzt": {
+  "answer": "Drizzt Do’Urden",
+  "matched": "Drizzt Do'Urden",
+  "via": "Drizzt Do'Urden"
+ },
+ "strahd": {
+  "answer": "Strahd von Zarovich",
+  "matched": "Strahd von Zarovich",
+  "via": "Strahd von Zarovich"
+ },
+ "vecna": {
+  "answer": "Vecna",
+  "matched": "Vecna",
+  "via": "Vecna"
+ },
+ "elminster": {
+  "answer": "Elminster",
+  "matched": "Elminster",
+  "via": "Elminster"
+ },
+ "mordenkainen": {
+  "answer": "Mordenkainen",
+  "matched": "Mordenkainen",
+  "via": "Mordenkainen"
+ },
+ "lolth": {
+  "answer": "Lolth",
+  "matched": "Lolth",
+  "via": "Lolth"
+ },
+ "gelatinous-cube": {
+  "answer": "Gelatinous Cube",
+  "matched": "Gelatinous cube",
+  "via": "Gelatinous cube"
+ },
+ "displacer-beast": {
+  "answer": "Displacer Beast",
+  "matched": "Displacer beast",
+  "via": "Displacer beast"
+ },
+ "rust-monster": {
+  "answer": "Rust Monster",
+  "matched": "Rust monster",
+  "via": "Rust monster"
+ },
+ "umber-hulk": {
+  "answer": "Umber Hulk",
+  "matched": "Umber hulk",
+  "via": "Umber hulk"
+ },
+ "black-dragon": {
+  "answer": "Black Dragon",
+  "matched": "Black dragon",
+  "via": "Black dragon"
+ },
+ "blue-dragon": {
+  "answer": "Blue Dragon",
+  "matched": "Blue dragon",
+  "via": "Blue dragon"
+ },
+ "white-dragon": {
+  "answer": "White Dragon",
+  "matched": "White dragon",
+  "via": "White dragon"
+ },
+ "silver-dragon": {
+  "answer": "Silver Dragon",
+  "matched": "Silver dragon",
+  "via": "Silver dragon"
+ },
+ "fire-giant": {
+  "answer": "Fire Giant",
+  "matched": "Fire giant",
+  "via": "Fire giant"
+ },
+ "storm-giant": {
+  "answer": "Storm Giant",
+  "matched": "Storm giant",
+  "via": "Storm giant"
+ },
+ "purple-worm": {
+  "answer": "Purple Worm",
+  "matched": "Purple worm",
+  "via": "Purple worm"
+ },
+ "shambling-mound": {
+  "answer": "Shambling Mound",
+  "matched": "Shambling mound",
+  "via": "Shambling mound"
+ },
+ "mummy-lord": {
+  "answer": "Mummy Lord",
+  "matched": "Mummy lord",
+  "via": "Mummy lord"
+ },
+ "vampire-spawn": {
+  "answer": "Vampire Spawn",
+  "matched": "Vampire spawn",
+  "via": "Vampire spawn"
+ },
+ "death-knight": {
+  "answer": "Death Knight",
+  "matched": "Death knight",
+  "via": "Death knight"
+ },
+ "pit-fiend": {
+  "answer": "Pit Fiend",
+  "matched": "Pit fiend",
+  "via": "Pit fiend"
+ },
+ "intellect-devourer": {
+  "answer": "Intellect Devourer",
+  "matched": "Intellect devourer",
+  "via": "Intellect devourer"
+ },
+ "carrion-crawler": {
+  "answer": "Carrion Crawler",
+  "matched": "Carrion crawler",
+  "via": "Carrion crawler"
+ },
+ "bag-of-holding": {
+  "answer": "Bag of Holding",
+  "matched": "Bag of holding",
+  "via": "Bag of holding"
+ },
+ "deck-of-many-things": {
+  "answer": "Deck of Many Things",
+  "matched": "Deck of many things",
+  "via": "Deck of many things"
+ }
+}

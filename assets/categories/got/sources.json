@@ -1,0 +1,302 @@
+{
+ "jon-snow": {
+  "answer": "Jon Snow",
+  "matched": "Jon Snow",
+  "via": "Jon Snow"
+ },
+ "eddard-stark": {
+  "answer": "Ned Stark",
+  "matched": "Eddard Stark",
+  "via": "Eddard Stark"
+ },
+ "arya-stark": {
+  "answer": "Arya Stark",
+  "matched": "Arya Stark",
+  "via": "Arya Stark"
+ },
+ "sansa-stark": {
+  "answer": "Sansa Stark",
+  "matched": "Sansa Stark",
+  "via": "Sansa Stark"
+ },
+ "bran-stark": {
+  "answer": "Bran Stark",
+  "matched": "Bran Stark",
+  "via": "Bran Stark"
+ },
+ "robb-stark": {
+  "answer": "Robb Stark",
+  "matched": "Robb Stark",
+  "via": "Robb Stark"
+ },
+ "catelyn-stark": {
+  "answer": "Catelyn Stark",
+  "matched": "Catelyn Stark",
+  "via": "Catelyn Stark"
+ },
+ "rickon-stark": {
+  "answer": "Rickon Stark",
+  "matched": "Rickon Stark",
+  "via": "Rickon Stark"
+ },
+ "hodor": {
+  "answer": "Hodor",
+  "matched": "Hodor",
+  "via": "Hodor"
+ },
+ "osha": {
+  "answer": "Osha",
+  "matched": "Osha",
+  "via": "Osha"
+ },
+ "tyrion-lannister": {
+  "answer": "Tyrion Lannister",
+  "matched": "Tyrion Lannister",
+  "via": "Tyrion Lannister"
+ },
+ "cersei-lannister": {
+  "answer": "Cersei Lannister",
+  "matched": "Cersei Lannister",
+  "via": "Cersei Lannister"
+ },
+ "jaime-lannister": {
+  "answer": "Jaime Lannister",
+  "matched": "Jaime Lannister",
+  "via": "Jaime Lannister"
+ },
+ "tywin-lannister": {
+  "answer": "Tywin Lannister",
+  "matched": "Tywin Lannister",
+  "via": "Tywin Lannister"
+ },
+ "joffrey-baratheon": {
+  "answer": "Joffrey",
+  "matched": "Joffrey Baratheon",
+  "via": "Joffrey Baratheon"
+ },
+ "tommen-baratheon": {
+  "answer": "Tommen",
+  "matched": "Tommen Baratheon",
+  "via": "Tommen Baratheon"
+ },
+ "myrcella-baratheon": {
+  "answer": "Myrcella",
+  "matched": "Myrcella Baratheon",
+  "via": "Myrcella Baratheon"
+ },
+ "daenerys-targaryen": {
+  "answer": "Daenerys Targaryen",
+  "matched": "Daenerys Targaryen",
+  "via": "Daenerys Targaryen"
+ },
+ "viserys-targaryen": {
+  "answer": "Viserys Targaryen",
+  "matched": "Viserys Targaryen (son of Aerys II)",
+  "via": "Viserys Targaryen (son of Aerys II)"
+ },
+ "khal-drogo": {
+  "answer": "Khal Drogo",
+  "matched": "Drogo",
+  "via": "Khal Drogo"
+ },
+ "missandei": {
+  "answer": "Missandei",
+  "matched": "Missandei",
+  "via": "Missandei"
+ },
+ "grey-worm": {
+  "answer": "Grey Worm",
+  "matched": "Grey Worm",
+  "via": "Grey Worm"
+ },
+ "jorah-mormont": {
+  "answer": "Jorah Mormont",
+  "matched": "Jorah Mormont",
+  "via": "Jorah Mormont"
+ },
+ "daario-naharis": {
+  "answer": "Daario Naharis",
+  "matched": "Daario Naharis",
+  "via": "Daario Naharis"
+ },
+ "drogon": {
+  "answer": "Drogon",
+  "matched": "Drogon",
+  "via": "Drogon"
+ },
+ "robert-baratheon": {
+  "answer": "Robert Baratheon",
+  "matched": "Robert Baratheon",
+  "via": "Robert Baratheon"
+ },
+ "stannis-baratheon": {
+  "answer": "Stannis Baratheon",
+  "matched": "Stannis Baratheon",
+  "via": "Stannis Baratheon"
+ },
+ "davos-seaworth": {
+  "answer": "Davos Seaworth",
+  "matched": "Davos Seaworth",
+  "via": "Davos Seaworth"
+ },
+ "melisandre": {
+  "answer": "Melisandre",
+  "matched": "Melisandre",
+  "via": "Melisandre"
+ },
+ "brienne-of-tarth": {
+  "answer": "Brienne of Tarth",
+  "matched": "Brienne of Tarth",
+  "via": "Brienne of Tarth"
+ },
+ "sandor-clegane": {
+  "answer": "The Hound",
+  "matched": "Sandor Clegane",
+  "via": "Sandor Clegane"
+ },
+ "gregor-clegane": {
+  "answer": "The Mountain",
+  "matched": "Gregor Clegane",
+  "via": "Gregor Clegane"
+ },
+ "bronn": {
+  "answer": "Bronn",
+  "matched": "Bronn",
+  "via": "Bronn"
+ },
+ "podrick-payne": {
+  "answer": "Podrick Payne",
+  "matched": "Podrick Payne",
+  "via": "Podrick Payne"
+ },
+ "beric-dondarrion": {
+  "answer": "Beric Dondarrion",
+  "matched": "Beric Dondarrion",
+  "via": "Beric Dondarrion"
+ },
+ "thoros-of-myr": {
+  "answer": "Thoros of Myr",
+  "matched": "Thoros",
+  "via": "Thoros of Myr"
+ },
+ "varys": {
+  "answer": "Varys",
+  "matched": "Varys",
+  "via": "Varys"
+ },
+ "petyr-baelish": {
+  "answer": "Littlefinger",
+  "matched": "Petyr Baelish",
+  "via": "Petyr Baelish"
+ },
+ "qyburn": {
+  "answer": "Qyburn",
+  "matched": "Qyburn",
+  "via": "Qyburn"
+ },
+ "high-sparrow": {
+  "answer": "The High Sparrow",
+  "matched": "High Sparrow",
+  "via": "High Sparrow"
+ },
+ "shae": {
+  "answer": "Shae",
+  "matched": "Shae",
+  "via": "Shae"
+ },
+ "theon-greyjoy": {
+  "answer": "Theon Greyjoy",
+  "matched": "Theon Greyjoy",
+  "via": "Theon Greyjoy"
+ },
+ "yara-greyjoy": {
+  "answer": "Yara Greyjoy",
+  "matched": "Yara Greyjoy",
+  "via": "Yara Greyjoy"
+ },
+ "euron-greyjoy": {
+  "answer": "Euron Greyjoy",
+  "matched": "Euron Greyjoy",
+  "via": "Euron Greyjoy"
+ },
+ "ramsay-bolton": {
+  "answer": "Ramsay Bolton",
+  "matched": "Ramsay Bolton",
+  "via": "Ramsay Bolton"
+ },
+ "roose-bolton": {
+  "answer": "Roose Bolton",
+  "matched": "Roose Bolton",
+  "via": "Roose Bolton"
+ },
+ "walder-frey": {
+  "answer": "Walder Frey",
+  "matched": "Walder Frey",
+  "via": "Walder Frey"
+ },
+ "olenna-tyrell": {
+  "answer": "Olenna Tyrell",
+  "matched": "Olenna Tyrell",
+  "via": "Olenna Tyrell"
+ },
+ "margaery-tyrell": {
+  "answer": "Margaery Tyrell",
+  "matched": "Margaery Tyrell",
+  "via": "Margaery Tyrell"
+ },
+ "samwell-tarly": {
+  "answer": "Samwell Tarly",
+  "matched": "Samwell Tarly",
+  "via": "Samwell Tarly"
+ },
+ "gilly": {
+  "answer": "Gilly",
+  "matched": "Gilly",
+  "via": "Gilly"
+ },
+ "ygritte": {
+  "answer": "Ygritte",
+  "matched": "Ygritte",
+  "via": "Ygritte"
+ },
+ "tormund-giantsbane": {
+  "answer": "Tormund Giantsbane",
+  "matched": "Tormund",
+  "via": "Tormund Giantsbane"
+ },
+ "night-king": {
+  "answer": "The Night King",
+  "matched": "Night King",
+  "via": "Night King"
+ },
+ "ghost-direwolf": {
+  "answer": "Ghost",
+  "matched": "Ghost",
+  "via": "Ghost"
+ },
+ "oberyn-martell": {
+  "answer": "Oberyn Martell",
+  "matched": "Oberyn Martell",
+  "via": "Oberyn Martell"
+ },
+ "ellaria-sand": {
+  "answer": "Ellaria Sand",
+  "matched": "Ellaria Sand",
+  "via": "Ellaria Sand"
+ },
+ "jaqen-hghar": {
+  "answer": "Jaqen H'ghar",
+  "matched": "Jaqen H'ghar",
+  "via": "Jaqen H'ghar"
+ },
+ "lyanna-mormont": {
+  "answer": "Lyanna Mormont",
+  "matched": "Lyanna Mormont",
+  "via": "Lyanna Mormont"
+ },
+ "meera-reed": {
+  "answer": "Meera Reed",
+  "matched": "Meera Reed",
+  "via": "Meera Reed"
+ }
+}
