@@ -101,7 +101,7 @@
     introFirst: $('introFirst'), introCount: $('introCount'),
     ovlResult: $('ovlResult'), resultName: $('resultName'), resultLine: $('resultLine'),
     resRematch: $('resRematch'), resNew: $('resNew'), resMenu: $('resMenu'),
-    ovlPause: $('ovlPause'), ovlHelp: $('ovlHelp'), helpClose: $('helpClose'),
+    ovlPause: $('ovlPause'), pauseResume: $('pauseResume'), ovlHelp: $('ovlHelp'), helpClose: $('helpClose'),
 
     mediaBack: $('mediaBack'), mediaCat: $('mediaCat'), mediaGrid: $('mediaGrid'),
     mediaCopy: $('mediaCopy'), mediaClear: $('mediaClear'), mediaRescan: $('mediaRescan'), dropAll: $('dropAll'),
@@ -2156,6 +2156,8 @@
     if (galleryState.page < galleryState.pages) { galleryState.page++; loadGallery(); }
   });
 
+  on(el.pauseResume, 'click', function () { if (G.phase === 'paused') togglePause(); });
+
   el.resShare.addEventListener('click', shareResult);
   on(el.muteBtn, 'click', toggleMute);
   on(el.shotClose, 'click', closeShot);
@@ -2420,6 +2422,11 @@
     }).length;
     el.deckCount.textContent = usable + (usable === 1 ? ' answer' : ' answers') +
       (usable < draft.items.length ? ' \u00b7 ' + (draft.items.length - usable) + ' unfinished' : '');
+    /* The "each row is one answer" note is onboarding. Once there is an
+       answer in the deck it has done its job and can stop taking up half a
+       phone screen. */
+    var screen = document.querySelector('.screen--builder');
+    if (screen) screen.classList.toggle('has-answers', usable > 0);
   }
 
   function buildDeckRow(row, i) {

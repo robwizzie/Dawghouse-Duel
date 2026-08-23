@@ -535,7 +535,6 @@
 
 <div class="ovl ovl--shot" id="ovlShot" hidden>
   <button class="shot__close" type="button" id="shotClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
-  <button class="shot__arrow shot__arrow--prev" type="button" id="shotPrev" aria-label="Previous">&#8249;</button>
   <figure class="shot">
     <img class="shot__img" id="shotImg" alt="">
     <b class="shot__prompt" id="shotPrompt" hidden></b>
@@ -546,7 +545,10 @@
       <span class="shot__count" id="shotCount"></span>
     </figcaption>
   </figure>
-  <button class="shot__arrow shot__arrow--next" type="button" id="shotNext" aria-label="Next">&#8250;</button>
+  <div class="shot__nav">
+    <button class="shot__arrow shot__arrow--prev" type="button" id="shotPrev" aria-label="Previous">&#8249;</button>
+    <button class="shot__arrow shot__arrow--next" type="button" id="shotNext" aria-label="Next">&#8250;</button>
+  </div>
 </div>
 
 <button class="mutebtn" type="button" id="muteBtn" aria-pressed="false" title="Mute sound">
@@ -668,7 +670,11 @@
 </div>
 
 <div class="ovl ovl--pause" id="ovlPause" hidden>
-  <div class="pausecard"><b>PAUSED</b><span>Press <kbd>P</kbd> to resume</span></div>
+  <div class="pausecard">
+    <b>PAUSED</b>
+    <span class="pausecard__keys">Press <kbd>P</kbd> to resume</span>
+    <button class="btn btn--go pausecard__go" type="button" id="pauseResume">Resume</button>
+  </div>
 </div>
 
 <div class="ovl ovl--help" id="ovlHelp" hidden>
