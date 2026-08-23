@@ -1,2 +1,3 @@
-# /host is nicer to read out loud than /host.html
+# /host and /play are nicer to read out loud than the .html
 /host   /host.html   200
+/play   /play.html   200
