@@ -69,6 +69,11 @@ img{max-width:100%;display:block}
 /* ── stage + house lighting ───────────────────────────────── */
 .stage{
   position:fixed;inset:0;
+  /* iOS sizes `inset:0` against the layout viewport, which is taller than
+     what you can see while the URL bar is up — so the top of a full-height
+     screen ends up behind the browser chrome. dvh tracks the visible area
+     as that chrome comes and goes. The vh line is the fallback. */
+  height:100vh;height:100dvh;
   background:
     radial-gradient(120% 85% at 50% -10%, var(--indigo-600) 0%, rgba(59,59,196,0) 62%),
     radial-gradient(90% 70% at 50% 118%, rgba(222,255,102,.16) 0%, rgba(222,255,102,0) 60%),
@@ -306,11 +311,43 @@ select.input option{background:var(--indigo-900);color:#fff}
 .deckrow__kill:hover{border-color:var(--red);color:var(--red)}
 
 @media (max-width:720px), (pointer:coarse){
-  .deckrow{grid-template-columns:96px minmax(0,1fr) 44px;grid-template-areas:'pic answer kill' 'pic prompt kill'}
-  .deckrow__pic{grid-area:pic}
-  .deckrow__kill{grid-area:kill}
+  /* Three columns on a 375px screen left the two inputs about 159px wide,
+     which is not enough to read your own answer back. The picture and the
+     delete button share the top line; the inputs get the full width. */
+  .deckrow{grid-template-columns:auto 1fr auto;
+    grid-template-areas:'pic label kill' 'answer answer answer' 'prompt prompt prompt';
+    gap:8px;align-items:center}
+  .deckrow__pic{grid-area:pic;width:76px;height:56px}
+  .deckrow__kill{grid-area:kill;width:40px;height:40px}
+  .deckrow__num{grid-area:label}
   .deckrow .input--answer{grid-area:answer}
   .deckrow .input--prompt{grid-area:prompt}
+  .deckrow .input{font-size:16px}   /* under 16px and iOS zooms the page in */
+}
+
+/* The builder's bar stays put. It cannot scroll away inside the app, but a
+   phone's own chrome moving around should never be able to clip it either. */
+@media (max-width:720px), (pointer:coarse){
+  .screen--builder .mediabar{position:sticky;top:0;z-index:5;
+    background:linear-gradient(180deg,var(--indigo-900) 70%,rgba(23,23,76,0));
+    padding-block:8px;margin-block:-8px}
+  /* Back stays where a back button belongs. Title beside it, actions on
+     their own line underneath rather than fighting for the same row. */
+  .screen--builder .mediabar,.screen--media .mediabar{
+    display:grid;grid-template-columns:auto 1fr;
+    grid-template-areas:'back title' 'acts acts';
+    gap:6px 10px;align-items:center}
+  .screen--builder .mediabar > .btn:first-child,
+  .screen--media .mediabar > .btn:first-child{grid-area:back}
+  .mediabar__title{grid-area:title;font-size:clamp(16px,4.6vw,22px);margin:0}
+  .mediabar__acts{grid-area:acts;justify-content:flex-start;flex-wrap:wrap}
+}
+
+/* Notched phones: keep the top bar and the bottom controls clear of the
+   hardware. */
+@supports (padding:max(0px)){
+  .stage{padding-top:env(safe-area-inset-top);
+    padding-bottom:env(safe-area-inset-bottom)}
 }
 
 /* ── the share / import cards ── */
