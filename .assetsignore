@@ -1,0 +1,13 @@
+# Only read when this is deployed as a Worker with static assets. Pages
+# excludes these by itself; a Worker build does not, and it tried to
+# upload the 261MB git pack as a site asset.
+.git
+.git/**
+worker
+worker/**
+tools
+tools/**
+.gitignore
+.assetsignore
+DEPLOY.md
+README.md
