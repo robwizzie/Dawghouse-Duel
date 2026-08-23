@@ -1,0 +1,410 @@
+{
+ "toothless": {
+  "answer": "Toothless",
+  "matched": "Toothless",
+  "via": "Toothless",
+  "wiki": "dreamworks.fandom.com"
+ },
+ "light-fury": {
+  "answer": "Light Fury",
+  "matched": "Light Fury",
+  "via": "Light Fury",
+  "wiki": "dreamworks.fandom.com"
+ },
+ "stormfly": {
+  "answer": "Stormfly",
+  "matched": "Stormfly (Franchise)",
+  "via": "Stormfly (Franchise)",
+  "wiki": "howtotrainyourdragon.fandom.com"
+ },
+ "hookfang": {
+  "answer": "Hookfang",
+  "matched": "Hookfang (Franchise)",
+  "via": "Hookfang (Franchise)",
+  "wiki": "howtotrainyourdragon.fandom.com"
+ },
+ "meatlug": {
+  "answer": "Meatlug",
+  "matched": "Meatlug (Franchise)",
+  "via": "Meatlug (Franchise)",
+  "wiki": "howtotrainyourdragon.fandom.com"
+ },
+ "cloudjumper": {
+  "answer": "Cloudjumper",
+  "matched": "Cloudjumper",
+  "via": "Cloudjumper",
+  "wiki": "howtotrainyourdragon.fandom.com"
+ },
+ "bewilderbeast": {
+  "answer": "Bewilderbeast",
+  "matched": "Bewilderbeast",
+  "via": "Bewilderbeast",
+  "wiki": "howtotrainyourdragon.fandom.com"
+ },
+ "shrek-dragon": {
+  "answer": "Dragon",
+  "matched": "Dragon",
+  "via": "Dragon",
+  "wiki": "shrek.fandom.com"
+ },
+ "elliott": {
+  "answer": "Elliott",
+  "matched": "Elliott",
+  "via": "Elliott",
+  "wiki": "disney.fandom.com"
+ },
+ "draco": {
+  "answer": "Draco",
+  "matched": "Draco",
+  "via": "Draco",
+  "wiki": "dragonheart.fandom.com"
+ },
+ "vermithrax": {
+  "answer": "Vermithrax Pejorative",
+  "matched": "Vermithrax Pejorative",
+  "via": "Vermithrax Pejorative",
+  "wiki": "villains.fandom.com"
+ },
+ "maleficent-dragon": {
+  "answer": "Maleficent",
+  "matched": "Maleficent",
+  "via": "Maleficent",
+  "wiki": "disney.fandom.com"
+ },
+ "mushu": {
+  "answer": "Mushu",
+  "matched": "Mushu",
+  "via": "Mushu",
+  "wiki": "disney.fandom.com"
+ },
+ "sisu": {
+  "answer": "Sisu",
+  "matched": "Sisu",
+  "via": "Sisu",
+  "wiki": "disney.fandom.com"
+ },
+ "haku": {
+  "answer": "Haku",
+  "matched": "Haku",
+  "via": "Haku",
+  "wiki": "ghibli.fandom.com"
+ },
+ "smaug": {
+  "answer": "Smaug",
+  "matched": "Smaug",
+  "via": "Smaug",
+  "wiki": "hobbit.fandom.com"
+ },
+ "ancalagon": {
+  "answer": "Ancalagon",
+  "matched": "Ancalagon",
+  "via": "Ancalagon",
+  "wiki": "lotr.fandom.com"
+ },
+ "glaurung": {
+  "answer": "Glaurung",
+  "matched": "Glaurung",
+  "via": "Glaurung",
+  "wiki": "lotr.fandom.com"
+ },
+ "scatha": {
+  "answer": "Scatha",
+  "matched": "Scatha",
+  "via": "Scatha",
+  "wiki": "lotr.fandom.com"
+ },
+ "saphira": {
+  "answer": "Saphira",
+  "matched": "Saphira",
+  "via": "Saphira",
+  "wiki": "inheritance.fandom.com"
+ },
+ "thorn": {
+  "answer": "Thorn",
+  "matched": "Thorn",
+  "via": "Thorn",
+  "wiki": "inheritance.fandom.com"
+ },
+ "glaedr": {
+  "answer": "Glaedr",
+  "matched": "Glaedr",
+  "via": "Glaedr",
+  "wiki": "inheritance.fandom.com"
+ },
+ "hungarian-horntail": {
+  "answer": "Hungarian Horntail",
+  "matched": "Hungarian Horntail",
+  "via": "Hungarian Horntail",
+  "wiki": "harrypotter.fandom.com"
+ },
+ "norwegian-ridgeback": {
+  "answer": "Norbert",
+  "matched": "Norwegian Ridgeback",
+  "via": "Norwegian Ridgeback",
+  "wiki": "harrypotter.fandom.com"
+ },
+ "ukrainian-ironbelly": {
+  "answer": "Ukrainian Ironbelly",
+  "matched": "Ukrainian Ironbelly",
+  "via": "Ukrainian Ironbelly",
+  "wiki": "harrypotter.fandom.com"
+ },
+ "chinese-fireball": {
+  "answer": "Chinese Fireball",
+  "matched": "Chinese Fireball",
+  "via": "Chinese Fireball",
+  "wiki": "harrypotter.fandom.com"
+ },
+ "swedish-short-snout": {
+  "answer": "Swedish Short-Snout",
+  "matched": "Swedish Short-Snout",
+  "via": "Swedish Short-Snout",
+  "wiki": "harrypotter.fandom.com"
+ },
+ "drogon": {
+  "answer": "Drogon",
+  "matched": "Drogon",
+  "via": "Drogon",
+  "wiki": "gameofthrones.fandom.com"
+ },
+ "rhaegal": {
+  "answer": "Rhaegal",
+  "matched": "Rhaegal",
+  "via": "Rhaegal",
+  "wiki": "gameofthrones.fandom.com"
+ },
+ "viserion": {
+  "answer": "Viserion",
+  "matched": "Viserion",
+  "via": "Viserion",
+  "wiki": "gameofthrones.fandom.com"
+ },
+ "balerion": {
+  "answer": "Balerion",
+  "matched": "Balerion",
+  "via": "Balerion",
+  "wiki": "gameofthrones.fandom.com"
+ },
+ "kilgharrah": {
+  "answer": "Kilgharrah",
+  "matched": "Kilgharrah",
+  "via": "Kilgharrah",
+  "wiki": "merlin.fandom.com"
+ },
+ "aithusa": {
+  "answer": "Aithusa",
+  "matched": "Aithusa",
+  "via": "Aithusa",
+  "wiki": "merlin.fandom.com"
+ },
+ "charizard": {
+  "answer": "Charizard",
+  "matched": "Charizard",
+  "via": "Charizard",
+  "wiki": "pokemon.fandom.com"
+ },
+ "dragonite": {
+  "answer": "Dragonite",
+  "matched": "Dragonite",
+  "via": "Dragonite",
+  "wiki": "pokemon.fandom.com"
+ },
+ "rayquaza": {
+  "answer": "Rayquaza",
+  "matched": "Rayquaza",
+  "via": "Rayquaza",
+  "wiki": "pokemon.fandom.com"
+ },
+ "salamence": {
+  "answer": "Salamence",
+  "matched": "Salamence",
+  "via": "Salamence",
+  "wiki": "pokemon.fandom.com"
+ },
+ "garchomp": {
+  "answer": "Garchomp",
+  "matched": "Garchomp",
+  "via": "Garchomp",
+  "wiki": "pokemon.fandom.com"
+ },
+ "spyro": {
+  "answer": "Spyro",
+  "matched": "Spyro the Dragon (character)",
+  "via": "Spyro the Dragon (character)",
+  "wiki": "spyro.fandom.com"
+ },
+ "cynder": {
+  "answer": "Cynder",
+  "matched": "Cynder",
+  "via": "Cynder",
+  "wiki": "spyro.fandom.com"
+ },
+ "ender-dragon": {
+  "answer": "Ender Dragon",
+  "matched": "Ender Dragon",
+  "via": "Ender dragon",
+  "wiki": "minecraft.fandom.com"
+ },
+ "alduin": {
+  "answer": "Alduin",
+  "matched": "Alduin",
+  "via": "Alduin",
+  "wiki": "elderscrolls.fandom.com"
+ },
+ "paarthurnax": {
+  "answer": "Paarthurnax",
+  "matched": "Paarthurnax",
+  "via": "Paarthurnax",
+  "wiki": "elderscrolls.fandom.com"
+ },
+ "odahviing": {
+  "answer": "Odahviing",
+  "matched": "Odahviing",
+  "via": "Odahviing",
+  "wiki": "elderscrolls.fandom.com"
+ },
+ "deathwing": {
+  "answer": "Deathwing",
+  "matched": "Deathwing",
+  "via": "Deathwing",
+  "wiki": "wowpedia.fandom.com"
+ },
+ "alexstrasza": {
+  "answer": "Alexstrasza",
+  "matched": "Alexstrasza",
+  "via": "Alexstrasza",
+  "wiki": "wowpedia.fandom.com"
+ },
+ "onyxia": {
+  "answer": "Onyxia",
+  "matched": "Onyxia",
+  "via": "Onyxia",
+  "wiki": "wowpedia.fandom.com"
+ },
+ "nefarian": {
+  "answer": "Nefarian",
+  "matched": "Nefarian",
+  "via": "Nefarian",
+  "wiki": "wowpedia.fandom.com"
+ },
+ "rathalos": {
+  "answer": "Rathalos",
+  "matched": "Rathalos",
+  "via": "Rathalos",
+  "wiki": "monsterhunter.fandom.com"
+ },
+ "rathian": {
+  "answer": "Rathian",
+  "matched": "Rathian",
+  "via": "Rathian",
+  "wiki": "monsterhunter.fandom.com"
+ },
+ "fatalis": {
+  "answer": "Fatalis",
+  "matched": "Fatalis",
+  "via": "Fatalis",
+  "wiki": "monsterhunter.fandom.com"
+ },
+ "ridley": {
+  "answer": "Ridley",
+  "matched": "Ridley",
+  "via": "Ridley",
+  "wiki": "metroid.fandom.com"
+ },
+ "blue-eyes": {
+  "answer": "Blue-Eyes White Dragon",
+  "matched": "Blue-Eyes White Dragon (character)",
+  "via": "Blue-Eyes White Dragon (character)",
+  "wiki": "yugioh.fandom.com"
+ },
+ "slifer": {
+  "answer": "Slifer the Sky Dragon",
+  "matched": "Slifer the Sky Dragon",
+  "via": "Slifer the Sky Dragon",
+  "wiki": "yugioh.fandom.com"
+ },
+ "shenron": {
+  "answer": "Shenron",
+  "matched": "Shenron",
+  "via": "Shenron",
+  "wiki": "dragonball.fandom.com"
+ },
+ "porunga": {
+  "answer": "Porunga",
+  "matched": "Porunga",
+  "via": "Porunga",
+  "wiki": "dragonball.fandom.com"
+ },
+ "igneel": {
+  "answer": "Igneel",
+  "matched": "Igneel",
+  "via": "Igneel",
+  "wiki": "fairytail.fandom.com"
+ },
+ "acnologia": {
+  "answer": "Acnologia",
+  "matched": "Acnologia",
+  "via": "Acnologia",
+  "wiki": "fairytail.fandom.com"
+ },
+ "king-ghidorah": {
+  "answer": "King Ghidorah",
+  "matched": "King Ghidorah (MonsterVerse)",
+  "via": "King Ghidorah (MonsterVerse)",
+  "wiki": "godzilla.fandom.com"
+ },
+ "trogdor": {
+  "answer": "Trogdor",
+  "matched": "Trogdor",
+  "via": "Trogdor",
+  "wiki": "villains.fandom.com"
+ },
+ "fin-fang-foom": {
+  "answer": "Fin Fang Foom",
+  "matched": "Fin Fang Foom",
+  "via": "Fin Fang Foom",
+  "wiki": "marvel.fandom.com"
+ },
+ "lockheed": {
+  "answer": "Lockheed",
+  "matched": "Lockheed",
+  "via": "Lockheed",
+  "wiki": "marvel.fandom.com"
+ },
+ "spike-mlp": {
+  "answer": "Spike",
+  "matched": "Spike",
+  "via": "Spike",
+  "wiki": "mlp.fandom.com"
+ },
+ "barf-and-belch": {
+  "answer": "Barf and Belch",
+  "matched": "Barf and Belch (Franchise)",
+  "via": "Barf and Belch (Franchise)",
+  "wiki": "howtotrainyourdragon.fandom.com"
+ },
+ "red-death": {
+  "answer": "Red Death",
+  "matched": "Red Death (Franchise)",
+  "via": "Red Death (Franchise)",
+  "wiki": "howtotrainyourdragon.fandom.com"
+ },
+ "falkor": {
+  "answer": "Falkor",
+  "matched": "Falkor",
+  "via": "Falkor",
+  "wiki": "neverendingstory.fandom.com"
+ },
+ "common-welsh-green": {
+  "answer": "Common Welsh Green",
+  "matched": "Common Welsh Green",
+  "via": "Common Welsh Green",
+  "wiki": "harrypotter.fandom.com"
+ },
+ "bahamut-ff": {
+  "answer": "Bahamut",
+  "matched": "Bahamut (Final Fantasy VII)",
+  "via": "Bahamut (Final Fantasy VII)",
+  "wiki": "finalfantasy.fandom.com"
+ }
+}
