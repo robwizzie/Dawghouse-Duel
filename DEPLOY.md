@@ -361,6 +361,11 @@ must match. Re-read it on the laptop, or hit **new code** and re-enter.
 **Pictures don't load** — check the deploy actually finished in the Pages
 dashboard. The artwork upload is the slow part of the first deploy.
 
+**`/host` or `/play` redirect forever** — there used to be a `_redirects`
+file mapping them to the `.html`. Cloudflare Pages serves `host.html` at
+`/host` by itself and redirects the `.html` form back to the clean one, so
+that file made a loop. It's gone; don't add it back.
+
 **Site shows an old version** — artwork is cached hard, the app never is (see
 [`_headers`](_headers)). Hard-refresh with Cmd-Shift-R.
 
