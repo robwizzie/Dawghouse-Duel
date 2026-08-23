@@ -520,7 +520,7 @@ const DECK_LIMITS = {
   /* Under R2's 10GB free allowance with room to spare. Past this the
      relay stops accepting uploads rather than quietly running up a bill.
      Raise it deliberately if you ever want to pay for more. */
-  storageCeiling: 8 * 1024 * 1024 * 1024
+  storageCeiling: 8 * 1024 * 1024 * 1024,
   name: 40,
   blurb: 120,
   answer: 80,
