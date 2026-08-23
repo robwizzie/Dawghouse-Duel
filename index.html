@@ -651,7 +651,7 @@
 
 <div class="ovl ovl--help" id="ovlHelp" hidden>
   <div class="help">
-    <button class="help__close" id="helpClose" aria-label="Close">&times;</button>
+    <button class="help__close" id="helpClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
     <h2>How Dawg House Duel works</h2>
 
     <ol class="help__rules">
@@ -681,8 +681,8 @@
     <h3>Picture modes</h3>
     <p class="help__note"><b>Silhouette</b> blacks the picture out and fills it in after a few seconds. <b>Extreme zoom</b> starts far too close and pulls back. <b>Blurred</b> sharpens up. On a correct answer or a pass you always see the real picture.</p>
 
-    <h3>Keys (when someone is marking)</h3>
-    <div class="help__keys">
+    <h3 class="help--keysonly">Keys (when someone is marking)</h3>
+    <div class="help__keys help--keysonly">
       <div><kbd>Click</kbd> <kbd>Space</kbd><span>Pass &mdash; reveal, new picture, same turn</span></div>
       <div><kbd>Enter</kbd> <kbd>&rarr;</kbd><span>Correct &mdash; reveal, hand off</span></div>
       <div><kbd>X</kbd><span>Wrong &mdash; time penalty, same picture</span></div>

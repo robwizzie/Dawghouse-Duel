@@ -432,6 +432,7 @@ select.input option{background:var(--indigo-900);color:#fff}
 .pick__body{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.35em;
   border:3px solid var(--indigo-600);border-radius:18px;padding:clamp(16px,2.6vh,30px) clamp(14px,2vw,26px);
   background:rgba(14,14,45,.45);transition:.16s var(--ease);height:100%}
+.pick__head{display:contents}
 .pick__icon{width:clamp(34px,4vw,52px);height:clamp(34px,4vw,52px);display:block;
   fill:none;stroke:rgba(255,255,255,.62);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
   transition:stroke .16s}
@@ -1187,9 +1188,19 @@ body.is-shot .mutebtn{display:none}
 .help__note{color:rgba(255,255,255,.72);font-size:clamp(13px,1.25vw,18px);line-height:1.4;margin:0}
 kbd{font-family:var(--ff-cond);font-weight:900;background:var(--lime);color:var(--indigo);border-radius:6px;padding:.06em .48em .12em;
   font-size:.95em;letter-spacing:.05em;white-space:nowrap}
-.help__close{position:absolute;top:10px;right:12px;background:none;border:0;color:rgba(255,255,255,.5);
-  font-size:34px;line-height:1;cursor:pointer;width:40px;height:40px;
-  display:flex;align-items:center;justify-content:center;padding:0;border-radius:10px}
+/* Sticky, not absolute: the rules are long and an absolutely positioned
+   close button scrolls away with the top of the card, stranding anyone who
+   read to the bottom. An SVG rather than a "\00d7" for the same reason the
+   other close buttons are — the glyph sits off-centre in its own box. */
+.help__close{position:sticky;top:0;float:right;z-index:2;margin:-6px -6px 0 12px;
+  background:rgba(23,23,76,.92);border:2px solid var(--indigo-600);
+  color:rgba(255,255,255,.75);backdrop-filter:blur(8px);
+  cursor:pointer;width:42px;height:42px;flex:none;
+  display:flex;align-items:center;justify-content:center;padding:0;border-radius:50%;
+  transition:border-color .15s,color .15s}
+.help__close:hover{border-color:var(--lime);color:var(--lime)}
+.help__close svg{width:19px;height:19px;display:block;fill:none;stroke:currentColor;
+  stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .help__close:hover{color:var(--lime)}
 
 /* ══════════════════ MEDIA LIBRARY ══════════════════ */
@@ -1510,4 +1521,25 @@ kbd{font-family:var(--ff-cond);font-weight:900;background:var(--lime);color:var(
   .welcome__pitch b{display:inline}
   .welcome__acts .btn{min-height:clamp(44px,5.6vh,52px)}
   .welcome__stats{display:none}   /* the least load-bearing line on the screen */
+}
+
+
+/* ── the three modes on a phone ─────────────────────────────
+   Side by side, a long name like "Online Duel" wrapped to two lines and
+   squeezed its own description into a narrow column beside it. Stacked:
+   icon and name share a line, the description gets its own. */
+@media (max-width:720px), (pointer:coarse){
+  .pick__body{display:grid;grid-template-columns:auto 1fr;
+    grid-template-areas:'icon title' 'sub sub';
+    align-items:center;text-align:left;gap:.15em .7em;
+    padding:14px 16px}
+  .pick__icon{grid-area:icon;width:30px;height:30px}
+  .pick__body b{grid-area:title;font-size:clamp(19px,5.4vw,24px);line-height:1.05}
+  .pick__body i{grid-area:sub;max-width:none;font-size:clamp(13px,3.5vw,15px);
+    line-height:1.35;margin-top:.25em}
+}
+
+/* No keyboard, no reason to explain the keyboard. */
+@media (pointer:coarse){
+  .help--keysonly{display:none}
 }
