@@ -63,7 +63,7 @@
     deckList: $('deckList'), deckListState: $('deckListState'), deckSearch: $('deckSearch'),
     deckCoverPick: $('deckCoverPick'), deckCoverImg: $('deckCoverImg'),
     deckCoverEmpty: $('deckCoverEmpty'), deckCoverClear: $('deckCoverClear'),
-    browseDecks: $('browseDecks'), toMyDecks: $('toMyDecks'),
+    toMyDecks: $('toMyDecks'),
     ovlMyDecks: $('ovlMyDecks'), myDecksList: $('myDecksList'), myDecksState: $('myDecksState'),
     myDecksClose: $('myDecksClose'), myDecksNew: $('myDecksNew'),
     deckSort: $('deckSort'), deckPager: $('deckPager'), deckPrev: $('deckPrev'),
@@ -2129,7 +2129,6 @@
   });
   on(el.deckGetClose, 'click', function () { el.ovlDeckGet.hidden = true; });
   on(el.deckGetForm, 'submit', function (e) { e.preventDefault(); getDeckByCode(el.deckGetCode.value); });
-  on(el.browseDecks, 'click', openDeckGet);
   on(el.toMyDecks, 'click', openMyDecks);
   on(el.myDecksClose, 'click', function () { el.ovlMyDecks.hidden = true; });
   on(el.myDecksNew, 'click', function () { el.ovlMyDecks.hidden = true; openBuilder(null); });
