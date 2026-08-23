@@ -106,7 +106,7 @@ the domain is **Active**. You can carry on with steps 3 and 4 while you wait.
 
 6. **Save and Deploy**.
 
-The first deploy uploads about 1,600 files and 310 MB of artwork, so give it a
+The first deploy uploads about 1,900 files and 360 MB of artwork, so give it a
 few minutes. Later deploys only upload what changed and take seconds.
 
 When it finishes you get a URL like `https://dawghouse-duel.pages.dev`.
@@ -380,7 +380,7 @@ the real bytes and names files honestly.
 Nothing at this scale.
 
 - **Pages** — free, unlimited bandwidth for static sites. Limits are 20,000
-  files and 25 MB per file; you're at ~1,500 files and the largest is 1.3 MB.
+  files and 25 MB per file; you're at ~1,900 files and the largest is 1.3 MB.
 - **Workers** — 100,000 requests a day free. A duel is a handful of small
   messages a second between two people.
 - **Durable Objects** — free tier, and a room only exists while somebody is
