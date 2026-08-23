@@ -53,7 +53,13 @@
 
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none !important}   /* beats the display:flex/grid set below */
-html,body{height:100%}
+/* A mobile browser resolves `height:100%` against the LARGE viewport — the
+   one you get with the URL bar hidden. So while the bar is showing, the
+   document is taller than the visible area by exactly the height of that
+   bar, and you can scroll down into empty background. dvh tracks what is
+   actually visible, and nothing here needs the document to scroll anyway:
+   the stage is fixed and every screen scrolls inside itself. */
+html,body{height:100%;height:100dvh;overflow:hidden;overscroll-behavior:none}
 body{
   margin:0;
   background:var(--indigo);
@@ -1203,12 +1209,14 @@ body.is-typing .topbar__pair{display:none}
 .mutebtn.is-muted .mutebtn__on{display:none}
 .mutebtn.is-muted .mutebtn__off{display:block}
 
-/* Only where sound happens: the menu, setting a game up, and the duel.
-   Not the deck builder or the image library, which make no noise. */
-.mutebtn{display:none}
-html[data-screen="welcome"] .mutebtn,
-html[data-screen="setup"] .mutebtn,
+/* Only during a round. Everywhere else it was furniture — and the setup
+   screen already carries a "Sound effects" checkbox under More options,
+   so the floating button was a duplicate of a control that has a proper
+   home. Mid-round is the one moment you need to kill the sound fast and
+   can't go hunting through settings for it. */
+.mutebtn{display:none;opacity:.4}
 html[data-screen="duel"] .mutebtn{display:flex}
+.mutebtn:hover,.mutebtn:focus-visible,.mutebtn.is-muted{opacity:1}
 body.is-shot .mutebtn{display:none}
 
 /* A phone has no hover, so the label would never show — keep it an icon
