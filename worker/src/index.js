@@ -307,6 +307,17 @@ export class DeckIndex {
       return Response.json({ ok: true });
     }
 
+    /* How many bytes of pictures are parked in the bucket. Kept as a
+       running total rather than listed on demand, because listing a
+       bucket to answer every upload is itself billable work. */
+    if (action === 'bytes') {
+      const d = await request.json();
+      const cur = (await this.state.storage.get('bytes')) || 0;
+      const next = Math.max(0, cur + (d.delta || 0));
+      if (d.delta) await this.state.storage.put('bytes', next);
+      return Response.json({ bytes: next });
+    }
+
     if (action === 'bump') {
       const d = await request.json();
       sql.exec(
@@ -409,6 +420,20 @@ async function indexAdmin(env, action, code) {
   return res.json();
 }
 
+/* Read, or move, the stored-bytes total. */
+async function storedBytes(env, delta) {
+  const stub = indexStub(env);
+  if (!stub) return 0;
+  try {
+    const res = await stub.fetch('https://index/?do=bytes', {
+      method: 'POST', body: JSON.stringify({ delta: delta || 0 })
+    });
+    return (await res.json()).bytes || 0;
+  } catch (e) {
+    return 0;                 // a broken counter must not block real users
+  }
+}
+
 async function indexBump(env, code, delta) {
   const stub = indexStub(env);
   if (!stub) return;
@@ -492,6 +517,10 @@ const DECK_LIMITS = {
   json: 512 * 1024,          // the deck itself, without pictures
   image: 3 * 1024 * 1024,    // one picture
   uploadBudget: 120 * 1024 * 1024,   // all pictures, per caller, per hour
+  /* Under R2's 10GB free allowance with room to spare. Past this the
+     relay stops accepting uploads rather than quietly running up a bill.
+     Raise it deliberately if you ever want to pay for more. */
+  storageCeiling: 8 * 1024 * 1024 * 1024
   name: 40,
   blurb: 120,
   answer: 80,
@@ -719,11 +748,17 @@ async function deleteDeck(request, env, code) {
 
   /* The pictures go too, or they sit in the bucket forever paying rent. */
   const imgs = (existing.items || []).map(i => i.img).filter(Boolean);
+  let freed = 0;
   for (const key of imgs) {
     if (/^[A-Za-z0-9_-]{1,64}\.(jpg|png|webp|gif)$/.test(key)) {
-      try { await env.DECKS.delete('img/' + key); } catch (e) {}
+      try {
+        const head = await env.DECKS.head('img/' + key);
+        if (head) freed += head.size || 0;
+        await env.DECKS.delete('img/' + key);
+      } catch (e) {}
     }
   }
+  if (freed) await storedBytes(env, -freed);
   await env.DECKS.delete('deck/' + existing.code + '.json');
   await indexDel(env, existing.code);
   return json({ deleted: existing.code, images: imgs.length });
@@ -749,8 +784,21 @@ async function putImage(request, env) {
                                  60 * 60 * 1000, body.byteLength);
   if (budget) return budget;
 
+  /* And a ceiling on the whole bucket. Cloudflare has no hard spend cap,
+     so this is the only thing standing between a runaway deck and a bill:
+     past the line, uploads stop. Everything already published keeps
+     working, and playing is never affected. */
+  const used = await storedBytes(env, 0);
+  if (used + body.byteLength > DECK_LIMITS.storageCeiling) {
+    return json({
+      error: 'deck storage is full for now — nothing new can be uploaded',
+      full: true
+    }, 507);
+  }
+
   const key = newCode(16) + '.' + real.ext;
   await env.DECKS.put('img/' + key, body, { httpMetadata: { contentType: real.type } });
+  await storedBytes(env, body.byteLength);
   return json({ key: key });
 }
 
