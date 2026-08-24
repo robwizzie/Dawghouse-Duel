@@ -278,7 +278,7 @@
     'nba-today': 'lebron-james', 'nba-goats': 'michael-jordan',
     celebrities: 'tom-hanks', streamers: 'mrbeast',
     'nfl-today': 'patrick-mahomes', 'nfl-goats': 'tom-brady',
-    got: 'jon-snow', dnd: 'beholder', dragons: 'toothless', food: 'pizza'
+    got: 'jon-snow', dnd: 'beholder', dragons: 'toothless', food: 'pizza', dwts: 'derek-hough'
   };
 
   /* Deliberately no defaults: an option that is already selected reads as a

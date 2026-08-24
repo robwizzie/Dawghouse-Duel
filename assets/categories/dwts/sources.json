@@ -1,0 +1,692 @@
+{
+ "len-goodman": {
+  "answer": "Len Goodman",
+  "matched": "Len Goodman",
+  "via": "Len Goodman",
+  "wiki": "en.wikipedia.org"
+ },
+ "carrie-ann-inaba": {
+  "answer": "Carrie Ann Inaba",
+  "matched": "Carrie Ann Inaba",
+  "via": "Carrie Ann Inaba",
+  "wiki": "en.wikipedia.org"
+ },
+ "bruno-tonioli": {
+  "answer": "Bruno Tonioli",
+  "matched": "Bruno Tonioli",
+  "via": "Bruno Tonioli",
+  "wiki": "en.wikipedia.org"
+ },
+ "derek-hough": {
+  "answer": "Derek Hough",
+  "matched": "Derek Hough",
+  "via": "Derek Hough",
+  "wiki": "en.wikipedia.org"
+ },
+ "julianne-hough": {
+  "answer": "Julianne Hough",
+  "matched": "Julianne Hough",
+  "via": "Julianne Hough",
+  "wiki": "en.wikipedia.org"
+ },
+ "tom-bergeron": {
+  "answer": "Tom Bergeron",
+  "matched": "Tom Bergeron",
+  "via": "Tom Bergeron",
+  "wiki": "en.wikipedia.org"
+ },
+ "erin-andrews": {
+  "answer": "Erin Andrews",
+  "matched": "Erin Andrews",
+  "via": "Erin Andrews",
+  "wiki": "en.wikipedia.org"
+ },
+ "tyra-banks": {
+  "answer": "Tyra Banks",
+  "matched": "Tyra Banks",
+  "via": "Tyra Banks",
+  "wiki": "en.wikipedia.org"
+ },
+ "alfonso-ribeiro": {
+  "answer": "Alfonso Ribeiro",
+  "matched": "Alfonso Ribeiro",
+  "via": "Alfonso Ribeiro",
+  "wiki": "en.wikipedia.org"
+ },
+ "mark-ballas": {
+  "answer": "Mark Ballas",
+  "matched": "Mark Ballas",
+  "via": "Mark Ballas",
+  "wiki": "en.wikipedia.org"
+ },
+ "cheryl-burke": {
+  "answer": "Cheryl Burke",
+  "matched": "Cheryl Burke",
+  "via": "Cheryl Burke",
+  "wiki": "en.wikipedia.org"
+ },
+ "karina-smirnoff": {
+  "answer": "Karina Smirnoff",
+  "matched": "Karina Smirnoff",
+  "via": "Karina Smirnoff",
+  "wiki": "en.wikipedia.org"
+ },
+ "maksim-chmerkovskiy": {
+  "answer": "Maksim Chmerkovskiy",
+  "matched": "Maksim Chmerkovskiy",
+  "via": "Maksim Chmerkovskiy",
+  "wiki": "en.wikipedia.org"
+ },
+ "val-chmerkovskiy": {
+  "answer": "Val Chmerkovskiy",
+  "matched": "Valentin Chmerkovskiy",
+  "via": "Valentin Chmerkovskiy",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "peta-murgatroyd": {
+  "answer": "Peta Murgatroyd",
+  "matched": "Peta Murgatroyd",
+  "via": "Peta Murgatroyd",
+  "wiki": "en.wikipedia.org"
+ },
+ "sharna-burgess": {
+  "answer": "Sharna Burgess",
+  "matched": "Sharna Burgess",
+  "via": "Sharna Burgess",
+  "wiki": "en.wikipedia.org"
+ },
+ "witney-carson": {
+  "answer": "Witney Carson",
+  "matched": "Witney Carson",
+  "via": "Witney Carson",
+  "wiki": "en.wikipedia.org"
+ },
+ "lindsay-arnold": {
+  "answer": "Lindsay Arnold",
+  "matched": "Lindsay Arnold",
+  "via": "Lindsay Arnold",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "jenna-johnson": {
+  "answer": "Jenna Johnson",
+  "matched": "Jenna Johnson",
+  "via": "Jenna Johnson",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "emma-slater": {
+  "answer": "Emma Slater",
+  "matched": "Emma Slater",
+  "via": "Emma Slater",
+  "wiki": "en.wikipedia.org"
+ },
+ "artem-chigvintsev": {
+  "answer": "Artem Chigvintsev",
+  "matched": "Artem Chigvintsev",
+  "via": "Artem Chigvintsev",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "gleb-savchenko": {
+  "answer": "Gleb Savchenko",
+  "matched": "Gleb Savchenko",
+  "via": "Gleb Savchenko",
+  "wiki": "en.wikipedia.org"
+ },
+ "sasha-farber": {
+  "answer": "Sasha Farber",
+  "matched": "Sasha Farber",
+  "via": "Sasha Farber",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "alan-bersten": {
+  "answer": "Alan Bersten",
+  "matched": "Alan Bersten",
+  "via": "Alan Bersten",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "brandon-armstrong": {
+  "answer": "Brandon Armstrong",
+  "matched": "Brandon Armstrong",
+  "via": "Brandon Armstrong",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "britt-stewart": {
+  "answer": "Britt Stewart",
+  "matched": "Britt Stewart",
+  "via": "Britt Stewart",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "daniella-karagach": {
+  "answer": "Daniella Karagach",
+  "matched": "Daniella Karagach",
+  "via": "Daniella Karagach",
+  "wiki": "en.wikipedia.org"
+ },
+ "pasha-pashkov": {
+  "answer": "Pasha Pashkov",
+  "matched": "Pasha Pashkov",
+  "via": "Pasha Pashkov",
+  "wiki": "en.wikipedia.org"
+ },
+ "rylee-arnold": {
+  "answer": "Rylee Arnold",
+  "matched": "Rylee Arnold",
+  "via": "Rylee Arnold",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "tony-dovolani": {
+  "answer": "Tony Dovolani",
+  "matched": "Tony Dovolani",
+  "via": "Tony Dovolani",
+  "wiki": "en.wikipedia.org"
+ },
+ "louis-van-amstel": {
+  "answer": "Louis van Amstel",
+  "matched": "Louis van Amstel",
+  "via": "Louis van Amstel",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "kym-johnson": {
+  "answer": "Kym Johnson",
+  "matched": "Kym Herjavec",
+  "via": "Kym Johnson",
+  "wiki": "en.wikipedia.org"
+ },
+ "anna-trebunskaya": {
+  "answer": "Anna Trebunskaya",
+  "matched": "Anna Trebunskaya",
+  "via": "Anna Trebunskaya",
+  "wiki": "en.wikipedia.org"
+ },
+ "edyta-sliwinska": {
+  "answer": "Edyta Śliwińska",
+  "matched": "Edyta Śliwińska",
+  "via": "Edyta Śliwińska",
+  "wiki": "en.wikipedia.org"
+ },
+ "chelsie-hightower": {
+  "answer": "Chelsie Hightower",
+  "matched": "Chelsie Hightower",
+  "via": "Chelsie Hightower",
+  "wiki": "en.wikipedia.org"
+ },
+ "lacey-schwimmer": {
+  "answer": "Lacey Schwimmer",
+  "matched": "Lacey Schwimmer",
+  "via": "Lacey Schwimmer",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "ezra-sosa": {
+  "answer": "Ezra Sosa",
+  "matched": "Ezra Sosa",
+  "via": "Ezra Sosa",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "kelly-monaco": {
+  "answer": "Kelly Monaco",
+  "matched": "Kelly Monaco",
+  "via": "Kelly Monaco",
+  "wiki": "en.wikipedia.org"
+ },
+ "drew-lachey": {
+  "answer": "Drew Lachey",
+  "matched": "Drew Lachey",
+  "via": "Drew Lachey",
+  "wiki": "en.wikipedia.org"
+ },
+ "emmitt-smith": {
+  "answer": "Emmitt Smith",
+  "matched": "Emmitt Smith",
+  "via": "Emmitt Smith",
+  "wiki": "en.wikipedia.org"
+ },
+ "apolo-ohno": {
+  "answer": "Apolo Ohno",
+  "matched": "Apolo Ohno",
+  "via": "Apolo Ohno",
+  "wiki": "en.wikipedia.org"
+ },
+ "helio-castroneves": {
+  "answer": "Hélio Castroneves",
+  "matched": "Hélio Castroneves",
+  "via": "Hélio Castroneves",
+  "wiki": "en.wikipedia.org"
+ },
+ "kristi-yamaguchi": {
+  "answer": "Kristi Yamaguchi",
+  "matched": "Kristi Yamaguchi",
+  "via": "Kristi Yamaguchi",
+  "wiki": "en.wikipedia.org"
+ },
+ "brooke-burke": {
+  "answer": "Brooke Burke",
+  "matched": "Brooke Burke",
+  "via": "Brooke Burke",
+  "wiki": "en.wikipedia.org"
+ },
+ "shawn-johnson": {
+  "answer": "Shawn Johnson",
+  "matched": "Shawn Johnson East",
+  "via": "Shawn Johnson",
+  "wiki": "en.wikipedia.org"
+ },
+ "nicole-scherzinger": {
+  "answer": "Nicole Scherzinger",
+  "matched": "Nicole Scherzinger",
+  "via": "Nicole Scherzinger",
+  "wiki": "en.wikipedia.org"
+ },
+ "jennifer-grey": {
+  "answer": "Jennifer Grey",
+  "matched": "Jennifer Grey",
+  "via": "Jennifer Grey",
+  "wiki": "en.wikipedia.org"
+ },
+ "hines-ward": {
+  "answer": "Hines Ward",
+  "matched": "Hines Ward",
+  "via": "Hines Ward",
+  "wiki": "en.wikipedia.org"
+ },
+ "jr-martinez": {
+  "answer": "J.R. Martinez",
+  "matched": "J. R. Martinez",
+  "via": "J. R. Martinez",
+  "wiki": "en.wikipedia.org"
+ },
+ "donald-driver": {
+  "answer": "Donald Driver",
+  "matched": "Donald Driver",
+  "via": "Donald Driver",
+  "wiki": "en.wikipedia.org"
+ },
+ "kellie-pickler": {
+  "answer": "Kellie Pickler",
+  "matched": "Kellie Pickler",
+  "via": "Kellie Pickler",
+  "wiki": "en.wikipedia.org"
+ },
+ "amber-riley": {
+  "answer": "Amber Riley",
+  "matched": "Amber Riley",
+  "via": "Amber Riley",
+  "wiki": "en.wikipedia.org"
+ },
+ "meryl-davis": {
+  "answer": "Meryl Davis",
+  "matched": "Meryl Davis",
+  "via": "Meryl Davis",
+  "wiki": "en.wikipedia.org"
+ },
+ "rumer-willis": {
+  "answer": "Rumer Willis",
+  "matched": "Rumer Willis",
+  "via": "Rumer Willis",
+  "wiki": "en.wikipedia.org"
+ },
+ "nyle-dimarco": {
+  "answer": "Nyle DiMarco",
+  "matched": "Nyle DiMarco",
+  "via": "Nyle DiMarco",
+  "wiki": "en.wikipedia.org"
+ },
+ "laurie-hernandez": {
+  "answer": "Laurie Hernandez",
+  "matched": "Laurie Hernandez",
+  "via": "Laurie Hernandez",
+  "wiki": "en.wikipedia.org"
+ },
+ "rashad-jennings": {
+  "answer": "Rashad Jennings",
+  "matched": "Rashad Jennings",
+  "via": "Rashad Jennings",
+  "wiki": "en.wikipedia.org"
+ },
+ "jordan-fisher": {
+  "answer": "Jordan Fisher",
+  "matched": "Jordan Fisher",
+  "via": "Jordan Fisher",
+  "wiki": "en.wikipedia.org"
+ },
+ "adam-rippon": {
+  "answer": "Adam Rippon",
+  "matched": "Adam Rippon",
+  "via": "Adam Rippon",
+  "wiki": "en.wikipedia.org"
+ },
+ "bindi-irwin": {
+  "answer": "Bindi Irwin",
+  "matched": "Bindi Irwin",
+  "via": "Bindi Irwin",
+  "wiki": "en.wikipedia.org"
+ },
+ "bobby-bones": {
+  "answer": "Bobby Bones",
+  "matched": "Bobby Bones",
+  "via": "Bobby Bones",
+  "wiki": "en.wikipedia.org"
+ },
+ "kaitlyn-bristowe": {
+  "answer": "Kaitlyn Bristowe",
+  "matched": "Kaitlyn Bristowe",
+  "via": "Kaitlyn Bristowe",
+  "wiki": "en.wikipedia.org"
+ },
+ "iman-shumpert": {
+  "answer": "Iman Shumpert",
+  "matched": "Iman Shumpert",
+  "via": "Iman Shumpert",
+  "wiki": "en.wikipedia.org"
+ },
+ "amanda-kloots": {
+  "answer": "Amanda Kloots",
+  "matched": "Amanda Kloots",
+  "via": "Amanda Kloots",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "charli-damelio": {
+  "answer": "Charli D’Amelio",
+  "matched": "Charli D'Amelio",
+  "via": "Charli D'Amelio",
+  "wiki": "en.wikipedia.org"
+ },
+ "xochitl-gomez": {
+  "answer": "Xochitl Gomez",
+  "matched": "Xochitl Gomez",
+  "via": "Xochitl Gomez",
+  "wiki": "en.wikipedia.org"
+ },
+ "joey-graziadei": {
+  "answer": "Joey Graziadei",
+  "matched": "Joey Graziadei",
+  "via": "Joey Graziadei",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "zendaya": {
+  "answer": "Zendaya",
+  "matched": "Zendaya",
+  "via": "Zendaya",
+  "wiki": "en.wikipedia.org"
+ },
+ "normani": {
+  "answer": "Normani",
+  "matched": "Normani",
+  "via": "Normani",
+  "wiki": "en.wikipedia.org"
+ },
+ "marlee-matlin": {
+  "answer": "Marlee Matlin",
+  "matched": "Marlee Matlin",
+  "via": "Marlee Matlin",
+  "wiki": "en.wikipedia.org"
+ },
+ "mario-lopez": {
+  "answer": "Mario Lopez",
+  "matched": "Mario Lopez",
+  "via": "Mario Lopez",
+  "wiki": "en.wikipedia.org"
+ },
+ "ricki-lake": {
+  "answer": "Ricki Lake",
+  "matched": "Ricki Lake",
+  "via": "Ricki Lake",
+  "wiki": "en.wikipedia.org"
+ },
+ "mel-b": {
+  "answer": "Mel B",
+  "matched": "Mel B",
+  "via": "Mel B",
+  "wiki": "en.wikipedia.org"
+ },
+ "pamela-anderson": {
+  "answer": "Pamela Anderson",
+  "matched": "Pamela Anderson",
+  "via": "Pamela Anderson",
+  "wiki": "en.wikipedia.org"
+ },
+ "kirstie-alley": {
+  "answer": "Kirstie Alley",
+  "matched": "Kirstie Alley",
+  "via": "Kirstie Alley",
+  "wiki": "en.wikipedia.org"
+ },
+ "bristol-palin": {
+  "answer": "Bristol Palin",
+  "matched": "Bristol Palin",
+  "via": "Bristol Palin",
+  "wiki": "en.wikipedia.org"
+ },
+ "sean-spicer": {
+  "answer": "Sean Spicer",
+  "matched": "Sean Spicer",
+  "via": "Sean Spicer",
+  "wiki": "en.wikipedia.org"
+ },
+ "suni-lee": {
+  "answer": "Suni Lee",
+  "matched": "Sunisa Lee",
+  "via": "Suni Lee",
+  "wiki": "en.wikipedia.org"
+ },
+ "wayne-brady": {
+  "answer": "Wayne Brady",
+  "matched": "Wayne Brady",
+  "via": "Wayne Brady",
+  "wiki": "en.wikipedia.org"
+ },
+ "bethany-mota": {
+  "answer": "Bethany Mota",
+  "matched": "Bethany Mota",
+  "via": "Bethany Mota",
+  "wiki": "en.wikipedia.org"
+ },
+ "sadie-robertson": {
+  "answer": "Sadie Robertson",
+  "matched": "Sadie Robertson Huff",
+  "via": "Sadie Robertson",
+  "wiki": "en.wikipedia.org"
+ },
+ "jamie-lynn-spears": {
+  "answer": "Jamie Lynn Spears",
+  "matched": "Jamie Lynn Spears",
+  "via": "Jamie Lynn Spears",
+  "wiki": "en.wikipedia.org"
+ },
+ "ariana-madix": {
+  "answer": "Ariana Madix",
+  "matched": "Ariana Madix",
+  "via": "Ariana Madix",
+  "wiki": "en.wikipedia.org"
+ },
+ "alyson-hannigan": {
+  "answer": "Alyson Hannigan",
+  "matched": "Alyson Hannigan",
+  "via": "Alyson Hannigan",
+  "wiki": "en.wikipedia.org"
+ },
+ "jason-mraz": {
+  "answer": "Jason Mraz",
+  "matched": "Jason Mraz",
+  "via": "Jason Mraz",
+  "wiki": "en.wikipedia.org"
+ },
+ "dwight-howard": {
+  "answer": "Dwight Howard",
+  "matched": "Dwight Howard",
+  "via": "Dwight Howard",
+  "wiki": "en.wikipedia.org"
+ },
+ "ilona-maher": {
+  "answer": "Ilona Maher",
+  "matched": "Ilona Maher",
+  "via": "Ilona Maher",
+  "wiki": "en.wikipedia.org"
+ },
+ "stephen-nedoroscik": {
+  "answer": "Stephen Nedoroscik",
+  "matched": "Stephen Nedoroscik",
+  "via": "Stephen Nedoroscik",
+  "wiki": "en.wikipedia.org"
+ },
+ "chandler-kinney": {
+  "answer": "Chandler Kinney",
+  "matched": "Chandler Kinney",
+  "via": "Chandler Kinney",
+  "wiki": "en.wikipedia.org"
+ },
+ "danielle-fishel": {
+  "answer": "Danielle Fishel",
+  "matched": "Danielle Fishel",
+  "via": "Danielle Fishel",
+  "wiki": "en.wikipedia.org"
+ },
+ "selma-blair": {
+  "answer": "Selma Blair",
+  "matched": "Selma Blair",
+  "via": "Selma Blair",
+  "wiki": "en.wikipedia.org"
+ },
+ "shangela": {
+  "answer": "Shangela",
+  "matched": "Shangela",
+  "via": "Shangela",
+  "wiki": "en.wikipedia.org"
+ },
+ "daniel-durant": {
+  "answer": "Daniel Durant",
+  "matched": "Daniel Durant",
+  "via": "Daniel Durant",
+  "wiki": "en.wikipedia.org"
+ },
+ "teresa-giudice": {
+  "answer": "Teresa Giudice",
+  "matched": "Teresa Giudice",
+  "via": "Teresa Giudice",
+  "wiki": "en.wikipedia.org"
+ },
+ "vinny-guadagnino": {
+  "answer": "Vinny Guadagnino",
+  "matched": "Vinny Guadagnino",
+  "via": "Vinny Guadagnino",
+  "wiki": "en.wikipedia.org"
+ },
+ "tyson-beckford": {
+  "answer": "Tyson Beckford",
+  "matched": "Tyson Beckford",
+  "via": "Tyson Beckford",
+  "wiki": "en.wikipedia.org"
+ },
+ "cheryl-ladd": {
+  "answer": "Cheryl Ladd",
+  "matched": "Cheryl Ladd",
+  "via": "Cheryl Ladd",
+  "wiki": "en.wikipedia.org"
+ },
+ "mira-sorvino": {
+  "answer": "Mira Sorvino",
+  "matched": "Mira Sorvino",
+  "via": "Mira Sorvino",
+  "wiki": "en.wikipedia.org"
+ },
+ "jordin-sparks": {
+  "answer": "Jordin Sparks",
+  "matched": "Jordin Sparks",
+  "via": "Jordin Sparks",
+  "wiki": "en.wikipedia.org"
+ },
+ "lele-pons": {
+  "answer": "Lele Pons",
+  "matched": "Lele Pons",
+  "via": "Lele Pons",
+  "wiki": "en.wikipedia.org"
+ },
+ "adam-carolla": {
+  "answer": "Sam Champion",
+  "matched": "Sam Champion",
+  "via": "Sam Champion",
+  "wiki": "en.wikipedia.org"
+ },
+ "jessie-james-decker": {
+  "answer": "Jessie James Decker",
+  "matched": "Jessie James Decker",
+  "via": "Jessie James Decker",
+  "wiki": "en.wikipedia.org"
+ },
+ "mauricio-umansky": {
+  "answer": "Mauricio Umansky",
+  "matched": "Mauricio Umansky",
+  "via": "Mauricio Umansky",
+  "wiki": "en.wikipedia.org"
+ },
+ "heidi-damelio": {
+  "answer": "Heidi D’Amelio",
+  "matched": "Heidi D'Amelio",
+  "via": "Heidi D'Amelio",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "trevor-donovan": {
+  "answer": "Trevor Donovan",
+  "matched": "Trevor Donovan",
+  "via": "Trevor Donovan",
+  "wiki": "en.wikipedia.org"
+ },
+ "wayne-newton": {
+  "answer": "Wayne Newton",
+  "matched": "Wayne Newton",
+  "via": "Wayne Newton",
+  "wiki": "en.wikipedia.org"
+ },
+ "chaka-khan": {
+  "answer": "Chaka Khan",
+  "matched": "Chaka Khan",
+  "via": "Chaka Khan",
+  "wiki": "en.wikipedia.org"
+ },
+ "tommy-chong": {
+  "answer": "Tommy Chong",
+  "matched": "Tommy Chong",
+  "via": "Tommy Chong",
+  "wiki": "en.wikipedia.org"
+ },
+ "evan-lysacek": {
+  "answer": "Evan Lysacek",
+  "matched": "Evan Lysacek",
+  "via": "Evan Lysacek",
+  "wiki": "en.wikipedia.org"
+ },
+ "nastia-liukin": {
+  "answer": "Nastia Liukin",
+  "matched": "Nastia Liukin",
+  "via": "Nastia Liukin",
+  "wiki": "en.wikipedia.org"
+ },
+ "katherine-jenkins": {
+  "answer": "Katherine Jenkins",
+  "matched": "Katherine Jenkins",
+  "via": "Katherine Jenkins",
+  "wiki": "en.wikipedia.org"
+ },
+ "harry-jowsey": {
+  "answer": "Harry Jowsey",
+  "matched": "Harry Jowsey",
+  "via": "Harry Jowsey",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "gabby-windey": {
+  "answer": "Gabby Windey",
+  "matched": "Gabby Windey",
+  "via": "Gabby Windey",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "barry-williams": {
+  "answer": "Barry Williams",
+  "matched": "Barry Williams",
+  "via": "Barry Williams",
+  "wiki": "dancingwiththestars.fandom.com"
+ },
+ "joseph-baena": {
+  "answer": "Joseph Baena",
+  "matched": "Joseph Baena",
+  "via": "Joseph Baena",
+  "wiki": "dancingwiththestars.fandom.com"
+ }
+}
