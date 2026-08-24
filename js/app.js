@@ -320,7 +320,8 @@
     'nba-today': 'lebron-james', 'nba-goats': 'michael-jordan',
     celebrities: 'tom-hanks', streamers: 'mrbeast',
     'nfl-today': 'patrick-mahomes', 'nfl-goats': 'tom-brady',
-    got: 'jon-snow', dnd: 'beholder', dragons: 'toothless', food: 'pizza', dwts: 'derek-hough', harrypotter: 'harry-potter', horror: 'michael-myers'
+    got: 'jon-snow', dnd: 'beholder', dragons: 'toothless', food: 'pizza', dwts: 'derek-hough', harrypotter: 'harry-potter', horror: 'michael-myers',
+    minecraft: 'creeper', kingdomhearts: 'sora'
   };
 
   /* Deliberately no defaults: an option that is already selected reads as a
@@ -1512,6 +1513,9 @@
     el.boardCardClue.textContent = item.clue;
     el.boardClue.textContent = cfg.clue ? item.clue : '';
     renderPeek(item);
+
+    /* A pixel-art deck scales with hard edges rather than blurring. */
+    document.body.classList.toggle('is-pixelart', !!G.cat.pixelArt);
 
     /* Text goes on the board instead of a picture whenever this answer has
        no picture to show — a whole text deck, or one text row inside a

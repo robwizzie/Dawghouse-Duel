@@ -1,0 +1,562 @@
+{
+ "creeper": {
+  "answer": "Creeper",
+  "matched": "Creeper",
+  "via": "Creeper"
+ },
+ "enderman": {
+  "answer": "Enderman",
+  "matched": "Enderman",
+  "via": "Enderman"
+ },
+ "zombie": {
+  "answer": "Zombie",
+  "matched": "Zombie",
+  "via": "Zombie"
+ },
+ "skeleton": {
+  "answer": "Skeleton",
+  "matched": "Skeleton",
+  "via": "Skeleton"
+ },
+ "spider": {
+  "answer": "Spider",
+  "matched": "Spider",
+  "via": "Spider"
+ },
+ "witch": {
+  "answer": "Witch",
+  "matched": "Witch",
+  "via": "Witch"
+ },
+ "slime": {
+  "answer": "Slime",
+  "matched": "Slime",
+  "via": "Slime"
+ },
+ "ghast": {
+  "answer": "Ghast",
+  "matched": "Ghast",
+  "via": "Ghast"
+ },
+ "blaze": {
+  "answer": "Blaze",
+  "matched": "Blaze",
+  "via": "Blaze"
+ },
+ "wither-skeleton": {
+  "answer": "Wither Skeleton",
+  "matched": "Wither Skeleton",
+  "via": "Wither Skeleton"
+ },
+ "piglin": {
+  "answer": "Piglin",
+  "matched": "Piglin",
+  "via": "Piglin"
+ },
+ "hoglin": {
+  "answer": "Hoglin",
+  "matched": "Hoglin",
+  "via": "Hoglin"
+ },
+ "drowned": {
+  "answer": "Drowned",
+  "matched": "Drowned",
+  "via": "Drowned"
+ },
+ "husk": {
+  "answer": "Husk",
+  "matched": "Husk",
+  "via": "Husk"
+ },
+ "stray": {
+  "answer": "Stray",
+  "matched": "Stray",
+  "via": "Stray"
+ },
+ "phantom": {
+  "answer": "Phantom",
+  "matched": "Phantom",
+  "via": "Phantom"
+ },
+ "silverfish": {
+  "answer": "Silverfish",
+  "matched": "Silverfish",
+  "via": "Silverfish"
+ },
+ "guardian": {
+  "answer": "Guardian",
+  "matched": "Guardian",
+  "via": "Guardian"
+ },
+ "elder-guardian": {
+  "answer": "Elder Guardian",
+  "matched": "Elder Guardian",
+  "via": "Elder Guardian"
+ },
+ "shulker": {
+  "answer": "Shulker",
+  "matched": "Shulker",
+  "via": "Shulker"
+ },
+ "vex": {
+  "answer": "Vex",
+  "matched": "Vex",
+  "via": "Vex"
+ },
+ "evoker": {
+  "answer": "Evoker",
+  "matched": "Evoker",
+  "via": "Evoker"
+ },
+ "vindicator": {
+  "answer": "Vindicator",
+  "matched": "Vindicator",
+  "via": "Vindicator"
+ },
+ "pillager": {
+  "answer": "Pillager",
+  "matched": "Pillager",
+  "via": "Pillager"
+ },
+ "ravager": {
+  "answer": "Ravager",
+  "matched": "Ravager",
+  "via": "Ravager"
+ },
+ "warden": {
+  "answer": "Warden",
+  "matched": "Warden",
+  "via": "Warden"
+ },
+ "wither": {
+  "answer": "Wither",
+  "matched": "Wither",
+  "via": "Wither"
+ },
+ "ender-dragon-mc": {
+  "answer": "Ender Dragon",
+  "matched": "Ender Dragon",
+  "via": "Ender Dragon"
+ },
+ "villager": {
+  "answer": "Villager",
+  "matched": "Villager",
+  "via": "Villager"
+ },
+ "iron-golem": {
+  "answer": "Iron Golem",
+  "matched": "Iron Golem",
+  "via": "Iron Golem"
+ },
+ "snow-golem": {
+  "answer": "Snow Golem",
+  "matched": "Snow Golem",
+  "via": "Snow Golem"
+ },
+ "cow": {
+  "answer": "Cow",
+  "matched": "Cow",
+  "via": "Cow"
+ },
+ "pig": {
+  "answer": "Pig",
+  "matched": "Pig",
+  "via": "Pig"
+ },
+ "sheep": {
+  "answer": "Sheep",
+  "matched": "Sheep",
+  "via": "Sheep"
+ },
+ "wolf": {
+  "answer": "Wolf",
+  "matched": "Wolf",
+  "via": "Wolf"
+ },
+ "cat-mc": {
+  "answer": "Cat",
+  "matched": "Cat",
+  "via": "Cat"
+ },
+ "fox": {
+  "answer": "Fox",
+  "matched": "Fox",
+  "via": "Fox"
+ },
+ "panda": {
+  "answer": "Panda",
+  "matched": "Panda",
+  "via": "Panda"
+ },
+ "bee": {
+  "answer": "Bee",
+  "matched": "Bee",
+  "via": "Bee"
+ },
+ "axolotl": {
+  "answer": "Axolotl",
+  "matched": "Axolotl",
+  "via": "Axolotl"
+ },
+ "allay": {
+  "answer": "Allay",
+  "matched": "Allay",
+  "via": "Allay"
+ },
+ "goat": {
+  "answer": "Goat",
+  "matched": "Goat",
+  "via": "Goat"
+ },
+ "llama": {
+  "answer": "Llama",
+  "matched": "Llama",
+  "via": "Llama"
+ },
+ "parrot": {
+  "answer": "Parrot",
+  "matched": "Parrot",
+  "via": "Parrot"
+ },
+ "turtle": {
+  "answer": "Turtle",
+  "matched": "Turtle",
+  "via": "Turtle"
+ },
+ "dolphin": {
+  "answer": "Dolphin",
+  "matched": "Dolphin",
+  "via": "Dolphin"
+ },
+ "glow-squid": {
+  "answer": "Glow Squid",
+  "matched": "Glow Squid",
+  "via": "Glow Squid"
+ },
+ "mooshroom": {
+  "answer": "Mooshroom",
+  "matched": "Mooshroom",
+  "via": "Mooshroom"
+ },
+ "sniffer": {
+  "answer": "Sniffer",
+  "matched": "Sniffer",
+  "via": "Sniffer"
+ },
+ "camel": {
+  "answer": "Camel",
+  "matched": "Camel",
+  "via": "Camel"
+ },
+ "armadillo": {
+  "answer": "Armadillo",
+  "matched": "Armadillo",
+  "via": "Armadillo"
+ },
+ "breeze": {
+  "answer": "Breeze",
+  "matched": "Breeze",
+  "via": "Breeze"
+ },
+ "alex": {
+  "answer": "Alex",
+  "matched": "Player",
+  "via": "Alex"
+ },
+ "enchanted-golden-apple": {
+  "answer": "Enchanted Golden Apple",
+  "matched": "Enchanted Golden Apple",
+  "via": "Enchanted Golden Apple"
+ },
+ "tnt": {
+  "answer": "TNT",
+  "matched": "TNT",
+  "via": "TNT"
+ },
+ "crafting-table": {
+  "answer": "Crafting Table",
+  "matched": "Crafting Table",
+  "via": "Crafting Table"
+ },
+ "furnace": {
+  "answer": "Furnace",
+  "matched": "Furnace",
+  "via": "Furnace"
+ },
+ "anvil": {
+  "answer": "Anvil",
+  "matched": "Anvil",
+  "via": "Anvil"
+ },
+ "enchanting-table": {
+  "answer": "Enchanting Table",
+  "matched": "Enchanting Table",
+  "via": "Enchanting Table"
+ },
+ "beacon": {
+  "answer": "Beacon",
+  "matched": "Beacon",
+  "via": "Beacon"
+ },
+ "bed": {
+  "answer": "Bed",
+  "matched": "Bed",
+  "via": "Bed"
+ },
+ "chest": {
+  "answer": "Chest",
+  "matched": "Chest",
+  "via": "Chest"
+ },
+ "ender-chest": {
+  "answer": "Ender Chest",
+  "matched": "Ender Chest",
+  "via": "Ender Chest"
+ },
+ "nether-portal": {
+  "answer": "Nether Portal",
+  "matched": "Nether portal",
+  "via": "Nether Portal"
+ },
+ "obsidian": {
+  "answer": "Obsidian",
+  "matched": "Obsidian",
+  "via": "Obsidian"
+ },
+ "bedrock": {
+  "answer": "Bedrock",
+  "matched": "Bedrock",
+  "via": "Bedrock"
+ },
+ "grass-block": {
+  "answer": "Grass Block",
+  "matched": "Grass Block",
+  "via": "Grass Block"
+ },
+ "cobblestone": {
+  "answer": "Cobblestone",
+  "matched": "Cobblestone",
+  "via": "Cobblestone"
+ },
+ "torch": {
+  "answer": "Torch",
+  "matched": "Torch",
+  "via": "Torch"
+ },
+ "sea-lantern": {
+  "answer": "Sea Lantern",
+  "matched": "Sea Lantern",
+  "via": "Sea Lantern"
+ },
+ "glowstone": {
+  "answer": "Glowstone",
+  "matched": "Glowstone",
+  "via": "Glowstone"
+ },
+ "sculk": {
+  "answer": "Sculk",
+  "matched": "Sculk",
+  "via": "Sculk"
+ },
+ "bookshelf": {
+  "answer": "Bookshelf",
+  "matched": "Bookshelf",
+  "via": "Bookshelf"
+ },
+ "jukebox": {
+  "answer": "Jukebox",
+  "matched": "Jukebox",
+  "via": "Jukebox"
+ },
+ "note-block": {
+  "answer": "Note Block",
+  "matched": "Note Block",
+  "via": "Note Block"
+ },
+ "piston": {
+  "answer": "Piston",
+  "matched": "Piston",
+  "via": "Piston"
+ },
+ "minecart": {
+  "answer": "Minecart",
+  "matched": "Minecart",
+  "via": "Minecart"
+ },
+ "boat": {
+  "answer": "Boat",
+  "matched": "Boat",
+  "via": "Boat"
+ },
+ "nether-star": {
+  "answer": "Nether Star",
+  "matched": "Nether Star",
+  "via": "Nether Star"
+ },
+ "shulker-box": {
+  "answer": "Shulker Box",
+  "matched": "Shulker Box",
+  "via": "Shulker Box"
+ },
+ "lodestone": {
+  "answer": "Lodestone",
+  "matched": "Lodestone",
+  "via": "Lodestone"
+ },
+ "respawn-anchor": {
+  "answer": "Respawn Anchor",
+  "matched": "Respawn Anchor",
+  "via": "Respawn Anchor"
+ },
+ "crying-obsidian": {
+  "answer": "Crying Obsidian",
+  "matched": "Crying Obsidian",
+  "via": "Crying Obsidian"
+ },
+ "ancient-debris": {
+  "answer": "Ancient Debris",
+  "matched": "Ancient Debris",
+  "via": "Ancient Debris"
+ },
+ "cherry-blossom": {
+  "answer": "Cherry Blossom",
+  "matched": "Cherry",
+  "via": "Cherry Blossom"
+ },
+ "chicken": {
+  "answer": "Chicken",
+  "matched": "Chicken",
+  "via": "Chicken"
+ },
+ "eye-of-ender": {
+  "answer": "Eye of Ender",
+  "matched": "Eye of Ender",
+  "via": "Eye of Ender"
+ },
+ "brewing-stand": {
+  "answer": "Brewing Stand",
+  "matched": "Brewing Stand",
+  "via": "Brewing Stand"
+ },
+ "conduit": {
+  "answer": "Conduit",
+  "matched": "Conduit",
+  "via": "Conduit"
+ },
+ "cake": {
+  "answer": "Cake",
+  "matched": "Cake",
+  "via": "Cake"
+ },
+ "amethyst-cluster": {
+  "answer": "Amethyst Cluster",
+  "matched": "Amethyst Cluster",
+  "via": "Amethyst Cluster"
+ },
+ "hopper": {
+  "answer": "Hopper",
+  "matched": "Hopper",
+  "via": "Hopper"
+ },
+ "shield": {
+  "answer": "Shield",
+  "matched": "Shield",
+  "via": "Shield"
+ },
+ "crossbow": {
+  "answer": "Crossbow",
+  "matched": "Crossbow",
+  "via": "Crossbow"
+ },
+ "compass": {
+  "answer": "Compass",
+  "matched": "Compass",
+  "via": "Compass"
+ },
+ "spyglass": {
+  "answer": "Spyglass",
+  "matched": "Spyglass",
+  "via": "Spyglass"
+ },
+ "dragon-egg": {
+  "answer": "Dragon Egg",
+  "matched": "Dragon Egg",
+  "via": "Dragon Egg"
+ },
+ "nether-wart": {
+  "answer": "Nether Wart",
+  "matched": "Nether Wart",
+  "via": "Nether Wart"
+ },
+ "diamond": {
+  "answer": "Diamond",
+  "matched": "Diamond",
+  "via": "Diamond"
+ },
+ "diamond-sword": {
+  "answer": "Diamond Sword",
+  "matched": "Sword",
+  "via": "Diamond Sword"
+ },
+ "diamond-pickaxe": {
+  "answer": "Diamond Pickaxe",
+  "matched": "Pickaxe",
+  "via": "Diamond Pickaxe"
+ },
+ "netherite-ingot": {
+  "answer": "Netherite Ingot",
+  "matched": "Netherite Ingot",
+  "via": "Netherite Ingot"
+ },
+ "elytra": {
+  "answer": "Elytra",
+  "matched": "Elytra",
+  "via": "Elytra"
+ },
+ "totem-of-undying": {
+  "answer": "Totem of Undying",
+  "matched": "Totem of Undying",
+  "via": "Totem of Undying"
+ },
+ "ender-pearl": {
+  "answer": "Ender Pearl",
+  "matched": "Ender Pearl",
+  "via": "Ender Pearl"
+ },
+ "blaze-rod": {
+  "answer": "Blaze Rod",
+  "matched": "Blaze Rod",
+  "via": "Blaze Rod"
+ },
+ "redstone-dust": {
+  "answer": "Redstone Dust",
+  "matched": "Redstone Dust",
+  "via": "Redstone Dust"
+ },
+ "bow": {
+  "answer": "Bow",
+  "matched": "Bow",
+  "via": "Bow"
+ },
+ "trident": {
+  "answer": "Trident",
+  "matched": "Trident",
+  "via": "Trident"
+ },
+ "flint-and-steel": {
+  "answer": "Flint and Steel",
+  "matched": "Flint and Steel",
+  "via": "Flint and Steel"
+ },
+ "chorus-fruit": {
+  "answer": "Chorus Fruit",
+  "matched": "Chorus Fruit",
+  "via": "Chorus Fruit"
+ },
+ "jack-o-lantern": {
+  "answer": "Jack o’Lantern",
+  "matched": "Jack o'Lantern",
+  "via": "Jack o'Lantern"
+ }
+}

@@ -189,7 +189,7 @@ async function credits(wiki, files) {
   const have = new Set();
   cat.items.forEach(item => {
     const dest = path.join(OUT, item.slug + EXT);
-    if (fs.existsSync(dest) && fs.statSync(dest).size > MIN_BYTES) { have.add(item.slug); cached++; }
+    if (fs.existsSync(dest) && fs.statSync(dest).size > (cat.minBytes || MIN_BYTES)) { have.add(item.slug); cached++; }
   });
   const todo = cat.items;
   console.log('Need ' + (cat.items.length - cached) + ', already have ' + cached + '.');
@@ -254,7 +254,11 @@ async function credits(wiki, files) {
     try {
       const wantOriginal = keepAlpha && /fandom\.com|wikia\./.test(hit.url);
       const buf = await fetchWithBackoff(wantOriginal ? originalUrl(hit.url) : hit.url, item.name);
-      if (buf.length < MIN_BYTES) throw new Error('image too small');
+      /* A deck can lower the floor. Minecraft's item art is genuinely a
+         few hundred bytes of pixel art, and rejecting it as "too small"
+         throws away the correct picture. */
+      const floor = cat.minBytes || MIN_BYTES;
+      if (buf.length < floor) throw new Error('image too small');
       const real = sniff(buf);
       if (!real) throw new Error('unrecognised image data');
 

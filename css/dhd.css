@@ -1678,3 +1678,10 @@ kbd{font-family:var(--ff-cond);font-weight:900;background:var(--lime);color:var(
 
 .media__how{margin:0;color:rgba(255,255,255,.55);font-size:clamp(12px,1.2vw,14px);line-height:1.45}
 .media__how b{color:#fff}
+
+
+/* ── pixel-art decks ────────────────────────────────────────
+   Minecraft's item art is a 160px sprite. Scaled up smoothly it turns to
+   mush; scaled with hard edges it looks exactly like the game. */
+body.is-pixelart .board__img{image-rendering:pixelated}
+.catcard[data-cat="minecraft"] .catcard__art img{image-rendering:pixelated}

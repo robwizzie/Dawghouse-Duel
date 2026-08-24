@@ -1,0 +1,397 @@
+{
+ "sora": {
+  "answer": "Sora",
+  "matched": "Sora",
+  "via": "Sora"
+ },
+ "riku": {
+  "answer": "Riku",
+  "matched": "Riku",
+  "via": "Riku"
+ },
+ "kairi": {
+  "answer": "Kairi",
+  "matched": "Kairi",
+  "via": "Kairi"
+ },
+ "donald-duck-kh": {
+  "answer": "Donald Duck",
+  "matched": "Donald Duck",
+  "via": "Donald Duck"
+ },
+ "goofy-kh": {
+  "answer": "Goofy",
+  "matched": "Goofy",
+  "via": "Goofy"
+ },
+ "mickey-mouse-kh": {
+  "answer": "King Mickey",
+  "matched": "Mickey Mouse",
+  "via": "Mickey Mouse"
+ },
+ "jiminy-cricket-kh": {
+  "answer": "Jiminy Cricket",
+  "matched": "Jiminy Cricket",
+  "via": "Jiminy Cricket"
+ },
+ "chip-and-dale": {
+  "answer": "Chip and Dale",
+  "matched": "Chip and Dale",
+  "via": "Chip and Dale"
+ },
+ "yen-sid": {
+  "answer": "Yen Sid",
+  "matched": "Yen Sid",
+  "via": "Yen Sid"
+ },
+ "pete": {
+  "answer": "Pete",
+  "matched": "Pete",
+  "via": "Pete"
+ },
+ "maleficent-kh": {
+  "answer": "Maleficent",
+  "matched": "Maleficent",
+  "via": "Maleficent"
+ },
+ "roxas": {
+  "answer": "Roxas",
+  "matched": "Roxas",
+  "via": "Roxas"
+ },
+ "namine": {
+  "answer": "Naminé",
+  "matched": "Naminé",
+  "via": "Naminé"
+ },
+ "xion": {
+  "answer": "Xion",
+  "matched": "Xion",
+  "via": "Xion"
+ },
+ "axel": {
+  "answer": "Axel",
+  "matched": "Axel",
+  "via": "Axel"
+ },
+ "xemnas": {
+  "answer": "Xemnas",
+  "matched": "Xemnas",
+  "via": "Xemnas"
+ },
+ "saix": {
+  "answer": "Saïx",
+  "matched": "Saïx",
+  "via": "Saïx"
+ },
+ "xigbar": {
+  "answer": "Xigbar",
+  "matched": "Xigbar",
+  "via": "Xigbar"
+ },
+ "xaldin": {
+  "answer": "Xaldin",
+  "matched": "Xaldin",
+  "via": "Xaldin"
+ },
+ "vexen": {
+  "answer": "Vexen",
+  "matched": "Vexen",
+  "via": "Vexen"
+ },
+ "lexaeus": {
+  "answer": "Lexaeus",
+  "matched": "Lexaeus",
+  "via": "Lexaeus"
+ },
+ "zexion": {
+  "answer": "Zexion",
+  "matched": "Zexion",
+  "via": "Zexion"
+ },
+ "demyx": {
+  "answer": "Demyx",
+  "matched": "Demyx",
+  "via": "Demyx"
+ },
+ "luxord": {
+  "answer": "Luxord",
+  "matched": "Luxord",
+  "via": "Luxord"
+ },
+ "marluxia": {
+  "answer": "Marluxia",
+  "matched": "Marluxia",
+  "via": "Marluxia"
+ },
+ "larxene": {
+  "answer": "Larxene",
+  "matched": "Larxene",
+  "via": "Larxene"
+ },
+ "master-xehanort": {
+  "answer": "Master Xehanort",
+  "matched": "Master Xehanort",
+  "via": "Master Xehanort"
+ },
+ "young-xehanort": {
+  "answer": "Young Xehanort",
+  "matched": "Young Xehanort",
+  "via": "Young Xehanort"
+ },
+ "ansem-seeker": {
+  "answer": "Ansem, Seeker of Darkness",
+  "matched": "Ansem, Seeker of Darkness",
+  "via": "Ansem, Seeker of Darkness"
+ },
+ "vanitas": {
+  "answer": "Vanitas",
+  "matched": "Vanitas",
+  "via": "Vanitas"
+ },
+ "terra": {
+  "answer": "Terra",
+  "matched": "Terra",
+  "via": "Terra"
+ },
+ "aqua": {
+  "answer": "Aqua",
+  "matched": "Aqua",
+  "via": "Aqua"
+ },
+ "ventus": {
+  "answer": "Ventus",
+  "matched": "Ventus",
+  "via": "Ventus"
+ },
+ "master-eraqus": {
+  "answer": "Master Eraqus",
+  "matched": "Master Eraqus",
+  "via": "Master Eraqus"
+ },
+ "ansem-the-wise": {
+  "answer": "Ansem the Wise",
+  "matched": "Ansem the Wise",
+  "via": "Ansem the Wise"
+ },
+ "heartless": {
+  "answer": "Heartless",
+  "matched": "Heartless",
+  "via": "Heartless"
+ },
+ "shadow": {
+  "answer": "Shadow",
+  "matched": "Shadow",
+  "via": "Shadow"
+ },
+ "darkside": {
+  "answer": "Darkside",
+  "matched": "Darkside",
+  "via": "Darkside"
+ },
+ "nobody": {
+  "answer": "Nobody",
+  "matched": "Nobody",
+  "via": "Nobody"
+ },
+ "dusk": {
+  "answer": "Twilight Thorn",
+  "matched": "Twilight Thorn",
+  "via": "Twilight Thorn"
+ },
+ "unversed": {
+  "answer": "Unversed",
+  "matched": "Unversed",
+  "via": "Unversed"
+ },
+ "dream-eater": {
+  "answer": "Dream Eater",
+  "matched": "Dream Eater",
+  "via": "Dream Eater"
+ },
+ "keyblade": {
+  "answer": "Keyblade",
+  "matched": "Keyblade",
+  "via": "Keyblade"
+ },
+ "kingdom-key": {
+  "answer": "Kingdom Key",
+  "matched": "Kingdom Key",
+  "via": "Kingdom Key"
+ },
+ "oathkeeper": {
+  "answer": "Oathkeeper",
+  "matched": "Oathkeeper",
+  "via": "Oathkeeper"
+ },
+ "oblivion": {
+  "answer": "Oblivion",
+  "matched": "Oblivion",
+  "via": "Oblivion"
+ },
+ "way-to-the-dawn": {
+  "answer": "Way to the Dawn",
+  "matched": "Way to the Dawn",
+  "via": "Way to the Dawn"
+ },
+ "ultima-weapon-kh": {
+  "answer": "Ultima Weapon",
+  "matched": "Ultima Weapon",
+  "via": "Ultima Weapon"
+ },
+ "destiny-islands": {
+  "answer": "Destiny Islands",
+  "matched": "Destiny Islands",
+  "via": "Destiny Islands"
+ },
+ "traverse-town": {
+  "answer": "Traverse Town",
+  "matched": "Traverse Town",
+  "via": "Traverse Town"
+ },
+ "hollow-bastion": {
+  "answer": "Hollow Bastion",
+  "matched": "Hollow Bastion",
+  "via": "Hollow Bastion"
+ },
+ "twilight-town": {
+  "answer": "Twilight Town",
+  "matched": "Twilight Town",
+  "via": "Twilight Town"
+ },
+ "world-that-never-was": {
+  "answer": "The World That Never Was",
+  "matched": "The World That Never Was",
+  "via": "The World That Never Was"
+ },
+ "castle-oblivion": {
+  "answer": "Castle Oblivion",
+  "matched": "Castle Oblivion",
+  "via": "Castle Oblivion"
+ },
+ "keyblade-graveyard": {
+  "answer": "Keyblade Graveyard",
+  "matched": "Keyblade Graveyard",
+  "via": "Keyblade Graveyard"
+ },
+ "disney-castle": {
+  "answer": "Disney Castle",
+  "matched": "Disney Castle",
+  "via": "Disney Castle"
+ },
+ "halloween-town": {
+  "answer": "Halloween Town",
+  "matched": "Halloween Town",
+  "via": "Halloween Town"
+ },
+ "agrabah": {
+  "answer": "Agrabah",
+  "matched": "Agrabah",
+  "via": "Agrabah"
+ },
+ "atlantica": {
+  "answer": "Atlantica",
+  "matched": "Atlantica",
+  "via": "Atlantica"
+ },
+ "neverland": {
+  "answer": "Neverland",
+  "matched": "Neverland",
+  "via": "Neverland"
+ },
+ "wonderland": {
+  "answer": "Wonderland",
+  "matched": "Wonderland",
+  "via": "Wonderland"
+ },
+ "olympus-coliseum": {
+  "answer": "Olympus Coliseum",
+  "matched": "Olympus Coliseum",
+  "via": "Olympus Coliseum"
+ },
+ "monstro": {
+  "answer": "Monstro",
+  "matched": "Monstro",
+  "via": "Monstro"
+ },
+ "hundred-acre-wood": {
+  "answer": "100 Acre Wood",
+  "matched": "100 Acre Wood",
+  "via": "100 Acre Wood"
+ },
+ "port-royal": {
+  "answer": "Port Royal",
+  "matched": "Port Royal",
+  "via": "Port Royal"
+ },
+ "pride-lands": {
+  "answer": "Pride Lands",
+  "matched": "Pride Lands",
+  "via": "Pride Lands"
+ },
+ "space-paranoids": {
+  "answer": "Space Paranoids",
+  "matched": "Space Paranoids",
+  "via": "Space Paranoids"
+ },
+ "sephiroth-kh": {
+  "answer": "Sephiroth",
+  "matched": "Sephiroth",
+  "via": "Sephiroth"
+ },
+ "cloud-strife": {
+  "answer": "Cloud Strife",
+  "matched": "Cloud",
+  "via": "Cloud Strife"
+ },
+ "tifa-lockhart": {
+  "answer": "Tifa Lockhart",
+  "matched": "Tifa",
+  "via": "Tifa Lockhart"
+ },
+ "yuffie": {
+  "answer": "Yuffie Kisaragi",
+  "matched": "Yuffie",
+  "via": "Yuffie Kisaragi"
+ },
+ "setzer": {
+  "answer": "Setzer",
+  "matched": "Setzer",
+  "via": "Setzer"
+ },
+ "hayner": {
+  "answer": "Hayner",
+  "matched": "Hayner",
+  "via": "Hayner"
+ },
+ "pence": {
+  "answer": "Pence",
+  "matched": "Pence",
+  "via": "Pence"
+ },
+ "olette": {
+  "answer": "Olette",
+  "matched": "Olette",
+  "via": "Olette"
+ },
+ "seifer": {
+  "answer": "Seifer",
+  "matched": "Seifer",
+  "via": "Seifer"
+ },
+ "moogle": {
+  "answer": "Moogle",
+  "matched": "Moogle",
+  "via": "Moogle"
+ },
+ "chirithy": {
+  "answer": "Chirithy",
+  "matched": "Chirithy",
+  "via": "Chirithy"
+ },
+ "yozora": {
+  "answer": "Yozora",
+  "matched": "Yozora",
+  "via": "Yozora"
+ }
+}
