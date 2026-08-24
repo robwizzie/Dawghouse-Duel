@@ -1,232 +1,502 @@
 {
  "eren-yeager": {
   "answer": "Eren Yeager",
-  "matched": "Eren Yeager",
-  "via": "Eren Yeager"
+  "matched": "Eren Jaeger (Anime)",
+  "via": "Eren Jaeger (Anime)"
  },
  "mikasa-ackerman": {
   "answer": "Mikasa Ackerman",
-  "matched": "Mikasa Ackerman",
-  "via": "Mikasa Ackerman"
+  "matched": "Mikasa Ackermann (Anime)",
+  "via": "Mikasa Ackermann (Anime)"
  },
  "armin-arlelt": {
   "answer": "Armin Arlelt",
   "matched": "Armin Arlelt (Anime)",
-  "via": "Armin Arlelt"
+  "via": "Armin Arlelt (Anime)"
  },
  "levi-ackerman": {
   "answer": "Levi Ackerman",
-  "matched": "Levi Ackerman",
-  "via": "Levi Ackerman"
+  "matched": "Levi Ackermann (Anime)",
+  "via": "Levi Ackermann (Anime)"
  },
  "erwin-smith": {
   "answer": "Erwin Smith",
-  "matched": "Erwin Smith",
-  "via": "Erwin Smith"
+  "matched": "Erwin Smith (Anime)",
+  "via": "Erwin Smith (Anime)"
  },
  "reiner-braun": {
   "answer": "Reiner Braun",
-  "matched": "Reiner Braun",
-  "via": "Reiner Braun"
+  "matched": "Reiner Braun (Anime)",
+  "via": "Reiner Braun (Anime)"
  },
  "annie-leonhart": {
   "answer": "Annie Leonhart",
-  "matched": "Annie Leonhart",
-  "via": "Annie Leonhart"
+  "matched": "Annie Leonhart (Anime)",
+  "via": "Annie Leonhart (Anime)"
  },
  "historia-reiss": {
   "answer": "Historia Reiss",
-  "matched": "Historia Reiss",
-  "via": "Historia Reiss"
+  "matched": "Historia Reiss (Anime)",
+  "via": "Historia Reiss (Anime)"
  },
  "sasha-blouse": {
   "answer": "Sasha Blouse",
-  "matched": "Sasha Blouse",
-  "via": "Sasha Blouse"
+  "matched": "Sasha Braus (Anime)",
+  "via": "Sasha Braus (Anime)"
  },
  "connie-springer": {
   "answer": "Connie Springer",
-  "matched": "Connie Springer",
-  "via": "Connie Springer"
+  "matched": "Conny Springer (Anime)",
+  "via": "Conny Springer (Anime)"
  },
  "jean-kirstein": {
   "answer": "Jean Kirstein",
-  "matched": "Jean Kirstein",
-  "via": "Jean Kirstein"
+  "matched": "Jean Kirschtein (Anime)",
+  "via": "Jean Kirschtein (Anime)"
  },
  "hange-zoe": {
   "answer": "Hange Zoë",
-  "matched": "Hange Zoë",
-  "via": "Hange Zoë"
+  "matched": "Hange Zoë (Anime)",
+  "via": "Hange Zoë (Anime)"
  },
  "colossal-titan": {
   "answer": "Colossal Titan",
   "matched": "Colossal Titan (Anime)",
-  "via": "Colossal Titan"
+  "via": "Colossal Titan (Anime)"
  },
  "armored-titan": {
   "answer": "Armored Titan",
-  "matched": "Armored Titan",
-  "via": "Armored Titan"
+  "matched": "Armored Titan (Anime)",
+  "via": "Armored Titan (Anime)"
  },
  "female-titan": {
   "answer": "Female Titan",
-  "matched": "Female Titan",
-  "via": "Female Titan"
+  "matched": "Female Titan (Anime)",
+  "via": "Female Titan (Anime)"
  },
  "beast-titan": {
   "answer": "Beast Titan",
-  "matched": "Beast Titan",
-  "via": "Beast Titan"
+  "matched": "Beast Titan (Anime)",
+  "via": "Beast Titan (Anime)"
  },
  "attack-titan": {
   "answer": "Attack Titan",
-  "matched": "Attack Titan",
-  "via": "Attack Titan"
+  "matched": "Attack Titan (Anime)",
+  "via": "Attack Titan (Anime)"
  },
  "cart-titan": {
   "answer": "Cart Titan",
-  "matched": "Cart Titan",
-  "via": "Cart Titan"
+  "matched": "Cart Titan (Anime)",
+  "via": "Cart Titan (Anime)"
  },
  "jaw-titan": {
   "answer": "Jaw Titan",
-  "matched": "Jaw Titan",
-  "via": "Jaw Titan"
+  "matched": "Jaw Titan (Anime)",
+  "via": "Jaw Titan (Anime)"
  },
  "war-hammer-titan": {
   "answer": "War Hammer Titan",
-  "matched": "War Hammer Titan",
-  "via": "War Hammer Titan"
+  "matched": "War Hammer Titan (Anime)",
+  "via": "War Hammer Titan (Anime)"
  },
  "zeke-yeager": {
   "answer": "Zeke Yeager",
-  "matched": "Zeke Yeager",
-  "via": "Zeke Yeager"
+  "matched": "Zeke Jaeger (Anime)",
+  "via": "Zeke Jaeger (Anime)"
  },
  "bertholdt-hoover": {
   "answer": "Bertholdt Hoover",
   "matched": "Bertholdt Hoover (Anime)",
-  "via": "Bertholdt Hoover"
+  "via": "Bertholdt Hoover (Anime)"
  },
  "ymir": {
   "answer": "Ymir",
-  "matched": "Ymir",
-  "via": "Ymir"
+  "matched": "Ymir Fritz (Anime)",
+  "via": "Ymir Fritz (Anime)"
  },
  "gabi-braun": {
   "answer": "Gabi Braun",
-  "matched": "Gabi Braun",
-  "via": "Gabi Braun"
+  "matched": "Gabi Braun (Anime)",
+  "via": "Gabi Braun (Anime)"
  },
  "falco-grice": {
   "answer": "Falco Grice",
-  "matched": "Falco Grice",
-  "via": "Falco Grice"
+  "matched": "Falco Grice (Anime)",
+  "via": "Falco Grice (Anime)"
  },
  "pieck-finger": {
   "answer": "Pieck Finger",
-  "matched": "Pieck Finger",
-  "via": "Pieck Finger"
+  "matched": "Finger (Anime)",
+  "via": "Finger (Anime)"
  },
  "porco-galliard": {
   "answer": "Porco Galliard",
-  "matched": "Porco Galliard",
-  "via": "Porco Galliard"
+  "matched": "Porco Galliard (Anime)",
+  "via": "Porco Galliard (Anime)"
  },
  "grisha-yeager": {
   "answer": "Grisha Yeager",
-  "matched": "Grisha Yeager",
-  "via": "Grisha Yeager"
+  "matched": "Grisha Jaeger (Anime)",
+  "via": "Grisha Jaeger (Anime)"
  },
  "carla-yeager": {
   "answer": "Carla Yeager",
-  "matched": "Carla Yeager",
-  "via": "Carla Yeager"
+  "matched": "Carla Jaeger (Anime)",
+  "via": "Carla Jaeger (Anime)"
  },
  "kenny-ackerman": {
   "answer": "Kenny Ackerman",
-  "matched": "Kenny Ackerman",
-  "via": "Kenny Ackerman"
+  "matched": "Kenny Ackermann (Anime)",
+  "via": "Kenny Ackermann (Anime)"
  },
  "ymir-fritz": {
   "answer": "Ymir Fritz",
-  "matched": "Ymir Fritz",
-  "via": "Ymir Fritz"
+  "matched": "Fritz (Anime)",
+  "via": "Fritz (Anime)"
  },
  "floch-forster": {
   "answer": "Floch Forster",
-  "matched": "Floch Forster",
-  "via": "Floch Forster"
+  "matched": "Floch Forster (Anime)",
+  "via": "Floch Forster (Anime)"
  },
  "dot-pixis": {
   "answer": "Dot Pixis",
-  "matched": "Dot Pixis",
-  "via": "Dot Pixis"
+  "matched": "Dot Pyxis (Anime)",
+  "via": "Dot Pyxis (Anime)"
  },
  "keith-shadis": {
   "answer": "Keith Shadis",
-  "matched": "Keith Shadis",
-  "via": "Keith Shadis"
+  "matched": "Keith Sadies (Anime)",
+  "via": "Keith Sadies (Anime)"
  },
  "marco-bott": {
   "answer": "Marco Bott",
-  "matched": "Marco Bott",
-  "via": "Marco Bott"
+  "matched": "Marco Bodt (Anime)",
+  "via": "Marco Bodt (Anime)"
  },
  "petra-ral": {
   "answer": "Petra Ral",
-  "matched": "Petra Ral",
-  "via": "Petra Ral"
+  "matched": "Petra Rall (Anime)",
+  "via": "Petra Rall (Anime)"
  },
  "miche-zacharias": {
   "answer": "Miche Zacharias",
-  "matched": "Mike Zacharias",
-  "via": "Mike Zacharias"
+  "matched": "Miche Zacharius (Anime)",
+  "via": "Miche Zacharius (Anime)"
  },
  "nile-dok": {
   "answer": "Nile Dok",
-  "matched": "Nile Dok",
-  "via": "Nile Dok"
+  "matched": "Nile Dawk (Anime)",
+  "via": "Nile Dawk (Anime)"
  },
  "yelena": {
   "answer": "Yelena",
-  "matched": "Yelena",
-  "via": "Yelena"
+  "matched": "Yelena (Anime)",
+  "via": "Yelena (Anime)"
  },
  "onyankopon": {
   "answer": "Onyankopon",
-  "matched": "Onyankopon",
-  "via": "Onyankopon"
+  "matched": "Onyankopon (Anime)",
+  "via": "Onyankopon (Anime)"
  },
  "survey-corps": {
   "answer": "Survey Corps",
-  "matched": "Survey Corps",
-  "via": "Survey Corps"
+  "matched": "Scout Regiment (Anime)",
+  "via": "Scout Regiment (Anime)"
  },
  "military-police-brigade": {
   "answer": "Military Police Brigade",
-  "matched": "Military Police Brigade",
-  "via": "Military Police Brigade"
+  "matched": "Military Police Regiment (Anime)",
+  "via": "Military Police Regiment (Anime)"
  },
  "garrison": {
   "answer": "Garrison",
-  "matched": "Garrison",
-  "via": "Garrison"
+  "matched": "Garrison Regiment (Anime)",
+  "via": "Garrison Regiment (Anime)"
  },
  "vertical-maneuvering-equipment": {
   "answer": "ODM Gear",
-  "matched": "Vertical maneuvering equipment",
-  "via": "Vertical Maneuvering Equipment"
+  "matched": "Omni-directional mobility gear (Anime)",
+  "via": "Omni-directional mobility gear (Anime)"
  },
  "wall-maria": {
   "answer": "Wall Maria",
-  "matched": "Walls",
-  "via": "Wall Maria"
+  "matched": "Fall of Wall Maria (Anime)",
+  "via": "Fall of Wall Maria (Anime)"
  },
  "titan": {
   "answer": "Pure Titan",
-  "matched": "Titan",
-  "via": "Pure Titan"
+  "matched": "Titan (Anime)",
+  "via": "Titan (Anime)"
+ },
+ "hannes": {
+  "answer": "Hannes",
+  "matched": "Hannes (Anime)",
+  "via": "Hannes (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "rico-brzenska": {
+  "answer": "Rico Brzenska",
+  "matched": "Rico Brzenska (Anime)",
+  "via": "Rico Brzenska (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "ian-dietrich": {
+  "answer": "Ian Dietrich",
+  "matched": "Ian Dietrich (Anime)",
+  "via": "Ian Dietrich (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "mitabi-jarnach": {
+  "answer": "Mitabi Jarnach",
+  "matched": "Mitabi Jarnach (Anime)",
+  "via": "Mitabi Jarnach (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "anka-rheinberger": {
+  "answer": "Anka Rheinberger",
+  "matched": "Anka Rheinberger (Anime)",
+  "via": "Anka Rheinberger (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "hitch-dreyse": {
+  "answer": "Hitch Dreyse",
+  "matched": "Hitch Dreyse (Anime)",
+  "via": "Hitch Dreyse (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "djel-sannes": {
+  "answer": "Djel Sannes",
+  "matched": "Djel Sannes (Anime)",
+  "via": "Djel Sannes (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "traute-carven": {
+  "answer": "Traute Carven",
+  "matched": "Traute Carven (Anime)",
+  "via": "Traute Carven (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "moblit-berner": {
+  "answer": "Moblit Berner",
+  "matched": "Moblit Berner (Anime)",
+  "via": "Moblit Berner (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "mina-carolina": {
+  "answer": "Mina Carolina",
+  "matched": "Mina Carolina (Anime)",
+  "via": "Mina Carolina (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "thomas-wagner": {
+  "answer": "Thomas Wagner",
+  "matched": "Thomas Wagner (Anime)",
+  "via": "Thomas Wagner (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "franz-kefka": {
+  "answer": "Franz Kefka",
+  "matched": "Franz Kefka (Anime)",
+  "via": "Franz Kefka (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "samuel-linke": {
+  "answer": "Samuel Linke-Jackson",
+  "matched": "Samuel Linke-Jackson (Anime)",
+  "via": "Samuel Linke-Jackson (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "rod-reiss": {
+  "answer": "Rod Reiss",
+  "matched": "Rod Reiss (Anime)",
+  "via": "Rod Reiss (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "frieda-reiss": {
+  "answer": "Frieda Reiss",
+  "matched": "Frieda Reiss (Anime)",
+  "via": "Frieda Reiss (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "uri-reiss": {
+  "answer": "Uri Reiss",
+  "matched": "Uri Reiss (Anime)",
+  "via": "Uri Reiss (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "willy-tybur": {
+  "answer": "Willy Tybur",
+  "matched": "Willy Tybur (Anime)",
+  "via": "Willy Tybur (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "lara-tybur": {
+  "answer": "Lara Tybur",
+  "matched": "Lara Tybur (Anime)",
+  "via": "Lara Tybur (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "theo-magath": {
+  "answer": "Theo Magath",
+  "matched": "Theo Magath (Anime)",
+  "via": "Theo Magath (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "colt-grice": {
+  "answer": "Colt Grice",
+  "matched": "Colt Grice (Anime)",
+  "via": "Colt Grice (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "udo": {
+  "answer": "Udo",
+  "matched": "Udo (Anime)",
+  "via": "Udo (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "zofia": {
+  "answer": "Zofia",
+  "matched": "Zofia (Anime)",
+  "via": "Zofia (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "marcel-galliard": {
+  "answer": "Marcel Galliard",
+  "matched": "Marcel Galliard (Anime)",
+  "via": "Marcel Galliard (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "karina-braun": {
+  "answer": "Karina Braun",
+  "matched": "Karina Braun (Anime)",
+  "via": "Karina Braun (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "mr-leonhart": {
+  "answer": "Mr. Leonhart",
+  "matched": "Leonhart (Anime)",
+  "via": "Mr. Leonhart (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "eren-kruger": {
+  "answer": "Eren Kruger",
+  "matched": "Eren Kruger (Anime)",
+  "via": "Eren Kruger (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "dina-fritz": {
+  "answer": "Dina Fritz",
+  "matched": "Dina Fritz (Anime)",
+  "via": "Dina Fritz (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "tom-ksaver": {
+  "answer": "Tom Ksaver",
+  "matched": "Tom Xaver (Anime)",
+  "via": "Tom Ksaver (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "kuchel-ackermann": {
+  "answer": "Kuchel Ackerman",
+  "matched": "Kuchel Ackermann (Anime)",
+  "via": "Kuchel Ackermann (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "isabel-magnolia": {
+  "answer": "Isabel Magnolia",
+  "matched": "Isabel Magnolia (Anime)",
+  "via": "Isabel Magnolia (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "furlan-church": {
+  "answer": "Furlan Church",
+  "matched": "Furlan Church (Anime)",
+  "via": "Furlan Church (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "nicolo": {
+  "answer": "Nicolo",
+  "matched": "Nicolo (Anime)",
+  "via": "Nicolo (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "louise": {
+  "answer": "Louise",
+  "matched": "Louise (Anime)",
+  "via": "Louise (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "kiyomi-azumabito": {
+  "answer": "Kiyomi Azumabito",
+  "matched": "Kiyomi Azumabito (Anime)",
+  "via": "Kiyomi Azumabito (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "keith-shadis-2": {
+  "answer": "Keith Sadies",
+  "matched": "Keith Sadies (Anime)",
+  "via": "Keith Sadies (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "wall-rose": {
+  "answer": "Wall Rose",
+  "matched": "Walls",
+  "via": "Wall Rose",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "wall-sina": {
+  "answer": "Wall Sina",
+  "matched": "Walls (Anime)",
+  "via": "Wall Sina (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "shiganshina": {
+  "answer": "Shiganshina District",
+  "matched": "Shiganshina District (Anime)",
+  "via": "Shiganshina District (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "trost": {
+  "answer": "Trost District",
+  "matched": "Trost District (Anime)",
+  "via": "Trost District (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "marley": {
+  "answer": "Marley",
+  "matched": "Marley (Anime)",
+  "via": "Marley (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "paradis": {
+  "answer": "Paradis Island",
+  "matched": "Paradis Island (Anime)",
+  "via": "Paradis Island (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "thunder-spear": {
+  "answer": "Thunder Spear",
+  "matched": "Thunder Spear (Anime)",
+  "via": "Thunder Spear (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "cadet-corps": {
+  "answer": "Cadet Corps",
+  "matched": "Cadet Corps (Anime)",
+  "via": "Cadet Corps (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "founding-titan": {
+  "answer": "Founding Titan",
+  "matched": "Founding Titan (Anime)",
+  "via": "Founding Titan (Anime)",
+  "wiki": "attackontitan.fandom.com"
+ },
+ "paths": {
+  "answer": "Paths",
+  "matched": "Path (Anime)",
+  "via": "Paths (Anime)",
+  "wiki": "attackontitan.fandom.com"
  }
 }

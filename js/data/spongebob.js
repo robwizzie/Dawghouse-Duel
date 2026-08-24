@@ -51,6 +51,58 @@ window.DHD_CATEGORIES.push({
     {slug:'bikini-bottom',      name:'Bikini Bottom',alt:[],          note:'Setting',tier:'deep',clue:'The town itself, under a certain atoll.'},
     {slug:'krusty-krab',    name:'The Krusty Krab', alt:['Krusty Krab'],   note:'Setting',tier:'mid',  clue:'A giant lobster trap that serves burgers.'},
     {slug:'chum-bucket',    name:'The Chum Bucket', alt:['Chum Bucket'],   note:'Setting',tier:'mid',  clue:'Across the road, and permanently empty.'},
-    {slug:'krabby-patty',   name:'Krabby Patty',   alt:[],                 note:'Object', tier:'mid',  clue:'The burger the entire show is about.'}
+    {slug:'krabby-patty',   name:'Krabby Patty',   alt:[],                 note:'Object', tier:'mid',  clue:'The burger the entire show is about.'},
+    /* ── CREATURES ── */
+    {slug:'alaskan-bull-worm', name:'Alaskan Bull Worm', alt:[], note:'Creatures', tier:'mid', clue:'It’s big, it’s pink, you must have seen it.'},
+    {slug:'sea-bear', name:'Sea Bear', alt:[], note:'Creatures', tier:'mid', clue:'The circle in the sand does not work.'},
+    {slug:'puffy-fluffy', name:'Puffy Fluffy', alt:[], note:'Creatures', tier:'deep', clue:'Started cute.'},
+    {slug:'wormy', name:'Wormy', alt:[], note:'Creatures', tier:'deep', clue:'Turned into a butterfly. Chaos followed.'},
+    {slug:'mystery', name:'Mystery', alt:[], note:'Creatures', tier:'deep', clue:'Patrick’s seahorse.'},
+    {slug:'jellyfish', name:'Jellyfish', alt:[], note:'Creatures', tier:'easy', clue:'Pink, stings, makes jelly.'},
+
+    /* ── VILLAINS ── */
+    {slug:'tattletale-strangler', name:'Tattletale Strangler', alt:[], note:'Villains', tier:'deep', clue:'Turned himself in eventually.'},
+    {slug:'hash-slinging-slasher', name:'Hash-Slinging Slasher', alt:[], note:'Villains', tier:'mid', clue:'The bus, the phone, the door.'},
+    {slug:'nosferatu', name:'Nosferatu', alt:[], note:'Villains', tier:'deep', clue:'The one who flicks the lights.'},
+
+    /* ── CHARACTERS ── */
+    {slug:'mama-krabs', name:'Mama Krabs', alt:[], note:'Characters', tier:'deep', clue:'Mr. Krabs’ mother. Blue dress.'},
+    {slug:'sadie', name:'Sadie Rechid', alt:[], note:'Characters', tier:'deep', clue:'One of the regulars in the queue.'},
+    {slug:'nancy-suzy-fish', name:'Nancy Suzy Fish', alt:[], note:'Characters', tier:'deep', clue:'A background fish with a name.'},
+    {slug:'scooter', name:'Scooter', alt:[], note:'Characters', tier:'deep', clue:'Surfer. Goo Lagoon.'},
+    {slug:'tom', name:'Tom', alt:[], note:'Characters', tier:'deep', clue:'The one who cries a lot.'},
+    {slug:'jack-crazyfish', name:'Jack M. Crazyfish', alt:[], note:'Characters', tier:'deep', clue:'Another one from the crowd.'},
+
+    /* ── PLACES ── */
+    {slug:'squidward-house', name:'Squidward’s house', alt:[], note:'Places', tier:'easy', clue:'The Easter Island head.', page:'Squidward\'s house'},
+    {slug:'boating-school', name:'Mrs. Puff’s Boating School', alt:[], note:'Places', tier:'mid', clue:'He has never passed.', page:'Mrs. Puff\'s Boating School'},
+    {slug:'goo-lagoon', name:'Goo Lagoon', alt:[], note:'Places', tier:'mid', clue:'The beach.'},
+    {slug:'jellyfish-fields', name:'Jellyfish Fields', alt:[], note:'Places', tier:'mid', clue:'Where the netting happens.'},
+    {slug:'rock-bottom', name:'Rock Bottom', alt:[], note:'Places', tier:'mid', clue:'Wrong bus. No light.'},
+    {slug:'shell-city', name:'Shell City', alt:[], note:'Places', tier:'deep', clue:'The gift shop at the end of the film.'},
+    {slug:'atlantis', name:'Atlantis', alt:[], note:'Places', tier:'deep', clue:'They found it in a bubble.'},
+    {slug:'salty-spitoon', name:'Salty Spitoon', alt:[], note:'Places', tier:'mid', clue:'How tough are ya?'},
+    {slug:'weenie-hut', name:'Weenie Hut Jr’s', alt:[], note:'Places', tier:'mid', clue:'Next door, for everyone else.'},
+    {slug:'glove-world', name:'Glove World', alt:[], note:'Places', tier:'mid', clue:'The theme park.'},
+    {slug:'conch-street', name:'Conch Street', alt:[], note:'Places', tier:'deep', clue:'Where all three of them live.'},
+    {slug:'mermalair', name:'Mermalair', alt:[], note:'Places', tier:'deep', clue:'Mermaid Man’s cave.'},
+    {slug:'treedome', name:'Sandy’s Treedome', alt:[], note:'Places', tier:'mid', clue:'Bring a helmet.', page:'Sandy\'s Treedome'},
+
+    /* ── OBJECTS ── */
+    {slug:'magic-conch', name:'Magic Conch Shell', alt:[], note:'Objects', tier:'mid', clue:'All hail. Neither.'},
+    {slug:'secret-formula', name:'Krabby Patty Secret Formula', alt:[], note:'Objects', tier:'mid', clue:'The bottle in the safe.'},
+    {slug:'spatula', name:'Spatula', alt:[], note:'Objects', tier:'deep', clue:'His whole career.'},
+    {slug:'reef-blower', name:'Reef Blower', alt:[], note:'Objects', tier:'deep', clue:'Episode one, no dialogue.'},
+    {slug:'boaty', name:'Boaty', alt:[], note:'Objects', tier:'deep', clue:'The boatmobile.'},
+    {slug:'employee-of-month', name:'Employee of the Month', alt:[], note:'Objects', tier:'deep', clue:'The wall of identical photos.'},
+
+    /* ── FOOD ── */
+    {slug:'pretty-patties', name:'Pretty Patties', alt:[], note:'Food', tier:'deep', clue:'Coloured, and briefly a business.'},
+    {slug:'chum', name:'Chum', alt:[], note:'Food', tier:'mid', clue:'Nobody has ever ordered it.'},
+    {slug:'kelp-shake', name:'Kelp Shake', alt:[], note:'Food', tier:'deep', clue:'Took over the whole town.'},
+    {slug:'krusty-krab-pizza', name:'Krusty Krab Pizza', alt:[], note:'Food', tier:'mid', clue:'It is the pizza. For you.'},
+
+    /* ── OBJECTS ── */
+    {slug:'flying-dutchmans-ship', name:'Flying Dutchman’s ship', alt:[], note:'Objects', tier:'deep', clue:'The green one in the sky.', page:'Flying Dutchman\'s ship'}
   ]
 });

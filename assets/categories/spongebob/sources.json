@@ -183,5 +183,205 @@
   "answer": "Krabby Patty",
   "matched": "Krabby Patty",
   "via": "Krabby Patty"
+ },
+ "alaskan-bull-worm": {
+  "answer": "Alaskan Bull Worm",
+  "matched": "Alaskan Bull Worm",
+  "via": "Alaskan Bull Worm"
+ },
+ "sea-bear": {
+  "answer": "Sea Bear",
+  "matched": "Sea bear",
+  "via": "Sea Bear"
+ },
+ "puffy-fluffy": {
+  "answer": "Puffy Fluffy",
+  "matched": "Puffy Fluffy",
+  "via": "Puffy Fluffy"
+ },
+ "wormy": {
+  "answer": "Wormy",
+  "matched": "Wormy",
+  "via": "Wormy"
+ },
+ "mystery": {
+  "answer": "Mystery",
+  "matched": "Mystery the Seahorse",
+  "via": "Mystery"
+ },
+ "jellyfish": {
+  "answer": "Jellyfish",
+  "matched": "Jellyfish",
+  "via": "Jellyfish"
+ },
+ "tattletale-strangler": {
+  "answer": "Tattletale Strangler",
+  "matched": "Tattletale Strangler",
+  "via": "Tattletale Strangler"
+ },
+ "hash-slinging-slasher": {
+  "answer": "Hash-Slinging Slasher",
+  "matched": "Hash-slinging slasher",
+  "via": "Hash-Slinging Slasher"
+ },
+ "nosferatu": {
+  "answer": "Nosferatu",
+  "matched": "Nosferatu",
+  "via": "Nosferatu"
+ },
+ "mama-krabs": {
+  "answer": "Mama Krabs",
+  "matched": "Mama Krabs",
+  "via": "Mama Krabs"
+ },
+ "betsy-krabs": {
+  "answer": "Betsy Krabs",
+  "matched": "Mama Krabs",
+  "via": "Betsy Krabs"
+ },
+ "sadie": {
+  "answer": "Sadie Rechid",
+  "matched": "Incidental 49",
+  "via": "Sadie Rechid"
+ },
+ "nancy-suzy-fish": {
+  "answer": "Nancy Suzy Fish",
+  "matched": "Suzy",
+  "via": "Nancy Suzy Fish"
+ },
+ "scooter": {
+  "answer": "Scooter",
+  "matched": "Scooter",
+  "via": "Scooter"
+ },
+ "tom": {
+  "answer": "Tom",
+  "matched": "Tom (Inc 6)",
+  "via": "Tom"
+ },
+ "jack-crazyfish": {
+  "answer": "Jack M. Crazyfish",
+  "matched": "Jack M. Crazyfish",
+  "via": "Jack M. Crazyfish"
+ },
+ "goo-lagoon": {
+  "answer": "Goo Lagoon",
+  "matched": "Goo Lagoon",
+  "via": "Goo Lagoon"
+ },
+ "jellyfish-fields": {
+  "answer": "Jellyfish Fields",
+  "matched": "Jellyfish Fields",
+  "via": "Jellyfish Fields"
+ },
+ "rock-bottom": {
+  "answer": "Rock Bottom",
+  "matched": "Rock Bottom",
+  "via": "Rock Bottom"
+ },
+ "shell-city": {
+  "answer": "Shell City",
+  "matched": "Shell City",
+  "via": "Shell City"
+ },
+ "atlantis": {
+  "answer": "Atlantis",
+  "matched": "Atlantis",
+  "via": "Atlantis"
+ },
+ "salty-spitoon": {
+  "answer": "Salty Spitoon",
+  "matched": "The Salty Spitoon",
+  "via": "Salty Spitoon"
+ },
+ "weenie-hut": {
+  "answer": "Weenie Hut Jr’s",
+  "matched": "Weenie Hut Jr's",
+  "via": "Weenie Hut Jr’s"
+ },
+ "glove-world": {
+  "answer": "Glove World",
+  "matched": "Glove World!",
+  "via": "Glove World"
+ },
+ "conch-street": {
+  "answer": "Conch Street",
+  "matched": "Conch Street",
+  "via": "Conch Street"
+ },
+ "mermalair": {
+  "answer": "Mermalair",
+  "matched": "Mermalair",
+  "via": "Mermalair"
+ },
+ "magic-conch": {
+  "answer": "Magic Conch Shell",
+  "matched": "Magic Conch shell",
+  "via": "Magic Conch Shell"
+ },
+ "secret-formula": {
+  "answer": "Krabby Patty Secret Formula",
+  "matched": "Krabby Patty secret formula",
+  "via": "Krabby Patty Secret Formula"
+ },
+ "spatula": {
+  "answer": "Spatula",
+  "matched": "Spatula",
+  "via": "Spatula"
+ },
+ "reef-blower": {
+  "answer": "Reef Blower",
+  "matched": "Reef Blower",
+  "via": "Reef Blower"
+ },
+ "boaty": {
+  "answer": "Boaty",
+  "matched": "Boaty (No Free Rides)",
+  "via": "Boaty"
+ },
+ "employee-of-month": {
+  "answer": "Employee of the Month",
+  "matched": "Employee of the Month",
+  "via": "Employee of the Month"
+ },
+ "pretty-patties": {
+  "answer": "Pretty Patties",
+  "matched": "Pretty Patty",
+  "via": "Pretty Patties"
+ },
+ "chum": {
+  "answer": "Chum",
+  "matched": "Chum",
+  "via": "Chum"
+ },
+ "kelp-shake": {
+  "answer": "Kelp Shake",
+  "matched": "Kelp Shake",
+  "via": "Kelp Shake"
+ },
+ "krusty-krab-pizza": {
+  "answer": "Krusty Krab Pizza",
+  "matched": "Krusty Krab Pizza",
+  "via": "Krusty Krab Pizza"
+ },
+ "squidward-house": {
+  "answer": "Squidward’s house",
+  "matched": "Squidward Tentacles' house",
+  "via": "Squidward's house"
+ },
+ "boating-school": {
+  "answer": "Mrs. Puff’s Boating School",
+  "matched": "Mrs. Puff's Boating School",
+  "via": "Mrs. Puff's Boating School"
+ },
+ "treedome": {
+  "answer": "Sandy’s Treedome",
+  "matched": "Sandy Cheeks' treedome",
+  "via": "Sandy's Treedome"
+ },
+ "flying-dutchmans-ship": {
+  "answer": "Flying Dutchman’s ship",
+  "matched": "Flying Dutchman's ship",
+  "via": "Flying Dutchman's ship"
  }
 }

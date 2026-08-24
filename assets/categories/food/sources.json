@@ -1,0 +1,1194 @@
+{
+ "pizza": {
+  "answer": "Pizza",
+  "matched": "Pizza",
+  "via": "Pizza",
+  "file": "Pizza-3007395.jpg",
+  "licence": "CC0",
+  "by": "igorovsyannykov"
+ },
+ "lasagne": {
+  "answer": "Lasagne",
+  "matched": "Lasagna",
+  "via": "Lasagne",
+  "file": "Lasagne - stonesoup.jpg",
+  "licence": "CC BY 2.0",
+  "by": "jules / stonesoup"
+ },
+ "carbonara": {
+  "answer": "Carbonara",
+  "matched": "Carbonara",
+  "via": "Carbonara",
+  "file": "Espaguetis carbonara.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Javier Somoza"
+ },
+ "gnocchi": {
+  "answer": "Gnocchi",
+  "matched": "Gnocchi",
+  "via": "Gnocchi",
+  "file": "Gnocchi di ricotta burro e salvia.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Paoletta S."
+ },
+ "ravioli": {
+  "answer": "Ravioli",
+  "matched": "Ravioli",
+  "via": "Ravioli",
+  "file": "Flickr - cyclonebill - Ravioli med skinke og asparges i mascarponecreme.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "cyclonebill"
+ },
+ "risotto": {
+  "answer": "Risotto",
+  "matched": "Risotto",
+  "via": "Risotto",
+  "file": "Risotto with speck and goat cheese (6101067436).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Luca Nebuloni from Milan, Italy"
+ },
+ "tiramisu": {
+  "answer": "Tiramisu",
+  "matched": "Tiramisu",
+  "via": "Tiramisu",
+  "file": "Tiramisu - Raffaele Diomede.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Raffaele Diomede from Pordenone, ITALIA"
+ },
+ "cannoli": {
+  "answer": "Cannoli",
+  "matched": "Cannoli",
+  "via": "Cannoli",
+  "file": "Cannoli siciliani al Caffè Impero, ad Alcamo.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Ensahequ"
+ },
+ "panna-cotta": {
+  "answer": "Panna cotta",
+  "matched": "Panna cotta",
+  "via": "Panna cotta",
+  "file": "Panna Cotta with cream and garnish.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "hiro"
+ },
+ "gelato": {
+  "answer": "Gelato",
+  "matched": "Gelato",
+  "via": "Gelato",
+  "file": "Delicious Gelato on display.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "EquipmentAndConcepts"
+ },
+ "sushi": {
+  "answer": "Sushi",
+  "matched": "Sushi",
+  "via": "Sushi",
+  "file": "Sushi platter.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "chidorian from Japan"
+ },
+ "sashimi": {
+  "answer": "Sashimi",
+  "matched": "Sashimi",
+  "via": "Sashimi",
+  "file": "241109 Shigaraki ware Koga Shiga pref Japan01s3.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "663highland"
+ },
+ "ramen": {
+  "answer": "Ramen",
+  "matched": "Ramen",
+  "via": "Ramen",
+  "file": "Shoyu Ramen（Tokyo Ramen） - 01.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Quercus acuta"
+ },
+ "udon": {
+  "answer": "Udon",
+  "matched": "Udon",
+  "via": "Udon",
+  "file": "鶏天のうどん.jpg",
+  "licence": "CC0",
+  "by": "加茂川の民"
+ },
+ "soba": {
+  "answer": "Soba",
+  "matched": "Soba",
+  "via": "Soba",
+  "file": "Dried soba noodles by FotoosVanRobin.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "FotoosVanRobin"
+ },
+ "tempura": {
+  "answer": "Tempura",
+  "matched": "Tempura",
+  "via": "Tempura",
+  "file": "Tempura 01.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Yaco*"
+ },
+ "tonkatsu": {
+  "answer": "Tonkatsu",
+  "matched": "Tonkatsu",
+  "via": "Tonkatsu",
+  "file": "\"Amai-Yuwaku\" Special Loin Pork Cutlet1.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "ＫｏＺ"
+ },
+ "gyoza": {
+  "answer": "Gyoza",
+  "matched": "Jiaozi",
+  "via": "Gyoza",
+  "file": "台灣南投草屯水餃Nantou, Taiwan Caotun dumplings.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Yeepunchmen"
+ },
+ "onigiri": {
+  "answer": "Onigiri",
+  "matched": "Onigiri",
+  "via": "Onigiri",
+  "file": "小料理バルさくら 特製おにぎり.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "脇山航"
+ },
+ "mochi": {
+  "answer": "Mochi",
+  "matched": "Mochi",
+  "via": "Mochi",
+  "file": "Mochi 002.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Kropsoq"
+ },
+ "takoyaki": {
+  "answer": "Takoyaki",
+  "matched": "Takoyaki",
+  "via": "Takoyaki",
+  "file": "ソースとポン酢のたこ焼き.jpg",
+  "licence": "CC0",
+  "by": "加茂川の民"
+ },
+ "okonomiyaki": {
+  "answer": "Okonomiyaki",
+  "matched": "Okonomiyaki",
+  "via": "Okonomiyaki",
+  "file": "Okonomiyaki 001.jpg",
+  "licence": "CC BY 2.0",
+  "by": "ume-y"
+ },
+ "miso-soup": {
+  "answer": "Miso soup",
+  "matched": "Miso soup",
+  "via": "Miso soup",
+  "file": "Miso Soup 001.jpg",
+  "licence": "CC0",
+  "by": "Ocdp"
+ },
+ "taiyaki": {
+  "answer": "Taiyaki",
+  "matched": "Taiyaki",
+  "via": "Taiyaki",
+  "file": "Taiyaki 003.jpg",
+  "licence": "CC0",
+  "by": "Ocdp"
+ },
+ "bibimbap": {
+  "answer": "Bibimbap",
+  "matched": "Bibimbap",
+  "via": "Bibimbap",
+  "file": "Dolsot-bibimbap.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Sous Chef"
+ },
+ "kimchi": {
+  "answer": "Kimchi",
+  "matched": "Kimchi",
+  "via": "Kimchi",
+  "file": "Various kimchi.jpg",
+  "licence": "CC BY-SA 2.0 kr",
+  "by": "국립국어원"
+ },
+ "bulgogi": {
+  "answer": "Bulgogi",
+  "matched": "Bulgogi",
+  "via": "Bulgogi",
+  "file": "Bulgogi 2.jpg",
+  "licence": "CC BY-SA 2.0 kr",
+  "by": "국립국어원"
+ },
+ "tteokbokki": {
+  "answer": "Tteokbokki",
+  "matched": "Tteokbokki",
+  "via": "Tteokbokki",
+  "file": "Tteokbokki.JPG",
+  "licence": "CC0",
+  "by": "Popo le Chien"
+ },
+ "pho": {
+  "answer": "Pho",
+  "matched": "Pho",
+  "via": "Pho",
+  "file": "Bowl of Meatball pho.jpg",
+  "licence": "CC BY 4.0",
+  "by": "SerraKnightz"
+ },
+ "banh-mi": {
+  "answer": "Bánh mì",
+  "matched": "Bánh mì",
+  "via": "Bánh mì",
+  "file": "Bánh mì thịt nướng.png",
+  "licence": "CC BY-SA 3.0",
+  "by": "nsaum75¡שיחת!‎"
+ },
+ "pad-thai": {
+  "answer": "Pad thai",
+  "matched": "Pad thai",
+  "via": "Pad thai",
+  "file": "Phat Thai kung Chang Khien street stall.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Takeaway"
+ },
+ "tom-yum": {
+  "answer": "Tom yum",
+  "matched": "Tom yum",
+  "via": "Tom yum",
+  "file": "Tom yam kung maenam.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Takeaway"
+ },
+ "som-tam": {
+  "answer": "Som tam",
+  "matched": "Green papaya salad",
+  "via": "Papaya salad",
+  "file": "2013 Tam Lao.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Takeaway"
+ },
+ "massaman": {
+  "answer": "Massaman curry",
+  "matched": "Massaman curry",
+  "via": "Massaman curry",
+  "file": "Kaeng matsaman kai.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Takeaway"
+ },
+ "satay": {
+  "answer": "Satay",
+  "matched": "Satay",
+  "via": "Satay",
+  "file": "Sate Udang.JPG",
+  "licence": "CC BY-SA 4.0",
+  "by": "Gunawan Kartapranata"
+ },
+ "rendang": {
+  "answer": "Rendang",
+  "matched": "Rendang",
+  "via": "Rendang",
+  "file": "Rendang daging sapi asli Padang.JPG",
+  "licence": "CC BY 3.0",
+  "by": "Midori"
+ },
+ "nasi-goreng": {
+  "answer": "Nasi goreng",
+  "matched": "Nasi goreng",
+  "via": "Nasi goreng",
+  "file": "Nasi Goreng Kampung (11967588375).jpg",
+  "licence": "CC BY 2.0",
+  "by": "shankar s. from Dubai, united arab emirates"
+ },
+ "laksa": {
+  "answer": "Laksa",
+  "matched": "Laksa",
+  "via": "Laksa",
+  "file": "Nyonya Laksa.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Giddy98"
+ },
+ "dim-sum": {
+  "answer": "Dim sum",
+  "matched": "Dim sum",
+  "via": "Dim sum",
+  "file": "Chinese DimSum (9023590541).jpg",
+  "licence": "CC BY 2.0",
+  "by": "LeonardKong"
+ },
+ "dumpling": {
+  "answer": "Dumpling",
+  "matched": "Dumpling",
+  "via": "Dumpling",
+  "file": "HK SYP 西營盤 Sai Ying Pun Kwan Yick Building 名星海鮮酒家 Star Seafood Restaurant food 吞麵 Wonton dim sum October 2020 SS2 01.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Honmustak Chooica"
+ },
+ "peking-duck": {
+  "answer": "Peking duck",
+  "matched": "Peking duck",
+  "via": "Peking duck",
+  "file": "Peking Duck, 2014 (02).jpg",
+  "licence": "CC BY 2.0",
+  "by": "City Foodsters"
+ },
+ "char-siu": {
+  "answer": "Char siu",
+  "matched": "Char siu",
+  "via": "Char siu",
+  "file": "Charsiu.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Simon Shek"
+ },
+ "mapo-tofu": {
+  "answer": "Mapo tofu",
+  "matched": "Mapo tofu",
+  "via": "Mapo tofu",
+  "file": "Chen Mapo Tofu.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "ZhengZhou"
+ },
+ "hot-pot": {
+  "answer": "Hot pot",
+  "matched": "Hot pot",
+  "via": "Hot pot",
+  "file": "Hot Pot.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Praneeth Thalla"
+ },
+ "congee": {
+  "answer": "Congee",
+  "matched": "Congee",
+  "via": "Congee",
+  "file": "Chinese rice congee.jpg",
+  "licence": "CC BY-SA 2.5",
+  "by": "Daiju Azuma"
+ },
+ "spring-roll": {
+  "answer": "Spring roll",
+  "matched": "Spring roll",
+  "via": "Spring roll",
+  "file": "Spring Rolls (3357696061).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Donna Benjamin"
+ },
+ "samosa": {
+  "answer": "Samosa",
+  "matched": "Samosa",
+  "via": "Samosa",
+  "file": "Samosas, snack food at Wikipedia's 16th Birthday celebration in Chittagong (01).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Moheen Reeyad"
+ },
+ "curry": {
+  "answer": "Curry",
+  "matched": "Curry",
+  "via": "Curry",
+  "file": "Taj Mahal - Lamb Curry Madras.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Francesc Fort"
+ },
+ "biryani": {
+  "answer": "Biryani",
+  "matched": "Biryani",
+  "via": "Biryani",
+  "file": "\"Hyderabadi Dum Biryani\".jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Mahi Tatavarty"
+ },
+ "falafel": {
+  "answer": "Falafel",
+  "matched": "Falafel",
+  "via": "Falafel",
+  "file": "Falafels 2.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Popo le Chien"
+ },
+ "hummus": {
+  "answer": "Hummus",
+  "matched": "Hummus",
+  "via": "Hummus",
+  "file": "Lebanese style hummus.jpg",
+  "licence": "CC BY 3.0",
+  "by": "Beyrouthhh at English Wikipedia"
+ },
+ "shawarma": {
+  "answer": "Shawarma",
+  "matched": "Shawarma",
+  "via": "Shawarma",
+  "file": "Shawarma 2.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Vis M"
+ },
+ "kebab": {
+  "answer": "Kebab",
+  "matched": "Kebab",
+  "via": "Kebab",
+  "file": "Lula kebab 2.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Lesya Dolyk"
+ },
+ "baklava": {
+  "answer": "Baklava",
+  "matched": "Baklava",
+  "via": "Baklava",
+  "file": "Baklava(1).png",
+  "licence": "CC BY-SA 4.0",
+  "by": "Sakaman"
+ },
+ "tagine": {
+  "answer": "Tagine",
+  "matched": "Tagine",
+  "via": "Tagine",
+  "file": "Tajine-marocain-un-plat-varie-et-sain (cropped).jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "BBouchra00"
+ },
+ "couscous": {
+  "answer": "Couscous",
+  "matched": "Couscous",
+  "via": "Couscous",
+  "file": "Moroccan cuscus, from Casablanca, September 2018.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Lmmima"
+ },
+ "injera": {
+  "answer": "Injera",
+  "matched": "Injera",
+  "via": "Injera",
+  "file": "Injera with eight kinds of stew.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Artem.G"
+ },
+ "jollof": {
+  "answer": "Jollof rice",
+  "matched": "Jollof rice",
+  "via": "Jollof rice",
+  "file": "Jollof Rice with Stew.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Noahalorwu"
+ },
+ "gyros": {
+  "answer": "Gyros",
+  "matched": "Gyros",
+  "via": "Gyros",
+  "file": "Pita giros.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Antonio Fajardo i López"
+ },
+ "moussaka": {
+  "answer": "Moussaka",
+  "matched": "Moussaka",
+  "via": "Moussaka",
+  "file": "MussakasMeMelitsanesKePatates01.JPG",
+  "licence": "CC BY-SA 2.5",
+  "by": "Robert Kindermann aka RobertK"
+ },
+ "paella": {
+  "answer": "Paella",
+  "matched": "Paella",
+  "via": "Paella",
+  "file": "01 Paella Valenciana original.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Jan Harenburg"
+ },
+ "churro": {
+  "answer": "Churro",
+  "matched": "Churro",
+  "via": "Churro",
+  "file": "Chocolate con churros (27343655726).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Joy"
+ },
+ "pastel-de-nata": {
+  "answer": "Pastel de nata",
+  "matched": "Pastel de nata",
+  "via": "Pastel de nata",
+  "file": "Pasteis de Belem.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Mon Œil"
+ },
+ "croissant": {
+  "answer": "Croissant",
+  "matched": "Croissant",
+  "via": "Croissant",
+  "file": "Croissant-Petr Kratochvil.jpg",
+  "licence": "CC0",
+  "by": "Petr Kratochvil"
+ },
+ "baguette": {
+  "answer": "Baguette",
+  "matched": "Baguette",
+  "via": "Baguette",
+  "file": "Baguettes, Paris, France - panoramio.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Nick Thweatt"
+ },
+ "creme-brulee": {
+  "answer": "Crème brûlée",
+  "matched": "Crème brûlée",
+  "via": "Crème brûlée",
+  "file": "2014 0531 Crème brûlée Doi Mae Salong (cropped).jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Takeaway"
+ },
+ "eclair": {
+  "answer": "Éclair",
+  "matched": "Éclair",
+  "via": "Éclair",
+  "file": "Two Safeway Chocolate Eclairs (19043880936).jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Willis Lam"
+ },
+ "profiterole": {
+  "answer": "Profiterole",
+  "matched": "Profiterole",
+  "via": "Profiterole",
+  "file": "Paris 2e - Rue Vivienne - Restaurant Le Vaudeville - Profiteroles au chocolat.jpg",
+  "licence": "CC0",
+  "by": "Romainbehar"
+ },
+ "beignet": {
+  "answer": "Beignet",
+  "matched": "Beignet",
+  "via": "Beignet",
+  "file": "Beignet good for mouth.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Zoe from Seattle, USA"
+ },
+ "pretzel": {
+  "answer": "Pretzel",
+  "matched": "Pretzel",
+  "via": "Pretzel",
+  "file": "BrezelnSalz02 (cropped).JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Sundar1"
+ },
+ "schnitzel": {
+  "answer": "Schnitzel",
+  "matched": "Schnitzel",
+  "via": "Schnitzel",
+  "file": "Breitenlesau Krug Bräu Schnitzel.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Benreis"
+ },
+ "bratwurst": {
+  "answer": "Bratwurst",
+  "matched": "Bratwurst",
+  "via": "Bratwurst",
+  "file": "German Bratwürste.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Gerbis"
+ },
+ "goulash": {
+  "answer": "Goulash",
+  "matched": "Goulash",
+  "via": "Goulash",
+  "file": "Gulyas080.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Lily15"
+ },
+ "pierogi": {
+  "answer": "Pierogi",
+  "matched": "Pierogi",
+  "via": "Pierogi",
+  "file": "Pierogi z masłem - 2023.03.31.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Aw58"
+ },
+ "borscht": {
+  "answer": "Borscht",
+  "matched": "Borscht",
+  "via": "Borscht",
+  "file": "Borscht served.jpg",
+  "licence": "CC BY 2.0",
+  "by": "liz west from Boxborough, MA"
+ },
+ "blini": {
+  "answer": "Blini",
+  "matched": "Blini",
+  "via": "Blini",
+  "file": "50 блінкоў на талерцы 240 мм.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Maksim L."
+ },
+ "fish-and-chips": {
+  "answer": "Fish and chips",
+  "matched": "Fish and chips",
+  "via": "Fish and chips",
+  "file": "Fish and chips blackpool.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Matthias Meckel"
+ },
+ "shepherds-pie": {
+  "answer": "Shepherd’s pie",
+  "matched": "Shepherd's pie",
+  "via": "Cottage pie",
+  "file": "Homerton College - Shepherd's pie (cropped).jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Oxfordian Kissuth"
+ },
+ "full-breakfast": {
+  "answer": "Full English breakfast",
+  "matched": "Full breakfast",
+  "via": "Full breakfast",
+  "file": "Full English breakfast (cropped).jpg",
+  "licence": "CC BY-SA 3.0 at",
+  "by": "Joadl"
+ },
+ "scone": {
+  "answer": "Scone",
+  "matched": "Scone",
+  "via": "Scone",
+  "file": "Scone varieties.jpg",
+  "licence": "CC BY-SA 2.5",
+  "by": "User:Dave souza"
+ },
+ "trifle": {
+  "answer": "Trifle",
+  "matched": "Trifle",
+  "via": "Trifle",
+  "file": "Trifle 4layer.jpg",
+  "licence": "CC BY 3.0",
+  "by": "Dlublink"
+ },
+ "sticky-toffee": {
+  "answer": "Sticky toffee pudding",
+  "matched": "Sticky toffee pudding",
+  "via": "Sticky toffee pudding",
+  "file": "Sticky toffee pudding at the Black Swan - Stierch.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Sarah Stierch"
+ },
+ "banoffee": {
+  "answer": "Banoffee pie",
+  "matched": "Banoffee pie",
+  "via": "Banoffee pie",
+  "file": "Banoffeepie.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Glen MacLarty from Sydney, Australia."
+ },
+ "haggis": {
+  "answer": "Haggis",
+  "matched": "Haggis",
+  "via": "Haggis",
+  "file": "Scotland Haggis.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Chris Brown"
+ },
+ "pavlova": {
+  "answer": "Pavlova",
+  "matched": "Pavlova",
+  "via": "Pavlova (food)",
+  "file": "Pavlova dessert.JPG",
+  "licence": "Public domain",
+  "by": "Hazel Fowler"
+ },
+ "poutine": {
+  "answer": "Poutine",
+  "matched": "Poutine",
+  "via": "Poutine",
+  "file": "Food at WIkimanian 2017 02.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Camelia.boban"
+ },
+ "hamburger": {
+  "answer": "Hamburger",
+  "matched": "Hamburger",
+  "via": "Hamburger",
+  "file": "RedDot Burger.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Hongreddotbrewhouse"
+ },
+ "hot-dog": {
+  "answer": "Hot dog",
+  "matched": "Hot dog",
+  "via": "Hot dog",
+  "file": "Hot dog with mustard.png",
+  "licence": "Public domain",
+  "by": "Czar, original photographed by Renee Comet"
+ },
+ "fried-chicken": {
+  "answer": "Fried chicken",
+  "matched": "Fried chicken",
+  "via": "Fried chicken",
+  "file": "Fried-Chicken-Set.jpg",
+  "licence": "CC0",
+  "by": "Evan-Amos"
+ },
+ "mac-and-cheese": {
+  "answer": "Macaroni and cheese",
+  "matched": "Macaroni and cheese",
+  "via": "Macaroni and cheese",
+  "file": "Original Mac n Cheese .jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Texasfoodgawker"
+ },
+ "cornbread": {
+  "answer": "Cornbread",
+  "matched": "Cornbread",
+  "via": "Cornbread",
+  "file": "Skillet cornbread (cropped).jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Zankopedia"
+ },
+ "gumbo": {
+  "answer": "Gumbo",
+  "matched": "Gumbo",
+  "via": "Gumbo",
+  "file": "Gumbo.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Amadscientist"
+ },
+ "jambalaya": {
+  "answer": "Jambalaya",
+  "matched": "Jambalaya",
+  "via": "Jambalaya",
+  "file": "Homemade Jambalaya.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Amadscientist"
+ },
+ "clam-chowder": {
+  "answer": "Clam chowder",
+  "matched": "Clam chowder",
+  "via": "Clam chowder",
+  "file": "Quail 07 bg 041506.jpg",
+  "licence": "Public domain",
+  "by": "Jon SullivanThe original uploader was Y6y6y6 at English Wikipedia."
+ },
+ "lobster-roll": {
+  "answer": "Lobster roll",
+  "matched": "Lobster roll",
+  "via": "Lobster roll",
+  "file": "Lobster Roll.png",
+  "licence": "CC BY-SA 4.0",
+  "by": "Maguy23"
+ },
+ "philly-cheesesteak": {
+  "answer": "Philly cheesesteak",
+  "matched": "Cheesesteak",
+  "via": "Philly cheesesteak",
+  "file": "PatsCheesesteak.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": ""
+ },
+ "reuben": {
+  "answer": "Reuben sandwich",
+  "matched": "Reuben sandwich",
+  "via": "Reuben sandwich",
+  "file": "Katz's Deli - Lunch.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Ernesto Andrade"
+ },
+ "club-sandwich": {
+  "answer": "Club sandwich",
+  "matched": "Club sandwich",
+  "via": "Club sandwich",
+  "file": "Club sandwich at Café Picnic.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "JIP"
+ },
+ "caesar-salad": {
+  "answer": "Caesar salad",
+  "matched": "Caesar salad",
+  "via": "Caesar salad",
+  "file": "Caesar salad (2).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Geoff Peters from Vancouver, BC, Canada"
+ },
+ "cobb-salad": {
+  "answer": "Cobb salad",
+  "matched": "Cobb salad",
+  "via": "Cobb salad",
+  "file": "Cobb salad, 15 October 2010.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Jodimichelle"
+ },
+ "biscuits-and-gravy": {
+  "answer": "Biscuits and gravy",
+  "matched": "Biscuits and gravy",
+  "via": "Biscuits and gravy",
+  "file": "Biscuits-and-gravy.jpg",
+  "licence": "Public domain",
+  "by": "No machine-readable author provided. Kaszeta assumed (based on copyright claims)."
+ },
+ "chicken-and-waffles": {
+  "answer": "Chicken and waffles",
+  "matched": "Chicken and waffles",
+  "via": "Chicken and waffles",
+  "file": "Chicken and waffles with peaches and cream.jpg",
+  "licence": "CC BY 2.0",
+  "by": "arnold inuyaki"
+ },
+ "grits": {
+  "answer": "Grits",
+  "matched": "Grits",
+  "via": "Grits",
+  "file": "Grits1.jpg",
+  "licence": "CC BY 2.0",
+  "by": "sashafatcat"
+ },
+ "smore": {
+  "answer": "S’more",
+  "matched": "S'more",
+  "via": "S'more",
+  "file": "Smores-Microwave.jpg",
+  "licence": "CC0",
+  "by": "Evan-Amos"
+ },
+ "apple-pie": {
+  "answer": "Apple pie",
+  "matched": "Apple pie",
+  "via": "Apple pie",
+  "file": "Lattice apple pie.png",
+  "licence": "CC BY-SA 4.0",
+  "by": "The-Wuje"
+ },
+ "pumpkin-pie": {
+  "answer": "Pumpkin pie",
+  "matched": "Pumpkin pie",
+  "via": "Pumpkin pie",
+  "file": "Pumpkin-Pie-Whole-Slice.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Evan-Amos"
+ },
+ "key-lime-pie": {
+  "answer": "Key lime pie",
+  "matched": "Key lime pie",
+  "via": "Key lime pie",
+  "file": "Slice of Key Lime Pie.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Louiemantia"
+ },
+ "banana-split": {
+  "answer": "Banana split",
+  "matched": "Banana split",
+  "via": "Banana split",
+  "file": "Banana split 1.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Edward Allen Lim"
+ },
+ "sundae": {
+  "answer": "Sundae",
+  "matched": "Sundae",
+  "via": "Sundae",
+  "file": "StrawberrySundae.jpg",
+  "licence": "Public domain",
+  "by": "USDA photo by: Ken Hammond"
+ },
+ "milkshake": {
+  "answer": "Milkshake",
+  "matched": "Milkshake",
+  "via": "Milkshake",
+  "file": "Strawberry milk shake (cropped).jpg",
+  "licence": "Public domain",
+  "by": "Renee Comet (Photographer)"
+ },
+ "doughnut": {
+  "answer": "Doughnut",
+  "matched": "Doughnut",
+  "via": "Doughnut",
+  "file": "Glazed-Donut.jpg",
+  "licence": "Public domain",
+  "by": "Evan-Amos"
+ },
+ "cupcake": {
+  "answer": "Cupcake",
+  "matched": "Cupcake",
+  "via": "Cupcake",
+  "file": "Cupcakes, chocolate and strawberry flavour.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Marc-Lautenbacher"
+ },
+ "macaron": {
+  "answer": "Macaron",
+  "matched": "Macaron",
+  "via": "Macaron",
+  "file": "VanillaMacaron.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Michelle Naherny"
+ },
+ "cheesecake": {
+  "answer": "Cheesecake",
+  "matched": "Cheesecake",
+  "via": "Cheesecake",
+  "file": "Baked cheesecake with raspberries and blueberries.jpg",
+  "licence": "CC BY 2.0",
+  "by": "zingyyellow"
+ },
+ "brownie": {
+  "answer": "Chocolate brownie",
+  "matched": "Chocolate brownie",
+  "via": "Chocolate brownie",
+  "file": "Chocolatebrownie.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Ɱ"
+ },
+ "waffle": {
+  "answer": "Waffle",
+  "matched": "Waffle",
+  "via": "Waffle",
+  "file": "Waffles with Strawberries.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Parkerman &amp; Christie from San Diego, USA"
+ },
+ "pancake": {
+  "answer": "Pancake",
+  "matched": "Pancake",
+  "via": "Pancake",
+  "file": "Foodiesfeed.com pouring-honey-on-pancakes-with-walnuts.jpg",
+  "licence": "CC0",
+  "by": "Mae Mu"
+ },
+ "bagel": {
+  "answer": "Bagel",
+  "matched": "Bagel",
+  "via": "Bagel",
+  "file": "Bagel with sesame 3.jpg",
+  "licence": "CC BY 4.0",
+  "by": "Shisma"
+ },
+ "cotton-candy": {
+  "answer": "Cotton candy",
+  "matched": "Cotton candy",
+  "via": "Cotton candy",
+  "file": "Cotton candy Μαλλί της γριάς.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "FocalPoint"
+ },
+ "candy-apple": {
+  "answer": "Candy apple",
+  "matched": "Candy apple",
+  "via": "Candy apple",
+  "file": "Tastee-Candy-Apple-Red-Caramel-wPeanuts.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Evan-Amos"
+ },
+ "popcorn": {
+  "answer": "Popcorn",
+  "matched": "Popcorn",
+  "via": "Popcorn",
+  "file": "Popcorn - Studio - 2011.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Bill Ebbesen"
+ },
+ "nachos": {
+  "answer": "Nachos",
+  "matched": "Nachos",
+  "via": "Nachos",
+  "file": "Nachos-cheese.jpg",
+  "licence": "CC BY 2.0",
+  "by": "chee.hong from Kuala Lumpur, Malaysia"
+ },
+ "taco": {
+  "answer": "Taco",
+  "matched": "Taco",
+  "via": "Taco",
+  "file": "001 Tacos de carnitas, carne asada y al pastor.jpg",
+  "licence": "CC BY-SA 2.0",
+  "by": "Larry Miller"
+ },
+ "burrito": {
+  "answer": "Burrito",
+  "matched": "Burrito",
+  "via": "Burrito",
+  "file": "Burrito.JPG",
+  "licence": "CC0",
+  "by": "samuelfernandezrivera"
+ },
+ "quesadilla": {
+  "answer": "Quesadilla",
+  "matched": "Quesadilla",
+  "via": "Quesadilla",
+  "file": "Empanada flor de Calabaza.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "nsaum75¡שיחת!‎"
+ },
+ "guacamole": {
+  "answer": "Guacamole",
+  "matched": "Guacamole",
+  "via": "Guacamole",
+  "file": "Guacamole IMGP1271.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Nikodem Nijaki"
+ },
+ "tamale": {
+  "answer": "Tamale",
+  "matched": "Tamale",
+  "via": "Tamale",
+  "file": "Tamale Oaxaqueño.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Nsaum75"
+ },
+ "empanada": {
+  "answer": "Empanada",
+  "matched": "Empanada",
+  "via": "Empanada",
+  "file": "Tapa de empanadillitas.JPG",
+  "licence": "CC BY 3.0",
+  "by": "Tamorlan"
+ },
+ "arepa": {
+  "answer": "Arepa",
+  "matched": "Arepa",
+  "via": "Arepa",
+  "file": "Arepitas Food Macro.jpg",
+  "licence": "CC BY 2.0",
+  "by": "Steven Depolo from Grand Rapids, MI, USA"
+ },
+ "ceviche": {
+  "answer": "Ceviche",
+  "matched": "Ceviche",
+  "via": "Ceviche",
+  "file": "Cebiche de corvina.JPG",
+  "licence": "CC BY-SA 4.0",
+  "by": "Picanteria karol"
+ },
+ "feijoada": {
+  "answer": "Feijoada",
+  "matched": "Feijoada",
+  "via": "Feijoada",
+  "file": "Feijoada à transmontada.jpg",
+  "licence": "CC BY 3.0",
+  "by": "Adrião"
+ },
+ "churrasco": {
+  "answer": "Churrasco",
+  "matched": "Churrasco",
+  "via": "Churrasco",
+  "file": "Churrasco00003.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Leonardo Sakaki"
+ },
+ "chimichurri": {
+  "answer": "Chimichurri",
+  "matched": "Chimichurri",
+  "via": "Chimichurri",
+  "file": "Chimichurri Sauce Recipe (13294574784).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Dominic Lockyer"
+ },
+ "poke": {
+  "answer": "Poke",
+  "matched": "Poke (dish)",
+  "via": "Poke (Hawaiian dish)",
+  "file": "Shoyu and onion poke.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Aquateamhungerforce"
+ },
+ "loco-moco": {
+  "answer": "Loco moco",
+  "matched": "Loco moco",
+  "via": "Loco moco",
+  "file": "Loco moco (32605169782).jpg",
+  "licence": "CC BY 2.0",
+  "by": "California Cow from Seattle, USA"
+ },
+ "spam-musubi": {
+  "answer": "Spam musubi",
+  "matched": "Spam musubi",
+  "via": "Spam musubi",
+  "file": "Homemade Spam Musubi.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Chris Hackmann"
+ },
+ "french-fries": {
+  "answer": "French fries",
+  "matched": "French fries",
+  "via": "French fries",
+  "file": "French Fries.JPG",
+  "licence": "CC0",
+  "by": "StockSnap"
+ },
+ "onion-ring": {
+  "answer": "Onion ring",
+  "matched": "Onion ring",
+  "via": "Onion ring",
+  "file": "OnionRings.JPG",
+  "licence": "CC BY-SA 3.0",
+  "by": "Jonathunder"
+ },
+ "mashed-potato": {
+  "answer": "Mashed potato",
+  "matched": "Mashed potato",
+  "via": "Mashed potato",
+  "file": "Sous vide mashed potatoes.jpg",
+  "licence": "CC BY 2.0",
+  "by": "sousvideguy"
+ },
+ "baked-potato": {
+  "answer": "Baked potato",
+  "matched": "Baked potato",
+  "via": "Baked potato",
+  "file": "BakedPotatoWithButter.jpg",
+  "licence": "Public domain",
+  "by": "Renee Comet (photographer)"
+ },
+ "hash-browns": {
+  "answer": "Hash browns",
+  "matched": "Hash browns",
+  "via": "Hash browns",
+  "file": "Mmm... sliders and deep fried hash browns (7958927842).jpg",
+  "licence": "CC BY 2.0",
+  "by": "jeffreyw"
+ },
+ "coleslaw": {
+  "answer": "Coleslaw",
+  "matched": "Coleslaw",
+  "via": "Coleslaw",
+  "file": "2015-12-20 Spitzkohlsalat mit Möhren anagoria.JPG",
+  "licence": "CC BY 3.0",
+  "by": "Anagoria"
+ },
+ "deviled-egg": {
+  "answer": "Deviled egg",
+  "matched": "Deviled egg",
+  "via": "Deviled egg",
+  "file": "0.2014 Ostereier zum Frühstück, Beskiden, Nowotaniec.jpg",
+  "licence": "CC BY-SA 3.0",
+  "by": "Silar"
+ },
+ "omelette": {
+  "answer": "Omelette",
+  "matched": "Omelette",
+  "via": "Omelette",
+  "file": "Gorgonzola + Bacon Omelette @ Omelegg @ Amsterdam (16600947041).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Guilhem Vellut from Annecy, France"
+ },
+ "eggs-benedict": {
+  "answer": "Eggs Benedict",
+  "matched": "Eggs Benedict",
+  "via": "Eggs Benedict",
+  "file": "Traditional Eggs Benedict.jpg",
+  "licence": "CC BY-SA 4.0",
+  "by": "Mark Miller"
+ },
+ "avocado-toast": {
+  "answer": "Avocado toast",
+  "matched": "Avocado toast",
+  "via": "Avocado toast",
+  "file": "Avocado toast at Voyager Espresso (33134505776).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Bex Walton from London, England"
+ },
+ "granola": {
+  "answer": "Granola",
+  "matched": "Granola",
+  "via": "Granola",
+  "file": "Granola, yogurt, fruit. (16696981528).jpg",
+  "licence": "CC BY 2.0",
+  "by": "Arnold Gatilao from Oakland, CA, USA"
+ },
+ "porridge": {
+  "answer": "Porridge",
+  "matched": "Porridge",
+  "via": "Porridge",
+  "file": "Oatmeal (1).jpg",
+  "licence": "Public domain",
+  "by": "Renee Comet (Photographer)"
+ },
+ "smoothie": {
+  "answer": "Smoothie",
+  "matched": "Smoothie",
+  "via": "Smoothie",
+  "file": "Kiwi Smoothie.jpg",
+  "licence": "CC0",
+  "by": "rawpixel.com"
+ }
+}
