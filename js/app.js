@@ -104,6 +104,8 @@
     ovlPause: $('ovlPause'), pauseResume: $('pauseResume'), ovlHelp: $('ovlHelp'), helpClose: $('helpClose'),
 
     mediaBack: $('mediaBack'), mediaCat: $('mediaCat'), mediaGrid: $('mediaGrid'),
+    mediaShowHidden: $('mediaShowHidden'), mediaHiddenCount: $('mediaHiddenCount'),
+    mediaRestoreAll: $('mediaRestoreAll'),
     mediaCopy: $('mediaCopy'), mediaClear: $('mediaClear'), mediaRescan: $('mediaRescan'), dropAll: $('dropAll'),
     toast: $('toast')
   };
@@ -168,8 +170,48 @@
     for (var i = 0; i < CATS.length; i++) if (CATS[i].id === id) return CATS[i];
     return CATS[0];
   }
+  /* ── answers you've turned off ─────────────────────────────
+     Built-in decks ship in the repo, so "delete" here means hidden for
+     this browser rather than removed from disk — reversible, and it
+     can't break anybody else's copy. Kept per category. */
+  var HIDDEN_KEY = 'dhd.hidden';
+
+  function loadHidden() {
+    try { return JSON.parse(localStorage.getItem(HIDDEN_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+
+  function hiddenFor(catId) {
+    var all = loadHidden();
+    return Array.isArray(all[catId]) ? all[catId] : [];
+  }
+
+  function isHidden(catId, slug) {
+    return hiddenFor(catId).indexOf(slug) >= 0;
+  }
+
+  function setHidden(catId, slug, off) {
+    var all = loadHidden();
+    var list = Array.isArray(all[catId]) ? all[catId] : [];
+    var at = list.indexOf(slug);
+    if (off && at < 0) list.push(slug);
+    if (!off && at >= 0) list.splice(at, 1);
+    if (list.length) all[catId] = list; else delete all[catId];
+    try { localStorage.setItem(HIDDEN_KEY, JSON.stringify(all)); } catch (e) {}
+  }
+
+  function clearHidden(catId) {
+    var all = loadHidden();
+    delete all[catId];
+    try { localStorage.setItem(HIDDEN_KEY, JSON.stringify(all)); } catch (e) {}
+  }
+
   function pool(cat, deep) {
-    return cat.items.filter(function (it) { return deep || it.tier !== 'deep'; });
+    var off = hiddenFor(cat.id);
+    return cat.items.filter(function (it) {
+      if (off.indexOf(it.slug) >= 0) return false;
+      return deep || it.tier !== 'deep';
+    });
   }
 
   /* ══════════════════ TUTORIAL ══════════════════
@@ -352,14 +394,19 @@
       card.className = 'catcard';
       card.dataset.cat = cat.id;
 
-      var withArt = cat.text ? cat.items.length
-                 : cat.items.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
+      /* Count what will actually be dealt, so a deck with answers switched
+         off doesn't advertise a size it won't play. */
+      var live = cat.items.filter(function (it) { return !isHidden(cat.id, it.slug); });
+      var withArt = cat.text ? live.length
+                 : live.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
+      var offCount = cat.items.length - live.length;
       card.innerHTML =
         '<div class="catcard__art"></div>' +
         '<div class="catcard__body">' +
           '<span class="catcard__name"></span>' +
           '<span class="catcard__blurb"></span>' +
-          '<span class="catcard__count">' + (withArt || cat.items.length) + ' answers</span>' +
+          '<span class="catcard__count">' + (withArt || live.length) + ' answers' +
+            (offCount ? ' \u00b7 ' + offCount + ' off' : '') + '</span>' +
           '<span class="catcard__history">' + historyLine(cat.id) + '</span>' +
         '</div>';
       card.querySelector('.catcard__name').textContent = cat.name;
@@ -620,8 +667,9 @@
 
   function refreshMediaCount() {
     var cat = catById(el.catSelect.value);
-    var n = cat.text ? cat.items.length
-            : cat.items.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
+    var liveItems = cat.items.filter(function (it) { return !isHidden(cat.id, it.slug); });
+    var n = cat.text ? liveItems.length
+            : liveItems.filter(function (it) { return Store.hasArt(cat.id, it.slug); }).length;
     el.mediaCount.textContent = n + '/' + cat.items.length;
   }
 
@@ -1830,8 +1878,17 @@
     Store.scan(mediaCat.id, mediaCat.items, force === true).then(renderMedia);
   }
 
+  var lastScan = [];
+
   function renderMedia(rows) {
+    lastScan = rows;
     el.mediaGrid.innerHTML = '';
+
+    /* How many are switched off, and the way back. */
+    var off = hiddenFor(mediaCat.id).length;
+    el.mediaRestoreAll.hidden = !off;
+    el.mediaRestoreAll.textContent = 'Turn all ' + off + ' back on';
+
     var frag = document.createDocumentFragment();
     rows.forEach(function (row) {
       var it = row.item;
@@ -1865,6 +1922,26 @@
         src.classList.add(row.source === 'upload' ? 'upload' : 'folder');
         src.textContent = row.source === 'upload' ? 'ADDED' : 'FOLDER';
       }
+
+      /* Take this answer out of the deck. Not a file delete — the built-in
+         artwork lives in the repo — so it is per-browser and reversible. */
+      var off = isHidden(mediaCat.id, it.slug);
+      tile.classList.toggle('is-off', off);
+      var hide = document.createElement('button');
+      hide.className = 'tile__hide';
+      hide.type = 'button';
+      hide.title = off ? 'Put this answer back' : 'Take this answer out of the deck';
+      hide.setAttribute('aria-label', hide.title);
+      hide.textContent = off ? '\u21ba' : '\u00d7';
+      hide.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setHidden(mediaCat.id, it.slug, !isHidden(mediaCat.id, it.slug));
+        renderMedia(lastScan);
+        buildSetup();
+        refreshCatGrid();
+        toast(isHidden(mediaCat.id, it.slug) ? 'Took ' + it.name + ' out' : 'Put ' + it.name + ' back');
+      });
+      tile.appendChild(hide);
 
       tile.addEventListener('click', function (e) {
         if (e.shiftKey && row.source === 'upload') {
@@ -2193,6 +2270,14 @@
   el.catSelect.addEventListener('change', function () { cfg.catId = el.catSelect.value; refreshMediaCount(); refreshPictureModes(); });
   el.toMedia.addEventListener('click', function () { openMedia(); });
   el.mediaRescan.addEventListener('click', function () { toast('Re-checking the assets folder…'); openMedia(true); });
+  on(el.mediaRestoreAll, 'click', function () {
+    var n = hiddenFor(mediaCat.id).length;
+    clearHidden(mediaCat.id);
+    renderMedia(lastScan);
+    buildSetup();
+    refreshCatGrid();
+    toast('Put ' + n + ' back');
+  });
   el.mediaBack.addEventListener('click', function () { show('setup'); refreshMediaCount(); });
   el.openHost.addEventListener('click', openHost);
   el.newCode.addEventListener('click', function () {

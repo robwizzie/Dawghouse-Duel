@@ -1657,3 +1657,24 @@ kbd{font-family:var(--ff-cond);font-weight:900;background:var(--lime);color:var(
      the default 0 put the whole row above the picture. */
   .shot__nav{display:flex;gap:18px;order:2;margin-top:clamp(10px,2vh,18px)}
 }
+
+
+/* ── answers switched off in the library ────────────────────
+   Not deleted: the built-in artwork lives in the repo. Hidden for this
+   browser, dimmed rather than removed so it can be put back. */
+.tile{position:relative}
+.tile__hide{position:absolute;top:6px;right:6px;z-index:2;width:28px;height:28px;padding:0;
+  border-radius:50%;cursor:pointer;border:0;background:rgba(14,14,45,.78);
+  color:rgba(255,255,255,.65);font-size:17px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .15s,color .15s,background .15s}
+.tile:hover .tile__hide,.tile__hide:focus-visible{opacity:1}
+.tile__hide:hover{color:var(--red);background:rgba(14,14,45,.95)}
+.tile.is-off{opacity:.32;filter:grayscale(1)}
+.tile.is-off .tile__hide{opacity:1;color:var(--lime)}
+.tile.is-off .tile__hide:hover{color:var(--lime);background:rgba(14,14,45,.95)}
+.tile.is-off .tile__name{text-decoration:line-through}
+@media (pointer:coarse){ .tile__hide{opacity:1;width:34px;height:34px} }
+
+.media__how{margin:0;color:rgba(255,255,255,.55);font-size:clamp(12px,1.2vw,14px);line-height:1.45}
+.media__how b{color:#fff}

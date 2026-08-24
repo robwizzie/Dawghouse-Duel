@@ -446,6 +446,7 @@
       <button class="btn btn--ghost btn--sm" id="mediaBack">&larr; Back</button>
       <h2 class="mediabar__title">Image Library <span id="mediaCat"></span></h2>
       <div class="mediabar__acts">
+        <button class="btn btn--ghost btn--sm" id="mediaRestoreAll" hidden>Turn all back on</button>
         <button class="btn btn--ghost btn--sm" id="mediaRescan">Rescan folder</button>
         <button class="btn btn--ghost btn--sm" id="mediaCopy">Copy filename list</button>
         <button class="btn btn--ghost btn--sm btn--danger" id="mediaClear">Clear uploads</button>
@@ -455,6 +456,8 @@
       <b>Drop a whole folder of images here.</b>
       <span>Files are matched to answers by filename &mdash; <code>black-panther.jpg</code> &rarr; Black Panther. Or drop onto a single tile below.</span>
     </div>
+    <p class="media__how">Tap the <b>&times;</b> on any answer to take it out of the deck. It stays on
+      your device only &mdash; nothing is deleted, and you can turn it back on any time.</p>
     <div class="mediagrid" id="mediaGrid"></div>
   </section>
 
