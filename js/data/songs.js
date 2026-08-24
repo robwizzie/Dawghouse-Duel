@@ -19,6 +19,7 @@ window.DHD_CATEGORIES.push({
   name: 'Name the Artist',
   blurb: 'The song goes up. Say who sang it.',
   text: true,
+  glyph: '\u266a',
   promptLabel: 'SONG',
   items: [
 

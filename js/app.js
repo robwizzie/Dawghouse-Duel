@@ -424,8 +424,12 @@
           artT.style.setProperty('--cover', 'url("' + cat.cover + '")');
           artT.appendChild(ci);
         } else {
-          card.querySelector('.catcard__art').innerHTML =
-            '<span class="catcard__glyph">\u266a</span>';
+          /* A music note is right for songs and wrong for books, so the
+             deck names its own mark. */
+          var glyph = document.createElement('span');
+          glyph.className = 'catcard__glyph';
+          glyph.textContent = cat.glyph || '\u266a';
+          card.querySelector('.catcard__art').appendChild(glyph);
         }
       }
 
