@@ -1,0 +1,592 @@
+{
+ "harry-potter": {
+  "answer": "Harry Potter",
+  "matched": "Harry Potter",
+  "via": "Harry Potter"
+ },
+ "ron-weasley": {
+  "answer": "Ron Weasley",
+  "matched": "Ronald Weasley",
+  "via": "Ron Weasley"
+ },
+ "hermione-granger": {
+  "answer": "Hermione Granger",
+  "matched": "Hermione Granger",
+  "via": "Hermione Granger"
+ },
+ "draco-malfoy": {
+  "answer": "Draco Malfoy",
+  "matched": "Draco Malfoy",
+  "via": "Draco Malfoy"
+ },
+ "neville-longbottom": {
+  "answer": "Neville Longbottom",
+  "matched": "Neville Longbottom",
+  "via": "Neville Longbottom"
+ },
+ "luna-lovegood": {
+  "answer": "Luna Lovegood",
+  "matched": "Luna Lovegood",
+  "via": "Luna Lovegood"
+ },
+ "ginny-weasley": {
+  "answer": "Ginny Weasley",
+  "matched": "Ginevra Weasley",
+  "via": "Ginny Weasley"
+ },
+ "fred-weasley": {
+  "answer": "Fred Weasley",
+  "matched": "Fred Weasley",
+  "via": "Fred Weasley"
+ },
+ "george-weasley": {
+  "answer": "George Weasley",
+  "matched": "George Weasley",
+  "via": "George Weasley"
+ },
+ "percy-weasley": {
+  "answer": "Percy Weasley",
+  "matched": "Percy Weasley",
+  "via": "Percy Weasley"
+ },
+ "cedric-diggory": {
+  "answer": "Cedric Diggory",
+  "matched": "Cedric Diggory",
+  "via": "Cedric Diggory"
+ },
+ "cho-chang": {
+  "answer": "Cho Chang",
+  "matched": "Cho Chang",
+  "via": "Cho Chang"
+ },
+ "viktor-krum": {
+  "answer": "Viktor Krum",
+  "matched": "Viktor Krum",
+  "via": "Viktor Krum"
+ },
+ "fleur-delacour": {
+  "answer": "Fleur Delacour",
+  "matched": "Fleur Delacour",
+  "via": "Fleur Delacour"
+ },
+ "albus-dumbledore": {
+  "answer": "Albus Dumbledore",
+  "matched": "Albus Dumbledore",
+  "via": "Albus Dumbledore"
+ },
+ "severus-snape": {
+  "answer": "Severus Snape",
+  "matched": "Severus Snape",
+  "via": "Severus Snape"
+ },
+ "minerva-mcgonagall": {
+  "answer": "Minerva McGonagall",
+  "matched": "Minerva McGonagall",
+  "via": "Minerva McGonagall"
+ },
+ "rubeus-hagrid": {
+  "answer": "Rubeus Hagrid",
+  "matched": "Rubeus Hagrid",
+  "via": "Rubeus Hagrid"
+ },
+ "dolores-umbridge": {
+  "answer": "Dolores Umbridge",
+  "matched": "Dolores Umbridge",
+  "via": "Dolores Umbridge"
+ },
+ "remus-lupin": {
+  "answer": "Remus Lupin",
+  "matched": "Remus Lupin",
+  "via": "Remus Lupin"
+ },
+ "alastor-moody": {
+  "answer": "Alastor Moody",
+  "matched": "Alastor Moody",
+  "via": "Alastor Moody"
+ },
+ "gilderoy-lockhart": {
+  "answer": "Gilderoy Lockhart",
+  "matched": "Gilderoy Lockhart",
+  "via": "Gilderoy Lockhart"
+ },
+ "sybill-trelawney": {
+  "answer": "Sybill Trelawney",
+  "matched": "Sybill Trelawney",
+  "via": "Sybill Trelawney"
+ },
+ "filius-flitwick": {
+  "answer": "Filius Flitwick",
+  "matched": "Filius Flitwick",
+  "via": "Filius Flitwick"
+ },
+ "pomona-sprout": {
+  "answer": "Pomona Sprout",
+  "matched": "Pomona Sprout",
+  "via": "Pomona Sprout"
+ },
+ "horace-slughorn": {
+  "answer": "Horace Slughorn",
+  "matched": "Horace Slughorn",
+  "via": "Horace Slughorn"
+ },
+ "quirinus-quirrell": {
+  "answer": "Quirinus Quirrell",
+  "matched": "Quirinus Quirrell",
+  "via": "Quirinus Quirrell"
+ },
+ "argus-filch": {
+  "answer": "Argus Filch",
+  "matched": "Argus Filch",
+  "via": "Argus Filch"
+ },
+ "lord-voldemort": {
+  "answer": "Lord Voldemort",
+  "matched": "Tom Riddle",
+  "via": "Voldemort"
+ },
+ "bellatrix-lestrange": {
+  "answer": "Bellatrix Lestrange",
+  "matched": "Bellatrix Lestrange",
+  "via": "Bellatrix Lestrange"
+ },
+ "lucius-malfoy": {
+  "answer": "Lucius Malfoy",
+  "matched": "Lucius Malfoy",
+  "via": "Lucius Malfoy"
+ },
+ "narcissa-malfoy": {
+  "answer": "Narcissa Malfoy",
+  "matched": "Narcissa Malfoy",
+  "via": "Narcissa Malfoy"
+ },
+ "peter-pettigrew": {
+  "answer": "Peter Pettigrew",
+  "matched": "Peter Pettigrew",
+  "via": "Peter Pettigrew"
+ },
+ "gellert-grindelwald": {
+  "answer": "Gellert Grindelwald",
+  "matched": "Gellert Grindelwald",
+  "via": "Gellert Grindelwald"
+ },
+ "sirius-black": {
+  "answer": "Sirius Black",
+  "matched": "Sirius Black",
+  "via": "Sirius Black"
+ },
+ "nymphadora-tonks": {
+  "answer": "Tonks",
+  "matched": "Nymphadora Tonks",
+  "via": "Tonks"
+ },
+ "kingsley-shacklebolt": {
+  "answer": "Kingsley Shacklebolt",
+  "matched": "Kingsley Shacklebolt",
+  "via": "Kingsley Shacklebolt"
+ },
+ "molly-weasley": {
+  "answer": "Molly Weasley",
+  "matched": "Molly Weasley",
+  "via": "Molly Weasley"
+ },
+ "arthur-weasley": {
+  "answer": "Arthur Weasley",
+  "matched": "Arthur Weasley",
+  "via": "Arthur Weasley"
+ },
+ "bill-weasley": {
+  "answer": "Bill Weasley",
+  "matched": "William Weasley",
+  "via": "Bill Weasley"
+ },
+ "charlie-weasley": {
+  "answer": "Charlie Weasley",
+  "matched": "Charles Weasley",
+  "via": "Charlie Weasley"
+ },
+ "dobby": {
+  "answer": "Dobby",
+  "matched": "Dobby",
+  "via": "Dobby"
+ },
+ "kreacher": {
+  "answer": "Kreacher",
+  "matched": "Kreacher",
+  "via": "Kreacher"
+ },
+ "winky": {
+  "answer": "Winky",
+  "matched": "Winky",
+  "via": "Winky"
+ },
+ "hedwig": {
+  "answer": "Hedwig",
+  "matched": "Hedwig",
+  "via": "Hedwig"
+ },
+ "fawkes": {
+  "answer": "Fawkes",
+  "matched": "Fawkes",
+  "via": "Fawkes"
+ },
+ "buckbeak": {
+  "answer": "Buckbeak",
+  "matched": "Buckbeak",
+  "via": "Buckbeak"
+ },
+ "crookshanks": {
+  "answer": "Crookshanks",
+  "matched": "Crookshanks",
+  "via": "Crookshanks"
+ },
+ "nagini": {
+  "answer": "Nagini",
+  "matched": "Nagini",
+  "via": "Nagini"
+ },
+ "aragog": {
+  "answer": "Aragog",
+  "matched": "Aragog",
+  "via": "Aragog"
+ },
+ "basilisk": {
+  "answer": "Basilisk",
+  "matched": "Basilisk",
+  "via": "Basilisk"
+ },
+ "dementor": {
+  "answer": "Dementor",
+  "matched": "Dementor",
+  "via": "Dementor"
+ },
+ "boggart": {
+  "answer": "Boggart",
+  "matched": "Boggart",
+  "via": "Boggart"
+ },
+ "thestral": {
+  "answer": "Thestral",
+  "matched": "Thestral",
+  "via": "Thestral"
+ },
+ "hippogriff": {
+  "answer": "Hippogriff",
+  "matched": "Hippogriff",
+  "via": "Hippogriff"
+ },
+ "grindylow": {
+  "answer": "Grindylow",
+  "matched": "Grindylow",
+  "via": "Grindylow"
+ },
+ "cornish-pixie": {
+  "answer": "Cornish pixie",
+  "matched": "Pixie",
+  "via": "Cornish pixie"
+ },
+ "centaur": {
+  "answer": "Centaur",
+  "matched": "Centaur",
+  "via": "Centaur"
+ },
+ "mountain-troll": {
+  "answer": "Mountain troll",
+  "matched": "Mountain troll",
+  "via": "Mountain troll"
+ },
+ "niffler": {
+  "answer": "Niffler",
+  "matched": "Niffler",
+  "via": "Niffler"
+ },
+ "bowtruckle": {
+  "answer": "Bowtruckle",
+  "matched": "Bowtruckle",
+  "via": "Bowtruckle"
+ },
+ "occamy": {
+  "answer": "Occamy",
+  "matched": "Occamy",
+  "via": "Occamy"
+ },
+ "nearly-headless-nick": {
+  "answer": "Nearly Headless Nick",
+  "matched": "Nicholas de Mimsy-Porpington",
+  "via": "Nick"
+ },
+ "moaning-myrtle": {
+  "answer": "Moaning Myrtle",
+  "matched": "Myrtle Warren",
+  "via": "Moaning Myrtle"
+ },
+ "peeves": {
+  "answer": "Peeves",
+  "matched": "Peeves",
+  "via": "Peeves"
+ },
+ "fat-lady": {
+  "answer": "The Fat Lady",
+  "matched": "Fat Lady",
+  "via": "Fat Lady"
+ },
+ "newt-scamander": {
+  "answer": "Newt Scamander",
+  "matched": "Newton Scamander",
+  "via": "Newt Scamander"
+ },
+ "tina-goldstein": {
+  "answer": "Tina Goldstein",
+  "matched": "Porpentina Goldstein",
+  "via": "Porpentina Goldstein"
+ },
+ "queenie-goldstein": {
+  "answer": "Queenie Goldstein",
+  "matched": "Queenie Goldstein",
+  "via": "Queenie Goldstein"
+ },
+ "jacob-kowalski": {
+  "answer": "Jacob Kowalski",
+  "matched": "Jacob Kowalski",
+  "via": "Jacob Kowalski"
+ },
+ "sorting-hat": {
+  "answer": "Sorting Hat",
+  "matched": "Sorting Hat",
+  "via": "Sorting Hat"
+ },
+ "golden-snitch": {
+  "answer": "Golden Snitch",
+  "matched": "Golden Snitch",
+  "via": "Golden Snitch"
+ },
+ "marauders-map": {
+  "answer": "Marauder’s Map",
+  "matched": "Marauder's Map",
+  "via": "Marauders Map"
+ },
+ "invisibility-cloak": {
+  "answer": "Cloak of Invisibility",
+  "matched": "Cloak of Invisibility",
+  "via": "Cloak of Invisibility"
+ },
+ "elder-wand": {
+  "answer": "Elder Wand",
+  "matched": "Elder Wand",
+  "via": "Elder Wand"
+ },
+ "resurrection-stone": {
+  "answer": "Resurrection Stone",
+  "matched": "Resurrection Stone",
+  "via": "Resurrection Stone"
+ },
+ "time-turner": {
+  "answer": "Time-Turner",
+  "matched": "Time-Turner",
+  "via": "Time-Turner"
+ },
+ "pensieve": {
+  "answer": "Pensieve",
+  "matched": "Pensieve",
+  "via": "Pensieve"
+ },
+ "mirror-of-erised": {
+  "answer": "Mirror of Erised",
+  "matched": "Mirror of Erised",
+  "via": "Mirror of Erised"
+ },
+ "philosophers-stone": {
+  "answer": "Philosopher’s Stone",
+  "matched": "Philosopher's Stone",
+  "via": "Philosophers Stone"
+ },
+ "goblet-of-fire": {
+  "answer": "Goblet of Fire",
+  "matched": "Goblet of Fire",
+  "via": "Goblet of Fire"
+ },
+ "triwizard-cup": {
+  "answer": "Triwizard Cup",
+  "matched": "Triwizard Cup",
+  "via": "Triwizard Cup"
+ },
+ "horcrux": {
+  "answer": "Horcrux",
+  "matched": "Horcrux",
+  "via": "Horcrux"
+ },
+ "deathly-hallows": {
+  "answer": "Deathly Hallows",
+  "matched": "Deathly Hallows",
+  "via": "Deathly Hallows"
+ },
+ "nimbus-2000": {
+  "answer": "Nimbus 2000",
+  "matched": "Nimbus 2000",
+  "via": "Nimbus 2000"
+ },
+ "firebolt": {
+  "answer": "Firebolt",
+  "matched": "Firebolt",
+  "via": "Firebolt"
+ },
+ "sword-of-gryffindor": {
+  "answer": "Sword of Gryffindor",
+  "matched": "Sword of Gryffindor",
+  "via": "Sword of Gryffindor"
+ },
+ "deluminator": {
+  "answer": "Deluminator",
+  "matched": "Deluminator",
+  "via": "Deluminator"
+ },
+ "monster-book": {
+  "answer": "Monster Book of Monsters",
+  "matched": "The Monster Book of Monsters",
+  "via": "Monster Book of Monsters"
+ },
+ "remembrall": {
+  "answer": "Remembrall",
+  "matched": "Remembrall",
+  "via": "Remembrall"
+ },
+ "howler": {
+  "answer": "Howler",
+  "matched": "Howler",
+  "via": "Howler"
+ },
+ "chocolate-frog": {
+  "answer": "Chocolate Frog",
+  "matched": "Chocolate Frog",
+  "via": "Chocolate Frog"
+ },
+ "butterbeer": {
+  "answer": "Butterbeer",
+  "matched": "Butterbeer",
+  "via": "Butterbeer"
+ },
+ "quaffle": {
+  "answer": "Quaffle",
+  "matched": "Quaffle",
+  "via": "Quaffle"
+ },
+ "bludger": {
+  "answer": "Bludger",
+  "matched": "Bludger",
+  "via": "Bludger"
+ },
+ "hogwarts": {
+  "answer": "Hogwarts Castle",
+  "matched": "Hogwarts Castle",
+  "via": "Hogwarts Castle"
+ },
+ "hogwarts-express": {
+  "answer": "Hogwarts Express",
+  "matched": "Hogwarts Express",
+  "via": "Hogwarts Express"
+ },
+ "platform-nine": {
+  "answer": "Platform Nine and Three-Quarters",
+  "matched": "Platform Nine and Three-Quarters",
+  "via": "Platform Nine and Three-Quarters"
+ },
+ "diagon-alley": {
+  "answer": "Diagon Alley",
+  "matched": "Diagon Alley",
+  "via": "Diagon Alley"
+ },
+ "gringotts": {
+  "answer": "Gringotts Wizarding Bank",
+  "matched": "Gringotts Wizarding Bank",
+  "via": "Gringotts Wizarding Bank"
+ },
+ "azkaban": {
+  "answer": "Azkaban",
+  "matched": "Azkaban",
+  "via": "Azkaban"
+ },
+ "ministry-of-magic": {
+  "answer": "Ministry of Magic",
+  "matched": "Ministry of Magic",
+  "via": "Ministry of Magic"
+ },
+ "room-of-requirement": {
+  "answer": "Room of Requirement",
+  "matched": "Room of Requirement",
+  "via": "Room of Requirement"
+ },
+ "chamber-of-secrets": {
+  "answer": "Chamber of Secrets",
+  "matched": "Chamber of Secrets",
+  "via": "Chamber of Secrets"
+ },
+ "forbidden-forest": {
+  "answer": "Forbidden Forest",
+  "matched": "Forbidden Forest",
+  "via": "Forbidden Forest"
+ },
+ "whomping-willow": {
+  "answer": "Whomping Willow",
+  "matched": "Whomping Willow",
+  "via": "Whomping Willow"
+ },
+ "great-hall": {
+  "answer": "Great Hall",
+  "matched": "Great Hall",
+  "via": "Great Hall"
+ },
+ "the-burrow": {
+  "answer": "The Burrow",
+  "matched": "The Burrow",
+  "via": "The Burrow"
+ },
+ "shrieking-shack": {
+  "answer": "Shrieking Shack",
+  "matched": "Shrieking Shack",
+  "via": "Shrieking Shack"
+ },
+ "godrics-hollow": {
+  "answer": "Godric’s Hollow",
+  "matched": "Godric's Hollow",
+  "via": "Godric’s Hollow"
+ },
+ "privet-drive": {
+  "answer": "Number four, Privet Drive",
+  "matched": "4 Privet Drive",
+  "via": "Number four, Privet Drive"
+ },
+ "grimmauld-place": {
+  "answer": "Grimmauld Place",
+  "matched": "Grimmauld Place",
+  "via": "Grimmauld Place"
+ },
+ "knight-bus": {
+  "answer": "Knight Bus",
+  "matched": "Knight Bus",
+  "via": "Knight Bus"
+ },
+ "ford-anglia": {
+  "answer": "Ford Anglia",
+  "matched": "Flying Ford Anglia",
+  "via": "Ford Anglia"
+ },
+ "gryffindor": {
+  "answer": "Gryffindor",
+  "matched": "Gryffindor",
+  "via": "Gryffindor"
+ },
+ "slytherin": {
+  "answer": "Slytherin",
+  "matched": "Slytherin",
+  "via": "Slytherin"
+ },
+ "hufflepuff": {
+  "answer": "Hufflepuff",
+  "matched": "Hufflepuff",
+  "via": "Hufflepuff"
+ },
+ "ravenclaw": {
+  "answer": "Ravenclaw",
+  "matched": "Ravenclaw",
+  "via": "Ravenclaw"
+ }
+}

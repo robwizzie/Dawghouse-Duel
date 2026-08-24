@@ -1,0 +1,464 @@
+{
+ "freddy-krueger": {
+  "answer": "Freddy Krueger",
+  "matched": "Freddy Krueger",
+  "via": "Freddy Krueger",
+  "wiki": "villains.fandom.com"
+ },
+ "jason-voorhees": {
+  "answer": "Jason Voorhees",
+  "matched": "Jason Voorhees",
+  "via": "Jason Voorhees",
+  "wiki": "villains.fandom.com"
+ },
+ "michael-myers": {
+  "answer": "Michael Myers",
+  "matched": "Michael Myers",
+  "via": "Michael Myers",
+  "wiki": "villains.fandom.com"
+ },
+ "leatherface": {
+  "answer": "Leatherface",
+  "matched": "Leatherface",
+  "via": "Leatherface",
+  "wiki": "villains.fandom.com"
+ },
+ "ghostface": {
+  "answer": "Ghostface",
+  "matched": "Ghostface",
+  "via": "Ghostface",
+  "wiki": "villains.fandom.com"
+ },
+ "chucky": {
+  "answer": "Chucky",
+  "matched": "Chucky",
+  "via": "Chucky",
+  "wiki": "villains.fandom.com"
+ },
+ "tiffany-valentine": {
+  "answer": "Tiffany Valentine",
+  "matched": "Tiffany Valentine",
+  "via": "Tiffany Valentine",
+  "wiki": "villains.fandom.com"
+ },
+ "pinhead": {
+  "answer": "Pinhead",
+  "matched": "Pinhead",
+  "via": "Pinhead",
+  "wiki": "villains.fandom.com"
+ },
+ "candyman": {
+  "answer": "Candyman",
+  "matched": "Candyman (Candyman)",
+  "via": "Candyman (Candyman)",
+  "wiki": "villains.fandom.com"
+ },
+ "art-the-clown": {
+  "answer": "Art the Clown",
+  "matched": "Art the Clown",
+  "via": "Art the Clown",
+  "wiki": "horror.fandom.com"
+ },
+ "victor-crowley": {
+  "answer": "Victor Crowley",
+  "matched": "Victor Crowley",
+  "via": "Victor Crowley",
+  "wiki": "villains.fandom.com"
+ },
+ "vincent-sinclair": {
+  "answer": "Vincent Sinclair",
+  "matched": "Vincent Sinclair",
+  "via": "Vincent Sinclair",
+  "wiki": "villains.fandom.com"
+ },
+ "angela-baker": {
+  "answer": "Angela Baker",
+  "matched": "Angela Baker (real)",
+  "via": "Angela Baker (real)",
+  "wiki": "villains.fandom.com"
+ },
+ "benjamin-willis": {
+  "answer": "Ben Willis",
+  "matched": "Benjamin Willis",
+  "via": "Benjamin Willis",
+  "wiki": "villains.fandom.com"
+ },
+ "charlie-hewitt": {
+  "answer": "Hoyt Sawyer",
+  "matched": "Charlie Hewitt Jr.",
+  "via": "Charlie Hewitt Jr.",
+  "wiki": "villains.fandom.com"
+ },
+ "pennywise": {
+  "answer": "Pennywise",
+  "matched": "It (Stephen King)",
+  "via": "Pennywise",
+  "wiki": "villains.fandom.com"
+ },
+ "pazuzu": {
+  "answer": "Pazuzu",
+  "matched": "Pazuzu",
+  "via": "Pazuzu",
+  "wiki": "villains.fandom.com"
+ },
+ "regan-macneil": {
+  "answer": "Regan MacNeil",
+  "matched": "Regan Teresa MacNeil",
+  "via": "Regan Teresa MacNeil",
+  "wiki": "horror.fandom.com"
+ },
+ "valak": {
+  "answer": "Valak",
+  "matched": "Valak",
+  "via": "Valak",
+  "wiki": "horror.fandom.com"
+ },
+ "malthus": {
+  "answer": "Annabelle",
+  "matched": "Malthus (The Conjuring Universe)",
+  "via": "Malthus (The Conjuring Universe)",
+  "wiki": "villains.fandom.com"
+ },
+ "bagul": {
+  "answer": "Bughuul",
+  "matched": "Bagul",
+  "via": "Bagul",
+  "wiki": "villains.fandom.com"
+ },
+ "mister-babadook": {
+  "answer": "The Babadook",
+  "matched": "Mister Babadook",
+  "via": "Mister Babadook",
+  "wiki": "villains.fandom.com"
+ },
+ "mama": {
+  "answer": "Mama",
+  "matched": "Mama (Mama)",
+  "via": "Mama (Mama)",
+  "wiki": "villains.fandom.com"
+ },
+ "samara-morgan": {
+  "answer": "Samara Morgan",
+  "matched": "Samara Morgan",
+  "via": "Samara Morgan",
+  "wiki": "villains.fandom.com"
+ },
+ "sadako-yamamura": {
+  "answer": "Sadako Yamamura",
+  "matched": "Sadako Yamamura",
+  "via": "Sadako Yamamura",
+  "wiki": "villains.fandom.com"
+ },
+ "kayako-saeki": {
+  "answer": "Kayako Saeki",
+  "matched": "Kayako Saeki",
+  "via": "Kayako Saeki",
+  "wiki": "villains.fandom.com"
+ },
+ "toshio-saeki": {
+  "answer": "Toshio",
+  "matched": "Toshio Saeki",
+  "via": "Toshio Saeki",
+  "wiki": "villains.fandom.com"
+ },
+ "kuchisake-onna": {
+  "answer": "Kuchisake-onna",
+  "matched": "Kuchisake Onna",
+  "via": "Kuchisake Onna",
+  "wiki": "villains.fandom.com"
+ },
+ "asami-yamazaki": {
+  "answer": "Asami Yamazaki",
+  "matched": "Asami Yamazaki",
+  "via": "Asami Yamazaki",
+  "wiki": "villains.fandom.com"
+ },
+ "la-llorona": {
+  "answer": "La Llorona",
+  "matched": "La Llorona",
+  "via": "La Llorona",
+  "wiki": "villains.fandom.com"
+ },
+ "slender-man": {
+  "answer": "Slender Man",
+  "matched": "Slender Man",
+  "via": "Slender Man",
+  "wiki": "villains.fandom.com"
+ },
+ "the-grabber": {
+  "answer": "The Grabber",
+  "matched": "The Grabber (The Black Phone)",
+  "via": "The Grabber (The Black Phone)",
+  "wiki": "villains.fandom.com"
+ },
+ "m3gan": {
+  "answer": "M3GAN",
+  "matched": "M3GAN",
+  "via": "M3GAN",
+  "wiki": "villains.fandom.com"
+ },
+ "count-dracula": {
+  "answer": "Count Dracula",
+  "matched": "Dracula",
+  "via": "Count Dracula",
+  "wiki": "villains.fandom.com"
+ },
+ "frankensteins-monster": {
+  "answer": "Frankenstein’s Monster",
+  "matched": "Frankenstein",
+  "via": "Frankenstein's Monster",
+  "wiki": "villains.fandom.com"
+ },
+ "imhotep": {
+  "answer": "The Mummy",
+  "matched": "Imhotep",
+  "via": "Imhotep",
+  "wiki": "villains.fandom.com"
+ },
+ "the-wolf-man": {
+  "answer": "The Wolf Man",
+  "matched": "The Wolf Man",
+  "via": "The Wolf Man",
+  "wiki": "villains.fandom.com"
+ },
+ "gill-man": {
+  "answer": "Creature from the Black Lagoon",
+  "matched": "Gill-man",
+  "via": "Gill-man",
+  "wiki": "villains.fandom.com"
+ },
+ "count-orlok": {
+  "answer": "Count Orlok",
+  "matched": "Nosferatu",
+  "via": "Count Orlok",
+  "wiki": "villains.fandom.com"
+ },
+ "griffin": {
+  "answer": "The Invisible Man",
+  "matched": "Griffin (The Invisible Man)",
+  "via": "Griffin (The Invisible Man)",
+  "wiki": "horror.fandom.com"
+ },
+ "xenomorph": {
+  "answer": "Xenomorph",
+  "matched": "Xenomorph",
+  "via": "Xenomorph",
+  "wiki": "villains.fandom.com"
+ },
+ "xenomorph-queen": {
+  "answer": "Alien Queen",
+  "matched": "Xenomorph Queens",
+  "via": "Xenomorph Queens",
+  "wiki": "villains.fandom.com"
+ },
+ "predator": {
+  "answer": "Predator",
+  "matched": "Predator",
+  "via": "Predator",
+  "wiki": "villains.fandom.com"
+ },
+ "the-thing": {
+  "answer": "The Thing",
+  "matched": "The Thing (Who Goes There?)",
+  "via": "The Thing (Who Goes There?)",
+  "wiki": "villains.fandom.com"
+ },
+ "hannibal-lecter": {
+  "answer": "Hannibal Lecter",
+  "matched": "Hannibal",
+  "via": "Hannibal Lecter",
+  "wiki": "villains.fandom.com"
+ },
+ "norman-bates": {
+  "answer": "Norman Bates",
+  "matched": "Norman Bates",
+  "via": "Norman Bates",
+  "wiki": "villains.fandom.com"
+ },
+ "john-kramer": {
+  "answer": "Jigsaw",
+  "matched": "John Kramer",
+  "via": "John Kramer",
+  "wiki": "villains.fandom.com"
+ },
+ "billy-the-puppet": {
+  "answer": "Billy the Puppet",
+  "matched": "Billy the Puppet (Saw)",
+  "via": "Billy the Puppet",
+  "wiki": "horror.fandom.com"
+ },
+ "amanda-young": {
+  "answer": "Amanda Young",
+  "matched": "Amanda Young",
+  "via": "Amanda Young",
+  "wiki": "villains.fandom.com"
+ },
+ "zep-hindle": {
+  "answer": "Zep Hindle",
+  "matched": "Zep Hindle",
+  "via": "Zep Hindle",
+  "wiki": "villains.fandom.com"
+ },
+ "jack-torrance": {
+  "answer": "Jack Torrance",
+  "matched": "Jack Torrance",
+  "via": "Jack Torrance",
+  "wiki": "horror.fandom.com"
+ },
+ "buffalo-bill": {
+  "answer": "Buffalo Bill",
+  "matched": "Buffalo Bill",
+  "via": "Buffalo Bill",
+  "wiki": "villains.fandom.com"
+ },
+ "patrick-bateman": {
+  "answer": "Patrick Bateman",
+  "matched": "Patrick Bateman",
+  "via": "Patrick Bateman",
+  "wiki": "villains.fandom.com"
+ },
+ "anton-chigurh": {
+  "answer": "Anton Chigurh",
+  "matched": "Anton Chigurh",
+  "via": "Anton Chigurh",
+  "wiki": "villains.fandom.com"
+ },
+ "nurse-ratched": {
+  "answer": "Nurse Ratched",
+  "matched": "Nurse Ratched",
+  "via": "Nurse Ratched",
+  "wiki": "villains.fandom.com"
+ },
+ "captain-spaulding": {
+  "answer": "Captain Spaulding",
+  "matched": "Captain Spaulding",
+  "via": "Captain Spaulding",
+  "wiki": "villains.fandom.com"
+ },
+ "baby-firefly": {
+  "answer": "Baby Firefly",
+  "matched": "Baby Firefly",
+  "via": "Baby Firefly",
+  "wiki": "villains.fandom.com"
+ },
+ "dr-satan": {
+  "answer": "Dr. Satan",
+  "matched": "Dr. Satan (House of 1000 Corpses)",
+  "via": "Dr. Satan (House of 1000 Corpses)",
+  "wiki": "villains.fandom.com"
+ },
+ "esther-coleman": {
+  "answer": "Esther",
+  "matched": "Esther Coleman",
+  "via": "Esther Coleman",
+  "wiki": "villains.fandom.com"
+ },
+ "damien-thorn": {
+  "answer": "Damien Thorn",
+  "matched": "Damien Thorn",
+  "via": "Damien Thorn",
+  "wiki": "horror.fandom.com"
+ },
+ "carrie-white": {
+  "answer": "Carrie White",
+  "matched": "Carrie White",
+  "via": "Carrie White",
+  "wiki": "villains.fandom.com"
+ },
+ "rose-the-hat": {
+  "answer": "Rose the Hat",
+  "matched": "Rose the Hat",
+  "via": "Rose the Hat",
+  "wiki": "villains.fandom.com"
+ },
+ "cheryl-williams": {
+  "answer": "Cheryl Williams",
+  "matched": "Cheryl Williams",
+  "via": "Cheryl Williams",
+  "wiki": "villains.fandom.com"
+ },
+ "pyramid-head": {
+  "answer": "Pyramid Head",
+  "matched": "Pyramid Head",
+  "via": "Pyramid Head",
+  "wiki": "villains.fandom.com"
+ },
+ "stripe": {
+  "answer": "Stripe",
+  "matched": "Stripe",
+  "via": "Stripe",
+  "wiki": "horror.fandom.com"
+ },
+ "leprechaun": {
+  "answer": "Leprechaun",
+  "matched": "Leprechaun",
+  "via": "Leprechaun",
+  "wiki": "villains.fandom.com"
+ },
+ "pumpkinhead": {
+  "answer": "Pumpkinhead",
+  "matched": "Pumpkinhead",
+  "via": "Pumpkinhead",
+  "wiki": "villains.fandom.com"
+ },
+ "the-creeper": {
+  "answer": "The Creeper",
+  "matched": "Creeper",
+  "via": "The Creeper",
+  "wiki": "villains.fandom.com"
+ },
+ "sam": {
+  "answer": "Sam",
+  "matched": "Sam (Trick 'r Treat)",
+  "via": "Sam (Trick 'r Treat)",
+  "wiki": "horror.fandom.com"
+ },
+ "tall-man": {
+  "answer": "Tall Man",
+  "matched": "Tall Man",
+  "via": "Tall Man",
+  "wiki": "villains.fandom.com"
+ },
+ "bruce-jaws": {
+  "answer": "Bruce",
+  "matched": "Bruce (Jaws)",
+  "via": "Bruce (Jaws)",
+  "wiki": "villains.fandom.com"
+ },
+ "cujo": {
+  "answer": "Cujo",
+  "matched": "Cujo",
+  "via": "Cujo",
+  "wiki": "villains.fandom.com"
+ },
+ "overlook-hotel": {
+  "answer": "The Overlook Hotel",
+  "matched": "Overlook Hotel",
+  "via": "Overlook Hotel",
+  "wiki": "villains.fandom.com"
+ },
+ "otis-driftwood": {
+  "answer": "Otis Driftwood",
+  "matched": "Otis B. Driftwood",
+  "via": "Otis B. Driftwood",
+  "wiki": "villains.fandom.com"
+ },
+ "deadite": {
+  "answer": "Deadite",
+  "matched": "Deadites",
+  "via": "Deadites",
+  "wiki": "villains.fandom.com"
+ },
+ "christine": {
+  "answer": "Christine",
+  "matched": "Christine (1983)",
+  "via": "Christine (1983)",
+  "wiki": "horror.fandom.com"
+ },
+ "kurt-barlow": {
+  "answer": "Kurt Barlow",
+  "matched": "Kurt Barlow",
+  "via": "Kurt Barlow",
+  "wiki": "horror.fandom.com"
+ }
+}
