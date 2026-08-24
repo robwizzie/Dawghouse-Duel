@@ -320,7 +320,7 @@
     'nba-today': 'lebron-james', 'nba-goats': 'michael-jordan',
     celebrities: 'tom-hanks', streamers: 'mrbeast',
     'nfl-today': 'patrick-mahomes', 'nfl-goats': 'tom-brady',
-    got: 'jon-snow', dnd: 'beholder', dragons: 'toothless', food: 'pizza', dwts: 'derek-hough', harrypotter: 'harry-potter', horror: 'michael-myers',
+    got: 'jon-snow', dnd: 'beholder', dragons: 'toothless', food: 'pizza', dwts: 'derek-hough', harrypotter: 'harry-potter', villains: 'darth-vader', heroes: 'superman',
     minecraft: 'creeper', kingdomhearts: 'sora'
   };
 
